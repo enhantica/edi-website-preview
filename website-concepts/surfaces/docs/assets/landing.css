@@ -1,6 +1,7 @@
 /* Home only. Documentation pages keep Zensical's native layout and typography. */
 .md-main:has(.ed-landing) {
   display: flex;
+  overflow-x: clip;
 }
 .md-main__inner:has(.ed-landing) {
   align-self: center;
@@ -13,7 +14,7 @@
 }
 .ed-landing {
   display: grid;
-  grid-template-columns: minmax(0, 20rem) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 21rem) minmax(0, 1fr);
   /* Keep the text aligned with the header; use the open space to its right. */
   width: calc(100% + max(0px, (100vw - 61rem) / 2 - .4rem));
   font-family: Nunito, var(--md-text-font), sans-serif;
@@ -64,7 +65,7 @@
   text-align: center;
 }
 .ed-landing__interfaces {
-  margin-top: 1.35rem;
+  margin: 0 0 1.15rem;
 }
 .ed-landing__interfaces p {
   display: flex;
@@ -76,11 +77,12 @@
 .ed-landing__interfaces a {
   display: inline-flex;
   align-items: center;
-  gap: .35rem;
+  gap: .2rem;
   color: var(--md-default-fg-color--light);
   font-size: .65rem;
   font-weight: 600;
   white-space: nowrap;
+  text-decoration: none;
 }
 .ed-landing__interfaces a:hover,
 .ed-landing__interfaces a:focus-visible {
@@ -95,7 +97,8 @@
   height: 100%;
 }
 .ed-landing .ed-landing__preview {
-  width: 100%;
+  width: calc(100% + 2.5rem);
+  max-width: none;
   margin: 0;
   overflow: hidden;
   border: 1px solid var(--md-default-fg-color--lightest);

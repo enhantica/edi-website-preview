@@ -12,6 +12,15 @@ hide:
 
 <div class="ed-landing__copy" markdown>
 
+<nav class="ed-landing__interfaces" aria-label="Explore EasyDiffraction interfaces" markdown>
+
+[:lucide-globe: Web app](application/browser.md "Web app documentation")
+[:lucide-monitor: Desktop app](application/desktop.md "Desktop app documentation")
+[:simple-python: Python](python/index.md "Python library documentation")
+[:lucide-square-terminal: Command Line](cli/index.md "Command Line documentation")
+
+</nav>
+
 # Making <span class="ed-landing__accent">diffraction</span><br>data analysis and<br>modelling <span class="ed-landing__accent">easy</span> { #landing-heading }
 
 <p class="ed-landing__intro">Calculate diffraction patterns, refine your structural model and understand your results. Try it directly in your browser.</p>
@@ -23,14 +32,7 @@ hide:
 
 </div>
 
-<nav class="ed-landing__interfaces" aria-label="Explore EasyDiffraction interfaces" markdown>
 
-[:lucide-globe: Web app](application/browser.md "Web app documentation")
-[:lucide-monitor: Desktop app](application/desktop.md "Desktop app documentation")
-[:simple-python: Python](python/index.md "Python library documentation")
-[:lucide-square-terminal: Command Line](cli/index.md "Command Line documentation")
-
-</nav>
 </div>
 
 <figure class="ed-landing__preview">
