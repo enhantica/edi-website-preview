@@ -4,7 +4,7 @@ template: features.html
 
 # Features and roadmap
 
-Find a capability by its scientific role. The four columns show the **web application, desktop application, Python library and Command Line**. Follow a feature link for its equations, parameters and conventions in **Physics**.
+Find a capability by its scientific role. Follow a feature link for its equations, parameters and conventions in **Physics**.
 
 ## How to read this page
 
