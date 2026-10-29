@@ -1,6 +1,6 @@
 /* Full-width decoration; only the artwork layer is clipped vertically. */
 .md-main__inner:has([data-network-hero]) {
-  max-width: 61rem;
+  max-width: none;
   width: 100%;
   margin-block: 0;
 }
@@ -14,7 +14,7 @@
   z-index: 1;
   width: 100%;
   margin-inline: auto;
-  max-width: none;
+  max-width: 61rem;
 }
 [data-network-hero] .ed-network-art {
   position: absolute;

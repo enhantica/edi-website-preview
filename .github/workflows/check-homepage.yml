@@ -1,0 +1,41 @@
+name: Check homepage in Chromium and Safari
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - browser: chromium
+            os: ubuntu-24.04
+          - browser: safari
+            os: macos-15
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+      - name: Install documentation and browser client
+        run: python -m pip install -r website-concepts/requirements.txt playwright==1.64.1 selenium==4.52.0
+      - name: Install Chromium
+        if: matrix.browser == 'chromium'
+        run: python -m playwright install --with-deps chromium
+      - name: Enable native Safari WebDriver
+        if: matrix.browser == 'safari'
+        run: sudo safaridriver --enable
+      - name: Build preview
+        run: python website-concepts/build.py surfaces
+      - name: Check actual homepage
+        run: python website-concepts/checks/network_browser.py --browser "$CHECK_BROWSER" --output browser-evidence
+        env:
+          CHECK_BROWSER: ${{ matrix.browser }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: homepage-${{ matrix.browser }}
+          path: browser-evidence
