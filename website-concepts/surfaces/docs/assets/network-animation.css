@@ -33,6 +33,9 @@
   pointer-events: none;
 }
 /* Retain every approved path's geometry, grey and individual inward fade. */
+[data-network-hero] .network-linework > g:not([data-pulses]) {
+  opacity: .75;
+}
 [data-network-hero] .network-linework > g:not([data-pulses]) > path {
   vector-effect: non-scaling-stroke;
   stroke-width: 1.25px;

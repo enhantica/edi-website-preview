@@ -205,3 +205,9 @@ Increase the shared logo/search row's top padding by .35rem to approximately dou
 The owner supersedes the supplied pulse-speed range: choose each pulse's original 30–45 SVG-unit base independently, multiply by an independent factor from 3–5, and add gentle continuous variation around that speed. Preserve the approved trail lengths, local opacity fade, connected routing, staggered starts and stationary grey mesh.
 
 Constrain the hero paragraph to the intrinsic headline width. Keep both button borders present in resting/hover/focus states so native colour feedback causes no geometry change. The owner-selected Analysis screenshot replaces the earlier Experiment screenshot only on Home.
+
+### Owner-selected accent — 2026-10-29
+
+Use `#0084C7`, sampled as RGB(0, 132, 199) from the solid blue lettering in the supplied `Screenshot 2026-10-29 at 19.15.49.png`. Select the custom native palette in both configurations and supply its primary/accent variables via one shared colour definition. Links, buttons, selected navigation, highlighted words, feature icons and network pulses all consume that palette in either native colour scheme.
+
+The owner requests a clearer screenshot frame and softer grey mesh. Use a one-pixel #D4D4D4 outer frame, resembling the app status-bar divider. Apply a .75 opacity multiplier to the grey bank groups while preserving their supplied path-specific stroke opacities; the blue overlay retains its local fade and selected accent.
