@@ -319,6 +319,11 @@
     function tick(time) {
       raf = 0;
       if (!root.isConnected) { destroy(); return; }
+      // A restored page may expose a new preference before dispatching its change event.
+      // Check it before advancing any decorative motion as well as in the listener.
+      if (playing && reducedMotion.matches && root.dataset.motionChoice !== 'play') {
+        onReducedMotion(reducedMotion);
+      }
       if (!active()) { previousTime = null; publishState(); return; }
       const dt = previousTime === null ? 0 : Math.min(0.08, Math.max(0, (time - previousTime) / 1000));
       previousTime = time;
