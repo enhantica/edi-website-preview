@@ -1,83 +1,187 @@
 # Features and roadmap
 
-Choose an interface for how you work. The scientific model is shared; the controls and ways to prepare a project differ. Each scientific feature below links to its definition in **Physics**.
+Find a capability by its scientific role. The four columns show the **web application, desktop application, Python library and Command Line**. Follow a feature link for its equations, parameters and conventions in **Physics**.
 
-## Reading the tables
+## How to read this page
 
-**Edit & run** means that the interface can configure the feature and calculate or refine it. **Run project** means that it uses the feature from a prepared project; it does not provide a dedicated editor for it. **Available** describes the named action. **Partial** has a qualification below the table. **Unavailable** is not a promise of future delivery.
+✅ **Available** · ☑️ **Runs a prepared project** · ◐ **Partial** · 🗓️ **Planned** · 💡 **Proposed** · — **Unavailable**.
 
-These are source-backed capabilities of the [reference snapshot](../physics/models.md#reference-snapshot), rather than a guarantee about every released installer. Browser storage and downloads differ from desktop file access. Planned work is listed separately, with no implied delivery date.
+Each status has a text description; hover an icon for its meaning. A prepared-project status means the calculation uses saved settings; that interface does not have a dedicated editor for them. The application and Python can configure the scientific features marked available. Command Line runs the model declared in the project.
 
-## Scientific coverage
+??? note "Scope, planned work and interface differences"
 
-| Feature and scientific definition | Web app | Desktop app | Python | Command Line |
-| --- | --- | --- | --- | --- |
-| [Nuclear neutron CW powder diffraction](../physics/diffraction.md#eq-nuclear-structure-factor) | Edit & run | Edit & run | Edit & run | Run project |
-| [X-ray CW powder diffraction](../physics/diffraction.md#eq-xray-structure-factor) | Edit & run | Edit & run | Edit & run | Run project |
-| [Neutron TOF powder diffraction](../physics/profiles/tof.md) | Edit & run | Edit & run | Edit & run | Run project |
-| [Single-crystal neutron reflection calculation and fitting](../physics/corrections/extinction.md#single-crystal-intensity) | Edit & run | Edit & run | Edit & run | Run project |
-| [Multiple phases, scales and mass fractions](../physics/diffraction.md#phase-fractions) | Edit & run | Edit & run | Edit & run | Run project |
-| [Cell, symmetry, atom sites and occupancy](../physics/crystallography.md) | Edit & run | Edit & run | Edit & run | Run project |
-| [Atomic displacement: isotropic and anisotropic conventions](../physics/displacement.md) | Edit & run | Edit & run | Edit & run | Run project |
-| [Scattering-table and dispersion source selections](../physics/diffraction.md#eq-xray-structure-factor) | Run project | Run project | Edit & run | Run project |
-| [CW Gaussian, Lorentzian and direct pseudo-Voigt profiles](../physics/profiles/cw.md#eq-cwl-pseudovoigt) | Edit & run | Edit & run | Edit & run | Run project |
-| [CW TCH width and mixing](../physics/profiles/cw.md#eq-tch) | Edit & run | Edit & run | Edit & run | Run project |
-| [Bérar–Baldinozzi and FCJ asymmetry](../physics/profiles/cw.md#eq-berar-baldinozzi) | Edit & run | Edit & run | Edit & run | Run project |
-| [TOF Jorgensen, Jorgensen–Von Dreele and symmetric pseudo-Voigt](../physics/profiles/tof.md) | Edit & run | Edit & run | Edit & run | Run project |
-| [Wavelength, zero offset and TOF calibration](../physics/calibration.md) | Edit & run | Edit & run | Edit & run | Run project |
-| [CW displacement and transparency shifts](../physics/calibration.md#eq-line-shifts) | Edit & run | Edit & run | Edit & run | Run project |
-| [CW cylindrical absorption: Hewat and Lobanov](../physics/corrections/absorption.md) | Edit & run | Edit & run | Edit & run | Run project |
-| [TOF cylindrical absorption: active ABSCOR1](../physics/corrections/absorption.md#absorption-types) | Edit & run | Edit & run | Edit & run | Run project |
-| [Becker–Coppens and Larson extinction](../physics/corrections/extinction.md) | Edit & run | Edit & run | Edit & run | Run project |
-| [March–Dollase preferred orientation](../physics/corrections/orientation.md) | Edit & run | Edit & run | Edit & run | Run project |
-| [X-ray polarization and wavelength doublet](../physics/corrections/intensity.md) | Edit & run | Edit & run | Edit & run | Run project |
-| [Line-segment, polynomial and Chebyshev background](../physics/background.md) | Edit & run | Edit & run | Edit & run | Run project |
-| [Automatic background estimation: arPLS, SNIP and FABC](../physics/background.md#background-estimation) | Edit & run | Edit & run | Edit & run | Run project |
-| [Rietveld least-squares refinement](../physics/rietveld.md#eq-weighted-residual) | Edit & run | Edit & run | Edit & run | Run project |
-| [Single and joint fitting](../physics/rietveld.md#joint-refinement) | Edit & run | Edit & run | Edit & run | Run project |
-| [Sequential and independent scans](../physics/rietveld.md#scan-refinement) | Edit & run | Edit & run | Edit & run | Run project |
-| [Agreement factors and uncertainties](../physics/reliability.md) | Available | Available | Available | Available |
+    Coverage is based on the [reference snapshot](../physics/models.md#reference-snapshot). It describes source-backed capabilities rather than a guarantee about every installed version.
 
-**Scope details.** CW means constant wavelength; TOF means time of flight. Extinction here is a single-crystal correction; March–Dollase is the CW powder texture model. The [model catalogue](../physics/models.md) lists the exact admitted types. Automatic background settings in a saved project are honoured by command-line calculation and fitting, including re-estimation when needed; there is no separate command-line background editor.
+    Planned means a recorded shared scientific roadmap item, not available functionality or a promised release date. Interface delivery for those models has not been specified. Proposed means a discussion candidate. No in-progress status is assigned without evidence of active implementation.
 
-**Stored fields.** The reciprocal TOF calibration coefficient and ABSCOR2 can be retained in a project but are not active calculation terms in this snapshot. They are not additional supported fitting directions. See [TOF calibration](../physics/calibration.md#eq-tof-calibration) and [TOF absorption](../physics/corrections/absorption.md#absorption-types).
+    The web and desktop apps share the scientific controls. Browser file access and downloads differ; see [browser projects](../application/browser.md). Files, controls and rendering are documented under each interface tab.
 
-## Preparing, running and sharing
+## Structure model
 
-| Action | Web app | Desktop app | Python | Command Line |
-| --- | --- | --- | --- | --- |
-| Open a complete project folder or archive | Available¹ | Available | Available | Available |
-| Save or export the complete project | Available¹ | Available | Available | Available² |
-| Create structures and experiments interactively | Available | Available | API | Unavailable³ |
-| Import a structural CIF | Partial⁴ | Partial⁴ | Partial⁴ | Run prepared project |
-| Import measured powder text data | Available | Available | Available | Run prepared project |
-| Configure powder excluded regions | Available | Available | Available | Run project |
-| Calculate without measured observations | Available | Available | Available | Available |
-| Show fit progress and cancel | Available | Available | Callbacks | Terminal / interrupt |
-| Inspect pattern and reflection charts | Available | Available | Result arrays / HTML report | Export arrays / HTML report |
-| Write interactive or offline HTML reports | Available | Available | Available | Available |
-| Write PDF reports | Available | Available | Unavailable | Unavailable |
-| Write CIF reports | Unavailable | Unavailable | Unavailable | Unavailable |
-| Check whether a saved report is current | Available | Available | Available | Available |
+### Crystal structure
 
-1. Browser support determines whether a folder can be opened directly or an archive is imported/exported. See [browser projects](../application/browser.md).
-2. Fit/calculate write-back and export operate on the prepared project; see [input and output files](../cli/files.md).
-3. Prepare the project in the application, Python or saved Edi files. The command line runs, reports and exports it.
-4. Current structural input supports a defined subset, rather than arbitrary CIF declarations. More complete declaration handling is planned. See [data formats](data-formats.md).
+| Feature | Web | Desktop | Python | Command Line |
+| --- | :---: | :---: | :---: | :---: |
+| [Unit cell and lattice parameters](../physics/crystallography.md#eq-cell-metric) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Space group, symmetry and atom sites](../physics/crystallography.md#symmetry) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Occupancies and fractional coordinates](../physics/diffraction.md#eq-nuclear-structure-factor) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Multiple phases and phase scales](../physics/diffraction.md#phase-fractions) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Derived mass fractions](../physics/diffraction.md#phase-fractions) | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
 
-For the equations behind inputs and outputs, use [crystallography](../physics/crystallography.md), [calibration](../physics/calibration.md), [background and exclusions](../physics/background.md#background-estimation), [refinement](../physics/rietveld.md) and [reliability and uncertainty](../physics/reliability.md). File operations and visual controls have their instructions under the corresponding interface tab.
+### Atomic displacement
 
-## Planned scientific models {#planned-scientific-models}
+| Feature | Web | Desktop | Python | Command Line |
+| --- | :---: | :---: | :---: | :---: |
+| [Isotropic Biso and Uiso](../physics/displacement.md#eq-isotropic-adp) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Anisotropic Bani, Uani and beta](../physics/displacement.md#eq-anisotropic-adp) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
 
-The same four interfaces are shown so an engine roadmap item cannot be mistaken for a delivered interface feature. **Planned** means a recorded scientific roadmap item; interface controls and delivery remain subject to implementation. No feature below has source evidence of being in progress in this snapshot.
+### Scattering models
 
-| Scientific feature | Web app | Desktop app | Python | Command Line | Recorded state |
-| --- | --- | --- | --- | --- | --- |
-| [Ikeda–Carpenter TOF pulse profile](../physics/models.md#planned-scientific-models) | Unavailable | Unavailable | Unavailable | Unavailable | Planned |
-| [Magnetic diffraction](../physics/models.md#planned-scientific-models) | Unavailable | Unavailable | Unavailable | Unavailable | Planned |
-| [Polarized diffraction](../physics/models.md#planned-scientific-models) | Unavailable | Unavailable | Unavailable | Unavailable | Planned |
-| [Total scattering and PDF](../physics/models.md#planned-scientific-models) | Unavailable | Unavailable | Unavailable | Unavailable | Planned |
-| [Le Bail / Pawley intensity extraction](../physics/models.md#planned-scientific-models) | Unavailable | Unavailable | Unavailable | Unavailable | Proposed |
-| [Single-crystal reflection exclusions](../physics/reliability.md#single-crystal-factors) | Unavailable | Unavailable | Unavailable | Unavailable | Planned |
+| Feature | Web | Desktop | Python | Command Line |
+| --- | :---: | :---: | :---: | :---: |
+| [Nuclear neutron structure factors](../physics/diffraction.md#eq-nuclear-structure-factor) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [X-ray atomic form factors and dispersion](../physics/diffraction.md#eq-xray-structure-factor) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Select scattering-table and dispersion sources](../physics/models.md#xray-dispersion) | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
 
-Other recorded work includes fuller CIF input and improved PDF-report production. A proposed item is a discussion candidate, rather than a committed delivery. This page will change with the [reference snapshot](../physics/models.md#reference-snapshot).
+## Experiment model
+
+### Diffraction modes
+
+| Feature | Web | Desktop | Python | Command Line |
+| --- | :---: | :---: | :---: | :---: |
+| [Neutron powder · constant wavelength](../physics/rietveld.md#eq-rietveld-pattern) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [X-ray powder · constant wavelength](../physics/diffraction.md#eq-xray-structure-factor) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Neutron powder · time of flight](../physics/profiles/tof.md) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Neutron single crystal · CW and TOF](../physics/corrections/extinction.md#single-crystal-intensity) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+
+### Constant-wavelength peak profiles
+
+| Feature | Web | Desktop | Python | Command Line |
+| --- | :---: | :---: | :---: | :---: |
+| [Gaussian and Lorentzian](../physics/profiles/cw.md#eq-cwl-pseudovoigt) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Pseudo-Voigt · direct width and mixing](../physics/profiles/cw.md#eq-caglioti) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Thompson–Cox–Hastings pseudo-Voigt](../physics/profiles/cw.md#eq-tch) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Bérar–Baldinozzi asymmetry](../physics/profiles/cw.md#eq-berar-baldinozzi) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Finger–Cox–Jephcoat axial asymmetry](../physics/profiles/cw.md#eq-fcj) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+
+### Time-of-flight peak profiles
+
+| Feature | Web | Desktop | Python | Command Line |
+| --- | :---: | :---: | :---: | :---: |
+| [Jorgensen · Gaussian pulse convolution](../physics/profiles/tof.md#eq-jorgensen) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Jorgensen–Von Dreele · mixed profile](../physics/profiles/tof.md#eq-jorgensen-von-dreele) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Symmetric pseudo-Voigt](../physics/profiles/tof.md#tof-pseudo-voigt) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Gaussian and Lorentzian width terms](../physics/profiles/tof.md#eq-tof-widths) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+
+### Instrument and calibration
+
+| Feature | Web | Desktop | Python | Command Line |
+| --- | :---: | :---: | :---: | :---: |
+| [Wavelength and CW zero offset](../physics/calibration.md#eq-cwl-calibration) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [CW displacement and transparency shifts](../physics/calibration.md#eq-line-shifts) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [TOF zero, linear and quadratic calibration](../physics/calibration.md#eq-tof-calibration) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [X-ray wavelength doublet](../physics/corrections/intensity.md#wavelength-doublet) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [X-ray polarization and monochromator](../physics/corrections/intensity.md#eq-xray-polarization) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+
+The reciprocal TOF coefficient is retained in saved input but is **not an active calibration term**. See [the operative equation](../physics/calibration.md#eq-tof-calibration).
+
+### Absorption and preferred orientation
+
+| Feature | Web | Desktop | Python | Command Line |
+| --- | :---: | :---: | :---: | :---: |
+| [Hewat cylinder · CW](../physics/corrections/absorption.md#eq-hewat) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Lobanov cylinder · CW](../physics/corrections/absorption.md#eq-lobanov) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Wavelength-dependent cylinder · TOF ABSCOR1](../physics/corrections/absorption.md#eq-hewat) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [March–Dollase preferred orientation · CW powder](../physics/corrections/orientation.md#eq-march-dollase) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+
+**ABSCOR2 is stored but not applied.** It is not an additional active absorption term or fitting direction. [Details and units](../physics/corrections/absorption.md#absorption-types).
+
+### Single-crystal extinction
+
+| Feature | Web | Desktop | Python | Command Line |
+| --- | :---: | :---: | :---: | :---: |
+| [Becker–Coppens · type I, type II and mixed](../physics/corrections/extinction.md#extinction-types) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Gaussian and Lorentzian mosaic distributions](../physics/corrections/extinction.md#eq-secondary-extinction) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Larson · isotropic and anisotropic](../physics/corrections/extinction.md#eq-larson) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+
+### Background and excluded observations
+
+| Feature | Web | Desktop | Python | Command Line |
+| --- | :---: | :---: | :---: | :---: |
+| [Line-segment background](../physics/background.md#eq-line-segment-background) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Polynomial background](../physics/background.md#eq-polynomial-background) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Chebyshev background](../physics/background.md#eq-chebyshev-background) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Automatic estimation · arPLS, SNIP and FABC](../physics/background.md#background-estimation) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Powder excluded regions](../physics/background.md#excluded-regions) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+
+Command Line honours automatic-background settings saved in a project, including re-estimation when needed. It has no separate background editor.
+
+## Analysis and refinement
+
+### Calculation and fitting modes
+
+| Feature | Web | Desktop | Python | Command Line |
+| --- | :---: | :---: | :---: | :---: |
+| [Forward calculation without observations](../physics/rietveld.md#eq-rietveld-pattern) | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> |
+| [Rietveld least-squares refinement](../physics/rietveld.md#eq-weighted-residual) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Single-experiment fitting](../physics/rietveld.md#joint-refinement) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Joint multi-experiment fitting](../physics/rietveld.md#joint-refinement) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Sequential and independent scans](../physics/rietveld.md#scan-refinement) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+
+### Parameters and fit assessment
+
+| Feature | Web | Desktop | Python | Command Line |
+| --- | :---: | :---: | :---: | :---: |
+| [Independent free-parameter selection](../physics/minimization.md#eq-jacobian) | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Descent strategy from saved analysis settings](../physics/minimization.md#eq-lm) | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> | <span role="img" aria-label="Available: configure and run" title="Available: configure and run">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Covariance, uncertainties and correlations](../physics/minimization.md#eq-covariance) | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> |
+| [Profile and background-subtracted R factors](../physics/reliability.md#eq-profile-factors) | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> |
+| [Phase Bragg and F factors](../physics/reliability.md#eq-bragg-factors) | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> |
+| [Single-crystal factors and reflection subsets](../physics/reliability.md#single-crystal-factors) | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> |
+
+A dictionary refinability flag does not by itself establish an admissible free parameter. The selected model, constraints and derived-value rules still apply; see the [parameter index](../physics/parameters.md).
+
+## Projects and results
+
+### Project files and measured input
+
+| Feature | Web | Desktop | Python | Command Line |
+| --- | :---: | :---: | :---: | :---: |
+| [Open and save a complete project](data-formats.md) | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> |
+| [Import/export a project archive](data-formats.md) | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> |
+| [Create structures and experiments](analysis-workflow/project.md) | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Unavailable" title="Unavailable">—</span> |
+| [Import a structural CIF](data-formats.md) | <span role="img" aria-label="Partially available; see the qualification below" title="Partially available; see the qualification below">◐</span> | <span role="img" aria-label="Partially available; see the qualification below" title="Partially available; see the qualification below">◐</span> | <span role="img" aria-label="Partially available; see the qualification below" title="Partially available; see the qualification below">◐</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+| [Import measured powder text data](data-formats.md) | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available: run a prepared project" title="Available: run a prepared project">☑️</span> |
+
+Browser folder access depends on the browser; archive import/export provides a portable route. Command Line runs prepared structures and observations. Current CIF input supports a defined subset; fuller declaration handling is planned. [Scientific input conventions](../physics/conventions.md).
+
+### Charts and reports
+
+| Feature | Web | Desktop | Python | Command Line |
+| --- | :---: | :---: | :---: | :---: |
+| [Pattern and reflection charts](../physics/rietveld.md#eq-rietveld-pattern) | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Partially available; see the qualification below" title="Partially available; see the qualification below">◐</span> | <span role="img" aria-label="Partially available; see the qualification below" title="Partially available; see the qualification below">◐</span> |
+| [Interactive and offline HTML reports](analysis-workflow/report.md) | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> |
+| [PDF reports](analysis-workflow/report.md) | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Unavailable" title="Unavailable">—</span> | <span role="img" aria-label="Unavailable" title="Unavailable">—</span> |
+| [CIF reports](analysis-workflow/report.md) | <span role="img" aria-label="Unavailable" title="Unavailable">—</span> | <span role="img" aria-label="Unavailable" title="Unavailable">—</span> | <span role="img" aria-label="Unavailable" title="Unavailable">—</span> | <span role="img" aria-label="Unavailable" title="Unavailable">—</span> |
+| [Saved-report freshness checks](analysis-workflow/report.md) | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> | <span role="img" aria-label="Available" title="Available">✅</span> |
+
+The application shows interactive charts. Python exposes result arrays and HTML reports; Command Line exports calculated arrays and HTML reports. The interfaces use the same [agreement and uncertainty definitions](../physics/reliability.md), with different display controls. The application writes PDF. A stored CIF-report setting does not establish an available writer.
+
+## Planned work {#planned-scientific-models}
+
+These shared scientific roadmap items are **not available yet**. Calendar icons identify planned scientific work; they do not promise an interface release or indicate active implementation.
+
+### Additional physics
+
+| Feature | Web | Desktop | Python | Command Line |
+| --- | :---: | :---: | :---: | :---: |
+| [Ikeda–Carpenter TOF pulse profile](../physics/models.md#planned-scientific-models) | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> |
+| [Magnetic diffraction](../physics/models.md#planned-scientific-models) | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> |
+| [Polarized diffraction](../physics/models.md#planned-scientific-models) | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> |
+| [Total scattering and PDF](../physics/models.md#planned-scientific-models) | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> |
+| [Le Bail / Pawley intensity extraction](../physics/models.md#planned-scientific-models) | <span role="img" aria-label="Proposed scientific model; unavailable now" title="Proposed scientific model; unavailable now">💡</span> | <span role="img" aria-label="Proposed scientific model; unavailable now" title="Proposed scientific model; unavailable now">💡</span> | <span role="img" aria-label="Proposed scientific model; unavailable now" title="Proposed scientific model; unavailable now">💡</span> | <span role="img" aria-label="Proposed scientific model; unavailable now" title="Proposed scientific model; unavailable now">💡</span> |
+| [Single-crystal reflection exclusions](../physics/reliability.md#single-crystal-factors) | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">🗓️</span> |
+
+### Input and reporting
+
+Fuller CIF input and improved PDF-report production are also recorded work. Current limitations are described under [Data formats](data-formats.md) and [Report](analysis-workflow/report.md). Availability and roadmap states are updated with the [reference snapshot](../physics/models.md#reference-snapshot).

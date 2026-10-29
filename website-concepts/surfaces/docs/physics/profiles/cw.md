@@ -58,11 +58,11 @@ $$\cos2\phi_{\min}=\cos2\theta_h\sqrt{1+(S_L+D_L)^2},\qquad
 
 With $q(\delta)=|\cos2\theta_h|/\sqrt{\cos^2\delta-\cos^22\theta_h}$, the two geometric regions use
 
-$$G(\delta)=\begin{cases}|(S_L+D_L)q(\delta)-1|/\cos\delta,&\text{inner region},\\
+$$G(\delta)=\begin{cases}\left|[(S_L+D_L)q(\delta)-1]/\cos\delta\right|,&\text{inner region},\\
 2\min(S_L,D_L)q(\delta)/\cos\delta,&\text{outer region}.
 \end{cases}$$
 
-The inner/outer boundary is the inflection angle. The normalised quadrature is
+Integrate between $2\phi_{\min}$ and $2\theta_h$. The inner branch applies when $|\delta-2\phi_{\min}|\le|2\phi_{\rm infl}-2\phi_{\min}|$; the outer branch applies beyond that boundary. The normalised quadrature is
 
 $$\Omega(x)=\frac{\sum_k w_kG(\delta_k)\,pV(x-\delta_k+2\theta_h)}{\sum_k w_kG(\delta_k)}.$$
 

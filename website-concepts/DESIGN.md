@@ -163,3 +163,14 @@ The owner also requested the landing-page typeface from easydiffraction.org. Its
 `css/style.min.css` declares Nunito (Google Fonts, weights 400–800). Use that face only in the
 hero and its actions, keep the native documentation font, reduce the buttons' padding/rounding,
 and give the screenshot more width on desktop while retaining stacked mobile layouts.
+
+
+### Preview publishing decision (2026-10-29)
+
+The owner clarified that preview `main` is their work-in-progress review surface. Push working increments directly to main and let Pages deploy them, even while the wider design/content task is unfinished. Do not hold normal progress on a separate checkpoint branch waiting for a completed production migration. Report what changed and which checks remain.
+
+### Scientific reference and retrieval contract
+
+Physics is grouped into diffraction model, peak profiles, intensity corrections, experiment model, refinement/statistics and reference lookups. Exact model tokens and parameter names resolve to stable section/equation anchors. Render equations only on Physics pages with locally bundled MathJax. Preserve native Zensical article/sidebar typography.
+
+A JSON catalogue records source snapshot, model/parameter scope, scientific units and effective roles. Metadata refinability alone does not prove fitting admission. Features and roadmap distinguishes all four interfaces and prepared-project execution from editing. Plain Markdown and llms.txt are generated from these same pages rather than maintained as a competing scientific source. The export supports future assistant retrieval; this change does not add an application chat backend.
