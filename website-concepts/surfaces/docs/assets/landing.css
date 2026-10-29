@@ -16,7 +16,7 @@
 .ed-landing {
   display: grid;
   grid-template-columns: minmax(0, 21rem) minmax(0, 1fr);
-  --ed-hero-gap: clamp(1.5rem, 4vw, 4rem);
+  --ed-hero-gap: clamp(1.5rem, 3.2vw, 3.2rem);
   box-sizing: border-box;
   width: 100%;
   padding-inline: var(--ed-hero-gap) 0;
@@ -111,7 +111,7 @@
   height: 100%;
 }
 .ed-landing .ed-landing__preview {
-  width: calc(100% + 2.5rem);
+  width: calc(90% + 2.25rem);
   max-width: none;
   margin: 0;
   overflow: hidden;
