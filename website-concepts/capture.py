@@ -43,6 +43,39 @@ def _capture_tabs(page: Page, output: Path, name: str) -> None:
     )
 
 
+def _capture_drawer(page: Page, output: Path, name: str) -> None:
+    header = page.locator('.md-header .md-logo')
+    header_size = header.locator('svg.ed-wordmark').bounding_box()
+    if header.locator('svg').count() != 1 or header.locator('img').count():
+        raise RuntimeError('Header must contain one SVG, without light/dark image alternatives')
+    colors = []
+    for scheme in ['default', 'slate']:
+        colors.append(header.locator('g[style="fill: currentColor"] path').first.evaluate(
+            '(e) => getComputedStyle(e).fill'
+        ))
+        page.locator('.md-header label[for="__drawer"]').click()
+        title = page.locator('.md-nav--primary > .md-nav__title')
+        if title.locator('svg.ed-wordmark').count() != 1 or title.locator('img').count():
+            raise RuntimeError('Drawer must contain one SVG, without image alternatives')
+        extra_text = title.evaluate(
+            '(e) => Array.from(e.childNodes).filter(n => n.nodeType === 3)'
+            '.map(n => n.textContent).join("").trim()'
+        )
+        size = title.locator('svg.ed-wordmark').bounding_box()
+        if extra_text or not size or not header_size:
+            raise RuntimeError('Drawer repeats the brand label or has no visible wordmark')
+        if size['width'] < 95 or abs(size['height'] - header_size['height']) > 1:
+            raise RuntimeError('Drawer wordmark must match the header size')
+        page.screenshot(
+            path=str(output / f'{name}-drawer-{scheme}.png'), animations='disabled', full_page=True
+        )
+        page.locator('.md-header label[for="__drawer"]').evaluate('(label) => label.click()')
+        if scheme == 'default':
+            page.get_by_title('Switch to dark mode', exact=True).click()
+    if colors[0] == colors[1]:
+        raise RuntimeError('Wordmark lettering did not follow the theme color')
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('concept', choices=['surfaces', 'workflows'])
@@ -107,8 +140,8 @@ def main() -> None:
             if name == 'workflows' and label == 'guide':
                 _capture_tabs(page, output, name)
                 checks.append({'page': docs_path, 'python_interface_tab_works': True})
-        logo = page.locator('.md-header .md-logo img:visible')
-        if not logo.is_visible() or not logo.get_attribute('src').endswith('logo-light.svg'):
+        logo = page.locator('.md-header .md-logo svg.ed-wordmark')
+        if logo.count() != 1 or not logo.is_visible():
             raise RuntimeError('Official wordmark is missing from the header')
         if page.locator('.md-header__topic').first.is_visible():
             raise RuntimeError('Duplicate brand label is visible')
@@ -130,6 +163,8 @@ def main() -> None:
                 'document.documentElement.scrollWidth <= innerWidth'
             ),
         })
+        _capture_drawer(page, output, name)
+        checks.append({'single_svg_header_and_drawer': True, 'theme_aware_lettering': True})
         browser.close()
     server.shutdown()
     report = {'concept': name, 'checks': checks, 'browser_errors': errors}

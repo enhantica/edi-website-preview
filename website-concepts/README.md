@@ -25,8 +25,8 @@ a user workflow; contributor documentation concerns changing the product itself.
 Both alternatives use the standard Zensical modern theme, native Inter and JetBrains Mono font
 loading, and native light/dark schemes with a switch next to Search. Light is the initial default. The only theme color selection is EasyDiffraction's light
 blue primary/accent. Documentation pages use the native content design and templates. The selected Home has a
-page-specific adaptive landing layout; no custom JavaScript is used. A header-only branding
-stylesheet sizes the official wordmark and hides the duplicate text label.
+page-specific adaptive landing layout; no custom JavaScript is used. A small wordmark
+stylesheet sizes the single adaptive SVG in the header and drawer without a duplicate label.
 The public root opens the selected documentation directly. See [DESIGN.md](DESIGN.md).
 
 ## Build and preview

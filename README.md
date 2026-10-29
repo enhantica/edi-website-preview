@@ -18,8 +18,8 @@ existing edi application; this repository does not build or host another copy of
 Continue editing `website-concepts/surfaces/docs/`. The earlier `workflows/` alternative is retained
 as a reference.
 Navigation is declared in the adjacent `mkdocs.yml` files. Use Zensical's native components and
-modern theme. The shared branding stylesheet fits the official wordmark into the header and hides the
-duplicate brand label. Home has a separate adaptive landing layout; documentation pages retain
+modern theme. The shared wordmark stylesheet fits one adaptive SVG into the header and mobile drawer
+without repeating the brand name. Home has a separate adaptive landing layout; documentation pages retain
 the native typography, spacing and layout. The native light/dark switch sits beside Search, and
 the selected mode is retained between pages. Push to `main`
 to rebuild and publish the preview automatically. The Pages workflow can also be run manually.

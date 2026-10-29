@@ -40,6 +40,10 @@
     {
       "page": "/ mobile",
       "no_horizontal_overflow": true
+    },
+    {
+      "single_svg_header_and_drawer": true,
+      "theme_aware_lettering": true
     }
   ],
   "browser_errors": []

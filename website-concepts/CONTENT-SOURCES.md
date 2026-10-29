@@ -105,3 +105,8 @@ The native palette toggle and official dark-background wordmark were added with 
 page update. The wordmark comes unchanged from `easydiffraction/logos/dark.svg` at branding
 revision `46ab481bfe6d3b196f9609b17cd46cda7a0fadd8`; the existing branding licence covers it.
 The application screenshot remains the original light-mode product image in both site modes.
+
+The single adaptive wordmark is derived from the official light SVG: all geometry, gradient
+colors and blue-symbol shapes are retained. Only the lettering group inherits `currentColor`;
+gradient IDs are scoped to the header/drawer instances. The original light/dark source assets
+are retained unchanged. The mobile drawer's separate site-name text is removed.

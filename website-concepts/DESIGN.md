@@ -116,3 +116,22 @@ Use the official light and dark wordmarks unchanged from the same branding revis
 A logo-only template partial emits both image variants; the branding CSS shows the matching one.
 Check switching, persistence after reload and navigation, visible search controls and wordmarks,
 and layout at different viewport widths and device pixel ratios.
+
+## Single adaptive wordmark — 2026-10-29
+
+The owner's iPhone screenshots showed both light/dark images in the header and a shrunken
+wordmark followed by duplicate site-name text in the drawer. Replace the two-image logo in
+both prototypes with one inline SVG derived from the official light wordmark. Preserve the
+geometry and blue symbol; set only the lettering group's fill to `currentColor` so the native
+light/dark theme supplies its color. Prefix gradient IDs separately for header and drawer.
+The original official SVG files remain unchanged as source assets.
+
+The native drawer title assumed an icon plus a separate name. Its narrow override removes
+that repeated name and gives the single wordmark the same visual height as the header.
+Use a new `wordmark.css` URL so a cached earlier branding stylesheet cannot leave the old
+icon sizing in place. There is no image visibility switching or custom theme JavaScript.
+
+Check the open mobile drawer, not just the closed header, in both schemes. Require exactly
+one SVG per logo slot, no image pair or extra site-name text, consistent logo dimensions,
+unique gradient IDs and lettering that changes color while the symbol remains unchanged.
+Also check navigation and keyboard focus, and exercise the markup with custom CSS blocked.

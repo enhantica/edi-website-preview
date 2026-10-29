@@ -1,0 +1,74 @@
+[
+  {
+    "engine": "chromium",
+    "prefix": "",
+    "width": 320,
+    "one_svg": true,
+    "same_size": true,
+    "lettering_changes_color": true,
+    "symbol_unchanged": true
+  },
+  {
+    "engine": "chromium",
+    "prefix": "",
+    "width": 390,
+    "one_svg": true,
+    "same_size": true,
+    "lettering_changes_color": true,
+    "symbol_unchanged": true
+  },
+  {
+    "engine": "chromium",
+    "prefix": "",
+    "width": 768,
+    "one_svg": true,
+    "same_size": true,
+    "lettering_changes_color": true,
+    "symbol_unchanged": true
+  },
+  {
+    "engine": "chromium",
+    "prefix": "",
+    "width": 1600,
+    "one_svg": true,
+    "same_size": true,
+    "lettering_changes_color": true,
+    "symbol_unchanged": true
+  },
+  {
+    "engine": "chromium",
+    "prefix": "workflows/",
+    "width": 320,
+    "one_svg": true,
+    "same_size": true,
+    "lettering_changes_color": true,
+    "symbol_unchanged": true
+  },
+  {
+    "engine": "chromium",
+    "prefix": "workflows/",
+    "width": 390,
+    "one_svg": true,
+    "same_size": true,
+    "lettering_changes_color": true,
+    "symbol_unchanged": true
+  },
+  {
+    "engine": "chromium",
+    "prefix": "workflows/",
+    "width": 768,
+    "one_svg": true,
+    "same_size": true,
+    "lettering_changes_color": true,
+    "symbol_unchanged": true
+  },
+  {
+    "engine": "chromium",
+    "prefix": "workflows/",
+    "width": 1600,
+    "one_svg": true,
+    "same_size": true,
+    "lettering_changes_color": true,
+    "symbol_unchanged": true
+  }
+]
