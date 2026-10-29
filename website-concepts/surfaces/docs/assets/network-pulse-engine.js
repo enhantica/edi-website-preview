@@ -230,9 +230,13 @@
         pulse.wait = random(1.2, 3.6);
         return;
       }
-      // Independent base speeds, with a gentle continuous glide rather than abrupt changes.
-      pulse.currentSpeed = pulse.speed * (1 + 0.14 * Math.sin(
-        pulse.speedPhase + pulse.age * Math.PI * 2 / pulse.speedPeriod));
+      // Each spark eases through its own slow-fast-slow cycle. Smoothstep keeps
+      // acceleration continuous; softer entry/exit avoids a sudden launch or stop.
+      const phase = (1 + Math.sin(pulse.speedPhase + pulse.age * Math.PI * 2 / pulse.speedPeriod)) / 2;
+      const glide = 0.5 + 0.9 * ease(phase);
+      const entry = 0.35 + 0.65 * ease(pulse.age / 1.3);
+      const exit = 0.35 + 0.65 * ease((pulse.life - pulse.age) / 1.7);
+      pulse.currentSpeed = pulse.speed * glide * Math.min(entry, exit);
       pulse.offset += pulse.currentSpeed * dt;
       let guard = 0;
       while (pulse.offset >= pulse.current.length && guard++ < 100) {

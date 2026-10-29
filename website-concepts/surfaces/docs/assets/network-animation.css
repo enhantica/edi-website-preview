@@ -1,6 +1,6 @@
 /* Full-width decoration; only the artwork layer is clipped vertically. */
 .md-main__inner:has([data-network-hero]) {
-  max-width: none;
+  max-width: 61rem;
   width: 100%;
   margin-block: 0;
 }

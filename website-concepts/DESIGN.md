@@ -213,3 +213,9 @@ Use `#0084C7`, sampled as RGB(0, 132, 199) from the solid blue lettering in the 
 The owner requests a clearer screenshot frame and softer grey mesh. Use a one-pixel #D4D4D4 outer frame, resembling the app status-bar divider. Apply a .75 opacity multiplier to the grey bank groups while preserving their supplied path-specific stroke opacities; the blue overlay retains its local fade and selected accent.
 
 Latest owner sizing adjustment: tighten the desktop hero gutters and render the screenshot at approximately 90% of its previous allocated width. Keep it close to the copy, allowing more breathing room on its right. Mobile continues to use the full available image width.
+
+Refine the owner-requested acceleration/deceleration into a clearly visible, smooth slow–fast–slow cycle per spark, with independent phase and duration. Add softer velocity envelopes at entry/exit; retain elapsed-time integration and connected trail history, avoiding jumps or sudden speed changes.
+
+The latest owner reference restores the shared native grid alignment: the hero text aligns with the Home navigation label. Keep the network full-width independently of this content grid. Use the tighter internal gap and let the application frame extend slightly beyond the right viewport again. Screenshot size adapts to the available space beside this aligned copy rather than to a fixed viewport-wide column.
+
+Crop the Analysis screenshot's macOS title bar in the displayed frame, leaving the supplied PNG unchanged. The proportional crop is 62/2992 of its displayed width, measured by `/tmp/edi-sample-titlebar.py` from the source's white-to-grey boundary. The frame supplies rounded corners and the owner's latest one-pixel `#D6D6D6` border at every screen size.

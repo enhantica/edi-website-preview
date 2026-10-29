@@ -18,8 +18,8 @@
   grid-template-columns: minmax(0, 21rem) minmax(0, 1fr);
   --ed-hero-gap: clamp(1.5rem, 3.2vw, 3.2rem);
   box-sizing: border-box;
-  width: 100%;
-  padding-inline: var(--ed-hero-gap) 0;
+  width: calc(100% + max(0px, (100vw - 61rem) / 2 - 1rem));
+  padding-inline: 1rem 0;
   font-family: Nunito, var(--md-text-font), sans-serif;
   align-items: center;
   gap: var(--ed-hero-gap);
@@ -101,6 +101,7 @@
 .ed-landing__interfaces a:hover,
 .ed-landing__interfaces a:focus-visible {
   color: var(--md-primary-fg-color);
+  text-decoration: none;
 }
 .ed-landing__interfaces .twemoji {
   width: .9rem;
@@ -111,11 +112,11 @@
   height: 100%;
 }
 .ed-landing .ed-landing__preview {
-  width: calc(90% + 2.25rem);
+  width: calc(100% + 2.5rem);
   max-width: none;
   margin: 0;
   overflow: hidden;
-  border-color: var(--md-default-fg-color--lightest);
+  border: 1px solid #d6d6d6;
   border-radius: .65rem;
   box-shadow: 0 .8rem 2.4rem -.6rem rgb(18 50 68 / 12%);
 }
@@ -123,6 +124,8 @@
   display: block;
   width: 100%;
   height: auto;
+  /* Remove the 62px title bar proportionally from the 2992px-wide source. */
+  margin-top: -2.072193%;
 }
 @media (max-width: 58rem) {
   .ed-landing {
