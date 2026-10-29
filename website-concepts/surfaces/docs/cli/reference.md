@@ -58,7 +58,3 @@ Undo supports `--verbosity off|compact|full` and `--report machine|human`; it de
 ## Output and exit status
 
 For fit, calc and undo, the selected report is stdout, while warnings and errors are stderr. A failed run exits nonzero. A cancelled fit uses status `130`. Report freshness checking uses status `1` when a listed saved report is not current.
-
----
-
-Source: syntax, defaults and behavior checked directly against [the current edi parser and command implementations](https://github.com/enhantica/edi/blob/main/lib/edi/__main__.py). This is a selected user reference; the installed command's help remains the version-specific option listing.

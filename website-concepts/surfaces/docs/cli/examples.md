@@ -9,7 +9,3 @@ python -m edi fit docs/user/cli/pd-neut-cwl_lbco-hrpt/project --dry
 This runs the refinement without saving. To retain the result, follow the [Command Line refinement guide](fit.md). Keep a copy of the starting project so the original inputs remain available.
 
 Choose a scientific case in the shared [example catalogue](../user-guide/examples.md).
-
----
-
-Sources: [current example catalogue](https://github.com/enhantica/edi/blob/main/docs/user/cli/index.md), [LBCO example](https://github.com/enhantica/edi/blob/main/docs/user/cli/pd-neut-cwl_lbco-hrpt/index.md), and [LBCO tutorial](https://github.com/enhantica/edi/blob/main/docs/user/tutorials/pd-neut-cwl_lbco-hrpt.py).

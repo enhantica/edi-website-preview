@@ -55,7 +55,3 @@ Use an external folder or archive for work you want to retain. Browser storage c
 - [Create a project](new-project.md) from your own structure and observations.
 - Explore [other example projects](../user-guide/examples.md).
 - Run the same saved project in [Python](../python/fit.md) or [the Command Line](../cli/fit.md).
-
----
-
-Sources: [LBCO example and starting conditions](https://github.com/enhantica/edi/blob/main/docs/user/cli/pd-neut-cwl_lbco-hrpt/index.md), [Project page and examples](https://github.com/enhantica/edi/blob/main/app/qml/Pages/Project/ProjectPage.qml), [saving projects](https://github.com/enhantica/edi/blob/main/docs/user/guides/open-save-and-export.md).

@@ -1,10 +1,10 @@
 # Set up Python
 
-The current library's import name is `edi`. These pages describe the current edi codebase, which is a new generation of EasyDiffraction; installation instructions for the earlier `easydiffraction` package are not interchangeable with it.
+Use `edi` to access EasyDiffraction from Python scripts and notebooks.
 
 ## Current availability
 
-This preview documents a configured edi source checkout. It does not yet advertise a public package-install command for the new library. The [edi repository](https://github.com/enhantica/edi) is the source for current build requirements and package availability.
+Set up Python from a configured edi source checkout. The [edi repository](https://github.com/enhantica/edi) declares the build requirements and package availability.
 
 Python is a binding over edi's native product core. An environment that contains only the Python source files is insufficient: the matching compiled `edi._edi` extension and its engine dependencies must be available.
 
@@ -34,7 +34,3 @@ Begin with an [existing complete project](projects.md). Save your starting proje
 ## Explore without a source build
 
 [Try the web application](https://enhantica.github.io/edi/webapp/) to explore the project model and examples while package distribution is being prepared.
-
----
-
-Sources: [edi package metadata](https://github.com/enhantica/edi/blob/main/pyproject.toml), [Pixi tasks](https://github.com/enhantica/edi/blob/main/pixi.toml), and [native extension loading](https://github.com/enhantica/edi/blob/main/lib/edi/__init__.py). The introductory progression follows the [earlier library first steps](https://docs.easydiffraction.org/lib/latest/user-guide/first-steps/).

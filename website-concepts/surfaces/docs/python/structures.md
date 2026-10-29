@@ -54,7 +54,3 @@ structure = edi.StructureFactory.from_cif_path('structure.cif')
 This creates a structure object; it does not by itself create a complete measurement and analysis project. A successful import also depends on the input carrying the structure information the reader supports.
 
 For a complete runnable analysis, start from a project or a checked example. These pages intentionally document a demonstrated subset rather than claiming that all constructors and file variants are covered.
-
----
-
-Sources: conceptual grouping adapted from the [earlier structure workflow](https://docs.easydiffraction.org/lib/latest/user-guide/analysis-workflow/model/); examples checked against [edi factories](https://github.com/enhantica/edi/blob/main/lib/edi/__init__.py), [binding declarations](https://github.com/enhantica/edi/blob/main/lib/src/bindings.cpp), and the [LBCO example](https://github.com/enhantica/edi/blob/main/examples/fit_lbco_hrpt.py).

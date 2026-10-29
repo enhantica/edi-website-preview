@@ -45,7 +45,3 @@ Subtracting calculated peaks can help where peaks overlap and the measured inten
 Use **Excluded regions** on the Experiment page to declare intervals that should not be fitted. Check the boundaries against the pattern. An excluded region remains a deliberate omission from the analysis; it does not repair the model of that interval.
 
 Save the project to keep its background settings and excluded regions.
-
----
-
-Sources: [current background guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/background-estimate.md), [background controls](https://github.com/enhantica/edi/blob/main/app/qml/Pages/Experiment/BackgroundGroup.qml), [excluded-region controls](https://github.com/enhantica/edi/blob/main/app/qml/Pages/Experiment/ExcludedRegionsGroup.qml).

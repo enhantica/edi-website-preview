@@ -48,7 +48,3 @@ Several structures can contribute to one experiment. The displayed weight fracti
 Compare the measured points with the total calculated curve, background and residual. Bragg marks locate the reflection positions. For a scan, the dataset selector chooses which measurement is shown; see [scan fitting](scans.md).
 
 ![Experiment controls beside the measured and calculated pattern](../assets/edi-app.png)
-
----
-
-Sources: [current experiment and data-import guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/projects-from-scratch-in-the-app.md), [current experiment controls](https://github.com/enhantica/edi/tree/main/app/qml/Pages/Experiment), [linked-structure controls](https://github.com/enhantica/edi/blob/main/app/qml/Pages/Experiment/LinkedStructureGroup.qml), [earlier experiment concepts](https://github.com/easyscience/diffraction-lib/blob/develop/docs/docs/user-guide/analysis-workflow/experiment.md).

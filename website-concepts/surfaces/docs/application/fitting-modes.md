@@ -23,7 +23,3 @@ Use **sequential** when each result should seed the next fit, or **independent**
 ## Fit the shown scan dataset on its own
 
 A scan can use `single` to fit the shown dataset. That result becomes the template, and the selected file becomes the template dataset. Check the template before starting a full scan.
-
----
-
-Sources: [current fitting-mode controls](https://github.com/enhantica/edi/blob/main/app/qml/Pages/Analysis/FittingModeGroup.qml), [current scan guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/sequential-fitting-in-the-app.md), [current project-analysis contract](https://github.com/enhantica/edi/blob/main/docs/user/guides/complete-project-loading.md).

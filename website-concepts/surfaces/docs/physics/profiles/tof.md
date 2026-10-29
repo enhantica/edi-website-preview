@@ -1,0 +1,61 @@
+---
+template: physics.html
+---
+
+# Time-of-flight peak profiles
+
+Let $\delta=t-t_h$ in microseconds. The bank geometry supplies the wavelength of each reflection; [calibration](../calibration.md#eq-tof-calibration) maps spacing to the peak centre.
+
+## Gaussian and Lorentzian width terms {#eq-tof-widths}
+
+$$\sigma_G^2(d)=\sigma_0+(\sigma_1+\mathrm{strain}_G)d^2+(\sigma_2+\mathrm{size}_G)d^4,$$
+
+$$H_G=\sqrt{8\ln2}\,\sigma_G,\qquad
+H_L(d)=\gamma_0+(\gamma_1+\mathrm{strain}_L)d+(\gamma_2+\mathrm{size}_L)d^2.$$
+
+The `broad_gauss_sigma_*` coefficients are variance coefficients, not standard deviations or FWHMs. `broad_lorentz_gamma_*` coefficients define Lorentzian FWHM. Keep their respective time/spacing units; see the [parameter index](../parameters.md#peak).
+
+## Symmetric pseudo-Voigt {#tof-pseudo-voigt}
+
+`tof-pseudo-voigt` uses the [TCH width/mixing](cw.md#eq-tch), with $H_G,H_L$ in microseconds, and the symmetric unit-area pseudo-Voigt. It does not add the back-to-back exponential pulse.
+
+## Jorgensen pulse and profile {#eq-jorgensen}
+
+`tof-jorgensen` convolves a two-sided exponential pulse with a Gaussian. The rates are
+
+$$\alpha(d)=\alpha_0+\alpha_1/d,\qquad \beta(d)=\beta_0+\beta_1/d^4,$$
+
+with positive evaluated rates in inverse microseconds. Let $N=\alpha\beta/[2(\alpha+\beta)]$ and $\sigma$ be the Gaussian standard deviation:
+
+$$\Omega_G(\delta)=N[e^u\operatorname{erfc}(y)+e^v\operatorname{erfc}(z)],$$
+
+$$\begin{aligned}
+u&=\tfrac12\alpha(\alpha\sigma^2+2\delta),&
+y&=(\alpha\sigma^2+\delta)/(\sqrt2\sigma),\\
+v&=\tfrac12\beta(\beta\sigma^2-2\delta),&
+z&=(\beta\sigma^2-\delta)/(\sqrt2\sigma).
+\end{aligned}$$
+
+The normalisation already includes the Gaussian-convolution factors; do not reuse $N$ as if it alone normalised a bare piecewise exponential. The numerical evaluation uses stable exponential/error-function combinations to avoid overflow without changing this equation.
+
+## Jorgensen–Von Dreele {#eq-jorgensen-von-dreele}
+
+`tof-jorgensen-von-dreele` adds the Lorentzian contribution through a common TCH width $H$ and mixing $\eta$:
+
+$$\Omega=(1-\eta)\Omega_G+\eta\Omega_L.$$
+
+Both terms use that combined width: $\sigma=H/\sqrt{8\ln2}$ in $\Omega_G$ and FWHM $H$ in $\Omega_L$.
+
+$$\Omega_L=-\frac{2N}{\pi}\left(\operatorname{Im}[e^pE_1(p)]+\operatorname{Im}[e^qE_1(q)]\right),$$
+
+$$p=\alpha\delta+i\alpha H/2,\qquad q=-\beta\delta+i\beta H/2.$$
+
+$E_1$ is the exponential integral. At zero Lorentzian width the profile reduces to its Gaussian Jorgensen limit; assigning a different width to each mixed kernel would define a different model.
+
+## Available and planned types
+
+The supported registry contains the three types above. Ikeda–Carpenter is [planned](../../user-guide/features.md#planned-scientific-models). A research description of that or another pulse model is not evidence that it can be selected in this reference's build.
+
+## References
+
+Von Dreele, Jorgensen & Windsor (1982), J. Appl. Cryst. 15, 581–589; Thompson, Cox & Hastings (1987), J. Appl. Cryst. 20, 79–83. See [model coverage](../models.md#peak-profiles) and [profile cutoffs](../profiles.md#peak-cutoff).

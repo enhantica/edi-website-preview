@@ -12,7 +12,7 @@ An example opens as a temporary working copy. Save a copy to keep changes you ma
 
 Select a structure from the **Structures** table, then edit its space group, cell and atom sites. A project can contain several structures. The selected structure determines which values the page displays.
 
-The current page is called **Structure**; earlier application documentation called this page **Model**. See [work with structures](structures.md).
+Use **Structure** to inspect and edit the crystallographic model. See [work with structures](structures.md).
 
 ## Experiment
 
@@ -37,7 +37,3 @@ The report combines structures, experiments, fit information and selected figure
 The status bar reports messages and the state of the project. Read a message after importing data or when an operation is refused: it can explain a changed value or an unavailable action.
 
 Changing the selected structure, experiment or dataset changes the values shown on the relevant pages. Undo returns project changes to their earlier state.
-
----
-
-Sources: [earlier analysis workflow](https://github.com/easyscience/diffraction-lib/blob/develop/docs/docs/user-guide/analysis-workflow/index.md), [current fitting controls](https://github.com/enhantica/edi/blob/main/app/qml/Pages/Analysis/FittingGroup.qml), [current project controls](https://github.com/enhantica/edi/blob/main/app/qml/Pages/Project/GetStartedGroup.qml).

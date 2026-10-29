@@ -16,7 +16,3 @@ The path is relative to the edi repository. A downloaded or exported project can
 The tutorial sources are also available in [the repository](https://github.com/enhantica/edi/tree/main/docs/user/tutorials). Their execution status is declared separately; publishing a tutorial does not by itself establish that it is currently part of the automatic notebook-execution suite.
 
 Choose a scientific case in the shared [example catalogue](../user-guide/examples.md).
-
----
-
-Sources: [current example catalogue](https://github.com/enhantica/edi/blob/main/docs/user/cli/index.md), [LBCO example](https://github.com/enhantica/edi/blob/main/docs/user/cli/pd-neut-cwl_lbco-hrpt/index.md), and [LBCO tutorial](https://github.com/enhantica/edi/blob/main/docs/user/tutorials/pd-neut-cwl_lbco-hrpt.py).

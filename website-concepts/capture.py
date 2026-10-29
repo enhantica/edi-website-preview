@@ -148,7 +148,7 @@ def main() -> None:
         if name == 'surfaces':
             tabs = [text.strip() for text in page.locator('.md-tabs__link').all_inner_texts()]
             if tabs != [
-                'Home', 'Get started', 'User guide', 'Application', 'Python', 'Command Line', 'About'
+                'Home', 'User guide', 'Application', 'Python', 'Command Line', 'Physics', 'About'
             ]:
                 raise RuntimeError(f'Unexpected section order: {tabs}')
             checks.append({'shared_guide_before_interfaces': True, 'header_wordmark_only': True})

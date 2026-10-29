@@ -6,7 +6,7 @@ A software citation identifies the software you used. A reproducible analysis al
 
 Record the exact release version or source commit of edi that produced the result. For a browser or desktop build, keep the version information shown by that build with the exported result. For a source environment, record the checkout commit and its dependency information.
 
-If the release supplies a recommended citation or an archive DOI, use the citation for that exact release. A DOI associated with an earlier EasyDiffraction library or application describes that archived software, rather than automatically identifying a current edi build.
+If your release supplies a recommended citation or a DOI, use the citation for that exact version.
 
 ## Identify the analysis
 
@@ -32,7 +32,3 @@ A figure or a single agreement factor cannot by itself preserve the starting sta
 Retain the citation and provenance of external measurements, structural models and independent reference calculations. Example pages in the repository explain their sources and comparison conditions.
 
 When reproducing a published example, consult its own reference record rather than treating the software's citation as a replacement for data or scientific-method citations.
-
----
-
-Sources: [earlier library citation guidance](https://github.com/easyscience/diffraction-lib/blob/master/docs/docs/introduction/index.md), [current project format](https://github.com/enhantica/edi/blob/main/docs/user/guides/open-save-and-export.md), [report contents](https://github.com/enhantica/edi/blob/main/docs/user/guides/the-report.md), [example comparisons and provenance](https://github.com/enhantica/edi/blob/main/docs/user/guides/fit-quality.md).

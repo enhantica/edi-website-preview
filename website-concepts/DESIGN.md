@@ -135,3 +135,31 @@ Check the open mobile drawer, not just the closed header, in both schemes. Requi
 one SVG per logo slot, no image pair or extra site-name text, consistent logo dimensions,
 unique gradient IDs and lettering that changes color while the symbol remains unchanged.
 Also check navigation and keyboard focus, and exercise the markup with custom CSS blocked.
+
+## Independent documentation and workflow navigation — 2026-10-29
+
+The owner requested standalone documentation for EasyDiffraction, clearer navigation and a home
+for the scientific theory. Remove the redundant Get started primary tab. The Home Get started
+button opens User guide, whose entry table points directly to each interface's setup and first
+refinement. Remove the separate onboarding tree and retain its URLs as redirects.
+
+Application, Python and Command Line share the same left-navigation order: Start here, Project,
+Structure, Experiment, Analysis and Report. Add Reference only where needed. Procedures remain
+interface-specific; the command line consumes prepared structure/experiment inputs and its
+pages say so without inventing editing commands. User guide owns the common workflow. Replace
+Plan and assess with the actual Fitting modes, Fit quality and Examples topics.
+
+Place Physics before About. It owns the scientific explanations, equations and conventions;
+User guide owns the practical analysis decisions. Begin with diffraction/scattering, profiles,
+refinement/statistics and conventions, citing public scientific sources. Do not expose an
+unfiltered research corpus or imply that every general physics topic is an implemented feature.
+
+Remove release-history sections, old-documentation links, migration prose and authoring source
+footers from published user pages. Preserve attribution, licences and source notes in the
+repository-level CONTENT-SOURCES.md and third-party notices. Retain factual setup and capability
+limits without presenting the website as a comparison with another product generation.
+
+The owner also requested the landing-page typeface from easydiffraction.org. Its live
+`css/style.min.css` declares Nunito (Google Fonts, weights 400–800). Use that face only in the
+hero and its actions, keep the native documentation font, reduce the buttons' padding/rounding,
+and give the screenshot more width on desktop while retaining stacked mobile layouts.

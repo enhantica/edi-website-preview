@@ -47,7 +47,3 @@ The report channel goes to stdout. Warnings and errors go to stderr. Redirecting
 ## Output precision
 
 Saving rounds values to the persisted precision, then recalculates the model from the saved values. Compare a reopened project with that saved model, rather than assuming every in-memory floating-point digit is written unchanged.
-
----
-
-Sources: [project input/output guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/open-save-and-export.md), [current Command Line input handling](https://github.com/enhantica/edi/blob/main/lib/edi/__main__.py), and [project-output design](https://github.com/enhantica/edi/blob/main/docs/dev/adrs/0039-project-output.md).

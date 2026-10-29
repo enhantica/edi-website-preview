@@ -27,8 +27,3 @@ A simulation uses a calculation range without measured observations. A refinemen
 | [Command Line](../../cli/index.md) | Commands for saved projects, output options and automation |
 
 The scientific explanations belong here; the interface pages link back to them as needed.
-
-
----
-
-Sources: [earlier library guide](https://github.com/easyscience/diffraction-lib/blob/master/docs/docs/user-guide/analysis-workflow/index.md), [current edi guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/complete-project-loading.md).

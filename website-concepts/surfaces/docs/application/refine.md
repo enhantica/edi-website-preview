@@ -39,7 +39,3 @@ A small agreement factor alone does not establish that the structural model is c
 Save the updated project if you want to keep working from its refined values. Use the **Report** page to prepare a separate document containing the selected model, results and figures.
 
 The same project can be opened in [Python](../python/fit.md) or run with [the Command Line](../cli/fit.md).
-
----
-
-Sources: [current parameter controls](https://github.com/enhantica/edi/blob/main/app/qml/Pages/Analysis/ParametersGroup.qml), [current fitting controls](https://github.com/enhantica/edi/blob/main/app/qml/Pages/Analysis/FittingGroup.qml), [current fitting-mode controls](https://github.com/enhantica/edi/blob/main/app/qml/Pages/Analysis/FittingModeGroup.qml), [current fit-quality guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/fit-quality.md).

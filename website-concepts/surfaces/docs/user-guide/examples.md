@@ -30,7 +30,3 @@ The [current catalogue](https://github.com/enhantica/edi/blob/main/docs/user/cli
 An example may compare a calculated curve or fitted values with FullProf or another reference. Read what is being compared: identical model settings, a program-specific model, or a labelled regression result answer different questions.
 
 Use [fit quality](fit-quality.md) to interpret agreement factors. The references validate the paths and cases they cover; they do not establish every possible model or interface operation.
-
----
-
-Sources: [edi catalogue](https://github.com/enhantica/edi/blob/main/docs/user/cli/index.md), [LBCO example](https://github.com/enhantica/edi/blob/main/docs/user/cli/pd-neut-cwl_lbco-hrpt/index.md), [LBCO tutorial](https://github.com/enhantica/edi/blob/main/docs/user/tutorials/pd-neut-cwl_lbco-hrpt.py), [tutorial execution declaration](https://github.com/enhantica/edi/blob/main/docs/user/tutorials/execution-exclusions.yml).

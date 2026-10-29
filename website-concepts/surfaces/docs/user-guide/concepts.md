@@ -40,7 +40,3 @@ Inspect the observed and calculated signal, the residual, parameter uncertaintie
 ## The same ideas in every interface
 
 The app makes these relationships visible. Python lets you express them in a script or notebook. The Command Line runs the analysis already declared by a saved project. All use the same [project model](analysis-workflow/project.md).
-
----
-
-Sources: [earlier library concepts](https://github.com/easyscience/diffraction-lib/blob/master/docs/docs/user-guide/concept.md), [edi project model](https://github.com/enhantica/edi/blob/main/docs/user/guides/complete-project-loading.md), [edi fit-quality guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/fit-quality.md).

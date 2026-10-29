@@ -33,85 +33,96 @@ theme:
 extra_css:
   - assets/wordmark.css
 nav:
-  - Home: index.md
-  - Get started:
-      - get-started/index.md
-      - Your first refinement: get-started/first-refinement.md
-      - Choose your interface: get-started/interfaces.md
-      - Setup and availability: get-started/setup.md
-  - User guide:
-      - user-guide/index.md
-      - Foundations:
-          - Introduction: user-guide/introduction.md
-          - Concept: user-guide/concepts.md
-          - Data formats: user-guide/data-formats.md
-          - Parameters: user-guide/parameters.md
-          - Glossary: user-guide/glossary.md
-      - Analysis workflow:
-          - user-guide/analysis-workflow/index.md
-          - Project: user-guide/analysis-workflow/project.md
-          - Structure: user-guide/analysis-workflow/structure.md
-          - Experiment: user-guide/analysis-workflow/experiment.md
-          - Analysis: user-guide/analysis-workflow/analysis.md
-          - Report: user-guide/analysis-workflow/report.md
-      - Plan and assess:
-          - Fitting modes: user-guide/fitting-modes.md
-          - Fit quality: user-guide/fit-quality.md
-          - Examples: user-guide/examples.md
-  - Application:
-      - application/index.md
-      - Getting started:
-          - Your first refinement: application/first-refinement.md
-          - Example projects: application/examples.md
-          - The workspace: application/workspace.md
-          - Create a project: application/new-project.md
-      - Build your model:
-          - Structures: application/structures.md
-          - Experiments and data: application/experiments.md
-          - Background and excluded regions: application/background.md
-      - Calculate and refine:
-          - Refine a pattern: application/refine.md
-          - Fitting modes: application/fitting-modes.md
-          - Work with a scan: application/scans.md
-      - Where you work:
-          - In your browser: application/browser.md
-          - On your desktop: application/desktop.md
-      - Keep your work:
-          - Projects and files: application/projects.md
-          - Reports: application/reports.md
-  - Python:
-      - python/index.md
-      - Getting started:
-          - Example projects: python/examples.md
-          - Set up Python: python/setup.md
-          - Load and save projects: python/projects.md
-      - Build your model:
-          - Structures: python/structures.md
-          - Experiments: python/experiments.md
-      - Calculate and refine:
-          - Calculate a pattern: python/calculate.md
-          - Fit a project: python/fit.md
-          - Inspect results: python/results.md
-      - Save and look up:
-          - Reports: python/reports.md
-          - API quick reference: python/reference.md
-  - Command Line:
-      - cli/index.md
-      - Example projects: cli/examples.md
-      - Run an analysis:
-          - Refine a project: cli/fit.md
-          - Calculate a pattern: cli/calculate.md
-      - Keep and share:
-          - Projects and output files: cli/files.md
-          - Reports: cli/reports.md
-      - Automate and look up:
-          - Batch workflows: cli/batch.md
-          - Command reference: cli/reference.md
-  - About:
-      - about/index.md
-      - Get involved: about/community.md
-      - Licence and source: about/licence.md
-      - Citation and reproducibility: about/citation.md
+- Home: index.md
+- User guide:
+  - user-guide/index.md
+  - Foundations:
+    - Introduction: user-guide/introduction.md
+    - Concept: user-guide/concepts.md
+    - Data formats: user-guide/data-formats.md
+    - Parameters: user-guide/parameters.md
+    - Glossary: user-guide/glossary.md
+  - Analysis workflow:
+    - user-guide/analysis-workflow/index.md
+    - Project: user-guide/analysis-workflow/project.md
+    - Structure: user-guide/analysis-workflow/structure.md
+    - Experiment: user-guide/analysis-workflow/experiment.md
+    - Analysis: user-guide/analysis-workflow/analysis.md
+    - Fitting modes: user-guide/fitting-modes.md
+    - Fit quality: user-guide/fit-quality.md
+    - Report: user-guide/analysis-workflow/report.md
+  - Examples: user-guide/examples.md
+- Application:
+  - application/index.md
+  - Start here:
+    - In your browser: application/browser.md
+    - On your desktop: application/desktop.md
+    - First refinement: application/first-refinement.md
+    - The workspace: application/workspace.md
+    - Example projects: application/examples.md
+  - Project:
+    - Create a project: application/new-project.md
+    - Open and save: application/projects.md
+  - Structure:
+    - Edit structures: application/structures.md
+  - Experiment:
+    - Experiments and data: application/experiments.md
+    - Background and exclusions: application/background.md
+  - Analysis:
+    - Refine a pattern: application/refine.md
+    - Fitting modes: application/fitting-modes.md
+    - Work with a scan: application/scans.md
+  - Report:
+    - Review and save: application/reports.md
+- Python:
+  - python/index.md
+  - Start here:
+    - Setup: python/setup.md
+    - First refinement: python/examples.md
+  - Project:
+    - Load and save: python/projects.md
+  - Structure:
+    - Structures and parameters: python/structures.md
+  - Experiment:
+    - Experiments and data: python/experiments.md
+  - Analysis:
+    - Calculate a pattern: python/calculate.md
+    - Fit a project: python/fit.md
+    - Inspect results: python/results.md
+  - Report:
+    - Generate and save: python/reports.md
+  - Reference:
+    - API quick reference: python/reference.md
+- Command Line:
+  - cli/index.md
+  - Start here:
+    - Setup: cli/setup.md
+    - First refinement: cli/examples.md
+  - Project:
+    - Inputs and output files: cli/files.md
+  - Structure:
+    - Prepared structures: cli/structures.md
+  - Experiment:
+    - Prepared experiments: cli/experiments.md
+  - Analysis:
+    - Calculate a pattern: cli/calculate.md
+    - Refine a project: cli/fit.md
+    - Batch workflows: cli/batch.md
+  - Report:
+    - Generate and check: cli/reports.md
+  - Reference:
+    - Command reference: cli/reference.md
+- Physics:
+  - physics/index.md
+  - Diffraction and scattering: physics/diffraction.md
+  - Peak profiles: physics/profiles.md
+  - Refinement and statistics: physics/refinement.md
+  - Conventions: physics/conventions.md
+- About:
+  - about/index.md
+  - Get involved: about/community.md
+  - Licence and source: about/licence.md
+  - Citation and reproducibility: about/citation.md
 plugins:
   - search
 markdown_extensions:
@@ -123,6 +134,8 @@ markdown_extensions:
       permalink: true
   - pymdownx.superfences
   - pymdownx.details
+  - pymdownx.arithmatex:
+      generic: true
 copyright: 'EasyDiffraction · <a href="https://enhantica.github.io/edi/dev/">Contributor documentation</a>'
 validation:
   invalid_links: true

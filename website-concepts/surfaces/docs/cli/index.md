@@ -6,6 +6,10 @@ Run a saved EasyDiffraction project from a terminal. The project keeps the struc
 python -m edi fit path/to/project
 ```
 
+## Start here
+
+[Set up the command line](setup.md), then [run an example](examples.md). Continue through Project, Structure, Experiment, Analysis and Report using the left navigation.
+
 ## Choose a command
 
 | Command | Purpose | Guide |
@@ -16,7 +20,7 @@ python -m edi fit path/to/project
 | `export` | Package a saved project as a zip archive. | [Files and output](files.md) |
 | `undo` | Restore the persisted state before the last fit. | [Command reference](reference.md) |
 
-These commands are available in a configured edi environment. See [Python setup](../python/setup.md) for current source-build availability; this preview does not invent a public package-install command.
+These commands are available in a configured edi environment. Follow [Command Line setup](setup.md) before running them.
 
 ## Choose where results go
 
@@ -31,7 +35,3 @@ Store the project alongside your analysis. Its declared fitting mode determines 
 ## Use the same model
 
 The Command Line shares [projects and experiments](../user-guide/analysis-workflow/project.md) with Python and the application. Use whichever interface fits the next step in your work. [Batch workflows](batch.md) shows ordinary shell automation around these commands.
-
----
-
-Sources: current commands and defaults from [edi's argument parser](https://github.com/enhantica/edi/blob/main/lib/edi/__main__.py), [complete-project loading](https://github.com/enhantica/edi/blob/main/docs/user/guides/complete-project-loading.md), and [project input/output](https://github.com/enhantica/edi/blob/main/docs/user/guides/open-save-and-export.md).

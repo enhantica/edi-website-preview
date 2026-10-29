@@ -7,6 +7,10 @@ Use the EasyDiffraction application to build a crystallographic model, compare c
 
 ![EasyDiffraction showing measured and calculated diffraction patterns with experiment controls](../assets/edi-app.png)
 
+## Start here
+
+Use the [browser application](browser.md) or [set up the desktop application](desktop.md), then follow [your first refinement](first-refinement.md). The [workspace tour](workspace.md) introduces the controls.
+
 ## A workflow you can follow
 
 The pages across the top follow **Project → Structure → Experiment → Analysis → Report**. You can return to an earlier page whenever your model needs attention.
@@ -35,7 +39,3 @@ The scientific workflow is the same. File handling depends on where the applicat
 ## Use the same project elsewhere
 
 The project also opens in [Python](../python/index.md) and through the [command line](../cli/index.md). Shared explanations belong in [User guide](../user-guide/index.md); these pages focus on the application's controls.
-
----
-
-Sources: [current project creation guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/projects-from-scratch-in-the-app.md), [current open/save guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/open-save-and-export.md), [earlier workflow](https://github.com/easyscience/diffraction-lib/blob/develop/docs/docs/user-guide/analysis-workflow/index.md).

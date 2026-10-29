@@ -40,7 +40,3 @@ project.report.save_html('calculation.html', offline=True)
 Saving and reporting are explicit choices. A report is a presentation of the project; keep the editable project when you want to continue the analysis later.
 
 Continue with [refinement](fit.md) when the project contains observations, or read [reports](reports.md).
-
----
-
-Sources: conceptual distinction adapted from the [earlier analysis guide](https://docs.easydiffraction.org/lib/latest/user-guide/analysis-workflow/analysis/); current calls from [edi.Analysis](https://github.com/enhantica/edi/blob/main/lib/edi/__init__.py) and the [LBCO simulation tutorial](https://github.com/enhantica/edi/blob/main/docs/user/tutorials/pd-neut-cwl_lbco_simulation.py).

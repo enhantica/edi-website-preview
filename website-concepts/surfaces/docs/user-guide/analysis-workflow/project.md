@@ -38,8 +38,3 @@ For scans, retain the declared source files and their order along with the templ
 - [Command Line: project inputs and output destinations](../../cli/files.md).
 
 Continue with [Structure](structure.md).
-
-
----
-
-Sources: [earlier library guide](https://github.com/easyscience/diffraction-lib/blob/master/docs/docs/user-guide/analysis-workflow/project.md), [current edi guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/open-save-and-export.md).

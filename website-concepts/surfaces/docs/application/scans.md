@@ -42,7 +42,3 @@ After editing the template, previous results remain visible but are marked out o
 ## Save the scan
 
 The run writes a row per dataset to `analysis/results.csv` as it progresses. Use **Save project as…** to keep a working copy of an example together with its data and results.
-
----
-
-Source: [current sequential-fitting guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/sequential-fitting-in-the-app.md).

@@ -19,7 +19,7 @@ hide:
 <div class="ed-landing__actions" markdown>
 
 [Try the web app](https://enhantica.github.io/edi/webapp/){ .md-button .md-button--primary }
-[Get started](get-started/index.md){ .md-button }
+[Get started](user-guide/index.md){ .md-button }
 
 </div>
 </div>

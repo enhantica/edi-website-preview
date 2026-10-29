@@ -37,8 +37,3 @@ Check which phases should contribute and whether their links are enabled. Struct
 - [Command Line: calculate a prepared project](../../cli/calculate.md). Structural definitions are read from the project.
 
 Continue with [Experiment](experiment.md).
-
-
----
-
-Sources: [earlier library guide](https://github.com/easyscience/diffraction-lib/blob/master/docs/docs/user-guide/analysis-workflow/model.md), [current edi guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/projects-from-scratch-in-the-app.md).

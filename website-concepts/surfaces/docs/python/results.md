@@ -45,7 +45,3 @@ Sequential and independent modes produce one record per measured file and keep s
 ## Save evidence with the model
 
 Prepare an [interactive report](reports.md) for inspection and save the project when you want the refined values to persist. Reopening the project provides the editable model behind the report.
-
----
-
-Sources: current result access copied from the [LBCO tutorial](https://github.com/enhantica/edi/blob/main/docs/user/tutorials/pd-neut-cwl_lbco-hrpt.py), with interpretation adapted from [fit-quality guidance](https://github.com/enhantica/edi/blob/main/docs/user/guides/fit-quality.md) and the [earlier analysis workflow](https://docs.easydiffraction.org/lib/latest/user-guide/analysis-workflow/analysis/).

@@ -12,7 +12,7 @@ in [CONTENT-SOURCES.md](CONTENT-SOURCES.md).
 
 | | A: choose your interface | B: follow your workflow |
 | --- | --- | --- |
-| Main navigation | Home, Get started, User guide, Application, Python, Command Line, About | Home, Get started, Guides, Tutorials, Reference, About |
+| Main navigation | Home, User guide, Application, Python, Command Line, Physics, About | Home, Get started, Guides, Tutorials, Reference, About |
 | Best entry | A visitor already knows which interface they want | A visitor knows what analysis they want to perform |
 | Shared material | Scientific concepts, workflow and examples in User guide | Scientific guides with interface-specific instructions |
 | Application | Desktop and web have one application home | Application entry points feed the common workflow |

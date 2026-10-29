@@ -28,12 +28,8 @@ Explain the task the change would help you complete. Include the present workaro
 
 The current source is in [enhantica/edi](https://github.com/enhantica/edi). Build, architecture and testing information belongs in the separate [contributor documentation](https://enhantica.github.io/edi/dev/).
 
-For a change to scientific behaviour, include the relevant reference and a reproducible case. For a documentation change, check that commands and screenshots describe the current interface rather than an earlier release.
+For a change to scientific behaviour, include the relevant reference and a reproducible case. For a documentation change, check commands and screenshots against the interface and software version being documented.
 
 ## Keep the analysis reproducible
 
 When a discussion leads to a result you plan to share, keep its inputs, settings and software identity. See [citing and recording an analysis](citation.md).
-
----
-
-Sources: [current source and issue tracker](https://github.com/enhantica/edi), [earlier project contribution guidance](https://github.com/easyscience/diffraction-lib/blob/master/docs/docs/introduction/index.md).

@@ -41,8 +41,3 @@ Scales connect phase contributions to the experiment. Interpret any derived comp
 - [Command Line: run the experiment model saved in a project](../../cli/calculate.md).
 
 Continue with [Analysis](analysis.md).
-
-
----
-
-Sources: [earlier library guide](https://github.com/easyscience/diffraction-lib/blob/master/docs/docs/user-guide/analysis-workflow/experiment.md), [current edi guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/projects-from-scratch-in-the-app.md).

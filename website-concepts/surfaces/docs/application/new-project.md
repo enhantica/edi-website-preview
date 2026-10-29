@@ -35,7 +35,3 @@ Follow [refine a pattern](refine.md) to assess the result.
 ## Save your work
 
 Use **Save project as…** to choose where to keep it. The [file handling guide](projects.md) explains folders, zip archives and browser storage. Measured data are written into the experiment's `.edi` file, so the saved project does not depend on the original text file you imported.
-
----
-
-Sources: [current create-project guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/projects-from-scratch-in-the-app.md), [structure file controls](https://github.com/enhantica/edi/blob/main/app/qml/Pages/Structure/StructuresGroup.qml), [project file guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/open-save-and-export.md).

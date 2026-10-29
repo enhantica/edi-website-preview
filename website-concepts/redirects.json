@@ -7,5 +7,9 @@
   "learn/examples/": "user-guide/examples/",
   "learn/parameters/": "user-guide/parameters/",
   "learn/": "user-guide/",
-  "learn/data-formats/": "user-guide/data-formats/"
+  "learn/data-formats/": "user-guide/data-formats/",
+  "get-started/": "user-guide/",
+  "get-started/interfaces/": "user-guide/",
+  "get-started/setup/": "user-guide/",
+  "get-started/first-refinement/": "user-guide/"
 }

@@ -14,20 +14,11 @@ Compare the measured and calculated intensities over the full range, then inspec
 
 Reflection marks show where the structures predict Bragg positions. They help connect a profile disagreement to the contributing phases, but they do not explain every source of intensity in the measurement.
 
-## Understand the agreement factors
+## Read the agreement factors
 
-For a powder profile, the principal factors compare observed intensities `yₒ` with calculated intensities `y꜀`. The weights use the observations' standard uncertainties, `w = 1/σ²`.
+R<sub>p</sub> and R<sub>wp</sub> summarise the powder-profile mismatch. R<sub>exp</sub> and reduced χ² connect that mismatch with the observation uncertainties and independent parameter count. The [refinement and statistics](../physics/refinement.md) chapter gives their equations and conventions.
 
-| Quantity | What it describes |
-| --- | --- |
-| R<sub>p</sub> | The summed absolute profile difference, relative to summed observed intensity |
-| R<sub>wp</sub> | The weighted profile difference, normalised by the weighted observed intensity |
-| R<sub>exp</sub> | The expected weighted factor for the observations and number of independent free parameters |
-| Reduced χ² | The weighted squared residual per degree of freedom |
-
-EasyDiffraction's example-comparison guide computes reduced χ² as `Σw(yₒ − y꜀)² / (N − P)`, where `N` is the number of observations and `P` the number of free parameters.
-
-There is no universal R-factor threshold that makes every model acceptable. Data range, excluded regions, noise estimates, background, instrument resolution and the model itself affect the value.
+There is no universal R-factor threshold that makes every model acceptable. Data range, exclusions, uncertainty estimates, background and the model affect the values.
 
 ## Check parameters and correlations
 
@@ -54,7 +45,3 @@ Single-crystal examples fit reflection observations rather than a powder profile
 Save both the project and an appropriate [report](analysis-workflow/report.md). Include enough information to identify the measured data, structure model, fitting mode, free set, excluded regions, software version and minimizer conditions.
 
 For a scan, inspect failed datasets and out-of-date results before interpreting parameter evolution. See [fitting modes](fitting-modes.md).
-
----
-
-Sources: [edi fit-quality definitions, comparison method and references](https://github.com/enhantica/edi/blob/main/docs/user/guides/fit-quality.md), [report guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/the-report.md), [scan guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/sequential-fitting-in-the-app.md).

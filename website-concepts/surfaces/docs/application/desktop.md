@@ -29,12 +29,8 @@ pixi run -e app app-run
 
 The build uses the repository's dependencies, including access to the crysta SDK. The [contributor documentation](https://enhantica.github.io/edi/dev/) covers development setup.
 
-To explore the current visual interface without a local build, use the [web app](browser.md). Earlier EasyDiffraction installers belong to their earlier implementation and are not interchangeable with the current edi application.
+To explore the visual interface without a local build, use the [web app](browser.md).
 
 ## Continue in Python or the Command Line
 
 The project you save is also the input to [Python](../python/index.md) and [the command line](../cli/index.md). Those interfaces let you script the same project model.
-
----
-
-Sources: [current desktop project-file guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/open-save-and-export.md), [current application build tasks](https://github.com/enhantica/edi/blob/main/pixi.toml).

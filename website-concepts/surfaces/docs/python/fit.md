@@ -63,7 +63,3 @@ project.save_as('refined-project')
 `save_as()` puts the project in the new folder and makes that its location for later saves. A Python single or joint fit does not automatically save your project. Scan analysis also writes its progress results during the run; retain the input project separately when you need its initial state.
 
 Open the saved result in [the application](../application/index.md) to inspect it visually, or run the project through [the Command Line](../cli/fit.md).
-
----
-
-Sources: adapted from the [earlier analysis guide](https://docs.easydiffraction.org/lib/latest/user-guide/analysis-workflow/analysis/), with current behavior from [edi.Analysis](https://github.com/enhantica/edi/blob/main/lib/edi/__init__.py), [complete-project loading](https://github.com/enhantica/edi/blob/main/docs/user/guides/complete-project-loading.md), and the [LBCO tutorial](https://github.com/enhantica/edi/blob/main/docs/user/tutorials/pd-neut-cwl_lbco-hrpt.py).

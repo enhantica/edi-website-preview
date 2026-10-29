@@ -6,7 +6,7 @@ Analysis evaluates the combined structure and experiment model. A calculation pr
 
 Inspect the initial prediction before fitting. Check peak positions, widths, relative intensities and background against the measurement. A forward calculation can also explore a simulation with no observed data.
 
-The current edi generation uses the crysta diffraction engine. Calculator menus and Python backend names in earlier library documentation describe that earlier generation.
+EasyDiffraction uses the crysta diffraction engine. The [Physics](../../physics/index.md) section explains the models and conventions behind its calculations.
 
 ## Select the independent parameters
 
@@ -24,7 +24,7 @@ For a joint fit, inspect both shared and experiment-specific parameters and revi
 
 The project records the descent strategy, convergence tolerance and iteration budget. These conditions govern how a run proceeds and when it stops; they are separate from the scientific model and its free-parameter choices.
 
-The current project format declares them in the `_minimizer` category of `analysis/analysis.edi`. Use the current interface instructions for access. The earlier library's optimizer and Bayesian-sampler lists are not a statement of current edi availability.
+The current project format declares them in the `_minimizer` category of `analysis/analysis.edi`. Use the current interface instructions for access.
 
 ## Assess the outcome
 
@@ -39,8 +39,3 @@ For a scan, inspect individual failed or out-of-date results before interpreting
 - [Command Line: calculation](../../cli/calculate.md) and [refinement commands](../../cli/fit.md).
 
 Continue with [Report](report.md).
-
-
----
-
-Sources: [earlier library guide](https://github.com/easyscience/diffraction-lib/blob/master/docs/docs/user-guide/analysis-workflow/analysis.md), [current edi guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/complete-project-loading.md).

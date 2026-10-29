@@ -48,7 +48,3 @@ Keep completed results tied to the template and conditions that produced them. C
 - [Command Line: saved mode, progress and output behaviour](../cli/fit.md).
 
 Keep the mode, free-parameter choices and minimizer conditions with the saved project when sharing a result.
-
----
-
-Sources: [complete-project loading](https://github.com/enhantica/edi/blob/main/docs/user/guides/complete-project-loading.md), [scan workflow](https://github.com/enhantica/edi/blob/main/docs/user/guides/sequential-fitting-in-the-app.md).

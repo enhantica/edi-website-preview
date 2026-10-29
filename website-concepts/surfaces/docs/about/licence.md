@@ -14,14 +14,7 @@ The application built from the source is distributed under the **GNU General Pub
 
 The desktop and browser application are graphical builds of the product. Use the licence and third-party notices included with the particular build when redistributing it.
 
-## Earlier releases
-
-Earlier EasyDiffraction applications and libraries may have different distribution and dependency arrangements. Consult the licence shipped with the release you actually use; do not substitute the current edi notice for an earlier product's notice.
 
 ## Scientific references and citation
 
 A software licence states the conditions for using and distributing software. Scientific attribution is a separate part of communicating an analysis. See [citing and recording an analysis](citation.md), and retain the provenance of any example data or external reference result you use.
-
----
-
-Sources: [edi README licence statement](https://github.com/enhantica/edi/blob/main/README.md), [BSD 3-Clause licence](https://github.com/enhantica/edi/blob/main/LICENSE), [GPL version 3 text](https://github.com/enhantica/edi/blob/main/COPYING).

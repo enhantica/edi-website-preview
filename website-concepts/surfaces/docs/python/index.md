@@ -2,6 +2,10 @@
 
 Use `edi` to calculate patterns, refine a structural model and prepare a report from a script or notebook. The Python library uses the same project model as the application and command line.
 
+## Start here
+
+[Set up Python](setup.md), then [run an example](examples.md). Continue through Project, Structure, Experiment, Analysis and Report using the left navigation.
+
 ## A complete analysis
 
 Start from a complete project, inspect its model, run the analysis it declares, and save the result where you choose.
@@ -36,7 +40,3 @@ This example is a measured-data refinement. A simulation project can [calculate 
 ## One project across interfaces
 
 You can reopen the saved project in [the application](../application/index.md), or run it with [the Command Line](../cli/index.md). The [shared concepts](../user-guide/analysis-workflow/project.md) explain structures, experiments and analysis independently of the interface.
-
----
-
-Sources: organization adapted from the [earlier library quick reference](https://docs.easydiffraction.org/lib/latest/quick-reference/); current calls checked against [edi's Python facade](https://github.com/enhantica/edi/blob/main/lib/edi/__init__.py) and [LBCO tutorial source](https://github.com/enhantica/edi/blob/main/docs/user/tutorials/pd-neut-cwl_lbco-hrpt.py).

@@ -59,7 +59,3 @@ The **coreCIF** dictionary defines general crystallographic quantities; **pdCIF*
 The catalogue uses `pd` for powder, `sc` for single crystal, `neut` for neutron, `xray` for X-ray, `cwl` for constant wavelength and `tof` for time of flight.
 
 These labels identify measurement types and scientific terms. Current feature availability and model coverage are described by the interface guides and checked examples.
-
----
-
-Sources: [earlier glossary](https://github.com/easyscience/diffraction-lib/blob/master/docs/docs/user-guide/glossary.md), [edi example catalogue](https://github.com/enhantica/edi/blob/main/docs/user/cli/index.md), [edi fitting workflow](https://github.com/enhantica/edi/blob/main/docs/user/guides/complete-project-loading.md).

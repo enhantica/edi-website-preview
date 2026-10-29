@@ -22,10 +22,4 @@ For your own analysis, retain the source of the structure and data, experimental
 
 ## Find the right documentation
 
-[Get started](../get-started/index.md) is a short entry route. This User guide explains the common scientific model. The interface sections explain how to carry out the work. [About](../about/index.md) covers the project, licensing, support and citation.
-
-These pages describe the current edi generation. The [earlier documentation](../about/index.md#earlier-documentation) remains relevant for reproducing analyses made with older application and library releases.
-
----
-
-Sources: [earlier introduction](https://github.com/easyscience/diffraction-lib/blob/master/docs/docs/introduction/index.md), [current product overview](https://github.com/enhantica/edi/blob/main/README.md), [complete-project model](https://github.com/enhantica/edi/blob/main/docs/user/guides/complete-project-loading.md).
+The User guide explains the common scientific model. Start under [Application](../application/index.md), [Python](../python/index.md) or [Command Line](../cli/index.md) for setup and a first refinement. Those sections follow the same Project → Structure → Experiment → Analysis → Report stages. [Physics](../physics/index.md) explains the calculations; [About](../about/index.md) covers the project, licensing, support and citation.

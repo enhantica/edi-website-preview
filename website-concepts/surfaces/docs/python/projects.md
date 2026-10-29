@@ -63,7 +63,3 @@ project.export_zip('shared-project.zip')
 `export_zip()` packages the project's folder **as last saved**. Save first when you want current in-memory changes included. The exported archive can be opened by the other interfaces.
 
 Read [shared data formats](../user-guide/data-formats.md) for the project structure and [Command Line files and output](../cli/files.md) for the different archive write-back rule used by commands.
-
----
-
-Sources: [opening, saving and exporting](https://github.com/enhantica/edi/blob/main/docs/user/guides/open-save-and-export.md) and [complete-project loading](https://github.com/enhantica/edi/blob/main/docs/user/guides/complete-project-loading.md). Organization adapted from the [earlier project workflow](https://docs.easydiffraction.org/lib/latest/user-guide/analysis-workflow/project/).

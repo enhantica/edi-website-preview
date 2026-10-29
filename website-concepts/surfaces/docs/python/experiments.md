@@ -55,7 +55,3 @@ The factory creates the experiment and reads its data. You still need to choose 
 A measured pattern supports comparison and fitting. A simulation range supports a forward calculation without observations. A project can contain both kinds; fitting uses experiments with measured data.
 
 Read [calculate a pattern](calculate.md) or [load and fit](fit.md) for the next step.
-
----
-
-Sources: organization adapted from the [earlier experiment guide](https://docs.easydiffraction.org/lib/latest/user-guide/analysis-workflow/experiment/); current behavior from [ExperimentFactory](https://github.com/enhantica/edi/blob/main/lib/edi/__init__.py) and [projects from scratch](https://github.com/enhantica/edi/blob/main/docs/user/guides/projects-from-scratch-in-the-app.md).

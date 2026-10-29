@@ -44,7 +44,3 @@ A report is separate: saving a project does not create a fresh report. Use [Save
 ## Move to another interface
 
 Open the saved folder, `project.edi` or archive from [Python](../python/index.md) or [the Command Line](../cli/index.md). The shared [project concepts](../user-guide/analysis-workflow/project.md) explain what those interfaces read.
-
----
-
-Source: [current opening, saving and exporting guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/open-save-and-export.md).

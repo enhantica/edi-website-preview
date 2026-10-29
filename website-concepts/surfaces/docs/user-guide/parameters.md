@@ -54,8 +54,4 @@ For scan analyses, the [fitting mode](fitting-modes.md) determines whether each 
 
 ## Names in code and files
 
-A parameter can have a Python access path, an Edi persistence key, and a scientific CIF report name. These have different jobs. Use the current [Python documentation](../python/index.md) for code and [data formats](data-formats.md) for saved files; do not assume a name from an older library release is an interchangeable API.
-
----
-
-Sources: [earlier parameter guide](https://github.com/easyscience/diffraction-lib/blob/master/docs/docs/user-guide/parameters.md), [edi project loading and free-set contract](https://github.com/enhantica/edi/blob/main/docs/user/guides/complete-project-loading.md), [current example tutorial](https://github.com/enhantica/edi/blob/main/docs/user/tutorials/pd-neut-cwl_lbco-hrpt.py).
+A parameter can have a Python access path, an Edi persistence key, and a scientific CIF report name. These have different jobs. Use the current [Python documentation](../python/index.md) for code and [data formats](data-formats.md) for saved files. The code access path and the saved-file key need not be identical.

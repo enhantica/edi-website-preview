@@ -6,7 +6,7 @@ The web app lets you explore EasyDiffraction without installing the application.
 
 ## Start with an example
 
-Choose an example on **Project**. It opens as a working copy with structures, experiments and starting conditions already supplied. Follow [your first refinement](../get-started/first-refinement.md) to inspect and fit it.
+Choose an example on **Project**. It opens as a working copy with structures, experiments and starting conditions already supplied. Follow [your first refinement](first-refinement.md) to inspect and fit it.
 
 ## Bring your own project or data
 
@@ -33,7 +33,3 @@ A browser can clear its saved site data. A private window may keep the project o
 ## Reports and desktop work
 
 The web app also downloads the report files you save. For routine work with project folders on disk, the [desktop application](desktop.md) provides native file dialogs. Read [projects and files](projects.md) for the complete saving behaviour.
-
----
-
-Sources: [current web-project storage and file guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/open-save-and-export.md), [current report guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/the-report.md).

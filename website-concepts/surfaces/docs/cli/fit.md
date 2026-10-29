@@ -75,7 +75,3 @@ The first command writes the selected report formats except PDF. The second chec
 ## Continue visually
 
 Open the saved project in [the application](../application/index.md). Its structures and experiments are the same ones the command line reads.
-
----
-
-Sources: [fit parser and execution](https://github.com/enhantica/edi/blob/main/lib/edi/__main__.py), [complete-project loading](https://github.com/enhantica/edi/blob/main/docs/user/guides/complete-project-loading.md), and [project archives](https://github.com/enhantica/edi/blob/main/docs/user/guides/open-save-and-export.md). The model-driven workflow follows the [earlier analysis guide](https://docs.easydiffraction.org/lib/latest/user-guide/analysis-workflow/analysis/).

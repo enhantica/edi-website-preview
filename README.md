@@ -8,8 +8,8 @@ screenshots and build tooling. It does not contain the edi or crysta implementat
 - [Open the selected documentation](https://enhantica.github.io/edi-website-preview/)
 - [Earlier workflow-first alternative](https://enhantica.github.io/edi-website-preview/workflows/)
 
-The visible brand is **EasyDiffraction**; code examples use **edi**. Home, Get started, User guide, Application,
-Python, Command Line and About are the selected primary sections. The content is an evolving draft
+The visible brand is **EasyDiffraction**; code examples use **edi**. Home, User guide, Application, Python, Command Line,
+Physics and About are the selected primary sections. The content is an evolving draft
 checked against current edi behavior. The web-app buttons open the
 existing edi application; this repository does not build or host another copy of the application.
 
