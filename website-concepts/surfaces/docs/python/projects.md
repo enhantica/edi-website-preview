@@ -1,6 +1,6 @@
 # Load and save projects
 
-A complete project brings together structures, experiments, measured data or a calculation range, and analysis settings. Python opens the same saved projects as the application and CLI.
+A complete project brings together structures, experiments, measured data or a calculation range, and analysis settings. Python opens the same saved projects as the application and Command Line.
 
 ## Open a project
 
@@ -62,7 +62,7 @@ project.export_zip('shared-project.zip')
 
 `export_zip()` packages the project's folder **as last saved**. Save first when you want current in-memory changes included. The exported archive can be opened by the other interfaces.
 
-Read [shared data formats](../learn/data-formats.md) for the project structure and [CLI files and output](../cli/files.md) for the different archive write-back rule used by commands.
+Read [shared data formats](../learn/data-formats.md) for the project structure and [Command Line files and output](../cli/files.md) for the different archive write-back rule used by commands.
 
 ---
 

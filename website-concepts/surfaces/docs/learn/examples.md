@@ -2,7 +2,7 @@
 
 Examples combine a structure model, experiment settings, data and starting conditions. Use them to learn an analysis before preparing your own files.
 
-The example catalogue connects the interfaces: an example opens in the app, has project files the CLI can run, and has a Python tutorial using those files. Read the example's description and provenance to understand its starting point and reference result.
+The example catalogue connects the interfaces: an example opens in the app, has project files the Command Line can run, and has a Python tutorial using those files. Read the example's description and provenance to understand its starting point and reference result.
 
 ## Choose an example
 
@@ -47,7 +47,7 @@ From the same configured checkout:
 python -m edi fit docs/user/cli/pd-neut-cwl_lbco-hrpt/project --dry
 ```
 
-For a real fit, follow the [CLI refinement guide](../cli/fit.md). Keep a copy of the starting project so the original inputs remain available.
+For a real fit, follow the [Command Line refinement guide](../cli/fit.md). Keep a copy of the starting project so the original inputs remain available.
 
 ## Understand the reference
 

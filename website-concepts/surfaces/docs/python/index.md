@@ -35,7 +35,7 @@ This example is a measured-data refinement. A simulation project can [calculate 
 
 ## One project across interfaces
 
-You can reopen the saved project in [the application](../application/index.md), or run it with [the CLI](../cli/index.md). The [shared concepts](../learn/projects.md) explain structures, experiments and analysis independently of the interface.
+You can reopen the saved project in [the application](../application/index.md), or run it with [the Command Line](../cli/index.md). The [shared concepts](../learn/projects.md) explain structures, experiments and analysis independently of the interface.
 
 ---
 

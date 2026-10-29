@@ -1,4 +1,4 @@
-# Diffraction analysis from the command line
+# Command Line
 
 Run a saved EasyDiffraction project from a terminal. The project keeps the structural model and analysis settings together, so a command names the input rather than rebuilding the scientific model.
 
@@ -30,7 +30,7 @@ Store the project alongside your analysis. Its declared fitting mode determines 
 
 ## Use the same model
 
-The CLI shares [projects and experiments](../learn/projects.md) with Python and the application. Use whichever interface fits the next step in your work. [Batch workflows](batch.md) shows ordinary shell automation around these commands.
+The Command Line shares [projects and experiments](../learn/projects.md) with Python and the application. Use whichever interface fits the next step in your work. [Batch workflows](batch.md) shows ordinary shell automation around these commands.
 
 ---
 

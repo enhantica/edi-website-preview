@@ -2,7 +2,7 @@
 
 - **Status:** accepted direction for the documentation prototypes.
 - **Date:** 2026-10-29.
-- **Scope:** both navigation alternatives and the comparison page.
+- **Scope:** the selected documentation and archived navigation alternative.
 
 The previous prototypes overrode the theme's content width, margins, typography, header, navigation,
 colors and landing-page layout. Those overrides are removed. The owner requested Zensical's
@@ -34,11 +34,13 @@ continue to come from edi's existing public documentation.
 ## Selected navigation
 
 On 2026-10-29 the owner selected the interface-first direction: Home, Get started, Application,
-Python, CLI, Learn and About. Most visitors work through one interface, so its procedures and
+Python, Command Line, Learn and About. Most visitors work through one interface, so its procedures and
 reference material belong under an explicit primary tab. Shared concepts remain in Learn.
 
-New content is added to `surfaces/`. The comparison entry points to that working documentation;
-the earlier `workflows/` variant remains available as a reference. Both keep the native theme.
+New content is added to `surfaces/`. The public site root opens that working documentation directly;
+the earlier `workflows/` variant remains available as a reference. Existing `/surfaces/` URLs
+remain compatibility aliases with canonical URLs at the root. Both keep the native theme.
+The owner requested removal of the prototype chooser and the label **Command Line** on 2026-10-29.
 Production integration into edi remains a separate reviewed change.
 
 Legacy documentation is adapted to the current edi generation rather than copied as an API or

@@ -50,4 +50,4 @@ Use the [report guide](reports.md) to choose contents and check freshness.
 
 ---
 
-Sources: the shell composition is new for this preview; command behavior is checked against [edi's CLI](https://github.com/enhantica/edi/blob/main/lib/edi/__main__.py). Scan semantics come from [complete-project loading](https://github.com/enhantica/edi/blob/main/docs/user/guides/complete-project-loading.md).
+Sources: the shell composition is new for this preview; command behavior is checked against [edi's Command Line](https://github.com/enhantica/edi/blob/main/lib/edi/__main__.py). Scan semantics come from [complete-project loading](https://github.com/enhantica/edi/blob/main/docs/user/guides/complete-project-loading.md).

@@ -17,7 +17,7 @@ project/
 
 `project.edi` carries the project-level information. The other files contain the structures, experiments and fitting settings. Reports and saved scan results stay with the project.
 
-The folder can be packaged as a `.zip` archive. The app, Python and CLI accept a project folder, its `project.edi`, or a project archive. The archive is useful for handing an analysis between a browser and a desktop or sending it to a collaborator.
+The folder can be packaged as a `.zip` archive. The app, Python and Command Line accept a project folder, its `project.edi`, or a project archive. The archive is useful for handing an analysis between a browser and a desktop or sending it to a collaborator.
 
 ## Edi and CIF
 

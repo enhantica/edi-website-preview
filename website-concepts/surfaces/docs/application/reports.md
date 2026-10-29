@@ -24,7 +24,7 @@ These choices are saved with the project. They do not change which data were fit
 
 The HTML export option can embed the chart libraries for offline use. Without embedding, the document loads those libraries from the web when opened.
 
-The PDF uses A4 pages and light-colour figures. The application writes PDF; Python and CLI report generation share the report model and settings but do not write that application PDF.
+The PDF uses A4 pages and light-colour figures. The application writes PDF; Python and Command Line report generation share the report model and settings but do not write that application PDF.
 
 ## Save the report
 
@@ -42,7 +42,7 @@ Use **Save report** again to bring the selected formats up to date. The status s
 
 Saving a project keeps the working model and report settings, but does not generate a new report. Save each for its purpose: the project for continuing the analysis, the report for communicating it.
 
-The same report settings can be used from [Python](../python/fit.md) or [the CLI](../cli/fit.md).
+The same report settings can be used from [Python](../python/fit.md) or [the Command Line](../cli/fit.md).
 
 ---
 

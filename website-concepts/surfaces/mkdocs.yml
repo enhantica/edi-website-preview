@@ -1,6 +1,6 @@
 site_name: EasyDiffraction
 site_description: Diffraction analysis, your way. Application, Python and command line in one place.
-site_url: http://127.0.0.1:8873/surfaces/
+site_url: http://127.0.0.1:8873/
 docs_dir: docs
 site_dir: site
 theme:
@@ -61,7 +61,7 @@ nav:
       - Save and look up:
           - Reports: python/reports.md
           - API quick reference: python/reference.md
-  - CLI:
+  - Command Line:
       - cli/index.md
       - Run an analysis:
           - Refine a project: cli/fit.md

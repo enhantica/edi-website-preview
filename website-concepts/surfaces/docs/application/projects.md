@@ -1,6 +1,6 @@
 # Projects and files
 
-A project is a folder containing `project.edi`, `structures/`, `experiments/`, `analysis/` and `reports/`. It can also be handed on as one zip archive. The application, Python and CLI open the same project content.
+A project is a folder containing `project.edi`, `structures/`, `experiments/`, `analysis/` and `reports/`. It can also be handed on as one zip archive. The application, Python and Command Line open the same project content.
 
 ## Open a project
 
@@ -43,7 +43,7 @@ A report is separate: saving a project does not create a fresh report. Use [Save
 
 ## Move to another interface
 
-Open the saved folder, `project.edi` or archive from [Python](../python/index.md) or [the CLI](../cli/index.md). The shared [project concepts](../learn/projects.md) explain what those interfaces read.
+Open the saved folder, `project.edi` or archive from [Python](../python/index.md) or [the Command Line](../cli/index.md). The shared [project concepts](../learn/projects.md) explain what those interfaces read.
 
 ---
 

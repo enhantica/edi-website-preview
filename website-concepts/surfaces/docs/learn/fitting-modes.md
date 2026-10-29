@@ -1,6 +1,6 @@
 # Fitting modes
 
-Choose a fitting mode according to how your observations should share a model. The mode is part of the project, so the app, Python and CLI can run the same declared analysis.
+Choose a fitting mode according to how your observations should share a model. The mode is part of the project, so the app, Python and Command Line can run the same declared analysis.
 
 ## The available modes
 
@@ -54,7 +54,7 @@ project = edi.Project.load('path/to/project')
 result = project.analysis.fit()
 ```
 
-The CLI follows the same declaration:
+The Command Line follows the same declaration:
 
 ```console
 python -m edi fit path/to/project

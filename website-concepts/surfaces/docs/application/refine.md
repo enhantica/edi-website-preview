@@ -36,7 +36,7 @@ A small agreement factor alone does not establish that the structural model is c
 
 Save the updated project if you want to keep working from its refined values. Use the **Report** page to prepare a separate document containing the selected model, results and figures.
 
-The same project can be opened in [Python](../python/fit.md) or run with [the CLI](../cli/fit.md).
+The same project can be opened in [Python](../python/fit.md) or run with [the Command Line](../cli/fit.md).
 
 ---
 

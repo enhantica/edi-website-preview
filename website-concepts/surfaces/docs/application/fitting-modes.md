@@ -17,7 +17,7 @@ Sequential and independent scan runs are both serial. Their difference is the st
 
 Open **Analysis** and use the fitting-mode control. The choices reflect the project: with only one applicable mode the selector is disabled and explains why.
 
-A joint fit shows the experiment weights. A scan mode shows its scan declaration. The mode is saved as part of the project and is also read by Python and CLI analysis.
+A joint fit shows the experiment weights. A scan mode shows its scan declaration. The mode is saved as part of the project and is also read by Python and Command Line analysis.
 
 ## Fit several experiments jointly
 

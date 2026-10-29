@@ -1,6 +1,6 @@
 # Set up your environment
 
-Use the browser to explore the current application immediately. Local desktop, Python and CLI work use a configured edi source environment and the native dependencies it declares.
+Use the browser to explore the current application immediately. Local desktop, Python and Command Line work use a configured edi source environment and the native dependencies it declares.
 
 ## Browser
 
@@ -20,9 +20,9 @@ The current import name is `edi`. The Python library uses the compiled edi core,
 
 Follow [Python setup](../python/setup.md) for the declared source build and environment checks. Current package metadata requires Python 3.12 or later; the checkout's Pixi configuration selects its working interpreter and dependencies.
 
-## Command line
+## Command Line
 
-The current CLI entry point is `python -m edi`. It uses the same configured environment and native core as the Python library.
+The current Command Line entry point is `python -m edi`. It uses the same configured environment and native core as the Python library.
 
 Start with [the command-line overview](../cli/index.md), then run a saved project through the [refinement guide](../cli/fit.md).
 

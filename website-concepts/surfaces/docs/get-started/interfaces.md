@@ -11,7 +11,7 @@ Choose the interface that fits the way you want to work. A saved project is the 
 | Python library | Your analysis belongs in a script or notebook | Load and inspect project objects through `import edi` |
 | Command line | You want to run the analysis declared by saved inputs | Use `python -m edi` with a project path |
 
-The browser and desktop are two ways to run the graphical application. Python and the CLI are alternative ways to work with the same project model.
+The browser and desktop are two ways to run the graphical application. Python and the Command Line are alternative ways to work with the same project model.
 
 ## Application: direct visual exploration
 
@@ -27,7 +27,7 @@ The [Python library](../python/index.md) exposes the model as `edi`. Load a proj
 
 Use it for notebooks, repeated analyses and integration with your own processing. It requires a configured native edi environment; the Python source files alone do not supply the compiled core. See [Python setup](../python/setup.md).
 
-## CLI: run the saved project
+## Command Line: run the saved project
 
 The [command line](../cli/index.md) calculates or fits the project you give it. Structures, free parameters and minimizer conditions remain in the project rather than being recreated as a long command.
 
@@ -41,4 +41,4 @@ Scientific concepts such as [parameters](../learn/parameters.md) and [fitting mo
 
 ---
 
-Sources: [edi overview](https://github.com/enhantica/edi/blob/main/README.md), [opening, saving and exporting](https://github.com/enhantica/edi/blob/main/docs/user/guides/open-save-and-export.md), [Python facade](https://github.com/enhantica/edi/blob/main/lib/edi/__init__.py), [CLI entry point](https://github.com/enhantica/edi/blob/main/lib/edi/__main__.py).
+Sources: [edi overview](https://github.com/enhantica/edi/blob/main/README.md), [opening, saving and exporting](https://github.com/enhantica/edi/blob/main/docs/user/guides/open-save-and-export.md), [Python facade](https://github.com/enhantica/edi/blob/main/lib/edi/__init__.py), [Command Line entry point](https://github.com/enhantica/edi/blob/main/lib/edi/__main__.py).

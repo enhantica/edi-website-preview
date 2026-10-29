@@ -36,7 +36,7 @@ application, a Python notebook or your terminal, and keep the same project as yo
 
     [Work in Python](python/index.md)
 
--   **Command line**
+-   **Command Line**
 
     ---
 
@@ -64,10 +64,10 @@ settings and results between the visual application, Python and the command line
 
 | Your task | Where to start |
 | --- | --- |
-| Calculate a pattern from a structure and experiment, without measured data | [Calculate in Python](python/calculate.md) or [use the CLI](cli/calculate.md) |
+| Calculate a pattern from a structure and experiment, without measured data | [Calculate in Python](python/calculate.md) or [use the Command Line](cli/calculate.md) |
 | Bring your own structure and measured pattern into the app | [Create a project](application/new-project.md) |
 | Choose background points and remove regions from a fit | [Background and excluded regions](application/background.md) |
-| Refine a structural model against observations | [Application refinement](application/refine.md), [Python](python/fit.md) or [CLI](cli/fit.md) |
+| Refine a structural model against observations | [Application refinement](application/refine.md), [Python](python/fit.md) or [Command Line](cli/fit.md) |
 | Fit several experiments or follow a changing sample through a scan | [Understand fitting modes](learn/fitting-modes.md) |
 | Assess the residual, uncertainties and agreement factors | [Fit quality](learn/fit-quality.md) |
 | Keep an analysis portable or send it to a collaborator | [Projects and files](application/projects.md) |

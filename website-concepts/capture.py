@@ -54,6 +54,7 @@ def main() -> None:
     origin = f'http://127.0.0.1:{server.server_port}'
     output = ROOT / 'screenshots'
     output.mkdir(exist_ok=True)
+    base_path = '' if name == 'surfaces' else f'{name}/'
     docs_path = 'application/refine/' if name == 'surfaces' else 'guides/refine/'
     checks = []
     errors = []
@@ -76,7 +77,7 @@ def main() -> None:
         )
         for slug, label in [('', 'home'), (docs_path, 'guide')]:
             response = page.goto(
-                f'{origin}/{name}/{slug}', wait_until='networkidle', timeout=12000
+                f'{origin}/{base_path}{slug}', wait_until='networkidle', timeout=12000
             )
             if not response or response.status != 200:
                 raise RuntimeError(f'{slug}: page did not return HTTP 200')
@@ -101,7 +102,7 @@ def main() -> None:
                 _capture_tabs(page, output, name)
                 checks.append({'page': docs_path, 'python_interface_tab_works': True})
         page.set_viewport_size({'width': 390, 'height': 844})
-        page.goto(f'{origin}/{name}/', wait_until='networkidle', timeout=12000)
+        page.goto(f'{origin}/{base_path}', wait_until='networkidle', timeout=12000)
         page.screenshot(path=str(output / f'{name}-mobile.png'), full_page=True)
         checks.append({
             'page': '/ mobile',

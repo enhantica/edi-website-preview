@@ -2,7 +2,7 @@
 
 A visual refinement, a Python notebook and a command-line run can describe the same analysis. The shared ideas are the project, its structures and experiments, the parameters allowed to vary, and the evidence used to judge the result.
 
-Start here when you want to understand the analysis itself. The [Application](../application/index.md), [Python](../python/index.md) and [CLI](../cli/index.md) sections explain the controls and commands particular to each interface.
+Start here when you want to understand the analysis itself. The [Application](../application/index.md), [Python](../python/index.md) and [Command Line](../cli/index.md) sections explain the controls and commands particular to each interface.
 
 ## Understand the model
 

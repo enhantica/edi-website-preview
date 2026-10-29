@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parent
 CONCEPTS = {
     'surfaces': (
         'Choose your interface',
-        'Application, Python and CLI have their own top-level sections.',
+        'Application, Python and Command Line have their own top-level sections.',
     ),
     'workflows': (
         'Follow your workflow',
@@ -87,14 +87,13 @@ def main() -> None:
     if args.concept == 'all':
         if output.exists():
             shutil.rmtree(output)
-        names.insert(0, 'comparison')
     for name in names:
         config = ROOT / name / 'mkdocs.yml'
         temporary = None
         if args.base_url:
             text, count = re.subn(
                 r'^site_url:.*$',
-                f'site_url: {args.base_url}' + (f'{name}/' if name != 'comparison' else ''),
+                f'site_url: {args.base_url}' + (f'{name}/' if name != 'surfaces' else ''),
                 config.read_text(encoding='utf-8'),
                 flags=re.MULTILINE,
             )
@@ -123,10 +122,16 @@ def main() -> None:
         built = ROOT / name / 'site'
         if not (built / 'index.html').is_file():
             raise SystemExit(f'{name}: the build did not produce its homepage')
-        assembled = output / name if name != 'comparison' else output
-        if assembled.exists() and name != 'comparison':
+        assembled = output if name == 'surfaces' else output / name
+        if assembled.exists() and name != 'surfaces':
             shutil.rmtree(assembled)
-        shutil.copytree(built, assembled, dirs_exist_ok=name == 'comparison')
+        shutil.copytree(built, assembled, dirs_exist_ok=name == 'surfaces')
+        if name == 'surfaces':
+            # Preserve published prototype links; canonical URLs point to the site root.
+            legacy = output / 'surfaces'
+            if legacy.exists():
+                shutil.rmtree(legacy)
+            shutil.copytree(built, legacy)
     _check_links(output.resolve(), args.base_url)
     command = f'python -m http.server 8873 --bind 127.0.0.1 --directory {output}'
     print(f'Preview: {command}', flush=True)

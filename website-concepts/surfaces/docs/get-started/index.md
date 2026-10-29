@@ -38,7 +38,7 @@ The [Learn](../learn/index.md) section covers projects, parameters, fitting mode
 
 ## Set up a local environment
 
-Current local builds use the edi source environment and its native dependencies. The [setup overview](setup.md) links the appropriate desktop, Python and CLI instructions and explains the current availability.
+Current local builds use the edi source environment and its native dependencies. The [setup overview](setup.md) links the appropriate desktop, Python and Command Line instructions and explains the current availability.
 
 ---
 

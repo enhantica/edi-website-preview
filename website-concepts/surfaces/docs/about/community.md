@@ -4,7 +4,7 @@ Questions, reproducible problem reports and improvements to the documentation he
 
 ## Ask a question
 
-Use the [edi issue tracker](https://github.com/enhantica/edi/issues) for questions about the current product, unexpected behaviour and feature proposals. Say whether you are using the browser app, desktop app, Python or CLI, and identify the version or source commit when you can.
+Use the [edi issue tracker](https://github.com/enhantica/edi/issues) for questions about the current product, unexpected behaviour and feature proposals. Say whether you are using the browser app, desktop app, Python or Command Line, and identify the version or source commit when you can.
 
 For a usage question, describe the scientific task and the step where you got stuck. Linking the documentation page or example you followed helps distinguish an unclear instruction from a software problem.
 

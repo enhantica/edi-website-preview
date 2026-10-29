@@ -54,7 +54,7 @@ Use an external folder or archive for work you want to retain. Browser storage c
 
 - [Create a project](../application/new-project.md) from your own structure and observations.
 - Explore [other example projects](../learn/examples.md).
-- Run the same saved project in [Python](../python/fit.md) or [the CLI](../cli/fit.md).
+- Run the same saved project in [Python](../python/fit.md) or [the Command Line](../cli/fit.md).
 
 ---
 

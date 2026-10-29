@@ -16,7 +16,7 @@ The current documentation brings these entry points together:
 
 - **Application** explains the desktop and browser workspace.
 - **Python** covers scripts and notebooks using `edi`.
-- **CLI** covers commands that operate on saved projects.
+- **Command Line** covers commands that operate on saved projects.
 - **Learn** explains the shared scientific model and examples.
 
 Earlier names, imports, release numbers and backend descriptions belong to their corresponding versions. Use [the earlier documentation](#earlier-documentation) when reproducing work done with one of those releases.

@@ -12,7 +12,7 @@ in [CONTENT-SOURCES.md](CONTENT-SOURCES.md).
 
 | | A: choose your interface | B: follow your workflow |
 | --- | --- | --- |
-| Main navigation | Home, Get started, Application, Python, CLI, Learn, About | Home, Get started, Guides, Tutorials, Reference, About |
+| Main navigation | Home, Get started, Application, Python, Command Line, Learn, About | Home, Get started, Guides, Tutorials, Reference, About |
 | Best entry | A visitor already knows which interface they want | A visitor knows what analysis they want to perform |
 | Shared material | Scientific concepts and examples in Learn | Scientific guides with interface-specific instructions |
 | Application | Desktop and web have one application home | Application entry points feed the common workflow |
@@ -25,7 +25,7 @@ a user workflow; contributor documentation concerns changing the product itself.
 Both alternatives use the standard Zensical modern theme, native Inter and JetBrains Mono font
 loading, and its default light scheme. The only theme color selection is EasyDiffraction's light
 blue primary/accent. There is no custom theme stylesheet, JavaScript or template override.
-The comparison page uses the same theme. See [DESIGN.md](DESIGN.md).
+The public root opens the selected documentation directly. See [DESIGN.md](DESIGN.md).
 
 ## Build and preview
 
@@ -38,7 +38,7 @@ website-concepts/.venv/bin/python website-concepts/build.py
 website-concepts/.venv/bin/python -m http.server 8873 --bind 127.0.0.1 --directory website-concepts/_build
 ```
 
-Open `http://127.0.0.1:8873/`. Build only one alternative by passing `surfaces` or `workflows` to
+Open `http://127.0.0.1:8873/` for the selected documentation. Existing `/surfaces/` links remain available as compatibility aliases; the earlier alternative is at `/workflows/`. Build only one alternative by passing `surfaces` or `workflows` to
 `build.py`. Build products and caches are ignored. Authored concept pages and review screenshots
 are retained on the branch.
 

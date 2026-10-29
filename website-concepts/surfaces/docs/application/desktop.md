@@ -31,7 +31,7 @@ The build uses the repository's dependencies, including access to the crysta SDK
 
 To explore the current visual interface without a local build, use the [web app](browser.md). Earlier EasyDiffraction installers belong to their earlier implementation and are not interchangeable with the current edi application.
 
-## Continue in Python or the CLI
+## Continue in Python or the Command Line
 
 The project you save is also the input to [Python](../python/index.md) and [the command line](../cli/index.md). Those interfaces let you script the same project model.
 

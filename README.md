@@ -5,12 +5,11 @@ Zensical generator. The selected interface-first design is being expanded from t
 website, library and application sources. It contains documentation, branding assets, real application
 screenshots and build tooling. It does not contain the edi or crysta implementation.
 
-- [Open the selected documentation](https://enhantica.github.io/edi-website-preview/surfaces/)
-- [Preview entry](https://enhantica.github.io/edi-website-preview/)
+- [Open the selected documentation](https://enhantica.github.io/edi-website-preview/)
 - [Earlier workflow-first alternative](https://enhantica.github.io/edi-website-preview/workflows/)
 
 The visible brand is **EasyDiffraction**; code examples use **edi**. Home, Get started, Application,
-Python, CLI, Learn and About are the selected primary sections. The content is an evolving draft
+Python, Command Line, Learn and About are the selected primary sections. The content is an evolving draft
 checked against current edi behavior. The web-app buttons open the
 existing edi application; this repository does not build or host another copy of the application.
 
