@@ -1,0 +1,27 @@
+{
+  "command": "python /tmp/edi-final-small.py",
+  "source_commit": "d10f2d17e85cc2f8a5f677e051ffd9d681a3bcae",
+  "checks": [
+    {
+      "page": "user-guide/features/",
+      "rendered_equations": 0,
+      "passed": true
+    },
+    {
+      "page": "physics/displacement/",
+      "rendered_equations": 7,
+      "passed": true
+    },
+    {
+      "page": "physics/background/",
+      "rendered_equations": 11,
+      "passed": true
+    },
+    {
+      "page": "physics/corrections/extinction/",
+      "rendered_equations": 36,
+      "passed": true
+    }
+  ],
+  "browser_errors": []
+}

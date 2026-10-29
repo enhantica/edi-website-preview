@@ -34,6 +34,249 @@
       "page_outline_visible": true
     },
     {
+      "page": "user-guide/features/",
+      "heading": "Features and roadmap\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/profiles/cw/",
+      "equations_rendered_without_errors": true,
+      "equations_checked": 34
+    },
+    {
+      "page": "physics/profiles/cw/",
+      "heading": "Constant-wavelength peak profiles\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/profiles/tof/",
+      "equations_rendered_without_errors": true,
+      "equations_checked": 21
+    },
+    {
+      "page": "physics/profiles/tof/",
+      "heading": "Time-of-flight peak profiles\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/corrections/absorption/",
+      "equations_rendered_without_errors": true,
+      "equations_checked": 23
+    },
+    {
+      "page": "physics/corrections/absorption/",
+      "heading": "Absorption\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/corrections/extinction/",
+      "equations_rendered_without_errors": true,
+      "equations_checked": 36
+    },
+    {
+      "page": "physics/corrections/extinction/",
+      "heading": "Extinction\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/reliability/",
+      "equations_rendered_without_errors": true,
+      "equations_checked": 22
+    },
+    {
+      "page": "physics/reliability/",
+      "heading": "Reliability factors\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/background/",
+      "equations_rendered_without_errors": true,
+      "equations_checked": 11
+    },
+    {
+      "page": "physics/background/",
+      "heading": "Background models and estimation\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/calibration/",
+      "equations_rendered_without_errors": true,
+      "equations_checked": 16
+    },
+    {
+      "page": "physics/calibration/",
+      "heading": "Calibration and peak positions\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/conventions/",
+      "heading": "Conventions\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/corrections/intensity/",
+      "equations_rendered_without_errors": true,
+      "equations_checked": 9
+    },
+    {
+      "page": "physics/corrections/intensity/",
+      "heading": "Lorentz and polarization factors\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/corrections/orientation/",
+      "equations_rendered_without_errors": true,
+      "equations_checked": 9
+    },
+    {
+      "page": "physics/corrections/orientation/",
+      "heading": "Preferred orientation\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/crystallography/",
+      "equations_rendered_without_errors": true,
+      "equations_checked": 12
+    },
+    {
+      "page": "physics/crystallography/",
+      "heading": "Crystallography\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/diffraction/",
+      "equations_rendered_without_errors": true,
+      "equations_checked": 13
+    },
+    {
+      "page": "physics/diffraction/",
+      "heading": "Scattering and structure factors\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/displacement/",
+      "equations_rendered_without_errors": true,
+      "equations_checked": 7
+    },
+    {
+      "page": "physics/displacement/",
+      "heading": "Atomic displacement parameters\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/",
+      "heading": "Physics\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/minimization/",
+      "equations_rendered_without_errors": true,
+      "equations_checked": 6
+    },
+    {
+      "page": "physics/minimization/",
+      "heading": "Minimization and uncertainty\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/models/",
+      "heading": "Model catalogue\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/parameters/",
+      "heading": "Scientific parameter index\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/profiles/",
+      "equations_rendered_without_errors": true,
+      "equations_checked": 3
+    },
+    {
+      "page": "physics/profiles/",
+      "heading": "Peak profiles\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/refinement/",
+      "heading": "Refinement and statistics\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "physics/rietveld/",
+      "equations_rendered_without_errors": true,
+      "equations_checked": 19
+    },
+    {
+      "page": "physics/rietveld/",
+      "heading": "Rietveld refinement\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
       "shared_guide_before_interfaces": true,
       "header_wordmark_only": true
     },
@@ -44,7 +287,22 @@
     {
       "single_svg_header_and_drawer": true,
       "theme_aware_lettering": true
+    },
+    {
+      "page": "/",
+      "responsive_widths_320_to_2560": true
+    },
+    {
+      "page": "user-guide/features/",
+      "responsive_widths_320_to_2560": true
+    },
+    {
+      "page": "physics/corrections/extinction/",
+      "responsive_widths_320_to_2560": true
     }
   ],
-  "browser_errors": []
+  "browser_errors": [],
+  "source_commit": "d20c36eeae3d1c25cc6b68d79da7467bf1017e21",
+  "command": "python website-concepts/capture.py surfaces",
+  "scope": "Successful all-Physics and responsive check after bundling full MathJax. Native SVG feature icons were verified separately in surfaces-final-checks.json."
 }
