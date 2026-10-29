@@ -5,9 +5,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,500,600,700,800&amp;display=swap">
-  <link rel="stylesheet" href="{{ 'assets/landing.css' | url }}?v=network-2">
-  <link rel="stylesheet" href="{{ 'assets/network-animation.css' | url }}?v=1">
-  <script defer src="{{ 'assets/network-pulse-engine.js' | url }}?v=1"></script>
+  <link rel="stylesheet" href="{{ 'assets/landing.css' | url }}?v=network-5">
+  <link rel="stylesheet" href="{{ 'assets/network-animation.css' | url }}?v=2">
+  <script defer src="{{ 'assets/network-pulse-engine.js' | url }}?v=2"></script>
 {% endblock %}
 
 {% block container %}
@@ -18,12 +18,6 @@
     <div class="md-grid" data-network-content>
       {{ super() }}
     </div>
-    <button class="ed-network-toggle md-icon" data-pulse-toggle type="button"
-      title="Pause background animation" aria-label="Pause background animation"
-      aria-pressed="true" hidden>
-      <span data-motion-pause>{% include ".icons/lucide/pause.svg" %}</span>
-      <span data-motion-play>{% include ".icons/lucide/play.svg" %}</span>
-    </button>
   </section>
 {% endblock %}
 

@@ -21,9 +21,13 @@ hide:
 
 </nav>
 
+<div class="ed-landing__message" markdown>
+
 # Making <span class="ed-landing__accent">diffraction</span><br>data analysis and<br>modelling <span class="ed-landing__accent">easy</span> { #landing-heading }
 
 <p class="ed-landing__intro">Calculate diffraction patterns, refine your structural model and understand your results. Try it directly in your browser.</p>
+
+</div>
 
 <div class="ed-landing__actions" markdown>
 
@@ -36,7 +40,7 @@ hide:
 </div>
 
 <figure class="ed-landing__preview">
-  <img src="assets/edi-app.png" alt="EasyDiffraction showing measured and calculated diffraction patterns, the residual and experiment controls" width="1280" height="768" fetchpriority="high" decoding="async">
+  <img src="assets/edi-analysis-hero.png" alt="EasyDiffraction Analysis showing measured and calculated multiphase patterns, residuals and structural refinement parameters" width="2992" height="1768" fetchpriority="high" decoding="async">
 </figure>
 
 </section>

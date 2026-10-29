@@ -154,7 +154,9 @@
       pulse.current = directed(edge, from);
       pulse.offset = (from === edge.a ? t : 1 - t) * edge.length;
       pulse.history = [];
-      pulse.speed = random(30, 45);
+      pulse.speed = random(30, 45) * random(3, 5);
+      pulse.speedPhase = random(0, Math.PI * 2);
+      pulse.speedPeriod = random(4, 7);
       pulse.tailLength = random(57, 74);
       pulse.life = random(14, 21);
       pulse.age = 0;
@@ -228,7 +230,10 @@
         pulse.wait = random(1.2, 3.6);
         return;
       }
-      pulse.offset += pulse.speed * dt;
+      // Independent base speeds, with a gentle continuous glide rather than abrupt changes.
+      pulse.currentSpeed = pulse.speed * (1 + 0.14 * Math.sin(
+        pulse.speedPhase + pulse.age * Math.PI * 2 / pulse.speedPeriod));
+      pulse.offset += pulse.currentSpeed * dt;
       let guard = 0;
       while (pulse.offset >= pulse.current.length && guard++ < 100) {
         pulse.offset -= pulse.current.length;
@@ -339,9 +344,11 @@
     function onReducedMotion(event) {
       if (event.matches) {
         playing = false;
-        root.dataset.motionChoice = 'pause';
         for (const pulse of pulses) pulse.group.setAttribute('display', 'none');
         renderedCount = 0;
+        sync();
+      } else {
+        playing = root.dataset.motionChoice !== 'pause';
         sync();
       }
     }
@@ -394,7 +401,7 @@
           graphEdges: {upper: graphs.upper.edges.length, lower: graphs.lower.edges.length},
           pulses: pulses.map(p => ({
             id: p.id, bank: p.bank, waiting: p.wait > 0, age: p.age,
-            speed: p.speed, tailLength: p.tailLength, life: p.life, wait: p.wait,
+            speed: p.speed, currentSpeed: p.currentSpeed || p.speed, tailLength: p.tailLength, life: p.life, wait: p.wait,
             position: interpolate(p.current.from, p.current.to, p.offset / p.current.length),
             edge: {id: p.current.edge.id, from: {x: p.current.from.x, y: p.current.from.y}, to: {x: p.current.to.x, y: p.current.to.y}},
             offset: p.offset,

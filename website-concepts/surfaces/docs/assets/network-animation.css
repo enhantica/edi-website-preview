@@ -45,20 +45,3 @@
   stroke-width: 1.6px;
   stroke-linecap: butt;
 }
-.ed-network-toggle {
-  position: absolute;
-  z-index: 2;
-  inset-inline-end: 1rem;
-  bottom: .8rem;
-  padding: .35rem;
-  color: var(--md-default-fg-color--light);
-  border-radius: .3rem;
-}
-.ed-network-toggle:hover { color: var(--md-primary-fg-color); }
-.ed-network-toggle:focus-visible {
-  outline: 2px solid var(--md-primary-fg-color);
-  outline-offset: 2px;
-}
-.ed-network-toggle[hidden],
-.ed-network-toggle[aria-pressed="true"] [data-motion-play],
-.ed-network-toggle[aria-pressed="false"] [data-motion-pause] { display: none; }

@@ -31,7 +31,7 @@ theme:
     - toc.follow
     - content.code.copy
 extra_css:
-  - assets/wordmark.css
+  - assets/wordmark.css?v=header-2
 nav:
   - Home: index.md
   - Get started:

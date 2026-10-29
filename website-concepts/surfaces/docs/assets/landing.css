@@ -26,6 +26,16 @@
   min-height: calc(100svh - 5.3rem);
   padding-block: 3rem;
 }
+/* Size the message from its heading; the paragraph cannot widen that column. */
+.ed-landing__message {
+  display: grid;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+}
+.ed-landing__message .ed-landing__intro {
+  contain: inline-size;
+  max-width: 100%;
+}
 .ed-landing__copy h1 {
   margin: 0;
   color: var(--md-default-fg-color);
@@ -61,7 +71,7 @@
   margin: 0;
   min-height: 2.3rem;
   border-radius: .4rem;
-  border-width: 1px;
+  border: 1px solid transparent;
   padding: .6rem 1.05rem;
   font-weight: 600;
   font-size: .8rem;
@@ -105,7 +115,7 @@
   max-width: none;
   margin: 0;
   overflow: hidden;
-  border: 1px solid var(--md-default-fg-color--lightest);
+  border-color: var(--md-default-fg-color--lightest);
   border-radius: .65rem;
   box-shadow: 0 .8rem 2.4rem -.6rem rgb(18 50 68 / 12%);
 }
@@ -171,7 +181,7 @@
 }
 
 .ed-landing__actions .md-button:not(.md-button--primary):not(:hover):not(:focus) {
-  border: 1px solid var(--md-default-fg-color--lightest);
+  border-color: var(--md-default-fg-color--lightest);
   background: transparent;
   color: var(--md-default-fg-color);
 }

@@ -22,3 +22,8 @@
   max-width: none;
   height: 1.8rem;
 }
+
+/* More breathing room above the shared logo/search row. */
+.md-header__inner {
+  padding-top: .35rem;
+}

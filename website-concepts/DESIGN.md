@@ -194,3 +194,14 @@ Use the supplied graph traversal/trail renderer as the animation's prior impleme
 A discreet native pause/play button provides explicit opt-in under reduced motion. IntersectionObserver and Page Visibility suspend the loop, resetting elapsed-time state on resume. Component disposal cancels the frame, disconnects observers/listeners and removes its overlay/property. Full-document navigation is current; pagehide/pageshow handles back/forward cache, and a guarded optional native document$ subscription prevents duplicate initialization if instant navigation is enabled. The static inline artwork remains without JavaScript.
 
 Acceptance follows the supplied brief: geometry/opacity preservation, edge-aligned turns, restrained trails, readable/clickable content, correct desktop/mobile placement, no horizontal overflow or layout shift, motion preferences, pause, hidden/offscreen suspension, disposal/re-entry and native themes. Verify in Chromium and native Safari, and record the integrated motion.
+
+
+### Owner refinements to the network hero — 2026-10-29
+
+Remove the visible motion control to keep the hero clean. The system reduced-motion preference supplies the static variant; hidden/offscreen suspension and disposal remain. When the system leaves reduced motion, normal animation resumes. The engine retains its optional control support without rendering a control in the website.
+
+Increase the shared logo/search row's top padding by .35rem to approximately double the previous visual margin, without resizing the logo or search field. Apply the same rule to both existing theme configurations.
+
+The owner supersedes the supplied pulse-speed range: choose each pulse's original 30–45 SVG-unit base independently, multiply by an independent factor from 3–5, and add gentle continuous variation around that speed. Preserve the approved trail lengths, local opacity fade, connected routing, staggered starts and stationary grey mesh.
+
+Constrain the hero paragraph to the intrinsic headline width. Keep both button borders present in resting/hover/focus states so native colour feedback causes no geometry change. The owner-selected Analysis screenshot replaces the earlier Experiment screenshot only on Home.

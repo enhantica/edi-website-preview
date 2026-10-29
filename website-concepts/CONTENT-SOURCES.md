@@ -258,3 +258,5 @@ Feature status icons use Zensical’s bundled Lucide SVG shortcodes, with the do
 ## Owner-supplied animated network (2026-10-29)
 
 Source: `easydiffraction-network-handoff.zip`, supplied in this conversation. The approved SVG is inlined in `surfaces/overrides/partials/network.svg`, with accessibility/class attributes added at its root. Its path definitions, stroke values and opacity attributes are preserved. The supplied `network-pulse-engine.js` is the starting implementation of `surfaces/docs/assets/network-pulse-engine.js`; integration adds offscreen suspension, full-width/responsive bank placement and component lifecycle cleanup. The CSS is scoped to the homepage. The preview HTML/GIF are authoring references, not shipped page content or runtime dependencies.
+
+Home hero screenshot replaced with the owner-supplied `Screenshot 2026-10-29 at 19.14.21.png`, copied unchanged to `assets/edi-analysis-hero.png`. The previous experiment screenshot remains in the relevant documentation pages.
