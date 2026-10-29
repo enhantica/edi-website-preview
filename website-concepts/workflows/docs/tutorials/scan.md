@@ -1,6 +1,6 @@
 # Working with a scan
 
-<p class="ed-doc-lead">Follow a changing sample through a sequence of measured patterns.</p>
+Follow a changing sample through a sequence of measured patterns.
 
 ## One template, many measurements
 

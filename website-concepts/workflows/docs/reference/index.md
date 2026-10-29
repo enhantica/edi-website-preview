@@ -1,6 +1,6 @@
 # Reference
 
-<p class="ed-doc-lead">Look up a control, a call, an option or a file format.</p>
+Look up a control, a call, an option or a file format.
 
 ## Interfaces
 

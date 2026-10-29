@@ -1,6 +1,6 @@
 # Interpret a fit
 
-<p class="ed-doc-lead">Use the full pattern and the model together. An agreement factor is one part of the evidence.</p>
+Use the full pattern and the model together. An agreement factor is one part of the evidence.
 
 ## Inspect the residual
 

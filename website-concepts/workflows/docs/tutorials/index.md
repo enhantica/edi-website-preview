@@ -1,6 +1,6 @@
 # Learn with a complete example
 
-<p class="ed-doc-lead">Work through the same project in the application, Python or the command line.</p>
+Work through the same project in the application, Python or the command line.
 
 ## Start with one pattern
 

@@ -18,6 +18,11 @@ The homepage introduces the product and offers the real web app. Documentation p
 Zensical horizontal navigation, grouped left navigation and right-hand page outline. Python use is
 a user workflow; contributor documentation concerns changing the product itself.
 
+Both alternatives use the standard Zensical modern theme, native Inter and JetBrains Mono font
+loading, and its default light scheme. The only theme color selection is EasyDiffraction's light
+blue primary/accent. There is no custom theme stylesheet, JavaScript or template override.
+The comparison page uses the same theme. See [DESIGN.md](DESIGN.md).
+
 ## Build and preview
 
 From the repository root, using a Python interpreter supported by Zensical:
@@ -52,7 +57,8 @@ mobile screenshots, and then stops its browser and server. It does not download 
 - `https://easydiffraction.github.io/`: direct product and platform entry points.
 - The supplied Zensical screenshots: horizontal section navigation, grouped local navigation,
   page outline, readable content width and restrained contributor navigation.
-- `app/web/`: existing EasyDiffraction logo assets. The generated logo records its source and font licence.
+- `https://github.com/easyscience/assets-branding`: the official color icon and light-background
+  wordmark, with the upstream revision and retained licence recorded in `DESIGN.md`.
 - `docs/dev/design/app-screenshots/edi/`: existing product screenshots. Their provenance is recorded
   in that directory's `provenance.yml`. Concept assets are copies of those existing images, not
   generated representations of the application.

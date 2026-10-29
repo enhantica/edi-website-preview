@@ -1,14 +1,14 @@
-<p class="ed-kicker">Guides / Build your analysis</p>
-
 # Refine a model
 
-<p class="ed-doc-lead">Bring the calculated pattern into agreement with your measured data — and keep the model physically meaningful.</p>
+Bring the calculated pattern into agreement with your measured data — and keep the model physically meaningful.
 
 ## Before you fit
 
 Start with a complete project and inspect its calculated pattern. Check the structure, background and peak positions before freeing more parameters. The fit uses the project's measured intensities and their uncertainties.
 
-<div class="ed-doc-note">Use one example throughout: <strong>La₀.₅Ba₀.₅CoO₃ measured on HRPT</strong>. Open <code>pd-neut-cwl_lbco-hrpt</code> from the app's catalogue, or use the same project's folder in Python and the command line.</div>
+!!! note "Shared example"
+
+    Use one example throughout: <strong>La₀.₅Ba₀.₅CoO₃ measured on HRPT</strong>. Open <code>pd-neut-cwl_lbco-hrpt</code> from the app's catalogue, or use the same project's folder in Python and the command line.
 
 ## Choose what may vary
 

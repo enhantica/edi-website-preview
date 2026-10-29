@@ -1,5 +1,7 @@
 # Making diffraction analysis easier
 
+![EasyDiffraction](../assets/logo-light.svg)
+
 EasyDiffraction brings diffraction modelling and refinement into a clear workflow, from an interactive application to Python scripts and command-line runs.
 
 ## One product, connected interfaces

@@ -1,6 +1,6 @@
 # A powder refinement
 
-<p class="ed-doc-lead">Explore La₀.₅Ba₀.₅CoO₃ measured on HRPT, from the initial project to the refined pattern.</p>
+Explore La₀.₅Ba₀.₅CoO₃ measured on HRPT, from the initial project to the refined pattern.
 
 ## Open the example
 

@@ -5,9 +5,12 @@ docs_dir: docs
 site_dir: site
 theme:
   variant: modern
-  logo: assets/mark.svg
-  favicon: assets/mark.svg
-  font: false
+  logo: assets/icon.png
+  favicon: assets/icon.png
+  palette:
+    scheme: default
+    primary: light blue
+    accent: light blue
   features:
     - navigation.tabs
     - navigation.tabs.sticky
@@ -59,11 +62,7 @@ markdown_extensions:
       permalink: true
   - pymdownx.superfences
   - pymdownx.details
-extra_css:
-  - assets/concept.css
-extra_javascript:
-  - assets/concept.js
-copyright: 'EasyDiffraction · Open scientific software · <a href="https://enhantica.github.io/edi/dev/">Contributor documentation ↗</a>'
+copyright: 'EasyDiffraction · <a href="https://enhantica.github.io/edi/dev/">Contributor documentation</a>'
 validation:
   invalid_links: true
   invalid_link_anchors: true

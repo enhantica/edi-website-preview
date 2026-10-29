@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # SPDX-License-Identifier: BSD-3-Clause
 """Capture one concept with Playwright and an installed Chromium-compatible browser."""
 

@@ -1,6 +1,6 @@
 # Define a structure
 
-<p class="ed-doc-lead">Describe the crystal that gives rise to the diffraction pattern.</p>
+Describe the crystal that gives rise to the diffraction pattern.
 
 ## Space group and cell
 

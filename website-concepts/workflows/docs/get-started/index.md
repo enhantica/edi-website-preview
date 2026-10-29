@@ -1,8 +1,6 @@
-<p class="ed-kicker">Start here</p>
-
 # Your first diffraction project
 
-<p class="ed-doc-lead">Choose how you want to work. The structure, experiment and analysis belong to the same project in every interface.</p>
+Choose how you want to work. The structure, experiment and analysis belong to the same project in every interface.
 
 ## Start in the browser
 

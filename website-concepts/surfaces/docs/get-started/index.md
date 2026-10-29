@@ -6,7 +6,11 @@ title: Get started
 
 You do not need to choose a programming language to try EasyDiffraction. Open an example in the browser, explore a pattern, and follow the same project into Python or the command line when you need to.
 
-<div class="ed-callout"><strong>The quickest way to explore</strong><p>Open the web app and choose an example from the Project page.</p><a class="ed-button ed-button-primary" href="https://enhantica.github.io/edi/webapp/">Open the web app ↗</a></div>
+!!! tip "The quickest way to explore"
+
+    Open the web app and choose an example from the Project page.
+
+[Open the web app](https://enhantica.github.io/edi/webapp/){ .md-button .md-button--primary }
 
 ## Choose your starting point
 

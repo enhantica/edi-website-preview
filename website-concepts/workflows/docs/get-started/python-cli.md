@@ -1,6 +1,6 @@
 # Python and command line
 
-<p class="ed-doc-lead">Use edi in a script, a notebook, or a repeatable terminal run.</p>
+Use edi in a script, a notebook, or a repeatable terminal run.
 
 ## Current setup
 

@@ -1,6 +1,6 @@
 # Your first project
 
-<p class="ed-doc-lead">Start with measured data and a complete model, then follow the analysis from the structure to its fit.</p>
+Start with measured data and a complete model, then follow the analysis from the structure to its fit.
 
 ## Open the LBCO example
 

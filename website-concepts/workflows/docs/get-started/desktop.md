@@ -1,6 +1,6 @@
 # Use the desktop application
 
-<p class="ed-doc-lead">Work with local projects, measured data, and the same visual analysis workflow as the browser application.</p>
+Work with local projects, measured data, and the same visual analysis workflow as the browser application.
 
 ## Choose a build
 

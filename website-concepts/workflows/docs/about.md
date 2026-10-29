@@ -1,6 +1,8 @@
 # About EasyDiffraction
 
-<p class="ed-doc-lead">Making diffraction data analysis and modelling easy.</p>
+![EasyDiffraction](assets/logo-light.svg)
+
+Making diffraction data analysis and modelling easy.
 
 ## One product, several ways to work
 

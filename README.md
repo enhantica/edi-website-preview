@@ -15,8 +15,9 @@ existing edi application; this repository does not build or host another copy of
 
 ## Continue the design
 
-Edit `website-concepts/surfaces/docs/` or `website-concepts/workflows/docs/`, including each one's
-`assets/concept.css`. Navigation is declared in the adjacent `mkdocs.yml` files. Push to `main`
+Edit `website-concepts/surfaces/docs/` or `website-concepts/workflows/docs/`.
+Navigation is declared in the adjacent `mkdocs.yml` files. Use Zensical's native components and
+modern theme; typography, spacing and layout overrides are intentionally absent. Push to `main`
 to rebuild and publish both alternatives automatically. The Pages workflow can also be run manually.
 
 See [local build instructions](website-concepts/README.md). The preview builds without a native
@@ -30,5 +31,7 @@ edi snapshot is recorded in `EDI_SOURCE_COMMIT`; the initial preview commit is t
 that excludes this repository's independent hosting workflow.
 
 The source and existing product assets carry edi's BSD-3-Clause licence. Zensical has its own
-MIT licence. Screenshots are actual images already present in edi's public documentation.
+MIT licence. Official logos come from `easyscience/assets-branding`; their source revision and
+licence are recorded in [the design record](website-concepts/DESIGN.md). Screenshots are actual
+images already present in edi's public documentation.
 

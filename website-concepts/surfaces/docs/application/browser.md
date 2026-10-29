@@ -2,7 +2,7 @@
 
 The web app is a quick way to explore EasyDiffraction without installing the application.
 
-<p><a class="ed-button ed-button-primary" href="https://enhantica.github.io/edi/webapp/">Launch the web app ↗</a></p>
+<p><a class="md-button md-button--primary" href="https://enhantica.github.io/edi/webapp/">Launch the web app ↗</a></p>
 
 ## Open an example
 

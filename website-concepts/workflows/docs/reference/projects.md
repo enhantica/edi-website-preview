@@ -1,6 +1,6 @@
 # Projects and files
 
-<p class="ed-doc-lead">One readable project record across the application, Python and the command line.</p>
+One readable project record across the application, Python and the command line.
 
 ## The project model
 

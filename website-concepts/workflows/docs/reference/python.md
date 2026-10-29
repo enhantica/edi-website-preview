@@ -1,6 +1,6 @@
 # Python
 
-<p class="ed-doc-lead">The <code>edi</code> library exposes the same project model for scripts and notebooks.</p>
+The <code>edi</code> library exposes the same project model for scripts and notebooks.
 
 ## Load a complete project
 

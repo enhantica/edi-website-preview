@@ -1,6 +1,6 @@
 # Calculate a pattern
 
-<p class="ed-doc-lead">See what the current structural and experimental model predicts before you refine it.</p>
+See what the current structural and experimental model predicts before you refine it.
 
 ## What enters the calculation
 

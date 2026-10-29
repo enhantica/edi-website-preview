@@ -1,6 +1,6 @@
 # Application
 
-<p class="ed-doc-lead">A visual workspace for the project, its model, measured patterns and fit.</p>
+A visual workspace for the project, its model, measured patterns and fit.
 
 ## The pages
 

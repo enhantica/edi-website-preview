@@ -1,6 +1,6 @@
 # Use the web application
 
-<p class="ed-doc-lead">Explore a complete project in your browser, without installing the desktop application.</p>
+Explore a complete project in your browser, without installing the desktop application.
 
 ## Open an example
 

@@ -1,6 +1,6 @@
 # Save and share
 
-<p class="ed-doc-lead">Keep the project for reproducibility and the report for communication.</p>
+Keep the project for reproducibility and the report for communication.
 
 ## Save the project
 

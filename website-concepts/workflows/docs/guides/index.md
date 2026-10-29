@@ -1,6 +1,6 @@
 # A guide through your analysis
 
-<p class="ed-doc-lead">Learn the project workflow once. Switch between the application, Python and the command line when the work calls for it.</p>
+Learn the project workflow once. Switch between the application, Python and the command line when the work calls for it.
 
 ## Prepare the model
 

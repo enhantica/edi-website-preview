@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # SPDX-License-Identifier: BSD-3-Clause
 """Build the public-website design alternatives without the native edi toolchain."""
 
@@ -82,13 +83,18 @@ def main() -> None:
     if version != '0.0.73':
         raise SystemExit(f'Expected Zensical 0.0.73; found {version}. Install requirements.txt.')
     names = list(CONCEPTS) if args.concept == 'all' else [args.concept]
+    output = ROOT / '_build'
+    if args.concept == 'all':
+        if output.exists():
+            shutil.rmtree(output)
+        names.insert(0, 'comparison')
     for name in names:
         config = ROOT / name / 'mkdocs.yml'
         temporary = None
         if args.base_url:
             text, count = re.subn(
                 r'^site_url:.*$',
-                f'site_url: {args.base_url}{name}/',
+                f'site_url: {args.base_url}' + (f'{name}/' if name != 'comparison' else ''),
                 config.read_text(encoding='utf-8'),
                 flags=re.MULTILINE,
             )
@@ -117,19 +123,10 @@ def main() -> None:
         built = ROOT / name / 'site'
         if not (built / 'index.html').is_file():
             raise SystemExit(f'{name}: the build did not produce its homepage')
-        assembled = ROOT / '_build' / name
-        if assembled.exists():
+        assembled = output / name if name != 'comparison' else output
+        if assembled.exists() and name != 'comparison':
             shutil.rmtree(assembled)
-        shutil.copytree(built, assembled)
-    cards = ''.join(
-        f'<a class="concept" href="{name}/"><span>CONCEPT {label}</span>'
-        f'<h2>{title}</h2><p>{description}</p><b>Explore concept →</b></a>'
-        for label, (name, (title, description)) in zip(('A', 'B'), CONCEPTS.items(), strict=True)
-    )
-    output = ROOT / '_build'
-    output.mkdir(exist_ok=True)
-    template = (ROOT / 'gallery.html').read_text(encoding='utf-8')
-    (output / 'index.html').write_text(template.replace('{{cards}}', cards), encoding='utf-8')
+        shutil.copytree(built, assembled, dirs_exist_ok=name == 'comparison')
     _check_links(output.resolve(), args.base_url)
     command = f'python -m http.server 8873 --bind 127.0.0.1 --directory {output}'
     print(f'Preview: {command}', flush=True)

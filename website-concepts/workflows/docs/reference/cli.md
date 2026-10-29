@@ -1,6 +1,6 @@
 # Command line
 
-<p class="ed-doc-lead">Run the analysis a project declares, with commands suitable for repeatable workflows.</p>
+Run the analysis a project declares, with commands suitable for repeatable workflows.
 
 ## Fit without saving
 

@@ -1,6 +1,6 @@
 # Load a project
 
-<p class="ed-doc-lead">A project brings together the structure, experiments, observed data and analysis settings needed for a calculation or fit.</p>
+A project brings together the structure, experiments, observed data and analysis settings needed for a calculation or fit.
 
 ## Start with a complete project
 
