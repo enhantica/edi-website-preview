@@ -18,3 +18,7 @@ The desktop and browser application are graphical builds of the product. Use the
 ## Scientific references and citation
 
 A software licence states the conditions for using and distributing software. Scientific attribution is a separate part of communicating an analysis. See [citing and recording an analysis](citation.md), and retain the provenance of any example data or external reference result you use.
+
+## Documentation artwork
+
+The coloured feature-status icons use [Twemoji graphics](https://github.com/jdecked/twemoji), copyright Twitter, Inc. and other contributors, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The graphics are reused unchanged; the complete graphics licence is retained with the documentation source.

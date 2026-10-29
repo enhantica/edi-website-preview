@@ -143,6 +143,19 @@ def main() -> None:
                     '(items) => items.some(e => !e.querySelector("svg") || !e.ariaLabel)'
                 ):
                     raise RuntimeError('Feature status icons must be accessible SVGs')
+                tables = page.locator('main table').evaluate_all(
+                    '(tables) => tables.map(t => ({headers:[...t.querySelectorAll("th")].map(h=>h.innerText.trim()),'
+                    'featureWidth:t.querySelector("th").getBoundingClientRect().width,'
+                    'width:t.getBoundingClientRect().width}))'
+                )
+                if not tables or any(
+                    table['headers'] != ['Feature', 'Web', 'Desktop', 'Python', 'CLI']
+                    or table['featureWidth'] < table['width'] * 0.5
+                    for table in tables
+                ):
+                    raise RuntimeError(
+                        'Feature tables need compact interface columns and CLI headers'
+                    )
                 checks.append({'page': slug, 'accessible_svg_status_icons': True})
             math_count = page.locator('.arithmatex').count()
             if slug.startswith('physics/') and math_count:

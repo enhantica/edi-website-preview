@@ -10,7 +10,7 @@ Start in the interface you want to use. Each section has its own setup and first
 | --- | --- | --- |
 | Visually, in a browser or on your desktop | [Application](../application/index.md) | [Follow an example](../application/first-refinement.md) |
 | In a Python script or notebook | [Python](../python/index.md) | [Run an example](../python/examples.md) |
-| From a terminal or shell script | [Command Line](../cli/index.md) | [Run an example](../cli/examples.md) |
+| From a terminal or shell script | [CLI](../cli/index.md) | [Run an example](../cli/examples.md) |
 
 ## Understand the analysis
 

@@ -253,7 +253,7 @@ The owner requested smaller hierarchical capability tables and checkbox/icon sta
 
 The full local MathJax bundle includes TeX extensions needed by the reference, including boldsymbol. The smaller bundle attempted to fetch unvendored extension files and prevented ADP-page typesetting; the rendering check now covers every Physics page and every math wrapper. Bibliographies use numbered entries, separate from related documentation links.
 
-Feature status icons use Zensical’s bundled Lucide SVG shortcodes, with the documented pymdownx.emoji extension. This avoids platform emoji-font differences and preserves native icon sizing and table styling.
+Feature status icons reuse the filled Twemoji artwork from the [original library Features page](https://easyscience.github.io/diffraction-lib/dev/features/). The checked/limited/calendar graphics are the same Twemoji 16.0.1 SVGs; the matching proposed/work-in-progress graphics use that version too. Local unchanged copies live under `surfaces/overrides/.icons/status`, including the upstream CC BY 4.0 graphics licence. The existing Zensical emoji extension inlines these SVGs, so there is no CDN or emoji-font dependency. Unavailable uses Zensical's bundled Material cancel icon, as on the original page. Status meanings, accessible qualifications and scientific links are preserved.
 
 ## Owner-supplied animated network (2026-10-29)
 

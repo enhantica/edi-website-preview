@@ -160,6 +160,9 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_generator: !!python/name:zensical.extensions.emoji.to_svg
       emoji_index: !!python/name:zensical.extensions.emoji.twemoji
+      options:
+        custom_icons:
+          - overrides/.icons
   - pymdownx.arithmatex:
       generic: true
 copyright: 'EasyDiffraction · <a href="https://enhantica.github.io/edi/dev/">Contributor documentation</a>'

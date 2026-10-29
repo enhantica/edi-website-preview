@@ -1,0 +1,26 @@
+/* Feature matrix only: compact status columns leave room for capability names. */
+.md-typeset__table {
+  display: block;
+}
+.md-typeset table:not([class]) {
+  display: table;
+  width: 100%;
+  min-width: 24rem;
+  table-layout: fixed;
+}
+.md-typeset table:not([class]) th {
+  min-width: 0;
+}
+.md-typeset table:not([class]) th:not(:first-child),
+.md-typeset table:not([class]) td:not(:first-child) {
+  padding-inline: .35rem;
+  white-space: nowrap;
+}
+.md-typeset table:not([class]) th:nth-child(2) { width: 2.5rem; }
+.md-typeset table:not([class]) th:nth-child(3) { width: 3.6rem; }
+.md-typeset table:not([class]) th:nth-child(4) { width: 3.2rem; }
+.md-typeset table:not([class]) th:nth-child(5) { width: 2.2rem; }
+.md-typeset table:not([class]) .twemoji {
+  --md-icon-size: 1.25em;
+  vertical-align: middle;
+}

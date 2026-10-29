@@ -24,6 +24,6 @@ A simulation uses a calculation range without measured observations. A refinemen
 | --- | --- |
 | [Application](../../application/index.md) | Workspace, imports, parameter controls, fit progress and visual inspection |
 | [Python](../../python/index.md) | Project objects, parameter access, analysis calls and result objects |
-| [Command Line](../../cli/index.md) | Commands for saved projects, output options and automation |
+| [CLI](../../cli/index.md) | Commands for saved projects, output options and automation |
 
 The scientific explanations belong here; the interface pages link back to them as needed.
