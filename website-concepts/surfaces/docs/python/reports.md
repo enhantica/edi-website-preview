@@ -51,14 +51,8 @@ print(states)
 
 Saving a project is separate from saving a report. A later model or report-settings change can make an existing report out of date.
 
-## Export a CIF report
+## Supported outputs
 
-```python
-project.report.save_cif('refinement.cif')
-```
+HTML is available from Python, including self-contained offline HTML. PDF is written by the application. A CIF-report setting exists in the project model, but its writer is not available in this reference version; there is no `save_cif` method.
 
-The CIF report contains result, structure and experiment blocks. It is a report of the analysis; retain the complete project as the editable working record.
-
----
-
-Sources: adapted from [edi's report guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/the-report.md) and verified against the [Report facade](https://github.com/enhantica/edi/blob/main/lib/edi/__init__.py). The separation between project and report follows the [earlier report workflow](https://docs.easydiffraction.org/lib/latest/user-guide/analysis-workflow/report/).
+Keep the complete Edi project as the editable analysis record.

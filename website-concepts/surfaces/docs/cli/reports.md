@@ -10,7 +10,7 @@ The shared [Report](../user-guide/analysis-workflow/report.md) chapter explains 
 python -m edi report path/to/project
 ```
 
-This writes the formats selected by the project into its `reports/` folder, except PDF. The application writes PDF; the command leaves an existing PDF and its record as they are.
+This writes the formats selected by the project into its `reports/` folder, for the available writers. HTML is supported; CIF reporting is unavailable. The application writes PDF; the command leaves an existing PDF and its record as they are.
 
 Saving a project does not automatically save its report. A report can become out of date after changes to the model or report contents.
 
@@ -50,7 +50,3 @@ python -m edi report path/to/project --check
 ```
 
 The command lists each saved report as `current`, `out of date` or `missing`, writing nothing. It exits with status `1` when a listed report is not current. It checks the saved list; it does not require that a project has already saved a report.
-
----
-
-Sources: [current report guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/the-report.md) and [report parser/execution](https://github.com/enhantica/edi/blob/main/lib/edi/__main__.py). The report's role follows the [earlier report workflow](https://docs.easydiffraction.org/lib/latest/user-guide/analysis-workflow/report/).

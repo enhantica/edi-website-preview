@@ -15,7 +15,7 @@ Report settings select optional material such as charts, correlations, reflectio
 | Interactive HTML | Share a readable document with interactive figures | Application, Python and Command Line |
 | Offline HTML | Embed chart libraries so the document can be opened without fetching them | Application, Python and Command Line |
 | PDF | Share a paginated document with static figures | Application |
-| CIF report | Exchange a scientific account of structures, experiments and results | Python and Command Line when selected in the saved report settings; the application's CIF control is not available yet |
+| CIF report | Exchange a scientific account of structures, experiments and results | Not available in this reference version |
 
 A structural CIF used as input and a CIF report serve different purposes. Neither replaces the complete project; see [data formats](../data-formats.md).
 
@@ -32,8 +32,3 @@ Check report state before sharing it. Keep the report together with the matching
 - [Command Line: report output and freshness checks](../../cli/reports.md).
 
 Use [citation and reproducibility](../../about/citation.md) when preparing a publication or handing an analysis to a collaborator.
-
-
----
-
-Sources: [earlier library guide](https://github.com/easyscience/diffraction-lib/blob/master/docs/docs/user-guide/analysis-workflow/report.md), [current edi guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/the-report.md).

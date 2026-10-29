@@ -20,7 +20,7 @@ These choices are saved with the project. They do not change which data were fit
 | --- | --- |
 | HTML | An interactive document with pattern zoom, hover and structure controls |
 | PDF | A paginated document with static figures |
-| CIF | The control is shown but not available yet; use the current [Python report method](../python/reports.md#export-a-cif-report) when you need CIF output |
+| CIF | Not available in this version; a structural CIF input is a different document |
 
 The HTML export option can embed the chart libraries for offline use. Without embedding, the document loads those libraries from the web when opened.
 
@@ -43,7 +43,3 @@ Use **Save report** again to bring the selected formats up to date. The status s
 Saving a project keeps the working model and report settings, but does not generate a new report. Save each for its purpose: the project for continuing the analysis, the report for communicating it.
 
 The same report settings can be used from [Python](../python/reports.md) or [the Command Line](../cli/reports.md).
-
----
-
-Source: [current report guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/the-report.md).

@@ -30,7 +30,6 @@ CIF is the crystallographic exchange format maintained by the [International Uni
 | Edi project | Reopen the analysis with its structures, experiments, data and settings |
 | Structural CIF | Import or exchange crystallographic structure information |
 | Measured-pattern file | Supply observations to an experiment |
-| CIF report | Exchange the model and fit result using scientific report names |
 | HTML or PDF report | Inspect or share a readable account of the analysis |
 
 A structure imported from CIF is a starting point. It still needs an experiment, instrument settings and measured data or a calculation range before it represents a complete analysis.
@@ -68,7 +67,3 @@ File selection, import diagnostics and write-back behaviour are interface-specif
 - [Command Line: accepted project inputs and output destinations](../cli/files.md).
 
 See the shared [Report](analysis-workflow/report.md) stage for document formats and provenance.
-
----
-
-Sources: [earlier data-format guide](https://github.com/easyscience/diffraction-lib/blob/master/docs/docs/user-guide/data-format.md), [edi input workflow](https://github.com/enhantica/edi/blob/main/docs/user/guides/projects-from-scratch-in-the-app.md), [complete-project contract](https://github.com/enhantica/edi/blob/main/docs/user/guides/complete-project-loading.md), [opening and saving](https://github.com/enhantica/edi/blob/main/docs/user/guides/open-save-and-export.md).

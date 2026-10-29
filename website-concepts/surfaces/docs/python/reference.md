@@ -1,6 +1,6 @@
 # Python quick reference
 
-This page covers the calls demonstrated in this preview. It is a **selected reference**, not a complete generated API catalogue. The [current declared surface](https://github.com/enhantica/edi/blob/main/data/python-surface.json) lists the broader interface; signatures and behavior should be checked in the matching edi version.
+This page covers the calls used in the Python guides. It is a **selected reference**, not a complete generated API catalogue. The [current declared surface](https://github.com/enhantica/edi/blob/main/data/python-surface.json) lists the broader interface; signatures and behavior should be checked in the matching edi version.
 
 ## Project input and output
 
@@ -41,12 +41,7 @@ Optional fit callbacks are `on_start`, `on_iteration`, `on_scan_start`, `on_file
 | --- | --- |
 | `project.report.as_html(...)` | Obtain HTML text. |
 | `project.report.save_html(path, ...)` | Write an HTML report. |
-| `project.report.save_cif(path)` | Write a CIF report. |
-| `project.report.save(...)` | Write the project's selected formats, except PDF. |
+| `project.report.save(...)` | Write the available selected formats; PDF requires the application and CIF reporting is unavailable. |
 | `project.report.check()` | Read saved-report freshness states. |
 
 See [reports](reports.md) for call-specific options and the difference between saved settings and per-call overrides.
-
----
-
-Sources: layout adapted from the [earlier quick reference](https://docs.easydiffraction.org/lib/latest/quick-reference/); members checked against [edi's declared API](https://github.com/enhantica/edi/blob/main/data/python-surface.json), [Python facade](https://github.com/enhantica/edi/blob/main/lib/edi/__init__.py), and [project input/output guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/open-save-and-export.md).

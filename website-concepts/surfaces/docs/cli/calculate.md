@@ -39,8 +39,4 @@ python -m edi calc path/to/project --report human --dry
 
 ## Prepare a document
 
-After keeping the calculated project, use [the report command](reports.md) to save an HTML or CIF report. Calculating a project and rendering its report are separate actions.
-
----
-
-Sources: [calc implementation and options](https://github.com/enhantica/edi/blob/main/lib/edi/__main__.py), [opening and output rules](https://github.com/enhantica/edi/blob/main/docs/user/guides/open-save-and-export.md), and the calculation/refinement distinction from the [earlier analysis guide](https://docs.easydiffraction.org/lib/latest/user-guide/analysis-workflow/analysis/).
+After keeping the calculated project, use [the report command](reports.md) to save an HTML report. Calculating a project and rendering its report are separate actions.
