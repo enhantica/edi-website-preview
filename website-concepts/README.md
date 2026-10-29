@@ -23,8 +23,9 @@ Zensical horizontal navigation, grouped left navigation and right-hand page outl
 a user workflow; contributor documentation concerns changing the product itself.
 
 Both alternatives use the standard Zensical modern theme, native Inter and JetBrains Mono font
-loading, and its default light scheme. The only theme color selection is EasyDiffraction's light
-blue primary/accent. There is no custom content styling, JavaScript or template override. A header-only branding
+loading, and native light/dark schemes with a switch next to Search. Light is the initial default. The only theme color selection is EasyDiffraction's light
+blue primary/accent. Documentation pages use the native content design and templates. The selected Home has a
+page-specific adaptive landing layout; no custom JavaScript is used. A header-only branding
 stylesheet sizes the official wordmark and hides the duplicate text label.
 The public root opens the selected documentation directly. See [DESIGN.md](DESIGN.md).
 
@@ -62,8 +63,8 @@ mobile screenshots, and then stops its browser and server. It does not download 
 - `https://easydiffraction.github.io/`: direct product and platform entry points.
 - The supplied Zensical screenshots: horizontal section navigation, grouped local navigation,
   page outline, readable content width and restrained contributor navigation.
-- `https://github.com/easyscience/assets-branding`: the official color icon and light-background
-  wordmark, with the upstream revision and retained licence recorded in `DESIGN.md`.
+- `https://github.com/easyscience/assets-branding`: the official color icon and light/dark-background
+  wordmarks, with the upstream revision and retained licence recorded in `DESIGN.md`.
 - `docs/dev/design/app-screenshots/edi/`: existing product screenshots. Their provenance is recorded
   in that directory's `provenance.yml`. Concept assets are copies of those existing images, not
   generated representations of the application.

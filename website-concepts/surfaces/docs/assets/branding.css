@@ -10,3 +10,9 @@
 .md-header .md-header__topic {
   visibility: hidden;
 }
+
+/* Use the official wordmark for the selected native color scheme. */
+[data-md-color-scheme="default"] .md-logo .ed-logo--dark,
+[data-md-color-scheme="slate"] .md-logo .ed-logo--light {
+  display: none;
+}

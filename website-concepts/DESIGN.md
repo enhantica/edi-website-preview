@@ -16,10 +16,11 @@ heading styles, buttons, admonitions and cards. Authored content selects those c
 overriding their styling. The light theme contains no dark hero or custom dark panels.
 
 Theme configuration selects the native `light blue` primary/accent palette for EasyDiffraction.
-Custom content styling, JavaScript, font overrides and template overrides are absent. The
+Documentation pages retain native content styling, fonts and templates. The
 2026-10-29 wordmark request adds a header-only `assets/branding.css`: fit the unchanged official
 wordmark within the native toolbar height, show it on mobile, and hide the duplicate brand label.
-The favicon retains the official icon. This is the only custom stylesheet.
+The favicon retains the official icon. This header rule is shared by both navigation prototypes. The selected homepage also has the
+scoped landing-page design described below.
 
 ## Official branding
 
@@ -29,7 +30,8 @@ Assets are copied unchanged from `https://github.com/easyscience/assets-branding
 | Upstream path | Preview asset | Use |
 | --- | --- | --- |
 | `easydiffraction/icons/color.png` | `assets/icon.png` | Favicon |
-| `easydiffraction/logos/light.svg` | `assets/logo-light.svg` | Header logo and About-page wordmark |
+| `easydiffraction/logos/light.svg` | `assets/logo-light.svg` | Light header logo and About-page wordmark |
+| `easydiffraction/logos/dark.svg` | `assets/logo-dark.svg` | Dark header logo |
 
 The upstream BSD-3-Clause licence is retained in `BRANDING-LICENSE`. Application screenshots
 continue to come from edi's existing public documentation.
@@ -75,3 +77,42 @@ the original and `/surfaces/` URLs in the browser.
 Historical calculator lists, Bayesian samplers, automatic report-on-project-save behaviour and
 old Python access/key tables are not carried over as current edi promises. Current procedure
 examples remain checked against edi; the common model explains the concepts without obsolete APIs.
+
+## Focused landing-page decision — 2026-10-29
+
+The owner requested a clean, light, modern homepage inspired by Zensical's single-hero homepage,
+with introductory text, Try the web app and Get started buttons, and one real application screenshot
+on the right. Replace the previous selected homepage's stacked screenshot, cards, task table,
+workflow list, technical explanation and source footer. Their information already has homes in
+Get started, User guide, the interface sections and About. Source attribution remains in
+CONTENT-SOURCES.md. The archived workflow-first alternative is retained as historical prior art.
+
+The selected Home uses a page-specific template and stylesheet. The template inherits Zensical's
+header, navigation, search, fonts and runtime; it adds only the landing CSS and omits the footer.
+The stylesheet is loaded only on Home and scopes its content rules to the hero. Documentation
+pages keep the native Zensical design. There are no theme-wide width or typography changes,
+animations, decorative badges, extra feature sections or new JavaScript. The official wordmark
+and existing light application screenshot are unchanged.
+
+Use the exact owner-provided slogan, **Making diffraction data analysis and modelling easy**.
+Only **diffraction** and **easy** use the EasyDiffraction primary blue; the other words retain
+the normal dark text.
+
+Use an adaptive grid: text beside the screenshot when both have room, then a stacked layout
+on tablets and phones. Keep fluid type, wrapping buttons, the screenshot's intrinsic ratio and
+visible keyboard focus. Check narrow phones, tablets, ordinary laptops and large/high-resolution
+displays for clipping, horizontal overflow, action visibility and screenshot loading.
+
+## Native color-mode toggle — 2026-10-29
+
+The owner requested the mode switch beside Search, as on Zensical's site. The earlier single
+light palette deliberately omitted that switch; replace it with the native default/slate palette
+list and its sun/moon toggle in both prototypes. Light is the initial default, and the native
+runtime retains the visitor's selection. The hero uses the same foreground/background/accent
+variables as the theme, so light mode remains fully light and dark mode uses the native dark
+scheme. Do not add a custom theme-toggle script.
+
+Use the official light and dark wordmarks unchanged from the same branding revision above.
+A logo-only template partial emits both image variants; the branding CSS shows the matching one.
+Check switching, persistence after reload and navigation, visible search controls and wordmarks,
+and layout at different viewport widths and device pixel ratios.

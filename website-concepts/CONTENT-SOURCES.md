@@ -91,3 +91,17 @@ The report chapter is corrected for current edi: saving a project does not write
 The earlier engine/plugin and Bayesian capability lists are not treated as current features.
 This is a conceptual adaptation; it does not claim migration of every historical parameter
 reference table, image or API tutorial.
+
+## Homepage simplification — 2026-10-29
+
+Home retains the product promise adapted from `EasyDiffractionWww/content/home.yaml` and the
+existing unmodified edi application screenshot. It now contains only the introduction, web-app
+and Get started actions, and screenshot. Interface selection remains in Get started; the common
+workflow and task explanations remain in User guide; licensing and product background remain in
+About. The composition takes inspiration from <https://zensical.org/> while using the requested
+light design and real application image.
+
+The native palette toggle and official dark-background wordmark were added with the landing
+page update. The wordmark comes unchanged from `easydiffraction/logos/dark.svg` at branding
+revision `46ab481bfe6d3b196f9609b17cd46cda7a0fadd8`; the existing branding licence covers it.
+The application screenshot remains the original light-mode product image in both site modes.

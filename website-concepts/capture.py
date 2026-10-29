@@ -107,7 +107,7 @@ def main() -> None:
             if name == 'workflows' and label == 'guide':
                 _capture_tabs(page, output, name)
                 checks.append({'page': docs_path, 'python_interface_tab_works': True})
-        logo = page.locator('.md-header .md-logo img')
+        logo = page.locator('.md-header .md-logo img:visible')
         if not logo.is_visible() or not logo.get_attribute('src').endswith('logo-light.svg'):
             raise RuntimeError('Official wordmark is missing from the header')
         if page.locator('.md-header__topic').first.is_visible():

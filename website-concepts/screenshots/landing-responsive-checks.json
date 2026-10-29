@@ -1,0 +1,200 @@
+[
+  {
+    "profile": "small-phone",
+    "viewport": [
+      320,
+      740
+    ],
+    "density": 2,
+    "scheme": "default",
+    "layout": "stacked",
+    "passed": true
+  },
+  {
+    "profile": "small-phone",
+    "viewport": [
+      320,
+      740
+    ],
+    "density": 2,
+    "scheme": "slate",
+    "layout": "stacked",
+    "passed": true
+  },
+  {
+    "profile": "phone",
+    "viewport": [
+      390,
+      844
+    ],
+    "density": 3,
+    "scheme": "default",
+    "layout": "stacked",
+    "passed": true
+  },
+  {
+    "profile": "phone",
+    "viewport": [
+      390,
+      844
+    ],
+    "density": 3,
+    "scheme": "slate",
+    "layout": "stacked",
+    "passed": true
+  },
+  {
+    "profile": "tablet",
+    "viewport": [
+      768,
+      1024
+    ],
+    "density": 2,
+    "scheme": "default",
+    "layout": "stacked",
+    "passed": true
+  },
+  {
+    "profile": "tablet",
+    "viewport": [
+      768,
+      1024
+    ],
+    "density": 2,
+    "scheme": "slate",
+    "layout": "stacked",
+    "passed": true
+  },
+  {
+    "profile": "tablet-landscape",
+    "viewport": [
+      1024,
+      768
+    ],
+    "density": 2,
+    "scheme": "default",
+    "layout": "beside",
+    "passed": true
+  },
+  {
+    "profile": "tablet-landscape",
+    "viewport": [
+      1024,
+      768
+    ],
+    "density": 2,
+    "scheme": "slate",
+    "layout": "beside",
+    "passed": true
+  },
+  {
+    "profile": "laptop",
+    "viewport": [
+      1280,
+      800
+    ],
+    "density": 1,
+    "scheme": "default",
+    "layout": "beside",
+    "passed": true
+  },
+  {
+    "profile": "laptop",
+    "viewport": [
+      1280,
+      800
+    ],
+    "density": 1,
+    "scheme": "slate",
+    "layout": "beside",
+    "passed": true
+  },
+  {
+    "profile": "desktop",
+    "viewport": [
+      1600,
+      1050
+    ],
+    "density": 1,
+    "scheme": "default",
+    "layout": "beside",
+    "passed": true
+  },
+  {
+    "profile": "desktop",
+    "viewport": [
+      1600,
+      1050
+    ],
+    "density": 1,
+    "scheme": "slate",
+    "layout": "beside",
+    "passed": true
+  },
+  {
+    "profile": "dense-desktop",
+    "viewport": [
+      1920,
+      1080
+    ],
+    "density": 2,
+    "scheme": "default",
+    "layout": "beside",
+    "passed": true
+  },
+  {
+    "profile": "dense-desktop",
+    "viewport": [
+      1920,
+      1080
+    ],
+    "density": 2,
+    "scheme": "slate",
+    "layout": "beside",
+    "passed": true
+  },
+  {
+    "profile": "large-desktop",
+    "viewport": [
+      2560,
+      1440
+    ],
+    "density": 1,
+    "scheme": "default",
+    "layout": "beside",
+    "passed": true
+  },
+  {
+    "profile": "large-desktop",
+    "viewport": [
+      2560,
+      1440
+    ],
+    "density": 1,
+    "scheme": "slate",
+    "layout": "beside",
+    "passed": true
+  },
+  {
+    "profile": "4k-display",
+    "viewport": [
+      3840,
+      2160
+    ],
+    "density": 1,
+    "scheme": "default",
+    "layout": "beside",
+    "passed": true
+  },
+  {
+    "profile": "4k-display",
+    "viewport": [
+      3840,
+      2160
+    ],
+    "density": 1,
+    "scheme": "slate",
+    "layout": "beside",
+    "passed": true
+  }
+]
