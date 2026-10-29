@@ -2,6 +2,8 @@
 
 Refinement adjusts the parameters you choose to bring the calculated result closer to the measured data. Begin with a structural model and experiment that plausibly describe the measurement; refinement is not a substitute for checking those choices.
 
+The shared [Analysis](../user-guide/analysis-workflow/analysis.md) chapter explains the scientific model; the steps below describe this interface.
+
 ## Load or prepare the project
 
 Open an existing project or an included example on **Project**. To analyse your own measurement, follow [create a project](new-project.md).

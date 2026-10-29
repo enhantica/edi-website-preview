@@ -2,16 +2,7 @@
 
 The fitting mode determines how the project's experiments or scan datasets are fitted. It changes the relationship between fits, not the meaning of the structures and experiments.
 
-## The available modes
-
-| Mode | What is fitted | Starting values |
-| --- | --- | --- |
-| `single` | One experiment, or the shown dataset of a scan | The current model values |
-| `joint` | Several experiments together | Shared and experiment-specific values from the project |
-| `sequential` | Each dataset of a scan in order | Each fit starts from the previous dataset's fitted values |
-| `independent` | Each dataset of a scan in order | Every fit starts from the template's values |
-
-Sequential and independent scan runs are both serial. Their difference is the starting point for each dataset.
+The shared [fitting-mode guide](../user-guide/fitting-modes.md) explains single, joint, sequential and independent fitting, including their starting-state policies. This page explains the application controls.
 
 ## Select the mode in the app
 

@@ -2,6 +2,8 @@
 
 A structure describes the crystal model used to calculate diffraction: its symmetry, unit cell, atom sites and displacement parameters. The **Structure** page displays one selected structure at a time.
 
+The shared [Structure](../user-guide/analysis-workflow/structure.md) chapter explains the scientific model; the steps below describe this interface.
+
 ## Load, create or duplicate
 
 The **Structures** group lists the structures in the project.

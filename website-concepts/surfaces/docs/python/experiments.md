@@ -2,6 +2,8 @@
 
 An experiment describes the measurement and the model used to calculate it. For powder diffraction, that includes instrument and peak-profile settings, background, exclusions and linked structures.
 
+The shared [Experiment](../user-guide/analysis-workflow/experiment.md) chapter explains the scientific model; the steps below describe this interface.
+
 ## Inspect a project
 
 ```python

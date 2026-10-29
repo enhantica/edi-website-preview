@@ -16,38 +16,14 @@ The example catalogue connects the interfaces: an example opens in the app, has 
 
 The [current catalogue](https://github.com/enhantica/edi/blob/main/docs/user/cli/index.md) lists the available projects and links each project page to its tutorial. Example-specific pages carry the reference and any limitations; support should be read from those pages rather than inferred from an example name alone.
 
-## Open one in the app
 
-Open the [web app](https://enhantica.github.io/edi/webapp/), go to **Project**, and expand **Examples**. Choose a measured-data example for [your first refinement](../get-started/first-refinement.md), or choose a simulation to inspect a calculated pattern without fitting.
 
-Examples open as working copies. Use **Save project as…** to keep your changes in your own project.
 
-## Use the same project in Python
+## Follow the example in your interface
 
-In a configured edi source environment, the LBCO example can be loaded from its catalogue folder:
-
-```python
-import edi
-
-project = edi.Project.load('docs/user/cli/pd-neut-cwl_lbco-hrpt/project')
-print(project.metadata.title)
-result = project.analysis.fit()
-print(result.rwp, result.reduced_chi_square)
-```
-
-The path is relative to the edi repository. A downloaded or exported project can be loaded from its own location instead. See [Python setup](../python/setup.md) and [load and fit a project](../python/fit.md).
-
-The tutorial sources are also available in [the repository](https://github.com/enhantica/edi/tree/main/docs/user/tutorials). Their execution status is declared separately; publishing a tutorial does not by itself establish that it is currently part of the automatic notebook-execution suite.
-
-## Run it from the command line
-
-From the same configured checkout:
-
-```console
-python -m edi fit docs/user/cli/pd-neut-cwl_lbco-hrpt/project --dry
-```
-
-For a real fit, follow the [Command Line refinement guide](../cli/fit.md). Keep a copy of the starting project so the original inputs remain available.
+- [Application: open an included example](../application/examples.md).
+- [Python: load and fit an example project](../python/examples.md).
+- [Command Line: run an example project](../cli/examples.md).
 
 ## Understand the reference
 

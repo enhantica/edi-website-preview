@@ -2,6 +2,8 @@
 
 A structure describes the crystal: its symmetry, unit-cell geometry and atom sites. Experiments link the structures that contribute to their calculated data.
 
+The shared [Structure](../user-guide/analysis-workflow/structure.md) chapter explains the scientific model; the steps below describe this interface.
+
 ## Inspect a loaded structure
 
 ```python
@@ -30,7 +32,7 @@ print(length_a.free)
 length_a.free = True
 ```
 
-The `free` flag allows a parameter to vary during refinement. Set it only when that parameter belongs in the scientific model you intend to fit. Shared [parameter concepts](../learn/parameters.md) explain values, uncertainties and constraints.
+The `free` flag allows a parameter to vary during refinement. Set it only when that parameter belongs in the scientific model you intend to fit. Shared [parameter concepts](../user-guide/parameters.md) explain values, uncertainties and constraints.
 
 ## Inspect the free set
 

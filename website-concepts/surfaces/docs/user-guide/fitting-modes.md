@@ -37,28 +37,15 @@ Both modes fit files serially. Their distinction is the starting state, rather t
 
 ## Review a scan
 
-Inspect convergence and failures for the individual datasets. The app's dataset selector lets you review a fitted pattern, and the Evolution tab shows a selected parameter across the scan with its uncertainty.
+Inspect convergence and failures for individual datasets, then compare fitted patterns and parameter evolution. A smooth trend alone does not prove that every dataset was fitted adequately.
 
-Results are written to `analysis/results.csv` as the scan runs. Stopping keeps completed fits; continuing resumes with the remaining files. A change to the template can make earlier results out of date, so check the displayed state before combining them with new fits.
+Keep completed results tied to the template and conditions that produced them. Changes to a template can make earlier results out of date. Scan output and resume behaviour depend on how the run is invoked, so use the interface instructions when continuing or cancelling a run.
 
-For controls, dataset selection and display updates, read [sequential fitting in the app](https://github.com/enhantica/edi/blob/main/docs/user/guides/sequential-fitting-in-the-app.md).
+## Apply the mode in your interface
 
-## Run the declared mode
-
-The current Python entry point reads the fitting mode from the project:
-
-```python
-import edi
-
-project = edi.Project.load('path/to/project')
-result = project.analysis.fit()
-```
-
-The Command Line follows the same declaration:
-
-```console
-python -m edi fit path/to/project
-```
+- [Application: mode selector](../application/fitting-modes.md) and [scan controls](../application/scans.md).
+- [Python: mode dispatch and callbacks](../python/fit.md).
+- [Command Line: saved mode, progress and output behaviour](../cli/fit.md).
 
 Keep the mode, free-parameter choices and minimizer conditions with the saved project when sharing a result.
 

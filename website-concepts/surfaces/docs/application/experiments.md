@@ -2,6 +2,8 @@
 
 An experiment connects the measurement to the structural model. It holds measured data or a simulation range, instrument settings, peak and background descriptions, excluded regions, and links to the structures that contribute to its calculation.
 
+The shared [Experiment](../user-guide/analysis-workflow/experiment.md) chapter explains the scientific model; the steps below describe this interface.
+
 ## Select or create an experiment
 
 On **Experiment**, select the experiment you want to inspect. **Create experiment** adds an experiment linked to the project's current structures. Before loading measured data you can choose its type and simulation range.

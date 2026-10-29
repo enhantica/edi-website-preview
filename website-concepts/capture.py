@@ -75,7 +75,13 @@ def main() -> None:
                 else None
             ),
         )
-        for slug, label in [('', 'home'), (docs_path, 'guide')]:
+        pages = [('', 'home'), (docs_path, 'guide')]
+        if name == 'surfaces':
+            pages.extend([
+                ('user-guide/', 'user-guide'),
+                ('user-guide/analysis-workflow/structure/', 'workflow'),
+            ])
+        for slug, label in pages:
             response = page.goto(
                 f'{origin}/{base_path}{slug}', wait_until='networkidle', timeout=12000
             )
@@ -101,8 +107,22 @@ def main() -> None:
             if name == 'workflows' and label == 'guide':
                 _capture_tabs(page, output, name)
                 checks.append({'page': docs_path, 'python_interface_tab_works': True})
+        logo = page.locator('.md-header .md-logo img')
+        if not logo.is_visible() or not logo.get_attribute('src').endswith('logo-light.svg'):
+            raise RuntimeError('Official wordmark is missing from the header')
+        if page.locator('.md-header__topic').first.is_visible():
+            raise RuntimeError('Duplicate brand label is visible')
+        if name == 'surfaces':
+            tabs = [text.strip() for text in page.locator('.md-tabs__link').all_inner_texts()]
+            if tabs != [
+                'Home', 'Get started', 'User guide', 'Application', 'Python', 'Command Line', 'About'
+            ]:
+                raise RuntimeError(f'Unexpected section order: {tabs}')
+            checks.append({'shared_guide_before_interfaces': True, 'header_wordmark_only': True})
         page.set_viewport_size({'width': 390, 'height': 844})
         page.goto(f'{origin}/{base_path}', wait_until='networkidle', timeout=12000)
+        if not logo.is_visible():
+            raise RuntimeError('Official wordmark is missing on mobile')
         page.screenshot(path=str(output / f'{name}-mobile.png'), full_page=True)
         checks.append({
             'page': '/ mobile',

@@ -55,7 +55,7 @@ concepts once, then choose the interface that suits your work.
 2. Compare the calculated pattern with your measured data and choose which parameters vary.
 3. Review the result, save your project and prepare a report.
 
-[Understand the project model](learn/projects.md) · [Follow your first refinement](get-started/first-refinement.md)
+[Read the shared User guide](user-guide/index.md) · [Follow your first refinement](get-started/first-refinement.md)
 
 ## What you can do
 
@@ -68,10 +68,10 @@ settings and results between the visual application, Python and the command line
 | Bring your own structure and measured pattern into the app | [Create a project](application/new-project.md) |
 | Choose background points and remove regions from a fit | [Background and excluded regions](application/background.md) |
 | Refine a structural model against observations | [Application refinement](application/refine.md), [Python](python/fit.md) or [Command Line](cli/fit.md) |
-| Fit several experiments or follow a changing sample through a scan | [Understand fitting modes](learn/fitting-modes.md) |
-| Assess the residual, uncertainties and agreement factors | [Fit quality](learn/fit-quality.md) |
-| Keep an analysis portable or send it to a collaborator | [Projects and files](application/projects.md) |
-| Share an interactive report or a scientific record | [Reports](application/reports.md) |
+| Fit several experiments or follow a changing sample through a scan | [Understand fitting modes](user-guide/fitting-modes.md) |
+| Assess the residual, uncertainties and agreement factors | [Fit quality](user-guide/fit-quality.md) |
+| Keep an analysis portable or send it to a collaborator | [Projects and files](user-guide/analysis-workflow/project.md) |
+| Share an interactive report or a scientific record | [Reports](user-guide/analysis-workflow/report.md) |
 
 ## Open and reproducible
 
@@ -79,7 +79,7 @@ EasyDiffraction is open scientific software. Its readable project files keep the
 experiment, fitting choices and saved results together. The current edi implementation uses the
 crysta diffraction engine; older EasyDiffraction releases have their own interfaces and backends.
 
-[About the project](about/index.md) · [Data and file formats](learn/data-formats.md) · [Get involved](about/community.md)
+[About the project](about/index.md) · [Data and file formats](user-guide/data-formats.md) · [Get involved](about/community.md)
 
 ---
 

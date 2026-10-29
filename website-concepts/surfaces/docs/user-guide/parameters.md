@@ -14,23 +14,13 @@ A parameter's value needs its name, units and place in the model to be meaningfu
 | Instrument and profile | Calibration shifts and peak-width terms | Instrument geometry and profile definition |
 | Background and scale | Background points or terms, phase scales | Baseline behaviour and how phases contribute |
 
-The [project model](projects.md) keeps structure quantities separate from experiment quantities. They may still be correlated in a fit.
+The [project model](analysis-workflow/project.md) keeps structure quantities separate from experiment quantities. They may still be correlated in a fit.
 
 ## Free and fixed
 
 A **free** parameter is allowed to change during refinement. A **fixed** parameter contributes to the calculation but keeps the value you supplied.
 
-In the application, inspect the variation flags on the Analysis page. Free only the quantities that the present observations can usefully determine. In Python, the project's `free_parameters` collection provides the parameters currently selected for refinement:
-
-```python
-import edi
-
-project = edi.Project.load('path/to/project')
-for parameter in project.free_parameters:
-    print(parameter.name, parameter.value, parameter.units)
-```
-
-The command line runs the free-parameter choices saved in the project. It does not require a second list of free parameters on the command itself.
+Review the free set before fitting. Only quantities that can vary independently belong in it; symmetry-related or constrained values do not add independent degrees of freedom. Keep the chosen free set with the saved project. Interface instructions for editing or inspecting it are linked below.
 
 ## Uncertainties
 
@@ -50,11 +40,17 @@ For example, a symmetry restriction on a coordinate cannot be treated as an arbi
 
 Use meaningful starting values. A fit begins at the project's current parameter values, and its final state can depend on that starting point.
 
-The minimum and maximum displayed in the app describe the values the model accepts. They are model-admissibility information; the app does not expose them as controls for setting an optimiser's search interval.
+Model-admissibility limits describe which values the model accepts. They have a different purpose from an optimiser's search bounds. Check the applicable model and interface documentation before treating a displayed range as an editable fitting interval.
 
 When interpreting a constrained or limited value, check the applicable model and fitting settings. A result reaching a permitted limit can be a reason to inspect the starting assumptions, observations and parameter correlations.
 
 For scan analyses, the [fitting mode](fitting-modes.md) determines whether each dataset starts from the same template values or from the previous fit.
+
+## Work with parameters
+
+- [Application: free-parameter table](../application/refine.md#choose-free-parameters).
+- [Python: parameter values and free flags](../python/structures.md).
+- [Command Line: run the free-set choices saved in the project](../cli/fit.md).
 
 ## Names in code and files
 

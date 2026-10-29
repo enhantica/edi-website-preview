@@ -5,7 +5,7 @@ docs_dir: docs
 site_dir: site
 theme:
   variant: modern
-  logo: assets/icon.png
+  logo: assets/logo-light.svg
   favicon: assets/icon.png
   palette:
     scheme: default
@@ -20,6 +20,8 @@ theme:
     - navigation.top
     - toc.follow
     - content.code.copy
+extra_css:
+  - assets/branding.css
 nav:
   - Home: index.md
   - Get started:
@@ -27,9 +29,30 @@ nav:
       - Your first refinement: get-started/first-refinement.md
       - Choose your interface: get-started/interfaces.md
       - Setup and availability: get-started/setup.md
+  - User guide:
+      - user-guide/index.md
+      - Foundations:
+          - Introduction: user-guide/introduction.md
+          - Concept: user-guide/concepts.md
+          - Data formats: user-guide/data-formats.md
+          - Parameters: user-guide/parameters.md
+          - Glossary: user-guide/glossary.md
+      - Analysis workflow:
+          - user-guide/analysis-workflow/index.md
+          - Project: user-guide/analysis-workflow/project.md
+          - Structure: user-guide/analysis-workflow/structure.md
+          - Experiment: user-guide/analysis-workflow/experiment.md
+          - Analysis: user-guide/analysis-workflow/analysis.md
+          - Report: user-guide/analysis-workflow/report.md
+      - Plan and assess:
+          - Fitting modes: user-guide/fitting-modes.md
+          - Fit quality: user-guide/fit-quality.md
+          - Examples: user-guide/examples.md
   - Application:
       - application/index.md
       - Getting started:
+          - Your first refinement: application/first-refinement.md
+          - Example projects: application/examples.md
           - The workspace: application/workspace.md
           - Create a project: application/new-project.md
       - Build your model:
@@ -49,6 +72,7 @@ nav:
   - Python:
       - python/index.md
       - Getting started:
+          - Example projects: python/examples.md
           - Set up Python: python/setup.md
           - Load and save projects: python/projects.md
       - Build your model:
@@ -63,6 +87,7 @@ nav:
           - API quick reference: python/reference.md
   - Command Line:
       - cli/index.md
+      - Example projects: cli/examples.md
       - Run an analysis:
           - Refine a project: cli/fit.md
           - Calculate a pattern: cli/calculate.md
@@ -72,19 +97,6 @@ nav:
       - Automate and look up:
           - Batch workflows: cli/batch.md
           - Command reference: cli/reference.md
-  - Learn:
-      - learn/index.md
-      - Understand the model:
-          - Diffraction analysis: learn/concepts.md
-          - Projects and experiments: learn/projects.md
-          - Parameters and constraints: learn/parameters.md
-      - Plan and interpret:
-          - Fitting modes: learn/fitting-modes.md
-          - Fit quality: learn/fit-quality.md
-          - Examples: learn/examples.md
-      - Look up:
-          - Data and file formats: learn/data-formats.md
-          - Glossary: learn/glossary.md
   - About:
       - about/index.md
       - Get involved: about/community.md

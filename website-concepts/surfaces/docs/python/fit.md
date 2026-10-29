@@ -29,16 +29,7 @@ print(result.rwp)
 print(result.reduced_chi_square)
 ```
 
-`analysis.fit()` reads the fitting mode declared by the project:
-
-| Mode | What it does |
-| --- | --- |
-| `single` | Refines one experiment. |
-| `joint` | Refines several experiments together. |
-| `sequential` | Processes a scan, starting each pattern from the previous fit's parameters. |
-| `independent` | Processes a scan, starting each pattern from the same initial parameters. |
-
-Both scan modes run serially. Choose a mode to match the scientific analysis, rather than choosing a different Python method for each input.
+`analysis.fit()` dispatches according to the fitting mode saved in the project. The shared [fitting-mode guide](../user-guide/fitting-modes.md) explains the modes and their starting-state policies; the same method runs each declared mode. Scan results have a different shape from single or joint outcomes: use [result handling](results.md).
 
 ## Follow progress
 

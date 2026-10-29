@@ -18,6 +18,26 @@
       "page_outline_visible": true
     },
     {
+      "page": "user-guide/",
+      "heading": "User guide\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "page": "user-guide/analysis-workflow/structure/",
+      "heading": "Structure\u00b6",
+      "no_horizontal_overflow": true,
+      "images_loaded": true,
+      "left_navigation_visible": true,
+      "page_outline_visible": true
+    },
+    {
+      "shared_guide_before_interfaces": true,
+      "header_wordmark_only": true
+    },
+    {
       "page": "/ mobile",
       "no_horizontal_overflow": true
     }

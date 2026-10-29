@@ -17,7 +17,7 @@ The current documentation brings these entry points together:
 - **Application** explains the desktop and browser workspace.
 - **Python** covers scripts and notebooks using `edi`.
 - **Command Line** covers commands that operate on saved projects.
-- **Learn** explains the shared scientific model and examples.
+- **User guide** explains the shared scientific model and examples.
 
 Earlier names, imports, release numbers and backend descriptions belong to their corresponding versions. Use [the earlier documentation](#earlier-documentation) when reproducing work done with one of those releases.
 
@@ -25,7 +25,7 @@ Earlier names, imports, release numbers and backend descriptions belong to their
 
 The current source code is available on GitHub. edi's source is licensed under BSD 3-Clause; the built application is distributed under GPL version 3. See [licensing](licence.md) for the authoritative files.
 
-The source repository also holds the examples, their provenance and comparisons against reference results. [Fit quality](../learn/fit-quality.md) explains how to read that evidence and its scope.
+The source repository also holds the examples, their provenance and comparisons against reference results. [Fit quality](../user-guide/fit-quality.md) explains how to read that evidence and its scope.
 
 ## Participate and report your work
 

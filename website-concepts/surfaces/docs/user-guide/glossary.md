@@ -38,13 +38,27 @@ These terms are shared by the application, Python library and command line. The 
 | Independent fit | Fitting the datasets of a scan from the same template starting values. |
 | Standard uncertainty | The uncertainty reported with an estimated parameter or observation. A fitted uncertainty reflects the assumptions of the fit, rather than every possible systematic error. |
 
+## Crystallographic quantities
+
+**Unit cell** is the repeating geometry described by cell lengths and angles. **Fractional coordinates** express a position relative to that cell.
+
+**Space group** describes crystallographic symmetry. Its **setting** identifies the coordinate convention used to describe that symmetry and the atom positions.
+
+**Occupancy** describes occupation of an atom site. **Atomic displacement parameters (ADPs)** describe displacement around its average position; isotropic and anisotropic representations use different quantities and conventions.
+
+**Scale factor** weights a structure's contribution to an experiment's calculated intensity. Its scientific interpretation depends on the experiment model and phase conventions.
+
 ## Files and labels
 
 **Edi (`.edi`)** is EasyDiffraction's saved project format. It uses readable CIF-like syntax with keys that describe the project model.
 
 **CIF** means Crystallographic Information File, a scientific exchange format with dictionaries maintained by the IUCr. A structural CIF and a complete Edi project serve different purposes.
 
+The **coreCIF** dictionary defines general crystallographic quantities; **pdCIF** defines powder-diffraction quantities; **magCIF** covers magnetic structures. Edi project keys are EasyDiffraction's persistence vocabulary and should not all be assumed to be IUCr dictionary items.
+
 The catalogue uses `pd` for powder, `sc` for single crystal, `neut` for neutron, `xray` for X-ray, `cwl` for constant wavelength and `tof` for time of flight.
+
+These labels identify measurement types and scientific terms. Current feature availability and model coverage are described by the interface guides and checked examples.
 
 ---
 

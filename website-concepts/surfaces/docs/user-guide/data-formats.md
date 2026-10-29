@@ -37,19 +37,19 @@ A structure imported from CIF is a starting point. It still needs an experiment,
 
 ## Powder-pattern input
 
-The app's **Load data…** action reads plain text containing columns for `x`, intensity, and optionally the standard uncertainty of intensity. The columns may be separated by spaces, tabs or commas.
+Powder observations can be supplied as plain text columns for `x`, intensity, and optionally the standard uncertainty of intensity. The supported reader and its diagnostic rules are documented for each interface.
 
 - For constant-wavelength data, `x` is 2θ in degrees.
 - For time-of-flight data, `x` is time of flight in microseconds.
 - A supplied uncertainty is used as the observation's standard uncertainty. Check it as carefully as the intensity.
 
-The loader reports skipped or adjusted rows in **Messages**. It skips non-numeric header lines, sorts by the independent variable, and keeps the first observation at a repeated position. Where uncertainty is absent or invalid, the loader applies the rules documented in the current input guide.
+Inspect any reader diagnostics about skipped or adjusted rows. Import rules for headers, repeated positions, missing uncertainties and invalid observations are part of the reader behaviour; they should not be inferred from the filename extension.
 
 After loading, the measured data are stored in the experiment's Edi file. The project retains the source filename as context, but does not depend on that original text file to reopen the stored measurement.
 
 !!! note "Check the imported pattern"
 
-    Inspect the units, range, point count and Messages after importing. A readable file is not evidence that its columns or units describe the measurement you intended.
+    Inspect the units, range, retained observations and import diagnostics. A readable file is not evidence that its columns or units describe the measurement you intended.
 
 ## Observations and calculation ranges
 
@@ -59,9 +59,15 @@ A project may contain both simulation and measured-data experiments. Calculation
 
 ## Saving and handing on a project
 
-On the desktop, choose a project folder or zip archive. In a browser, available save locations depend on the browser and how the project was opened. For portable work, **Save project as…** can export a zip copy to your computer.
+Hand on the complete project folder or archive to retain its saved model, embedded observations and analysis choices. Retain any external scan inputs as well. A report is a separate output, and saving a project does not automatically create a fresh report.
 
-A report is a separate output. Saving the project does not automatically create a fresh report. See [projects and files](../application/projects.md) and [reports](../application/reports.md) for the visual workflow.
+File selection, import diagnostics and write-back behaviour are interface-specific:
+
+- [Application: measured-data import](../application/experiments.md) and [saving projects](../application/projects.md).
+- [Python: experiment input](../python/experiments.md) and [project loading and saving](../python/projects.md).
+- [Command Line: accepted project inputs and output destinations](../cli/files.md).
+
+See the shared [Report](analysis-workflow/report.md) stage for document formats and provenance.
 
 ---
 

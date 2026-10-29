@@ -1,45 +1,29 @@
 # Get started
 
-Start with an example in the browser. You can explore the project, compare a measured pattern with its calculation, and run a refinement without installing a programming environment.
+Choose how you want to work, then run an included example before preparing your own inputs. The browser application is the quickest way to explore without setting up a local edi environment.
 
-[Open the web app](https://enhantica.github.io/edi/webapp/){ .md-button .md-button--primary }
+[Try the web app](https://enhantica.github.io/edi/webapp/){ .md-button .md-button--primary }
 [Your first refinement](first-refinement.md){ .md-button }
 
-## Try a complete analysis
-
-1. Open the web application and go to **Project**.
-2. Choose a measured-data project from **Examples**.
-3. Inspect its structure and experiment before fitting.
-4. Review the free parameters on **Analysis**, then run the fit.
-5. Inspect the result and save your own project copy.
-
-[Your first refinement](first-refinement.md) walks through these steps. The [workspace tour](../application/workspace.md) explains the pages and their controls.
-
-## Choose how you work
+## Choose an interface
 
 | You want to… | Start here |
 | --- | --- |
-| Explore interactively with no local installation | [Browser application](../application/browser.md) |
-| Work with projects on your computer | [Desktop application](../application/desktop.md) |
-| Express an analysis in a script or notebook | [Python library](../python/index.md) |
-| Run saved projects from a terminal | [Command-line interface](../cli/index.md) |
+| Explore interactively in a browser | [Browser application](../application/browser.md) |
+| Work visually with files on your computer | [Desktop application](../application/desktop.md) |
+| Express an analysis in a script or notebook | [Python](../python/index.md) |
+| Run a saved analysis from a terminal | [Command Line](../cli/index.md) |
 
-The interfaces share the scientific model. Their setup, controls and file handling differ. [Choose your interface](interfaces.md) compares them.
+[Choose your interface](interfaces.md) compares their setup and file handling. [Setup and availability](setup.md) explains the current local-build requirements.
+
+## Try a complete analysis
+
+[Your first refinement](first-refinement.md) starts from a measured-data example and links to the walkthrough for each interface. The example contains the structure, experiment and starting fitting choices together.
+
+## Understand the common model
+
+The [User guide](../user-guide/index.md) explains concepts, formats, parameters and the complete analysis workflow once for every interface. Start with the [introduction](../user-guide/introduction.md) or use the [glossary](../user-guide/glossary.md) for an unfamiliar term.
 
 ## Bring your own work
 
-Once the example workflow is familiar, [create a project](../application/new-project.md) and import a structure and measured data. Check the [data formats](../learn/data-formats.md) before preparing files.
-
-You can also reopen a complete project folder or zip archive. A structural CIF on its own supplies the structure, rather than all the settings of an analysis.
-
-## Learn the common ideas
-
-The [Learn](../learn/index.md) section covers projects, parameters, fitting modes and fit quality once for every interface. Use the [glossary](../learn/glossary.md) whenever an unfamiliar term appears.
-
-## Set up a local environment
-
-Current local builds use the edi source environment and its native dependencies. The [setup overview](setup.md) links the appropriate desktop, Python and Command Line instructions and explains the current availability.
-
----
-
-Sources: [current example catalogue](https://github.com/enhantica/edi/blob/main/docs/user/cli/index.md), [app project controls](https://github.com/enhantica/edi/blob/main/app/qml/Pages/Project/ProjectPage.qml), [current project workflow](https://github.com/enhantica/edi/blob/main/docs/user/guides/projects-from-scratch-in-the-app.md).
+Prepare your structure and measured pattern using the shared [data formats](../user-guide/data-formats.md). Follow the [analysis workflow](../user-guide/analysis-workflow/index.md), then use your chosen interface guide for the controls or calls that implement each step.

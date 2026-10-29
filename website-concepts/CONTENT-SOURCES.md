@@ -32,10 +32,11 @@ by renaming the earlier library's import package.
   structures, experiments, data intake, background, exclusions, fitting modes, scans and files.
 - **Python:** the library guide's progression from a project to its structures, experiments,
   calculation, fit and results; examples use current factories, facade calls and report methods.
-- **CLI:** the same project-driven workflow, with the current `fit`, `calc`, `export`, `undo` and
+- **Command Line:** the same project-driven workflow, with the current `fit`, `calc`, `export`, `undo` and
   `report` commands and their persistence/reporting options.
-- **Learn:** scientific concepts, a glossary, formats, parameters, fitting modes, interpretation
-  and links into the current examples.
+- **User guide:** the generic introduction, concepts, glossary, formats, parameters and full
+  Project → Structure → Experiment → Analysis → Report workflow, before the interface sections;
+  fitting modes, interpretation and example selection are shared as well.
 - **About:** product background, current licensing, support, contribution and citation guidance.
 
 ## Generation differences resolved
@@ -66,3 +67,27 @@ Python examples have been checked against the source and parsed for syntax. They
 been executed against a newly built native edi environment as part of this documentation-only
 preview. This is an expanded documentation draft, not a claim that every historical API page or
 tutorial has been migrated or independently revalidated.
+
+## Shared-guide adaptation — 2026-10-29
+
+The user supplied the published `diffraction-lib/dev/introduction/` and `dev/user-guide/` pages.
+The introduction was read online; the guide subroutes could not be fetched by the web reader,
+so the Markdown source in the library snapshot above supplied the chapters.
+
+| Earlier source | Current shared destination | Interface material retained elsewhere |
+| --- | --- | --- |
+| Introduction | `user-guide/introduction.md`; licensing/support/citation remain in About | Setup stays in Get started and the interface setup pages |
+| Concept | `user-guide/concepts.md` | Buttons, methods and commands stay outside this page |
+| Glossary | `user-guide/glossary.md` | No package-specific interpretation of the scientific terms |
+| Data Format | `user-guide/data-formats.md` | Reader diagnostics and write-back rules remain with each interface |
+| Parameters | `user-guide/parameters.md` and workflow Structure/Experiment/Analysis | Current Python access examples stay under Python; old access-path/key tables are not blindly ported |
+| Analysis Workflow / Project | `user-guide/analysis-workflow/project.md` | App project controls, Python persistence and command output paths |
+| Analysis Workflow / Structure | `user-guide/analysis-workflow/structure.md` | App fields and Python factories/parameter access |
+| Analysis Workflow / Experiment | `user-guide/analysis-workflow/experiment.md` | Import actions, Python constructors and saved-project commands |
+| Analysis Workflow / Analysis | `user-guide/analysis-workflow/analysis.md` | Fit controls, Python dispatch/callbacks and command flags |
+| Analysis Workflow / Report | `user-guide/analysis-workflow/report.md` | Export controls, report methods and report command options |
+
+The report chapter is corrected for current edi: saving a project does not write a report.
+The earlier engine/plugin and Bayesian capability lists are not treated as current features.
+This is a conceptual adaptation; it does not claim migration of every historical parameter
+reference table, image or API tutorial.

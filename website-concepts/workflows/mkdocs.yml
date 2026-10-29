@@ -5,7 +5,7 @@ docs_dir: docs
 site_dir: site
 theme:
   variant: modern
-  logo: assets/icon.png
+  logo: assets/logo-light.svg
   favicon: assets/icon.png
   palette:
     scheme: default
@@ -20,6 +20,8 @@ theme:
     - navigation.path
     - toc.follow
     - content.code.copy
+extra_css:
+  - assets/branding.css
 nav:
   - Home: index.md
   - Get started:

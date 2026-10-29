@@ -6,11 +6,14 @@ from __future__ import annotations
 
 import argparse
 import importlib.metadata
+import json
+import posixpath
 import re
 import shutil
 import subprocess
 import sys
 import tempfile
+from html import escape
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -26,6 +29,33 @@ CONCEPTS = {
         'Shared guides explain the science; interface tabs show how to do it.',
     ),
 }
+
+
+def _write_redirects(root: Path, base_url: str) -> None:
+    """Keep links to relocated shared guides valid without a theme plugin."""
+    redirects = json.loads((ROOT / 'redirects.json').read_text(encoding='utf-8'))
+    for old, new in redirects.items():
+        for route in (old, new):
+            if not isinstance(route, str) or not re.fullmatch(r'(?:[a-z0-9-]+/)+', route):
+                raise SystemExit(f'Invalid redirect route: {route!r}')
+        target = root / new / 'index.html'
+        destination = root / old / 'index.html'
+        if not target.is_file() or (
+            destination.exists()
+            and '<title>Page moved - EasyDiffraction</title>' not in destination.read_text()
+        ):
+            raise SystemExit(f'Redirect must point to a page and not replace one: {old} -> {new}')
+        relative = escape(posixpath.relpath(new, old) + '/', quote=True)
+        canonical = escape(base_url.rstrip('/') + '/' + new, quote=True)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_text(
+            '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+            f'<meta http-equiv="refresh" content="0; url={relative}">'
+            f'<link rel="canonical" href="{canonical}">'
+            '<title>Page moved - EasyDiffraction</title></head><body>'
+            f'<a href="{relative}">Continue to the User guide</a></body></html>\n',
+            encoding='utf-8',
+        )
 
 
 def _check_links(root: Path, base_url: str | None) -> None:
@@ -127,11 +157,13 @@ def main() -> None:
             shutil.rmtree(assembled)
         shutil.copytree(built, assembled, dirs_exist_ok=name == 'surfaces')
         if name == 'surfaces':
+            _write_redirects(assembled, args.base_url or 'http://127.0.0.1:8873/')
             # Preserve published prototype links; canonical URLs point to the site root.
             legacy = output / 'surfaces'
             if legacy.exists():
                 shutil.rmtree(legacy)
             shutil.copytree(built, legacy)
+            _write_redirects(legacy, args.base_url or 'http://127.0.0.1:8873/')
     _check_links(output.resolve(), args.base_url)
     command = f'python -m http.server 8873 --bind 127.0.0.1 --directory {output}'
     print(f'Preview: {command}', flush=True)

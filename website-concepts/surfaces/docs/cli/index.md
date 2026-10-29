@@ -30,7 +30,7 @@ Store the project alongside your analysis. Its declared fitting mode determines 
 
 ## Use the same model
 
-The Command Line shares [projects and experiments](../learn/projects.md) with Python and the application. Use whichever interface fits the next step in your work. [Batch workflows](batch.md) shows ordinary shell automation around these commands.
+The Command Line shares [projects and experiments](../user-guide/analysis-workflow/project.md) with Python and the application. Use whichever interface fits the next step in your work. [Batch workflows](batch.md) shows ordinary shell automation around these commands.
 
 ---
 

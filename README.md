@@ -8,8 +8,8 @@ screenshots and build tooling. It does not contain the edi or crysta implementat
 - [Open the selected documentation](https://enhantica.github.io/edi-website-preview/)
 - [Earlier workflow-first alternative](https://enhantica.github.io/edi-website-preview/workflows/)
 
-The visible brand is **EasyDiffraction**; code examples use **edi**. Home, Get started, Application,
-Python, Command Line, Learn and About are the selected primary sections. The content is an evolving draft
+The visible brand is **EasyDiffraction**; code examples use **edi**. Home, Get started, User guide, Application,
+Python, Command Line and About are the selected primary sections. The content is an evolving draft
 checked against current edi behavior. The web-app buttons open the
 existing edi application; this repository does not build or host another copy of the application.
 
@@ -18,7 +18,8 @@ existing edi application; this repository does not build or host another copy of
 Continue editing `website-concepts/surfaces/docs/`. The earlier `workflows/` alternative is retained
 as a reference.
 Navigation is declared in the adjacent `mkdocs.yml` files. Use Zensical's native components and
-modern theme; typography, spacing and layout overrides are intentionally absent. Push to `main`
+modern theme. The only custom stylesheet fits the official wordmark into the header and hides
+the duplicate brand label; content typography, spacing and layout retain the native design. Push to `main`
 to rebuild and publish the preview automatically. The Pages workflow can also be run manually.
 
 See [local build instructions](website-concepts/README.md). The preview builds without a native

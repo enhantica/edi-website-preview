@@ -62,7 +62,7 @@ project.export_zip('shared-project.zip')
 
 `export_zip()` packages the project's folder **as last saved**. Save first when you want current in-memory changes included. The exported archive can be opened by the other interfaces.
 
-Read [shared data formats](../learn/data-formats.md) for the project structure and [Command Line files and output](../cli/files.md) for the different archive write-back rule used by commands.
+Read [shared data formats](../user-guide/data-formats.md) for the project structure and [Command Line files and output](../cli/files.md) for the different archive write-back rule used by commands.
 
 ---
 

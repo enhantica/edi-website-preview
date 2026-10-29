@@ -35,9 +35,9 @@ It is useful for repeatable terminal workflows and scripts that operate on saved
 
 ## Move between interfaces
 
-Save a complete [project folder or archive](../learn/data-formats.md) to continue elsewhere. Export a [report](../application/reports.md) to share an account of the result.
+Save a complete [project folder or archive](../user-guide/data-formats.md) to continue elsewhere. Export a [report](../user-guide/analysis-workflow/report.md) to share an account of the result.
 
-Scientific concepts such as [parameters](../learn/parameters.md) and [fitting modes](../learn/fitting-modes.md) are shared; interface-specific pages explain how to reach them.
+Scientific concepts such as [parameters](../user-guide/parameters.md) and [fitting modes](../user-guide/fitting-modes.md) are shared; interface-specific pages explain how to reach them.
 
 ---
 

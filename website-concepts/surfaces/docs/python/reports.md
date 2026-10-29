@@ -2,6 +2,8 @@
 
 The project's report brings together structures, experiments, calculated patterns and fit information. The application, Python and Command Line use the same report model and saved settings.
 
+The shared [Report](../user-guide/analysis-workflow/report.md) chapter explains the scientific model; the steps below describe this interface.
+
 ## Save interactive HTML
 
 ```python

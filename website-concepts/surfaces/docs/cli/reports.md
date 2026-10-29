@@ -2,6 +2,8 @@
 
 The report command uses the project's structures, experiments, fit results and saved report settings. It presents the same document as Python and the application's Report page.
 
+The shared [Report](../user-guide/analysis-workflow/report.md) chapter explains the scientific model; the steps below describe this interface.
+
 ## Save the selected formats
 
 ```console

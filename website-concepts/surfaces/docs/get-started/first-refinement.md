@@ -1,61 +1,34 @@
 # Your first refinement
 
-Start with an included measured-data example. It supplies the structure, instrument settings, measured pattern and starting parameters together, so you can focus on the analysis workflow.
+Choose a measured-data example and work through one complete analysis. The scientific steps are the same in the application, Python and the command line; choose the instructions for the interface you want to use.
 
-## Open the application
+## Choose how to follow along
 
-[Open the web app](https://enhantica.github.io/edi/webapp/) in a current browser. Go to **Project** and expand **Examples**.
+| Interface | Walkthrough | What you need |
+| --- | --- | --- |
+| Application | [First refinement in the app](../application/first-refinement.md) | A browser, or a configured desktop build |
+| Python | [Load and fit a project](../python/fit.md) | A configured edi environment and a measured-data example project |
+| Command Line | [Refine a project](../cli/fit.md) | The same environment and a saved measured-data project |
 
-Choose the LBCO example measured on HRPT for a first powder refinement. A simulation example has no measured data to fit; it is useful for calculation instead.
+The LBCO example measured on HRPT is a useful starting point. It supplies the structure, experiment, observations and starting parameter choices together. A simulation example has a calculation range but no measured data to refine against.
 
-The example opens as a working copy. Changes will not alter the bundled input.
+## Inspect before fitting
 
-## Inspect the structure
+Check the structure, experiment type, measurement units and initial calculated pattern. Decide which independent parameters may vary. For a first run, retain the example's supplied choices so you can compare your result with its documented starting conditions.
 
-Open **Structure**. Look at the space group, unit cell and atom sites. These describe the crystalline sample.
+The [analysis workflow](../user-guide/analysis-workflow/index.md) explains what each part of the project contributes.
 
-The experiment settings are separate. A peak-profile term or calibration shift does not become part of the structural model just because it changes the calculated pattern.
+## Fit, assess and retain
 
-## Compare the initial pattern
+Run the refinement using your chosen interface. Read how it ended, compare the observed and calculated signals, and inspect fitted values and uncertainties. [Fit quality](../user-guide/fit-quality.md) explains the assessment.
 
-On **Experiment**, select the experiment and inspect the calculated signal against its measured intensities.
+Keep a separate copy of the starting project, save the refined project, and prepare a report when you want to share the result. The interface walkthroughs explain the corresponding actions and save locations.
 
-![Measured and calculated intensities with reflection positions and residual](../assets/edi-app.png)
+## Continue with your own measurement
 
-The reflection marks locate the expected Bragg positions, and the residual shows the observed-minus-calculated difference. Check the overall range and the mismatch around individual peaks before fitting.
+Prepare a structural model and observations in the supported [data formats](../user-guide/data-formats.md), then follow the [Project](../user-guide/analysis-workflow/project.md), [Structure](../user-guide/analysis-workflow/structure.md) and [Experiment](../user-guide/analysis-workflow/experiment.md) stages. Return to the interface guide for the actual import steps.
 
-The image illustrates the same pattern workspace using a Co₂SiO₄ scan; the LBCO example you open has its own pattern and parameters.
-
-## Choose what varies
-
-On **Analysis**, inspect the free-parameter table and fitting mode. A fit can change only the parameters allowed to vary independently.
-
-For the first run, keep the example's supplied choices. They are part of its starting conditions. Later, change one meaningful part of the model at a time and compare the result. [Parameters](../learn/parameters.md) explains free, fixed and related values.
-
-## Run the fit
-
-Press **Start fitting**. Read how the run ended, then compare the updated calculated pattern with the observations.
-
-A successful termination means the optimisation completed under its settings. Continue by checking the residual, fitted values and uncertainties. The [fit-quality guide](../learn/fit-quality.md) explains why one agreement factor is not the whole assessment.
-
-## Inspect a report
-
-Open **Report** to review the project and result as a document. Its contents and export formats are separate from saving the project.
-
-Use [reports](../application/reports.md) for the available options and the differences between a visual report, scientific CIF output and the editable project state.
-
-## Keep your work
-
-Use **Save project as…** to keep your own copy of the example. In a browser you may be offered a local location or a zip download, depending on the browser and where the project is being kept.
-
-Use an external folder or archive for work you want to retain. Browser storage can be cleared. See [projects and files](../application/projects.md).
-
-## Continue from here
-
-- [Create a project](../application/new-project.md) from your own structure and observations.
-- Explore [other example projects](../learn/examples.md).
-- Run the same saved project in [Python](../python/fit.md) or [the Command Line](../cli/fit.md).
 
 ---
 
-Sources: [LBCO example and starting conditions](https://github.com/enhantica/edi/blob/main/docs/user/cli/pd-neut-cwl_lbco-hrpt/index.md), [Project page and examples](https://github.com/enhantica/edi/blob/main/app/qml/Pages/Project/ProjectPage.qml), [saving projects](https://github.com/enhantica/edi/blob/main/docs/user/guides/open-save-and-export.md).
+Sources: [earlier library guide](https://github.com/easyscience/diffraction-lib/blob/master/docs/docs/user-guide/analysis-workflow/index.md), [current edi guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/complete-project-loading.md).

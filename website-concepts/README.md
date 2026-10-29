@@ -12,9 +12,9 @@ in [CONTENT-SOURCES.md](CONTENT-SOURCES.md).
 
 | | A: choose your interface | B: follow your workflow |
 | --- | --- | --- |
-| Main navigation | Home, Get started, Application, Python, Command Line, Learn, About | Home, Get started, Guides, Tutorials, Reference, About |
+| Main navigation | Home, Get started, User guide, Application, Python, Command Line, About | Home, Get started, Guides, Tutorials, Reference, About |
 | Best entry | A visitor already knows which interface they want | A visitor knows what analysis they want to perform |
-| Shared material | Scientific concepts and examples in Learn | Scientific guides with interface-specific instructions |
+| Shared material | Scientific concepts, workflow and examples in User guide | Scientific guides with interface-specific instructions |
 | Application | Desktop and web have one application home | Application entry points feed the common workflow |
 | Contributor content | Quiet footer link, outside the primary user navigation | Quiet footer link, outside the primary user navigation |
 
@@ -24,7 +24,8 @@ a user workflow; contributor documentation concerns changing the product itself.
 
 Both alternatives use the standard Zensical modern theme, native Inter and JetBrains Mono font
 loading, and its default light scheme. The only theme color selection is EasyDiffraction's light
-blue primary/accent. There is no custom theme stylesheet, JavaScript or template override.
+blue primary/accent. There is no custom content styling, JavaScript or template override. A header-only branding
+stylesheet sizes the official wordmark and hides the duplicate text label.
 The public root opens the selected documentation directly. See [DESIGN.md](DESIGN.md).
 
 ## Build and preview
