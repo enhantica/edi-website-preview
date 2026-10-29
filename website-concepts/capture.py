@@ -156,7 +156,7 @@ def main() -> None:
                         'Web application',
                         'Desktop application',
                         'Python library',
-                        'Command Line (CLI)',
+                        'Command Line',
                     ]
                     or not table['iconHeaders']
                     or table['featureWidth'] < table['width'] * 0.5
