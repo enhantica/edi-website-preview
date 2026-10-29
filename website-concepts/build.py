@@ -31,6 +31,105 @@ CONCEPTS = {
 }
 
 
+def _write_reference(built: Path, base_url: str) -> None:
+    """Publish the same authored text for retrieval, with canonical working links."""
+    docs = ROOT / 'surfaces' / 'docs'
+    index = [
+        '# EasyDiffraction',
+        '',
+        '> Scientific explanations and interface instructions for the new EasyDiffraction.',
+        '',
+        'Identify experiment type, radiation, model and units before selecting an equation.',
+        'Cite its exact section. Stored-only fields are not active calculation terms.',
+        'The model catalogue records the inspected source snapshot. Interface availability',
+        'comes from Features and roadmap; planned or proposed work is not available functionality.',
+        'This export supplies reference content; it does not implement a chat integration.',
+        '',
+        f'- [Model and parameter catalogue]({base_url}physics/catalogue.json)',
+        '',
+        '## Documentation in Markdown',
+        '',
+    ]
+    for source in sorted(docs.rglob('*.md')):
+        relative = source.relative_to(docs)
+        text = source.read_text(encoding='utf-8')
+        text = re.sub(r'\A---\n.*?\n---\n', '', text, count=1, flags=re.DOTALL).lstrip()
+        route = relative.parent if relative.name == 'index.md' else relative.with_suffix('')
+        canonical = base_url + (route.as_posix().strip('.') + '/').lstrip('/')
+
+        def link(match: re.Match[str], canonical: str = canonical, source: Path = source) -> str:
+            value = match.group(1)
+            parsed = urlsplit(value)
+            if parsed.scheme or parsed.netloc or value.startswith('/'):
+                return match.group(0)
+            if not parsed.path:
+                return '](' + canonical + value + ')'
+            target = (source.parent / unquote(parsed.path)).resolve()
+            if not target.is_relative_to(docs):
+                raise SystemExit(f'Reference link escapes docs: {source}: {value}')
+            target_relative = target.relative_to(docs)
+            if target.suffix == '.md':
+                target_route = (
+                    target_relative.parent
+                    if target.name == 'index.md'
+                    else target_relative.with_suffix('')
+                )
+                url = base_url + (target_route.as_posix().strip('.') + '/').lstrip('/')
+            else:
+                url = base_url + target_relative.as_posix()
+            if parsed.fragment:
+                url += '#' + parsed.fragment
+            return '](' + url + ')'
+
+        # Leave code examples unchanged: paths in code are instructions, not document links.
+        blocks = re.split(r'(^```[^\n]*\n.*?^```[^\n]*$)', text, flags=re.MULTILINE | re.DOTALL)
+        text = ''.join(
+            block if number % 2 else re.sub(r'\]\(([^\s)]+)\)', link, block)
+            for number, block in enumerate(blocks)
+        )
+        destination = built / 'reference' / relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_text(f'Canonical page: {canonical}\n\n{text}', encoding='utf-8')
+        title = re.search(r'^# (.+)$', text, flags=re.MULTILINE)
+        index.append(f'- [{title[1] if title else relative}]({base_url}reference/{relative.as_posix()})')
+    (built / 'llms.txt').write_text('\n'.join(index) + '\n', encoding='utf-8')
+
+
+def _check_catalogue(built: Path) -> None:
+    """A model/parameter lookup must resolve to an actual explanatory heading."""
+    physics = built / 'physics'
+    catalogue = json.loads((physics / 'catalogue.json').read_text(encoding='utf-8'))
+    seen = set()
+
+    class Headings(HTMLParser):
+        def __init__(self) -> None:
+            super().__init__()
+            self.ids: set[str] = set()
+
+        def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+            if tag in {'h1', 'h2', 'h3', 'h4'}:
+                self.ids.update(value for key, value in attrs if key == 'id' and value)
+
+    for group in ('models', 'parameters'):
+        for entry in catalogue[group]:
+            identity = (group, entry['category'], entry['id'])
+            if identity in seen:
+                raise SystemExit(f'Duplicate catalogue entry: {identity}')
+            seen.add(identity)
+            for field in ('explanation_url', 'parameter_url'):
+                if field not in entry:
+                    continue
+                url = urlsplit(entry[field])
+                target = (physics / url.path / 'index.html').resolve()
+                if url.scheme or url.netloc or not target.is_relative_to(physics):
+                    raise SystemExit(f'Invalid catalogue URL: {entry[field]}')
+                parser = Headings()
+                parser.feed(target.read_text(encoding='utf-8'))
+                if not url.fragment or url.fragment not in parser.ids:
+                    raise SystemExit(f'Catalogue heading missing: {entry[field]}')
+    print('Scientific catalogue explanation/parameter headings: PASS', flush=True)
+
+
 def _write_redirects(root: Path, base_url: str) -> None:
     """Keep links to relocated shared guides valid without a theme plugin."""
     redirects = json.loads((ROOT / 'redirects.json').read_text(encoding='utf-8'))
@@ -152,6 +251,9 @@ def main() -> None:
         built = ROOT / name / 'site'
         if not (built / 'index.html').is_file():
             raise SystemExit(f'{name}: the build did not produce its homepage')
+        if name == 'surfaces':
+            _write_reference(built, args.base_url or 'http://127.0.0.1:8873/')
+            _check_catalogue(built)
         assembled = output if name == 'surfaces' else output / name
         if assembled.exists() and name != 'surfaces':
             shutil.rmtree(assembled)

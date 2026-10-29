@@ -6,7 +6,7 @@ template: physics.html
 
 Look up an exact stored parameter name, its units and the scientific section that defines it. The family and selected model determine applicability; this index is not a claim that every parameter is visible or free in every interface. Model-admissibility limits are distinct from optimiser bounds.
 
-A **stored-only** item is retained but does not affect the calculation. A **descriptor** or **fixed** item can configure a model without being an independent fitting direction. Numerical parameters remain subject to symmetry, constraints and observation sensitivity.
+A **stored-only** item is retained but does not affect the calculation. A **descriptor** or **fixed** item can configure a model without being an independent fitting direction. Numerical parameters remain subject to symmetry, constraints and observation sensitivity. Dictionary refinability metadata is not the complete fitting contract: selected model, free-set admission and derived values can impose additional restrictions. For an anisotropic site, `adp_iso` is derived from its tensor. `extinction.crystal_radius` is a fixed crystal descriptor, although the dictionary carries numeric parameter metadata for it.
 
 ## Cell {#cell}
 

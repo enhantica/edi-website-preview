@@ -17,7 +17,7 @@ for structure in project.structures:
     print(structure.cell.length_a.value)
 ```
 
-Cell lengths and angles are parameters with values. A space-group name selects symmetry; it is not a floating-point fit parameter.
+[Cell lengths and angles](../physics/crystallography.md#eq-cell-metric) are parameters with values. A space-group name selects symmetry; it is not a floating-point fit parameter.
 
 ## Read and change a parameter
 
@@ -32,7 +32,7 @@ print(length_a.free)
 length_a.free = True
 ```
 
-The `free` flag allows a parameter to vary during refinement. Set it only when that parameter belongs in the scientific model you intend to fit. Shared [parameter concepts](../user-guide/parameters.md) explain values, uncertainties and constraints.
+The [`free` flag](../physics/minimization.md#eq-jacobian) allows a parameter to vary during refinement. Set it only when that parameter belongs in the scientific model you intend to fit. Shared [parameter concepts](../user-guide/parameters.md) explain values, uncertainties and constraints.
 
 ## Inspect the free set
 

@@ -15,7 +15,7 @@ These are source-backed capabilities of the [reference snapshot](../physics/mode
 | [Nuclear neutron CW powder diffraction](../physics/diffraction.md#eq-nuclear-structure-factor) | Edit & run | Edit & run | Edit & run | Run project |
 | [X-ray CW powder diffraction](../physics/diffraction.md#eq-xray-structure-factor) | Edit & run | Edit & run | Edit & run | Run project |
 | [Neutron TOF powder diffraction](../physics/profiles/tof.md) | Edit & run | Edit & run | Edit & run | Run project |
-| [Single-crystal neutron reflection calculation and fitting](../physics/corrections/extinction.md#extinction-types) | Edit & run | Edit & run | Edit & run | Run project |
+| [Single-crystal neutron reflection calculation and fitting](../physics/corrections/extinction.md#single-crystal-intensity) | Edit & run | Edit & run | Edit & run | Run project |
 | [Multiple phases, scales and mass fractions](../physics/diffraction.md#phase-fractions) | Edit & run | Edit & run | Edit & run | Run project |
 | [Cell, symmetry, atom sites and occupancy](../physics/crystallography.md) | Edit & run | Edit & run | Edit & run | Run project |
 | [Atomic displacement: isotropic and anisotropic conventions](../physics/displacement.md) | Edit & run | Edit & run | Edit & run | Run project |
@@ -78,6 +78,6 @@ The same four interfaces are shown so an engine roadmap item cannot be mistaken 
 | [Polarized diffraction](../physics/models.md#planned-scientific-models) | Unavailable | Unavailable | Unavailable | Unavailable | Planned |
 | [Total scattering and PDF](../physics/models.md#planned-scientific-models) | Unavailable | Unavailable | Unavailable | Unavailable | Planned |
 | [Le Bail / Pawley intensity extraction](../physics/models.md#planned-scientific-models) | Unavailable | Unavailable | Unavailable | Unavailable | Proposed |
-| [Single-crystal reflection exclusions](../physics/reliability.md#pooled-factors) | Unavailable | Unavailable | Unavailable | Unavailable | Planned |
+| [Single-crystal reflection exclusions](../physics/reliability.md#single-crystal-factors) | Unavailable | Unavailable | Unavailable | Unavailable | Planned |
 
 Other recorded work includes fuller CIF input and improved PDF-report production. A proposed item is a discussion candidate, rather than a committed delivery. This page will change with the [reference snapshot](../physics/models.md#reference-snapshot).

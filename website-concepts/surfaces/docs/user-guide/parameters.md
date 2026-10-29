@@ -8,17 +8,17 @@ A parameter's value needs its name, units and place in the model to be meaningfu
 
 | Group | Examples | What to check |
 | --- | --- | --- |
-| Unit cell | Lengths and angles | Units, symmetry and plausible geometry |
-| Atom sites | Fractional coordinates and occupancies | Site meaning, symmetry restrictions and composition |
-| Displacements | Isotropic or anisotropic displacement parameters | Convention, units and physical interpretation |
-| Instrument and profile | Calibration shifts and peak-width terms | Instrument geometry and profile definition |
-| Background and scale | Background points or terms, phase scales | Baseline behaviour and how phases contribute |
+| [Unit cell](../physics/crystallography.md#eq-cell-metric) | Lengths and angles | Units, symmetry and plausible geometry |
+| [Atom sites](../physics/diffraction.md#eq-nuclear-structure-factor) | Fractional coordinates and occupancies | Site meaning, symmetry restrictions and composition |
+| [Displacements](../physics/displacement.md) | Isotropic or anisotropic displacement parameters | Convention, units and physical interpretation |
+| [Instrument](../physics/calibration.md) and [profile](../physics/profiles.md) | Calibration shifts and peak-width terms | Instrument geometry and profile definition |
+| [Background](../physics/background.md) and [scale](../physics/diffraction.md#phase-fractions) | Background points or terms, phase scales | Baseline behaviour and how phases contribute |
 
 The [project model](analysis-workflow/project.md) keeps structure quantities separate from experiment quantities. They may still be correlated in a fit.
 
 ## Free and fixed
 
-A **free** parameter is allowed to change during refinement. A **fixed** parameter contributes to the calculation but keeps the value you supplied.
+A **free** parameter is allowed to change during refinement. An active **fixed** parameter contributes to the calculation but keeps the value you supplied. A stored-only field is different: retaining it does not establish a calculation effect. The [parameter index](../physics/parameters.md) identifies the known stored-only fields and model-specific roles.
 
 Review the free set before fitting. Only quantities that can vary independently belong in it; symmetry-related or constrained values do not add independent degrees of freedom. Keep the chosen free set with the saved project. Interface instructions for editing or inspecting it are linked below.
 

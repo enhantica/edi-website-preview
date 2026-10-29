@@ -8,12 +8,12 @@ Let $\delta=t-t_h$ in microseconds. The bank geometry supplies the wavelength of
 
 ## Gaussian and Lorentzian width terms {#eq-tof-widths}
 
-$$\sigma_G^2(d)=\sigma_0+(\sigma_1+\mathrm{strain}_G)d^2+(\sigma_2+\mathrm{size}_G)d^4,$$
+$$\sigma_G^2(d)=v_0+(v_1+\mathrm{strain}_G)d^2+(v_2+\mathrm{size}_G)d^4,$$
 
 $$H_G=\sqrt{8\ln2}\,\sigma_G,\qquad
 H_L(d)=\gamma_0+(\gamma_1+\mathrm{strain}_L)d+(\gamma_2+\mathrm{size}_L)d^2.$$
 
-The `broad_gauss_sigma_*` coefficients are variance coefficients, not standard deviations or FWHMs. `broad_lorentz_gamma_*` coefficients define Lorentzian FWHM. Keep their respective time/spacing units; see the [parameter index](../parameters.md#peak).
+Here $v_0,v_1,v_2$ denote the stored variance coefficients labelled σ₀², σ₁² and σ₂²; the superscript is part of the variance notation, not an instruction to square their stored values again. The `broad_gauss_sigma_*` coefficients are variance coefficients, not standard deviations or FWHMs. `broad_lorentz_gamma_*` coefficients define Lorentzian FWHM. Keep their respective time/spacing units; see the [parameter index](../parameters.md#peak).
 
 ## Symmetric pseudo-Voigt {#tof-pseudo-voigt}
 

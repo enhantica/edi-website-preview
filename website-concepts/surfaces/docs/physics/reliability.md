@@ -45,7 +45,17 @@ R_F=\frac{\sum_h\big||F_{o,h}|-|F_{c,h}|\big|}{\sum_h|F_{o,h}|}.$$
 
 The reflection partition is model-dependent, particularly where peaks overlap. These phase factors are not independent directly measured integrated intensities for every powder reflection.
 
-## Single-crystal and pooled results {#pooled-factors}
+## Single-crystal reflection factors {#single-crystal-factors}
+
+The reflection-statistics view also reports amplitude-based and intensity-weighted factors over a declared set $\mathcal H$:
+
+$$R(F)=\frac{\sum_{h\in\mathcal H}\left|\sqrt{\max(F_{o,h}^2,0)}-\sqrt{\max(F_{c,h}^2,0)}\right|}{\sum_{h\in\mathcal H}\sqrt{\max(F_{o,h}^2,0)}},$$
+
+$$wR(F^2)=\sqrt{\frac{\sum_{h\in\mathcal H}w_h(F_{o,h}^2-F_{c,h}^2)^2}{\sum_{h\in\mathcal H}w_h(F_{o,h}^2)^2}},\qquad w_h=1/u(F_{o,h}^2)^2.$$
+
+`r_factor_all` and `wr_factor_all` use all reflections; `_gt` uses those passing the experiment's observed-reflection threshold; `wr_factor_ref` uses those selected for refinement. An absent observed threshold means $I>2u(I)$. An amplitude threshold $F>n u(F)$ is implemented as $F_o^2>(n/2)u(F_o^2)$; an intensity threshold uses $F_o^2>n u(F_o^2)$. The project's optional refinement threshold is separate and uses the intensity rule. A reporting threshold does not itself discard weak data from refinement.
+
+## Per-experiment and pooled summaries {#pooled-factors}
 
 For a single-crystal reflection list, the same absolute and weighted formulas operate on observed and calculated $F^2$ values, giving $R(F^2)$ and $wR(F^2)$. There is no powder background partition; the background-subtracted denominators equal the un-subtracted ones. Do not label this intensity-based factor as the amplitude-based $R(F)$.
 

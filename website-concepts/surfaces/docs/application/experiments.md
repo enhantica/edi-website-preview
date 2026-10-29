@@ -27,7 +27,7 @@ After loading, the range fields reflect the data and the experiment type cannot 
 
 ## Instrument and peak profile
 
-Choose settings that match the measurement. The instrument describes quantities such as wavelength or the calibration of the time-of-flight axis. The peak profile describes the shape and broadening of the calculated reflections.
+Choose settings that match the measurement. The instrument describes quantities such as [wavelength](../physics/calibration.md#eq-cwl-calibration) or the [calibration of the time-of-flight axis](../physics/calibration.md#eq-tof-calibration). The peak profile describes the shape and broadening of the calculated reflections.
 
 A profile that is appropriate for one measurement is not automatically appropriate for another. Start from a relevant example or the instrument's known conditions, then inspect the peak positions and widths before fitting.
 
@@ -39,9 +39,9 @@ The [background guide](background.md) explains manual and automatic estimation.
 
 ## Linked structures
 
-The **Linked structures** group lists the structures that contribute to the experiment and their scale factors. Check that the intended structure is linked and enabled.
+The **Linked structures** group lists the structures that contribute to the experiment and their [scale factors](../physics/diffraction.md#occupancy-and-scale). Check that the intended structure is linked and enabled.
 
-Several structures can contribute to one experiment. The displayed weight fractions are derived from the scales; they are not an independent input field.
+Several structures can contribute to one experiment. The displayed [weight fractions](../physics/diffraction.md#phase-fractions) are derived from the scales; they are not an independent input field.
 
 ## Read the pattern
 

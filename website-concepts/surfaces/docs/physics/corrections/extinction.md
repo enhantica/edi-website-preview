@@ -6,6 +6,14 @@ template: physics.html
 
 Extinction reduces strong single-crystal reflection intensities relative to the kinematic model. It is distinct from sample absorption. The correction below is a factor $y$ on **intensity** $F^2$, not a factor to apply unchanged to an amplitude.
 
+## Single-crystal intensity {#single-crystal-intensity}
+
+The scalar nuclear calculation compares each measured reflection with
+
+$$F_{c,h}^2=s\,y_h\,|F_{N,h}|^2.$$
+
+Here $s$ is the linked structure's scale and $y_h$ the selected extinction factor. A CW experiment supplies one wavelength; a TOF reflection list supplies a wavelength per reflection. This is a reflection model, with no powder-profile convolution or background term. Keep the [structure factor](../diffraction.md#eq-nuclear-structure-factor), scale and [reflection-statistics convention](../reliability.md#single-crystal-factors) consistent with the observed $F^2$ data.
+
 ## Supported types {#extinction-types}
 
 | Type | Physical/empirical model | Active inputs |

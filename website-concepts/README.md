@@ -74,3 +74,7 @@ mobile screenshots, and then stops its browser and server. It does not download 
 The preview is being expanded into the selected documentation structure. It does not claim to finish the
 documentation migration, supply a desktop release, publish to PyPI, or port all historical content.
 The proposed architecture and remaining production work are recorded in ADR-0053.
+
+The selected preview now has `Home · User guide · Application · Python · Command Line · Physics · About`. Each interface follows Start here, Project, Structure, Experiment, Analysis and Report. The homepage button enters the User guide; setup and first steps live under the relevant interface. Physics supplies model/equation anchors and a JSON catalogue; the build also emits plain Markdown under `reference/` and a root `llms.txt`. The feature matrix separates current four-interface coverage from planned scientific models.
+
+The preview's main branch is a work-in-progress review surface: push incremental changes directly to main so the owner can follow them on Pages. A completed production migration is not required before publishing an increment.
