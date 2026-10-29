@@ -187,7 +187,7 @@ for (const path of svg.querySelectorAll('[data-pulses] path:not([display=none])'
 }
 const state = document.querySelector('[data-network-hero]').__pulseController.snapshot();
 for (const pulse of state.pulses) {
-  if (pulse.speed<90 || pulse.speed>225 || pulse.tailLength<57 || pulse.tailLength>74 ||
+  if (pulse.speed<140 || pulse.speed>210 || pulse.tailLength<57 || pulse.tailLength>74 ||
       pulse.life<6 || pulse.life>10) throw Error('Pulse settings outside owner-approved ranges');
   for (let i=1;i<pulse.route.length;i++) {
     const a=pulse.route[i-1],b=pulse.route[i];
@@ -300,8 +300,8 @@ return {width:innerWidth, heroWidth:h.width, overflow:document.documentElement.s
                 and after_pulse['age'] > before_pulse['age']
             ):
                 require(
-                    after_pulse['currentSpeed'] < before_pulse['currentSpeed'],
-                    'Spark must decelerate through its run',
+                    after_pulse['currentSpeed'] == before_pulse['currentSpeed'],
+                    'Spark speed must stay constant through its run',
                 )
         require(
             any(

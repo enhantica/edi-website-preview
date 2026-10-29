@@ -154,7 +154,7 @@
       pulse.current = directed(edge, from);
       pulse.offset = (from === edge.a ? t : 1 - t) * edge.length;
       pulse.history = [];
-      pulse.speed = random(30, 45) * random(3, 5);
+      pulse.speed = random(140, 210);
       pulse.currentSpeed = pulse.speed;
       pulse.tailLength = random(57, 74);
       pulse.life = random(6, 10);
@@ -224,18 +224,13 @@
         if (pulse.wait > 0) return;
         seed(pulse);
       }
-      const previousAge = pulse.age;
       pulse.age += dt;
       if (pulse.age >= pulse.life) {
         pulse.wait = random(0.25, 0.9);
         return;
       }
-      // Cubic ease-out: launch quickly, then decelerate continuously to rest.
-      // Integrate its derivative exactly so movement is independent of frame rate.
-      const before = 1 - clamp(previousAge / pulse.life);
-      const after = 1 - clamp(pulse.age / pulse.life);
-      pulse.currentSpeed = pulse.speed * after * after;
-      pulse.offset += pulse.speed * pulse.life / 3 * (before ** 3 - after ** 3);
+      // Each spark keeps its independently chosen fast speed throughout the run.
+      pulse.offset += pulse.speed * dt;
       let guard = 0;
       while (pulse.offset >= pulse.current.length && guard++ < 100) {
         pulse.offset -= pulse.current.length;
