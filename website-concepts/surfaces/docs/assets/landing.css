@@ -61,6 +61,7 @@
   margin: 0;
   min-height: 2.3rem;
   border-radius: .4rem;
+  border-width: 1px;
   padding: .6rem 1.05rem;
   font-weight: 600;
   font-size: .8rem;
@@ -169,7 +170,7 @@
   }
 }
 
-.ed-landing__actions .md-button:not(.md-button--primary) {
+.ed-landing__actions .md-button:not(.md-button--primary):not(:hover):not(:focus) {
   border: 1px solid var(--md-default-fg-color--lightest);
   background: transparent;
   color: var(--md-default-fg-color);
