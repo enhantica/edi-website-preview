@@ -8,7 +8,11 @@ Find a capability by its scientific role. The four columns show the **web applic
 
 ## How to read this page
 
-:status-available: **Available** · :status-limited: **Partial or prepared-project support** · :status-planned: **Planned** · :status-proposed: **Proposed** · :material-cancel: **Unavailable**.
+- :status-available: **Available**
+- :status-limited: **Partial or prepared-project support**
+- :status-planned: **Planned**
+- :status-proposed: **Proposed**
+- :material-cancel: **Unavailable**
 
 Each status has a text description; hover an icon for its meaning. A prepared-project status means the calculation uses saved settings; that interface does not have a dedicated editor for them. The application and Python can configure the scientific features marked available. Command Line runs the model declared in the project.
 
