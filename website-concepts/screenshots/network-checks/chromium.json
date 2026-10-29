@@ -1,0 +1,167 @@
+{
+  "browser": "chromium",
+  "version": "150.0.7871.63",
+  "checks": [
+    {
+      "requested_width": 1440,
+      "layout": {
+        "width": 1440,
+        "heroWidth": 1425,
+        "overflow": false,
+        "aligned": true,
+        "bleed": 22.5,
+        "frame": {
+          "border": "rgb(214, 214, 214)",
+          "width": "1px",
+          "radius": 13,
+          "crop": 18.0625,
+          "expectedCrop": 18.06789981617647
+        },
+        "fullWidth": true,
+        "textAbove": true,
+        "introFits": true,
+        "links": [
+          {
+            "label": "Web app",
+            "underline": "none"
+          },
+          {
+            "label": "Desktop app",
+            "underline": "none"
+          },
+          {
+            "label": "Python",
+            "underline": "none"
+          },
+          {
+            "label": "Command Line",
+            "underline": "none"
+          }
+        ],
+        "slots": 3,
+        "transformMatched": true,
+        "noControls": true,
+        "pointFree": true,
+        "banks": [
+          {
+            "x": 0.7421875,
+            "y": 0.7421875239743126
+          },
+          {
+            "x": 0.7421875,
+            "y": 0.7421875239743126
+          }
+        ]
+      }
+    },
+    {
+      "requested_width": 1920,
+      "layout": {
+        "width": 1920,
+        "heroWidth": 1905,
+        "overflow": false,
+        "aligned": true,
+        "bleed": 25.5,
+        "frame": {
+          "border": "rgb(214, 214, 214)",
+          "width": "1px",
+          "radius": 14.3,
+          "crop": 23.125,
+          "expectedCrop": 23.13732453208556
+        },
+        "fullWidth": true,
+        "textAbove": true,
+        "introFits": true,
+        "links": [
+          {
+            "label": "Web app",
+            "underline": "none"
+          },
+          {
+            "label": "Desktop app",
+            "underline": "none"
+          },
+          {
+            "label": "Python",
+            "underline": "none"
+          },
+          {
+            "label": "Command Line",
+            "underline": "none"
+          }
+        ],
+        "slots": 3,
+        "transformMatched": true,
+        "noControls": true,
+        "pointFree": true,
+        "banks": [
+          {
+            "x": 0.9921875,
+            "y": 0.9921875859921179
+          },
+          {
+            "x": 0.9921875,
+            "y": 0.9921875859921179
+          }
+        ]
+      }
+    },
+    {
+      "requested_width": 390,
+      "layout": {
+        "width": 390,
+        "heroWidth": 375,
+        "overflow": false,
+        "aligned": false,
+        "bleed": -21,
+        "frame": {
+          "border": "rgb(214, 214, 214)",
+          "width": "1px",
+          "radius": 13,
+          "crop": 7.46875,
+          "expectedCrop": 7.480614973262032
+        },
+        "fullWidth": true,
+        "textAbove": true,
+        "introFits": true,
+        "links": [
+          {
+            "label": "Web app",
+            "underline": "none"
+          },
+          {
+            "label": "Desktop app",
+            "underline": "none"
+          },
+          {
+            "label": "Python",
+            "underline": "none"
+          },
+          {
+            "label": "Command Line",
+            "underline": "none"
+          }
+        ],
+        "slots": 2,
+        "transformMatched": true,
+        "noControls": true,
+        "pointFree": true,
+        "banks": [
+          {
+            "x": 0.3409090917557478,
+            "y": 0.3409091096490415
+          },
+          {
+            "x": 0.3409090917557478,
+            "y": 0.3409091096490415
+          }
+        ]
+      }
+    }
+  ],
+  "motion_and_lifecycle": "PASS",
+  "errors": [],
+  "source_commit": "9a60788a38b302e0dcd06a9837be725f79dea5a8",
+  "invocation": "BROWSER_EXECUTABLE=/opt/brave.com/brave/brave PLAYWRIGHT_BROWSERS_PATH=/tmp/edi-network-browsers python website-concepts/checks/network_browser.py --record",
+  "visibility_check": "Simulated document.hidden / visibilitychange boundary; native reduced-motion emulation."
+}
