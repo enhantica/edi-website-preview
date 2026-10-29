@@ -155,10 +155,9 @@
       pulse.offset = (from === edge.a ? t : 1 - t) * edge.length;
       pulse.history = [];
       pulse.speed = random(30, 45) * random(3, 5);
-      pulse.speedPhase = random(0, Math.PI * 2);
-      pulse.speedPeriod = random(4, 7);
+      pulse.currentSpeed = pulse.speed;
       pulse.tailLength = random(57, 74);
-      pulse.life = random(14, 21);
+      pulse.life = random(6, 10);
       pulse.age = 0;
       pulse.wait = 0;
     }
@@ -176,7 +175,7 @@
 
     function reconcileCount() {
       const narrow = (root.getBoundingClientRect().width || window.innerWidth) <= 520;
-      const desired = narrow ? {upper: 1, lower: 1} : {upper: 2, lower: 1};
+      const desired = narrow ? {upper: 2, lower: 2} : {upper: 4, lower: 2};
       for (const bank of ['upper', 'lower']) {
         let matches = pulses.filter(p => p.bank === bank);
         while (matches.length > desired[bank]) {
@@ -185,7 +184,7 @@
           pulses = pulses.filter(p => p !== removed);
         }
         while (matches.length < desired[bank]) {
-          const pulse = newPulse(bank, pulses.length * 0.55);
+          const pulse = newPulse(bank, pulses.length * 0.25);
           pulses.push(pulse);
           matches.push(pulse);
         }
@@ -225,19 +224,18 @@
         if (pulse.wait > 0) return;
         seed(pulse);
       }
+      const previousAge = pulse.age;
       pulse.age += dt;
       if (pulse.age >= pulse.life) {
-        pulse.wait = random(1.2, 3.6);
+        pulse.wait = random(0.25, 0.9);
         return;
       }
-      // Each spark eases through its own slow-fast-slow cycle. Smoothstep keeps
-      // acceleration continuous; softer entry/exit avoids a sudden launch or stop.
-      const phase = (1 + Math.sin(pulse.speedPhase + pulse.age * Math.PI * 2 / pulse.speedPeriod)) / 2;
-      const glide = 0.5 + 0.9 * ease(phase);
-      const entry = 0.35 + 0.65 * ease(pulse.age / 1.3);
-      const exit = 0.35 + 0.65 * ease((pulse.life - pulse.age) / 1.7);
-      pulse.currentSpeed = pulse.speed * glide * Math.min(entry, exit);
-      pulse.offset += pulse.currentSpeed * dt;
+      // Cubic ease-out: launch quickly, then decelerate continuously to rest.
+      // Integrate its derivative exactly so movement is independent of frame rate.
+      const before = 1 - clamp(previousAge / pulse.life);
+      const after = 1 - clamp(pulse.age / pulse.life);
+      pulse.currentSpeed = pulse.speed * after * after;
+      pulse.offset += pulse.speed * pulse.life / 3 * (before ** 3 - after ** 3);
       let guard = 0;
       while (pulse.offset >= pulse.current.length && guard++ < 100) {
         pulse.offset -= pulse.current.length;
@@ -253,7 +251,7 @@
     }
 
     function renderPulse(pulse) {
-      const lifeFade = Math.min(ease(pulse.age / 0.9), ease((pulse.life - pulse.age) / 1.1));
+      const lifeFade = Math.min(ease(pulse.age / 0.35), ease((pulse.life - pulse.age) / 0.8));
       if (pulse.wait > 0 || lifeFade <= 0.001) {
         pulse.group.setAttribute('display', 'none');
         return false;

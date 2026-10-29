@@ -188,7 +188,7 @@ for (const path of svg.querySelectorAll('[data-pulses] path:not([display=none])'
 const state = document.querySelector('[data-network-hero]').__pulseController.snapshot();
 for (const pulse of state.pulses) {
   if (pulse.speed<90 || pulse.speed>225 || pulse.tailLength<57 || pulse.tailLength>74 ||
-      pulse.life<14 || pulse.life>21) throw Error('Pulse settings outside owner-approved ranges');
+      pulse.life<6 || pulse.life>10) throw Error('Pulse settings outside owner-approved ranges');
   for (let i=1;i<pulse.route.length;i++) {
     const a=pulse.route[i-1],b=pulse.route[i];
     if (a.to.x!==b.from.x || a.to.y!==b.from.y) throw Error('Disconnected route');
@@ -240,7 +240,7 @@ return {width:innerWidth, heroWidth:h.width, overflow:document.documentElement.s
         if layout['width'] > 1280:
             require(layout['aligned'] and 0 < layout['bleed'] < 80, layout)
         frame = layout['frame']
-        require(frame['border'] == 'rgb(214, 214, 214)' and frame['width'] == '1px', frame)
+        require(frame['border'] == 'rgb(229, 229, 229)' and frame['width'] == '1px', frame)
         require(frame['radius'] > 0 and abs(frame['crop'] - frame['expectedCrop']) < 0.2, frame)
         require(
             layout['introFits']
@@ -254,8 +254,8 @@ return {width:innerWidth, heroWidth:h.width, overflow:document.documentElement.s
             "Failed: all(link['underline'] == 'none' for link in layout['links'])",
         )
         require(
-            layout['slots'] == (2 if layout['heroWidth'] <= 520 else 3),
-            "Failed: layout['slots'] == (2 if layout['heroWidth'] <= 520 else 3)",
+            layout['slots'] == (4 if layout['heroWidth'] <= 520 else 6),
+            'Responsive spark count differs from the selected design',
         )
         require(
             all(abs(bank['x'] - bank['y']) < 0.001 for bank in layout['banks']), 'Distorted mesh'
@@ -293,9 +293,22 @@ return {width:innerWidth, heroWidth:h.width, overflow:document.documentElement.s
         browser.until(STATE + '.running')
         browser.wait(2.2)
         after = browser.execute(FRAGMENTS)
+        for before_pulse, after_pulse in zip(initial['pulses'], after['pulses'], strict=True):
+            if (
+                not before_pulse['waiting']
+                and not after_pulse['waiting']
+                and after_pulse['age'] > before_pulse['age']
+            ):
+                require(
+                    after_pulse['currentSpeed'] < before_pulse['currentSpeed'],
+                    'Spark must decelerate through its run',
+                )
         require(
-            after['pulses'][0]['age'] > initial['pulses'][0]['age'],
-            "Failed: after['pulses'][0]['age'] > initial['pulses'][0]['age']",
+            any(
+                a['age'] != b['age']
+                for a, b in zip(after['pulses'], initial['pulses'], strict=True)
+            ),
+            'Spark lifetimes must advance or restart while visible',
         )
         require(
             len({round(p['speed'], 4) for p in after['pulses']}) > 1,
