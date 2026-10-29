@@ -50,3 +50,7 @@ python -m edi report path/to/project --check
 ```
 
 The command lists each saved report as `current`, `out of date` or `missing`, writing nothing. It exits with status `1` when a listed report is not current. It checks the saved list; it does not require that a project has already saved a report.
+
+## Related Physics
+
+[Agreement factors](../physics/reliability.md) · [Uncertainty and correlations](../physics/minimization.md#eq-covariance).

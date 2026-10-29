@@ -47,3 +47,7 @@ python -m edi report runs/sample-a --check
 ```
 
 Use the [report guide](reports.md) to choose contents and check freshness.
+
+## Related Physics
+
+[Single and joint fitting](../physics/rietveld.md#joint-refinement) · [Sequential and independent scans](../physics/rietveld.md#scan-refinement).

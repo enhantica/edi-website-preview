@@ -43,3 +43,7 @@ Use **Save report** again to bring the selected formats up to date. The status s
 Saving a project keeps the working model and report settings, but does not generate a new report. Save each for its purpose: the project for continuing the analysis, the report for communicating it.
 
 The same report settings can be used from [Python](../python/reports.md) or [the Command Line](../cli/reports.md).
+
+## Related Physics
+
+[Agreement factors](../physics/reliability.md) · [Uncertainty and correlations](../physics/minimization.md#eq-covariance).

@@ -37,3 +37,7 @@ Check which phases should contribute and whether their links are enabled. Struct
 - [Command Line: calculate a prepared project](../../cli/calculate.md). Structural definitions are read from the project.
 
 Continue with [Experiment](experiment.md).
+
+## Related Physics
+
+[Unit cell and symmetry](../../physics/crystallography.md#eq-cell-metric) · [Occupancy and scattering](../../physics/diffraction.md#eq-nuclear-structure-factor) · [Atomic displacement](../../physics/displacement.md#eq-anisotropic-adp).

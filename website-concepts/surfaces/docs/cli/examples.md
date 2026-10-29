@@ -9,3 +9,7 @@ python -m edi fit docs/user/cli/pd-neut-cwl_lbco-hrpt/project --dry
 This runs the refinement without saving. To retain the result, follow the [Command Line refinement guide](fit.md). Keep a copy of the starting project so the original inputs remain available.
 
 Choose a scientific case in the shared [example catalogue](../user-guide/examples.md).
+
+## Related Physics
+
+[Least-squares objective](../physics/rietveld.md#eq-weighted-residual) · [Minimization and covariance](../physics/minimization.md) · [Agreement factors](../physics/reliability.md).

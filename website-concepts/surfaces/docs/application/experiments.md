@@ -48,3 +48,7 @@ Several structures can contribute to one experiment. The displayed weight fracti
 Compare the measured points with the total calculated curve, background and residual. Bragg marks locate the reflection positions. For a scan, the dataset selector chooses which measurement is shown; see [scan fitting](scans.md).
 
 ![Experiment controls beside the measured and calculated pattern](../assets/edi-app.png)
+
+## Related Physics
+
+[Peak profiles](../physics/profiles.md) · [Calibration](../physics/calibration.md) · [Absorption](../physics/corrections/absorption.md) · [Extinction](../physics/corrections/extinction.md) · [Preferred orientation](../physics/corrections/orientation.md).

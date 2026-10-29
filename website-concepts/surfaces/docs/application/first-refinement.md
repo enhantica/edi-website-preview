@@ -55,3 +55,7 @@ Use an external folder or archive for work you want to retain. Browser storage c
 - [Create a project](new-project.md) from your own structure and observations.
 - Explore [other example projects](../user-guide/examples.md).
 - Run the same saved project in [Python](../python/fit.md) or [the Command Line](../cli/fit.md).
+
+## Related Physics
+
+[Least-squares objective](../physics/rietveld.md#eq-weighted-residual) · [Minimization and covariance](../physics/minimization.md) · [Agreement factors](../physics/reliability.md).

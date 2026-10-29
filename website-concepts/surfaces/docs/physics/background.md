@@ -56,6 +56,10 @@ FABC classifies baseline versus peak regions using a wavelet/noise criterion, th
 
 Inspect the estimate. A missing phase or unsuitable calculated pattern can affect a model-assisted baseline proposal. Fitting the proposed background is a separate step.
 
+## Excluded observations {#excluded-regions}
+
+An excluded powder interval removes observations from the fitting objective and agreement-factor sums. It does not add a background component or change the definition of the calculated pattern. Retain excluded ranges with the experiment and justify them physically; masking a mismatch does not improve its model. Single-crystal reflection exclusion is a separate planned capability.
+
 ## References and parameters
 
 Baek, Park, Ahn & Choo (2015), Analyst 140, 250–257 (arPLS); Ryan et al. (1988), Nucl. Instrum. Methods B34, 396–402 (SNIP); Cobas, Bernstein, Martín-Pastor & Tahoces (2006), J. Magn. Reson. 183, 145–151 (FABC). See [background parameters](parameters.md#background) and [application controls](../application/background.md).

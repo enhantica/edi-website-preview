@@ -56,3 +56,7 @@ Saving a project is separate from saving a report. A later model or report-setti
 HTML is available from Python, including self-contained offline HTML. PDF is written by the application. A CIF-report setting exists in the project model, but its writer is not available in this reference version; there is no `save_cif` method.
 
 Keep the complete Edi project as the editable analysis record.
+
+## Related Physics
+
+[Agreement factors](../physics/reliability.md) · [Uncertainty and correlations](../physics/minimization.md#eq-covariance).

@@ -5,3 +5,7 @@ Open the [web app](https://enhantica.github.io/edi/webapp/), go to **Project**, 
 Examples open as working copies. Use **Save project as…** to keep your changes in your own project.
 
 Choose a scientific case in the shared [example catalogue](../user-guide/examples.md).
+
+## Related Physics
+
+[Least-squares objective](../physics/rietveld.md#eq-weighted-residual) · [Minimization and covariance](../physics/minimization.md) · [Agreement factors](../physics/reliability.md).

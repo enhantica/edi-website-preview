@@ -39,3 +39,7 @@ For a scan, inspect individual failed or out-of-date results before interpreting
 - [Command Line: calculation](../../cli/calculate.md) and [refinement commands](../../cli/fit.md).
 
 Continue with [Report](report.md).
+
+## Related Physics
+
+[Least-squares objective](../../physics/rietveld.md#eq-weighted-residual) · [Minimization and covariance](../../physics/minimization.md) · [Agreement factors](../../physics/reliability.md).

@@ -55,3 +55,7 @@ For scan analyses, the [fitting mode](fitting-modes.md) determines whether each 
 ## Names in code and files
 
 A parameter can have a Python access path, an Edi persistence key, and a scientific CIF report name. These have different jobs. Use the current [Python documentation](../python/index.md) for code and [data formats](data-formats.md) for saved files. The code access path and the saved-file key need not be identical.
+
+## Related Physics
+
+[Least-squares objective](../physics/rietveld.md#eq-weighted-residual) · [Minimization and covariance](../physics/minimization.md) · [Agreement factors](../physics/reliability.md).

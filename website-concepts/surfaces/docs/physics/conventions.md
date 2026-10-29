@@ -1,3 +1,7 @@
+---
+template: physics.html
+---
+
 # Conventions
 
 A physical model is reproducible only when its quantities, units and conventions are identified. Keep them with the structure, experiment and analysis settings.

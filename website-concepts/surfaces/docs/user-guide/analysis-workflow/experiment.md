@@ -41,3 +41,7 @@ Scales connect phase contributions to the experiment. Interpret any derived comp
 - [Command Line: run the experiment model saved in a project](../../cli/calculate.md).
 
 Continue with [Analysis](analysis.md).
+
+## Related Physics
+
+[Peak profiles](../../physics/profiles.md) · [Calibration](../../physics/calibration.md) · [Absorption](../../physics/corrections/absorption.md) · [Extinction](../../physics/corrections/extinction.md) · [Preferred orientation](../../physics/corrections/orientation.md).

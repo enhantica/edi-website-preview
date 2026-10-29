@@ -54,3 +54,7 @@ structure = edi.StructureFactory.from_cif_path('structure.cif')
 This creates a structure object; it does not by itself create a complete measurement and analysis project. A successful import also depends on the input carrying the structure information the reader supports.
 
 For a complete runnable analysis, start from a project or a checked example. These pages intentionally document a demonstrated subset rather than claiming that all constructors and file variants are covered.
+
+## Related Physics
+
+[Unit cell and symmetry](../physics/crystallography.md#eq-cell-metric) · [Occupancy and scattering](../physics/diffraction.md#eq-nuclear-structure-factor) · [Atomic displacement](../physics/displacement.md#eq-anisotropic-adp).

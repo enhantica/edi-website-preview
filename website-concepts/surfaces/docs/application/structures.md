@@ -39,3 +39,7 @@ The link can be disabled while remaining in the project. A disabled link is kept
 ## Refine selected values
 
 Use the **Analysis** parameter table to choose which independent structural parameters vary. Begin with a model that describes the main pattern before freeing every available value.
+
+## Related Physics
+
+[Unit cell and symmetry](../physics/crystallography.md#eq-cell-metric) · [Occupancy and scattering](../physics/diffraction.md#eq-nuclear-structure-factor) · [Atomic displacement](../physics/displacement.md#eq-anisotropic-adp).

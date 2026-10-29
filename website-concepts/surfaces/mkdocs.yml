@@ -38,6 +38,7 @@ nav:
   - user-guide/index.md
   - Foundations:
     - Introduction: user-guide/introduction.md
+    - Features and roadmap: user-guide/features.md
     - Concept: user-guide/concepts.md
     - Data formats: user-guide/data-formats.md
     - Parameters: user-guide/parameters.md
@@ -114,10 +115,31 @@ nav:
     - Command reference: cli/reference.md
 - Physics:
   - physics/index.md
-  - Diffraction and scattering: physics/diffraction.md
-  - Peak profiles: physics/profiles.md
-  - Refinement and statistics: physics/refinement.md
-  - Conventions: physics/conventions.md
+  - Diffraction model:
+    - Rietveld refinement: physics/rietveld.md
+    - Crystallography: physics/crystallography.md
+    - Scattering and structure factors: physics/diffraction.md
+    - Atomic displacement: physics/displacement.md
+  - Peak profiles:
+    - physics/profiles.md
+    - Constant wavelength: physics/profiles/cw.md
+    - Time of flight: physics/profiles/tof.md
+  - Intensity corrections:
+    - Absorption: physics/corrections/absorption.md
+    - Extinction: physics/corrections/extinction.md
+    - Preferred orientation: physics/corrections/orientation.md
+    - Lorentz and polarization: physics/corrections/intensity.md
+  - Experiment model:
+    - Calibration and peak positions: physics/calibration.md
+    - Background: physics/background.md
+  - Refinement and statistics:
+    - physics/refinement.md
+    - Minimization and uncertainty: physics/minimization.md
+    - Reliability factors: physics/reliability.md
+  - Reference:
+    - Conventions: physics/conventions.md
+    - Model catalogue: physics/models.md
+    - Parameter index: physics/parameters.md
 - About:
   - about/index.md
   - Get involved: about/community.md

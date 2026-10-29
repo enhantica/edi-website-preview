@@ -40,3 +40,7 @@ project.report.save_html('calculation.html', offline=True)
 Saving and reporting are explicit choices. A report is a presentation of the project; keep the editable project when you want to continue the analysis later.
 
 Continue with [refinement](fit.md) when the project contains observations, or read [reports](reports.md).
+
+## Related Physics
+
+[Calculated pattern](../physics/rietveld.md#eq-rietveld-pattern) · [Peak profiles](../physics/profiles.md) · [Background](../physics/background.md).

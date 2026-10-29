@@ -45,3 +45,7 @@ Subtracting calculated peaks can help where peaks overlap and the measured inten
 Use **Excluded regions** on the Experiment page to declare intervals that should not be fitted. Check the boundaries against the pattern. An excluded region remains a deliberate omission from the analysis; it does not repair the model of that interval.
 
 Save the project to keep its background settings and excluded regions.
+
+## Related Physics
+
+[Background equations and estimation](../physics/background.md) · [Excluded observations](../physics/background.md#excluded-regions).

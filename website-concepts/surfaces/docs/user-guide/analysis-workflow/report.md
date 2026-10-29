@@ -32,3 +32,7 @@ Check report state before sharing it. Keep the report together with the matching
 - [Command Line: report output and freshness checks](../../cli/reports.md).
 
 Use [citation and reproducibility](../../about/citation.md) when preparing a publication or handing an analysis to a collaborator.
+
+## Related Physics
+
+[Agreement factors](../../physics/reliability.md) · [Uncertainty and correlations](../../physics/minimization.md#eq-covariance).

@@ -42,3 +42,7 @@ After editing the template, previous results remain visible but are marked out o
 ## Save the scan
 
 The run writes a row per dataset to `analysis/results.csv` as it progresses. Use **Save project as…** to keep a working copy of an example together with its data and results.
+
+## Related Physics
+
+[Single and joint fitting](../physics/rietveld.md#joint-refinement) · [Sequential and independent scans](../physics/rietveld.md#scan-refinement).

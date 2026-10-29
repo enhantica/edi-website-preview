@@ -40,14 +40,14 @@ Powder phase factors use reflection intensities apportioned from the observed pr
 $$I_{o,h}=\sum_i I_{c,h}(i)\frac{y_{o,i}-b_i}{y_{c,i}-b_i},\qquad
 R_B=\frac{\sum_h|I_{o,h}-I_{c,h}|}{\sum_h|I_{o,h}|}.$$
 
-$$|F_{o,h}|=|F_{c,h}|\sqrt{\max(I_{o,h},0)/I_{c,h}},\qquad
+$$|F_{c,h}|=\sqrt{m_h|F_h|^2},\qquad |F_{o,h}|=|F_{c,h}|\sqrt{\max(I_{o,h},0)/I_{c,h}},\qquad
 R_F=\frac{\sum_h\big||F_{o,h}|-|F_{c,h}|\big|}{\sum_h|F_{o,h}|}.$$
 
 The reflection partition is model-dependent, particularly where peaks overlap. These phase factors are not independent directly measured integrated intensities for every powder reflection.
 
 ## Single-crystal and pooled results {#pooled-factors}
 
-For a single-crystal reflection list, compare its observed and calculated reflection intensities and use the appropriate reflection-based summary. It does not have a powder profile or a powder background partition.
+For a single-crystal reflection list, the same absolute and weighted formulas operate on observed and calculated $F^2$ values, giving $R(F^2)$ and $wR(F^2)$. There is no powder background partition; the background-subtracted denominators equal the un-subtracted ones. Do not label this intensity-based factor as the amplitude-based $R(F)$.
 
 Per-experiment factors use that experiment's included observations. Pooled factors combine the underlying sums across experiments; they are not an arithmetic average of each experiment's R factor. Keep the objective weighting and factor definition explicit when interpreting joint fits.
 

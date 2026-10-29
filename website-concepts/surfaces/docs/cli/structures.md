@@ -17,3 +17,7 @@ python -m edi calc path/to/project --dry
 This evaluates the saved model without writing changes. Inspect the output and any errors before starting a refinement. See [calculate a pattern](calculate.md) for output options.
 
 For the common scientific model, read [Structure](../user-guide/analysis-workflow/structure.md). Continue with [Experiments](experiments.md).
+
+## Related Physics
+
+[Unit cell and symmetry](../physics/crystallography.md#eq-cell-metric) · [Occupancy and scattering](../physics/diffraction.md#eq-nuclear-structure-factor) · [Atomic displacement](../physics/displacement.md#eq-anisotropic-adp).

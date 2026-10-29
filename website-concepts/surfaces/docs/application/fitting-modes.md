@@ -23,3 +23,7 @@ Use **sequential** when each result should seed the next fit, or **independent**
 ## Fit the shown scan dataset on its own
 
 A scan can use `single` to fit the shown dataset. That result becomes the template, and the selected file becomes the template dataset. Check the template before starting a full scan.
+
+## Related Physics
+
+[Single and joint fitting](../physics/rietveld.md#joint-refinement) · [Sequential and independent scans](../physics/rietveld.md#scan-refinement).

@@ -16,3 +16,7 @@ The path is relative to the edi repository. A downloaded or exported project can
 The tutorial sources are also available in [the repository](https://github.com/enhantica/edi/tree/main/docs/user/tutorials). Their execution status is declared separately; publishing a tutorial does not by itself establish that it is currently part of the automatic notebook-execution suite.
 
 Choose a scientific case in the shared [example catalogue](../user-guide/examples.md).
+
+## Related Physics
+
+[Least-squares objective](../physics/rietveld.md#eq-weighted-residual) · [Minimization and covariance](../physics/minimization.md) · [Agreement factors](../physics/reliability.md).
