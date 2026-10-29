@@ -91,7 +91,7 @@
 .ed-landing__interfaces a {
   display: inline-flex;
   align-items: center;
-  gap: .2rem;
+  gap: .1rem;
   color: var(--md-default-fg-color--light);
   font-size: .65rem;
   font-weight: 600;
@@ -115,6 +115,7 @@
   width: calc(100% + 2.5rem);
   max-width: none;
   margin: 0;
+  transform: translateX(-1rem);
   overflow: hidden;
   border: 1px solid #e5e5e5;
   border-radius: .65rem;
@@ -151,6 +152,7 @@
     width: calc(100% + 1rem);
     max-width: none;
     margin-inline: -.5rem;
+    transform: none;
   }
 }
 @media (max-width: 30rem) {
