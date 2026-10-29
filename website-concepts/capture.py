@@ -144,17 +144,26 @@ def main() -> None:
                 ):
                     raise RuntimeError('Feature status icons must be accessible SVGs')
                 tables = page.locator('main table').evaluate_all(
-                    '(tables) => tables.map(t => ({headers:[...t.querySelectorAll("th")].map(h=>h.innerText.trim()),'
+                    '(tables) => tables.map(t => ({headers:[...t.querySelectorAll("th")].map(h=>h.querySelector("[role=img]")?.getAttribute("aria-label") || h.innerText.trim()),'
+                    'iconHeaders:[...t.querySelectorAll("th")].slice(1).every(h=>h.querySelector("[role=img] svg")),'
                     'featureWidth:t.querySelector("th").getBoundingClientRect().width,'
                     'width:t.getBoundingClientRect().width}))'
                 )
                 if not tables or any(
-                    table['headers'] != ['Feature', 'Web', 'Desktop', 'Python', 'CLI']
+                    table['headers']
+                    != [
+                        'Feature',
+                        'Web application',
+                        'Desktop application',
+                        'Python library',
+                        'Command Line (CLI)',
+                    ]
+                    or not table['iconHeaders']
                     or table['featureWidth'] < table['width'] * 0.5
                     for table in tables
                 ):
                     raise RuntimeError(
-                        'Feature tables need compact interface columns and CLI headers'
+                        'Feature tables need compact interface columns and labelled icon headers'
                     )
                 checks.append({'page': slug, 'accessible_svg_status_icons': True})
             math_count = page.locator('.arithmatex').count()

@@ -5,7 +5,7 @@
 .md-typeset table:not([class]) {
   display: table;
   width: 100%;
-  min-width: 24rem;
+  min-width: 20rem;
   table-layout: fixed;
 }
 .md-typeset table:not([class]) th {
@@ -16,10 +16,12 @@
   padding-inline: .35rem;
   white-space: nowrap;
 }
-.md-typeset table:not([class]) th:nth-child(2) { width: 2.5rem; }
-.md-typeset table:not([class]) th:nth-child(3) { width: 3.6rem; }
-.md-typeset table:not([class]) th:nth-child(4) { width: 3.2rem; }
-.md-typeset table:not([class]) th:nth-child(5) { width: 2.2rem; }
+.md-typeset table:not([class]) th:not(:first-child) {
+  width: 2rem;
+}
+.md-typeset table:not([class]) th .twemoji {
+  --md-icon-size: 1rem;
+}
 .md-typeset table:not([class]) .twemoji {
   --md-icon-size: 1.25em;
   vertical-align: middle;
