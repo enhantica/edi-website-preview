@@ -137,6 +137,13 @@ def main() -> None:
             if not response or response.status != 200:
                 raise RuntimeError(f'{slug}: page did not return HTTP 200')
             page.locator('main').wait_for()
+            if label == 'features':
+                statuses = page.locator('main table span[role="img"]')
+                if not statuses.count() or statuses.evaluate_all(
+                    '(items) => items.some(e => !e.querySelector("svg") || !e.ariaLabel)'
+                ):
+                    raise RuntimeError('Feature status icons must be accessible SVGs')
+                checks.append({'page': slug, 'accessible_svg_status_icons': True})
             math_count = page.locator('.arithmatex').count()
             if slug.startswith('physics/') and math_count:
                 page.wait_for_function(

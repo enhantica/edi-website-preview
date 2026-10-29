@@ -79,7 +79,7 @@ x_{\rm eff}=\frac{x_{\rm aniso}}{4(\sin\theta/\lambda)^2},$$
 
 and substitute $x_{\rm eff}$ for $x$ in the same intensity factor. The cross coefficients are entered in the polynomial as written, without an additional factor of two. The implementation returns the identity at vanishing $\sin2\theta$ or a nonpositive empirical radicand; such a result is not evidence for a physically justified coefficient choice.
 
-## Applicability and references
+## Applicability
 
 These are spherical/isotropic Becker–Coppens approximations and the stated empirical Larson forms, not a general dynamical-diffraction solution. Parameter values can be correlated with scale and structure; inspect the strong-reflection residuals and the [reliability factors](../reliability.md).
 
