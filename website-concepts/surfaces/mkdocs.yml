@@ -26,11 +26,20 @@ nav:
       - get-started/index.md
       - Your first refinement: get-started/first-refinement.md
       - Choose your interface: get-started/interfaces.md
+      - Setup and availability: get-started/setup.md
   - Application:
       - application/index.md
-      - Getting comfortable:
+      - Getting started:
           - The workspace: application/workspace.md
+          - Create a project: application/new-project.md
+      - Build your model:
+          - Structures: application/structures.md
+          - Experiments and data: application/experiments.md
+          - Background and excluded regions: application/background.md
+      - Calculate and refine:
           - Refine a pattern: application/refine.md
+          - Fitting modes: application/fitting-modes.md
+          - Work with a scan: application/scans.md
       - Where you work:
           - In your browser: application/browser.md
           - On your desktop: application/desktop.md
@@ -39,18 +48,48 @@ nav:
           - Reports: application/reports.md
   - Python:
       - python/index.md
-      - Load and fit a project: python/fit.md
+      - Getting started:
+          - Set up Python: python/setup.md
+          - Load and save projects: python/projects.md
+      - Build your model:
+          - Structures: python/structures.md
+          - Experiments: python/experiments.md
+      - Calculate and refine:
+          - Calculate a pattern: python/calculate.md
+          - Fit a project: python/fit.md
+          - Inspect results: python/results.md
+      - Save and look up:
+          - Reports: python/reports.md
+          - API quick reference: python/reference.md
   - CLI:
       - cli/index.md
-      - Run a refinement: cli/fit.md
+      - Run an analysis:
+          - Refine a project: cli/fit.md
+          - Calculate a pattern: cli/calculate.md
+      - Keep and share:
+          - Projects and output files: cli/files.md
+          - Reports: cli/reports.md
+      - Automate and look up:
+          - Batch workflows: cli/batch.md
+          - Command reference: cli/reference.md
   - Learn:
       - learn/index.md
-      - Shared concepts:
+      - Understand the model:
+          - Diffraction analysis: learn/concepts.md
           - Projects and experiments: learn/projects.md
+          - Parameters and constraints: learn/parameters.md
+      - Plan and interpret:
+          - Fitting modes: learn/fitting-modes.md
+          - Fit quality: learn/fit-quality.md
           - Examples: learn/examples.md
+      - Look up:
+          - Data and file formats: learn/data-formats.md
+          - Glossary: learn/glossary.md
   - About:
       - about/index.md
       - Get involved: about/community.md
+      - Licence and source: about/licence.md
+      - Citation and reproducibility: about/citation.md
 plugins:
   - search
 markdown_extensions:

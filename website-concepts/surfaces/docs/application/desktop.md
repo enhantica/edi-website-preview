@@ -1,26 +1,40 @@
 # Work on your desktop
 
-The desktop application uses the same visual workspace as the web app and works with local project folders.
+The desktop application uses the same workspace and project model as the web app. It works directly with project folders and zip archives on your computer.
 
-## Local files
+## Open local work
 
-Open a project from disk and save it to a local location. You can inspect the project files or use that project from Python and the CLI.
+Use **Open project…** and choose **Folder** or **Zip archive**. You can also drop a project folder, its `project.edi` file or an archive onto the window.
 
-## Choose your starting point
+A zip archive is unpacked into a temporary working copy. **Save** writes the archive again when its location is writable; otherwise the app asks where to keep it.
 
-Use the [web app](browser.md) to explore the current application immediately. The edi repository also provides the desktop application for building from source.
+## Save or hand on a copy
 
-## Run a development checkout
+**Save project as…** offers a folder or zip archive. Select **Save a copy** to write the current state somewhere else while continuing in the original project.
 
-For an existing edi development environment, the repository provides:
+Folders are convenient when you want to inspect individual structure, experiment or result files. A zip archive keeps the project together when sharing or moving it.
+
+## Use the same workspace
+
+The [workspace tour](workspace.md), [refinement guide](refine.md), [scan guide](scans.md) and [reports](reports.md) apply to both desktop and browser versions.
+
+## Current desktop source
+
+The current edi repository provides the desktop application for building from source. In an existing configured development checkout:
 
 ```console
 pixi run -e app app-build
 pixi run -e app app-run
 ```
 
-Building requires the repository's configured dependencies, including access to the crysta SDK. See [contributor documentation](https://enhantica.github.io/edi/dev/) for development setup.
+The build uses the repository's dependencies, including access to the crysta SDK. The [contributor documentation](https://enhantica.github.io/edi/dev/) covers development setup.
 
-## Learn once
+To explore the current visual interface without a local build, use the [web app](browser.md). Earlier EasyDiffraction installers belong to their earlier implementation and are not interchangeable with the current edi application.
 
-The [workspace tour](workspace.md), [refinement guide](refine.md) and [report guide](reports.md) apply to the visual application in either environment.
+## Continue in Python or the CLI
+
+The project you save is also the input to [Python](../python/index.md) and [the command line](../cli/index.md). Those interfaces let you script the same project model.
+
+---
+
+Sources: [current desktop project-file guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/open-save-and-export.md), [current application build tasks](https://github.com/enhantica/edi/blob/main/pixi.toml).

@@ -31,6 +31,16 @@ Assets are copied unchanged from `https://github.com/easyscience/assets-branding
 The upstream BSD-3-Clause licence is retained in `BRANDING-LICENSE`. Application screenshots
 continue to come from edi's existing public documentation.
 
-The navigation alternatives remain available for comparison. Their difference is information
-architecture rather than a different visual theme. Production integration into edi remains a
-separate reviewed change.
+## Selected navigation
+
+On 2026-10-29 the owner selected the interface-first direction: Home, Get started, Application,
+Python, CLI, Learn and About. Most visitors work through one interface, so its procedures and
+reference material belong under an explicit primary tab. Shared concepts remain in Learn.
+
+New content is added to `surfaces/`. The comparison entry points to that working documentation;
+the earlier `workflows/` variant remains available as a reference. Both keep the native theme.
+Production integration into edi remains a separate reviewed change.
+
+Legacy documentation is adapted to the current edi generation rather than copied as an API or
+distribution promise. Source revisions, adapted subjects and current implementation checks are
+recorded in `CONTENT-SOURCES.md`; upstream attribution and licences are retained.

@@ -6,6 +6,10 @@ documentation, native product builds and Pages workflow.
 
 ## Compare the alternatives
 
+The interface-first navigation is the selected base. New documentation is added to `surfaces/`;
+the earlier workflow-first alternative remains as a reference. The content adaptation is recorded
+in [CONTENT-SOURCES.md](CONTENT-SOURCES.md).
+
 | | A: choose your interface | B: follow your workflow |
 | --- | --- | --- |
 | Main navigation | Home, Get started, Application, Python, CLI, Learn, About | Home, Get started, Guides, Tutorials, Reference, About |
@@ -65,6 +69,6 @@ mobile screenshots, and then stops its browser and server. It does not download 
 - Current `docs/user/` and the edi example catalogue are the authority for product instructions.
   Historical download versions, backend claims and old installation commands are not carried over.
 
-The concepts illustrate information architecture and presentation. They do not claim to finish the
+The preview is being expanded into the selected documentation structure. It does not claim to finish the
 documentation migration, supply a desktop release, publish to PyPI, or port all historical content.
 The proposed architecture and remaining production work are recorded in ADR-0053.

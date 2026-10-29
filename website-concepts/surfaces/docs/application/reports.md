@@ -1,25 +1,49 @@
-# Share a report
+# Review and save a report
 
-The **Report** page brings structures, experiments, fit results and correlations into one document.
+The **Report** page presents structures, experiments, fit information and correlations as one document. Use it to prepare a result for inspection or sharing while keeping the project as your working analysis.
+
+## Review the document
+
+The main view shows the report with its figures and structure views. Inspect it after a fit, particularly the selected experiment, model values and charts.
+
+The sidebar has **Export** and **Contents** groups.
 
 ## Choose the contents
 
-Review the report and choose the parts you want to include. Long data tables can be left out when a shorter document is more useful.
+**Contents** controls the optional parts of the document: charts, correlations, reflections, measured data points and, for a scan, parameter evolution. Data tables can be long, so data points are initially left out.
 
-## Choose a format
+These choices are saved with the project. They do not change which data were fitted.
 
-- **HTML** keeps charts interactive.
-- **PDF** is a document with static figures.
-- **CIF** stores the structures, experiments and fit result in crystallographic form.
+## Choose output formats
 
-## Keep HTML self-contained
+| Format | Use it for |
+| --- | --- |
+| HTML | An interactive document with pattern zoom, hover and structure controls |
+| PDF | A paginated document with static figures |
+| CIF | Crystallographic data blocks containing the fit, structures and experiments |
 
-The offline HTML option embeds the libraries its interactive figures need. Otherwise those libraries are loaded from the web when the report opens.
+The HTML export option can embed the chart libraries for offline use. Without embedding, the document loads those libraries from the web when opened.
+
+The PDF uses A4 pages and light-colour figures. The application writes PDF; Python and CLI report generation share the report model and settings but do not write that application PDF.
+
+## Save the report
+
+Select the desired formats in **Export**, then choose **Save report**. The files are written to the project's `reports/` directory. The web app also downloads the report files.
+
+Turning off a format leaves any previously saved file in place; it does not delete it.
+
+## Keep saved reports current
+
+Saved reports are listed with their saved time. A report is marked **out of date** when the document the project would produce now differs from it, for example after a fit or a change to Contents. **Missing** means the saved file is no longer present.
+
+Use **Save report** again to bring the selected formats up to date. The status survives reopening the project.
 
 ## Save the project too
 
-A report is a presentation of your result. Save the project separately so you can continue the analysis or run it through Python and the CLI.
+Saving a project keeps the working model and report settings, but does not generate a new report. Save each for its purpose: the project for continuing the analysis, the report for communicating it.
 
-## Use another interface
+The same report settings can be used from [Python](../python/fit.md) or [the CLI](../cli/fit.md).
 
-Report generation is also available from [Python](../python/fit.md) and [the command line](../cli/fit.md); the application writes PDF reports.
+---
+
+Source: [current report guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/the-report.md).

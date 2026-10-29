@@ -56,3 +56,33 @@ concepts once, then choose the interface that suits your work.
 3. Review the result, save your project and prepare a report.
 
 [Understand the project model](learn/projects.md) · [Follow your first refinement](get-started/first-refinement.md)
+
+## What you can do
+
+Start with the part of the analysis you need. A project carries the structural model, experiment
+settings and results between the visual application, Python and the command line.
+
+| Your task | Where to start |
+| --- | --- |
+| Calculate a pattern from a structure and experiment, without measured data | [Calculate in Python](python/calculate.md) or [use the CLI](cli/calculate.md) |
+| Bring your own structure and measured pattern into the app | [Create a project](application/new-project.md) |
+| Choose background points and remove regions from a fit | [Background and excluded regions](application/background.md) |
+| Refine a structural model against observations | [Application refinement](application/refine.md), [Python](python/fit.md) or [CLI](cli/fit.md) |
+| Fit several experiments or follow a changing sample through a scan | [Understand fitting modes](learn/fitting-modes.md) |
+| Assess the residual, uncertainties and agreement factors | [Fit quality](learn/fit-quality.md) |
+| Keep an analysis portable or send it to a collaborator | [Projects and files](application/projects.md) |
+| Share an interactive report or a scientific record | [Reports](application/reports.md) |
+
+## Open and reproducible
+
+EasyDiffraction is open scientific software. Its readable project files keep the structure,
+experiment, fitting choices and saved results together. The current edi implementation uses the
+crysta diffraction engine; older EasyDiffraction releases have their own interfaces and backends.
+
+[About the project](about/index.md) · [Data and file formats](learn/data-formats.md) · [Get involved](about/community.md)
+
+---
+
+The product introduction develops the [earlier EasyDiffraction website](https://github.com/easyscience/EasyDiffractionWww/blob/master/content/home.yaml),
+with the workflow from the [library documentation](https://github.com/easyscience/diffraction-lib/blob/master/docs/docs/user-guide/analysis-workflow/index.md).
+The linked guides describe the current edi generation.

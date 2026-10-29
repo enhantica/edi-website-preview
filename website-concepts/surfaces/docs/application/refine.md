@@ -1,29 +1,43 @@
 # Refine a diffraction pattern
 
-Start with a project whose structure and experiment describe your measurement. The refinement adjusts the parameters you choose so that the calculated pattern approaches the measured pattern.
+Refinement adjusts the parameters you choose to bring the calculated result closer to the measured data. Begin with a structural model and experiment that plausibly describe the measurement; refinement is not a substitute for checking those choices.
 
-## Load a project
+## Load or prepare the project
 
-Use **Project** to open a saved project or an included example. An example includes the structure, measured data and starting conditions for that case.
+Open an existing project or an included example on **Project**. To analyse your own measurement, follow [create a project](new-project.md).
 
-## Inspect the experiment
+On **Structure**, check symmetry, cell and atom sites. On **Experiment**, check the data, instrument, peak profile, [background](background.md), excluded regions and linked structures.
 
-On **Experiment**, compare the measured and calculated patterns. Check the peak profile, background, excluded regions and linked structures before fitting.
+## Compare the starting pattern
 
-![Measured and calculated diffraction patterns](../assets/edi-app.png)
+Look at peak positions, widths, intensities and the background before fitting. An incorrect wavelength or calibration can shift peaks; a missing phase can leave intensity the model cannot explain.
 
-## Select free parameters
+![The pattern, residual and reflection positions](../assets/edi-app.png)
 
-On **Analysis**, inspect the parameter table. Enable variation for the parameters you intend to refine. A parameter fixed by symmetry or tied to another value should be understood before trying to change it.
+## Choose free parameters
 
-## Run the fit
+On **Analysis**, the parameter table shows the values available to the fit. Use the **free** column to choose which independent parameters may vary. The name and variability filters help you find them.
 
-Start fitting and review the result. Look at the pattern and residual as well as the reported agreement factors. Parameter uncertainties and correlations help explain what the data constrain.
+Values fixed by symmetry or constrained to other values are not independent fit parameters. The minimum and maximum displayed in the table describe admissible model values; they are not a separate set of user-defined optimizer bounds.
 
-## Review and save
+Free parameters deliberately, checking the effect of each stage. Starting with every parameter free can hide an unsuitable model behind strongly correlated values.
 
-Save the project to keep its updated values. Use the **Report** page to prepare a separate document for sharing.
+## Select a fitting mode
 
-## Continue in another interface
+The available mode depends on the project. One experiment is fitted on its own; several experiments can be fitted jointly. A scan can run sequentially or independently across its datasets. See [fitting modes](fitting-modes.md).
 
-The same saved project can be [loaded in Python](../python/fit.md) or [run from the command line](../cli/fit.md). The structures and experiments do not need to be recreated.
+## Start and inspect the fit
+
+Choose **Start fitting**. Review the calculated curve and residual as well as the reported agreement factors. Parameter uncertainties and correlations help you understand what the data constrain.
+
+A small agreement factor alone does not establish that the structural model is correct. Inspect unmodelled features and physically implausible values before accepting the result.
+
+## Save the project and report
+
+Save the updated project if you want to keep working from its refined values. Use the **Report** page to prepare a separate document containing the selected model, results and figures.
+
+The same project can be opened in [Python](../python/fit.md) or run with [the CLI](../cli/fit.md).
+
+---
+
+Sources: [current parameter controls](https://github.com/enhantica/edi/blob/main/app/qml/Pages/Analysis/ParametersGroup.qml), [current fitting controls](https://github.com/enhantica/edi/blob/main/app/qml/Pages/Analysis/FittingGroup.qml), [current fitting-mode controls](https://github.com/enhantica/edi/blob/main/app/qml/Pages/Analysis/FittingModeGroup.qml), [current fit-quality guide](https://github.com/enhantica/edi/blob/main/docs/user/guides/fit-quality.md).
