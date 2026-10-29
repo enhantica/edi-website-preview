@@ -1,0 +1,56 @@
+name: Publish website concepts
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - website-concepts/**
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+          cache: pip
+          cache-dependency-path: website-concepts/requirements.txt
+      - name: Install the documentation toolchain
+        run: python -m pip install -r website-concepts/requirements.txt
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build both concepts and check generated links
+        run: python website-concepts/build.py --base-url "$PREVIEW_BASE_URL"
+        env:
+          PREVIEW_BASE_URL: ${{ steps.pages.outputs.base_url }}
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: website-concepts/_build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy the preview
+        id: deployment
+        uses: actions/deploy-pages@v4
+
