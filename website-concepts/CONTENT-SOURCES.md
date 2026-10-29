@@ -254,3 +254,7 @@ The owner requested smaller hierarchical capability tables and checkbox/icon sta
 The full local MathJax bundle includes TeX extensions needed by the reference, including boldsymbol. The smaller bundle attempted to fetch unvendored extension files and prevented ADP-page typesetting; the rendering check now covers every Physics page and every math wrapper. Bibliographies use numbered entries, separate from related documentation links.
 
 Feature status icons use Zensical’s bundled Lucide SVG shortcodes, with the documented pymdownx.emoji extension. This avoids platform emoji-font differences and preserves native icon sizing and table styling.
+
+## Owner-supplied animated network (2026-10-29)
+
+Source: `easydiffraction-network-handoff.zip`, supplied in this conversation. The approved SVG is inlined in `surfaces/overrides/partials/network.svg`, with accessibility/class attributes added at its root. Its path definitions, stroke values and opacity attributes are preserved. The supplied `network-pulse-engine.js` is the starting implementation of `surfaces/docs/assets/network-pulse-engine.js`; integration adds offscreen suspension, full-width/responsive bank placement and component lifecycle cleanup. The CSS is scoped to the homepage. The preview HTML/GIF are authoring references, not shipped page content or runtime dependencies.

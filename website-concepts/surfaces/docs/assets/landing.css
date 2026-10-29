@@ -11,15 +11,18 @@
 .md-content__inner:has(.ed-landing) {
   margin-block: 0;
   padding-block: 0;
+  margin-inline: 0;
 }
 .ed-landing {
   display: grid;
   grid-template-columns: minmax(0, 21rem) minmax(0, 1fr);
-  /* Keep the text aligned with the header; use the open space to its right. */
-  width: calc(100% + max(0px, (100vw - 61rem) / 2 - .4rem));
+  --ed-hero-gap: clamp(1.5rem, 4vw, 4rem);
+  box-sizing: border-box;
+  width: 100%;
+  padding-inline: var(--ed-hero-gap) 0;
   font-family: Nunito, var(--md-text-font), sans-serif;
   align-items: center;
-  gap: clamp(1.8rem, 3vw, 2.5rem);
+  gap: var(--ed-hero-gap);
   min-height: calc(100svh - 5.3rem);
   padding-block: 3rem;
 }
@@ -114,6 +117,7 @@
   .ed-landing {
     grid-template-columns: minmax(0, 1fr);
     width: 100%;
+    padding-inline: .8rem;
     gap: 2.4rem;
     max-width: 42rem;
     min-height: auto;

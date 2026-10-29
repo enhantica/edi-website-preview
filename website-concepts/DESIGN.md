@@ -181,3 +181,16 @@ A JSON catalogue records source snapshot, model/parameter scope, scientific unit
 Extend the existing screenshot-on-the-right hero: keep the slogan aligned with the native header, give the screenshot more of the available space to the right, and keep the full application image visible. On narrow screens the screenshot follows the text and uses a little more of the viewport width.
 
 A single quiet group below the action buttons identifies Web app, Desktop app, Python and Command Line. Use the bundled Zensical Lucide icons and Python mark with readable names; each link opens the relevant interface documentation. Keep the primary web-app action distinct. Avoid extra cards or homepage sections. The interface links wrap into a regular two-column layout on small screens.
+
+
+## ADR: supplied network animation and full-width hero — 2026-10-29
+
+Accepted owner brief: integrate `easydiffraction-network-handoff.zip` into the existing hero. This extends the prior `home.html`, `landing.css` and screenshot design rather than introducing another homepage. Supersedes the original no-animation restriction and header-aligned hero copy: the owner now requests matching left outer and internal gutters, interface links above the slogan, and slight desktop screenshot bleed through the right viewport edge. Mobile keeps the image complete.
+
+Keep the approved SVG path geometry, colours and individual opacity values. The native main/container template is retained; its Home-only container block wraps the existing content in a full-width isolated section. A separate clipped artwork layer sits below the content. Clip horizontal overflow at the viewport, leaving vertical screenshot shadows and native header/drawer/search controls intact. The four interface icons are decorative within named documentation links.
+
+Use the supplied graph traversal/trail renderer as the animation's prior implementation. Adapt each grey bank and its overlay with the same uniform physical scale and corner anchoring, including tall mobile heroes. Recompute only crop/placement on resize; build topology once from shared path endpoints. A single RAF loop retains elapsed-time movement, fragment reuse, local fades, reference timing ranges and responsive slot counts.
+
+A discreet native pause/play button provides explicit opt-in under reduced motion. IntersectionObserver and Page Visibility suspend the loop, resetting elapsed-time state on resume. Component disposal cancels the frame, disconnects observers/listeners and removes its overlay/property. Full-document navigation is current; pagehide/pageshow handles back/forward cache, and a guarded optional native document$ subscription prevents duplicate initialization if instant navigation is enabled. The static inline artwork remains without JavaScript.
+
+Acceptance follows the supplied brief: geometry/opacity preservation, edge-aligned turns, restrained trails, readable/clickable content, correct desktop/mobile placement, no horizontal overflow or layout shift, motion preferences, pause, hidden/offscreen suspension, disposal/re-entry and native themes. Verify in Chromium and native Safari, and record the integrated motion.
