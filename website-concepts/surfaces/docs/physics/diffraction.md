@@ -12,8 +12,6 @@ The sum is over the symmetry-generated cell: $o_j$ is occupancy, $b_j$ coherent 
 
 Neutron scattering lengths depend on species/isotope, not on the X-ray atomic form-factor equation. The supported source selectors are `rauch2003ext` and `sears1992`; preserve the selected source or explicitly supplied scattering lengths when reproducing a calculation. Model admission rules prevent conflicting source declarations.
 
-Reference: [IUCr structure factor](https://dictionary.iucr.org/Structure_factor).
-
 ## X-ray form factors and dispersion {#eq-xray-structure-factor}
 
 For the scalar X-ray model, replace $b_j$ by
@@ -43,3 +41,7 @@ Here $Z_pM_p$ is the cell formula mass and $V_p$ its volume; a cell-mass represe
 ## Applicability
 
 This page describes the scalar nuclear/X-ray Bragg model in the [catalogue](models.md). It does not turn a general magnetic, polarized, total-scattering or PDF theory into an available product capability; those states are recorded separately in [Features and roadmap](../user-guide/features.md).
+
+## References
+
+1. International Union of Crystallography. [Structure factor](https://dictionary.iucr.org/Structure_factor).

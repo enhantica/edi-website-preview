@@ -61,8 +61,13 @@ For a single-crystal reflection list, the same absolute and weighted formulas op
 
 Per-experiment factors use that experiment's included observations. Pooled factors combine the underlying sums across experiments; they are not an arithmetic average of each experiment's R factor. Keep the objective weighting and factor definition explicit when interpreting joint fits.
 
-## Interpretation and references
+## Interpretation
 
 There is no universal threshold that proves structural correctness. Changing the data range, uncertainty estimates, background, excluded observations or free set changes the statistic. See [assessing a fit](../user-guide/fit-quality.md).
 
-McCusker et al. (1999), *Rietveld refinement guidelines*, J. Appl. Cryst. 32, 36–50; Toby (2006), *R factors in Rietveld analysis: How good is good enough?*, Powder Diffraction 21, 67–70. Definitions here also follow the [documented EasyDiffraction fit-quality convention](https://github.com/enhantica/edi/blob/main/docs/user/guides/fit-quality.md), extended with the background-subtracted and phase factors described above.
+## References
+
+1. McCusker, L. B., Von Dreele, R. B., Cox, D. E., Louër, D. & Scardi, P. (1999). *Rietveld refinement guidelines*. **Journal of Applied Crystallography**, 32, 36–50.
+2. Toby, B. H. (2006). *R factors in Rietveld analysis: How good is good enough?* **Powder Diffraction**, 21, 67–70.
+
+Related documentation: [practical fit assessment](../user-guide/fit-quality.md) · [minimization and uncertainty](minimization.md).

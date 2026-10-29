@@ -24,4 +24,8 @@ The reciprocal metric matters for non-orthogonal cells. A bare Cartesian dot pro
 
 A preferred-orientation row belongs to a linked structure in a CW experiment. It changes reflection intensities rather than peak positions. The implementation applies no extra volume normalisation to this factor. This model is not an arbitrary orientation-distribution function or a model for every texture geometry.
 
-Dollase (1986), *Correction of intensities for preferred orientation in powder diffractometry: application of the March model*, J. Appl. Cryst. 19, 267–272. See [parameters](../parameters.md#preferred-orientation), [phase scales](../diffraction.md#occupancy-and-scale) and [crystallography](../crystallography.md#eq-cell-metric).
+## References
+
+1. Dollase, W. A. (1986). *Correction of intensities for preferred orientation in powder diffractometry: application of the March model*. **Journal of Applied Crystallography**, 19, 267–272.
+
+Related documentation: [preferred-orientation parameters](../parameters.md#preferred-orientation) · [phase scales](../diffraction.md#occupancy-and-scale) · [crystallography](../crystallography.md#eq-cell-metric).

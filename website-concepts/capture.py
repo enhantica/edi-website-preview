@@ -122,6 +122,13 @@ def main() -> None:
                 ('physics/corrections/extinction/', 'physics-extinction'),
                 ('physics/reliability/', 'physics-reliability'),
             ])
+            covered = {slug for slug, _ in pages}
+            for source in sorted((ROOT / 'surfaces/docs/physics').rglob('*.md')):
+                relative = source.relative_to(ROOT / 'surfaces/docs')
+                route = relative.parent if source.name == 'index.md' else relative.with_suffix('')
+                slug = route.as_posix() + '/'
+                if slug not in covered:
+                    pages.append((slug, slug.rstrip('/').replace('/', '-')))
         for slug, label in pages:
             print(f'Checking {slug or "/"}', flush=True)
             response = page.goto(
@@ -130,16 +137,24 @@ def main() -> None:
             if not response or response.status != 200:
                 raise RuntimeError(f'{slug}: page did not return HTTP 200')
             page.locator('main').wait_for()
-            if label.startswith('physics-'):
+            math_count = page.locator('.arithmatex').count()
+            if slug.startswith('physics/') and math_count:
                 page.wait_for_function(
                     'Boolean(window.MathJax && MathJax.startup && MathJax.startup.promise)'
                 )
                 page.evaluate('() => MathJax.startup.promise')
                 if page.locator('[data-mjx-error], mjx-merror').count():
                     raise RuntimeError(f'{slug}: an equation failed to render')
-                if not page.locator('.arithmatex mjx-container[jax="SVG"]').count():
-                    raise RuntimeError(f'{slug}: equations are not rendered as SVG')
-                checks.append({'page': slug, 'equations_rendered_without_errors': True})
+                unrendered = page.locator('.arithmatex').evaluate_all(
+                    '(items) => items.filter(e => !e.querySelector("mjx-container[jax=SVG]")).length'
+                )
+                if unrendered:
+                    raise RuntimeError(f'{slug}: {unrendered} equations are not rendered as SVG')
+                checks.append({
+                    'page': slug,
+                    'equations_rendered_without_errors': True,
+                    'equations_checked': math_count,
+                })
             page.screenshot(path=str(output / f'{name}-{label}.png'), full_page=False)
             if label == 'home':
                 page.screenshot(path=str(output / f'{name}-home-full.png'), full_page=True)

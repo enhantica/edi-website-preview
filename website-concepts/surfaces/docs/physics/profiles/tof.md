@@ -58,4 +58,7 @@ The supported registry contains the three types above. Ikeda–Carpenter is [pla
 
 ## References
 
-Von Dreele, Jorgensen & Windsor (1982), J. Appl. Cryst. 15, 581–589; Thompson, Cox & Hastings (1987), J. Appl. Cryst. 20, 79–83. See [model coverage](../models.md#peak-profiles) and [profile cutoffs](../profiles.md#peak-cutoff).
+1. Von Dreele, R. B., Jorgensen, J. D. & Windsor, C. G. (1982). **Journal of Applied Crystallography**, 15, 581–589. Time-of-flight profile modelling.
+2. Thompson, P., Cox, D. E. & Hastings, J. B. (1987). **Journal of Applied Crystallography**, 20, 79–83. [DOI](https://doi.org/10.1107/S0021889887087090). Width and mixing convention.
+
+Related documentation: [model coverage](../models.md#peak-profiles) · [profile cutoffs](../profiles.md#peak-cutoff).

@@ -59,8 +59,9 @@ t_4={}&0.044365-\frac{0.04259}{(1+0.41051s^2)^{148.4202}}.
 
 The high-$u$ expression is tabulated as a percentage before the $0.01$ conversion to a transmission fraction. The two empirical branches have a small seam mismatch; do not impose an invented continuity correction when reproducing this model.
 
-## References and use
+## References
 
-Hewat (1979), Acta Cryst. A35, 248; Lobanov & Alte da Veiga (1998), cylinder-transmission parameterisation as used by the GSAS-II absorption implementation. The reference fixes the implemented coefficients above, rather than asserting that all cylinder approximations are interchangeable.
+1. Hewat, A. W. (1979). **Acta Crystallographica A**, 35, 248. Cylinder absorption approximation.
+2. Lobanov, N. N. & Alte da Veiga, L. (1998). Cylinder-transmission parameterisation, as used by the GSAS-II absorption implementation. The coefficients and branch conventions reproduced above identify the implemented approximation.
 
-[Absorption parameters](../parameters.md#absorption) · [Experiment workflow](../../user-guide/analysis-workflow/experiment.md) · [Extinction](extinction.md).
+Related documentation: [absorption parameters](../parameters.md#absorption) · [experiment workflow](../../user-guide/analysis-workflow/experiment.md) · [extinction](extinction.md).

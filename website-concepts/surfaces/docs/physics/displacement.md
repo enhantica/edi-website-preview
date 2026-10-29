@@ -31,4 +31,5 @@ Check physical plausibility and positive-definiteness where appropriate. A large
 
 ## References
 
-[IUCr displacement-parameter nomenclature](https://www.iucr.org/who-we-are/commissions/commission-on-crystallographic-nomenclature/published-reports/adp) and the [coreCIF B-parameter definition](https://www.iucr.org/__data/iucr/cifdic_html/1/cif_core.dic/Iatom_site_B_iso_or_equiv.html).
+1. International Union of Crystallography. [Atomic displacement parameter nomenclature](https://www.iucr.org/who-we-are/commissions/commission-on-crystallographic-nomenclature/published-reports/adp). Definitions and coordinate conventions.
+2. International Union of Crystallography. [coreCIF definition of isotropic B](https://www.iucr.org/__data/iucr/cifdic_html/1/cif_core.dic/Iatom_site_B_iso_or_equiv.html).

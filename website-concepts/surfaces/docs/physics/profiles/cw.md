@@ -68,6 +68,11 @@ $$\Omega(x)=\frac{\sum_k w_kG(\delta_k)\,pV(x-\delta_k+2\theta_h)}{\sum_k w_kG(\
 
 `asym_fcj_1` is $S_L$ and `asym_fcj_2` is $D_L$. The implementation handles zero/equal-height limits and uses the symmetric profile within 0.4° of $2\theta_h=90°$; these evaluation conventions are part of the model, not new free parameters.
 
-## References and parameters
+## References
 
-Thompson, Cox & Hastings (1987), J. Appl. Cryst. 20, 79–83, [DOI](https://doi.org/10.1107/S0021889887087090); Caglioti, Paoletti & Ricci (1958), Nucl. Instrum. 3, 223–228; Bérar & Baldinozzi (1993), J. Appl. Cryst. 26, 128–129; Finger, Cox & Jephcoat (1994), J. Appl. Cryst. 27, 892–900. See the [peak parameter index](../parameters.md#peak) for the stored names and units.
+1. Caglioti, G., Paoletti, A. & Ricci, F. P. (1958). **Nuclear Instruments**, 3, 223–228. Angular dependence of peak widths.
+2. Thompson, P., Cox, D. E. & Hastings, J. B. (1987). **Journal of Applied Crystallography**, 20, 79–83. [DOI](https://doi.org/10.1107/S0021889887087090). TCH width and mixing.
+3. Bérar, J.-F. & Baldinozzi, G. (1993). **Journal of Applied Crystallography**, 26, 128–129. Empirical profile asymmetry.
+4. Finger, L. W., Cox, D. E. & Jephcoat, A. P. (1994). **Journal of Applied Crystallography**, 27, 892–900. Axial-divergence asymmetry.
+
+Related documentation: [peak parameter names and units](../parameters.md#peak) · [profile catalogue](../models.md#peak-profiles).

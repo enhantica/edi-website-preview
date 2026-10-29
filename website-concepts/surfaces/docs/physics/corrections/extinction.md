@@ -83,4 +83,10 @@ and substitute $x_{\rm eff}$ for $x$ in the same intensity factor. The cross coe
 
 These are spherical/isotropic Becker–Coppens approximations and the stated empirical Larson forms, not a general dynamical-diffraction solution. Parameter values can be correlated with scale and structure; inspect the strong-reflection residuals and the [reliability factors](../reliability.md).
 
-Becker & Coppens (1974), Acta Cryst. A30, 129–147, [DOI](https://doi.org/10.1107/S0567739474000337), and A30, 148–153; Larson's empirical extinction convention as in SHELXL and the Mag2Pol manual. [Parameter definitions](../parameters.md#extinction) fix the units and descriptor/free distinctions used here.
+## References
+
+1. Becker, P. J. & Coppens, P. (1974). **Acta Crystallographica A**, 30, 129–147. [DOI](https://doi.org/10.1107/S0567739474000337). Extinction theory and spherical approximations.
+2. Becker, P. J. & Coppens, P. (1974). **Acta Crystallographica A**, 30, 148–153. Application of the extinction treatment.
+3. Larson extinction convention, as used in SHELXL and the Mag2Pol manual, §5.1.3. The operative intensity factor and units for this reference are stated above.
+
+Related documentation: [extinction parameter definitions](../parameters.md#extinction) · [reliability factors](../reliability.md).
