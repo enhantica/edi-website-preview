@@ -50,9 +50,11 @@ def _capture_drawer(page: Page, output: Path, name: str) -> None:
         raise RuntimeError('Header must contain one SVG, without light/dark image alternatives')
     colors = []
     for scheme in ['default', 'slate']:
-        colors.append(header.locator('g[style="fill: currentColor"] path').first.evaluate(
-            '(e) => getComputedStyle(e).fill'
-        ))
+        colors.append(
+            header.locator('g[style="fill: currentColor"] path').first.evaluate(
+                '(e) => getComputedStyle(e).fill'
+            )
+        )
         page.locator('.md-header label[for="__drawer"]').click()
         title = page.locator('.md-nav--primary > .md-nav__title')
         if title.locator('svg.ed-wordmark').count() != 1 or title.locator('img').count():
@@ -113,14 +115,31 @@ def main() -> None:
             pages.extend([
                 ('user-guide/', 'user-guide'),
                 ('user-guide/analysis-workflow/structure/', 'workflow'),
+                ('user-guide/features/', 'features'),
+                ('physics/profiles/cw/', 'physics-cw'),
+                ('physics/profiles/tof/', 'physics-tof'),
+                ('physics/corrections/absorption/', 'physics-absorption'),
+                ('physics/corrections/extinction/', 'physics-extinction'),
+                ('physics/reliability/', 'physics-reliability'),
             ])
         for slug, label in pages:
+            print(f'Checking {slug or "/"}', flush=True)
             response = page.goto(
                 f'{origin}/{base_path}{slug}', wait_until='networkidle', timeout=12000
             )
             if not response or response.status != 200:
                 raise RuntimeError(f'{slug}: page did not return HTTP 200')
             page.locator('main').wait_for()
+            if label.startswith('physics-'):
+                page.wait_for_function(
+                    'Boolean(window.MathJax && MathJax.startup && MathJax.startup.promise)'
+                )
+                page.evaluate('() => MathJax.startup.promise')
+                if page.locator('[data-mjx-error], mjx-merror').count():
+                    raise RuntimeError(f'{slug}: an equation failed to render')
+                if not page.locator('.arithmatex mjx-container[jax="SVG"]').count():
+                    raise RuntimeError(f'{slug}: equations are not rendered as SVG')
+                checks.append({'page': slug, 'equations_rendered_without_errors': True})
             page.screenshot(path=str(output / f'{name}-{label}.png'), full_page=False)
             if label == 'home':
                 page.screenshot(path=str(output / f'{name}-home-full.png'), full_page=True)
@@ -148,7 +167,13 @@ def main() -> None:
         if name == 'surfaces':
             tabs = [text.strip() for text in page.locator('.md-tabs__link').all_inner_texts()]
             if tabs != [
-                'Home', 'User guide', 'Application', 'Python', 'Command Line', 'Physics', 'About'
+                'Home',
+                'User guide',
+                'Application',
+                'Python',
+                'Command Line',
+                'Physics',
+                'About',
             ]:
                 raise RuntimeError(f'Unexpected section order: {tabs}')
             checks.append({'shared_guide_before_interfaces': True, 'header_wordmark_only': True})
@@ -165,6 +190,21 @@ def main() -> None:
         })
         _capture_drawer(page, output, name)
         checks.append({'single_svg_header_and_drawer': True, 'theme_aware_lettering': True})
+        if name == 'surfaces':
+            for slug in ['', 'user-guide/features/', 'physics/corrections/extinction/']:
+                for width in [320, 390, 768, 1024, 1280, 1360, 1440, 1600, 2560]:
+                    print(f'Checking {slug or "/"} at {width}px', flush=True)
+                    page.set_viewport_size({'width': width, 'height': 1000})
+                    page.goto(f'{origin}/{slug}', wait_until='networkidle', timeout=12000)
+                    if slug.startswith('physics/'):
+                        page.evaluate('() => MathJax.startup.promise')
+                    if page.evaluate('document.documentElement.scrollWidth > innerWidth'):
+                        raise RuntimeError(f'{slug or "/"}: horizontal overflow at {width}px')
+                checks.append({'page': slug or '/', 'responsive_widths_320_to_2560': True})
+            page.set_viewport_size({'width': 390, 'height': 844})
+            page.goto(f'{origin}/physics/corrections/extinction/', wait_until='networkidle')
+            page.evaluate('() => MathJax.startup.promise')
+            page.screenshot(path=str(output / 'surfaces-physics-mobile-dark.png'), full_page=False)
         browser.close()
     server.shutdown()
     report = {'concept': name, 'checks': checks, 'browser_errors': errors}

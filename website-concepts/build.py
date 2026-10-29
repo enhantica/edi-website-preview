@@ -91,7 +91,9 @@ def _write_reference(built: Path, base_url: str) -> None:
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(f'Canonical page: {canonical}\n\n{text}', encoding='utf-8')
         title = re.search(r'^# (.+)$', text, flags=re.MULTILINE)
-        index.append(f'- [{title[1] if title else relative}]({base_url}reference/{relative.as_posix()})')
+        index.append(
+            f'- [{title[1] if title else relative}]({base_url}reference/{relative.as_posix()})'
+        )
     (built / 'llms.txt').write_text('\n'.join(index) + '\n', encoding='utf-8')
 
 

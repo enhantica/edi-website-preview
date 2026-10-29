@@ -47,7 +47,7 @@ Use the exact model identifier to select its explanation. The [parameter index](
 | `polynomial` | powder | [Physics](background.md#eq-polynomial-background) |
 | `chebyshev` | powder | [Physics](background.md#eq-chebyshev-background) |
 
-## Adp {#adp}
+## Atomic displacement {#adp}
 
 | Type | Scope | Explanation |
 | --- | --- | --- |
@@ -66,14 +66,14 @@ Use the exact model identifier to select its explanation. The [parameter index](
 | `snip` | powder baseline proposal | [Physics](background.md#eq-snip) |
 | `fabc` | powder baseline proposal | [Physics](background.md#fabc) |
 
-## Xray form factor {#xray-form-factor}
+## X-ray form factor {#xray-form-factor}
 
 | Type | Scope | Explanation |
 | --- | --- | --- |
 | `wk1995` | CW X-ray | [Physics](diffraction.md#eq-xray-structure-factor) |
 | `it1992` | CW X-ray | [Physics](diffraction.md#eq-xray-structure-factor) |
 
-## Xray dispersion {#xray-dispersion}
+## X-ray dispersion {#xray-dispersion}
 
 | Type | Scope | Explanation |
 | --- | --- | --- |
