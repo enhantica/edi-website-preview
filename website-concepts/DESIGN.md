@@ -174,3 +174,10 @@ The owner clarified that preview `main` is their work-in-progress review surface
 Physics is grouped into diffraction model, peak profiles, intensity corrections, experiment model, refinement/statistics and reference lookups. Exact model tokens and parameter names resolve to stable section/equation anchors. Render equations only on Physics pages with locally bundled MathJax. Preserve native Zensical article/sidebar typography.
 
 A JSON catalogue records source snapshot, model/parameter scope, scientific units and effective roles. Metadata refinability alone does not prove fitting admission. Features and roadmap distinguishes all four interfaces and prepared-project execution from editing. Plain Markdown and llms.txt are generated from these same pages rather than maintained as a competing scientific source. The export supports future assistant retrieval; this change does not add an application chat backend.
+
+
+### Home: larger product view and interface links (2026-10-29)
+
+Extend the existing screenshot-on-the-right hero: keep the slogan aligned with the native header, give the screenshot more of the available space to the right, and keep the full application image visible. On narrow screens the screenshot follows the text and uses a little more of the viewport width.
+
+A single quiet group below the action buttons identifies Web app, Desktop app, Python and Command Line. Use the bundled Zensical Lucide icons and Python mark with readable names; each link opens the relevant interface documentation. Keep the primary web-app action distinct. Avoid extra cards or homepage sections. The interface links wrap into a regular two-column layout on small screens.

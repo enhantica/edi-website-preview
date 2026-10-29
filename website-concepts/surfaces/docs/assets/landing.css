@@ -13,10 +13,12 @@
 }
 .ed-landing {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr);
+  grid-template-columns: minmax(0, 20rem) minmax(0, 1fr);
+  /* Keep the text aligned with the header; use the open space to its right. */
+  width: calc(100% + max(0px, (100vw - 61rem) / 2 - .4rem));
   font-family: Nunito, var(--md-text-font), sans-serif;
   align-items: center;
-  gap: clamp(2rem, 4vw, 3.5rem);
+  gap: clamp(1.8rem, 3vw, 2.5rem);
   min-height: calc(100svh - 5.3rem);
   padding-block: 3rem;
 }
@@ -61,6 +63,37 @@
   line-height: 1.4;
   text-align: center;
 }
+.ed-landing__interfaces {
+  margin-top: 1.35rem;
+}
+.ed-landing__interfaces p {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .65rem .65rem;
+  margin: 0;
+}
+.ed-landing__interfaces a {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  color: var(--md-default-fg-color--light);
+  font-size: .65rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.ed-landing__interfaces a:hover,
+.ed-landing__interfaces a:focus-visible {
+  color: var(--md-primary-fg-color);
+}
+.ed-landing__interfaces .twemoji {
+  width: .9rem;
+  height: .9rem;
+}
+.ed-landing__interfaces svg {
+  width: 100%;
+  height: 100%;
+}
 .ed-landing .ed-landing__preview {
   width: 100%;
   margin: 0;
@@ -77,6 +110,7 @@
 @media (max-width: 58rem) {
   .ed-landing {
     grid-template-columns: minmax(0, 1fr);
+    width: 100%;
     gap: 2.4rem;
     max-width: 42rem;
     min-height: auto;
@@ -91,6 +125,11 @@
   }
   .ed-landing .ed-landing__intro {
     max-width: 32em;
+  }
+  .ed-landing .ed-landing__preview {
+    width: calc(100% + 1rem);
+    max-width: none;
+    margin-inline: -.5rem;
   }
 }
 @media (max-width: 30rem) {
@@ -113,16 +152,18 @@
     flex: 1 1 8rem;
     padding-inline: .8rem;
   }
+  .ed-landing__interfaces p {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .7rem 1rem;
+  }
+  .ed-landing__interfaces a {
+    font-size: .75rem;
+  }
 }
 
 .ed-landing__actions .md-button:not(.md-button--primary) {
   border: 1px solid var(--md-default-fg-color--lightest);
   background: transparent;
   color: var(--md-default-fg-color);
-}
-@media (min-width: 85rem) {
-  .ed-landing .ed-landing__preview {
-    width: calc(100% + 3rem);
-    max-width: none;
-  }
 }

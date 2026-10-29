@@ -22,6 +22,15 @@ hide:
 [Get started](user-guide/index.md){ .md-button }
 
 </div>
+
+<nav class="ed-landing__interfaces" aria-label="Explore EasyDiffraction interfaces" markdown>
+
+[:lucide-globe: Web app](application/browser.md "Web app documentation")
+[:lucide-monitor: Desktop app](application/desktop.md "Desktop app documentation")
+[:simple-python: Python](python/index.md "Python library documentation")
+[:lucide-square-terminal: Command Line](cli/index.md "Command Line documentation")
+
+</nav>
 </div>
 
 <figure class="ed-landing__preview">
