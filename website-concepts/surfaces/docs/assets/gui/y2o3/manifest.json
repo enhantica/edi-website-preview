@@ -33,7 +33,7 @@
             "scene": "03-project-details"
         },
         {
-            "action": "fill:createProject.location=/tmp/EasyDiffraction-QjVCcH/pd-neut-cwl_y2o3-spodi",
+            "action": "fill:createProject.location=/tmp/EasyDiffraction-lOlUmE/pd-neut-cwl_y2o3-spodi",
             "scene": "03-project-details"
         },
         {
@@ -101,7 +101,7 @@
             "scene": "06-structure-import"
         },
         {
-            "action": "import-structure:/tmp/edi-docs-configurable-r3/inputs/structures/y2o3.edi",
+            "action": "import-structure:/tmp/edi-docs-guides-icons-final/inputs/structures/y2o3.edi",
             "scene": "07-structure-loaded"
         },
         {
@@ -161,7 +161,7 @@
             "scene": "09-experiment-import"
         },
         {
-            "action": "import-experiment:/tmp/edi-docs-configurable-r3/inputs/experiments/spodi.edi",
+            "action": "import-experiment:/tmp/edi-docs-guides-icons-final/inputs/experiments/spodi.edi",
             "scene": "10-experiment-loaded"
         },
         {
@@ -739,9 +739,141 @@
         {
             "action": "report.save",
             "scene": "guide-report-saved"
+        },
+        {
+            "action": "appBar.tab.structure",
+            "scene": "guide-structure-appearance"
+        },
+        {
+            "action": "sideBar.tab.extras",
+            "scene": "guide-structure-appearance"
+        },
+        {
+            "action": "reveal:group.appearance",
+            "scene": "guide-structure-appearance"
+        },
+        {
+            "action": "expand:group.appearance",
+            "scene": "guide-structure-appearance"
+        },
+        {
+            "action": "reveal:group.appearance",
+            "scene": "guide-structure-appearance"
+        },
+        {
+            "action": "appBar.tab.structure",
+            "scene": "guide-structure-scattering"
+        },
+        {
+            "action": "sideBar.tab.extras",
+            "scene": "guide-structure-scattering"
+        },
+        {
+            "action": "reveal:group.scattering_length",
+            "scene": "guide-structure-scattering"
+        },
+        {
+            "action": "expand:group.scattering_length",
+            "scene": "guide-structure-scattering"
+        },
+        {
+            "action": "reveal:group.scattering_length",
+            "scene": "guide-structure-scattering"
+        },
+        {
+            "action": "appBar.tab.experiment",
+            "scene": "guide-experiment-absorption"
+        },
+        {
+            "action": "sideBar.tab.extras",
+            "scene": "guide-experiment-absorption"
+        },
+        {
+            "action": "reveal:group.absorption",
+            "scene": "guide-experiment-absorption"
+        },
+        {
+            "action": "expand:group.absorption",
+            "scene": "guide-experiment-absorption"
+        },
+        {
+            "action": "reveal:group.absorption",
+            "scene": "guide-experiment-absorption"
+        },
+        {
+            "action": "appBar.tab.experiment",
+            "scene": "guide-experiment-orientation"
+        },
+        {
+            "action": "sideBar.tab.extras",
+            "scene": "guide-experiment-orientation"
+        },
+        {
+            "action": "reveal:group.preferred_orientation",
+            "scene": "guide-experiment-orientation"
+        },
+        {
+            "action": "expand:group.preferred_orientation",
+            "scene": "guide-experiment-orientation"
+        },
+        {
+            "action": "reveal:group.preferred_orientation",
+            "scene": "guide-experiment-orientation"
+        },
+        {
+            "action": "appBar.tab.experiment",
+            "scene": "guide-experiment-scattering"
+        },
+        {
+            "action": "sideBar.tab.extras",
+            "scene": "guide-experiment-scattering"
+        },
+        {
+            "action": "reveal:group.scattering_source",
+            "scene": "guide-experiment-scattering"
+        },
+        {
+            "action": "expand:group.scattering_source",
+            "scene": "guide-experiment-scattering"
+        },
+        {
+            "action": "reveal:group.scattering_source",
+            "scene": "guide-experiment-scattering"
+        },
+        {
+            "action": "appBar.tab.analysis",
+            "scene": "guide-analysis-aliases"
+        },
+        {
+            "action": "sideBar.tab.extras",
+            "scene": "guide-analysis-aliases"
+        },
+        {
+            "action": "reveal:group.alias",
+            "scene": "guide-analysis-aliases"
+        },
+        {
+            "action": "expand:group.alias",
+            "scene": "guide-analysis-aliases"
+        },
+        {
+            "action": "reveal:group.alias",
+            "scene": "guide-analysis-aliases"
+        },
+        {
+            "action": "appBar.tab.analysis",
+            "scene": "guide-analysis-correlations"
+        },
+        {
+            "action": "sideBar.tab.basic",
+            "scene": "guide-analysis-correlations"
+        },
+        {
+            "action": "mainArea.analysis.tab.correlations",
+            "scene": "guide-analysis-correlations"
         }
     ],
-    "binary_sha256": "6dd26b9cf9449ab92441aa37143e999b57a299a3c2c1c14c09c65ef973463a51",
+    "binary_sha256": "138755e1dd97a44499e49856378a7d79aa518530089d818036ec0edd98b652fe",
     "dependencies": [
         {
             "file": "inputs/analysis/analysis.edi",
@@ -1274,10 +1406,73 @@
             "page": "report",
             "sidebar": "",
             "status": "captured"
+        },
+        {
+            "description": "Choose the structure display",
+            "id": "guide-structure-appearance",
+            "image": "guide-structure-appearance.png",
+            "metadata": "guide-structure-appearance.json",
+            "page": "structure",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Inspect scattering-length settings",
+            "id": "guide-structure-scattering",
+            "image": "guide-structure-scattering.png",
+            "metadata": "guide-structure-scattering.json",
+            "page": "structure",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Inspect absorption settings",
+            "id": "guide-experiment-absorption",
+            "image": "guide-experiment-absorption.png",
+            "metadata": "guide-experiment-absorption.json",
+            "page": "experiment",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Inspect preferred-orientation settings",
+            "id": "guide-experiment-orientation",
+            "image": "guide-experiment-orientation.png",
+            "metadata": "guide-experiment-orientation.json",
+            "page": "experiment",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Inspect scattering data sources",
+            "id": "guide-experiment-scattering",
+            "image": "guide-experiment-scattering.png",
+            "metadata": "guide-experiment-scattering.json",
+            "page": "experiment",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Inspect parameter aliases",
+            "id": "guide-analysis-aliases",
+            "image": "guide-analysis-aliases.png",
+            "metadata": "guide-analysis-aliases.json",
+            "page": "analysis",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Inspect correlations after fitting",
+            "id": "guide-analysis-correlations",
+            "image": "guide-analysis-correlations.png",
+            "metadata": "guide-analysis-correlations.json",
+            "page": "analysis",
+            "sidebar": "",
+            "status": "captured"
         }
     ],
     "schema": 1,
-    "script_sha256": "f8b28e655938b21364826a3e2f1620621f061ba3e7f5019ec64c19f0032032df",
-    "source_revision": "ce108caedfe7f6637328bae9aad009deed328ddb",
+    "script_sha256": "27872a3591afb1aaa3d37f3959612c87497f241258ab0680fb2287dc94ec0800",
+    "source_revision": "570424f574d10fc82cfc20b919138d3aa7c14852",
     "status": "complete"
 }

@@ -20,3 +20,11 @@ The Application introduction contains one **Application layout** page before one
 ## Verification
 
 Build validation checks the native capture bundle and generated links, including SVG image links. Browser checks verify uniform column widths, screenshot-only clipping, square unclipped outlines, display-pixel padding after resizing, compound selected-tab paths, modal sizing/focus/close behavior, theme inheritance and the consolidated navigation and redirects. Check desktop and narrow mobile viewports.
+
+## Native tab viewers and GUI icon parity
+
+The layout guide now uses Zensical's native content tabs: one viewer per workflow page, with an overview and the enabled Main, Extra, Text and Settings views. Switching tabs changes the image and its geometry as one pane. This replaces the repeated vertical gallery and its two overlay-choice buttons.
+
+Highlight selectors use the actual captured Font Awesome icon name, mapped to the same Font Awesome 5 solid face bundled by the GUI. The font and its license are retained, and the glyph map is derived from that exact face. Controls with no GUI icon remain text-only. Figures always use their captured display labels, with explicit human-written explanations where useful.
+
+Image URLs include their image hash. The generated GUI CSS/JavaScript URLs include a hash of those assets, so frequent preview deployments do not mix current HTML with cached older styles or code. A full browser exercise passed the native tabs, mode switching, fixed column sizing and modal behavior at desktop and mobile widths. Local browser scratch used an isolated RAM-backed directory after the nearly full VM disk caused a Chromium page crash; this was a test-environment capacity issue.

@@ -31,3 +31,6 @@ html.gui-lightbox-open { overflow: hidden; }
 .gui-direction.is-active { display: block; }
 
 .gui-capture [data-gui-navigation] { fill: #d19966; fill-opacity: .16; stroke: #d19966; stroke-width: 2; stroke-linejoin: miter; vector-effect: non-scaling-stroke; pointer-events: none; }
+
+@font-face { font-family: "edi-gui-icons"; src: url("gui-icons/fontawesome-5-solid.otf") format("opentype"); font-style: normal; font-weight: 900; font-display: block; }
+.gui-fa { display: inline-block; font-family: "edi-gui-icons"; font-weight: 900; font-style: normal; line-height: 1; min-width: 1em; text-align: center; margin-right: .3em; }

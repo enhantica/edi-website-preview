@@ -5,6 +5,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import importlib.metadata
 import json
 import posixpath
@@ -218,7 +219,7 @@ def main() -> None:
     for interface in ('Application', 'Python', 'Command Line'):
         section = next(entry[interface] for entry in config_data['nav'] if interface in entry)
         groups = [next(iter(entry)) for entry in section if isinstance(entry, dict)]
-        if groups[:len(shared)] != shared:
+        if groups[: len(shared)] != shared:
             raise SystemExit(f'{interface}: workflow groups must be {shared}')
     print('Shared interface workflow navigation: PASS', flush=True)
     capture = ROOT / 'surfaces/docs/assets/gui/y2o3'
@@ -238,15 +239,25 @@ def main() -> None:
     for name in names:
         config = ROOT / name / 'mkdocs.yml'
         temporary = None
+        original = config.read_text(encoding='utf-8')
+        text = original
+        if name == 'surfaces':
+            assets = ROOT / 'surfaces/docs/assets'
+            digest = hashlib.sha256(
+                (assets / 'gui-capture.css').read_bytes()
+                + (assets / 'gui-capture.js').read_bytes()
+            ).hexdigest()[:12]
+            text = text.replace('extra:\n', f'extra:\n  gui_assets_version: {digest}\n', 1)
         if args.base_url:
             text, count = re.subn(
                 r'^site_url:.*$',
                 f'site_url: {args.base_url}' + (f'{name}/' if name != 'surfaces' else ''),
-                config.read_text(encoding='utf-8'),
+                text,
                 flags=re.MULTILINE,
             )
             if count != 1:
                 raise SystemExit(f'{name}: expected exactly one site_url setting')
+        if text != original:
             with tempfile.NamedTemporaryFile(
                 mode='w',
                 dir=config.parent,

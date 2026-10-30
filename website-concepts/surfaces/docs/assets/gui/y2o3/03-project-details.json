@@ -9,7 +9,7 @@
     ],
     "id": "03-project-details",
     "image": "03-project-details.png",
-    "image_sha256": "3efc2c0818aa652da545671dded803c08b71806de0232dc4b5cac52628bc901d",
+    "image_sha256": "5760dd5f3f61468b1b13cd73205be28d4e3b961f7414b67d0e7ac5c6b0a14bf3",
     "items": {
         "ApplicationWindow": {
             "bounds": [
@@ -131,6 +131,7 @@
                 35
             ],
             "enabled": true,
+            "icon": "bug",
             "label": "",
             "visible_bounds": [
                 1431,
@@ -147,6 +148,7 @@
                 35
             ],
             "enabled": true,
+            "icon": "question-circle",
             "label": "",
             "visible_bounds": [
                 1396,
@@ -163,6 +165,7 @@
                 35
             ],
             "enabled": true,
+            "icon": "cog",
             "label": "",
             "visible_bounds": [
                 1361,
@@ -179,6 +182,7 @@
                 35
             ],
             "enabled": false,
+            "icon": "redo",
             "label": "",
             "visible_bounds": [
                 84,
@@ -195,6 +199,7 @@
                 35
             ],
             "enabled": true,
+            "icon": "backspace",
             "label": "",
             "visible_bounds": [
                 119,
@@ -211,6 +216,7 @@
                 35
             ],
             "enabled": false,
+            "icon": "save",
             "label": "",
             "visible_bounds": [
                 14,
@@ -227,6 +233,7 @@
                 35
             ],
             "enabled": false,
+            "icon": "undo",
             "label": "",
             "visible_bounds": [
                 49,
@@ -243,6 +250,7 @@
                 77
             ],
             "enabled": false,
+            "icon": "calculator",
             "label": "Analysis",
             "visible_bounds": [
                 812.359375,
@@ -259,6 +267,7 @@
                 77
             ],
             "enabled": false,
+            "icon": "microscope",
             "label": "Experiment",
             "visible_bounds": [
                 727.453125,
@@ -275,6 +284,7 @@
                 77
             ],
             "enabled": true,
+            "icon": "home",
             "label": "Home",
             "visible_bounds": [
                 542,
@@ -291,6 +301,7 @@
                 77
             ],
             "enabled": true,
+            "icon": "archive",
             "label": "Project",
             "visible_bounds": [
                 595.46875,
@@ -307,6 +318,7 @@
                 77
             ],
             "enabled": false,
+            "icon": "clipboard-list",
             "label": "Report",
             "visible_bounds": [
                 880.203125,
@@ -323,6 +335,7 @@
                 77
             ],
             "enabled": false,
+            "icon": "layer-group",
             "label": "Structure",
             "visible_bounds": [
                 655.203125,
@@ -355,6 +368,7 @@
                 35
             ],
             "enabled": true,
+            "icon": "robot",
             "label": "",
             "visible_bounds": [
                 1326,
@@ -419,7 +433,7 @@
                 35
             ],
             "enabled": true,
-            "label": "/tmp/EasyDiffraction-QjVCcH/pd-neut-cwl_y2o3-spodi",
+            "label": "/tmp/EasyDiffraction-lOlUmE/pd-neut-cwl_y2o3-spodi",
             "visible_bounds": [
                 495,
                 547,
@@ -467,6 +481,7 @@
                 42
             ],
             "enabled": true,
+            "icon": "database",
             "label": "Examples",
             "visible_bounds": [
                 770,
@@ -483,6 +498,7 @@
                 155
             ],
             "enabled": true,
+            "icon": "rocket",
             "label": "Get started",
             "visible_bounds": [
                 770,
@@ -499,6 +515,7 @@
                 42
             ],
             "enabled": true,
+            "icon": "archive",
             "label": "Recent projects",
             "visible_bounds": [
                 770,
@@ -534,6 +551,7 @@
                 39
             ],
             "enabled": true,
+            "icon": "plus-circle",
             "label": "Create a new project",
             "visible_bounds": [
                 784,
@@ -550,6 +568,7 @@
                 39
             ],
             "enabled": true,
+            "icon": "upload",
             "label": "Open project…",
             "visible_bounds": [
                 1132,
@@ -566,6 +585,7 @@
                 39
             ],
             "enabled": false,
+            "icon": "link",
             "label": "Open project from URL…",
             "visible_bounds": [
                 1132,
@@ -582,6 +602,7 @@
                 39
             ],
             "enabled": false,
+            "icon": "file-export",
             "label": "Save project as…",
             "visible_bounds": [
                 784,
@@ -678,6 +699,7 @@
                 14
             ],
             "enabled": true,
+            "icon": "calculator",
             "label": "",
             "visible_bounds": [
                 274.959375,
@@ -694,6 +716,7 @@
                 14
             ],
             "enabled": true,
+            "icon": "archive",
             "label": "",
             "visible_bounds": [
                 126.58125,
@@ -713,6 +736,7 @@
                 14
             ],
             "enabled": true,
+            "icon": "exclamation-triangle",
             "label": "",
             "visible_bounds": [
                 14,
@@ -796,8 +820,8 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "f8b28e655938b21364826a3e2f1620621f061ba3e7f5019ec64c19f0032032df",
-    "source_revision": "ce108caedfe7f6637328bae9aad009deed328ddb",
+    "script_sha256": "27872a3591afb1aaa3d37f3959612c87497f241258ab0680fb2287dc94ec0800",
+    "source_revision": "570424f574d10fc82cfc20b919138d3aa7c14852",
     "state": {
         "experiments": 0,
         "fit_outcome": "",

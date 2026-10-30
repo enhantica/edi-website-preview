@@ -53,7 +53,7 @@ def exercise(browser: Browser, base: str, output: Path) -> list[dict]:
     for width in (1440, 390):
         browser.viewport(width, 1000)
         for route, count in [
-            ('application/workspace/', 16),
+            ('application/workspace/', 21),
             ('application/first-refinement/', 10),
             ('application/examples/', 1),
         ]:
@@ -62,6 +62,8 @@ def exercise(browser: Browser, base: str, output: Path) -> list[dict]:
             require(not result['overflow'] and not result['oldCaption'], result)
             require(len(result['figures']) == count, result)
             for figure in result['figures']:
+                if not figure['width']:
+                    continue
                 require(abs(figure['width'] - figure['column']) < 1, figure)
                 require(abs(figure['width'] / figure['height'] - 1480 / 800) < 0.01, figure)
                 require(figure['overflow'] == 'visible' and figure['radius'] == '0px', figure)
@@ -72,6 +74,31 @@ def exercise(browser: Browser, base: str, output: Path) -> list[dict]:
                     require(region['square'], region)
             if route.endswith('workspace/'):
                 require(all(f['regions'][0]['parts'] == 2 for f in result['figures'][1:]), result)
+            if route.endswith('workspace/'):
+                require(
+                    browser.execute(
+                        "return document.querySelectorAll('.tabbed-set').length === 5;"
+                    )
+                )
+                groups = browser.execute(
+                    "return [...document.querySelectorAll('.tabbed-set')].map(group=>group.querySelectorAll('.tabbed-labels label').length);"
+                )
+                for group, modes in enumerate(groups):
+                    for mode in range(modes):
+                        browser.execute(
+                            "document.querySelectorAll('.tabbed-set')[arg[0]].querySelectorAll('.tabbed-labels label')[arg[1]].click();",
+                            [group, mode],
+                        )
+                        browser.wait(0.05)
+                        visible = browser.execute(
+                            "return [...document.querySelectorAll('.tabbed-set')[arg].querySelectorAll('svg.gui-capture')].filter(svg=>svg.getBoundingClientRect().width>0).length;",
+                            group,
+                        )
+                        require(visible == 1, (group, mode, visible))
+                    browser.execute(
+                        "document.querySelectorAll('.tabbed-set')[arg].querySelector('.tabbed-labels label').click();",
+                        group,
+                    )
             opener = 'article [data-gui-open]'
             browser.execute('document.querySelector(arg).focus();', opener)
             press(browser, opener, 'ENTER')

@@ -85,6 +85,14 @@
     panel("guide-report-contents", "report", "basic", "group.reportContents", "Choose which sections appear in the report", ["group.reportContents"]);
     panel("guide-report-export", "report", "basic", "group.reportExport", "Choose report formats and export", ["report.writesHtml", "report.writesPdf", "report.writesCif", "report.save"]);
     shot("guide-report-saved", "report", "Review the saved report status", ["report.save"], ["group.reportExport"]);
+    panel("guide-structure-appearance", "structure", "extras", "group.appearance", "Choose the structure display", ["group.appearance"]);
+    panel("guide-structure-scattering", "structure", "extras", "group.scattering_length", "Inspect scattering-length settings", ["group.scattering_length"]);
+    panel("guide-experiment-absorption", "experiment", "extras", "group.absorption", "Inspect absorption settings", ["group.absorption"]);
+    panel("guide-experiment-orientation", "experiment", "extras", "group.preferred_orientation", "Inspect preferred-orientation settings", ["group.preferred_orientation"]);
+    panel("guide-experiment-scattering", "experiment", "extras", "group.scattering_source", "Inspect scattering data sources", ["group.scattering_source"]);
+    panel("guide-analysis-aliases", "analysis", "extras", "group.alias", "Inspect parameter aliases", ["group.alias"]);
+    shot("guide-analysis-correlations", "analysis", "Inspect correlations after fitting",
+        ["appBar.tab.analysis", "sideBar.tab.basic", "mainArea.analysis.tab.correlations"], ["workflow.analysis.mainContent"]);
     return steps;
     }};
 })();

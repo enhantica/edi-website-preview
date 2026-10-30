@@ -159,16 +159,27 @@ def region_path(parts: list[list[float]], padding: float = 2) -> str:
     return 'M' + ' L'.join(f'{px:.3f} {py:.3f}' for px, py in points) + ' Z'
 
 
+def gui_icon(item: dict) -> str:
+    name = item.get('icon', '')
+    if not name:
+        return ''
+    glyphs = json.loads((DOCS / 'assets/gui-icons/glyphs.json').read_text())
+    code = ord(name) if len(name) == 1 and 0xE000 <= ord(name) <= 0xF8FF else glyphs.get(name)
+    if code is None:
+        raise ValueError(f'GUI icon is absent from the bundled Font Awesome 5 face: {name}')
+    return f'<span class="gui-fa" aria-hidden="true">&#{code};</span>'
+
+
 def figure(scene: dict, *, view: str = 'overview', instance: str = '') -> str:
     meta = scene['layout']
-    image = '../assets/gui/y2o3/' + scene['image']
+    image = '../assets/gui/y2o3/' + scene['image'] + '?v=' + meta['image_sha256'][:12]
     description = html.escape(scene['description'], quote=True)
     identity = f'{scene["id"]}-{view}' + (f'-{instance}' if instance else '')
     targets = (
-        [f'workflow.{scene["page"]}.manualSidebar'] if view == 'sidebar' else meta['highlights']
+        [f'workflow.{scene["page"]}.manualSidebar']
+        if view == 'sidebar'
+        else ([f'workflow.{scene["page"]}.page'] if view == 'workflow' else meta['highlights'])
     )
-    if view == 'sidebar':
-        targets.append(f'workflow.{scene["page"]}.page')
     navigation = ''
     if view == 'overview':
         targets = [target for target in targets if target != 'appBar']
@@ -197,18 +208,10 @@ def figure(scene: dict, *, view: str = 'overview', instance: str = '') -> str:
         )
         buttons.append(
             f'<li><button type="button" data-gui-target="{key}" aria-pressed="{"true" if number == 1 and view != "layout" else "false"}">'
-            f'{number}. {html.escape(title)}</button> {html.escape(text)}</li>'
+            f'{number}. {gui_icon(meta["items"].get(target, {}))}{html.escape(title)}</button> {html.escape(text)}</li>'
         )
-    if view == 'sidebar':
-        buttons = [
-            f'<button type="button" class="gui-region-choice" data-gui-target="{identity}-1" aria-pressed="true">Tab and panel</button>',
-            f'<button type="button" class="gui-region-choice" data-gui-target="{identity}-2" aria-pressed="false">Workflow page</button>',
-        ]
-        controls = (
-            '<div class="gui-view-options" role="group" aria-label="Highlight">'
-            + ''.join(buttons)
-            + '</div>'
-        )
+    if view in {'sidebar', 'workflow'}:
+        controls = ''
     else:
         overview = (
             '<li><button type="button" data-gui-overview aria-pressed="true">Layout overview</button> Follow the workflow from left to right, then the sidebar from top to bottom.</li>'
@@ -424,7 +427,7 @@ The page views below introduce each enabled tab. Then follow [Example refinement
 
 Selecting a structure or experiment changes the model being inspected. The status bar reports the project state, messages and fitting progress. Read messages after importing data or when an operation is refused.
 """
-    gallery = '\n## Page and sidebar views\n\nThese views come from the same example refinement. Select **Workflow page** to see how its toolbar tab connects to the whole page. The Analysis and Report views show a completed refinement.\n'
+    gallery = '\n## Page and sidebar views\n\nThese views come from the same example refinement. Choose the page overview or a sidebar tab to explore the controls. The Analysis and Report views show a completed refinement.\n'
     for name in ['project', 'structure', 'experiment', 'analysis', 'report']:
         icon = {
             'project': 'archive',
@@ -434,9 +437,20 @@ Selecting a structure or experiment changes the model being inspected. The statu
             'report': 'clipboard-text',
         }[name]
         gallery += f'\n### :material-{icon}: {name.title()}\n'
-        for scene in scenes:
-            if scene['page'] == name and scene['sidebar']:
-                gallery += f'\n#### {scene["sidebar"]}\n\n' + figure(scene, view='sidebar')
+        modes = [scene for scene in scenes if scene['page'] == name and scene['sidebar']]
+        overview = figure(modes[0], view='workflow')
+        gallery += (
+            '\n=== "Overview"\n\n'
+            + '\n'.join('    ' + line if line else '' for line in overview.splitlines())
+            + '\n'
+        )
+        for scene in modes:
+            content = figure(scene, view='sidebar')
+            gallery += (
+                f'\n=== "{scene["sidebar"]}"\n\n'
+                + '\n'.join('    ' + line if line else '' for line in content.splitlines())
+                + '\n'
+            )
     (DOCS / 'application/workspace.md').write_text(page('Application layout', workspace + gallery))
     if '15-project-examples' in by_id:
         examples = 'The web and desktop applications both include built-in example projects. Go to **Project**, select **Main** and expand **Examples**. Use the search and filters to find a case.\n\n'
