@@ -433,7 +433,7 @@ The arrows show how to follow the workflow and read the controls. Select an expl
 
 | Page | What you do here |
 | --- | --- |
-| Home | Start an analysis. |
+| Home | Start an analysis, learn the interface and find help. |
 | Project | Create or open a project and record its details. |
 | Structure | Load and inspect the crystal structure, cell and atom sites. |
 | Experiment | Load measured intensities and configure the instrument, profile and background. |
@@ -451,7 +451,7 @@ The page views below introduce each enabled tab. Then follow [Example refinement
 Selecting a structure or experiment changes the model being inspected. The status bar reports the project state, messages and fitting progress. Read messages after importing data or when an operation is refused.
 """
     gallery = '\n## Page and sidebar views\n\nChoose **Overview** for the whole page. :material-dock-left: marks a main-view tab; :material-dock-right: marks a sidebar tab. Only enabled tabs are shown. Analysis and Report show the completed refinement.\n'
-    gallery += '\n### :material-home: Home\n\nStart a new analysis or open the Project page.\n\n'
+    gallery += '\n### :material-home: Home\n\nStart an analysis, learn the interface through built-in tutorials, read about EasyDiffraction, open the documentation or get in touch.\n\n'
     gallery += figure(by_id['01-home'], view='workflow', description='Home overview')
     introductions = {
         'project': 'Create or open a project and keep its details together.',

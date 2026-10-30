@@ -19,7 +19,7 @@ The arrows show how to follow the workflow and read the controls. Select an expl
 
 | Page | What you do here |
 | --- | --- |
-| Home | Start an analysis. |
+| Home | Start an analysis, learn the interface and find help. |
 | Project | Create or open a project and record its details. |
 | Structure | Load and inspect the crystal structure, cell and atom sites. |
 | Experiment | Load measured intensities and configure the instrument, profile and background. |
@@ -42,7 +42,7 @@ Choose **Overview** for the whole page. :material-dock-left: marks a main-view t
 
 ### :material-home: Home
 
-Start a new analysis or open the Project page.
+Start an analysis, learn the interface through built-in tutorials, read about EasyDiffraction, open the documentation or get in touch.
 
 <figure class="gui-figure" data-gui-figure>
 <a class="gui-image-link" href="../assets/gui/y2o3/01-home.png?v=0206c48d32c4" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Home overview"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Home overview"><title>Home overview</title><defs><clipPath id="gui-clip-01-home-workflow"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/01-home.png?v=0206c48d32c4" width="1480" height="800" clip-path="url(#gui-clip-01-home-workflow)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="01-home-workflow-1" data-gui-parts="[[0,77,1480,681],[542,0,53.46875,77]]" d="M-2.000 75.000 L540.000 75.000 L540.000 -2.000 L597.469 -2.000 L597.469 75.000 L1482.000 75.000 L1482.000 760.000 L-2.000 760.000 Z" /></svg></a>
