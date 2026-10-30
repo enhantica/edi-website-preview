@@ -1,5 +1,6 @@
 {
-    "description": "Compare the measured pattern with the initial calculation",
+    "description": "Inspect the starting pattern before choosing free parameters",
+    "fit_phase": "",
     "gui_components_revision": "10dc5828020c90666a1ef015835475936d56e819",
     "highlights": [
         "workflow.experiment.mainContent",
@@ -7,7 +8,7 @@
     ],
     "id": "10-experiment-loaded",
     "image": "10-experiment-loaded.png",
-    "image_sha256": "2bac8b09af44c39867cc55564b6f045173e77a657084afce3e0c34b8c099c37d",
+    "image_sha256": "181ef1b9d27e72723c7195e48153d72b28b1358bed112fb75aa571a976b07860",
     "items": {
         "ApplicationWindow": {
             "bounds": [
@@ -41,20 +42,20 @@
                 800
             ]
         },
-        "ExperimentsGroup": {
+        "CategoryGroup": {
             "bounds": [
                 784,
-                168,
+                210,
                 682,
-                271
+                337.5
             ],
             "enabled": true,
             "label": "",
             "visible_bounds": [
                 784,
-                168,
+                210,
                 682,
-                271
+                337.5
             ]
         },
         "Main": {
@@ -341,6 +342,474 @@
                 21,
                 35,
                 35
+            ]
+        },
+        "background.append": {
+            "bounds": [
+                784,
+                508.5,
+                218,
+                39
+            ],
+            "enabled": true,
+            "icon": "plus-circle",
+            "label": "Add point",
+            "visible_bounds": [
+                784,
+                508.5,
+                218,
+                39
+            ]
+        },
+        "background.estimate": {
+            "bounds": [
+                1248,
+                508.5,
+                218,
+                39
+            ],
+            "enabled": true,
+            "icon": "magic",
+            "label": "Estimate",
+            "visible_bounds": [
+                1248,
+                508.5,
+                218,
+                39
+            ]
+        },
+        "background.id.0": {
+            "bounds": [
+                823,
+                319,
+                32,
+                39
+            ],
+            "enabled": true,
+            "label": "1",
+            "visible_bounds": [
+                823,
+                319,
+                32,
+                39
+            ]
+        },
+        "background.id.1": {
+            "bounds": [
+                823,
+                358,
+                32,
+                39
+            ],
+            "enabled": true,
+            "label": "2",
+            "visible_bounds": [
+                823,
+                358,
+                32,
+                39
+            ]
+        },
+        "background.id.2": {
+            "bounds": [
+                823,
+                397,
+                32,
+                39
+            ],
+            "enabled": true,
+            "label": "3",
+            "visible_bounds": [
+                823,
+                397,
+                32,
+                39
+            ]
+        },
+        "background.id.3": {
+            "bounds": [
+                823,
+                436,
+                32,
+                39
+            ],
+            "enabled": true,
+            "label": "4",
+            "visible_bounds": [
+                823,
+                436,
+                32,
+                39
+            ]
+        },
+        "background.id.4": {
+            "bounds": [
+                823,
+                475,
+                32,
+                39
+            ],
+            "enabled": true,
+            "label": "5",
+            "visible_bounds": [
+                823,
+                475,
+                32,
+                19.5
+            ]
+        },
+        "background.intensity.0": {
+            "bounds": [
+                932,
+                319,
+                486,
+                39
+            ],
+            "enabled": true,
+            "label": "9952.21",
+            "visible_bounds": [
+                932,
+                319,
+                486,
+                39
+            ]
+        },
+        "background.intensity.1": {
+            "bounds": [
+                932,
+                358,
+                486,
+                39
+            ],
+            "enabled": true,
+            "label": "9167.78",
+            "visible_bounds": [
+                932,
+                358,
+                486,
+                39
+            ]
+        },
+        "background.intensity.2": {
+            "bounds": [
+                932,
+                397,
+                486,
+                39
+            ],
+            "enabled": true,
+            "label": "7891.89",
+            "visible_bounds": [
+                932,
+                397,
+                486,
+                39
+            ]
+        },
+        "background.intensity.3": {
+            "bounds": [
+                932,
+                436,
+                486,
+                39
+            ],
+            "enabled": true,
+            "label": "7884.3",
+            "visible_bounds": [
+                932,
+                436,
+                486,
+                39
+            ]
+        },
+        "background.intensity.4": {
+            "bounds": [
+                932,
+                475,
+                486,
+                39
+            ],
+            "enabled": true,
+            "label": "7613.33",
+            "visible_bounds": [
+                932,
+                475,
+                486,
+                19.5
+            ]
+        },
+        "background.list": {
+            "bounds": [
+                784,
+                280,
+                682,
+                214.5
+            ],
+            "enabled": true,
+            "label": "",
+            "visible_bounds": [
+                784,
+                280,
+                682,
+                214.5
+            ]
+        },
+        "background.namePoints": {
+            "bounds": [
+                1016,
+                508.5,
+                218,
+                39
+            ],
+            "enabled": true,
+            "icon": "tag",
+            "label": "Id from position",
+            "visible_bounds": [
+                1016,
+                508.5,
+                218,
+                39
+            ]
+        },
+        "background.position.0": {
+            "bounds": [
+                859,
+                319,
+                69,
+                39
+            ],
+            "enabled": true,
+            "label": "12.05",
+            "visible_bounds": [
+                859,
+                319,
+                69,
+                39
+            ]
+        },
+        "background.position.1": {
+            "bounds": [
+                859,
+                358,
+                69,
+                39
+            ],
+            "enabled": true,
+            "label": "21.15",
+            "visible_bounds": [
+                859,
+                358,
+                69,
+                39
+            ]
+        },
+        "background.position.2": {
+            "bounds": [
+                859,
+                397,
+                69,
+                39
+            ],
+            "enabled": true,
+            "label": "45.6",
+            "visible_bounds": [
+                859,
+                397,
+                69,
+                39
+            ]
+        },
+        "background.position.3": {
+            "bounds": [
+                859,
+                436,
+                69,
+                39
+            ],
+            "enabled": true,
+            "label": "49.95",
+            "visible_bounds": [
+                859,
+                436,
+                69,
+                39
+            ]
+        },
+        "background.position.4": {
+            "bounds": [
+                859,
+                475,
+                69,
+                39
+            ],
+            "enabled": true,
+            "label": "55.45",
+            "visible_bounds": [
+                859,
+                475,
+                69,
+                19.5
+            ]
+        },
+        "background.remove.0": {
+            "bounds": [
+                1422,
+                319,
+                39,
+                39
+            ],
+            "enabled": true,
+            "icon": "minus-circle",
+            "label": "",
+            "visible_bounds": [
+                1422,
+                319,
+                39,
+                39
+            ]
+        },
+        "background.remove.1": {
+            "bounds": [
+                1422,
+                358,
+                39,
+                39
+            ],
+            "enabled": true,
+            "icon": "minus-circle",
+            "label": "",
+            "visible_bounds": [
+                1422,
+                358,
+                39,
+                39
+            ]
+        },
+        "background.remove.2": {
+            "bounds": [
+                1422,
+                397,
+                39,
+                39
+            ],
+            "enabled": true,
+            "icon": "minus-circle",
+            "label": "",
+            "visible_bounds": [
+                1422,
+                397,
+                39,
+                39
+            ]
+        },
+        "background.remove.3": {
+            "bounds": [
+                1422,
+                436,
+                39,
+                39
+            ],
+            "enabled": true,
+            "icon": "minus-circle",
+            "label": "",
+            "visible_bounds": [
+                1422,
+                436,
+                39,
+                39
+            ]
+        },
+        "background.remove.4": {
+            "bounds": [
+                1422,
+                475,
+                39,
+                39
+            ],
+            "enabled": true,
+            "icon": "minus-circle",
+            "label": "",
+            "visible_bounds": [
+                1422,
+                475,
+                39,
+                19.5
+            ]
+        },
+        "background.rows": {
+            "bounds": [
+                784,
+                210,
+                682,
+                337.5
+            ],
+            "enabled": true,
+            "label": "",
+            "visible_bounds": [
+                784,
+                210,
+                682,
+                337.5
+            ]
+        },
+        "background.type": {
+            "bounds": [
+                784,
+                210,
+                339.25,
+                56
+            ],
+            "enabled": true,
+            "label": "",
+            "options": [
+                {
+                    "label": "Line segment",
+                    "token": "line-segment"
+                },
+                {
+                    "label": "Chebyshev",
+                    "token": "chebyshev"
+                },
+                {
+                    "label": "Polynomial",
+                    "token": "polynomial"
+                }
+            ],
+            "selected": "line-segment",
+            "uid": "background.type",
+            "visible_bounds": [
+                784,
+                210,
+                339.25,
+                56
+            ]
+        },
+        "background_estimate.mode": {
+            "bounds": [
+                1126.75,
+                210,
+                339.25,
+                56
+            ],
+            "enabled": true,
+            "label": "",
+            "options": [
+                {
+                    "label": "Manual",
+                    "token": "manual"
+                },
+                {
+                    "label": "Auto",
+                    "token": "auto"
+                }
+            ],
+            "selected": "manual",
+            "uid": "background_estimate.mode",
+            "visible_bounds": [
+                1126.75,
+                210,
+                339.25,
+                56
             ]
         },
         "chart": {
@@ -770,388 +1239,27 @@
                 145
             ]
         },
-        "currentRowBar": {
-            "bounds": [
-                785,
-                207,
-                2,
-                39
-            ],
-            "enabled": true,
-            "label": "",
-            "visible_bounds": [
-                785,
-                207,
-                2,
-                39
-            ]
-        },
-        "experimentType": {
-            "bounds": [
-                784,
-                260,
-                682,
-                126
-            ],
-            "enabled": true,
-            "label": "",
-            "visible_bounds": [
-                784,
-                260,
-                682,
-                126
-            ]
-        },
-        "experimentType.beamMode": {
-            "bounds": [
-                1012.5,
-                260,
-                225,
-                56
-            ],
-            "enabled": false,
-            "label": "",
-            "options": [
-                {
-                    "label": "Constant wavelength",
-                    "token": "constant wavelength"
-                },
-                {
-                    "label": "Time-of-flight",
-                    "token": "time-of-flight"
-                }
-            ],
-            "selected": "constant wavelength",
-            "uid": "experiment_type.beam_mode",
-            "visible_bounds": [
-                1012.5,
-                260,
-                225,
-                56
-            ]
-        },
-        "experimentType.dimensionality": {
-            "bounds": [
-                1012.5,
-                330,
-                225,
-                56
-            ],
-            "enabled": false,
-            "label": "",
-            "options": [
-                {
-                    "label": "1D",
-                    "token": "1d"
-                }
-            ],
-            "selected": "1d",
-            "uid": "experiment_type.dimensionality",
-            "visible_bounds": [
-                1012.5,
-                330,
-                225,
-                56
-            ]
-        },
-        "experimentType.polarisation": {
-            "bounds": [
-                1241,
-                330,
-                225,
-                56
-            ],
-            "enabled": false,
-            "label": "",
-            "options": [
-                {
-                    "label": "Unpolarised",
-                    "token": "unpolarised"
-                },
-                {
-                    "label": "Not applicable",
-                    "token": "."
-                }
-            ],
-            "selected": "unpolarised",
-            "uid": "experiment_type.polarisation",
-            "visible_bounds": [
-                1241,
-                330,
-                225,
-                56
-            ]
-        },
-        "experimentType.radiationProbe": {
-            "bounds": [
-                1241,
-                260,
-                225,
-                56
-            ],
-            "enabled": false,
-            "label": "",
-            "options": [
-                {
-                    "label": "Neutron",
-                    "token": "neutron"
-                },
-                {
-                    "label": "X-ray",
-                    "token": "xray"
-                }
-            ],
-            "selected": "neutron",
-            "uid": "experiment_type.radiation_probe",
-            "visible_bounds": [
-                1241,
-                260,
-                225,
-                56
-            ]
-        },
-        "experimentType.sampleForm": {
-            "bounds": [
-                784,
-                260,
-                225,
-                56
-            ],
-            "enabled": false,
-            "label": "",
-            "options": [
-                {
-                    "label": "Powder",
-                    "token": "powder"
-                },
-                {
-                    "label": "Single crystal",
-                    "token": "single crystal"
-                }
-            ],
-            "selected": "powder",
-            "uid": "experiment_type.sample_form",
-            "visible_bounds": [
-                784,
-                260,
-                225,
-                56
-            ]
-        },
-        "experimentType.scatteringType": {
-            "bounds": [
-                784,
-                330,
-                225,
-                56
-            ],
-            "enabled": false,
-            "label": "",
-            "options": [
-                {
-                    "label": "Bragg",
-                    "token": "bragg"
-                },
-                {
-                    "label": "Total",
-                    "token": "total"
-                }
-            ],
-            "selected": "bragg",
-            "uid": "experiment_type.scattering_type",
-            "visible_bounds": [
-                784,
-                330,
-                225,
-                56
-            ]
-        },
-        "experiments.color.0": {
-            "bounds": [
-                817,
-                207,
-                28,
-                39
-            ],
-            "enabled": true,
-            "icon": "microscope",
-            "label": "",
-            "visible_bounds": [
-                817,
-                207,
-                28,
-                39
-            ]
-        },
-        "experiments.create": {
-            "bounds": [
-                1016,
-                400,
-                218,
-                39
-            ],
-            "enabled": true,
-            "icon": "plus-circle",
-            "label": "Create experiment",
-            "visible_bounds": [
-                1016,
-                400,
-                218,
-                39
-            ]
-        },
-        "experiments.duplicate": {
-            "bounds": [
-                1248,
-                400,
-                218,
-                39
-            ],
-            "enabled": true,
-            "icon": "clone",
-            "label": "Duplicate experiment",
-            "visible_bounds": [
-                1248,
-                400,
-                218,
-                39
-            ]
-        },
-        "experiments.fit.0": {
-            "bounds": [
-                849,
-                207,
-                21,
-                39
-            ],
-            "enabled": true,
-            "label": "",
-            "visible_bounds": [
-                849,
-                207,
-                21,
-                39
-            ]
-        },
-        "experiments.list": {
-            "bounds": [
-                784,
-                168,
-                682,
-                78
-            ],
-            "enabled": true,
-            "label": "",
-            "visible_bounds": [
-                784,
-                168,
-                682,
-                78
-            ]
-        },
-        "experiments.load": {
-            "bounds": [
-                784,
-                400,
-                218,
-                39
-            ],
-            "enabled": true,
-            "icon": "upload",
-            "label": "Load experiment",
-            "visible_bounds": [
-                784,
-                400,
-                218,
-                39
-            ]
-        },
-        "experiments.loadData.0": {
-            "bounds": [
-                958,
-                207,
-                53.609375,
-                39
-            ],
-            "enabled": true,
-            "label": "spodi.edi",
-            "visible_bounds": [
-                958,
-                207,
-                53.609375,
-                39
-            ]
-        },
-        "experiments.name.0": {
-            "bounds": [
-                874,
-                207,
-                80,
-                39
-            ],
-            "enabled": true,
-            "label": "spodi",
-            "visible_bounds": [
-                874,
-                207,
-                80,
-                39
-            ]
-        },
-        "experiments.remove.0": {
-            "bounds": [
-                1419,
-                207,
-                39,
-                39
-            ],
-            "enabled": true,
-            "icon": "minus-circle",
-            "label": "",
-            "visible_bounds": [
-                1419,
-                207,
-                39,
-                39
-            ]
-        },
-        "experiments.row.0": {
-            "bounds": [
-                784,
-                207,
-                682,
-                39
-            ],
-            "enabled": true,
-            "label": "",
-            "visible_bounds": [
-                784,
-                207,
-                682,
-                39
-            ]
-        },
         "group.background": {
             "bounds": [
                 770,
-                453,
+                161,
                 710,
-                42
+                400.5
             ],
             "enabled": true,
             "icon": "wave-square",
             "label": "Background (21)",
             "visible_bounds": [
                 770,
-                453,
+                161,
                 710,
-                42
+                400.5
             ]
         },
         "group.excluded_region": {
             "bounds": [
                 770,
-                579,
+                645.5,
                 710,
                 42
             ],
@@ -1160,7 +1268,7 @@
             "label": "Excluded regions (2)",
             "visible_bounds": [
                 770,
-                579,
+                645.5,
                 710,
                 42
             ]
@@ -1170,7 +1278,7 @@
                 770,
                 119,
                 710,
-                334
+                42
             ],
             "enabled": true,
             "icon": "microscope",
@@ -1179,13 +1287,13 @@
                 770,
                 119,
                 710,
-                334
+                42
             ]
         },
         "group.instrument": {
             "bounds": [
                 770,
-                495,
+                561.5,
                 710,
                 42
             ],
@@ -1194,7 +1302,7 @@
             "label": "Instrument",
             "visible_bounds": [
                 770,
-                495,
+                561.5,
                 710,
                 42
             ]
@@ -1202,7 +1310,7 @@
         "group.linked_structure": {
             "bounds": [
                 770,
-                621,
+                687.5,
                 710,
                 42
             ],
@@ -1211,7 +1319,7 @@
             "label": "Linked structures (1)",
             "visible_bounds": [
                 770,
-                621,
+                687.5,
                 710,
                 42
             ]
@@ -1219,7 +1327,7 @@
         "group.peak": {
             "bounds": [
                 770,
-                537,
+                603.5,
                 710,
                 42
             ],
@@ -1228,7 +1336,7 @@
             "label": "Peak profile",
             "visible_bounds": [
                 770,
-                537,
+                603.5,
                 710,
                 42
             ]
@@ -1676,8 +1784,8 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "e7756426908b7d2506db7e1a8221d0c928d8320233a56182805812db7d6597e5",
-    "source_revision": "570424f574d10fc82cfc20b919138d3aa7c14852",
+    "script_sha256": "53af884d7b5eb69c047a5672d0c9e032377c4725fde5721d2069d4e31af7b64f",
+    "source_revision": "60fb4880cf1a5a1f2af61faa89e0af01112552a6",
     "state": {
         "experiments": 1,
         "fit_outcome": "",
@@ -1687,6 +1795,9 @@
         "fit_status": "",
         "has_project": true,
         "page": "experiment",
+        "scan_failed": 0,
+        "scan_fitted": 0,
+        "scan_total": 0,
         "sidebar": "",
         "sidebar_tabs": [
             {

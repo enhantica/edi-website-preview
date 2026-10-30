@@ -1,5 +1,6 @@
 {
     "description": "Load the structure into the empty project",
+    "fit_phase": "",
     "gui_components_revision": "10dc5828020c90666a1ef015835475936d56e819",
     "highlights": [
         "structures.load",
@@ -7,7 +8,7 @@
     ],
     "id": "06-structure-import",
     "image": "06-structure-import.png",
-    "image_sha256": "6a9e48dc194a9aaad33dd943064dd60ee429b1311c7977d9b8b41091a8a71c1e",
+    "image_sha256": "b9a32d40c46597f05c8b2a58b84f1211483135c48ef54fd72d34db4c877ea287",
     "items": {
         "ApplicationWindow": {
             "bounds": [
@@ -920,8 +921,8 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "e7756426908b7d2506db7e1a8221d0c928d8320233a56182805812db7d6597e5",
-    "source_revision": "570424f574d10fc82cfc20b919138d3aa7c14852",
+    "script_sha256": "53af884d7b5eb69c047a5672d0c9e032377c4725fde5721d2069d4e31af7b64f",
+    "source_revision": "60fb4880cf1a5a1f2af61faa89e0af01112552a6",
     "state": {
         "experiments": 0,
         "fit_outcome": "",
@@ -931,6 +932,9 @@
         "fit_status": "",
         "has_project": true,
         "page": "structure",
+        "scan_failed": 0,
+        "scan_fitted": 0,
+        "scan_total": 0,
         "sidebar": "",
         "sidebar_tabs": [
             {

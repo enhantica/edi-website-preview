@@ -1,5 +1,6 @@
 {
     "description": "Crystal structure — Text",
+    "fit_phase": "",
     "gui_components_revision": "10dc5828020c90666a1ef015835475936d56e819",
     "highlights": [
         "appBar",
@@ -9,7 +10,7 @@
     ],
     "id": "08-structure-text",
     "image": "08-structure-text.png",
-    "image_sha256": "f0fedb91178b62baf8830027f1ebb4bfe0af7085c06bfd21533cd5066bcd45cf",
+    "image_sha256": "86948e92d0a76abcd5a2d4c2b1157acb3b1110d08076ab3e98619ee2c34379d0",
     "items": {
         "ApplicationWindow": {
             "bounds": [
@@ -571,7 +572,7 @@
             "bounds": [
                 875.128125,
                 772,
-                209.484375,
+                195.734375,
                 14
             ],
             "enabled": true,
@@ -580,7 +581,7 @@
             "visible_bounds": [
                 875.128125,
                 772,
-                209.484375,
+                195.734375,
                 14
             ]
         },
@@ -906,15 +907,15 @@
             "bounds": [
                 784,
                 133,
-                377.578125,
+                327.234375,
                 640
             ],
             "enabled": true,
-            "label": "data_y2o3\n\n_space_group.name_h_m \"I a -3\"\n_space_group.coord_system_code 1\n_space_group.it_number 206\n\n_cell.length_a 10.61()\n_cell.length_b 10.61\n_cell.length_c 10.61\n_cell.angle_alpha 90\n_cell.angle_beta 90\n_cell.angle_gamma 90\n\nloop_\n_atom_site.id\n_atom",
+            "label": "data_y2o3\n\n_space_group.name_h_m \"I a -3\"\n_space_group.coord_system_code 1\n_space_group.it_number 206\n\n_cell.length_a 10.61\n_cell.length_b 10.61\n_cell.length_c 10.61\n_cell.angle_alpha 90\n_cell.angle_beta 90\n_cell.angle_gamma 90\n\nloop_\n_atom_site.id\n_atom_s",
             "visible_bounds": [
                 784,
                 133,
-                377.578125,
+                327.234375,
                 611
             ]
         },
@@ -993,8 +994,8 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "e7756426908b7d2506db7e1a8221d0c928d8320233a56182805812db7d6597e5",
-    "source_revision": "570424f574d10fc82cfc20b919138d3aa7c14852",
+    "script_sha256": "53af884d7b5eb69c047a5672d0c9e032377c4725fde5721d2069d4e31af7b64f",
+    "source_revision": "60fb4880cf1a5a1f2af61faa89e0af01112552a6",
     "state": {
         "experiments": 0,
         "fit_outcome": "",
@@ -1004,6 +1005,9 @@
         "fit_status": "",
         "has_project": true,
         "page": "structure",
+        "scan_failed": 0,
+        "scan_fitted": 0,
+        "scan_total": 0,
         "sidebar": "Text",
         "sidebar_tabs": [
             {

@@ -1,5 +1,6 @@
 {
     "description": "Create the project",
+    "fit_phase": "",
     "gui_components_revision": "10dc5828020c90666a1ef015835475936d56e819",
     "highlights": [
         "workflow.project.mainContent",
@@ -7,7 +8,7 @@
     ],
     "id": "04-project-created",
     "image": "04-project-created.png",
-    "image_sha256": "e796d4118c6b374f9e241e355aefe51c886849eee48d61ad72c9e8ed3f9610a7",
+    "image_sha256": "142ee9189eadc1bfba6f1cbd51dba382458aa13be68fcc6b19c62ad636045248",
     "items": {
         "ApplicationWindow": {
             "bounds": [
@@ -470,7 +471,7 @@
                 19
             ],
             "enabled": true,
-            "label": "/tmp/EasyDiffraction-jtzbMh/pd-neut-cwl_y2o3-spodi",
+            "label": "/tmp/EasyDiffraction-EWTNsl/pd-neut-cwl_y2o3-spodi",
             "visible_bounds": [
                 183.4,
                 329.40000000000003,
@@ -838,8 +839,8 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "e7756426908b7d2506db7e1a8221d0c928d8320233a56182805812db7d6597e5",
-    "source_revision": "570424f574d10fc82cfc20b919138d3aa7c14852",
+    "script_sha256": "53af884d7b5eb69c047a5672d0c9e032377c4725fde5721d2069d4e31af7b64f",
+    "source_revision": "60fb4880cf1a5a1f2af61faa89e0af01112552a6",
     "state": {
         "experiments": 0,
         "fit_outcome": "",
@@ -849,6 +850,9 @@
         "fit_status": "",
         "has_project": true,
         "page": "project",
+        "scan_failed": 0,
+        "scan_fitted": 0,
+        "scan_total": 0,
         "sidebar": "",
         "sidebar_tabs": [
             {

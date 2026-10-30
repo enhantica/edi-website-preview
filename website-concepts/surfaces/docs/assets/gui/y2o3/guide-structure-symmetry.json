@@ -1,5 +1,6 @@
 {
     "description": "Choose the crystal symmetry and setting",
+    "fit_phase": "",
     "gui_components_revision": "10dc5828020c90666a1ef015835475936d56e819",
     "highlights": [
         "spaceGroup.itNumber",
@@ -7,7 +8,7 @@
     ],
     "id": "guide-structure-symmetry",
     "image": "guide-structure-symmetry.png",
-    "image_sha256": "b2c8bb9a047ab2befb7f3439f20f7cac37e0f30700dcd165fd10c12f0f869147",
+    "image_sha256": "4a2774a7ca453c0396957350b31a35eb0f8d3fe5401d39810611455912077995",
     "items": {
         "ApplicationWindow": {
             "bounds": [
@@ -715,17 +716,17 @@
         },
         "statusBar.fit": {
             "bounds": [
-                1061,
+                1069,
                 769,
-                405,
+                397,
                 19
             ],
             "enabled": true,
             "label": "",
             "visible_bounds": [
-                1061,
+                1069,
                 769,
-                405,
+                397,
                 19
             ]
         },
@@ -764,7 +765,7 @@
         },
         "statusBar.fit.outcome": {
             "bounds": [
-                1079,
+                1087,
                 769,
                 82,
                 19
@@ -773,7 +774,7 @@
             "icon": "check-circle",
             "label": "",
             "visible_bounds": [
-                1079,
+                1087,
                 769,
                 82,
                 19
@@ -784,17 +785,17 @@
         },
         "statusBar.fit.values": {
             "bounds": [
-                1178,
+                1186,
                 770,
-                219,
+                211,
                 18.109375
             ],
             "enabled": true,
-            "label": "5 0.12s 127.71→1.20",
+            "label": "4 0.081s 3.58→2.28",
             "visible_bounds": [
-                1178,
+                1186,
                 770,
-                219,
+                211,
                 18.109375
             ]
         },
@@ -819,7 +820,7 @@
             "bounds": [
                 479.34687500000007,
                 772,
-                137.234375,
+                144.859375,
                 14
             ],
             "enabled": true,
@@ -828,7 +829,7 @@
             "visible_bounds": [
                 479.34687500000007,
                 772,
-                137.234375,
+                144.859375,
                 14
             ]
         },
@@ -1192,8 +1193,8 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "e7756426908b7d2506db7e1a8221d0c928d8320233a56182805812db7d6597e5",
-    "source_revision": "570424f574d10fc82cfc20b919138d3aa7c14852",
+    "script_sha256": "53af884d7b5eb69c047a5672d0c9e032377c4725fde5721d2069d4e31af7b64f",
+    "source_revision": "60fb4880cf1a5a1f2af61faa89e0af01112552a6",
     "state": {
         "experiments": 1,
         "fit_outcome": "success",
@@ -1203,6 +1204,9 @@
         "fit_status": "Success",
         "has_project": true,
         "page": "structure",
+        "scan_failed": 0,
+        "scan_fitted": 0,
+        "scan_total": 0,
         "sidebar": "",
         "sidebar_tabs": [
             {

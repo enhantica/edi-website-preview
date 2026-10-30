@@ -1,5 +1,6 @@
 {
     "description": "Experiment and measured data — Text",
+    "fit_phase": "",
     "gui_components_revision": "10dc5828020c90666a1ef015835475936d56e819",
     "highlights": [
         "appBar",
@@ -9,7 +10,7 @@
     ],
     "id": "11-experiment-text",
     "image": "11-experiment-text.png",
-    "image_sha256": "312e30eed66082f606336f16338f985c048825cc45605607a2dfc396600e4a23",
+    "image_sha256": "80266b17696a19e1fa22d21a08a437b120e8ea17944afd7ecd08b17df3146b4c",
     "items": {
         "ApplicationWindow": {
             "bounds": [
@@ -1161,15 +1162,15 @@
             "bounds": [
                 784,
                 133,
-                453.09375,
-                992
+                302.0625,
+                960
             ],
             "enabled": true,
-            "label": "data_spodi\n\n_background.type line-segment\n\nloop_\n_background.id\n_background.position\n_background.intensity\n1 12.5856 6400()\n2 19.4181 6400()\n3 21.8751 6400()\n4 27.8998 6400()\n5 32.9147 6400()\n6 39.1152 6400()\n7 45.712 6400()\n8 51.9387 6400()\n9 60.558 6400(",
+            "label": "data_spodi\n\n_background.type line-segment\n\nloop_\n_background.id\n_background.position\n_background.intensity\n1 12.05 9952.21\n2 21.15 9167.78\n3 45.6 7891.89\n4 49.95 7884.3\n5 55.45 7613.33\n6 56.8 7715.79\n7 63.05 7375.44\n8 84.45 7058.78\n9 88.6 6855.67\n10 95.75 ",
             "visible_bounds": [
                 784,
                 133,
-                453.09375,
+                302.0625,
                 611
             ]
         },
@@ -1248,8 +1249,8 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "e7756426908b7d2506db7e1a8221d0c928d8320233a56182805812db7d6597e5",
-    "source_revision": "570424f574d10fc82cfc20b919138d3aa7c14852",
+    "script_sha256": "53af884d7b5eb69c047a5672d0c9e032377c4725fde5721d2069d4e31af7b64f",
+    "source_revision": "60fb4880cf1a5a1f2af61faa89e0af01112552a6",
     "state": {
         "experiments": 1,
         "fit_outcome": "",
@@ -1259,6 +1260,9 @@
         "fit_status": "",
         "has_project": true,
         "page": "experiment",
+        "scan_failed": 0,
+        "scan_fitted": 0,
+        "scan_total": 0,
         "sidebar": "Text",
         "sidebar_tabs": [
             {

@@ -40,7 +40,7 @@ The notebook plots measured and calculated arrays with Plotly. Expand its plotti
     <p class="gui-view-description">Compare the starting calculation with the measured pattern. The residual shows their difference.</p>
 
     <figure class="ed-interface-preview" data-interface-hero>
-    <a class="gui-image-link" href="../assets/learning/initial.svg?v=f74f08b1eccb" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Starting model"><svg class="gui-capture" viewBox="0 0 1000 540" width="1000" height="540" role="img" aria-label="Starting model"><title>Starting model</title><defs><clipPath id="interface-initial"><rect y="0" width="1000" height="540" rx="12" /></clipPath></defs><image href="../assets/learning/initial.svg?v=f74f08b1eccb" width="1000" height="540" clip-path="url(#interface-initial)" /><rect class="gui-image-frame" y="0" width="1000" height="540" rx="12" /></svg></a>
+    <a class="gui-image-link" href="../assets/learning/initial.svg?v=f06fa4f9ee38" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Starting model"><svg class="gui-capture" viewBox="0 0 1000 540" width="1000" height="540" role="img" aria-label="Starting model"><title>Starting model</title><defs><clipPath id="interface-initial"><rect y="0" width="1000" height="540" rx="12" /></clipPath></defs><image href="../assets/learning/initial.svg?v=f06fa4f9ee38" width="1000" height="540" clip-path="url(#interface-initial)" /><rect class="gui-image-frame" y="0" width="1000" height="540" rx="12" /></svg></a>
     </figure>
 
 === "Refined model"
@@ -48,7 +48,7 @@ The notebook plots measured and calculated arrays with Plotly. Expand its plotti
     <p class="gui-view-description">After refinement, compare the same peaks and residual on exactly the same axes and scale.</p>
 
     <figure class="ed-interface-preview" data-interface-hero>
-    <a class="gui-image-link" href="../assets/learning/refined.svg?v=dc100b796917" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Refined model"><svg class="gui-capture" viewBox="0 0 1000 540" width="1000" height="540" role="img" aria-label="Refined model"><title>Refined model</title><defs><clipPath id="interface-refined"><rect y="0" width="1000" height="540" rx="12" /></clipPath></defs><image href="../assets/learning/refined.svg?v=dc100b796917" width="1000" height="540" clip-path="url(#interface-refined)" /><rect class="gui-image-frame" y="0" width="1000" height="540" rx="12" /></svg></a>
+    <a class="gui-image-link" href="../assets/learning/refined.svg?v=8c5fe4e476e6" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Refined model"><svg class="gui-capture" viewBox="0 0 1000 540" width="1000" height="540" role="img" aria-label="Refined model"><title>Refined model</title><defs><clipPath id="interface-refined"><rect y="0" width="1000" height="540" rx="12" /></clipPath></defs><image href="../assets/learning/refined.svg?v=8c5fe4e476e6" width="1000" height="540" clip-path="url(#interface-refined)" /><rect class="gui-image-frame" y="0" width="1000" height="540" rx="12" /></svg></a>
     </figure>
 
 </div>

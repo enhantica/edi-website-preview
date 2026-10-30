@@ -1,5 +1,6 @@
 {
     "description": "Completed Rietveld refinement — Main",
+    "fit_phase": "",
     "gui_components_revision": "10dc5828020c90666a1ef015835475936d56e819",
     "highlights": [
         "appBar",
@@ -9,7 +10,7 @@
     ],
     "id": "13-analysis-basic",
     "image": "13-analysis-basic.png",
-    "image_sha256": "b139c582c14713d9a82344550ce73e751e85ba299f7580fc605761f70f74f735",
+    "image_sha256": "8f3e20271fa585a2935760515b01299dfa294bbcde9ba672abb29195097eafad",
     "items": {
         "ApplicationWindow": {
             "bounds": [
@@ -183,7 +184,7 @@
                 35,
                 35
             ],
-            "enabled": true,
+            "enabled": false,
             "icon": "save",
             "label": "",
             "visible_bounds": [
@@ -775,7 +776,7 @@
         "currentRowBar": {
             "bounds": [
                 785,
-                270,
+                309,
                 2,
                 39
             ],
@@ -783,7 +784,7 @@
             "label": "",
             "visible_bounds": [
                 785,
-                270,
+                309,
                 2,
                 39
             ]
@@ -1586,7 +1587,7 @@
                 35
             ],
             "enabled": true,
-            "label": "10.5545",
+            "label": "-0.04908",
             "visible_bounds": [
                 784,
                 693.5,
@@ -1602,7 +1603,7 @@
                 35
             ],
             "enabled": true,
-            "label": "10.6545",
+            "label": "-0.01636",
             "visible_bounds": [
                 1382,
                 693.5,
@@ -1618,7 +1619,7 @@
                 39
             ],
             "enabled": true,
-            "label": "10.604451",
+            "label": "10.60448",
             "visible_bounds": [
                 966,
                 270,
@@ -1634,7 +1635,7 @@
                 39
             ],
             "enabled": true,
-            "label": "-0.03227",
+            "label": "-0.03272",
             "visible_bounds": [
                 966,
                 309,
@@ -1650,7 +1651,7 @@
                 39
             ],
             "enabled": true,
-            "label": "0.39073",
+            "label": "0.39127",
             "visible_bounds": [
                 966,
                 660,
@@ -1682,7 +1683,7 @@
                 39
             ],
             "enabled": true,
-            "label": "0.00061",
+            "label": "0.00111",
             "visible_bounds": [
                 966,
                 387,
@@ -1698,7 +1699,7 @@
                 39
             ],
             "enabled": true,
-            "label": "0.00037",
+            "label": "0.00111",
             "visible_bounds": [
                 966,
                 426,
@@ -1714,7 +1715,7 @@
                 39
             ],
             "enabled": true,
-            "label": "0.00063",
+            "label": "0.00111",
             "visible_bounds": [
                 966,
                 465,
@@ -1730,7 +1731,7 @@
                 39
             ],
             "enabled": true,
-            "label": "-0.00026",
+            "label": "0",
             "visible_bounds": [
                 966,
                 504,
@@ -1762,7 +1763,7 @@
                 39
             ],
             "enabled": true,
-            "label": "0.00070",
+            "label": "0.00111",
             "visible_bounds": [
                 966,
                 582,
@@ -1778,7 +1779,7 @@
                 39
             ],
             "enabled": true,
-            "label": "-0.00009",
+            "label": "0",
             "visible_bounds": [
                 966,
                 621,
@@ -1918,17 +1919,17 @@
         },
         "statusBar.fit": {
             "bounds": [
-                1061,
+                1069,
                 769,
-                405,
+                397,
                 19
             ],
             "enabled": true,
             "label": "",
             "visible_bounds": [
-                1061,
+                1069,
                 769,
-                405,
+                397,
                 19
             ]
         },
@@ -1967,7 +1968,7 @@
         },
         "statusBar.fit.outcome": {
             "bounds": [
-                1079,
+                1087,
                 769,
                 82,
                 19
@@ -1976,7 +1977,7 @@
             "icon": "check-circle",
             "label": "",
             "visible_bounds": [
-                1079,
+                1087,
                 769,
                 82,
                 19
@@ -1987,17 +1988,17 @@
         },
         "statusBar.fit.values": {
             "bounds": [
-                1178,
+                1186,
                 770,
-                219,
+                211,
                 18.109375
             ],
             "enabled": true,
-            "label": "5 0.12s 127.71→1.20",
+            "label": "4 0.081s 3.58→2.28",
             "visible_bounds": [
-                1178,
+                1186,
                 770,
-                219,
+                211,
                 18.109375
             ]
         },
@@ -2022,7 +2023,7 @@
             "bounds": [
                 479.34687500000007,
                 772,
-                137.234375,
+                144.859375,
                 14
             ],
             "enabled": true,
@@ -2031,7 +2032,7 @@
             "visible_bounds": [
                 479.34687500000007,
                 772,
-                137.234375,
+                144.859375,
                 14
             ]
         },
@@ -2164,8 +2165,8 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "e7756426908b7d2506db7e1a8221d0c928d8320233a56182805812db7d6597e5",
-    "source_revision": "570424f574d10fc82cfc20b919138d3aa7c14852",
+    "script_sha256": "53af884d7b5eb69c047a5672d0c9e032377c4725fde5721d2069d4e31af7b64f",
+    "source_revision": "60fb4880cf1a5a1f2af61faa89e0af01112552a6",
     "state": {
         "experiments": 1,
         "fit_outcome": "success",
@@ -2175,6 +2176,9 @@
         "fit_status": "Success",
         "has_project": true,
         "page": "analysis",
+        "scan_failed": 0,
+        "scan_fitted": 0,
+        "scan_total": 0,
         "sidebar": "Main",
         "sidebar_tabs": [
             {

@@ -76,10 +76,18 @@ def validate_bundle(root: Path, *, workflow: str = 'creation') -> tuple[dict, li
         'Walkthrough script changed',
     )
     inputs = manifest.get('inputs', {})
+    raw_inputs = 'data' in inputs
     require(
-        set(inputs) == {'structure', 'experiment'},
-        'Separate structure and experiment inputs are required',
+        set(inputs)
+        == ({'structure', 'experiment', 'data'} if raw_inputs else {'structure', 'experiment'}),
+        'Separate, declared tutorial inputs are required',
     )
+    if raw_inputs:
+        require(
+            Path(inputs['structure']['file']).suffix == '.cif'
+            and Path(inputs['data']['file']).suffix == '.xye',
+            'The realistic walkthrough requires CIF and measured XYE inputs',
+        )
     for item in inputs.values():
         require(
             sha256(local_file(root, item.get('file'))) == item.get('sha256'),
@@ -108,6 +116,23 @@ def validate_bundle(root: Path, *, workflow: str = 'creation') -> tuple[dict, li
         'wait-fit',
         'close-fit-results',
     ]
+    if raw_inputs and workflow == 'creation':
+        expected = [
+            'home.start',
+            'project.create',
+            'createProject.accept',
+            'import-structure:',
+            'experiments.create',
+            'import-data:',
+            'fill:instrument.setup_wavelength=',
+            'excludedRegions.append',
+            'background.estimate',
+            'parameters.freeHeader.fixed',
+            'parameters.freeHeader.free',
+            'statusBar.fit.button',
+            'wait-fit',
+            'close-fit-results',
+        ]
     if workflow == 'reference':
         expected = [loads[0], 'statusBar.fit.button', 'wait-fit', 'close-fit-results']
     position = -1
@@ -116,7 +141,7 @@ def validate_bundle(root: Path, *, workflow: str = 'creation') -> tuple[dict, li
             i
             for i, value in enumerate(actions)
             if i > position
-            and (value.startswith(action) if action.endswith(':') else value == action)
+            and (value.startswith(action) if action.endswith((':', '=')) else value == action)
         ]
         require(bool(candidates), f'Missing or out-of-order action: {action}')
         position = candidates[0]
@@ -163,12 +188,18 @@ def validate_bundle(root: Path, *, workflow: str = 'creation') -> tuple[dict, li
             require(
                 selected == [scene['sidebar']], 'Sidebar label does not match its native selection'
             )
+        fit_phase = metadata.get('fit_phase', '')
+        require(
+            fit_phase in {'', 'setup'}
+            and (fit_phase != 'setup' or scene.get('page') == 'analysis'),
+            'Only explicit Analysis setup scenes may precede fitting',
+        )
         if scene.get('page') in {'analysis', 'report'}:
             require(
                 not state.get('fit_running')
                 and not state.get('fit_results_open')
-                and state.get('fit_result_rows', 0) > 0,
-                'Post-fit scene has unfinished fit or open results',
+                and (fit_phase == 'setup' or state.get('fit_result_rows', 0) > 0),
+                'Analysis setup must be idle; result scenes need a completed fit and closed popup',
             )
             if workflow == 'reference' and reference_kind == 'scan':
                 require(

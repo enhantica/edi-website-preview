@@ -33,7 +33,7 @@
             "scene": "03-project-details"
         },
         {
-            "action": "fill:createProject.location=/tmp/EasyDiffraction-jtzbMh/pd-neut-cwl_y2o3-spodi",
+            "action": "fill:createProject.location=/tmp/EasyDiffraction-EWTNsl/pd-neut-cwl_y2o3-spodi",
             "scene": "03-project-details"
         },
         {
@@ -101,7 +101,7 @@
             "scene": "06-structure-import"
         },
         {
-            "action": "import-structure:/tmp/edi-docs-workflow-details/inputs/structures/y2o3.edi",
+            "action": "import-structure:/tmp/edi-realistic-walkthrough-r10/inputs/structures/y2o3.cif",
             "scene": "07-structure-loaded"
         },
         {
@@ -161,8 +161,224 @@
             "scene": "09-experiment-import"
         },
         {
-            "action": "import-experiment:/tmp/edi-docs-workflow-details/inputs/experiments/spodi.edi",
-            "scene": "10-experiment-loaded"
+            "action": "experiments.create",
+            "scene": "09-experiment-type"
+        },
+        {
+            "action": "experimentType.sampleForm",
+            "scene": "09-experiment-type"
+        },
+        {
+            "action": "choose-token:experimentType.sampleForm=powder",
+            "scene": "09-experiment-type"
+        },
+        {
+            "action": "experimentType.beamMode",
+            "scene": "09-experiment-type"
+        },
+        {
+            "action": "choose-token:experimentType.beamMode=constant wavelength",
+            "scene": "09-experiment-type"
+        },
+        {
+            "action": "experimentType.radiationProbe",
+            "scene": "09-experiment-type"
+        },
+        {
+            "action": "choose-token:experimentType.radiationProbe=neutron",
+            "scene": "09-experiment-type"
+        },
+        {
+            "action": "import-data:/tmp/edi-realistic-walkthrough-r10/inputs/spodi.xye",
+            "scene": "09-experiment-data"
+        },
+        {
+            "action": "reveal:group.instrument",
+            "scene": "09-wavelength"
+        },
+        {
+            "action": "expand:group.instrument",
+            "scene": "09-wavelength"
+        },
+        {
+            "action": "reveal:instrument.setup_wavelength",
+            "scene": "09-wavelength"
+        },
+        {
+            "action": "fill:instrument.setup_wavelength=1.54822",
+            "scene": "09-wavelength"
+        },
+        {
+            "action": "key:Return",
+            "scene": "09-wavelength"
+        },
+        {
+            "action": "reveal:group.peak",
+            "scene": "09-profile"
+        },
+        {
+            "action": "expand:group.peak",
+            "scene": "09-profile"
+        },
+        {
+            "action": "peak.type",
+            "scene": "09-profile"
+        },
+        {
+            "action": "choose-token:peak.type=cwl-tch-pseudo-voigt",
+            "scene": "09-profile"
+        },
+        {
+            "action": "reveal:peak.broad_gauss_u",
+            "scene": "09-profile-broad-gauss-u"
+        },
+        {
+            "action": "fill:peak.broad_gauss_u=0.04",
+            "scene": "09-profile-broad-gauss-u"
+        },
+        {
+            "action": "key:Return",
+            "scene": "09-profile-broad-gauss-u"
+        },
+        {
+            "action": "reveal:peak.broad_gauss_v",
+            "scene": "09-profile-broad-gauss-v"
+        },
+        {
+            "action": "fill:peak.broad_gauss_v=-0.07",
+            "scene": "09-profile-broad-gauss-v"
+        },
+        {
+            "action": "key:Return",
+            "scene": "09-profile-broad-gauss-v"
+        },
+        {
+            "action": "reveal:peak.broad_gauss_w",
+            "scene": "09-profile-broad-gauss-w"
+        },
+        {
+            "action": "fill:peak.broad_gauss_w=0.1",
+            "scene": "09-profile-broad-gauss-w"
+        },
+        {
+            "action": "key:Return",
+            "scene": "09-profile-broad-gauss-w"
+        },
+        {
+            "action": "reveal:group.excluded_region",
+            "scene": "09-exclusion-0"
+        },
+        {
+            "action": "expand:group.excluded_region",
+            "scene": "09-exclusion-0"
+        },
+        {
+            "action": "excludedRegions.append",
+            "scene": "09-exclusion-0"
+        },
+        {
+            "action": "reveal:excludedRegion.start.0",
+            "scene": "09-exclusion-0"
+        },
+        {
+            "action": "fill:excludedRegion.start.0=0",
+            "scene": "09-exclusion-0"
+        },
+        {
+            "action": "key:Return",
+            "scene": "09-exclusion-0"
+        },
+        {
+            "action": "reveal:excludedRegion.end.0",
+            "scene": "09-exclusion-0"
+        },
+        {
+            "action": "fill:excludedRegion.end.0=12",
+            "scene": "09-exclusion-0"
+        },
+        {
+            "action": "key:Return",
+            "scene": "09-exclusion-0"
+        },
+        {
+            "action": "reveal:group.excluded_region",
+            "scene": "09-exclusion-1"
+        },
+        {
+            "action": "expand:group.excluded_region",
+            "scene": "09-exclusion-1"
+        },
+        {
+            "action": "excludedRegions.append",
+            "scene": "09-exclusion-1"
+        },
+        {
+            "action": "reveal:excludedRegion.start.1",
+            "scene": "09-exclusion-1"
+        },
+        {
+            "action": "fill:excludedRegion.start.1=137.5",
+            "scene": "09-exclusion-1"
+        },
+        {
+            "action": "key:Return",
+            "scene": "09-exclusion-1"
+        },
+        {
+            "action": "reveal:excludedRegion.end.1",
+            "scene": "09-exclusion-1"
+        },
+        {
+            "action": "fill:excludedRegion.end.1=180",
+            "scene": "09-exclusion-1"
+        },
+        {
+            "action": "key:Return",
+            "scene": "09-exclusion-1"
+        },
+        {
+            "action": "sideBar.tab.extras",
+            "scene": "09-background-settings"
+        },
+        {
+            "action": "reveal:group.background_estimate",
+            "scene": "09-background-settings"
+        },
+        {
+            "action": "expand:group.background_estimate",
+            "scene": "09-background-settings"
+        },
+        {
+            "action": "reveal:background_estimate.n_points",
+            "scene": "09-background-settings"
+        },
+        {
+            "action": "fill:background_estimate.n_points=21",
+            "scene": "09-background-settings"
+        },
+        {
+            "action": "key:Return",
+            "scene": "09-background-settings"
+        },
+        {
+            "action": "sideBar.tab.basic",
+            "scene": "09-background-estimate"
+        },
+        {
+            "action": "reveal:group.background",
+            "scene": "09-background-estimate"
+        },
+        {
+            "action": "expand:group.background",
+            "scene": "09-background-estimate"
+        },
+        {
+            "action": "reveal:background.estimate",
+            "scene": "09-background-estimate"
+        },
+        {
+            "action": "background.estimate",
+            "scene": "09-background-estimate"
         },
         {
             "action": "appBar.tab.experiment",
@@ -210,10 +426,170 @@
         },
         {
             "action": "appBar.tab.analysis",
-            "scene": "12-run-refinement"
+            "scene": "12-analysis-choose"
         },
         {
             "action": "sideBar.tab.basic",
+            "scene": "12-analysis-choose"
+        },
+        {
+            "action": "parameters.clearFilters",
+            "scene": "12-analysis-choose"
+        },
+        {
+            "action": "parameters.freeHeader",
+            "scene": "12-analysis-choose"
+        },
+        {
+            "action": "parameters.freeHeader.fixed",
+            "scene": "12-analysis-choose"
+        },
+        {
+            "action": "reveal:parameters.nameFilter",
+            "scene": "12-analysis-choose"
+        },
+        {
+            "action": "fill:parameters.nameFilter=scale",
+            "scene": "12-analysis-choose"
+        },
+        {
+            "action": "parameters.freeHeader",
+            "scene": "12-analysis-choose"
+        },
+        {
+            "action": "parameters.freeHeader.free",
+            "scene": "12-analysis-choose"
+        },
+        {
+            "action": "parameters.clearFilters",
+            "scene": "12-analysis-choose"
+        },
+        {
+            "action": "reveal:parameters.nameFilter",
+            "scene": "12-analysis-choose"
+        },
+        {
+            "action": "fill:parameters.nameFilter=length_a",
+            "scene": "12-analysis-choose"
+        },
+        {
+            "action": "parameters.freeHeader",
+            "scene": "12-analysis-choose"
+        },
+        {
+            "action": "parameters.freeHeader.free",
+            "scene": "12-analysis-choose"
+        },
+        {
+            "action": "parameters.clearFilters",
+            "scene": "12-analysis-choose"
+        },
+        {
+            "action": "save-as:/tmp/edi-realistic-walkthrough-r10/checkpoints/starting",
+            "scene": "12-save-start"
+        },
+        {
+            "action": "statusBar.fit.button",
+            "scene": "12-fit-scale-cell"
+        },
+        {
+            "action": "wait-fit",
+            "scene": "12-fit-scale-cell"
+        },
+        {
+            "action": "close-fit-results",
+            "scene": "12-fit-scale-cell"
+        },
+        {
+            "action": "reveal:parameters.nameFilter",
+            "scene": "12-fit-profile"
+        },
+        {
+            "action": "fill:parameters.nameFilter=broad_gauss_",
+            "scene": "12-fit-profile"
+        },
+        {
+            "action": "parameters.freeHeader",
+            "scene": "12-fit-profile"
+        },
+        {
+            "action": "parameters.freeHeader.free",
+            "scene": "12-fit-profile"
+        },
+        {
+            "action": "parameters.clearFilters",
+            "scene": "12-fit-profile"
+        },
+        {
+            "action": "reveal:parameters.nameFilter",
+            "scene": "12-fit-profile"
+        },
+        {
+            "action": "fill:parameters.nameFilter=calib_twotheta_offset",
+            "scene": "12-fit-profile"
+        },
+        {
+            "action": "parameters.freeHeader",
+            "scene": "12-fit-profile"
+        },
+        {
+            "action": "parameters.freeHeader.free",
+            "scene": "12-fit-profile"
+        },
+        {
+            "action": "parameters.clearFilters",
+            "scene": "12-fit-profile"
+        },
+        {
+            "action": "statusBar.fit.button",
+            "scene": "12-fit-profile"
+        },
+        {
+            "action": "wait-fit",
+            "scene": "12-fit-profile"
+        },
+        {
+            "action": "close-fit-results",
+            "scene": "12-fit-profile"
+        },
+        {
+            "action": "reveal:parameters.nameFilter",
+            "scene": "12-run-refinement"
+        },
+        {
+            "action": "fill:parameters.nameFilter=background",
+            "scene": "12-run-refinement"
+        },
+        {
+            "action": "parameters.freeHeader",
+            "scene": "12-run-refinement"
+        },
+        {
+            "action": "parameters.freeHeader.free",
+            "scene": "12-run-refinement"
+        },
+        {
+            "action": "parameters.clearFilters",
+            "scene": "12-run-refinement"
+        },
+        {
+            "action": "reveal:parameters.nameFilter",
+            "scene": "12-run-refinement"
+        },
+        {
+            "action": "fill:parameters.nameFilter=fract_",
+            "scene": "12-run-refinement"
+        },
+        {
+            "action": "parameters.freeHeader",
+            "scene": "12-run-refinement"
+        },
+        {
+            "action": "parameters.freeHeader.free",
+            "scene": "12-run-refinement"
+        },
+        {
+            "action": "parameters.clearFilters",
             "scene": "12-run-refinement"
         },
         {
@@ -227,6 +603,18 @@
         {
             "action": "close-fit-results",
             "scene": "12-run-refinement"
+        },
+        {
+            "action": "save-as:/tmp/edi-realistic-walkthrough-r10/checkpoints/refined",
+            "scene": "12-save-refined"
+        },
+        {
+            "action": "mainArea.analysis.tab.correlations",
+            "scene": "12-correlations"
+        },
+        {
+            "action": "mainArea.analysis.tab.fitting",
+            "scene": "12-pattern-return"
         },
         {
             "action": "appBar.tab.analysis",
@@ -993,11 +1381,15 @@
             "scene": "guide-analysis-pattern-updates"
         }
     ],
-    "binary_sha256": "138755e1dd97a44499e49856378a7d79aa518530089d818036ec0edd98b652fe",
+    "binary_sha256": "86fd973f5e8716dbc4707f2539efa8d1b9230ab0d8493cc604e9a26b8f103628",
     "dependencies": [
         {
             "file": "inputs/analysis/analysis.edi",
             "sha256": "7d828f50cfa11d9e21c6493d25e287388293d6b0de36760c45f1eca6c8a3d84e"
+        },
+        {
+            "file": "inputs/structures/y2o3.edi",
+            "sha256": "0035a2409b1fa26521d4b59c9520c37d8c4bb8c2ec9e53c50ff227ad87d53ccf"
         }
     ],
     "error": "",
@@ -1055,13 +1447,17 @@
     },
     "gui_components_revision": "10dc5828020c90666a1ef015835475936d56e819",
     "inputs": {
+        "data": {
+            "file": "inputs/spodi.xye",
+            "sha256": "1abbb95e5a9073b7673f72546fb98376878fc9cbe6d20cbd5999b9bea83eeada"
+        },
         "experiment": {
             "file": "inputs/experiments/spodi.edi",
             "sha256": "c6ff7236515100d6a5559271a52772142d435583d2b477f87b82411848a45eb3"
         },
         "structure": {
-            "file": "inputs/structures/y2o3.edi",
-            "sha256": "0035a2409b1fa26521d4b59c9520c37d8c4bb8c2ec9e53c50ff227ad87d53ccf"
+            "file": "inputs/structures/y2o3.cif",
+            "sha256": "e4ff3fc52c953445941db8f926debaa78e8a87542f7a571ee2f4bce3ec146fd7"
         }
     },
     "logical_size": [
@@ -1192,7 +1588,7 @@
             "status": "skipped"
         },
         {
-            "description": "Load the experiment and measured intensities",
+            "description": "Create an experiment for the measurement",
             "id": "09-experiment-import",
             "image": "09-experiment-import.png",
             "metadata": "09-experiment-import.json",
@@ -1201,7 +1597,106 @@
             "status": "captured"
         },
         {
-            "description": "Compare the measured pattern with the initial calculation",
+            "description": "Choose the sample form, beam mode and probe before loading data",
+            "id": "09-experiment-type",
+            "image": "09-experiment-type.png",
+            "metadata": "09-experiment-type.json",
+            "page": "experiment",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Load the measured angle, intensity and uncertainty columns",
+            "id": "09-experiment-data",
+            "image": "09-experiment-data.png",
+            "metadata": "09-experiment-data.json",
+            "page": "experiment",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Set the wavelength used for this measurement",
+            "id": "09-wavelength",
+            "image": "09-wavelength.png",
+            "metadata": "09-wavelength.json",
+            "page": "experiment",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Choose the peak profile and starting coefficients",
+            "id": "09-profile",
+            "image": "09-profile.png",
+            "metadata": "09-profile.json",
+            "page": "experiment",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Set a starting profile coefficient",
+            "id": "09-profile-broad-gauss-u",
+            "image": "09-profile-broad-gauss-u.png",
+            "metadata": "09-profile-broad-gauss-u.json",
+            "page": "experiment",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Set a starting profile coefficient",
+            "id": "09-profile-broad-gauss-v",
+            "image": "09-profile-broad-gauss-v.png",
+            "metadata": "09-profile-broad-gauss-v.json",
+            "page": "experiment",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Set a starting profile coefficient",
+            "id": "09-profile-broad-gauss-w",
+            "image": "09-profile-broad-gauss-w.png",
+            "metadata": "09-profile-broad-gauss-w.json",
+            "page": "experiment",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Exclude the measured regions outside the fitting range",
+            "id": "09-exclusion-0",
+            "image": "09-exclusion-0.png",
+            "metadata": "09-exclusion-0.json",
+            "page": "experiment",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Exclude the measured regions outside the fitting range",
+            "id": "09-exclusion-1",
+            "image": "09-exclusion-1.png",
+            "metadata": "09-exclusion-1.json",
+            "page": "experiment",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Choose enough background anchors for this measurement",
+            "id": "09-background-settings",
+            "image": "09-background-settings.png",
+            "metadata": "09-background-settings.json",
+            "page": "experiment",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Estimate a starting background from the measured pattern",
+            "id": "09-background-estimate",
+            "image": "09-background-estimate.png",
+            "metadata": "09-background-estimate.json",
+            "page": "experiment",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Inspect the starting pattern before choosing free parameters",
             "id": "10-experiment-loaded",
             "image": "10-experiment-loaded.png",
             "metadata": "10-experiment-loaded.json",
@@ -1242,6 +1737,42 @@
             "reason": "sidebar tab is disabled",
             "sidebar": "Settings",
             "status": "skipped"
+        },
+        {
+            "description": "Begin with the scale and cell length; keep the other parameters fixed",
+            "id": "12-analysis-choose",
+            "image": "12-analysis-choose.png",
+            "metadata": "12-analysis-choose.json",
+            "page": "analysis",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Fit the scale and cell length first",
+            "id": "12-fit-scale-cell",
+            "image": "12-fit-scale-cell.png",
+            "metadata": "12-fit-scale-cell.json",
+            "page": "analysis",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Add the peak widths and zero offset to the free set",
+            "id": "12-fit-profile",
+            "image": "12-fit-profile.png",
+            "metadata": "12-fit-profile.json",
+            "page": "analysis",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Inspect correlations after the staged refinement",
+            "id": "12-correlations",
+            "image": "12-correlations.png",
+            "metadata": "12-correlations.json",
+            "page": "analysis",
+            "sidebar": "",
+            "status": "captured"
         },
         {
             "description": "Completed Rietveld refinement — Main",
@@ -1646,7 +2177,8 @@
         }
     ],
     "schema": 1,
-    "script_sha256": "e7756426908b7d2506db7e1a8221d0c928d8320233a56182805812db7d6597e5",
-    "source_revision": "570424f574d10fc82cfc20b919138d3aa7c14852",
-    "status": "complete"
+    "script_sha256": "53af884d7b5eb69c047a5672d0c9e032377c4725fde5721d2069d4e31af7b64f",
+    "source_revision": "60fb4880cf1a5a1f2af61faa89e0af01112552a6",
+    "status": "complete",
+    "workflow": "creation"
 }

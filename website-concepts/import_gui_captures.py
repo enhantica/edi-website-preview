@@ -44,6 +44,26 @@ LABELS = {
 }
 
 LABELS.update({
+    'instrument.setup_wavelength': (
+        'Wavelength',
+        'Enter the wavelength used for this measurement, in ångströms.',
+    ),
+    'peak.type': ('Profile', 'Choose the peak-shape model for this measurement.'),
+    'peak.broad_gauss_u': ('U', 'Set the starting Gaussian width coefficient U.'),
+    'peak.broad_gauss_v': ('V', 'Set the starting Gaussian width coefficient V.'),
+    'peak.broad_gauss_w': ('W', 'Set the starting Gaussian width coefficient W.'),
+    'background_estimate.n_points': (
+        'Number of points',
+        'Choose the number of background anchors before estimating the baseline.',
+    ),
+    'group.parameters': (
+        'Parameters',
+        'Inspect values, uncertainties, bounds and the free parameter set.',
+    ),
+    'parameters.freeHeader': (
+        'Free parameters',
+        'Open the free header menu to fix or free the parameters matching the current filters.',
+    ),
     'group.examples': (
         'Built-in examples',
         'Search or filter the example catalogue and select a case.',
@@ -499,6 +519,12 @@ def copy_bundle(bundle: Path, manifest: dict, scenes: list[dict], folder: str) -
     artifacts = {'manifest.json', 'walkthrough.js'}
     artifacts.update(item['file'] for item in manifest['inputs'].values())
     artifacts.update(item['file'] for item in manifest.get('dependencies', []))
+    if 'data' in manifest['inputs']:
+        artifacts.update(
+            str(path.relative_to(bundle))
+            for path in (bundle / 'checkpoints').rglob('*')
+            if path.is_file()
+        )
     for scene in scenes:
         artifacts.update((scene['image'], scene['metadata']))
     for artifact in sorted(artifacts):
@@ -663,20 +689,175 @@ The experiment input contains the measured pattern, instrument, profile, backgro
             '14-report-basic',
         ),
     ]
+    if 'data' in manifest['inputs']:
+        measured_file = Path(manifest['inputs']['data']['file']).name
+        wavelength = by_id['09-wavelength']['layout']['items']['instrument.setup_wavelength'][
+            'label'
+        ]
+        intro = f"""Create a refinement from a crystal-structure CIF and a measured diffraction pattern. This example uses {' + '.join(fixture['samples'])} measured on {fixture['origin']}.
+
+The [application layout](workspace.md) introduces the controls. Follow the steps below in the web or desktop app.
+
+## Download the inputs
+
+- [Crystal structure: {structure_file}](../assets/gui/y2o3/{manifest['inputs']['structure']['file']})
+- [Measured data: {measured_file}](../assets/gui/y2o3/{manifest['inputs']['data']['file']}) — scattering angle, intensity and standard uncertainty.
+
+Start with an empty project. Set up the experiment in the app; the measured-data file does not supply the wavelength, profile or background.
+"""
+        profile_scenes = ['09-profile'] + [
+            name for name in by_id if name.startswith('09-profile-broad-')
+        ]
+        exclusion_scenes = [name for name in by_id if name.startswith('09-exclusion-')]
+        intervals = []
+        for name in exclusion_scenes:
+            index = name.rsplit('-', 1)[1]
+            items = by_id[name]['layout']['items']
+            intervals.append(
+                items[f'excludedRegion.start.{index}']['label']
+                + ' to '
+                + items[f'excludedRegion.end.{index}']['label']
+                + '°'
+            )
+        type_items = by_id['09-experiment-type']['layout']['items']
+        type_labels = [
+            next(
+                option['label']
+                for option in type_items[key]['options']
+                if option['token'] == type_items[key]['selected']
+            )
+            for key in [
+                'experimentType.sampleForm',
+                'experimentType.beamMode',
+                'experimentType.radiationProbe',
+            ]
+        ]
+        sections = [
+            ('Home', 'Press **Start** to begin.', '01-home'),
+            ('Create a project', 'Choose **Create a new project**.', '02-project-start'),
+            (
+                'Enter project details',
+                'Give the analysis a name, title and description, choose where to keep it, then confirm.',
+                '03-project-details',
+            ),
+            (
+                'Inspect the project',
+                'Check the project details before adding a structure and measurement.',
+                '04-project-created',
+            ),
+            (
+                'Load the structure',
+                f'Open **Structure → Main**, expand **Structures**, choose **Load structure** and select **{structure_file}**.',
+                '06-structure-import',
+            ),
+            (
+                'Inspect the crystal structure',
+                'Check the cell, space group and atom sites. The [structure model](../physics/crystallography.md) describes their meaning.',
+                '07-structure-loaded',
+            ),
+            (
+                'Create an experiment',
+                'Open **Experiment → Main**, expand **Experiments** and choose **Create experiment**.',
+                '09-experiment-import',
+            ),
+            (
+                'Choose the measurement type',
+                'Before loading data, choose '
+                + ', '.join('**' + value + '**' for value in type_labels)
+                + ' for this measurement. [Experiment labels](../user-guide/experiment-types.md) distinguish these attributes.',
+                '09-experiment-type',
+            ),
+            (
+                'Load measured data',
+                f'Choose **Load data…** in the experiment row and select **{measured_file}**. Check the measured range and intensities.',
+                '09-experiment-data',
+            ),
+            (
+                'Set the wavelength',
+                f'Expand **Instrument** and enter **{wavelength} Å** for this measurement. Use the wavelength from your own measurement when working with other data.',
+                '09-wavelength',
+            ),
+            (
+                'Choose the peak profile',
+                'Expand **Peak profile**, choose the profile shown below and set its starting coefficients. These values are starting estimates; refine the widths later. See [constant-wavelength profiles](../physics/profiles/cw.md).',
+                profile_scenes,
+            ),
+            (
+                'Exclude unwanted regions',
+                'Expand **Excluded regions**, use **Append new region** and enter '
+                + ', '.join(intervals)
+                + ' for this example. Exclude a region for a stated reason, rather than to hide disagreement.',
+                exclusion_scenes[-1],
+            ),
+            (
+                'Estimate the background',
+                f'On **Experiment → Extra**, expand **Background estimation** and set the number of points to **{by_id["09-background-settings"]["layout"]["items"]["background_estimate.n_points"]["label"]}**. Return to **Main**, expand **Background** and press **Estimate**. Inspect the baseline between peaks before refining. See [background models](../physics/background.md).',
+                ['09-background-settings', '09-background-estimate'],
+            ),
+            (
+                'Inspect the starting pattern',
+                'Compare peak positions, widths, intensities and the residual. Correct the experiment setup before freeing more parameters.',
+                '10-experiment-loaded',
+            ),
+            (
+                'Fit the scale and cell',
+                'Open **Analysis → Main**. Use the **free** header to fix all parameters. Filter by `scale`, choose **free → Free · all …**, then repeat for `length_a`. Clear the filters, press **Fit**, inspect the result and close the popup.',
+                ['12-analysis-choose', '12-fit-scale-cell'],
+            ),
+            (
+                'Refine widths and calibration',
+                'Keep the scale and cell free. Repeat the filter-and-free action for `broad_gauss_` and `calib_twotheta_offset` to add the Gaussian widths and 2θ offset. Clear the filters and press **Fit** again. Inspect the peak shapes and residual before continuing.',
+                '12-fit-profile',
+            ),
+            (
+                'Refine the structural model',
+                'Repeat the filter-and-free action for `background` and `fract_` to add background values and independent atom coordinates. Clear the filters. Keep displacement parameters fixed in this first fit; their [advanced refinement](displacement.md) requires additional physical checks. Press **Fit**, inspect the outcome and close the result popup. Symmetry-related quantities remain linked. See [refinement](../physics/rietveld.md) and [fit assessment](../user-guide/fit-quality.md).',
+                '13-analysis-basic',
+            ),
+            (
+                'Inspect correlations',
+                'Choose **Correlations** in the main view. Strong correlations show parameters that are difficult to distinguish using these observations; review the free set and physical model.',
+                '12-correlations',
+            ),
+            (
+                'Review the report',
+                'Open **Report**. Check the fitted structure, measurement and results, then choose the report contents and export format.',
+                '14-report-basic',
+            ),
+        ]
     checkpoints = {
-        '03-project-details': 'The Project page now shows your project name and details.',
+        '04-project-created': 'The Project page now shows your project name and details.',
         '07-structure-loaded': 'The structure appears in the main view and the Structures count is one.',
         '10-experiment-loaded': 'The measured pattern, calculated curve, reflection marks and residual are visible.',
         '13-analysis-basic': 'Check the fit status, agreement factors and parameter uncertainties before continuing.',
     }
     body = intro
     for title, explanation, identity in sections:
-        body += f'\n## {title}\n\n{explanation}\n\n' + figure(by_id[identity])
+        body += f'\n## {title}\n\n{explanation}\n\n'
+        if isinstance(identity, list):
+            body += viewer([
+                (
+                    {
+                        '09-profile': 'Profile',
+                        '12-analysis-choose': 'Free parameters',
+                        '12-fit-scale-cell': 'Result',
+                        '09-background-settings': 'Estimation settings',
+                        '09-background-estimate': 'Estimated background',
+                    }.get(key, key.rsplit('-', 1)[-1].upper()),
+                    figure(by_id[key], instance='walkthrough-' + key),
+                )
+                for key in identity
+            ])
+        else:
+            body += figure(by_id[identity])
         if identity == '13-analysis-basic':
             body += '\n<!-- learning-comparison -->\n<!-- /learning-comparison -->\n'
-        if identity in checkpoints:
+        if isinstance(identity, str) and identity in checkpoints:
             body += f'\n{checkpoints[identity]}\n'
-    body += '\n## Save the project\n\nReturn to **Project** and choose **Save project as…**. Keep the complete project as a folder or zip archive; the report is a separate export.\n\n' + figure(by_id['guide-project-save'], instance='walkthrough-save')
+    body += (
+        '\n## Save the project\n\nReturn to **Project** and choose **Save project as…**. Keep the complete project as a folder or zip archive; the report is a separate export.\n\n'
+        + figure(by_id['guide-project-save'], instance='walkthrough-save')
+    )
     body += '\n!!! note "Keep the project as well as the report"\n\n    A report is an export of the result. Keep the saved project to reopen the model, change parameters or repeat the fit. In the browser, [check the save location](browser.md#open-and-save-files).\n'
     body += '\n## Try it\n\nChange the cell length **a** slightly on **Structure** and watch the peak positions move. Use **Undo** to restore the fitted model.\n\n??? tip "Where to look"\n\n    Expand **Cell** on **Structure → Main**. A cell change affects peak positions; compare several peaks across the pattern.\n'
     body += '\n## Continue with the same project\n\nOpen the saved project in [Python](../python/examples.md) or run it from the [Command Line](../cli/examples.md). Try [joint refinement](refine.md) or a [scan](scans.md) when you are ready for several measurements.\n'

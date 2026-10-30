@@ -1,13 +1,13 @@
 {
-    "description": "Load the experiment and measured intensities",
+    "description": "Create an experiment for the measurement",
+    "fit_phase": "",
     "gui_components_revision": "10dc5828020c90666a1ef015835475936d56e819",
     "highlights": [
-        "experiments.load",
-        "workflow.experiment.mainContent"
+        "experiments.create"
     ],
     "id": "09-experiment-import",
     "image": "09-experiment-import.png",
-    "image_sha256": "1fc524605c6f7956dbaf619f256419792f82ce966c5e744fcbf85c6513fb475e",
+    "image_sha256": "ac436627cb359ce41e40aa5fe6b427b1da1fe2d43cdb7756650746f31c9c0086",
     "items": {
         "ApplicationWindow": {
             "bounds": [
@@ -860,7 +860,7 @@
             "bounds": [
                 875.128125,
                 772,
-                209.484375,
+                195.734375,
                 14
             ],
             "enabled": true,
@@ -869,7 +869,7 @@
             "visible_bounds": [
                 875.128125,
                 772,
-                209.484375,
+                195.734375,
                 14
             ]
         },
@@ -1002,8 +1002,8 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "e7756426908b7d2506db7e1a8221d0c928d8320233a56182805812db7d6597e5",
-    "source_revision": "570424f574d10fc82cfc20b919138d3aa7c14852",
+    "script_sha256": "53af884d7b5eb69c047a5672d0c9e032377c4725fde5721d2069d4e31af7b64f",
+    "source_revision": "60fb4880cf1a5a1f2af61faa89e0af01112552a6",
     "state": {
         "experiments": 0,
         "fit_outcome": "",
@@ -1013,6 +1013,9 @@
         "fit_status": "",
         "has_project": true,
         "page": "experiment",
+        "scan_failed": 0,
+        "scan_fitted": 0,
+        "scan_total": 0,
         "sidebar": "",
         "sidebar_tabs": [
             {
