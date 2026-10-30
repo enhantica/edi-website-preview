@@ -39,7 +39,7 @@ Selecting a structure or experiment changes the model being inspected. The statu
 
 ## Page and sidebar views
 
-These views come from the same example refinement. Every enabled sidebar tab is shown. Select **Workflow page** to see how its toolbar tab connects to the whole page. All **Analysis** and **Report** views were captured after the fit completed and its results popup was closed.
+These views come from the same example refinement. Select **Workflow page** to see how its toolbar tab connects to the whole page. The Analysis and Report views show a completed refinement.
 
 ### :material-archive: Project
 
@@ -170,7 +170,3 @@ These views come from the same example refinement. Every enabled sidebar tab is 
 <figcaption>Review the fitted structure and report — Text.</figcaption>
 <div class="gui-view-options" role="group" aria-label="Highlight"><button type="button" class="gui-region-choice" data-gui-target="14-report-text-sidebar-1" aria-pressed="true">Tab and panel</button><button type="button" class="gui-region-choice" data-gui-target="14-report-text-sidebar-2" aria-pressed="false">Workflow page</button></div>
 </figure>
-
-## Capture provenance
-
-App source: [`ce108cae`](https://github.com/enhantica/edi/commit/ce108caedfe7f6637328bae9aad009deed328ddb). Image dimensions, native page/sidebar/fit state and annotation geometry are recorded in the [capture manifest](../assets/gui/y2o3/manifest.json) and matching JSON sidecars. The [JavaScript walkthrough](../assets/gui/y2o3/walkthrough.js) drives the run.

@@ -6,7 +6,7 @@ template: gui.html
 
 Build a project from its separate inputs, refine the model and review the report. This example is **pd-neut-cwl_y2o3-spodi**: Y₂O₃ [Ia-3], SPODI @ FRM II.
 
-The screenshots below follow an actual application run at **1480 by 800 pixels**. Select a numbered explanation to highlight that part of the interface. The [application layout](workspace.md) introduces the workspace and every enabled sidebar tab.
+Select a numbered explanation to highlight that part of the interface. The [application layout](workspace.md) introduces the workspace and every enabled sidebar tab.
 
 ## Download the inputs
 

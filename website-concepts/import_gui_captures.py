@@ -335,7 +335,7 @@ def render(bundle: Path) -> None:
             shutil.copy2(bundle / artifact, target)
     intro = f"""Build a project from its separate inputs, refine the model and review the report. This example is **{manifest['example']}**: {' + '.join(fixture['samples'])}, {fixture['origin']}.
 
-The screenshots below follow an actual application run at **1480 by 800 pixels**. Select a numbered explanation to highlight that part of the interface. The [application layout](workspace.md) introduces the workspace and every enabled sidebar tab.
+Select a numbered explanation to highlight that part of the interface. The [application layout](workspace.md) introduces the workspace and every enabled sidebar tab.
 
 ## Download the inputs
 
@@ -423,7 +423,7 @@ The page views below introduce each enabled tab. Then follow [Example refinement
 
 Selecting a structure or experiment changes the model being inspected. The status bar reports the project state, messages and fitting progress. Read messages after importing data or when an operation is refused.
 """
-    gallery = '\n## Page and sidebar views\n\nThese views come from the same example refinement. Every enabled sidebar tab is shown. Select **Workflow page** to see how its toolbar tab connects to the whole page. All **Analysis** and **Report** views were captured after the fit completed and its results popup was closed.\n'
+    gallery = '\n## Page and sidebar views\n\nThese views come from the same example refinement. Select **Workflow page** to see how its toolbar tab connects to the whole page. The Analysis and Report views show a completed refinement.\n'
     for name in ['project', 'structure', 'experiment', 'analysis', 'report']:
         icon = {
             'project': 'archive',
@@ -436,9 +436,6 @@ Selecting a structure or experiment changes the model being inspected. The statu
         for scene in scenes:
             if scene['page'] == name and scene['sidebar']:
                 gallery += f'\n#### {scene["sidebar"]}\n\n' + figure(scene, view='sidebar')
-    gallery += '\n## Capture provenance\n\n'
-    gallery += f'App source: [`{manifest["source_revision"][:8]}`](https://github.com/enhantica/edi/commit/{manifest["source_revision"]}). '
-    gallery += 'Image dimensions, native page/sidebar/fit state and annotation geometry are recorded in the [capture manifest](../assets/gui/y2o3/manifest.json) and matching JSON sidecars. The [JavaScript walkthrough](../assets/gui/y2o3/walkthrough.js) drives the run.\n'
     (DOCS / 'application/workspace.md').write_text(page('Application layout', workspace + gallery))
     if '15-project-examples' in by_id:
         examples = 'The web and desktop applications both include built-in example projects. Go to **Project**, select **Main** and expand **Examples**. Use the search and filters to find a case.\n\n'
