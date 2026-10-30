@@ -74,13 +74,24 @@ nav:
     - Create a project: application/new-project.md
     - Open and save: application/projects.md
   - Structure:
-    - Edit structures: application/structures.md
+    - Load and display: application/structures.md
+    - Symmetry and cell: application/symmetry.md
+    - Atom sites: application/atoms.md
+    - Atomic displacement: application/displacement.md
+    - Scattering lengths: application/scattering.md
   - Experiment:
     - Experiments and data: application/experiments.md
+    - Instrument: application/instrument.md
+    - Peak profiles: application/peak-profiles.md
     - Background and exclusions: application/background.md
+    - Linked structures: application/linked-structures.md
+    - Intensity corrections: application/corrections.md
   - Analysis:
     - Refine a pattern: application/refine.md
+    - Parameters and constraints: application/parameters.md
     - Fitting modes: application/fitting-modes.md
+    - Minimizer: application/minimizer.md
+    - Display and updates: application/display.md
     - Work with a scan: application/scans.md
   - Report:
     - Review and save: application/reports.md

@@ -143,3 +143,7 @@ Validation also rejected incomplete runs, mixed source revisions, whole-project 
 ## How-to coverage
 
 [ADR-0003](adrs/0003-scripted-how-to-coverage.md) records the configurable script and task-specific guide scenes. `gui-guide-scenes.json` maps authored instructions to captures; import refuses missing headings/scenes. The importer also derives titles, filenames and input downloads from the selected fixture. The current illustrated guide batch was captured with the schema-2 factory at native source `ce108caedfe7f6637328bae9aad009deed328ddb`; its executed custom script is retained by hash in the manifest.
+
+## Detailed task inventory
+
+The complete inventory is the committed native `walkthrough.js` plus `manifest.json`; each action and capture/skip has an explicit entry. The how-to heading map is `gui-guide-scenes.json`. This includes uncertainty formatting, structure appearance and scattering, measurement ranges/points, peak cutoff, absorption/orientation, aliases/constraints, pre-fit values, parameter visibility and scan display updates. The importer derives practical option lists from the native selector metadata and links supported model tokens to Physics; it does not maintain another list of GUI choices.

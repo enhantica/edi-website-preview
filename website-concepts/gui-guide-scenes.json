@@ -1,11 +1,7 @@
 {
   "application/new-project.md": {
-    "Create the project": "03-project-details",
-    "Add a structure": "guide-structure-create",
-    "Create an experiment": "guide-experiment-create",
-    "Load the measured pattern": "guide-experiment-data",
-    "Prepare and run the fit": "13-analysis-basic",
-    "Save your work": "guide-project-save"
+    "Enter the project details": "03-project-details",
+    "Choose uncertainty formatting": "guide-project-uncertainties"
   },
   "application/projects.md": {
     "Open a project": "guide-project-open",
@@ -15,18 +11,12 @@
   },
   "application/structures.md": {
     "Load, create or duplicate": "guide-structure-create",
-    "Space group and setting": "guide-structure-symmetry",
-    "Unit cell": "guide-structure-cell",
-    "Atom sites": "guide-structure-atoms",
-    "Link the structure to an experiment": "guide-experiment-links",
-    "Refine selected values": "13-analysis-basic"
+    "Change the structure display": "guide-structure-appearance"
   },
   "application/experiments.md": {
     "Select or create an experiment": "guide-experiment-create",
     "Load a powder pattern": "guide-experiment-data",
-    "Instrument and peak profile": ["guide-experiment-instrument", "guide-experiment-profile"],
-    "Background and exclusions": ["guide-experiment-background", "guide-experiment-exclusions"],
-    "Linked structures": "guide-experiment-links",
+    "Inspect the range and points": "guide-experiment-data-settings",
     "Read the pattern": "10-experiment-loaded"
   },
   "application/background.md": {
@@ -42,7 +32,8 @@
     "Choose free parameters": "13-analysis-basic",
     "Select a fitting mode": "guide-analysis-modes",
     "Start and inspect the fit": "13-analysis-basic",
-    "Save the project and report": "guide-report-saved"
+    "Save the project and report": "guide-report-saved",
+    "Inspect parameter correlations": "guide-analysis-correlations"
   },
   "application/fitting-modes.md": {
     "Select the mode in the app": "guide-analysis-modes"
@@ -54,5 +45,46 @@
     "Save the report": "guide-report-saved",
     "Keep saved reports current": "guide-report-saved",
     "Save the project too": "guide-project-save"
+  },
+  "application/symmetry.md": {
+    "Choose the space-group setting": "guide-structure-symmetry",
+    "Enter the unit cell": "guide-structure-cell"
+  },
+  "application/atoms.md": {
+    "Edit a site": "guide-structure-atoms"
+  },
+  "application/displacement.md": {
+    "Choose and edit displacement parameters": "guide-structure-displacement"
+  },
+  "application/scattering.md": {
+    "Override a structure's scattering lengths": "guide-structure-scattering",
+    "Choose the experiment's reference table": "guide-experiment-scattering"
+  },
+  "application/instrument.md": {
+    "Set the measurement conditions": "guide-experiment-instrument"
+  },
+  "application/peak-profiles.md": {
+    "Choose a profile": "guide-experiment-profile",
+    "Set the calculation window": "guide-experiment-cutoff"
+  },
+  "application/linked-structures.md": {
+    "Choose the contributing phases": "guide-experiment-links"
+  },
+  "application/corrections.md": {
+    "Set absorption": "guide-experiment-absorption",
+    "Set preferred orientation": "guide-experiment-orientation"
+  },
+  "application/parameters.md": {
+    "Choose independent parameters": "13-analysis-basic",
+    "Name parameters with aliases": "guide-analysis-aliases",
+    "Define constraints": "guide-analysis-constraints",
+    "Inspect the last starting values": "guide-analysis-start-values"
+  },
+  "application/minimizer.md": {
+    "Choose the search settings": "guide-analysis-minimizer"
+  },
+  "application/display.md": {
+    "Choose which parameters are shown": "guide-analysis-shown-parameters",
+    "Choose updates during a scan": "guide-analysis-pattern-updates"
   }
 }

@@ -6,7 +6,7 @@
     ],
     "id": "guide-structure-appearance",
     "image": "guide-structure-appearance.png",
-    "image_sha256": "f0f5492f4458df4fe7685355c3b45e20b1740eef41d4ed354c4e28dce6927552",
+    "image_sha256": "3aa3e6b3a4aec942e8d55b344f20229c4653e6557deb4cefe1093cccea93c3e4",
     "items": {
         "AppearanceGroup": {
             "bounds": [
@@ -674,7 +674,7 @@
                 18.109375
             ],
             "enabled": true,
-            "label": "5 0.14s 127.71→1.20",
+            "label": "5 0.12s 127.71→1.20",
             "visible_bounds": [
                 1178,
                 770,
@@ -1128,7 +1128,7 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "27872a3591afb1aaa3d37f3959612c87497f241258ab0680fb2287dc94ec0800",
+    "script_sha256": "e7756426908b7d2506db7e1a8221d0c928d8320233a56182805812db7d6597e5",
     "source_revision": "570424f574d10fc82cfc20b919138d3aa7c14852",
     "state": {
         "experiments": 1,

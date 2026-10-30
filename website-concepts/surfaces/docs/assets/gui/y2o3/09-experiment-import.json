@@ -7,7 +7,7 @@
     ],
     "id": "09-experiment-import",
     "image": "09-experiment-import.png",
-    "image_sha256": "70b91676e98ece9b01f8a12bf2a934e5d1c748eb2412ae66d023eb40771d25dd",
+    "image_sha256": "1fc524605c6f7956dbaf619f256419792f82ce966c5e744fcbf85c6513fb475e",
     "items": {
         "ApplicationWindow": {
             "bounds": [
@@ -1002,7 +1002,7 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "27872a3591afb1aaa3d37f3959612c87497f241258ab0680fb2287dc94ec0800",
+    "script_sha256": "e7756426908b7d2506db7e1a8221d0c928d8320233a56182805812db7d6597e5",
     "source_revision": "570424f574d10fc82cfc20b919138d3aa7c14852",
     "state": {
         "experiments": 0,

@@ -87,6 +87,58 @@ LABELS.update({
     'report.writesPdf': ('PDF report', 'Select a PDF document.'),
     'report.writesCif': ('CIF report', 'Select a crystallographic report.'),
     'report.save': ('Save report', 'Write the selected report formats.'),
+    'group.su_format': (
+        'Standard uncertainties',
+        'Choose how values and their standard uncertainties are written.',
+    ),
+    'group.appearance': (
+        'Appearance',
+        'Choose atom sizes, display scale and displacement ellipsoids.',
+    ),
+    'group.scattering_length': (
+        'Scattering lengths',
+        'Set custom neutron scattering lengths for atom types in this structure.',
+    ),
+    'group.scattering_source': (
+        'Scattering source',
+        'Choose the neutron scattering-length reference used by the experiment.',
+    ),
+    'group.instrument': (
+        'Instrument',
+        'Inspect the measurement conditions and calibration parameters.',
+    ),
+    'group.peak': ('Peak profile', 'Choose the peak shape and edit its profile parameters.'),
+    'group.data': ('Measured data', 'Inspect the measured range, intensities and uncertainties.'),
+    'group.absorption': (
+        'Absorption',
+        'Choose the sample absorption model and its physical parameters.',
+    ),
+    'group.preferred_orientation': (
+        'Preferred orientations',
+        'Set preferred directions and March parameters for linked structures.',
+    ),
+    'group.alias': ('Aliases', 'Give parameters short names for use in constraint expressions.'),
+    'group.constraint': (
+        'Constraints',
+        'Define relations between aliased parameters and enable the relations to apply.',
+    ),
+    'group.minimizer': ('Minimizer', 'Choose the descent strategy and convergence settings.'),
+    'group.shownParameters': (
+        'Parameters shown',
+        'Choose which additional parameter groups appear alongside free parameters.',
+    ),
+    'group.patternUpdates': (
+        'Pattern updates during a scan',
+        'Choose how often the display updates while a scan is fitted.',
+    ),
+    'peak.cutoff_fwhm': (
+        'Peak cutoff',
+        'Set the peak calculation window in multiples of the full width at half maximum.',
+    ),
+    'fitStart.list': (
+        'Fit start values',
+        'Inspect the free parameters before the last fit; use Undo to restore that state.',
+    ),
 })
 
 
@@ -347,6 +399,35 @@ def page(title: str, body: str) -> str:
     return f'---\ntemplate: gui.html\n---\n\n# {title}\n\n{body.rstrip()}\n'
 
 
+def native_options(text: str, by_id: dict[str, dict]) -> str:
+    """Keep authored choice lists bound to the captured native selector model."""
+    models = {
+        (entry['category'], entry['id']): entry['explanation_url']
+        for entry in json.loads((DOCS / 'physics/catalogue.json').read_text())['models']
+    }
+
+    def replace(match: re.Match[str]) -> str:
+        scene, target, category = match.group(1, 2, 3)
+        options = by_id[scene]['layout']['items'][target].get('options', [])
+        if not options or len({item['token'] for item in options}) != len(options):
+            raise ValueError(f'{scene}: {target} needs unique native options')
+        rows = []
+        for item in options:
+            name = html.escape(item['label']).replace('|', '&#124;')
+            if category:
+                route = models[category, item['token']]
+                name = f'[{name}](../physics/{route})'
+            rows.append(f'- {name}')
+        return match[0].split('\n', 1)[0] + '\n' + '\n'.join(rows) + '\n<!-- /gui-options -->'
+
+    return re.sub(
+        r'<!-- gui-options:([\w-]+):([\w.]+):([\w]*) -->\n.*?<!-- /gui-options -->',
+        replace,
+        text,
+        flags=re.DOTALL,
+    )
+
+
 def illustrate_guides(by_id: dict[str, dict]) -> None:
     """Place source-matched scenes after their corresponding how-to instructions."""
     if 'guide-project-open' not in by_id:
@@ -354,7 +435,7 @@ def illustrate_guides(by_id: dict[str, dict]) -> None:
     registry = json.loads((ROOT / 'gui-guide-scenes.json').read_text())
     for filename, sections in registry.items():
         source = DOCS / filename
-        text = source.read_text()
+        text = native_options(source.read_text(), by_id)
         text = re.sub(r'<!-- gui-guide:.*?<!-- /gui-guide -->\n?', '', text, flags=re.DOTALL)
         text = re.sub(r'<figure class="gui-figure".*?</figure>\n?', '', text, flags=re.DOTALL)
         headings = list(re.finditer(r'^## (.+)$', text, re.MULTILINE))
@@ -566,7 +647,7 @@ Selecting a structure or experiment changes the model being inspected. The statu
     }
     common_descriptions = {
         'Text': "Inspect or edit this page's project data in its text representation.",
-        'Settings': 'Choose which parameters are shown and how the pattern updates during editing and fitting.',
+        'Settings': 'Choose which parameters are shown and how the displayed pattern updates during a scan.',
     }
     for name in ['project', 'structure', 'experiment', 'analysis', 'report']:
         icon = {

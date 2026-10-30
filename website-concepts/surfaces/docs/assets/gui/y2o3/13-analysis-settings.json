@@ -9,7 +9,7 @@
     ],
     "id": "13-analysis-settings",
     "image": "13-analysis-settings.png",
-    "image_sha256": "a6abd57c8bda34647b7b63fe04726e5215d95e32082b704cdf83bc91edec454f",
+    "image_sha256": "b069948ad7465c0fd561d73eff3cd5eda428e477c03b090327f1aa44db68bf7c",
     "items": {
         "ApplicationWindow": {
             "bounds": [
@@ -1194,7 +1194,7 @@
                 18.109375
             ],
             "enabled": true,
-            "label": "5 0.14s 127.71→1.20",
+            "label": "5 0.12s 127.71→1.20",
             "visible_bounds": [
                 1178,
                 770,
@@ -1365,7 +1365,7 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "27872a3591afb1aaa3d37f3959612c87497f241258ab0680fb2287dc94ec0800",
+    "script_sha256": "e7756426908b7d2506db7e1a8221d0c928d8320233a56182805812db7d6597e5",
     "source_revision": "570424f574d10fc82cfc20b919138d3aa7c14852",
     "state": {
         "experiments": 1,

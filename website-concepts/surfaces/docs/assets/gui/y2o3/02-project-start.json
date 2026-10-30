@@ -7,7 +7,7 @@
     ],
     "id": "02-project-start",
     "image": "02-project-start.png",
-    "image_sha256": "42cd79e8ba8ab3bc69d3dab2efd7af4e4af6d74d0439f6d153180249f2247f87",
+    "image_sha256": "743fcb18ce5ea19c3b89d5cd99a17fec108cdf105c93a4925124590daa75d4ce",
     "items": {
         "ApplicationWindow": {
             "bounds": [
@@ -690,7 +690,7 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "27872a3591afb1aaa3d37f3959612c87497f241258ab0680fb2287dc94ec0800",
+    "script_sha256": "e7756426908b7d2506db7e1a8221d0c928d8320233a56182805812db7d6597e5",
     "source_revision": "570424f574d10fc82cfc20b919138d3aa7c14852",
     "state": {
         "experiments": 0,

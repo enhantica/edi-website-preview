@@ -18,3 +18,9 @@ Detailed application topics group related GUI controls into user tasks. Practica
 ## Verification
 
 Run the real creation/import/refinement/report workflow, capture task-specific controls, save and export through the existing native seams, and check all generated links and source bindings. Exercise a second bundled refinement example by changing only the script's example id. Specialized scan illustrations need a scan fixture; a single-pattern screenshot must not be presented as a scan.
+
+## Focused workflow topics
+
+The application navigation groups the native controls into small task pages: symmetry/cell, atom sites, displacement, scattering lengths, instrument, profiles/cutoff, phase links, corrections, parameter relations, minimizer and display preferences. Each practical subsection is mapped to a named native capture. Broad structure and experiment pages introduce their own controls and link to these topics rather than repeat the full workflow.
+
+Native selector choice lists are generated inside `gui-options` markers from the captured option tokens and labels. Where a Physics category is declared, every token must resolve through the model catalogue. Missing captures, missing selector choices, duplicate tokens or unresolved Physics models refuse import. Switching the configured example therefore updates the option list together with the screenshot, including a different experiment type.
