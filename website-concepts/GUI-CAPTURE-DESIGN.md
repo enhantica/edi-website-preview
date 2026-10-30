@@ -1,10 +1,10 @@
 # GUI documentation captures and annotations
 
-Status: proposal for discussion, 2026-10-30. The native metadata exporter and documentation overlay renderer described here are not implemented. No product source or public GUI guide was changed for this investigation.
+Status: implemented and published, 2026-10-30. The native exporter, bundled JavaScript walkthrough and documentation overlay renderer are working. The source-matched default run at `eb945aa8fb5964658daeab4a5bdc488b653e3bf3` produced the verified Y2O3/SPODI capture set. See the [illustrated walkthrough](https://enhantica.github.io/edi-website-preview/application/y2o3-walkthrough/), [workspace](https://enhantica.github.io/edi-website-preview/application/workspace/) and [page/sidebar reference](https://enhantica.github.io/edi-website-preview/application/screen-reference/).
 
 ## Recommendation
 
-Extend edi's existing native `DemoDriver` capture path to produce a screenshot and its layout metadata together. Use a Python command to select scenes, run the built app, validate the resulting bundle and generate documentation SVG overlays. Do not build a second GUI or try to reconstruct QML layout in Python.
+Extend edi's existing native `DemoDriver` capture path to produce a screenshot and its layout metadata together. Use the bundled JavaScript to select scenes and drive the built app; use Python to validate the resulting bundle and generate documentation SVG overlays. Do not build a second GUI or try to reconstruct QML layout in Python.
 
 The screenshot supplies appearance; Qt supplies coordinates; the documentation supplies explanations and the choice of what to highlight. A writer names a control or region instead of measuring pixels.
 
@@ -112,3 +112,26 @@ The existing `--demo-only onechart-` sequence completed successfully through the
 The binary was retained before running to prevent a concurrent relink from changing the experiment. Its CMake version label differs from the inspected checkout HEAD, and an incremental dry-run requested CMake regeneration, so it is not certified as a source-matched release screenshot. The saved provenance states that limitation explicitly. A DataTable column-width binding-loop warning was also recorded and should be investigated against a source-matched build before adopting a capture baseline.
 
 This investigation has not implemented or validated automatic geometry export, generated production overlays, changed the public application guide, or configured a docs CI job. It establishes the visual references, the existing capture path and the proposed contract for the next implementation.
+
+## Implemented commands
+
+In edi (branch `docs/gui-walkthrough-y2o3`, based on `ai-assistant-on-dev`):
+
+```sh
+pixi run -e app app-build
+pixi run -e app bash tools/docs/capture-gui.sh /absolute/path/to/new-capture
+```
+
+Set `EDI_DOCS_APP` to use an existing native build. An optional `--docs-script FILE` replaces the bundled JavaScript plan. On Linux the launcher supplies an isolated 1480 by 800 Weston/Xwayland display. The ordinary demo keeps its existing 1280 by 768 default.
+
+In this preview repository:
+
+```sh
+python website-concepts/checks/gui_capture.py /absolute/path/to/new-capture
+python website-concepts/import_gui_captures.py /absolute/path/to/new-capture
+python website-concepts/build.py --base-url https://enhantica.github.io/edi-website-preview/
+```
+
+The committed capture manifest lists 23 captured scenes and skips for disabled tabs. Its image hashes, dimensions, source/script identity, actual sidebar state and closed post-fit popup state are validated on every documentation build. The first successful fit reports native outcome `success`. File imports use the existing file chooser acceptance methods; platform file picker dialogs are not automated. Native capture is manual for now; the documentation validation already runs in the Pages build.
+
+Validation also rejected incomplete runs, mixed source revisions, whole-project actions, missing enabled tabs, paths escaping the bundle, open fit popups, invalid highlight bounds, wrong sidebar labels and changed PNGs. Chromium checks exercised desktop/mobile layouts and keyboard/click highlight selection. Safari was not available for this new documentation check.
