@@ -15,7 +15,7 @@ hide:
 <nav class="ed-landing__interfaces" aria-label="Explore EasyDiffraction interfaces" markdown>
 
 [:lucide-globe:{ aria-hidden="true" } Web app](application/browser.md "Web app documentation")
-[:lucide-monitor:{ aria-hidden="true" } Desktop app](application/desktop.md "Desktop app documentation")
+[:lucide-monitor:{ aria-hidden="true" } Desktop app](application/desktop.md#download "Desktop app downloads")
 [:simple-python:{ aria-hidden="true" } Python](python/index.md "Python library documentation")
 [:lucide-square-terminal:{ aria-hidden="true" } Command Line](cli/index.md "Command Line documentation")
 

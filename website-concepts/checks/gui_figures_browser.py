@@ -174,7 +174,9 @@ return {dialogWidth: dialog.getBoundingClientRect().width, viewport: innerWidth,
             )
             browser.shot(output / f'{browser.kind}-{width}-dialog.png')
             press(browser, '.gui-lightbox-close', 'ESCAPE')
-            browser.until("!document.querySelector('.gui-lightbox').open")
+            browser.until(
+                "!document.querySelector('.gui-lightbox').open && !document.documentElement.classList.contains('gui-lightbox-open') && document.activeElement.matches('article [data-gui-open]')"
+            )
             require(
                 browser.execute(
                     "return document.activeElement.matches('article [data-gui-open]');"

@@ -1,36 +1,31 @@
-# Work on your desktop
+---
+template: interface.html
+---
 
-The desktop application uses the same workspace and project model as the web app. It works directly with project folders and zip archives on your computer.
+# Desktop application
 
-## Open local work
+Use native file dialogs and work directly with projects on your computer.
 
-Use **Open project…** and choose **Folder** or **Zip archive**. You can also drop a project folder, its `project.edi` file or an archive onto the window.
+## Download
 
-A zip archive is unpacked into a temporary working copy. **Save** writes the archive again when its location is writable; otherwise the app asks where to keep it.
+<!-- distribution:desktop -->
+<div class="ed-downloads"><button class="md-button" type="button" disabled aria-label="macOS download not available yet">macOS</button>
+<button class="md-button" type="button" disabled aria-label="Windows download not available yet">Windows</button>
+<button class="md-button" type="button" disabled aria-label="Linux download not available yet">Linux</button></div>
+<!-- /distribution -->
 
-## Save or hand on a copy
+Installer links will be added here when the new releases are available. You can use the [web app](browser.md) now, or follow the [source build instructions](https://enhantica.github.io/edi/dev/).
 
-**Save project as…** offers a folder or zip archive. Select **Save a copy** to write the current state somewhere else while continuing in the original project.
+## Open local projects
 
-Folders are convenient when you want to inspect individual structure, experiment or result files. A zip archive keeps the project together when sharing or moving it.
+Choose **Open project…** and select a folder or zip archive. You can also drop a project folder, its `project.edi` file or a zip archive onto the application window.
 
-## Use the same workspace
+An archive opens as a temporary working copy. **Save** updates the archive when it is writable; otherwise the app asks where to save it.
 
-The [workspace tour](workspace.md), [refinement guide](refine.md), [scan guide](scans.md) and [reports](reports.md) apply to both desktop and browser versions.
+## Save and share
 
-## Current desktop source
+**Save project as…** writes a folder or zip archive. Select **Save a copy** to write to another location while continuing in the original project.
 
-The current edi repository provides the desktop application for building from source. In an existing configured development checkout:
+Use a folder to access individual model and result files, or a zip archive to move the complete project. Reports are saved directly to the location you choose.
 
-```console
-pixi run -e app app-build
-pixi run -e app app-run
-```
-
-The build uses the repository's dependencies, including access to the crysta SDK. The [contributor documentation](https://enhantica.github.io/edi/dev/) covers development setup.
-
-To explore the visual interface without a local build, use the [web app](browser.md).
-
-## Continue in Python or the Command Line
-
-The project you save is also the input to [Python](../python/index.md) and [the command line](../cli/index.md). Those interfaces let you script the same project model.
+The [application layout](workspace.md) and [example refinement](first-refinement.md) apply to both desktop and web versions.

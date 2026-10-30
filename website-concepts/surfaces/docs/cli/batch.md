@@ -6,19 +6,37 @@ Use ordinary shell or workflow tools to run several complete projects. There is 
 
 For a shell with the input folders `projects/sample-a` and `projects/sample-b`:
 
-```bash
-set -e
-mkdir -p logs runs
+=== "Standalone"
 
-for project in projects/sample-a projects/sample-b; do
-    case_name=$(basename "$project")
-    python -m edi fit "$project" \
-        --output "runs/$case_name" \
-        --report machine \
-        > "logs/$case_name.txt" \
-        2> "logs/$case_name-errors.txt"
-done
-```
+    ```bash
+    set -e
+    mkdir -p logs runs
+
+    for project in projects/sample-a projects/sample-b; do
+        case_name=$(basename "$project")
+        edi fit "$project" \
+            --output "runs/$case_name" \
+            --report machine \
+            > "logs/$case_name.txt" \
+            2> "logs/$case_name-errors.txt"
+    done
+    ```
+
+=== "Python package"
+
+    ```bash
+    set -e
+    mkdir -p logs runs
+
+    for project in projects/sample-a projects/sample-b; do
+        case_name=$(basename "$project")
+        python -m edi fit "$project" \
+            --output "runs/$case_name" \
+            --report machine \
+            > "logs/$case_name.txt" \
+            2> "logs/$case_name-errors.txt"
+    done
+    ```
 
 This loop is a shell example, not a new edi API. It stops on a failed command and keeps reports separate from project output. Give each input a distinct output name and retain its original files.
 
@@ -41,10 +59,19 @@ Check the process exit status and retain stderr. A machine report is a versioned
 
 ## Save reports after fitting
 
-```console
-python -m edi report runs/sample-a
-python -m edi report runs/sample-a --check
-```
+=== "Standalone"
+
+    ```console
+    edi report runs/sample-a
+    edi report runs/sample-a --check
+    ```
+
+=== "Python package"
+
+    ```console
+    python -m edi report runs/sample-a
+    python -m edi report runs/sample-a --check
+    ```
 
 Use the [report guide](reports.md) to choose contents and check freshness.
 

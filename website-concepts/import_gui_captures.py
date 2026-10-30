@@ -450,7 +450,7 @@ The page views below introduce each enabled tab. Then follow [Example refinement
 
 Selecting a structure or experiment changes the model being inspected. The status bar reports the project state, messages and fitting progress. Read messages after importing data or when an operation is refused.
 """
-    gallery = '\n## Page and sidebar views\n\nChoose **Overview** for the whole page. :material-dock-left: marks a main-view tab; :material-dock-right: marks a sidebar tab. Only enabled tabs are shown. Analysis and Report show the completed refinement.\n'
+    gallery = '\n## Page and sidebar views\n\nChoose **Overview** for the whole page. :lucide-monitor: marks a main-view tab; :material-dock-right: marks a sidebar tab. Only enabled tabs are shown. Analysis and Report show the completed refinement.\n'
     gallery += '\n### :material-home: Home\n\nStart an analysis, learn the interface through built-in tutorials, read about EasyDiffraction, open the documentation or get in touch.\n\n'
     gallery += figure(by_id['01-home'], view='workflow', description='Home overview')
     introductions = {
@@ -505,7 +505,7 @@ Selecting a structure or experiment changes the model being inspected. The statu
                 selected = captures[-1]
             title = html.escape(item['label'])
             gallery += pane(
-                f":material-dock-left: <span class='gui-sr-only'>Main view: </span>{title}",
+                f":lucide-monitor: <span class='gui-sr-only'>Main view: </span>{title}",
                 figure(
                     selected,
                     view='main',

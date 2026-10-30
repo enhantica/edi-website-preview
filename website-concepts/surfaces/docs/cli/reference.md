@@ -2,10 +2,19 @@
 
 The supported entry point documented here is `python -m edi` in a configured edi environment. Use the installed version's help to confirm the options available to that build:
 
-```console
-python -m edi --help
-python -m edi fit --help
-```
+=== "Standalone"
+
+    ```console
+    edi --help
+    edi fit --help
+    ```
+
+=== "Python package"
+
+    ```console
+    python -m edi --help
+    python -m edi fit --help
+    ```
 
 ## Fit
 
@@ -46,10 +55,19 @@ python -m edi export PROJECT --output FILE.zip
 
 ## Undo the last saved fit
 
-```console
-python -m edi undo path/to/project --dry
-python -m edi undo path/to/project --report human
-```
+=== "Standalone"
+
+    ```console
+    edi undo path/to/project --dry
+    edi undo path/to/project --report human
+    ```
+
+=== "Python package"
+
+    ```console
+    python -m edi undo path/to/project --dry
+    python -m edi undo path/to/project --report human
+    ```
 
 The first command previews what would be restored. The second restores the persisted pre-fit state and saves it back when a snapshot exists. `undo --dry` is a preview, unlike `fit --dry` and `calc --dry`, which run their computations.
 

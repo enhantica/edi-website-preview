@@ -1,37 +1,23 @@
+---
+template: interface.html
+hide:
+  - toc
+---
+
 # Command Line
 
-Run a saved EasyDiffraction project from a terminal. The project keeps the structural model and analysis settings together, so a command names the input rather than rebuilding the scientific model.
+Run saved projects from a terminal or shell script, without writing Python code.
 
-```console
-python -m edi fit path/to/project
-```
+[Standalone executable](standalone.md#download){ .md-button .md-button--primary }
+[Python package](python.md){ .md-button }
 
-## Start here
+<!-- interface-preview:cli -->
+<figure class="ed-interface-preview" data-interface-hero>
+<a class="gui-image-link" href="../assets/interfaces/command-line.png?v=50ff949190f0" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: EasyDiffraction command-line session"><svg class="gui-capture" viewBox="0 0 1402 703" width="1402" height="703" role="img" aria-label="EasyDiffraction command-line session"><title>EasyDiffraction command-line session</title><defs><clipPath id="interface-command-line"><rect y="0" width="1402" height="703" rx="12" /></clipPath></defs><image href="../assets/interfaces/command-line.png?v=50ff949190f0" width="1402" height="703" clip-path="url(#interface-command-line)" /><rect class="gui-image-frame" y="0" width="1402" height="703" rx="12" /></svg></a>
+</figure>
+<!-- /interface-preview -->
 
-[Set up the command line](setup.md), then [run an example](examples.md). Continue through Project, Structure, Experiment, Analysis and Report using the left navigation.
+The standalone executable and Python package use the same commands and arguments. Choose your installation route, then switch the invocation tabs in the guides.
 
-## Choose a command
-
-| Command | Purpose | Guide |
-| --- | --- | --- |
-| `fit` | Refine the project's model against its measured data. | [Run a refinement](fit.md) |
-| `calc` | Calculate from the current model without fitting. | [Calculate a project](calculate.md) |
-| `report` | Save a report or check whether saved reports are current. | [Reports](reports.md) |
-| `export` | Package a saved project as a zip archive. | [Files and output](files.md) |
-| `undo` | Restore the persisted state before the last fit. | [Command reference](reference.md) |
-
-These commands are available in a configured edi environment. Follow [Command Line setup](setup.md) before running them.
-
-## Choose where results go
-
-`fit` normally saves the refined folder back to its input location. `calc` normally writes its calculated data there. Both support `--dry` to do the computation without writing, or `--output DIR` to keep results in another folder.
-
-A zip input is kept unchanged by `fit` and `calc`; use `--output DIR` to retain their results. Read [files and output](files.md) before automating a run.
-
-## Keep your analysis reproducible
-
-Store the project alongside your analysis. Its declared fitting mode determines whether the run fits one experiment, several experiments jointly, or a scan.
-
-## Use the same model
-
-The Command Line shares [projects and experiments](../user-guide/analysis-workflow/project.md) with Python and the application. Use whichever interface fits the next step in your work. [Batch workflows](batch.md) shows ordinary shell automation around these commands.
+[Run an example](examples.md){ .md-button }
+[Command reference](reference.md){ .md-button }

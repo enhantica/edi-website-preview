@@ -1,42 +1,25 @@
-# Diffraction analysis in Python
+---
+template: interface.html
+hide:
+  - toc
+---
 
-Use `edi` to calculate patterns, refine a structural model and prepare a report from a script or notebook. The Python library uses the same project model as the application and command line.
+# Python
 
-## Start here
+Work with Python objects in scripts and notebooks, with direct access to parameters, data arrays and results.
 
-[Set up Python](setup.md), then [run an example](examples.md). Continue through Project, Structure, Experiment, Analysis and Report using the left navigation.
+[Set up Python](setup.md){ .md-button .md-button--primary }
+[Run a notebook example](examples.md){ .md-button }
 
-## A complete analysis
+<!-- interface-preview:python -->
+<figure class="ed-interface-preview" data-interface-hero>
+<a class="gui-image-link" href="../assets/interfaces/python-notebook.png?v=d7fcc1bb957e" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: EasyDiffraction in a Jupyter notebook"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="EasyDiffraction in a Jupyter notebook"><title>EasyDiffraction in a Jupyter notebook</title><defs><clipPath id="interface-python-notebook"><rect y="0" width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/interfaces/python-notebook.png?v=d7fcc1bb957e" width="1480" height="800" clip-path="url(#interface-python-notebook)" /><rect class="gui-image-frame" y="0" width="1480" height="800" rx="12" /></svg></a>
+</figure>
+<!-- /interface-preview -->
 
-Start from a complete project, inspect its model, run the analysis it declares, and save the result where you choose.
+In a notebook, run individual cells and keep the code, plots and results together. In a script, combine `edi` with your own data preparation and analysis tools.
 
-```python
-import edi
+[Python API reference](reference.md){ .md-button }
+[Download the example notebook](../assets/interfaces/refinement.ipynb){ .md-button }
 
-project = edi.Project.load('path/to/project')
-result = project.analysis.fit()
-print(result.rwp, result.reduced_chi_square)
-
-project.save_as('refined-project')
-project.report.save_html('refinement.html', offline=True)
-```
-
-This example is a measured-data refinement. A simulation project can [calculate a pattern](calculate.md) without measured data.
-
-## Follow the workflow
-
-| What you want to do | Start here |
-| --- | --- |
-| Prepare Python or a notebook | [Setup](setup.md) |
-| Open a folder, `project.edi` or archive | [Load and save projects](projects.md) |
-| Inspect the structural model | [Structures and parameters](structures.md) |
-| Inspect the measurement and its model | [Experiments and data](experiments.md) |
-| Calculate from the current model | [Calculate a pattern](calculate.md) |
-| Refine against measured data | [Load and fit a project](fit.md) |
-| Inspect fit values and uncertainties | [Read the result](results.md) |
-| Export an interactive report | [Reports](reports.md) |
-| Look up the calls used in these pages | [Python reference](reference.md) |
-
-## One project across interfaces
-
-You can reopen the saved project in [the application](../application/index.md), or run it with [the Command Line](../cli/index.md). The [shared concepts](../user-guide/analysis-workflow/project.md) explain structures, experiments and analysis independently of the interface.
+[Download the example project](../assets/interfaces/example-project.zip) to run the notebook.

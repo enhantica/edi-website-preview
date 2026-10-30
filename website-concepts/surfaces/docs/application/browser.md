@@ -1,35 +1,26 @@
-# Work in your browser
+# Web application
 
-The web app lets you explore EasyDiffraction without installing the application. It uses the same Project, Structure, Experiment, Analysis and Report workflow as the desktop version.
+Open EasyDiffraction in a browser, with no application installation.
 
-[Launch the web app](https://enhantica.github.io/edi/webapp/){ .md-button .md-button--primary }
+[Open the web app](https://enhantica.github.io/edi/webapp/){ .md-button .md-button--primary }
 
-## Start with an example
+The [application layout](workspace.md) and controls are shared with the desktop app. These are the differences when working in a browser.
 
-Choose an example on **Project**. It opens as a working copy with structures, experiments and starting conditions already supplied. Follow [your first refinement](first-refinement.md) to inspect and fit it.
+## Open and save files
 
-## Bring your own project or data
+**Open project…** accepts a folder or zip archive. When importing a structure or measured pattern, select the file in your browser's file chooser.
 
-**Open project…** offers **Folder** or **Zip archive**. Your browser then presents its file chooser. When loading a measured text pattern into an experiment, the app also uses the browser's chooser.
+| Browser | Where your work is saved |
+| --- | --- |
+| Chrome and Edge | Opening a local folder or archive can retain access to that location. **Save** writes back there; **Save project as…** chooses a new location. |
+| Firefox and Safari | Projects are kept in browser storage. **Save project as…** downloads a zip copy. |
 
-Use [create a project](new-project.md) if you have measured data and a structure but no complete project yet.
+New projects and built-in examples initially use browser storage in every browser. Their location reads **In this browser only**. Download a copy to keep it outside the browser or move it to another computer.
 
-## Chrome and Edge
+## Return to your work
 
-When you open a project from a local folder or zip archive, the browser can retain access to the chosen location. **Save** writes back there, and **Save project as…** can select another folder or archive.
+Use **Recent projects** or **Continue where you left off** after reloading or reopening the app. Clearing the browser's site data removes browser-held projects; private browsing may remove them when the session ends.
 
-## Firefox, Safari and browser-held projects
+## Export reports
 
-In Firefox and Safari, and initially for examples or new projects in any browser, the application keeps the project in browser storage. Its location reads **In this browser only**.
-
-**Save** writes that browser-held state. **Save project as…** saves a copy as a zip download. Keep that downloaded archive if you want to continue on another device or through another interface.
-
-A browser can clear its saved site data. A private window may keep the project only until the tab closes. Export a copy of work you need to keep.
-
-## Continue after a reload
-
-**Recent projects** lists the projects the browser keeps. **Continue where you left off** can restore a project after reloading or closing the tab, including changes made before the interruption.
-
-## Reports and desktop work
-
-The web app also downloads the report files you save. For routine work with project folders on disk, the [desktop application](desktop.md) provides native file dialogs. Read [projects and files](projects.md) for the complete saving behaviour.
+Saving a report downloads the selected files. For direct access to project folders and report files, use the [desktop application](desktop.md).

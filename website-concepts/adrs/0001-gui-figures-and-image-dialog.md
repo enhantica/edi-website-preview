@@ -17,6 +17,8 @@ Sidebar paths join the selected native tab and the body below the tab strip, usi
 
 Clicking a screenshot opens a native HTML dialog filling the viewport, with the current highlights retained. It has an accessible title, visible Close button, Escape handling, modal focus containment and focus return. The image link remains a fallback without JavaScript and supports ordinary modified clicks. The dialog uses the site's theme colors. Keyboard behavior follows the [WAI modal dialog pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/).
 
+The close check waits for the native dialog's queued close event to restore focus and scroll, rather than assuming that removing the `open` attribute already completed that event. A faster hosted Chromium run exposed this timing difference from local Chromium.
+
 The Application introduction contains one **Application layout** page before one **Example refinement** page. The former merges the workspace overview and every enabled sidebar view; the latter contains the complete Y2O3/SPODI workflow. The old routes redirect to these pages.
 
 ## Verification
@@ -25,7 +27,7 @@ Build validation checks the native capture bundle and generated links, including
 
 ## Native tab viewers and GUI icon parity
 
-The layout guide uses Zensical's native content tabs: one viewer per workflow page, with an overview, enabled main views and enabled sidebar views. Material dock-left and dock-right icons distinguish workspace tabs from sidebar tabs; hidden text gives each selector an explicit accessible prefix. Home precedes Project and has one overview because it has no tabbed panels. Switching tabs changes the image and its geometry as one pane. This replaces the repeated vertical gallery and its two overlay-choice buttons.
+The layout guide uses Zensical's native content tabs: one viewer per workflow page, with an overview, enabled main views and enabled sidebar views. A Lucide monitor and a Material dock-right icon distinguish workspace tabs from sidebar tabs; hidden text gives each selector an explicit accessible prefix. Home precedes Project and has one overview because it has no tabbed panels. Switching tabs changes the image and its geometry as one pane. This replaces the repeated vertical gallery and its two overlay-choice buttons.
 
 Main views use captured native tab labels and bounds. Their stepped outline joins the selected main-view tab to its workspace, just as the existing sidebar path joins a sidebar tab to its panel. Secondary main views require an actual capture whose action record selects that tab; missing captures refuse generation. Overview titles describe the whole page and do not inherit the source screenshot's sidebar name.
 

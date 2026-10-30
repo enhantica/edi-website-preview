@@ -38,7 +38,7 @@ Selecting a structure or experiment changes the model being inspected. The statu
 
 ## Page and sidebar views
 
-Choose **Overview** for the whole page. :material-dock-left: marks a main-view tab; :material-dock-right: marks a sidebar tab. Only enabled tabs are shown. Analysis and Report show the completed refinement.
+Choose **Overview** for the whole page. :lucide-monitor: marks a main-view tab; :material-dock-right: marks a sidebar tab. Only enabled tabs are shown. Analysis and Report show the completed refinement.
 
 ### :material-home: Home
 
@@ -60,7 +60,7 @@ Create or open a project and keep its details together.
 
     </figure>
 
-=== ":material-dock-left: <span class='gui-sr-only'>Main view: </span>Project"
+=== ":lucide-monitor: <span class='gui-sr-only'>Main view: </span>Project"
 
     <figure class="gui-figure" data-gui-figure>
     <a class="gui-image-link" href="../assets/gui/y2o3/05-project-basic.png?v=faf8e7a87764" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Project — Main view: Project"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Project — Main view: Project"><title>Project — Main view: Project</title><defs><clipPath id="gui-clip-05-project-basic-main-description"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/05-project-basic.png?v=faf8e7a87764" width="1480" height="800" clip-path="url(#gui-clip-05-project-basic-main-description)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="05-project-basic-main-description-1" data-gui-parts="[[0,119,770,639],[0,77,55.734375,42]]" d="M-2.000 117.000 L-2.000 117.000 L-2.000 75.000 L57.734 75.000 L57.734 117.000 L772.000 117.000 L772.000 760.000 L-2.000 760.000 Z" /></svg></a>
@@ -99,7 +99,7 @@ Inspect the crystal structure and edit its symmetry, cell and atom sites.
 
     </figure>
 
-=== ":material-dock-left: <span class='gui-sr-only'>Main view: </span>Structure"
+=== ":lucide-monitor: <span class='gui-sr-only'>Main view: </span>Structure"
 
     <figure class="gui-figure" data-gui-figure>
     <a class="gui-image-link" href="../assets/gui/y2o3/08-structure-basic.png?v=3ba62a04504a" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Structure — Main view: Structure"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Structure — Main view: Structure"><title>Structure — Main view: Structure</title><defs><clipPath id="gui-clip-08-structure-basic-main-view"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/08-structure-basic.png?v=3ba62a04504a" width="1480" height="800" clip-path="url(#gui-clip-08-structure-basic-main-view)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="08-structure-basic-main-view-1" data-gui-parts="[[0,119,770,639],[0,77,69.1875,42]]" d="M-2.000 117.000 L-2.000 117.000 L-2.000 75.000 L71.188 75.000 L71.188 117.000 L772.000 117.000 L772.000 760.000 L-2.000 760.000 Z" /></svg></a>
@@ -138,7 +138,7 @@ Compare the measured pattern with the calculation and configure the measurement 
 
     </figure>
 
-=== ":material-dock-left: <span class='gui-sr-only'>Main view: </span>Pattern"
+=== ":lucide-monitor: <span class='gui-sr-only'>Main view: </span>Pattern"
 
     <figure class="gui-figure" data-gui-figure>
     <a class="gui-image-link" href="../assets/gui/y2o3/11-experiment-basic.png?v=7f83aefad735" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Experiment — Main view: Pattern"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Experiment — Main view: Pattern"><title>Experiment — Main view: Pattern</title><defs><clipPath id="gui-clip-11-experiment-basic-main-chart"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/11-experiment-basic.png?v=7f83aefad735" width="1480" height="800" clip-path="url(#gui-clip-11-experiment-basic-main-chart)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="11-experiment-basic-main-chart-1" data-gui-parts="[[0,119,770,639],[0,77,57.765625,42]]" d="M-2.000 117.000 L-2.000 117.000 L-2.000 75.000 L59.766 75.000 L59.766 117.000 L772.000 117.000 L772.000 760.000 L-2.000 760.000 Z" /></svg></a>
@@ -177,14 +177,14 @@ Choose parameters to refine, run the fit and inspect the pattern and parameter c
 
     </figure>
 
-=== ":material-dock-left: <span class='gui-sr-only'>Main view: </span>Pattern"
+=== ":lucide-monitor: <span class='gui-sr-only'>Main view: </span>Pattern"
 
     <figure class="gui-figure" data-gui-figure>
     <a class="gui-image-link" href="../assets/gui/y2o3/13-analysis-basic.png?v=c3a1fb56d69b" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Analysis — Main view: Pattern"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Analysis — Main view: Pattern"><title>Analysis — Main view: Pattern</title><defs><clipPath id="gui-clip-13-analysis-basic-main-fitting"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/13-analysis-basic.png?v=c3a1fb56d69b" width="1480" height="800" clip-path="url(#gui-clip-13-analysis-basic-main-fitting)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="13-analysis-basic-main-fitting-1" data-gui-parts="[[0,119,770,639],[0,77,57.765625,42]]" d="M-2.000 117.000 L-2.000 117.000 L-2.000 75.000 L59.766 75.000 L59.766 117.000 L772.000 117.000 L772.000 760.000 L-2.000 760.000 Z" /></svg></a>
 
     </figure>
 
-=== ":material-dock-left: <span class='gui-sr-only'>Main view: </span>Correlations"
+=== ":lucide-monitor: <span class='gui-sr-only'>Main view: </span>Correlations"
 
     <figure class="gui-figure" data-gui-figure>
     <a class="gui-image-link" href="../assets/gui/y2o3/guide-analysis-correlations.png?v=b4b4015fae4d" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Analysis — Main view: Correlations"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Analysis — Main view: Correlations"><title>Analysis — Main view: Correlations</title><defs><clipPath id="gui-clip-guide-analysis-correlations-main-correlations"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-analysis-correlations.png?v=b4b4015fae4d" width="1480" height="800" clip-path="url(#gui-clip-guide-analysis-correlations-main-correlations)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-analysis-correlations-main-correlations-1" data-gui-parts="[[0,119,770,639],[57.09375,77,86.484375,42]]" d="M-2.000 117.000 L55.094 117.000 L55.094 75.000 L145.578 75.000 L145.578 117.000 L772.000 117.000 L772.000 760.000 L-2.000 760.000 Z" /></svg></a>
@@ -230,7 +230,7 @@ Review the results and choose what to include in an exported report.
 
     </figure>
 
-=== ":material-dock-left: <span class='gui-sr-only'>Main view: </span>Report"
+=== ":lucide-monitor: <span class='gui-sr-only'>Main view: </span>Report"
 
     <figure class="gui-figure" data-gui-figure>
     <a class="gui-image-link" href="../assets/gui/y2o3/14-report-basic.png?v=1a34e2660cbe" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Report — Main view: Report"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Report — Main view: Report"><title>Report — Main view: Report</title><defs><clipPath id="gui-clip-14-report-basic-main-report"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/14-report-basic.png?v=1a34e2660cbe" width="1480" height="800" clip-path="url(#gui-clip-14-report-basic-main-report)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="14-report-basic-main-report-1" data-gui-parts="[[0,119,770,639],[0,77,54.125,42]]" d="M-2.000 117.000 L-2.000 117.000 L-2.000 75.000 L56.125 75.000 L56.125 117.000 L772.000 117.000 L772.000 760.000 L-2.000 760.000 Z" /></svg></a>

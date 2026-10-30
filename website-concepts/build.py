@@ -20,6 +20,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 import yaml
+from render_interfaces import render as render_interfaces
 
 ROOT = Path(__file__).resolve().parent
 CONCEPTS = {
@@ -203,6 +204,7 @@ def main() -> None:
     parser.add_argument('concept', choices=[*CONCEPTS, 'all'], nargs='?', default='all')
     parser.add_argument('--base-url', help='Public site root, including the repository URL prefix')
     args = parser.parse_args()
+    render_interfaces()
     if args.base_url:
         parsed = urlsplit(args.base_url)
         if (
@@ -246,6 +248,7 @@ def main() -> None:
             digest = hashlib.sha256(
                 (assets / 'gui-capture.css').read_bytes()
                 + (assets / 'gui-capture.js').read_bytes()
+                + (assets / 'interfaces.css').read_bytes()
             ).hexdigest()[:12]
             text = text.replace('extra:\n', f'extra:\n  gui_assets_version: {digest}\n', 1)
         if args.base_url:

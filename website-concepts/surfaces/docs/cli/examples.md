@@ -1,15 +1,37 @@
-# Example projects from the command line
+# Example refinement from the Command Line
 
-In a [configured edi checkout](../python/setup.md), run the LBCO project from its catalogue folder:
+[Download the example project](../assets/interfaces/example-project.zip) and extract it. Open a terminal in the containing folder, using your [standalone executable](standalone.md) or [Python package environment](python.md).
 
-```console
-python -m edi fit docs/user/cli/pd-neut-cwl_lbco-hrpt/project --dry
-```
+## Run without saving
 
-This runs the refinement without saving. To retain the result, follow the [Command Line refinement guide](fit.md). Keep a copy of the starting project so the original inputs remain available.
+<!-- example:cli -->
+=== "Standalone"
 
-Choose a scientific case in the shared [example catalogue](../user-guide/examples.md).
+    ```console
+    edi fit pd-neut-cwl_y2o3-spodi --dry
+    ```
 
-## Related Physics
+=== "Python package"
 
-[Least-squares objective](../physics/rietveld.md#eq-weighted-residual) · [Minimization and covariance](../physics/minimization.md) · [Agreement factors](../physics/reliability.md).
+    ```console
+    python -m edi fit pd-neut-cwl_y2o3-spodi --dry
+    ```
+<!-- /example -->
+
+`--dry` runs the refinement and leaves the starting files unchanged.
+
+## Save the result
+
+=== "Standalone"
+
+    ```console
+    edi fit path/to/project --output refined-project
+    ```
+
+=== "Python package"
+
+    ```console
+    python -m edi fit path/to/project --output refined-project
+    ```
+
+Replace `path/to/project` with the extracted example folder. See [Run a refinement](fit.md) for progress, output and cancellation options.

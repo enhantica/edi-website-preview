@@ -38,6 +38,10 @@ jobs:
         run: python website-concepts/checks/gui_figures_browser.py --browser "$CHECK_BROWSER" --output browser-evidence
         env:
           CHECK_BROWSER: ${{ matrix.browser }}
+      - name: Check interface pages and installation routes
+        run: python website-concepts/checks/interface_pages_browser.py --browser "$CHECK_BROWSER" --output browser-evidence
+        env:
+          CHECK_BROWSER: ${{ matrix.browser }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -21,7 +21,7 @@
 .gui-lightbox-close:focus-visible { outline: 2px solid var(--md-accent-fg-color); outline-offset: 3px; }
 .gui-lightbox-close svg { width: 1.2rem; height: 1.2rem; }
 .gui-lightbox-stage { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 4px; }
-.gui-lightbox .gui-capture { flex: none; max-width: 100%; max-height: 100%; width: auto; height: auto; aspect-ratio: 1480 / 800; }
+.gui-lightbox .gui-capture { flex: none; max-width: 100%; max-height: 100%; width: auto; height: auto; }
 @media (prefers-reduced-motion: reduce) { .gui-capture [data-gui-region] { transition: none; } }
 
 html.gui-lightbox-open { overflow: hidden; }

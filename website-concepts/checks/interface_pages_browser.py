@@ -1,0 +1,110 @@
+#!/usr/bin/env python3
+"""Exercise interface previews, download routes and CLI invocation parity."""
+
+from __future__ import annotations
+
+import argparse
+import functools
+import http.server
+import json
+import threading
+from pathlib import Path
+
+from network_browser import ROOT, Browser, QuietHandler, require
+
+
+def exercise(browser: Browser, base: str, output: Path) -> list[dict]:
+    checks = []
+    for width in (1440, 390):
+        browser.viewport(width, 1000)
+        for route in ('application/', 'python/', 'cli/'):
+            browser.goto(base + route)
+            result = browser.execute("""
+const hero=document.querySelector('[data-interface-hero]');
+const svg=hero.querySelector('svg');
+return {overflow:document.documentElement.scrollWidth>innerWidth,
+  width:hero.getBoundingClientRect().width, column:document.querySelector('article').getBoundingClientRect().width,
+  title:svg.querySelector('title').textContent,
+  captions:hero.querySelectorAll('figcaption').length};
+""")
+            require(not result['overflow'] and not result['captions'], result)
+            require(abs(result['width'] - result['column']) < 1, result)
+            browser.execute("document.querySelector('[data-gui-open]').click();")
+            browser.until("document.querySelector('.gui-lightbox')?.open")
+            require(
+                browser.execute("""
+const stage=document.querySelector('.gui-lightbox-stage').getBoundingClientRect();
+const svg=document.querySelector('.gui-lightbox .gui-capture').getBoundingClientRect();
+return svg.width <= stage.width + 1 && svg.height <= stage.height + 1;
+"""),
+                result,
+            )
+            browser.execute("document.querySelector('.gui-lightbox-close').click();")
+            browser.until("!document.documentElement.classList.contains('gui-lightbox-open')")
+            browser.shot(output / f'{browser.kind}-{width}-{route.strip("/")}.png')
+            checks.append({'width': width, 'route': route, 'hero': 'PASS'})
+        browser.goto(base)
+        desktop = browser.execute(
+            """return document.querySelector('.ed-landing__interfaces a[href*="desktop"]').getAttribute('href');"""
+        )
+        require(desktop.endswith('application/desktop/#download'), desktop)
+        browser.goto(base + 'application/desktop/#download')
+        require(
+            browser.execute(
+                "return document.querySelectorAll('.ed-downloads button:disabled').length === 3;"
+            )
+        )
+        require(not browser.execute('return document.documentElement.scrollWidth > innerWidth;'))
+        browser.goto(base + 'cli/standalone/#download')
+        require(
+            browser.execute(
+                "return document.querySelectorAll('.ed-downloads button:disabled').length === 3;"
+            )
+        )
+    for page in (ROOT / 'surfaces/docs/cli').glob('*.md'):
+        if page.name in {'index.md', 'setup.md', 'python.md', 'standalone.md'}:
+            continue
+        browser.goto(base + 'cli/' + page.stem + '/')
+        pairs = browser.execute("""
+return [...document.querySelectorAll('.tabbed-set')].map(group => {
+  const panes=group.querySelectorAll('.tabbed-block');
+  return [...panes].map(pane=>pane.textContent.trim());
+});
+""")
+        for pair in pairs:
+            require(
+                len(pair) == 2 and pair[0] == pair[1].replace('python -m edi', 'edi'),
+                (page.name, pair),
+            )
+    require(not browser.errors, browser.errors)
+    return checks
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--browser', choices=['chromium', 'safari'], default='chromium')
+    parser.add_argument('--output', type=Path, required=True)
+    args = parser.parse_args()
+    args.output.mkdir(parents=True, exist_ok=True)
+    server = http.server.ThreadingHTTPServer(
+        ('127.0.0.1', 0), functools.partial(QuietHandler, directory=str(ROOT / '_build'))
+    )
+    threading.Thread(target=server.serve_forever, daemon=True).start()
+    browser = Browser(args.browser)
+    try:
+        result = {
+            'status': 'PASS',
+            'browser': args.browser,
+            'checks': exercise(browser, f'http://127.0.0.1:{server.server_port}/', args.output),
+        }
+        (args.output / f'interfaces-{args.browser}.json').write_text(
+            json.dumps(result, indent=2) + '\n'
+        )
+        print(json.dumps(result), flush=True)
+    finally:
+        browser.close()
+        server.shutdown()
+
+
+if __name__ == '__main__':
+    main()

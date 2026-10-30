@@ -6,11 +6,21 @@ The same complete project is used by the application, Python and Command Line. C
 
 `fit` and `calc` accept:
 
-```console
-python -m edi fit path/to/project
-python -m edi fit path/to/project/project.edi
-python -m edi fit project.zip --output refined-project
-```
+=== "Standalone"
+
+    ```console
+    edi fit path/to/project
+    edi fit path/to/project/project.edi
+    edi fit project.zip --output refined-project
+    ```
+
+=== "Python package"
+
+    ```console
+    python -m edi fit path/to/project
+    python -m edi fit path/to/project/project.edi
+    python -m edi fit project.zip --output refined-project
+    ```
 
 A folder holds `project.edi`, `structures/`, `experiments/`, `analysis/` and `reports/`. Its entry file opens that complete folder. A zip packages the project files together.
 
@@ -30,17 +40,33 @@ The zip rule differs from Python: `Project.save()` can rewrite an archive opened
 
 ## Export a project archive
 
-```console
-python -m edi export path/to/project --output shared-project.zip
-```
+=== "Standalone"
+
+    ```console
+    edi export path/to/project --output shared-project.zip
+    ```
+
+=== "Python package"
+
+    ```console
+    python -m edi export path/to/project --output shared-project.zip
+    ```
 
 The short spelling is `-o`. Export packages the project folder as last saved; it is not a refinement or a substitute for saving in-memory Python edits. The archive can be opened by another edi interface.
 
 ## Keep logs separate from project output
 
-```console
-python -m edi fit path/to/project --report machine > fit.txt 2> fit-errors.txt
-```
+=== "Standalone"
+
+    ```console
+    edi fit path/to/project --report machine > fit.txt 2> fit-errors.txt
+    ```
+
+=== "Python package"
+
+    ```console
+    python -m edi fit path/to/project --report machine > fit.txt 2> fit-errors.txt
+    ```
 
 The report channel goes to stdout. Warnings and errors go to stderr. Redirecting text output does not change where the project itself is saved.
 

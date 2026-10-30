@@ -105,7 +105,8 @@ nav:
 - Command Line:
   - cli/index.md
   - Start here:
-    - Setup: cli/setup.md
+    - Standalone executable: cli/standalone.md
+    - Python package: cli/python.md
     - Example refinement: cli/examples.md
   - Project:
     - Inputs and output files: cli/files.md

@@ -1,22 +1,32 @@
-# Example projects in Python
+# Example refinement in Python
 
-In a configured edi source environment, the LBCO example can be loaded from its catalogue folder:
+Download the [notebook](../assets/interfaces/refinement.ipynb) and [example project](../assets/interfaces/example-project.zip). Extract the project beside the notebook, then select a kernel from your [edi environment](setup.md).
 
+## Load the project
+
+<!-- example:python -->
 ```python
 import edi
 
-project = edi.Project.load('docs/user/cli/pd-neut-cwl_lbco-hrpt/project')
-print(project.metadata.title)
+project = edi.Project.load('pd-neut-cwl_y2o3-spodi')
+```
+<!-- /example -->
+
+## Refine and inspect
+
+```python
 result = project.analysis.fit()
-print(result.rwp, result.reduced_chi_square)
+print(f'Rwp: {100 * result.rwp:.2f}%')
+print(f'Reduced chi-square: {result.reduced_chi_square:.2f}')
 ```
 
-The path is relative to the edi repository. A downloaded or exported project can be loaded from its own location instead. See [Python setup](../python/setup.md) and [load and fit a project](../python/fit.md).
+The notebook plots measured and calculated arrays with Plotly. Expand its plotting cell to see or change the code. [Inspect results](results.md) describes parameter values and uncertainties.
 
-The tutorial sources are also available in [the repository](https://github.com/enhantica/edi/tree/main/docs/user/tutorials). Their execution status is declared separately; publishing a tutorial does not by itself establish that it is currently part of the automatic notebook-execution suite.
+## Keep the result
 
-Choose a scientific case in the shared [example catalogue](../user-guide/examples.md).
+```python
+project.save_as('refined-project')
+project.report.save_html('refinement.html', offline=True)
+```
 
-## Related Physics
-
-[Least-squares objective](../physics/rietveld.md#eq-weighted-residual) · [Minimization and covariance](../physics/minimization.md) · [Agreement factors](../physics/reliability.md).
+The starting files stay unchanged until you save. See [load and save](projects.md) for other input and output forms.
