@@ -41,7 +41,7 @@ Selecting a structure or experiment changes the model being inspected. The statu
 
 These views come from the same Y₂O₃/SPODI walkthrough. Every enabled sidebar tab is shown. Select **Workflow page** to see how its toolbar tab connects to the whole page. All **Analysis** and **Report** views were captured after the fit completed and its results popup was closed.
 
-### Project
+### :material-archive: Project
 
 #### Main
 
@@ -67,7 +67,7 @@ These views come from the same Y₂O₃/SPODI walkthrough. Every enabled sidebar
 <div class="gui-view-options" role="group" aria-label="Highlight"><button type="button" class="gui-region-choice" data-gui-target="05-project-text-sidebar-1" aria-pressed="true">Tab and panel</button><button type="button" class="gui-region-choice" data-gui-target="05-project-text-sidebar-2" aria-pressed="false">Workflow page</button></div>
 </figure>
 
-### Structure
+### :material-puzzle: Structure
 
 #### Main
 
@@ -93,7 +93,7 @@ These views come from the same Y₂O₃/SPODI walkthrough. Every enabled sidebar
 <div class="gui-view-options" role="group" aria-label="Highlight"><button type="button" class="gui-region-choice" data-gui-target="08-structure-text-sidebar-1" aria-pressed="true">Tab and panel</button><button type="button" class="gui-region-choice" data-gui-target="08-structure-text-sidebar-2" aria-pressed="false">Workflow page</button></div>
 </figure>
 
-### Experiment
+### :material-microscope: Experiment
 
 #### Main
 
@@ -119,7 +119,7 @@ These views come from the same Y₂O₃/SPODI walkthrough. Every enabled sidebar
 <div class="gui-view-options" role="group" aria-label="Highlight"><button type="button" class="gui-region-choice" data-gui-target="11-experiment-text-sidebar-1" aria-pressed="true">Tab and panel</button><button type="button" class="gui-region-choice" data-gui-target="11-experiment-text-sidebar-2" aria-pressed="false">Workflow page</button></div>
 </figure>
 
-### Analysis
+### :material-calculator: Analysis
 
 #### Main
 
@@ -153,7 +153,7 @@ These views come from the same Y₂O₃/SPODI walkthrough. Every enabled sidebar
 <div class="gui-view-options" role="group" aria-label="Highlight"><button type="button" class="gui-region-choice" data-gui-target="13-analysis-settings-sidebar-1" aria-pressed="true">Tab and panel</button><button type="button" class="gui-region-choice" data-gui-target="13-analysis-settings-sidebar-2" aria-pressed="false">Workflow page</button></div>
 </figure>
 
-### Report
+### :material-clipboard-text: Report
 
 #### Main
 

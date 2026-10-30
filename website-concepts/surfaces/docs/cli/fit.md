@@ -1,4 +1,4 @@
-# Run a refinement
+# :material-calculator: Run a refinement
 
 The command line loads a complete project and runs the analysis its settings declare. Use it for a single pattern, joint experiments, or a scan.
 

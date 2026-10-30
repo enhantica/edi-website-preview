@@ -1,4 +1,4 @@
-# Analysis
+# :material-calculator: Analysis
 
 Analysis evaluates the combined structure and experiment model. A calculation predicts its signal at the current values. Refinement changes selected independent parameters to improve agreement with measured observations.
 

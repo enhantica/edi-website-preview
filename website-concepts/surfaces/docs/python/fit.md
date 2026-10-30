@@ -1,4 +1,4 @@
-# Load and fit a project
+# :material-calculator: Load and fit a project
 
 Start from a complete project with measured data. It contains the structures, experiments, free parameters and analysis settings that determine the refinement.
 

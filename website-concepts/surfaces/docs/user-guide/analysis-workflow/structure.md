@@ -1,4 +1,4 @@
-# Structure
+# :material-puzzle: Structure
 
 A structure describes a crystalline phase used to calculate diffraction. It combines a symmetry setting, unit-cell geometry and atom sites. It can be imported from a structural CIF or assembled from crystallographic information.
 

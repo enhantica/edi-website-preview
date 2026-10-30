@@ -1,4 +1,4 @@
-# Experiment
+# :material-microscope: Experiment
 
 An experiment describes an observation of the sample or a simulation of that observation. It combines measured data or a calculation range with an instrument model, peak profile, background and links to the contributing structures.
 

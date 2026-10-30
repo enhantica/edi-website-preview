@@ -1,4 +1,4 @@
-# Projects and files
+# :material-archive: Projects and files
 
 Use the application to open, save and export the complete analysis. The shared [Project](../user-guide/analysis-workflow/project.md) stage explains what belongs in a project; [data formats](../user-guide/data-formats.md) explains its folder and archive representations.
 

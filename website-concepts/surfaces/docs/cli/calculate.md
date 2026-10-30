@@ -1,4 +1,4 @@
-# Calculate a project
+# :material-calculator: Calculate a project
 
 `calc` predicts the data from the current model. It does not optimize parameters, and it can run a complete simulation project without measured observations.
 

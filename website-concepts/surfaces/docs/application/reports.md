@@ -1,4 +1,4 @@
-# Review and save a report
+# :material-clipboard-text: Review and save a report
 
 The **Report** page presents structures, experiments, fit information and correlations as one document. The shared [Report](../user-guide/analysis-workflow/report.md) stage explains the document and its relationship to the saved project. This page covers the application controls.
 

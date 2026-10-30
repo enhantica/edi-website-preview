@@ -1,4 +1,4 @@
-# Refine a diffraction pattern
+# :material-calculator: Refine a diffraction pattern
 
 Refinement adjusts the parameters you choose to bring the calculated result closer to the measured data. Begin with a structural model and experiment that plausibly describe the measurement; refinement is not a substitute for checking those choices.
 

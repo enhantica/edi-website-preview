@@ -1,4 +1,4 @@
-# Reports from Python
+# :material-clipboard-text: Reports from Python
 
 The project's report brings together structures, experiments, calculated patterns and fit information. The application, Python and Command Line use the same report model and saved settings.
 

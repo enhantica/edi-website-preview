@@ -33,6 +33,13 @@ theme:
 extra_css:
   - assets/brand-colors.css?v=1
   - assets/wordmark.css?v=header-2
+extra:
+  workflow_icons:
+    Project: archive
+    Structure: puzzle
+    Experiment: microscope
+    Analysis: calculator
+    Report: clipboard-text
 nav:
 - Home: index.md
 - User guide:
@@ -80,7 +87,7 @@ nav:
   - python/index.md
   - Start here:
     - Setup: python/setup.md
-    - First refinement: python/examples.md
+    - Example refinement: python/examples.md
   - Project:
     - Load and save: python/projects.md
   - Structure:
@@ -99,7 +106,7 @@ nav:
   - cli/index.md
   - Start here:
     - Setup: cli/setup.md
-    - First refinement: cli/examples.md
+    - Example refinement: cli/examples.md
   - Project:
     - Inputs and output files: cli/files.md
   - Structure:

@@ -1,4 +1,4 @@
-# Project
+# :material-archive: Project
 
 A project is the complete working record of an analysis. It keeps structures, experiments, data, fitting settings and saved results together, so the analysis can be inspected, repeated and continued.
 

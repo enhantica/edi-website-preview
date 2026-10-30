@@ -314,7 +314,14 @@ Selecting a structure or experiment changes the model being inspected. The statu
 """
     gallery = '\n## Page and sidebar views\n\nThese views come from the same Y₂O₃/SPODI walkthrough. Every enabled sidebar tab is shown. Select **Workflow page** to see how its toolbar tab connects to the whole page. All **Analysis** and **Report** views were captured after the fit completed and its results popup was closed.\n'
     for name in ['project', 'structure', 'experiment', 'analysis', 'report']:
-        gallery += f'\n### {name.title()}\n'
+        icon = {
+            'project': 'archive',
+            'structure': 'puzzle',
+            'experiment': 'microscope',
+            'analysis': 'calculator',
+            'report': 'clipboard-text',
+        }[name]
+        gallery += f'\n### :material-{icon}: {name.title()}\n'
         for scene in scenes:
             if scene['page'] == name and scene['sidebar']:
                 gallery += f'\n#### {scene["sidebar"]}\n\n' + figure(scene, view='sidebar')

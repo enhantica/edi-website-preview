@@ -1,4 +1,4 @@
-# Fit a sequence of measurements
+# :material-calculator: Fit a sequence of measurements
 
 A scan is a series of data files measured in order, for example while a sample cools. The project uses one template experiment and declares the files to fit. The application lists them as datasets and fits them through the same analysis as the command line.
 

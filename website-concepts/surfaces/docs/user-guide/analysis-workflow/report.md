@@ -1,4 +1,4 @@
-# Report
+# :material-clipboard-text: Report
 
 A report brings the model and analysis outcome into a document for inspection and sharing. It complements the complete project, which retains the editable analysis.
 

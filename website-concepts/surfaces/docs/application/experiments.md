@@ -1,4 +1,4 @@
-# Experiments and measured data
+# :material-microscope: Experiments and measured data
 
 An experiment connects the measurement to the structural model. It holds measured data or a simulation range, instrument settings, peak and background descriptions, excluded regions, and links to the structures that contribute to its calculation.
 

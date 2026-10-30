@@ -1,4 +1,4 @@
-# Work with structures
+# :material-puzzle: Work with structures
 
 A structure describes the crystal model used to calculate diffraction: its symmetry, unit cell, atom sites and displacement parameters. The **Structure** page displays one selected structure at a time.
 

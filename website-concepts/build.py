@@ -18,6 +18,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
+import yaml
+
 ROOT = Path(__file__).resolve().parent
 CONCEPTS = {
     'surfaces': (
@@ -210,6 +212,15 @@ def main() -> None:
         ):
             parser.error('--base-url must be an HTTP(S) URL without a query or fragment')
         args.base_url = args.base_url.rstrip('/') + '/'
+    config_data = yaml.load((ROOT / 'surfaces/mkdocs.yml').read_text(), Loader=yaml.BaseLoader)
+    stages = list(config_data['extra']['workflow_icons'])
+    shared = ['Start here', *stages]
+    for interface in ('Application', 'Python', 'Command Line'):
+        section = next(entry[interface] for entry in config_data['nav'] if interface in entry)
+        groups = [next(iter(entry)) for entry in section if isinstance(entry, dict)]
+        if groups[:len(shared)] != shared:
+            raise SystemExit(f'{interface}: workflow groups must be {shared}')
+    print('Shared interface workflow navigation: PASS', flush=True)
     capture = ROOT / 'surfaces/docs/assets/gui/y2o3'
     if (capture / 'manifest.json').exists():
         from checks.gui_capture import validate_bundle

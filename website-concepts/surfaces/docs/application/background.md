@@ -1,4 +1,4 @@
-# Background and excluded regions
+# :material-microscope: Background and excluded regions
 
 A background describes the smooth intensity beneath the diffraction peaks. An excluded region removes a measurement interval from the fit. They solve different problems and should be chosen deliberately.
 

@@ -1,4 +1,4 @@
-# Choose a fitting mode
+# :material-calculator: Choose a fitting mode
 
 The fitting mode determines how the project's experiments or scan datasets are fitted. It changes the relationship between fits, not the meaning of the structures and experiments.
 

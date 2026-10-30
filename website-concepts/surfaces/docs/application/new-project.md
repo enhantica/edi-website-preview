@@ -1,4 +1,4 @@
-# Create a project from your own data
+# :material-archive: Create a project from your own data
 
 You can create a project in the app without preparing a project file first. Add the structure, describe the experiment, load the measured pattern, then choose the parameters to refine.
 
