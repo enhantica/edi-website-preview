@@ -207,6 +207,9 @@ def main() -> None:
     shared_controls = ROOT / 'surfaces/docs/assets/site-components.css'
     shutil.copy2(shared_controls, ROOT / 'workflows/docs/assets/site-components.css')
     render_interfaces()
+    from render_experiments import render as render_experiments
+
+    render_experiments()
     if args.base_url:
         parsed = urlsplit(args.base_url)
         if (

@@ -855,7 +855,7 @@ Selecting a structure or experiment changes the model being inspected. The statu
     if '15-project-examples' in by_id:
         examples = 'The web and desktop applications both include built-in example projects. Go to **Project**, select **Main** and expand **Examples**. Use the search and filters to find a case.\n\n'
         examples += figure(by_id['15-project-examples'])
-        examples += '\nChoose a **Fitting** example to analyse measured data, or a **Simulation** example to inspect a calculated pattern. Examples open as working copies; use **Save project as…** to keep your changes.\n\nFor a guided analysis, follow [Example refinement](first-refinement.md). The shared [example catalogue](../user-guide/examples.md) describes the scientific cases.\n'
+        examples += '\nChoose a **Fitting** example to analyse measured data, or a **Simulation** example to inspect a calculated pattern. Examples open as working copies; use **Save project as…** to keep your changes.\n\nFor a guided analysis, follow [Example refinement](first-refinement.md). The shared [example catalogue](../user-guide/examples.md) lets you filter the scientific cases. [Experiment labels](../user-guide/experiment-types.md) explain the same tags shown in the app.\n'
         (DOCS / 'application/examples.md').write_text(page('Example projects', examples))
     introduction = DOCS / 'application/index.md'
     text = introduction.read_text()

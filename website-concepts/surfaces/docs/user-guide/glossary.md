@@ -63,3 +63,8 @@ These labels identify measurement types and scientific terms. Current feature av
 ## Related Physics
 
 [Unit cell and symmetry](../physics/crystallography.md#eq-cell-metric) · [Occupancy and scattering](../physics/diffraction.md#eq-nuclear-structure-factor) · [Atomic displacement](../physics/displacement.md#eq-anisotropic-adp).
+
+
+<!-- experiment-labels -->
+For linked definitions of `pd`, `sc`, `neut`, `xray`, `cwl` and `tof`, see [Experiment types and labels](experiment-types.md).
+<!-- /experiment-labels -->

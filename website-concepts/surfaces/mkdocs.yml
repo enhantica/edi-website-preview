@@ -34,7 +34,19 @@ extra_css:
   - assets/brand-colors.css?v=1
   - assets/wordmark.css?v=header-2
   - assets/site-components.css?v=shared
+  - assets/experiment-tags.css?v=1
+extra_javascript:
+  - assets/example-catalogue.js?v=1
 extra:
+  section_icons:
+    Foundations: book-open-variant
+    Analysis workflow: routes
+    Start here: compass-outline
+    Peak profiles: chart-bell-curve
+    Intensity corrections: tune
+    Experiment model: microscope
+    Refinement and statistics: chart-scatter-plot
+    Reference: book-search-outline
   workflow_icons:
     Project: archive
     Structure: puzzle
@@ -51,6 +63,7 @@ nav:
     - Concept: user-guide/concepts.md
     - Data formats: user-guide/data-formats.md
     - Parameters: user-guide/parameters.md
+    - Experiment types and labels: user-guide/experiment-types.md
     - Glossary: user-guide/glossary.md
   - Analysis workflow:
     - user-guide/analysis-workflow/index.md

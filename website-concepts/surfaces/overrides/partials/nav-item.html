@@ -19,6 +19,8 @@
   {% set workflow_icons = config.extra.workflow_icons %}
   {% if nav_item.children and nav_item.title in workflow_icons %}
     {% include ".icons/material/" ~ workflow_icons[nav_item.title] ~ ".svg" %}
+  {% elif nav_item.children and nav_item.title in config.extra.section_icons %}
+    {% include ".icons/material/" ~ config.extra.section_icons[nav_item.title] ~ ".svg" %}
   {% elif nav_item.meta and nav_item.meta.icon %}
     {% include ".icons/" ~ nav_item.meta.icon ~ ".svg" %}
   {% endif %}

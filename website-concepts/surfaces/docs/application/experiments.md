@@ -8,7 +8,7 @@ template: gui.html
 
 On **Experiment → Main**, expand **Experiments** and select a row. **Load experiment** imports an `.edi` experiment, including its settings and any stored data. **Create experiment** adds a starting experiment linked to the project's structures.
 
-Choose the measurement type before importing measured data. Until data are loaded, the experiment uses a simulation range. A project can contain measured experiments and simulations; fitting uses the measured data.
+Use [experiment types and labels](../user-guide/experiment-types.md) to distinguish sample form, probe and beam mode. Choose the measurement type before importing measured data. Until data are loaded, the experiment uses a simulation range. A project can contain measured experiments and simulations; fitting uses the measured data.
 
 <!-- gui-guide:select-or-create-an-experiment -->
 <div class="gui-viewer" markdown="1">
