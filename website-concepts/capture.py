@@ -179,6 +179,11 @@ def main() -> None:
                 )
                 if unrendered:
                     raise RuntimeError(f'{slug}: {unrendered} equations are not rendered as SVG')
+                collapsed = page.locator('mjx-container[display="true"] > svg').evaluate_all(
+                    '(items) => items.filter(e => { const r=e.getBoundingClientRect(); return r.width<=1 || r.height<=1; }).length'
+                )
+                if collapsed:
+                    raise RuntimeError(f'{slug}: display equations collapsed to invisible dimensions')
                 checks.append({
                     'page': slug,
                     'equations_rendered_without_errors': True,
