@@ -5,6 +5,9 @@
   const geometry = svg => {
     const scale = svg.getBoundingClientRect().width / svg.viewBox.baseVal.width;
     if (!scale) return;
+    const host = svg.closest('.gui-image-link, .gui-lightbox-stage');
+    const radius = parseFloat(getComputedStyle(host).borderTopLeftRadius) / scale;
+    svg.querySelectorAll('clipPath rect, .gui-image-frame').forEach(frame => frame.setAttribute('rx', radius));
     const padding = 1.5 / scale;
     svg.querySelectorAll('[data-gui-region], [data-gui-navigation]').forEach(region => {
       const parts = JSON.parse(region.dataset.guiParts);

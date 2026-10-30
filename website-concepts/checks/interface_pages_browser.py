@@ -12,23 +12,79 @@ from pathlib import Path
 
 from network_browser import ROOT, Browser, QuietHandler, require
 
+BUTTON = """
+const element=document.querySelector(arg), rect=element.getBoundingClientRect(), style=getComputedStyle(element);
+return {width:rect.width,height:rect.height,radius:style.borderRadius,font:style.fontSize,
+  weight:style.fontWeight,padding:style.padding,border:style.borderWidth,bg:style.backgroundColor};
+"""
+
+
+def check_buttons(browser: Browser, base: str) -> None:
+    browser.goto(base)
+    browser.hover('.md-header .md-logo')
+    reference = browser.execute(BUTTON, '.ed-landing__actions .md-button')
+    for route in (
+        'application/',
+        'application/browser/',
+        'application/desktop/',
+        'python/',
+        'python/setup/',
+        'cli/',
+        'cli/standalone/',
+    ):
+        browser.goto(base + route)
+        count = browser.execute(
+            "document.querySelectorAll('article .md-button').forEach((button,i)=>button.dataset.checkButton=i); return document.querySelectorAll('article .md-button').length;"
+        )
+        for index in range(count):
+            selector = f'[data-check-button="{index}"]'
+            browser.hover('.md-header .md-logo')
+            before = browser.execute(BUTTON, selector)
+            require(
+                all(
+                    before[key] == reference[key]
+                    for key in ('radius', 'font', 'weight', 'padding', 'border')
+                ),
+                (route, before, reference),
+            )
+            if browser.execute('return document.querySelector(arg).disabled;', selector):
+                continue
+            browser.hover(selector)
+            after = browser.execute(BUTTON, selector)
+            require(
+                abs(before['width'] - after['width']) < 0.05
+                and abs(before['height'] - after['height']) < 0.05,
+                (route, before, after),
+            )
+            require(
+                before['font'] == after['font']
+                and before['weight'] == after['weight']
+                and before['bg'] != after['bg'],
+                (route, before, after),
+            )
+
 
 def exercise(browser: Browser, base: str, output: Path) -> list[dict]:
     checks = []
     for width in (1440, 390):
         browser.viewport(width, 1000)
+        check_buttons(browser, base)
         for route in ('application/', 'python/', 'cli/'):
             browser.goto(base + route)
             result = browser.execute("""
 const hero=document.querySelector('[data-interface-hero]');
 const svg=hero.querySelector('svg');
+const scale=svg.getBoundingClientRect().width/svg.viewBox.baseVal.width;
 return {overflow:document.documentElement.scrollWidth>innerWidth,
   width:hero.getBoundingClientRect().width, column:document.querySelector('article').getBoundingClientRect().width,
   title:svg.querySelector('title').textContent,
-  captions:hero.querySelectorAll('figcaption').length};
+  captions:hero.querySelectorAll('figcaption').length,
+  radius:svg.querySelector('.gui-image-frame').rx.baseVal.value*scale,
+  expectedRadius:parseFloat(getComputedStyle(hero.querySelector('a')).borderTopLeftRadius)};
 """)
             require(not result['overflow'] and not result['captions'], result)
             require(abs(result['width'] - result['column']) < 1, result)
+            require(abs(result['radius'] - result['expectedRadius']) < 0.05, result)
             browser.execute("document.querySelector('[data-gui-open]').click();")
             browser.until("document.querySelector('.gui-lightbox')?.open")
             require(

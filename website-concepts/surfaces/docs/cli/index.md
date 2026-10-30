@@ -8,8 +8,8 @@ hide:
 
 Run saved projects from a terminal or shell script, without writing Python code.
 
-[Standalone executable](standalone.md#download){ .md-button .md-button--primary }
-[Python package](python.md){ .md-button }
+[Download executable](standalone.md#download){ .md-button .md-button--primary }
+[Set up the Python package](python.md){ .md-button }
 
 <!-- interface-preview:cli -->
 <figure class="ed-interface-preview" data-interface-hero>

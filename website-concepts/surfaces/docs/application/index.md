@@ -17,7 +17,7 @@ Work visually, with the pattern or crystal structure beside the controls you are
 </figure>
 <!-- /interface-preview -->
 
-The web and desktop apps share the same workspace: workflow pages across the top, a main view on the left, related controls in the sidebar and status information below. Use the pattern, tables and structure view to inspect changes as you work.
+The same application runs in your browser or on your desktop, with workflow pages across the top, a main view on the left, related controls in the sidebar and status information below. Use the pattern, tables and structure view to inspect changes as you work.
 
 [Explore the application layout](workspace.md){ .md-button }
 [Follow an example refinement](first-refinement.md){ .md-button }

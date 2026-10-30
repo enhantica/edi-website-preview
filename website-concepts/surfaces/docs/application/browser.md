@@ -4,7 +4,7 @@ Open EasyDiffraction in a browser, with no application installation.
 
 [Open the web app](https://enhantica.github.io/edi/webapp/){ .md-button .md-button--primary }
 
-The [application layout](workspace.md) and controls are shared with the desktop app. These are the differences when working in a browser.
+The [application layout](workspace.md) and controls are identical in the browser and on the desktop. File access and saving depend on your browser.
 
 ## Open and save files
 

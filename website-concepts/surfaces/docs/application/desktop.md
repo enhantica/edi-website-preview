@@ -14,7 +14,7 @@ Use native file dialogs and work directly with projects on your computer.
 <button class="md-button" type="button" disabled aria-label="Linux download not available yet">Linux</button></div>
 <!-- /distribution -->
 
-Installer links will be added here when the new releases are available. You can use the [web app](browser.md) now, or follow the [source build instructions](https://enhantica.github.io/edi/dev/).
+Installer links will be added here when the new releases are available. You can use the [web app](browser.md) now.
 
 ## Open local projects
 

@@ -33,6 +33,7 @@ theme:
 extra_css:
   - assets/brand-colors.css?v=1
   - assets/wordmark.css?v=header-2
+  - assets/site-components.css?v=shared
 nav:
   - Home: index.md
   - Get started:

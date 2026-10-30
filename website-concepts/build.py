@@ -204,6 +204,8 @@ def main() -> None:
     parser.add_argument('concept', choices=[*CONCEPTS, 'all'], nargs='?', default='all')
     parser.add_argument('--base-url', help='Public site root, including the repository URL prefix')
     args = parser.parse_args()
+    shared_controls = ROOT / 'surfaces/docs/assets/site-components.css'
+    shutil.copy2(shared_controls, ROOT / 'workflows/docs/assets/site-components.css')
     render_interfaces()
     if args.base_url:
         parsed = urlsplit(args.base_url)
@@ -243,6 +245,11 @@ def main() -> None:
         temporary = None
         original = config.read_text(encoding='utf-8')
         text = original
+        text = text.replace(
+            'assets/site-components.css?v=shared',
+            'assets/site-components.css?v='
+            + hashlib.sha256(shared_controls.read_bytes()).hexdigest()[:12],
+        )
         if name == 'surfaces':
             assets = ROOT / 'surfaces/docs/assets'
             digest = hashlib.sha256(

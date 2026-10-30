@@ -1,0 +1,42 @@
+/* Shared components. The homepage is the visual reference (ADR-0005). */
+:root {
+  --ed-button-radius: .4rem;
+  --ed-screenshot-radius: .65rem;
+}
+.md-typeset .md-button,
+.md-typeset .md-button:hover,
+.md-typeset .md-button:focus,
+.md-typeset .md-button:active {
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.3rem;
+  margin: 0;
+  padding: .6rem 1.05rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: var(--ed-button-radius);
+  font-size: .8rem;
+  font-family: inherit;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  transform: none;
+  scale: 1;
+  box-shadow: none;
+  transition: background-color .15s, border-color .15s, color .15s;
+}
+.md-typeset .md-button { background: transparent; color: var(--md-default-fg-color); }
+.md-typeset .md-button--primary { background: var(--md-primary-fg-color); border-color: transparent; color: var(--md-primary-bg-color); }
+.md-typeset .md-button:not(:disabled):hover,
+.md-typeset .md-button:not(:disabled):focus-visible { background: var(--md-accent-fg-color--transparent); border-color: var(--md-primary-fg-color); color: var(--md-primary-fg-color); }
+.md-typeset .md-button--primary:not(:disabled):hover,
+.md-typeset .md-button--primary:not(:disabled):focus-visible { background: var(--md-primary-fg-color--dark); border-color: transparent; color: var(--md-primary-bg-color); }
+.md-typeset .md-button:focus-visible { outline: 2px solid var(--md-primary-fg-color); outline-offset: 3px; }
+.md-typeset .md-button:disabled { opacity: .5; cursor: default; }
+.md-typeset p:has(> .md-button) { display: flex; flex-wrap: wrap; gap: .65rem; }
+.md-typeset .tabbed-labels > label { display: flex; align-items: center; gap: .3em; }
+.md-typeset .tabbed-labels .twemoji { display: inline-flex; flex: none; align-items: center; margin: 0; width: 1em; height: 1em; line-height: 1; }
+.md-typeset .tabbed-labels .gui-fa { flex: none; margin-right: 0; }
+@media (prefers-reduced-motion: reduce) { .md-typeset .md-button { transition: none; } }

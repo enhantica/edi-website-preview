@@ -1,5 +1,5 @@
 .md-typeset figure.gui-figure { display: block; width: 100%; max-width: 100%; margin: 1.6rem 0 2.4rem; text-align: left; }
-.gui-image-link { display: block; width: 100%; cursor: zoom-in; line-height: 0; text-decoration: none; }
+.gui-image-link { display: block; width: 100%; cursor: zoom-in; line-height: 0; text-decoration: none; border-radius: var(--ed-screenshot-radius); }
 .gui-image-link:focus-visible { outline: 2px solid var(--md-accent-fg-color); outline-offset: 5px; }
 .md-typeset .gui-capture, .gui-lightbox .gui-capture { display: block; width: 100%; height: auto; overflow: visible; border: 0; border-radius: 0; background: transparent; }
 .gui-image-frame { fill: none; stroke: #d6d6d6; stroke-width: 1; vector-effect: non-scaling-stroke; pointer-events: none; }
@@ -17,7 +17,7 @@
 .gui-lightbox-close:hover { background: var(--md-accent-fg-color--transparent); }
 .gui-lightbox-close:focus-visible { outline: 2px solid var(--md-accent-fg-color); outline-offset: 3px; }
 .gui-lightbox-close svg { width: 1.2rem; height: 1.2rem; }
-.gui-lightbox-stage { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 4px; }
+.gui-lightbox-stage { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 4px; border-radius: var(--ed-screenshot-radius); }
 .gui-lightbox .gui-capture { flex: none; max-width: 100%; max-height: 100%; width: auto; height: auto; }
 @media (prefers-reduced-motion: reduce) { .gui-capture [data-gui-region] { transition: none; } }
 

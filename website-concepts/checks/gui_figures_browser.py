@@ -27,6 +27,9 @@ const figures = [...article.querySelectorAll('.gui-figure')].map(figure => {
       paddingY: (top-box.y)*scale, square: getComputedStyle(region).strokeLinejoin === 'miter'};
   });
   return {width: bounds.width, height: bounds.height, column: width, view:svg.dataset.guiView,
+    frameRadius:svg.querySelector('.gui-image-frame').rx.baseVal.value*scale,
+    clipRadius:svg.querySelector('clipPath rect').rx.baseVal.value*scale,
+    expectedRadius:parseFloat(getComputedStyle(figure.querySelector('.gui-image-link')).borderTopLeftRadius),
     caption: !!figure.querySelector('figcaption'),
     overflow: getComputedStyle(svg).overflow, radius: getComputedStyle(svg).borderRadius,
     imageClip: svg.querySelector('image').hasAttribute('clip-path'),
@@ -146,6 +149,11 @@ def exercise(browser: Browser, base: str, output: Path) -> list[dict]:
                 if not figure['width']:
                     continue
                 require(not figure['caption'], figure)
+                require(
+                    abs(figure['frameRadius'] - figure['expectedRadius']) < 0.05
+                    and abs(figure['clipRadius'] - figure['expectedRadius']) < 0.05,
+                    figure,
+                )
                 require(abs(figure['width'] - figure['column']) < 1, figure)
                 require(abs(figure['width'] / figure['height'] - 1480 / 800) < 0.01, figure)
                 require(figure['overflow'] == 'visible' and figure['radius'] == '0px', figure)
