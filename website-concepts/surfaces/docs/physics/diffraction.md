@@ -38,9 +38,19 @@ $$w_p=\frac{s_p Z_p M_p V_p}{\sum_q s_q Z_q M_q V_q}.$$
 
 Here $Z_pM_p$ is the cell formula mass and $V_p$ its volume; a cell-mass representation uses the same product without separately spelling $Z$ and formula mass. Interpret reported fractions with the project's scale convention, composition and links. A disconnected structure contributes no intensity.
 
-## Applicability
+## Magnetic diffraction {#magnetic-diffraction}
 
-This page describes the scalar nuclear/X-ray Bragg model in the [catalogue](models.md). It does not turn a general magnetic, polarized, total-scattering or PDF theory into an available product capability; those states are recorded separately in [Features and roadmap](../user-guide/features.md).
+**Planned.** Magnetic diffraction is planned. Magnetic scattering involves vector contributions beyond the scalar nuclear/X-ray model above.
+
+## Polarized diffraction {#polarized-diffraction}
+
+**Planned.** Polarized diffraction is planned. Polarization changes the scattering cross-section; the scalar model above does not provide this capability.
+
+## Total scattering and PDF {#total-scattering-and-pdf}
+
+**Planned.** Total scattering and pair distribution function (PDF) analysis are planned. PDF uses a total-scattering transform rather than the Bragg-profile model.
+
+See [Scattering models](../user-guide/features.md#scattering-models) for the status of these and the implemented models.
 
 ## References
 

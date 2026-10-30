@@ -52,9 +52,9 @@ $$p=\alpha\delta+i\alpha H/2,\qquad q=-\beta\delta+i\beta H/2.$$
 
 $E_1$ is the exponential integral. At zero Lorentzian width the profile reduces to its Gaussian Jorgensen limit; assigning a different width to each mixed kernel would define a different model.
 
-## Available and planned types
+## Ikeda–Carpenter {#ikeda-carpenter}
 
-The supported registry contains the three types above. Ikeda–Carpenter is [planned](../../user-guide/features.md#planned-scientific-models). A research description of that or another pulse model is not evidence that it can be selected in this reference's build.
+**Planned.** Ikeda–Carpenter is planned for TOF pulse modelling. It is not a selectable profile in this reference snapshot. See [Time-of-flight peak profiles](../../user-guide/features.md#time-of-flight-peak-profiles) for the availability of this and the implemented profiles.
 
 ## References
 

@@ -55,6 +55,10 @@ $$wR(F^2)=\sqrt{\frac{\sum_{h\in\mathcal H}w_h(F_{o,h}^2-F_{c,h}^2)^2}{\sum_{h\i
 
 `r_factor_all` and `wr_factor_all` use all reflections; `_gt` uses those passing the experiment's observed-reflection threshold; `wr_factor_ref` uses those selected for refinement. An absent observed threshold means $I>2u(I)$. An amplitude threshold $F>n u(F)$ is implemented as $F_o^2>(n/2)u(F_o^2)$; an intensity threshold uses $F_o^2>n u(F_o^2)$. The project's optional refinement threshold is separate and uses the intensity rule. A reporting threshold does not itself discard weak data from refinement.
 
+### Single-crystal reflection exclusions {#single-crystal-reflection-exclusions}
+
+**Planned.** Single-crystal reflection exclusions are planned. The reporting and refinement-threshold rules above describe the current behaviour. See [Background and excluded observations](../user-guide/features.md#background-and-excluded-observations) for the status alongside powder exclusions.
+
 ## Per-experiment and pooled summaries {#pooled-factors}
 
 For a single-crystal reflection list, the same absolute and weighted formulas operate on observed and calculated $F^2$ values, giving $R(F^2)$ and $wR(F^2)$. There is no powder background partition; the background-subtracted denominators equal the un-subtracted ones. Do not label this intensity-based factor as the amplitude-based $R(F)$.

@@ -39,6 +39,10 @@ Inspect each experiment after a joint fit. Combined agreement can hide a systema
 
 Both scan modes run a sequence of fits against a template experiment. Sequential fitting starts the next dataset from the preceding result; independent fitting restarts each dataset from the same template state. The distinction is the starting model, not parallel execution. See the [fitting-mode guide](../user-guide/fitting-modes.md).
 
+## Le Bail / Pawley intensity extraction {#intensity-extraction}
+
+**Proposed.** Le Bail / Pawley intensity extraction is a proposed capability. It is not an available fitting mode in this reference snapshot. See [Calculation and fitting modes](../user-guide/features.md#calculation-and-fitting-modes) for the current alternatives.
+
 ## Interpretation
 
 Refinement improves agreement under the model and its uncertainties. Convergence does not establish that the phase model, background, calibration or uncertainty estimates are correct. Use the [practical fit assessment](../user-guide/fit-quality.md) and retain the starting project.

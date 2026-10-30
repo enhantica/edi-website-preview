@@ -4,9 +4,13 @@ template: physics.html
 
 # Model catalogue
 
-Use the exact model identifier to select its explanation. The [parameter index](parameters.md) defines individual scientific fields. [Features and roadmap](../user-guide/features.md) distinguishes editing, execution and planned work in the four interfaces.
+<span id="planned-scientific-models"></span>
+
+Use the exact model identifier to select its explanation. Planned and proposed capabilities appear beside related models with their status; they have no selectable type token in this reference snapshot. The [parameter index](parameters.md) defines individual scientific fields. [Features and roadmap](../user-guide/features.md) distinguishes editing, execution and planned work in the four interfaces.
 
 ## Peak profiles {#peak-profiles}
+
+### Constant-wavelength peak profiles
 
 | Type | Scope | Explanation |
 | --- | --- | --- |
@@ -16,9 +20,15 @@ Use the exact model identifier to select its explanation. The [parameter index](
 | `cwl-pseudo-voigt-berar-baldinozzi` | CW powder | [Physics](profiles/cw.md#eq-berar-baldinozzi) |
 | `cwl-tch-pseudo-voigt` | CW powder | [Physics](profiles/cw.md#eq-tch) |
 | `cwl-tch-pseudo-voigt-fcj` | CW powder | [Physics](profiles/cw.md#eq-fcj) |
+
+### Time-of-flight peak profiles
+
+| Type or model | Scope | Explanation |
+| --- | --- | --- |
 | `tof-jorgensen` | TOF neutron powder | [Physics](profiles/tof.md#eq-jorgensen) |
 | `tof-jorgensen-von-dreele` | TOF neutron powder | [Physics](profiles/tof.md#eq-jorgensen-von-dreele) |
 | `tof-pseudo-voigt` | TOF neutron powder | [Physics](profiles/tof.md#tof-pseudo-voigt) |
+| Ikeda–Carpenter · **Planned** | TOF pulse profile | [Planned model](profiles/tof.md#ikeda-carpenter) |
 
 ## Absorption {#absorption}
 
@@ -66,6 +76,18 @@ Use the exact model identifier to select its explanation. The [parameter index](
 | `snip` | powder baseline proposal | [Physics](background.md#eq-snip) |
 | `fabc` | powder baseline proposal | [Physics](background.md#fabc) |
 
+## Scattering models {#scattering-models}
+
+The current [nuclear neutron](diffraction.md#eq-nuclear-structure-factor) and [X-ray](diffraction.md#eq-xray-structure-factor) models use the source selections listed above.
+
+| Model | Status | Explanation |
+| --- | --- | --- |
+| Nuclear neutron Bragg | Current | [Structure factor](diffraction.md#eq-nuclear-structure-factor) |
+| X-ray Bragg | Current | [Structure factor](diffraction.md#eq-xray-structure-factor) |
+| Magnetic diffraction | Planned | [Scattering](diffraction.md#magnetic-diffraction) |
+| Polarized diffraction | Planned | [Scattering](diffraction.md#polarized-diffraction) |
+| Total scattering and PDF | Planned | [Scattering](diffraction.md#total-scattering-and-pdf) |
+
 ## X-ray form factor {#xray-form-factor}
 
 | Type | Scope | Explanation |
@@ -98,6 +120,12 @@ Use the exact model identifier to select its explanation. The [parameter index](
 | `sequential` | project analysis | [Physics](rietveld.md#scan-refinement) |
 | `independent` | project analysis | [Physics](rietveld.md#scan-refinement) |
 
+## Intensity extraction {#intensity-extraction}
+
+| Model | Status | Explanation |
+| --- | --- | --- |
+| Le Bail / Pawley | Proposed | [Analysis](rietveld.md#intensity-extraction) |
+
 ## Descent {#descent}
 
 | Type | Scope | Explanation |
@@ -113,10 +141,6 @@ Use the exact model identifier to select its explanation. The [parameter index](
 | Type | Scope | Explanation |
 | --- | --- | --- |
 | `march-dollase` | linked phase in CW powder | [Physics](corrections/orientation.md#eq-march-dollase) |
-
-## Planned scientific models {#planned-scientific-models}
-
-Ikeda–Carpenter, magnetic diffraction, polarized diffraction and total-scattering/PDF have roadmap entries but are not supported model selections in this reference snapshot. Magnetic scattering involves vector contributions; polarization changes the cross-section; PDF uses a total-scattering transform rather than this Bragg-profile model. A roadmap entry does not establish interface availability. See [planned work](../user-guide/features.md#planned-scientific-models).
 
 ## Reference snapshot {#reference-snapshot}
 
