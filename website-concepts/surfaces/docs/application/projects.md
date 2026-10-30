@@ -15,10 +15,15 @@ When a project opens, the app prepares its pages in turn. The status bar shows p
 If your current project has unsaved changes when you open another, create one or quit, the application asks whether to save them.
 
 <!-- gui-guide:open-a-project -->
+<div class="gui-viewer" markdown="1">
+
 <figure class="gui-figure" data-gui-figure>
-<a class="gui-image-link" href="../assets/gui/y2o3/guide-project-open.png?v=9c9409e7eb95" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Choose a project folder or archive"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Choose a project folder or archive"><title>Choose a project folder or archive</title><defs><clipPath id="gui-clip-guide-project-open-overview-projects-open-a-project-0"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-project-open.png?v=9c9409e7eb95" width="1480" height="800" clip-path="url(#gui-clip-guide-project-open-overview-projects-open-a-project-0)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-project-open-overview-projects-open-a-project-0-1" data-gui-parts="[[607,371,97.96562500000005,58]]" d="M605.000 369.000 L706.966 369.000 L706.966 431.000 L605.000 431.000 Z" /><path data-gui-navigation data-gui-parts="[[595.46875,0,59.734375,77]]" d="M593.469 -2.000 L657.203 -2.000 L657.203 79.000 L593.469 79.000 Z" /></svg></a>
-<ol class="gui-regions"><li><button type="button" data-gui-target="guide-project-open-overview-projects-open-a-project-0-1" aria-pressed="true">1. Project source</button> Choose a folder or a zip archive.</li></ol>
+<p class="gui-view-description">Choose a folder or a zip archive.</p>
+<a class="gui-image-link" href="../assets/gui/y2o3/guide-project-open.png?v=9c9409e7eb95" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Project source"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Project source"><title>Project source</title><defs><clipPath id="gui-clip-guide-project-open-overview-projects-open-a-project-0-project-openChoice"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-project-open.png?v=9c9409e7eb95" width="1480" height="800" clip-path="url(#gui-clip-guide-project-open-overview-projects-open-a-project-0-project-openChoice)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-project-open-overview-projects-open-a-project-0-project-openChoice-1" data-gui-parts="[[607,371,97.96562500000005,58]]" d="M605.000 369.000 L706.966 369.000 L706.966 431.000 L605.000 431.000 Z" /><path data-gui-navigation data-gui-parts="[[595.46875,0,59.734375,77]]" d="M593.469 -2.000 L657.203 -2.000 L657.203 79.000 L593.469 79.000 Z" /></svg></a>
+
 </figure>
+
+</div>
 <!-- /gui-guide -->
 
 ## Save or save a copy
@@ -30,10 +35,15 @@ On the desktop, **Save project as…** offers **Folder**, **Zip archive**, and *
 An archive opened on the desktop is unpacked into a working copy. Save writes the archive again. If it is not writable, or it is a bundled example, the application asks where to keep your work instead.
 
 <!-- gui-guide:save-or-save-a-copy -->
+<div class="gui-viewer" markdown="1">
+
 <figure class="gui-figure" data-gui-figure>
-<a class="gui-image-link" href="../assets/gui/y2o3/guide-project-save.png?v=de7f11c4d553" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Choose a save format or save a copy"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Choose a save format or save a copy"><title>Choose a save format or save a copy</title><defs><clipPath id="gui-clip-guide-project-save-overview-projects-save-or-save-a-copy-0"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-project-save.png?v=de7f11c4d553" width="1480" height="800" clip-path="url(#gui-clip-guide-project-save-overview-projects-save-or-save-a-copy-0)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-project-save-overview-projects-save-or-save-a-copy-0-1" data-gui-parts="[[607,354,111.84375,93]]" d="M605.000 352.000 L720.844 352.000 L720.844 449.000 L605.000 449.000 Z" /><path data-gui-navigation data-gui-parts="[[595.46875,0,59.734375,77]]" d="M593.469 -2.000 L657.203 -2.000 L657.203 79.000 L593.469 79.000 Z" /></svg></a>
-<ol class="gui-regions"><li><button type="button" data-gui-target="guide-project-save-overview-projects-save-or-save-a-copy-0-1" aria-pressed="true">1. Save options</button> Choose the output format and whether to save a copy.</li></ol>
+<p class="gui-view-description">Choose the output format and whether to save a copy.</p>
+<a class="gui-image-link" href="../assets/gui/y2o3/guide-project-save.png?v=de7f11c4d553" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Save options"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Save options"><title>Save options</title><defs><clipPath id="gui-clip-guide-project-save-overview-projects-save-or-save-a-copy-0-project-saveChoice"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-project-save.png?v=de7f11c4d553" width="1480" height="800" clip-path="url(#gui-clip-guide-project-save-overview-projects-save-or-save-a-copy-0-project-saveChoice)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-project-save-overview-projects-save-or-save-a-copy-0-project-saveChoice-1" data-gui-parts="[[607,354,111.84375,93]]" d="M605.000 352.000 L720.844 352.000 L720.844 449.000 L605.000 449.000 Z" /><path data-gui-navigation data-gui-parts="[[595.46875,0,59.734375,77]]" d="M593.469 -2.000 L657.203 -2.000 L657.203 79.000 L593.469 79.000 Z" /></svg></a>
+
 </figure>
+
+</div>
 <!-- /gui-guide -->
 
 ## Browser file handling
@@ -54,10 +64,15 @@ The browser's **Recent projects** list includes projects it keeps. After a reloa
 Recovery is useful, but it is not a substitute for keeping your own project copy.
 
 <!-- gui-guide:recent-projects-and-recovery -->
+<div class="gui-viewer" markdown="1">
+
 <figure class="gui-figure" data-gui-figure>
-<a class="gui-image-link" href="../assets/gui/y2o3/guide-project-recent.png?v=40fd15debdc0" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Find recent projects"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Find recent projects"><title>Find recent projects</title><defs><clipPath id="gui-clip-guide-project-recent-overview-projects-recent-projects-and-recovery-0"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-project-recent.png?v=40fd15debdc0" width="1480" height="800" clip-path="url(#gui-clip-guide-project-recent-overview-projects-recent-projects-and-recovery-0)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-project-recent-overview-projects-recent-projects-and-recovery-0-1" data-gui-parts="[[770,203,710,180]]" d="M768.000 201.000 L1482.000 201.000 L1482.000 385.000 L768.000 385.000 Z" /><path data-gui-navigation data-gui-parts="[[595.46875,0,59.734375,77]]" d="M593.469 -2.000 L657.203 -2.000 L657.203 79.000 L593.469 79.000 Z" /></svg></a>
-<ol class="gui-regions"><li><button type="button" data-gui-target="guide-project-recent-overview-projects-recent-projects-and-recovery-0-1" aria-pressed="true">1. <span class="gui-fa" aria-hidden="true">&#61831;</span>Recent projects</button> </li></ol>
+<p class="gui-view-description">Find recent projects.</p>
+<a class="gui-image-link" href="../assets/gui/y2o3/guide-project-recent.png?v=40fd15debdc0" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Recent projects"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Recent projects"><title>Recent projects</title><defs><clipPath id="gui-clip-guide-project-recent-overview-projects-recent-projects-and-recovery-0-group-recentProjects"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-project-recent.png?v=40fd15debdc0" width="1480" height="800" clip-path="url(#gui-clip-guide-project-recent-overview-projects-recent-projects-and-recovery-0-group-recentProjects)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-project-recent-overview-projects-recent-projects-and-recovery-0-group-recentProjects-1" data-gui-parts="[[770,203,710,180]]" d="M768.000 201.000 L1482.000 201.000 L1482.000 385.000 L768.000 385.000 Z" /><path data-gui-navigation data-gui-parts="[[595.46875,0,59.734375,77]]" d="M593.469 -2.000 L657.203 -2.000 L657.203 79.000 L593.469 79.000 Z" /></svg></a>
+
 </figure>
+
+</div>
 <!-- /gui-guide -->
 
 ## What is saved
@@ -67,10 +82,26 @@ Saving writes the project state and measured data, including the selected analys
 A report is separate: saving a project does not create a fresh report. Use [Save report](reports.md) to update a document you intend to share.
 
 <!-- gui-guide:what-is-saved -->
-<figure class="gui-figure" data-gui-figure>
-<a class="gui-image-link" href="../assets/gui/y2o3/guide-project-actions.png?v=c3e7c73d6016" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Open or save the current project"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Open or save the current project"><title>Open or save the current project</title><defs><clipPath id="gui-clip-guide-project-actions-overview-projects-what-is-saved-0"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-project-actions.png?v=c3e7c73d6016" width="1480" height="800" clip-path="url(#gui-clip-guide-project-actions-overview-projects-what-is-saved-0)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-project-actions-overview-projects-what-is-saved-0-1" data-gui-parts="[[1132,168,334,39]]" d="M1130.000 166.000 L1468.000 166.000 L1468.000 209.000 L1130.000 209.000 Z" /><path class="" data-gui-region="guide-project-actions-overview-projects-what-is-saved-0-2" data-gui-parts="[[784,221,334,39]]" d="M782.000 219.000 L1120.000 219.000 L1120.000 262.000 L782.000 262.000 Z" /><path data-gui-navigation data-gui-parts="[[595.46875,0,59.734375,77]]" d="M593.469 -2.000 L657.203 -2.000 L657.203 79.000 L593.469 79.000 Z" /></svg></a>
-<ol class="gui-regions"><li><button type="button" data-gui-target="guide-project-actions-overview-projects-what-is-saved-0-1" aria-pressed="true">1. <span class="gui-fa" aria-hidden="true">&#61587;</span>Open project…</button> </li><li><button type="button" data-gui-target="guide-project-actions-overview-projects-what-is-saved-0-2" aria-pressed="false">2. <span class="gui-fa" aria-hidden="true">&#62830;</span>Save project as…</button> </li></ol>
-</figure>
+<div class="gui-viewer" markdown="1">
+
+
+=== "<span class='gui-fa' aria-hidden='true'>&#61587;</span>Open project…"
+
+    <figure class="gui-figure" data-gui-figure>
+    <p class="gui-view-description">Open or save the current project.</p>
+    <a class="gui-image-link" href="../assets/gui/y2o3/guide-project-actions.png?v=c3e7c73d6016" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Open project…"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Open project…"><title>Open project…</title><defs><clipPath id="gui-clip-guide-project-actions-overview-projects-what-is-saved-0-project-open"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-project-actions.png?v=c3e7c73d6016" width="1480" height="800" clip-path="url(#gui-clip-guide-project-actions-overview-projects-what-is-saved-0-project-open)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-project-actions-overview-projects-what-is-saved-0-project-open-1" data-gui-parts="[[1132,168,334,39]]" d="M1130.000 166.000 L1468.000 166.000 L1468.000 209.000 L1130.000 209.000 Z" /><path data-gui-navigation data-gui-parts="[[595.46875,0,59.734375,77]]" d="M593.469 -2.000 L657.203 -2.000 L657.203 79.000 L593.469 79.000 Z" /></svg></a>
+
+    </figure>
+
+=== "<span class='gui-fa' aria-hidden='true'>&#62830;</span>Save project as…"
+
+    <figure class="gui-figure" data-gui-figure>
+    <p class="gui-view-description">Open or save the current project.</p>
+    <a class="gui-image-link" href="../assets/gui/y2o3/guide-project-actions.png?v=c3e7c73d6016" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Save project as…"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Save project as…"><title>Save project as…</title><defs><clipPath id="gui-clip-guide-project-actions-overview-projects-what-is-saved-0-project-saveAs"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-project-actions.png?v=c3e7c73d6016" width="1480" height="800" clip-path="url(#gui-clip-guide-project-actions-overview-projects-what-is-saved-0-project-saveAs)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-project-actions-overview-projects-what-is-saved-0-project-saveAs-1" data-gui-parts="[[784,221,334,39]]" d="M782.000 219.000 L1120.000 219.000 L1120.000 262.000 L782.000 262.000 Z" /><path data-gui-navigation data-gui-parts="[[595.46875,0,59.734375,77]]" d="M593.469 -2.000 L657.203 -2.000 L657.203 79.000 L593.469 79.000 Z" /></svg></a>
+
+    </figure>
+
+</div>
 <!-- /gui-guide -->
 
 ## Move to another interface

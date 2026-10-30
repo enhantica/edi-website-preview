@@ -11,7 +11,9 @@ The native screenshot importer and `gui-capture` renderer already pair PNGs with
 
 All generated GUI figures fill the text column. The rounded clip applies only to the screenshot image; its frame and square highlight paths are separate siblings. The SVG allows visible overflow. Each highlight expands by 1.5 displayed CSS pixels on each side, recalculated from the viewBox scale by one ResizeObserver. Its outline remains two display pixels through a non-scaling stroke.
 
-Short explanations sit below subsection headings, without repeated image captions. SVG titles retain view-specific descriptions for assistive technology and the enlarged dialog.
+Every GUI switch uses native Zensical content tabs above the image. Tab labels contain names and GUI icons, without numbering or explanatory text. Each selected pane puts a short explanation immediately above its image. The same renderer handles highlight selection, the layout overview, main-view tabs and sidebar tabs; the older buttons below figures are removed. SVG titles retain view-specific descriptions for assistive technology and the enlarged dialog.
+
+A ResizeObserver measures the natural height of each viewer's explanations at its current width and reserves their maximum height. Switching tabs therefore keeps the image in place, including on narrow screens and after resizing. Explanations can wrap without clipping. Hidden measurement clones are removed synchronously and excluded from accessibility.
 
 Sidebar paths join the selected native tab and the body below the tab strip, using the capture's geometry. Missing or inconsistent tab geometry refuses generation. All sidebar views show this compound shape. The same rendering path serves the walkthrough, layout guide and enlarged view; it does not alter native images or metadata.
 

@@ -13,10 +13,26 @@ The application supports line-segment backgrounds, represented by points, and po
 Changing the background type replaces its representation; review the confirmation before removing points or terms you want to keep.
 
 <!-- gui-guide:choose-a-background-representation -->
-<figure class="gui-figure" data-gui-figure>
-<a class="gui-image-link" href="../assets/gui/y2o3/guide-experiment-background.png?v=26e09d16e703" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Inspect the background representation and values"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Inspect the background representation and values"><title>Inspect the background representation and values</title><defs><clipPath id="gui-clip-guide-experiment-background-overview-background-choose-a-background-representation-0"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-experiment-background.png?v=26e09d16e703" width="1480" height="800" clip-path="url(#gui-clip-guide-experiment-background-overview-background-choose-a-background-representation-0)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-experiment-background-overview-background-choose-a-background-representation-0-1" data-gui-parts="[[784,210,339.25,56]]" d="M782.000 208.000 L1125.250 208.000 L1125.250 268.000 L782.000 268.000 Z" /><path class="" data-gui-region="guide-experiment-background-overview-background-choose-a-background-representation-0-2" data-gui-parts="[[784,210,682,337.5]]" d="M782.000 208.000 L1468.000 208.000 L1468.000 549.500 L782.000 549.500 Z" /><path data-gui-navigation data-gui-parts="[[727.453125,0,84.90625,77]]" d="M725.453 -2.000 L814.359 -2.000 L814.359 79.000 L725.453 79.000 Z" /></svg></a>
-<ol class="gui-regions"><li><button type="button" data-gui-target="guide-experiment-background-overview-background-choose-a-background-representation-0-1" aria-pressed="true">1. Background model</button> Choose the background representation.</li><li><button type="button" data-gui-target="guide-experiment-background-overview-background-choose-a-background-representation-0-2" aria-pressed="false">2. Background values</button> Inspect or edit the values in the selected representation.</li></ol>
-</figure>
+<div class="gui-viewer" markdown="1">
+
+
+=== "Background model"
+
+    <figure class="gui-figure" data-gui-figure>
+    <p class="gui-view-description">Choose the background representation.</p>
+    <a class="gui-image-link" href="../assets/gui/y2o3/guide-experiment-background.png?v=26e09d16e703" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Background model"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Background model"><title>Background model</title><defs><clipPath id="gui-clip-guide-experiment-background-overview-background-choose-a-background-representation-0-background-type"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-experiment-background.png?v=26e09d16e703" width="1480" height="800" clip-path="url(#gui-clip-guide-experiment-background-overview-background-choose-a-background-representation-0-background-type)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-experiment-background-overview-background-choose-a-background-representation-0-background-type-1" data-gui-parts="[[784,210,339.25,56]]" d="M782.000 208.000 L1125.250 208.000 L1125.250 268.000 L782.000 268.000 Z" /><path data-gui-navigation data-gui-parts="[[727.453125,0,84.90625,77]]" d="M725.453 -2.000 L814.359 -2.000 L814.359 79.000 L725.453 79.000 Z" /></svg></a>
+
+    </figure>
+
+=== "Background values"
+
+    <figure class="gui-figure" data-gui-figure>
+    <p class="gui-view-description">Inspect or edit the values in the selected representation.</p>
+    <a class="gui-image-link" href="../assets/gui/y2o3/guide-experiment-background.png?v=26e09d16e703" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Background values"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Background values"><title>Background values</title><defs><clipPath id="gui-clip-guide-experiment-background-overview-background-choose-a-background-representation-0-background-rows"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-experiment-background.png?v=26e09d16e703" width="1480" height="800" clip-path="url(#gui-clip-guide-experiment-background-overview-background-choose-a-background-representation-0-background-rows)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-experiment-background-overview-background-choose-a-background-representation-0-background-rows-1" data-gui-parts="[[784,210,682,337.5]]" d="M782.000 208.000 L1468.000 208.000 L1468.000 549.500 L782.000 549.500 Z" /><path data-gui-navigation data-gui-parts="[[727.453125,0,84.90625,77]]" d="M725.453 -2.000 L814.359 -2.000 L814.359 79.000 L725.453 79.000 Z" /></svg></a>
+
+    </figure>
+
+</div>
 <!-- /gui-guide -->
 
 ## Estimate the background
@@ -31,10 +47,26 @@ The **estimation mode** controls what happens next:
 You can still free or fix a value through its context menu.
 
 <!-- gui-guide:estimate-the-background -->
-<figure class="gui-figure" data-gui-figure>
-<a class="gui-image-link" href="../assets/gui/y2o3/guide-experiment-background.png?v=26e09d16e703" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Inspect the background representation and values"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Inspect the background representation and values"><title>Inspect the background representation and values</title><defs><clipPath id="gui-clip-guide-experiment-background-overview-background-estimate-the-background-0"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-experiment-background.png?v=26e09d16e703" width="1480" height="800" clip-path="url(#gui-clip-guide-experiment-background-overview-background-estimate-the-background-0)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-experiment-background-overview-background-estimate-the-background-0-1" data-gui-parts="[[784,210,339.25,56]]" d="M782.000 208.000 L1125.250 208.000 L1125.250 268.000 L782.000 268.000 Z" /><path class="" data-gui-region="guide-experiment-background-overview-background-estimate-the-background-0-2" data-gui-parts="[[784,210,682,337.5]]" d="M782.000 208.000 L1468.000 208.000 L1468.000 549.500 L782.000 549.500 Z" /><path data-gui-navigation data-gui-parts="[[727.453125,0,84.90625,77]]" d="M725.453 -2.000 L814.359 -2.000 L814.359 79.000 L725.453 79.000 Z" /></svg></a>
-<ol class="gui-regions"><li><button type="button" data-gui-target="guide-experiment-background-overview-background-estimate-the-background-0-1" aria-pressed="true">1. Background model</button> Choose the background representation.</li><li><button type="button" data-gui-target="guide-experiment-background-overview-background-estimate-the-background-0-2" aria-pressed="false">2. Background values</button> Inspect or edit the values in the selected representation.</li></ol>
-</figure>
+<div class="gui-viewer" markdown="1">
+
+
+=== "Background model"
+
+    <figure class="gui-figure" data-gui-figure>
+    <p class="gui-view-description">Choose the background representation.</p>
+    <a class="gui-image-link" href="../assets/gui/y2o3/guide-experiment-background.png?v=26e09d16e703" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Background model"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Background model"><title>Background model</title><defs><clipPath id="gui-clip-guide-experiment-background-overview-background-estimate-the-background-0-background-type"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-experiment-background.png?v=26e09d16e703" width="1480" height="800" clip-path="url(#gui-clip-guide-experiment-background-overview-background-estimate-the-background-0-background-type)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-experiment-background-overview-background-estimate-the-background-0-background-type-1" data-gui-parts="[[784,210,339.25,56]]" d="M782.000 208.000 L1125.250 208.000 L1125.250 268.000 L782.000 268.000 Z" /><path data-gui-navigation data-gui-parts="[[727.453125,0,84.90625,77]]" d="M725.453 -2.000 L814.359 -2.000 L814.359 79.000 L725.453 79.000 Z" /></svg></a>
+
+    </figure>
+
+=== "Background values"
+
+    <figure class="gui-figure" data-gui-figure>
+    <p class="gui-view-description">Inspect or edit the values in the selected representation.</p>
+    <a class="gui-image-link" href="../assets/gui/y2o3/guide-experiment-background.png?v=26e09d16e703" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Background values"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Background values"><title>Background values</title><defs><clipPath id="gui-clip-guide-experiment-background-overview-background-estimate-the-background-0-background-rows"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-experiment-background.png?v=26e09d16e703" width="1480" height="800" clip-path="url(#gui-clip-guide-experiment-background-overview-background-estimate-the-background-0-background-rows)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-experiment-background-overview-background-estimate-the-background-0-background-rows-1" data-gui-parts="[[784,210,682,337.5]]" d="M782.000 208.000 L1468.000 208.000 L1468.000 549.500 L782.000 549.500 Z" /><path data-gui-navigation data-gui-parts="[[727.453125,0,84.90625,77]]" d="M725.453 -2.000 L814.359 -2.000 L814.359 79.000 L725.453 79.000 Z" /></svg></a>
+
+    </figure>
+
+</div>
 <!-- /gui-guide -->
 
 ## Estimation settings
@@ -53,10 +85,15 @@ The **Extra** tab's **Background** group holds the estimation settings. Leave a 
 Subtracting calculated peaks can help where peaks overlap and the measured intensity never reaches the background. A poor model can make subtraction misleading. The default `auto` choice checks whether the model is suitable and reports its choice below the settings.
 
 <!-- gui-guide:estimation-settings -->
+<div class="gui-viewer" markdown="1">
+
 <figure class="gui-figure" data-gui-figure>
-<a class="gui-image-link" href="../assets/gui/y2o3/guide-experiment-estimation.png?v=c19108ed7d45" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Inspect background estimation settings"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Inspect background estimation settings"><title>Inspect background estimation settings</title><defs><clipPath id="gui-clip-guide-experiment-estimation-overview-background-estimation-settings-0"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-experiment-estimation.png?v=c19108ed7d45" width="1480" height="800" clip-path="url(#gui-clip-guide-experiment-estimation-overview-background-estimation-settings-0)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-experiment-estimation-overview-background-estimation-settings-0-1" data-gui-parts="[[770,119,710,259]]" d="M768.000 117.000 L1482.000 117.000 L1482.000 380.000 L768.000 380.000 Z" /><path data-gui-navigation data-gui-parts="[[727.453125,0,84.90625,77]]" d="M725.453 -2.000 L814.359 -2.000 L814.359 79.000 L725.453 79.000 Z" /></svg></a>
-<ol class="gui-regions"><li><button type="button" data-gui-target="guide-experiment-estimation-overview-background-estimation-settings-0-1" aria-pressed="true">1. <span class="gui-fa" aria-hidden="true">&#61648;</span>Background estimation</button> </li></ol>
+<p class="gui-view-description">Inspect background estimation settings.</p>
+<a class="gui-image-link" href="../assets/gui/y2o3/guide-experiment-estimation.png?v=c19108ed7d45" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Background estimation"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Background estimation"><title>Background estimation</title><defs><clipPath id="gui-clip-guide-experiment-estimation-overview-background-estimation-settings-0-group-background_estimate"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-experiment-estimation.png?v=c19108ed7d45" width="1480" height="800" clip-path="url(#gui-clip-guide-experiment-estimation-overview-background-estimation-settings-0-group-background_estimate)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-experiment-estimation-overview-background-estimation-settings-0-group-background_estimate-1" data-gui-parts="[[770,119,710,259]]" d="M768.000 117.000 L1482.000 117.000 L1482.000 380.000 L768.000 380.000 Z" /><path data-gui-navigation data-gui-parts="[[727.453125,0,84.90625,77]]" d="M725.453 -2.000 L814.359 -2.000 L814.359 79.000 L725.453 79.000 Z" /></svg></a>
+
 </figure>
+
+</div>
 <!-- /gui-guide -->
 
 ## A practical sequence
@@ -66,10 +103,34 @@ Subtracting calculated peaks can help where peaks overlap and the measured inten
 3. Inspect the residual and estimate again if the improved model makes the background clearer.
 
 <!-- gui-guide:a-practical-sequence -->
-<figure class="gui-figure" data-gui-figure>
-<a class="gui-image-link" href="../assets/gui/y2o3/13-analysis-basic.png?v=c3a1fb56d69b" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Completed Rietveld refinement — Main"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Completed Rietveld refinement — Main"><title>Completed Rietveld refinement — Main</title><defs><clipPath id="gui-clip-13-analysis-basic-overview-background-a-practical-sequence-0"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/13-analysis-basic.png?v=c3a1fb56d69b" width="1480" height="800" clip-path="url(#gui-clip-13-analysis-basic-overview-background-a-practical-sequence-0)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="13-analysis-basic-overview-background-a-practical-sequence-0-1" data-gui-parts="[[0,77,770,681]]" d="M-2.000 75.000 L772.000 75.000 L772.000 760.000 L-2.000 760.000 Z" /><path class="" data-gui-region="13-analysis-basic-overview-background-a-practical-sequence-0-2" data-gui-parts="[[770,119,710,639],[770,77,43.515625,42]]" d="M768.000 117.000 L768.000 117.000 L768.000 75.000 L815.516 75.000 L815.516 117.000 L1482.000 117.000 L1482.000 760.000 L768.000 760.000 Z" /><path class="" data-gui-region="13-analysis-basic-overview-background-a-practical-sequence-0-3" data-gui-parts="[[0,758,1480,42]]" d="M-2.000 756.000 L1482.000 756.000 L1482.000 802.000 L-2.000 802.000 Z" /><path data-gui-navigation data-gui-parts="[[812.359375,0,67.84375,77]]" d="M810.359 -2.000 L882.203 -2.000 L882.203 79.000 L810.359 79.000 Z" /></svg></a>
-<ol class="gui-regions"><li><button type="button" data-gui-target="13-analysis-basic-overview-background-a-practical-sequence-0-1" aria-pressed="true">1. Main workspace</button> Inspect the analysis view here. Its content changes with the active page and selection.</li><li><button type="button" data-gui-target="13-analysis-basic-overview-background-a-practical-sequence-0-2" aria-pressed="false">2. Sidebar</button> Use the enabled Main, Extra, Text and Settings tabs to inspect and edit this page.</li><li><button type="button" data-gui-target="13-analysis-basic-overview-background-a-practical-sequence-0-3" aria-pressed="false">3. Status bar</button> Read project counts, messages, calculation and fitting state here.</li></ol>
-</figure>
+<div class="gui-viewer" markdown="1">
+
+
+=== "Main workspace"
+
+    <figure class="gui-figure" data-gui-figure>
+    <p class="gui-view-description">Inspect the analysis view here. Its content changes with the active page and selection.</p>
+    <a class="gui-image-link" href="../assets/gui/y2o3/13-analysis-basic.png?v=c3a1fb56d69b" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Main workspace"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Main workspace"><title>Main workspace</title><defs><clipPath id="gui-clip-13-analysis-basic-overview-background-a-practical-sequence-0-workflow-analysis-mainContent"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/13-analysis-basic.png?v=c3a1fb56d69b" width="1480" height="800" clip-path="url(#gui-clip-13-analysis-basic-overview-background-a-practical-sequence-0-workflow-analysis-mainContent)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="13-analysis-basic-overview-background-a-practical-sequence-0-workflow-analysis-mainContent-1" data-gui-parts="[[0,77,770,681]]" d="M-2.000 75.000 L772.000 75.000 L772.000 760.000 L-2.000 760.000 Z" /><path data-gui-navigation data-gui-parts="[[812.359375,0,67.84375,77]]" d="M810.359 -2.000 L882.203 -2.000 L882.203 79.000 L810.359 79.000 Z" /></svg></a>
+
+    </figure>
+
+=== "Sidebar"
+
+    <figure class="gui-figure" data-gui-figure>
+    <p class="gui-view-description">Use the enabled Main, Extra, Text and Settings tabs to inspect and edit this page.</p>
+    <a class="gui-image-link" href="../assets/gui/y2o3/13-analysis-basic.png?v=c3a1fb56d69b" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Sidebar"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Sidebar"><title>Sidebar</title><defs><clipPath id="gui-clip-13-analysis-basic-overview-background-a-practical-sequence-0-workflow-analysis-manualSidebar"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/13-analysis-basic.png?v=c3a1fb56d69b" width="1480" height="800" clip-path="url(#gui-clip-13-analysis-basic-overview-background-a-practical-sequence-0-workflow-analysis-manualSidebar)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="13-analysis-basic-overview-background-a-practical-sequence-0-workflow-analysis-manualSidebar-1" data-gui-parts="[[770,119,710,639],[770,77,43.515625,42]]" d="M768.000 117.000 L768.000 117.000 L768.000 75.000 L815.516 75.000 L815.516 117.000 L1482.000 117.000 L1482.000 760.000 L768.000 760.000 Z" /><path data-gui-navigation data-gui-parts="[[812.359375,0,67.84375,77]]" d="M810.359 -2.000 L882.203 -2.000 L882.203 79.000 L810.359 79.000 Z" /></svg></a>
+
+    </figure>
+
+=== "Status bar"
+
+    <figure class="gui-figure" data-gui-figure>
+    <p class="gui-view-description">Read project counts, messages, calculation and fitting state here.</p>
+    <a class="gui-image-link" href="../assets/gui/y2o3/13-analysis-basic.png?v=c3a1fb56d69b" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Status bar"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Status bar"><title>Status bar</title><defs><clipPath id="gui-clip-13-analysis-basic-overview-background-a-practical-sequence-0-statusBar"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/13-analysis-basic.png?v=c3a1fb56d69b" width="1480" height="800" clip-path="url(#gui-clip-13-analysis-basic-overview-background-a-practical-sequence-0-statusBar)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="13-analysis-basic-overview-background-a-practical-sequence-0-statusBar-1" data-gui-parts="[[0,758,1480,42]]" d="M-2.000 756.000 L1482.000 756.000 L1482.000 802.000 L-2.000 802.000 Z" /><path data-gui-navigation data-gui-parts="[[812.359375,0,67.84375,77]]" d="M810.359 -2.000 L882.203 -2.000 L882.203 79.000 L810.359 79.000 Z" /></svg></a>
+
+    </figure>
+
+</div>
 <!-- /gui-guide -->
 
 ## Exclude an interval
@@ -79,10 +140,15 @@ Use **Excluded regions** on the Experiment page to declare intervals that should
 Save the project to keep its background settings and excluded regions.
 
 <!-- gui-guide:exclude-an-interval -->
+<div class="gui-viewer" markdown="1">
+
 <figure class="gui-figure" data-gui-figure>
-<a class="gui-image-link" href="../assets/gui/y2o3/guide-experiment-exclusions.png?v=f01745c5a547" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Inspect excluded fitting intervals"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Inspect excluded fitting intervals"><title>Inspect excluded fitting intervals</title><defs><clipPath id="gui-clip-guide-experiment-exclusions-overview-background-exclude-an-interval-0"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-experiment-exclusions.png?v=f01745c5a547" width="1480" height="800" clip-path="url(#gui-clip-guide-experiment-exclusions-overview-background-exclude-an-interval-0)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-experiment-exclusions-overview-background-exclude-an-interval-0-1" data-gui-parts="[[784,336,682,117]]" d="M782.000 334.000 L1468.000 334.000 L1468.000 455.000 L782.000 455.000 Z" /><path data-gui-navigation data-gui-parts="[[727.453125,0,84.90625,77]]" d="M725.453 -2.000 L814.359 -2.000 L814.359 79.000 L725.453 79.000 Z" /></svg></a>
-<ol class="gui-regions"><li><button type="button" data-gui-target="guide-experiment-exclusions-overview-background-exclude-an-interval-0-1" aria-pressed="true">1. Excluded intervals</button> Set the boundaries of regions omitted from fitting.</li></ol>
+<p class="gui-view-description">Set the boundaries of regions omitted from fitting.</p>
+<a class="gui-image-link" href="../assets/gui/y2o3/guide-experiment-exclusions.png?v=f01745c5a547" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Excluded intervals"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Excluded intervals"><title>Excluded intervals</title><defs><clipPath id="gui-clip-guide-experiment-exclusions-overview-background-exclude-an-interval-0-excludedRegions-list"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-experiment-exclusions.png?v=f01745c5a547" width="1480" height="800" clip-path="url(#gui-clip-guide-experiment-exclusions-overview-background-exclude-an-interval-0-excludedRegions-list)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-experiment-exclusions-overview-background-exclude-an-interval-0-excludedRegions-list-1" data-gui-parts="[[784,336,682,117]]" d="M782.000 334.000 L1468.000 334.000 L1468.000 455.000 L782.000 455.000 Z" /><path data-gui-navigation data-gui-parts="[[727.453125,0,84.90625,77]]" d="M725.453 -2.000 L814.359 -2.000 L814.359 79.000 L725.453 79.000 Z" /></svg></a>
+
 </figure>
+
+</div>
 <!-- /gui-guide -->
 
 ## Related Physics

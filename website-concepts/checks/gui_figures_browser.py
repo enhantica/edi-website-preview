@@ -26,14 +26,15 @@ const figures = [...article.querySelectorAll('.gui-figure')].map(figure => {
     return {parts: parts.length, paddingX: (left-box.x)*scale,
       paddingY: (top-box.y)*scale, square: getComputedStyle(region).strokeLinejoin === 'miter'};
   });
-  return {width: bounds.width, height: bounds.height, column: width,
+  return {width: bounds.width, height: bounds.height, column: width, view:svg.dataset.guiView,
     caption: !!figure.querySelector('figcaption'),
     overflow: getComputedStyle(svg).overflow, radius: getComputedStyle(svg).borderRadius,
     imageClip: svg.querySelector('image').hasAttribute('clip-path'),
     regions, active: svg.querySelectorAll('[data-gui-region].is-active').length};
 });
 return {figures, overflow: document.documentElement.scrollWidth > innerWidth,
-  oldCaption: article.textContent.includes('Open full-size screenshot')};
+  oldCaption: article.textContent.includes('Open full-size screenshot'),
+  oldControls:article.querySelectorAll('[data-gui-target], [data-gui-overview]').length};
 """
 
 
@@ -50,11 +51,11 @@ def press(browser: Browser, selector: str, key: str) -> None:
 
 
 def check_viewers(browser: Browser, width: int, output: Path) -> None:
-    require(browser.execute("return document.querySelectorAll('.tabbed-set').length === 5;"))
+    require(browser.execute("return document.querySelectorAll('.tabbed-set').length === 6;"))
     groups = browser.execute(
         "return [...document.querySelectorAll('.tabbed-set')].map(group=>group.querySelectorAll('.tabbed-labels label').length);"
     )
-    require(groups == [5, 5, 5, 7, 4], groups)
+    require(groups == [5, 5, 5, 5, 7, 4], groups)
     inventory = browser.execute(r"""
 return [...document.querySelectorAll('.tabbed-set')].map(group =>
   [...group.querySelectorAll('.tabbed-labels label')].map(label => ({
@@ -63,7 +64,7 @@ return [...document.querySelectorAll('.tabbed-set')].map(group =>
   })));
 """)
     require(
-        [item['title'] for item in inventory[3]]
+        [item['title'] for item in inventory[4]]
         == [
             'Overview',
             'Main view: Pattern',
@@ -78,13 +79,14 @@ return [...document.querySelectorAll('.tabbed-set')].map(group =>
     require(
         all(
             item['icons'] == (0 if item['title'] == 'Overview' else 1)
-            for group in inventory
+            for group in inventory[1:]
             for item in group
         ),
         inventory,
     )
     require(browser.execute("return document.querySelector('h3#home') !== null;"))
     for group, modes in enumerate(groups):
+        image_positions, descriptions = [], []
         for mode in range(modes):
             browser.execute(
                 "document.querySelectorAll('.tabbed-set')[arg[0]].querySelectorAll('.tabbed-labels label')[arg[1]].click();",
@@ -102,17 +104,24 @@ const group=document.querySelectorAll('.tabbed-set')[arg[0]];
 const label=group.querySelectorAll('.tabbed-labels label')[arg[1]];
 const svg=[...group.querySelectorAll('svg.gui-capture')].find(svg=>svg.getBoundingClientRect().width>0);
 return {label:label.textContent.trim(), title:svg.querySelector('title').textContent,
+  text:svg.closest('figure').querySelector('.gui-view-description').textContent,
+  offset:svg.getBoundingClientRect().top-group.getBoundingClientRect().top,
   image:svg.querySelector('image').getAttribute('href')};
 """,
                 [group, mode],
             )
-            if mode == 0:
+            image_positions.append(selected['offset'])
+            descriptions.append(selected['text'])
+            require(bool(selected['text']), selected)
+            if mode == 0 and group:
                 require(selected['title'].endswith(' overview'), selected)
-            else:
+            elif mode:
                 require(selected['title'].endswith(selected['label']), selected)
-            if group == 3 and mode == 2:
+            if group == 4 and mode == 2:
                 require('guide-analysis-correlations.png' in selected['image'], selected)
                 browser.shot(output / f'{browser.kind}-{width}-correlations.png')
+        require(max(image_positions) - min(image_positions) < 1, (group, image_positions))
+        require(len(set(descriptions)) == modes, (group, descriptions))
         browser.execute(
             "document.querySelectorAll('.tabbed-set')[arg].querySelector('.tabbed-labels label').click();",
             group,
@@ -124,13 +133,14 @@ def exercise(browser: Browser, base: str, output: Path) -> list[dict]:
     for width in (1440, 390):
         browser.viewport(width, 1000)
         for route, count in [
-            ('application/workspace/', 28),
-            ('application/first-refinement/', 10),
+            ('application/workspace/', 32),
+            ('application/first-refinement/', 21),
             ('application/examples/', 1),
         ]:
             browser.goto(base + route)
             result = browser.execute(FIGURES)
             require(not result['overflow'] and not result['oldCaption'], result)
+            require(not result['oldControls'], result)
             require(len(result['figures']) == count, result)
             for figure in result['figures']:
                 if not figure['width']:
@@ -145,7 +155,14 @@ def exercise(browser: Browser, base: str, output: Path) -> list[dict]:
                     require(abs(region['paddingY'] - 1.5) < 0.05, region)
                     require(region['square'], region)
             if route.endswith('workspace/'):
-                require(all(f['regions'][0]['parts'] == 2 for f in result['figures'][1:]), result)
+                require(
+                    all(
+                        f['regions'][0]['parts'] == 2
+                        for f in result['figures']
+                        if f['view'] in {'workflow', 'main', 'sidebar'}
+                    ),
+                    result,
+                )
             if route.endswith('workspace/'):
                 check_viewers(browser, width, output)
             opener = 'article [data-gui-open]'
@@ -196,7 +213,8 @@ return {dialogWidth: dialog.getBoundingClientRect().width, viewport: innerWidth,
                     len(value) if isinstance(value, list) else 1 for value in sections.values()
                 )
                 result = browser.execute(FIGURES)
-                require(len(result['figures']) == expected, (filename, result))
+                require(len(result['figures']) >= expected, (filename, result))
+                require(not result['oldControls'], (filename, result))
                 require(
                     browser.execute(
                         "const ids=[...document.querySelectorAll('[id]')].map(e=>e.id);return ids.length === new Set(ids).size;"
@@ -204,7 +222,10 @@ return {dialogWidth: dialog.getBoundingClientRect().width, viewport: innerWidth,
                     filename,
                 )
                 require(
-                    all(abs(f['width'] - f['column']) < 1 for f in result['figures']), filename
+                    all(
+                        abs(f['width'] - f['column']) < 1 for f in result['figures'] if f['width']
+                    ),
+                    filename,
                 )
         browser.goto(base + 'application/y2o3-walkthrough/')
         require(

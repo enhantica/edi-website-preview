@@ -21,7 +21,27 @@
       region.setAttribute('d', 'M' + points.map(point => point.join(' ')).join(' L') + ' Z');
     });
   };
-  const observer = new ResizeObserver(entries => entries.forEach(entry => geometry(entry.target)));
+  const descriptionHeight = viewer => {
+    const width = viewer.getBoundingClientRect().width;
+    if (!width) return;
+    let height = 0;
+    viewer.querySelectorAll('.gui-view-description').forEach(description => {
+      const measure = description.cloneNode(true);
+      measure.setAttribute('aria-hidden', 'true');
+      measure.style.cssText = `position:absolute;visibility:hidden;pointer-events:none;min-block-size:0;block-size:auto;inline-size:${width}px`;
+      viewer.append(measure);
+      height = Math.max(height, measure.getBoundingClientRect().height);
+      measure.remove();
+    });
+    const value = `${Math.ceil(height)}px`;
+    if (viewer.style.getPropertyValue('--gui-description-height') !== value) {
+      viewer.style.setProperty('--gui-description-height', value);
+    }
+  };
+  const observer = new ResizeObserver(entries => entries.forEach(entry => {
+    if (entry.target.matches('.gui-viewer')) descriptionHeight(entry.target);
+    else geometry(entry.target);
+  }));
   const close = () => dialog?.close();
   const show = link => {
     if (!dialog) {
@@ -72,18 +92,6 @@
       show(link);
       return;
     }
-    const button = event.target.closest('[data-gui-target], [data-gui-overview]');
-    if (!button) return;
-    const figure = button.closest('[data-gui-figure]');
-    const active = button.getAttribute('aria-pressed') !== 'true';
-    const overview = button.hasAttribute('data-gui-overview');
-    figure.querySelectorAll('[data-gui-target], [data-gui-overview]').forEach(item => {
-      item.setAttribute('aria-pressed', String(active && item === button));
-    });
-    figure.querySelectorAll('[data-gui-region]').forEach(region => {
-      region.classList.toggle('is-active', active && (overview || region.dataset.guiRegion === button.dataset.guiTarget));
-    });
-    figure.querySelectorAll('[data-gui-direction]').forEach(arrow => arrow.classList.toggle('is-active', active && overview));
   });
   const initialize = () => {
     close();
@@ -91,6 +99,10 @@
     document.querySelectorAll('svg.gui-capture').forEach(svg => {
       observer.observe(svg);
       geometry(svg);
+    });
+    document.querySelectorAll('.gui-viewer').forEach(viewer => {
+      observer.observe(viewer);
+      descriptionHeight(viewer);
     });
   };
   if (typeof document$ !== 'undefined') document$.subscribe(initialize);

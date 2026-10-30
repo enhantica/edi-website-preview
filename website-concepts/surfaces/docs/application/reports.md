@@ -13,10 +13,34 @@ The main view shows the report with its figures and structure views. Inspect it 
 The sidebar has **Export** and **Contents** groups.
 
 <!-- gui-guide:review-the-document -->
-<figure class="gui-figure" data-gui-figure>
-<a class="gui-image-link" href="../assets/gui/y2o3/14-report-basic.png?v=1a34e2660cbe" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Review the fitted structure and report — Main"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Review the fitted structure and report — Main"><title>Review the fitted structure and report — Main</title><defs><clipPath id="gui-clip-14-report-basic-overview-reports-review-the-document-0"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/14-report-basic.png?v=1a34e2660cbe" width="1480" height="800" clip-path="url(#gui-clip-14-report-basic-overview-reports-review-the-document-0)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="14-report-basic-overview-reports-review-the-document-0-1" data-gui-parts="[[0,77,770,681]]" d="M-2.000 75.000 L772.000 75.000 L772.000 760.000 L-2.000 760.000 Z" /><path class="" data-gui-region="14-report-basic-overview-reports-review-the-document-0-2" data-gui-parts="[[770,119,710,639],[770,77,43.515625,42]]" d="M768.000 117.000 L768.000 117.000 L768.000 75.000 L815.516 75.000 L815.516 117.000 L1482.000 117.000 L1482.000 760.000 L768.000 760.000 Z" /><path class="" data-gui-region="14-report-basic-overview-reports-review-the-document-0-3" data-gui-parts="[[0,758,1480,42]]" d="M-2.000 756.000 L1482.000 756.000 L1482.000 802.000 L-2.000 802.000 Z" /><path data-gui-navigation data-gui-parts="[[880.203125,0,58.25,77]]" d="M878.203 -2.000 L940.453 -2.000 L940.453 79.000 L878.203 79.000 Z" /></svg></a>
-<ol class="gui-regions"><li><button type="button" data-gui-target="14-report-basic-overview-reports-review-the-document-0-1" aria-pressed="true">1. Main workspace</button> Inspect the report view here. Its content changes with the active page and selection.</li><li><button type="button" data-gui-target="14-report-basic-overview-reports-review-the-document-0-2" aria-pressed="false">2. Sidebar</button> Use the enabled Main, Extra, Text and Settings tabs to inspect and edit this page.</li><li><button type="button" data-gui-target="14-report-basic-overview-reports-review-the-document-0-3" aria-pressed="false">3. Status bar</button> Read project counts, messages, calculation and fitting state here.</li></ol>
-</figure>
+<div class="gui-viewer" markdown="1">
+
+
+=== "Main workspace"
+
+    <figure class="gui-figure" data-gui-figure>
+    <p class="gui-view-description">Inspect the report view here. Its content changes with the active page and selection.</p>
+    <a class="gui-image-link" href="../assets/gui/y2o3/14-report-basic.png?v=1a34e2660cbe" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Main workspace"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Main workspace"><title>Main workspace</title><defs><clipPath id="gui-clip-14-report-basic-overview-reports-review-the-document-0-workflow-report-mainContent"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/14-report-basic.png?v=1a34e2660cbe" width="1480" height="800" clip-path="url(#gui-clip-14-report-basic-overview-reports-review-the-document-0-workflow-report-mainContent)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="14-report-basic-overview-reports-review-the-document-0-workflow-report-mainContent-1" data-gui-parts="[[0,77,770,681]]" d="M-2.000 75.000 L772.000 75.000 L772.000 760.000 L-2.000 760.000 Z" /><path data-gui-navigation data-gui-parts="[[880.203125,0,58.25,77]]" d="M878.203 -2.000 L940.453 -2.000 L940.453 79.000 L878.203 79.000 Z" /></svg></a>
+
+    </figure>
+
+=== "Sidebar"
+
+    <figure class="gui-figure" data-gui-figure>
+    <p class="gui-view-description">Use the enabled Main, Extra, Text and Settings tabs to inspect and edit this page.</p>
+    <a class="gui-image-link" href="../assets/gui/y2o3/14-report-basic.png?v=1a34e2660cbe" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Sidebar"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Sidebar"><title>Sidebar</title><defs><clipPath id="gui-clip-14-report-basic-overview-reports-review-the-document-0-workflow-report-manualSidebar"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/14-report-basic.png?v=1a34e2660cbe" width="1480" height="800" clip-path="url(#gui-clip-14-report-basic-overview-reports-review-the-document-0-workflow-report-manualSidebar)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="14-report-basic-overview-reports-review-the-document-0-workflow-report-manualSidebar-1" data-gui-parts="[[770,119,710,639],[770,77,43.515625,42]]" d="M768.000 117.000 L768.000 117.000 L768.000 75.000 L815.516 75.000 L815.516 117.000 L1482.000 117.000 L1482.000 760.000 L768.000 760.000 Z" /><path data-gui-navigation data-gui-parts="[[880.203125,0,58.25,77]]" d="M878.203 -2.000 L940.453 -2.000 L940.453 79.000 L878.203 79.000 Z" /></svg></a>
+
+    </figure>
+
+=== "Status bar"
+
+    <figure class="gui-figure" data-gui-figure>
+    <p class="gui-view-description">Read project counts, messages, calculation and fitting state here.</p>
+    <a class="gui-image-link" href="../assets/gui/y2o3/14-report-basic.png?v=1a34e2660cbe" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Status bar"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Status bar"><title>Status bar</title><defs><clipPath id="gui-clip-14-report-basic-overview-reports-review-the-document-0-statusBar"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/14-report-basic.png?v=1a34e2660cbe" width="1480" height="800" clip-path="url(#gui-clip-14-report-basic-overview-reports-review-the-document-0-statusBar)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="14-report-basic-overview-reports-review-the-document-0-statusBar-1" data-gui-parts="[[0,758,1480,42]]" d="M-2.000 756.000 L1482.000 756.000 L1482.000 802.000 L-2.000 802.000 Z" /><path data-gui-navigation data-gui-parts="[[880.203125,0,58.25,77]]" d="M878.203 -2.000 L940.453 -2.000 L940.453 79.000 L878.203 79.000 Z" /></svg></a>
+
+    </figure>
+
+</div>
 <!-- /gui-guide -->
 
 ## Choose the contents
@@ -26,10 +50,15 @@ The sidebar has **Export** and **Contents** groups.
 These choices are saved with the project. They do not change which data were fitted.
 
 <!-- gui-guide:choose-the-contents -->
+<div class="gui-viewer" markdown="1">
+
 <figure class="gui-figure" data-gui-figure>
-<a class="gui-image-link" href="../assets/gui/y2o3/guide-report-contents.png?v=d7d709216e15" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Choose which sections appear in the report"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Choose which sections appear in the report"><title>Choose which sections appear in the report</title><defs><clipPath id="gui-clip-guide-report-contents-overview-reports-choose-the-contents-0"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-report-contents.png?v=d7d709216e15" width="1480" height="800" clip-path="url(#gui-clip-guide-report-contents-overview-reports-choose-the-contents-0)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-report-contents-overview-reports-choose-the-contents-0-1" data-gui-parts="[[770,161,710,189]]" d="M768.000 159.000 L1482.000 159.000 L1482.000 352.000 L768.000 352.000 Z" /><path data-gui-navigation data-gui-parts="[[880.203125,0,58.25,77]]" d="M878.203 -2.000 L940.453 -2.000 L940.453 79.000 L878.203 79.000 Z" /></svg></a>
-<ol class="gui-regions"><li><button type="button" data-gui-target="guide-report-contents-overview-reports-choose-the-contents-0-1" aria-pressed="true">1. <span class="gui-fa" aria-hidden="true">&#61498;</span>Contents</button> </li></ol>
+<p class="gui-view-description">Choose which sections appear in the report.</p>
+<a class="gui-image-link" href="../assets/gui/y2o3/guide-report-contents.png?v=d7d709216e15" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Contents"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Contents"><title>Contents</title><defs><clipPath id="gui-clip-guide-report-contents-overview-reports-choose-the-contents-0-group-reportContents"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-report-contents.png?v=d7d709216e15" width="1480" height="800" clip-path="url(#gui-clip-guide-report-contents-overview-reports-choose-the-contents-0-group-reportContents)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-report-contents-overview-reports-choose-the-contents-0-group-reportContents-1" data-gui-parts="[[770,161,710,189]]" d="M768.000 159.000 L1482.000 159.000 L1482.000 352.000 L768.000 352.000 Z" /><path data-gui-navigation data-gui-parts="[[880.203125,0,58.25,77]]" d="M878.203 -2.000 L940.453 -2.000 L940.453 79.000 L878.203 79.000 Z" /></svg></a>
+
 </figure>
+
+</div>
 <!-- /gui-guide -->
 
 ## Choose output formats
@@ -45,10 +74,42 @@ The HTML export option can embed the chart libraries for offline use. Without em
 The PDF uses A4 pages and light-colour figures. The application writes PDF; Python and Command Line report generation share the report model and settings but do not write that application PDF.
 
 <!-- gui-guide:choose-output-formats -->
-<figure class="gui-figure" data-gui-figure>
-<a class="gui-image-link" href="../assets/gui/y2o3/guide-report-export.png?v=8d21fb91bca1" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Choose report formats and export"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Choose report formats and export"><title>Choose report formats and export</title><defs><clipPath id="gui-clip-guide-report-export-overview-reports-choose-output-formats-0"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-report-export.png?v=8d21fb91bca1" width="1480" height="800" clip-path="url(#gui-clip-guide-report-export-overview-reports-choose-output-formats-0)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-report-export-overview-reports-choose-output-formats-0-1" data-gui-parts="[[784,175,70.46875,21]]" d="M782.000 173.000 L856.469 173.000 L856.469 198.000 L782.000 198.000 Z" /><path class="" data-gui-region="guide-report-export-overview-reports-choose-output-formats-0-2" data-gui-parts="[[784,224,70.46875,21]]" d="M782.000 222.000 L856.469 222.000 L856.469 247.000 L782.000 247.000 Z" /><path class="" data-gui-region="guide-report-export-overview-reports-choose-output-formats-0-3" data-gui-parts="[[784,273,70.46875,21]]" d="M782.000 271.000 L856.469 271.000 L856.469 296.000 L782.000 296.000 Z" /><path class="" data-gui-region="guide-report-export-overview-reports-choose-output-formats-0-4" data-gui-parts="[[784,315,682,39]]" d="M782.000 313.000 L1468.000 313.000 L1468.000 356.000 L782.000 356.000 Z" /><path data-gui-navigation data-gui-parts="[[880.203125,0,58.25,77]]" d="M878.203 -2.000 L940.453 -2.000 L940.453 79.000 L878.203 79.000 Z" /></svg></a>
-<ol class="gui-regions"><li><button type="button" data-gui-target="guide-report-export-overview-reports-choose-output-formats-0-1" aria-pressed="true">1. HTML report</button> Select an HTML document.</li><li><button type="button" data-gui-target="guide-report-export-overview-reports-choose-output-formats-0-2" aria-pressed="false">2. PDF report</button> Select a PDF document.</li><li><button type="button" data-gui-target="guide-report-export-overview-reports-choose-output-formats-0-3" aria-pressed="false">3. CIF report</button> Select a crystallographic report.</li><li><button type="button" data-gui-target="guide-report-export-overview-reports-choose-output-formats-0-4" aria-pressed="false">4. <span class="gui-fa" aria-hidden="true">&#61465;</span>Save report</button> Write the selected report formats.</li></ol>
-</figure>
+<div class="gui-viewer" markdown="1">
+
+
+=== "HTML report"
+
+    <figure class="gui-figure" data-gui-figure>
+    <p class="gui-view-description">Select an HTML document.</p>
+    <a class="gui-image-link" href="../assets/gui/y2o3/guide-report-export.png?v=8d21fb91bca1" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: HTML report"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="HTML report"><title>HTML report</title><defs><clipPath id="gui-clip-guide-report-export-overview-reports-choose-output-formats-0-report-writesHtml"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-report-export.png?v=8d21fb91bca1" width="1480" height="800" clip-path="url(#gui-clip-guide-report-export-overview-reports-choose-output-formats-0-report-writesHtml)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-report-export-overview-reports-choose-output-formats-0-report-writesHtml-1" data-gui-parts="[[784,175,70.46875,21]]" d="M782.000 173.000 L856.469 173.000 L856.469 198.000 L782.000 198.000 Z" /><path data-gui-navigation data-gui-parts="[[880.203125,0,58.25,77]]" d="M878.203 -2.000 L940.453 -2.000 L940.453 79.000 L878.203 79.000 Z" /></svg></a>
+
+    </figure>
+
+=== "PDF report"
+
+    <figure class="gui-figure" data-gui-figure>
+    <p class="gui-view-description">Select a PDF document.</p>
+    <a class="gui-image-link" href="../assets/gui/y2o3/guide-report-export.png?v=8d21fb91bca1" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: PDF report"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="PDF report"><title>PDF report</title><defs><clipPath id="gui-clip-guide-report-export-overview-reports-choose-output-formats-0-report-writesPdf"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-report-export.png?v=8d21fb91bca1" width="1480" height="800" clip-path="url(#gui-clip-guide-report-export-overview-reports-choose-output-formats-0-report-writesPdf)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-report-export-overview-reports-choose-output-formats-0-report-writesPdf-1" data-gui-parts="[[784,224,70.46875,21]]" d="M782.000 222.000 L856.469 222.000 L856.469 247.000 L782.000 247.000 Z" /><path data-gui-navigation data-gui-parts="[[880.203125,0,58.25,77]]" d="M878.203 -2.000 L940.453 -2.000 L940.453 79.000 L878.203 79.000 Z" /></svg></a>
+
+    </figure>
+
+=== "CIF report"
+
+    <figure class="gui-figure" data-gui-figure>
+    <p class="gui-view-description">Select a crystallographic report.</p>
+    <a class="gui-image-link" href="../assets/gui/y2o3/guide-report-export.png?v=8d21fb91bca1" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: CIF report"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="CIF report"><title>CIF report</title><defs><clipPath id="gui-clip-guide-report-export-overview-reports-choose-output-formats-0-report-writesCif"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-report-export.png?v=8d21fb91bca1" width="1480" height="800" clip-path="url(#gui-clip-guide-report-export-overview-reports-choose-output-formats-0-report-writesCif)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-report-export-overview-reports-choose-output-formats-0-report-writesCif-1" data-gui-parts="[[784,273,70.46875,21]]" d="M782.000 271.000 L856.469 271.000 L856.469 296.000 L782.000 296.000 Z" /><path data-gui-navigation data-gui-parts="[[880.203125,0,58.25,77]]" d="M878.203 -2.000 L940.453 -2.000 L940.453 79.000 L878.203 79.000 Z" /></svg></a>
+
+    </figure>
+
+=== "<span class='gui-fa' aria-hidden='true'>&#61465;</span>Save report"
+
+    <figure class="gui-figure" data-gui-figure>
+    <p class="gui-view-description">Write the selected report formats.</p>
+    <a class="gui-image-link" href="../assets/gui/y2o3/guide-report-export.png?v=8d21fb91bca1" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Save report"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Save report"><title>Save report</title><defs><clipPath id="gui-clip-guide-report-export-overview-reports-choose-output-formats-0-report-save"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-report-export.png?v=8d21fb91bca1" width="1480" height="800" clip-path="url(#gui-clip-guide-report-export-overview-reports-choose-output-formats-0-report-save)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-report-export-overview-reports-choose-output-formats-0-report-save-1" data-gui-parts="[[784,315,682,39]]" d="M782.000 313.000 L1468.000 313.000 L1468.000 356.000 L782.000 356.000 Z" /><path data-gui-navigation data-gui-parts="[[880.203125,0,58.25,77]]" d="M878.203 -2.000 L940.453 -2.000 L940.453 79.000 L878.203 79.000 Z" /></svg></a>
+
+    </figure>
+
+</div>
 <!-- /gui-guide -->
 
 ## Save the report
@@ -58,10 +119,15 @@ Select the desired formats in **Export**, then choose **Save report**. The files
 Turning off a format leaves any previously saved file in place; it does not delete it.
 
 <!-- gui-guide:save-the-report -->
+<div class="gui-viewer" markdown="1">
+
 <figure class="gui-figure" data-gui-figure>
-<a class="gui-image-link" href="../assets/gui/y2o3/guide-report-saved.png?v=87be6c625530" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Review the saved report status"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Review the saved report status"><title>Review the saved report status</title><defs><clipPath id="gui-clip-guide-report-saved-overview-reports-save-the-report-0"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-report-saved.png?v=87be6c625530" width="1480" height="800" clip-path="url(#gui-clip-guide-report-saved-overview-reports-save-the-report-0)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-report-saved-overview-reports-save-the-report-0-1" data-gui-parts="[[770,119,710,249]]" d="M768.000 117.000 L1482.000 117.000 L1482.000 370.000 L768.000 370.000 Z" /><path data-gui-navigation data-gui-parts="[[880.203125,0,58.25,77]]" d="M878.203 -2.000 L940.453 -2.000 L940.453 79.000 L878.203 79.000 Z" /></svg></a>
-<ol class="gui-regions"><li><button type="button" data-gui-target="guide-report-saved-overview-reports-save-the-report-0-1" aria-pressed="true">1. <span class="gui-fa" aria-hidden="true">&#61465;</span>Export</button> </li></ol>
+<p class="gui-view-description">Review the saved report status.</p>
+<a class="gui-image-link" href="../assets/gui/y2o3/guide-report-saved.png?v=87be6c625530" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Export"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Export"><title>Export</title><defs><clipPath id="gui-clip-guide-report-saved-overview-reports-save-the-report-0-group-reportExport"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-report-saved.png?v=87be6c625530" width="1480" height="800" clip-path="url(#gui-clip-guide-report-saved-overview-reports-save-the-report-0-group-reportExport)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-report-saved-overview-reports-save-the-report-0-group-reportExport-1" data-gui-parts="[[770,119,710,249]]" d="M768.000 117.000 L1482.000 117.000 L1482.000 370.000 L768.000 370.000 Z" /><path data-gui-navigation data-gui-parts="[[880.203125,0,58.25,77]]" d="M878.203 -2.000 L940.453 -2.000 L940.453 79.000 L878.203 79.000 Z" /></svg></a>
+
 </figure>
+
+</div>
 <!-- /gui-guide -->
 
 ## Keep saved reports current
@@ -71,10 +137,15 @@ Saved reports are listed with their saved time. A report is marked **out of date
 Use **Save report** again to bring the selected formats up to date. The status survives reopening the project.
 
 <!-- gui-guide:keep-saved-reports-current -->
+<div class="gui-viewer" markdown="1">
+
 <figure class="gui-figure" data-gui-figure>
-<a class="gui-image-link" href="../assets/gui/y2o3/guide-report-saved.png?v=87be6c625530" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Review the saved report status"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Review the saved report status"><title>Review the saved report status</title><defs><clipPath id="gui-clip-guide-report-saved-overview-reports-keep-saved-reports-current-0"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-report-saved.png?v=87be6c625530" width="1480" height="800" clip-path="url(#gui-clip-guide-report-saved-overview-reports-keep-saved-reports-current-0)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-report-saved-overview-reports-keep-saved-reports-current-0-1" data-gui-parts="[[770,119,710,249]]" d="M768.000 117.000 L1482.000 117.000 L1482.000 370.000 L768.000 370.000 Z" /><path data-gui-navigation data-gui-parts="[[880.203125,0,58.25,77]]" d="M878.203 -2.000 L940.453 -2.000 L940.453 79.000 L878.203 79.000 Z" /></svg></a>
-<ol class="gui-regions"><li><button type="button" data-gui-target="guide-report-saved-overview-reports-keep-saved-reports-current-0-1" aria-pressed="true">1. <span class="gui-fa" aria-hidden="true">&#61465;</span>Export</button> </li></ol>
+<p class="gui-view-description">Review the saved report status.</p>
+<a class="gui-image-link" href="../assets/gui/y2o3/guide-report-saved.png?v=87be6c625530" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Export"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Export"><title>Export</title><defs><clipPath id="gui-clip-guide-report-saved-overview-reports-keep-saved-reports-current-0-group-reportExport"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-report-saved.png?v=87be6c625530" width="1480" height="800" clip-path="url(#gui-clip-guide-report-saved-overview-reports-keep-saved-reports-current-0-group-reportExport)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-report-saved-overview-reports-keep-saved-reports-current-0-group-reportExport-1" data-gui-parts="[[770,119,710,249]]" d="M768.000 117.000 L1482.000 117.000 L1482.000 370.000 L768.000 370.000 Z" /><path data-gui-navigation data-gui-parts="[[880.203125,0,58.25,77]]" d="M878.203 -2.000 L940.453 -2.000 L940.453 79.000 L878.203 79.000 Z" /></svg></a>
+
 </figure>
+
+</div>
 <!-- /gui-guide -->
 
 ## Save the project too
@@ -84,10 +155,15 @@ Saving a project keeps the working model and report settings, but does not gener
 The same report settings can be used from [Python](../python/reports.md) or [the Command Line](../cli/reports.md).
 
 <!-- gui-guide:save-the-project-too -->
+<div class="gui-viewer" markdown="1">
+
 <figure class="gui-figure" data-gui-figure>
-<a class="gui-image-link" href="../assets/gui/y2o3/guide-project-save.png?v=de7f11c4d553" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Choose a save format or save a copy"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Choose a save format or save a copy"><title>Choose a save format or save a copy</title><defs><clipPath id="gui-clip-guide-project-save-overview-reports-save-the-project-too-0"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-project-save.png?v=de7f11c4d553" width="1480" height="800" clip-path="url(#gui-clip-guide-project-save-overview-reports-save-the-project-too-0)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-project-save-overview-reports-save-the-project-too-0-1" data-gui-parts="[[607,354,111.84375,93]]" d="M605.000 352.000 L720.844 352.000 L720.844 449.000 L605.000 449.000 Z" /><path data-gui-navigation data-gui-parts="[[595.46875,0,59.734375,77]]" d="M593.469 -2.000 L657.203 -2.000 L657.203 79.000 L593.469 79.000 Z" /></svg></a>
-<ol class="gui-regions"><li><button type="button" data-gui-target="guide-project-save-overview-reports-save-the-project-too-0-1" aria-pressed="true">1. Save options</button> Choose the output format and whether to save a copy.</li></ol>
+<p class="gui-view-description">Choose the output format and whether to save a copy.</p>
+<a class="gui-image-link" href="../assets/gui/y2o3/guide-project-save.png?v=de7f11c4d553" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Save options"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Save options"><title>Save options</title><defs><clipPath id="gui-clip-guide-project-save-overview-reports-save-the-project-too-0-project-saveChoice"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-project-save.png?v=de7f11c4d553" width="1480" height="800" clip-path="url(#gui-clip-guide-project-save-overview-reports-save-the-project-too-0-project-saveChoice)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-project-save-overview-reports-save-the-project-too-0-project-saveChoice-1" data-gui-parts="[[607,354,111.84375,93]]" d="M605.000 352.000 L720.844 352.000 L720.844 449.000 L605.000 449.000 Z" /><path data-gui-navigation data-gui-parts="[[595.46875,0,59.734375,77]]" d="M593.469 -2.000 L657.203 -2.000 L657.203 79.000 L593.469 79.000 Z" /></svg></a>
+
 </figure>
+
+</div>
 <!-- /gui-guide -->
 
 ## Related Physics

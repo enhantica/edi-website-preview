@@ -8,6 +8,7 @@ import html
 import json
 import re
 import shutil
+from itertools import starmap
 from pathlib import Path
 
 from checks.gui_capture import validate_bundle
@@ -183,25 +184,45 @@ def gui_icon(item: dict) -> str:
     return f'<span class="gui-fa" aria-hidden="true">&#{code};</span>'
 
 
+def pane(title: str, content: str) -> str:
+    title = title.replace('"', "'")
+    return (
+        '\n=== "'
+        + title
+        + '"\n\n'
+        + '\n'.join('    ' + line if line else '' for line in content.splitlines())
+        + '\n'
+    )
+
+
+def viewer(panes: list[tuple[str, str]]) -> str:
+    content = ''.join(starmap(pane, panes)) if len(panes) > 1 else panes[0][1]
+    return '<div class="gui-viewer" markdown="1">\n\n' + content + '\n</div>\n'
+
+
 def figure(
     scene: dict,
     *,
     view: str = 'overview',
     instance: str = '',
-    main_tab: str = '',
     description: str = '',
+    explanation: str = '',
+    selection: str = '',
+    interactive: bool = True,
 ) -> str:
     meta = scene['layout']
     image = '../assets/gui/y2o3/' + scene['image'] + '?v=' + meta['image_sha256'][:12]
     description = html.escape(description or scene['description'], quote=True)
     identity = f'{scene["id"]}-{view}' + (f'-{instance}' if instance else '')
+    if selection:
+        identity += '-' + selection.replace('.', '-')
     targets = (
         [f'workflow.{scene["page"]}.manualSidebar']
         if view == 'sidebar'
         else ([f'workflow.{scene["page"]}.page'] if view == 'workflow' else meta['highlights'])
     )
     if view == 'main':
-        targets = [f'mainView.{scene["page"]}.{main_tab.rsplit(".", 1)[1]}']
+        targets = [f'mainView.{scene["page"]}.{selection.rsplit(".", 1)[1]}']
     navigation = ''
     if view == 'overview':
         targets = [target for target in targets if target != 'appBar']
@@ -218,31 +239,48 @@ def figure(
         navigation = (
             f'<path data-gui-navigation data-gui-parts="{data}" d="{region_path(parts)}" />'
         )
-    paths, buttons = [], []
+    if interactive and view in {'overview', 'layout'}:
+        panes = []
+        if view == 'layout':
+            panes.append((
+                'Overview',
+                figure(
+                    scene,
+                    view=view,
+                    instance=instance,
+                    interactive=False,
+                    explanation='Follow the workflow from left to right, then read the sidebar controls from top to bottom.',
+                ),
+            ))
+        for target in targets:
+            item = meta['items'].get(target, {})
+            title, text = label(target, scene['page'], item.get('label', ''))
+            panes.append((
+                gui_icon(item) + html.escape(title),
+                figure(
+                    scene,
+                    view=view,
+                    instance=instance,
+                    selection=target,
+                    interactive=False,
+                    description=title,
+                    explanation=text or scene['description'].rstrip('.') + '.',
+                ),
+            ))
+        return viewer(panes)
+    if selection and view != 'main':
+        targets = [selection]
+    paths = []
     for number, target in enumerate(targets, 1):
         parts = region_parts(meta, target)
-        title, text = label(target, scene['page'], meta['items'].get(target, {}).get('label', ''))
         key = f'{identity}-{number}'
         data = html.escape(json.dumps(parts, separators=(',', ':')), quote=True)
         paths.append(
             f'<path class="{"is-active" if number == 1 or view == "layout" else ""}" data-gui-region="{key}" '
             f'data-gui-parts="{data}" d="{region_path(parts)}" />'
         )
-        buttons.append(
-            f'<li><button type="button" data-gui-target="{key}" aria-pressed="{"true" if number == 1 and view != "layout" else "false"}">'
-            f'{number}. {gui_icon(meta["items"].get(target, {}))}{html.escape(title)}</button> {html.escape(text)}</li>'
-        )
-    if view in {'sidebar', 'workflow', 'main'}:
-        controls = ''
-    else:
-        overview = (
-            '<li><button type="button" data-gui-overview aria-pressed="true">Layout overview</button> Follow the workflow from left to right, then the sidebar from top to bottom.</li>'
-            if view == 'layout'
-            else ''
-        )
-        controls = '<ol class="gui-regions">' + overview + ''.join(buttons) + '</ol>'
     arrows = ''
-    if view == 'layout':
+    if view == 'layout' and not selection:
         for axis, name in [
             ('x', 'appBar.workflow'),
             ('y', f'workflow.{scene["page"]}.manualSidebar'),
@@ -285,9 +323,14 @@ def figure(
     clip = f'gui-clip-{identity}'
     return (
         '<figure class="gui-figure" data-gui-figure>\n'
-        f'<a class="gui-image-link" href="{image}" data-gui-open aria-haspopup="dialog" '
+        + (
+            f'<p class="gui-view-description">{html.escape(explanation)}</p>\n'
+            if explanation
+            else ''
+        )
+        + f'<a class="gui-image-link" href="{image}" data-gui-open aria-haspopup="dialog" '
         f'aria-label="Enlarge screenshot: {description}">'
-        f'<svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="{description}">'
+        f'<svg class="gui-capture" data-gui-view="{view}" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="{description}">'
         f'<title>{description}</title><defs><clipPath id="{clip}"><rect width="1480" height="800" rx="12" /></clipPath></defs>'
         f'<image href="{image}" width="1480" height="800" clip-path="url(#{clip})" />'
         '<rect class="gui-image-frame" width="1480" height="800" rx="12" />'
@@ -295,7 +338,6 @@ def figure(
         + navigation
         + arrows
         + '</svg></a>\n'
-        + controls
         + '\n</figure>\n'
     )
 
@@ -424,7 +466,7 @@ The experiment input contains the measured pattern, instrument, profile, backgro
 
 ## Main regions
 
-The arrows show how to follow the workflow and read the controls. Select an explanation below to highlight a region. The example shows **Analysis after fitting**, with the results popup closed.
+The arrows show how to follow the workflow and read the controls. Choose a tab to highlight a region. The example shows **Analysis after fitting**, with the results popup closed.
 
 """
     workspace += figure(by_id['13-analysis-basic'], view='layout')
@@ -461,15 +503,63 @@ Selecting a structure or experiment changes the model being inspected. The statu
         'report': 'Review the results and choose what to include in an exported report.',
     }
 
-    def pane(title: str, content: str) -> str:
-        return (
-            '\n=== "'
-            + title
-            + '"\n\n'
-            + '\n'.join('    ' + line if line else '' for line in content.splitlines())
-            + '\n'
-        )
-
+    main_descriptions = {
+        'project': {
+            'Project': 'Read the project details, location, structures and experiments in one view.'
+        },
+        'structure': {
+            'Structure': 'Inspect the selected crystal structure and its unit cell in the interactive view.'
+        },
+        'experiment': {
+            'Pattern': 'Compare measured and calculated intensities, reflection marks and the residual pattern.'
+        },
+        'analysis': {
+            'Pattern': 'Inspect the fitted pattern, residual and agreement factors for the selected experiment.',
+            'Correlations': 'Inspect correlations between refined parameters to identify strongly coupled values.',
+        },
+        'report': {
+            'Report': 'Read the report preview for the current model and results before exporting it.'
+        },
+    }
+    sidebar_descriptions = {
+        (
+            'project',
+            'Main',
+        ): 'Create or open a project, browse built-in examples and return to recent work.',
+        (
+            'structure',
+            'Main',
+        ): 'Select a structure and edit its symmetry, cell, atom sites and displacement parameters.',
+        (
+            'experiment',
+            'Main',
+        ): 'Choose an experiment and edit its instrument, profile, background and linked structures.',
+        (
+            'analysis',
+            'Main',
+        ): 'Choose free parameters, inspect their values and bounds, and adjust the selected value.',
+        (
+            'report',
+            'Main',
+        ): 'Choose output formats, save locations and the sections included in the report.',
+        (
+            'project',
+            'Extra',
+        ): 'Choose how standard uncertainties are displayed in the project data.',
+        ('structure', 'Extra'): 'Adjust the structure appearance and scattering-length settings.',
+        (
+            'experiment',
+            'Extra',
+        ): 'Configure intensity corrections, scattering sources and background estimation.',
+        (
+            'analysis',
+            'Extra',
+        ): 'Configure fitting modes, minimizers, parameter aliases and constraints.',
+    }
+    common_descriptions = {
+        'Text': "Inspect or edit this page's project data in its text representation.",
+        'Settings': 'Choose which parameters are shown and how the pattern updates during editing and fitting.',
+    }
     for name in ['project', 'structure', 'experiment', 'analysis', 'report']:
         icon = {
             'project': 'archive',
@@ -478,12 +568,20 @@ Selecting a structure or experiment changes the model being inspected. The statu
             'analysis': 'calculator',
             'report': 'clipboard-text',
         }[name]
-        gallery += f'\n### :material-{icon}: {name.title()}\n\n{introductions[name]}\n'
+        gallery += f'\n### :material-{icon}: {name.title()}\n'
         modes = [scene for scene in scenes if scene['page'] == name and scene['sidebar']]
         base = modes[0]
-        gallery += pane(
-            'Overview', figure(base, view='workflow', description=f'{name.title()} overview')
-        )
+        panes = [
+            (
+                'Overview',
+                figure(
+                    base,
+                    view='workflow',
+                    description=f'{name.title()} overview',
+                    explanation=introductions[name],
+                ),
+            )
+        ]
         tabs = sorted(
             (
                 (key, item)
@@ -504,25 +602,31 @@ Selecting a structure or experiment changes the model being inspected. The statu
                     raise ValueError(f'Enabled main-view tab has no capture: {key}')
                 selected = captures[-1]
             title = html.escape(item['label'])
-            gallery += pane(
+            panes.append((
                 f":lucide-monitor: <span class='gui-sr-only'>Main view: </span>{title}",
                 figure(
                     selected,
                     view='main',
-                    main_tab=key,
+                    selection=key,
                     instance=key.rsplit('.', 1)[1],
                     description=f'{name.title()} — Main view: {item["label"]}',
+                    explanation=main_descriptions[name].get(item['label'], introductions[name]),
                 ),
-            )
+            ))
         for scene in modes:
-            gallery += pane(
+            panes.append((
                 f":material-dock-right: <span class='gui-sr-only'>Sidebar: </span>{scene['sidebar']}",
                 figure(
                     scene,
                     view='sidebar',
                     description=f'{name.title()} — Sidebar: {scene["sidebar"]}',
+                    explanation=sidebar_descriptions.get(
+                        (name, scene['sidebar']),
+                        common_descriptions.get(scene['sidebar'], introductions[name]),
+                    ),
                 ),
-            )
+            ))
+        gallery += viewer(panes)
     (DOCS / 'application/workspace.md').write_text(page('Application layout', workspace + gallery))
     if '15-project-examples' in by_id:
         examples = 'The web and desktop applications both include built-in example projects. Go to **Project**, select **Main** and expand **Examples**. Use the search and filters to find a case.\n\n'
