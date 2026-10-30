@@ -6,7 +6,7 @@ hide:
 
 # Application
 
-Work visually, with the pattern or crystal structure beside the controls you are editing.
+Work visually, with the pattern or crystal structure beside the controls you are editing. Use the same application in your browser or install it on your computer.
 
 [Open the web app](https://enhantica.github.io/edi/webapp/){ .md-button .md-button--primary }
 [Download for desktop](desktop.md#download){ .md-button }

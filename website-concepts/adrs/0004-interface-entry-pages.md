@@ -20,3 +20,5 @@ Command Line has separate standalone and Python-package setup pages. Usage examp
 ## Validation
 
 Build checks verify generated links and assets. Browser checks cover the interface entry pages, preview enlargement, one-click download anchor, disabled pending controls, invocation tab parity, and responsive layouts. Capture sources and commands are retained with the screenshot assets.
+
+The Command Line entry explicitly compares standalone executable (no Python installation) with Python package (Python environment), including each invocation. Both use shell commands without Python scripting. Use tabs for differing command syntax; keep the shared Application preview with web/desktop entry links and explain file-access differences on the dedicated pages.

@@ -121,7 +121,7 @@ The available mode depends on the project. One experiment is fitted on its own; 
 
 ## Start and inspect the fit
 
-Choose **Start fitting**. Review the calculated curve and residual as well as the reported agreement factors. Parameter uncertainties and correlations help you understand what the data constrain.
+Press **Fit**. Review the calculated curve and residual as well as the reported agreement factors. Parameter uncertainties and correlations help you understand what the data constrain.
 
 A small agreement factor alone does not establish that the structural model is correct. Inspect unmodelled features and physically implausible values before accepting the result.
 

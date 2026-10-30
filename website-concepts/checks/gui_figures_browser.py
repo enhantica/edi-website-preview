@@ -158,7 +158,7 @@ def exercise(browser: Browser, base: str, output: Path) -> list[dict]:
         browser.viewport(width, 1000)
         for route, count in [
             ('application/workspace/', 33),
-            ('application/first-refinement/', 21),
+            ('application/first-refinement/', 22),
             ('application/examples/', 1),
         ]:
             browser.goto(base + route)

@@ -12,6 +12,14 @@ Compare the measured and calculated intensities over the full range, then inspec
 - Is the baseline appropriate between and under peaks?
 - Does the residual contain a repeated or systematic pattern?
 
+| What you see | Check first | Learn more |
+| --- | --- | --- |
+| Peaks shifted across the pattern | Cell, wavelength and instrument calibration | [Cell and symmetry](../physics/crystallography.md), [calibration](../physics/calibration.md) |
+| Widths or tails disagree | Profile function and its coefficients | [Peak profiles](../physics/profiles.md) |
+| Baseline follows the residual | Background model and excluded regions | [Background](../physics/background.md) |
+| Extra measured peaks | Missing phases, impurities or measurement artefacts | [Structure model](analysis-workflow/structure.md) |
+| Unstable values or large uncertainties | Free parameters, bounds and correlations | [Minimization](../physics/minimization.md) |
+
 Reflection marks show where the structures predict Bragg positions. They help connect a profile disagreement to the contributing phases, but they do not explain every source of intensity in the measurement.
 
 ## Read the agreement factors
@@ -33,6 +41,8 @@ Read how the minimizer ended. Reaching an iteration limit is different from sati
 Keep the starting model and minimizer conditions with the result so another person can repeat the same optimisation.
 
 ## Compare results fairly
+
+Fitting measured data tests how well the chosen model describes that measurement. Comparing a calculation with an independent reference program checks the implementation for that model and case. Both are useful; neither replaces inspection of the physical result.
 
 A meaningful comparison between programs needs matching observations, structures, background, profile, excluded regions, free parameters and starting conditions.
 

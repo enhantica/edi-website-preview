@@ -10,7 +10,7 @@ The command-line interface does not provide a separate structure editor. Its `fi
 
 ## Check a calculation
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi calc path/to/project --dry

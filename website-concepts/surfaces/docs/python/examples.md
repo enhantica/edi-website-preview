@@ -20,6 +20,12 @@ print(f'Rwp: {100 * result.rwp:.2f}%')
 print(f'Reduced chi-square: {result.reduced_chi_square:.2f}')
 ```
 
+For the supplied starting project:
+
+```text
+Rwp: 1.34%   ·   Reduced χ²: 1.20
+```
+
 The notebook plots measured and calculated arrays with Plotly. Expand its plotting cell to see or change the code. [Inspect results](results.md) describes parameter values and uncertainties.
 
 ## Keep the result

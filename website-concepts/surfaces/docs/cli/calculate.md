@@ -4,7 +4,7 @@
 
 ## Run a calculation
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi calc path/to/project
@@ -20,7 +20,7 @@ The project's structures, experiments, data grids and calculation settings suppl
 
 ## Calculate without writing
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi calc path/to/project --dry
@@ -36,7 +36,7 @@ The calculation still runs and reports its result. The project's files stay unch
 
 ## Keep a separate result
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi calc path/to/project --output calculated-project
@@ -56,7 +56,7 @@ A zip input is never rewritten by the calculation command. Without `--output`, i
 
 Unlike `fit`, `calc` defaults to machine output. Ask for a readable summary with:
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi calc path/to/project --report human --dry

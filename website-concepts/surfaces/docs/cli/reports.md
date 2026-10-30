@@ -6,7 +6,7 @@ The shared [Report](../user-guide/analysis-workflow/report.md) chapter explains 
 
 ## Save the selected formats
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi report path/to/project
@@ -24,7 +24,7 @@ Saving a project does not automatically save its report. A report can become out
 
 ## Write an HTML file elsewhere
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi report path/to/project --output refinement.html --offline
@@ -40,7 +40,7 @@ Saving a project does not automatically save its report. A report can become out
 
 ## Choose the contents
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi report path/to/project --x-axis d_spacing --exclude data
@@ -71,7 +71,7 @@ These switches affect the generated report for that run; they do not replace the
 
 ## Check saved reports
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi report path/to/project --check

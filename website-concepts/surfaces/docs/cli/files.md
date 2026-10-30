@@ -6,7 +6,7 @@ The same complete project is used by the application, Python and Command Line. C
 
 `fit` and `calc` accept:
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi fit path/to/project
@@ -40,7 +40,7 @@ The zip rule differs from Python: `Project.save()` can rewrite an archive opened
 
 ## Export a project archive
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi export path/to/project --output shared-project.zip
@@ -56,7 +56,7 @@ The short spelling is `-o`. Export packages the project folder as last saved; it
 
 ## Keep logs separate from project output
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi fit path/to/project --report machine > fit.txt 2> fit-errors.txt

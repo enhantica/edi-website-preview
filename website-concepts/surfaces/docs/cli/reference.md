@@ -2,7 +2,7 @@
 
 The supported entry point documented here is `python -m edi` in a configured edi environment. Use the installed version's help to confirm the options available to that build:
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi --help
@@ -55,7 +55,7 @@ python -m edi export PROJECT --output FILE.zip
 
 ## Undo the last saved fit
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi undo path/to/project --dry

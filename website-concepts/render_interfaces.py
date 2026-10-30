@@ -83,7 +83,7 @@ def render() -> None:
             DOCS / 'cli/examples.md',
             'example',
             'cli',
-            '=== "Standalone"\n\n    ```console\n    edi ' + command + '\n    ```\n\n'
+            '=== "Standalone executable"\n\n    ```console\n    edi ' + command + '\n    ```\n\n'
             '=== "Python package"\n\n    ```console\n    python -m edi ' + command + '\n    ```',
         )
     for name, image, title, crop in [

@@ -95,6 +95,8 @@ Enter a name, title, authors and description for the analysis. Choose a location
 
 </div>
 
+The Project page now shows your project name and details.
+
 ## Inspect the project
 
 The Project page keeps the analysis details together. The enabled sidebar tabs offer additional views of this state.
@@ -122,7 +124,7 @@ The Project page keeps the analysis details together. The enabled sidebar tabs o
 
 ## Load the structure
 
-Open **Structure**, expand **Structures**, choose **Load** and select **y2o3.edi**.
+Open **Structure**, expand **Structures**, choose **Load structure** and select **y2o3.edi**.
 
 <div class="gui-viewer" markdown="1">
 
@@ -159,9 +161,11 @@ Inspect the cell, symmetry and atom sites. See [crystallography](../physics/crys
 
 </div>
 
+The structure appears in the main view and the Structures count is one.
+
 ## Load the experiment
 
-Open **Experiment**, expand **Experiments**, choose **Load** and select **spodi.edi**.
+Open **Experiment**, expand **Experiments**, choose **Load experiment** and select **spodi.edi**.
 
 <div class="gui-viewer" markdown="1">
 
@@ -198,9 +202,11 @@ Compare the measured and calculated intensities before fitting. Review the [peak
 
 </div>
 
+The measured pattern, calculated curve, reflection marks and residual are visible.
+
 ## Refine the model
 
-Open **Analysis**, inspect the free parameters and press **Fit**. Wait for fitting to finish, review the result and close the results popup. This screenshot shows the completed fit with that popup closed. See [Rietveld refinement](../physics/rietveld.md), [uncertainties](../physics/minimization.md) and [reliability factors](../physics/reliability.md).
+Open **Analysis**, inspect the free parameters and press **Fit**. Wait for fitting to finish, review the result and close the results popup. The calculated peaks should follow the measured pattern and the residual should be smaller. See [Rietveld refinement](../physics/rietveld.md), [uncertainties](../physics/minimization.md) and [reliability factors](../physics/reliability.md).
 
 <div class="gui-viewer" markdown="1">
 
@@ -230,6 +236,8 @@ Open **Analysis**, inspect the free parameters and press **Fit**. Wait for fitti
     </figure>
 
 </div>
+
+Check the fit status, agreement factors and parameter uncertainties before continuing.
 
 ## Review the report
 
@@ -263,6 +271,32 @@ Open **Report** to review the structure, measurement and fitted results. Use the
     </figure>
 
 </div>
+
+## Save the project
+
+Return to **Project** and choose **Save project as…**. Keep the complete project as a folder or zip archive; the report is a separate export.
+
+<div class="gui-viewer" markdown="1">
+
+<figure class="gui-figure" data-gui-figure>
+<p class="gui-view-description">Choose the output format and whether to save a copy.</p>
+<a class="gui-image-link" href="../assets/gui/y2o3/guide-project-save.png?v=4f407a652a14" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Save options"><svg class="gui-capture" data-gui-view="overview" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Save options"><title>Save options</title><defs><clipPath id="gui-clip-guide-project-save-overview-walkthrough-save-project-saveChoice"><rect width="1480" height="800" rx="17.76" /></clipPath></defs><image href="../assets/gui/y2o3/guide-project-save.png?v=4f407a652a14" width="1480" height="800" clip-path="url(#gui-clip-guide-project-save-overview-walkthrough-save-project-saveChoice)" /><rect class="gui-image-frame" width="1480" height="800" rx="17.76" /><path class="is-active" data-gui-region="guide-project-save-overview-walkthrough-save-project-saveChoice-1" data-gui-parts="[[607,354,111.84375,93]]" d="M605.000 352.000 L720.844 352.000 L720.844 449.000 L605.000 449.000 Z" /><path data-gui-navigation data-gui-parts="[[595.46875,0,59.734375,77]]" d="M593.469 -2.000 L657.203 -2.000 L657.203 79.000 L593.469 79.000 Z" /></svg></a>
+
+</figure>
+
+</div>
+
+## Try it
+
+Change the cell length **a** slightly on **Structure** and watch the peak positions move. Use **Undo** to restore the fitted model.
+
+??? tip "Where to look"
+
+    Expand **Cell** on **Structure → Main**. A cell change affects peak positions; compare several peaks across the pattern.
+
+## Continue with the same project
+
+Open the saved project in [Python](../python/examples.md) or run it from the [Command Line](../cli/examples.md). Try [joint refinement](refine.md) or a [scan](scans.md) when you are ready for several measurements.
 
 ## Explore the workspace
 

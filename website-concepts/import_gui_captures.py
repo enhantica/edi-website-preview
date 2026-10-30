@@ -634,7 +634,7 @@ The experiment input contains the measured pattern, instrument, profile, backgro
         ),
         (
             'Load the structure',
-            f'Open **Structure**, expand **Structures**, choose **Load** and select **{structure_file}**.',
+            f'Open **Structure**, expand **Structures**, choose **Load structure** and select **{structure_file}**.',
             '06-structure-import',
         ),
         (
@@ -644,7 +644,7 @@ The experiment input contains the measured pattern, instrument, profile, backgro
         ),
         (
             'Load the experiment',
-            f'Open **Experiment**, expand **Experiments**, choose **Load** and select **{experiment_file}**.',
+            f'Open **Experiment**, expand **Experiments**, choose **Load experiment** and select **{experiment_file}**.',
             '09-experiment-import',
         ),
         (
@@ -654,7 +654,7 @@ The experiment input contains the measured pattern, instrument, profile, backgro
         ),
         (
             'Refine the model',
-            'Open **Analysis**, inspect the free parameters and press **Fit**. Wait for fitting to finish, review the result and close the results popup. This screenshot shows the completed fit with that popup closed. See [Rietveld refinement](../physics/rietveld.md), [uncertainties](../physics/minimization.md) and [reliability factors](../physics/reliability.md).',
+            'Open **Analysis**, inspect the free parameters and press **Fit**. Wait for fitting to finish, review the result and close the results popup. The calculated peaks should follow the measured pattern and the residual should be smaller. See [Rietveld refinement](../physics/rietveld.md), [uncertainties](../physics/minimization.md) and [reliability factors](../physics/reliability.md).',
             '13-analysis-basic',
         ),
         (
@@ -663,9 +663,20 @@ The experiment input contains the measured pattern, instrument, profile, backgro
             '14-report-basic',
         ),
     ]
+    checkpoints = {
+        '03-project-details': 'The Project page now shows your project name and details.',
+        '07-structure-loaded': 'The structure appears in the main view and the Structures count is one.',
+        '10-experiment-loaded': 'The measured pattern, calculated curve, reflection marks and residual are visible.',
+        '13-analysis-basic': 'Check the fit status, agreement factors and parameter uncertainties before continuing.',
+    }
     body = intro
     for title, explanation, identity in sections:
         body += f'\n## {title}\n\n{explanation}\n\n' + figure(by_id[identity])
+        if identity in checkpoints:
+            body += f'\n{checkpoints[identity]}\n'
+    body += '\n## Save the project\n\nReturn to **Project** and choose **Save project as…**. Keep the complete project as a folder or zip archive; the report is a separate export.\n\n' + figure(by_id['guide-project-save'], instance='walkthrough-save')
+    body += '\n## Try it\n\nChange the cell length **a** slightly on **Structure** and watch the peak positions move. Use **Undo** to restore the fitted model.\n\n??? tip "Where to look"\n\n    Expand **Cell** on **Structure → Main**. A cell change affects peak positions; compare several peaks across the pattern.\n'
+    body += '\n## Continue with the same project\n\nOpen the saved project in [Python](../python/examples.md) or run it from the [Command Line](../cli/examples.md). Try [joint refinement](refine.md) or a [scan](scans.md) when you are ready for several measurements.\n'
     body += '\n## Explore the workspace\n\nSee [Application layout](workspace.md) for an annotated overview of every workflow page and its enabled sidebar tabs.\n'
     (DOCS / 'application/first-refinement.md').write_text(page('Example refinement', body))
     workspace = """The interface follows the same analysis workflow as the [User guide](../user-guide/analysis-workflow/index.md). The top bar selects a page, the central workspace shows its main view, and the sidebar contains the related controls.

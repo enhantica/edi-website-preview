@@ -6,7 +6,7 @@ Use ordinary shell or workflow tools to run several complete projects. There is 
 
 For a shell with the input folders `projects/sample-a` and `projects/sample-b`:
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```bash
     set -e
@@ -59,7 +59,7 @@ Check the process exit status and retain stderr. A machine report is a versioned
 
 ## Save reports after fitting
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi report runs/sample-a

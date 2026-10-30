@@ -4,7 +4,7 @@ The command line loads a complete project and runs the analysis its settings dec
 
 ## Run the project
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi fit path/to/project
@@ -20,7 +20,7 @@ For a folder or its `project.edi`, this command refines **and saves** the projec
 
 ## Choose the output
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi fit path/to/project --output refined-project
@@ -38,7 +38,7 @@ For a folder or its `project.edi`, this command refines **and saves** the projec
 
 For an archive:
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi fit project.zip --output refined-project
@@ -54,7 +54,7 @@ Without an output folder, `fit` leaves the input archive unchanged and warns tha
 
 ## Inspect more detail
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi fit path/to/project --verbosity full
@@ -72,7 +72,7 @@ Full output includes per-bank agreement factors and the refined parameter table.
 
 The human channel reports progress during a single fit. A scan reports progress per measured file; full verbosity adds its iteration detail. To request live progress records on the machine channel for a single or joint fit:
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi fit path/to/project --report machine --stream
@@ -88,7 +88,7 @@ Machine streaming is not emitted for scans, whose independent per-file iteration
 
 ## Read machine output
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi fit path/to/project --report machine
@@ -114,7 +114,7 @@ Ctrl+C requests a clean cancellation. The command exits with status `130`. A can
 
 ## Prepare a report
 
-=== "Standalone"
+=== "Standalone executable"
 
     ```console
     edi report path/to/project
