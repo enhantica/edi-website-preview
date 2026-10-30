@@ -1,2 +1,4 @@
 zensical==0.0.73
 
+
+defusedxml==0.7.1

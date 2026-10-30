@@ -26,7 +26,9 @@ Reflection marks show where the structures predict Bragg positions. They help co
 
 R<sub>p</sub> and R<sub>wp</sub> summarise the powder-profile mismatch. R<sub>exp</sub> and reduced χ² connect that mismatch with the observation uncertainties and independent parameter count. The [refinement and statistics](../physics/refinement.md) chapter gives their equations and conventions.
 
-There is no universal R-factor threshold that makes every model acceptable. Data range, exclusions, uncertainty estimates, background and the model affect the values.
+!!! note "A small R factor is only part of the assessment"
+
+    There is no universal R-factor threshold that makes every model acceptable. Data range, exclusions, uncertainty estimates, background and the model affect the values. Inspect the curve, residual and physical parameters together.
 
 ## Check parameters and correlations
 

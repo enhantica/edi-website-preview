@@ -6,6 +6,10 @@ template: gui.html
 
 Use the application to open, save and export the complete analysis. The shared [Project](../user-guide/analysis-workflow/project.md) stage explains what belongs in a project; [data formats](../user-guide/data-formats.md) explains its folder and archive representations.
 
+!!! note "Saving in the browser"
+
+    Check the project location before closing the app. **In this browser only** means the project is in browser storage; use **Save project as…** to keep an external copy. [Browser-specific saving](browser.md#open-and-save-files) explains folders, archives and downloads.
+
 ## Open a project
 
 Choose **Open project…**, then **Folder** or **Zip archive**. In the desktop app you can also drop a project folder, its `project.edi`, or a zip archive onto the window.

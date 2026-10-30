@@ -672,9 +672,12 @@ The experiment input contains the measured pattern, instrument, profile, backgro
     body = intro
     for title, explanation, identity in sections:
         body += f'\n## {title}\n\n{explanation}\n\n' + figure(by_id[identity])
+        if identity == '13-analysis-basic':
+            body += '\n<!-- learning-comparison -->\n<!-- /learning-comparison -->\n'
         if identity in checkpoints:
             body += f'\n{checkpoints[identity]}\n'
     body += '\n## Save the project\n\nReturn to **Project** and choose **Save project as…**. Keep the complete project as a folder or zip archive; the report is a separate export.\n\n' + figure(by_id['guide-project-save'], instance='walkthrough-save')
+    body += '\n!!! note "Keep the project as well as the report"\n\n    A report is an export of the result. Keep the saved project to reopen the model, change parameters or repeat the fit. In the browser, [check the save location](browser.md#open-and-save-files).\n'
     body += '\n## Try it\n\nChange the cell length **a** slightly on **Structure** and watch the peak positions move. Use **Undo** to restore the fitted model.\n\n??? tip "Where to look"\n\n    Expand **Cell** on **Structure → Main**. A cell change affects peak positions; compare several peaks across the pattern.\n'
     body += '\n## Continue with the same project\n\nOpen the saved project in [Python](../python/examples.md) or run it from the [Command Line](../cli/examples.md). Try [joint refinement](refine.md) or a [scan](scans.md) when you are ready for several measurements.\n'
     body += '\n## Explore the workspace\n\nSee [Application layout](workspace.md) for an annotated overview of every workflow page and its enabled sidebar tabs.\n'

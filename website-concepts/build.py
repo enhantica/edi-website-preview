@@ -136,6 +136,26 @@ def _check_catalogue(built: Path) -> None:
     print('Scientific catalogue explanation/parameter headings: PASS', flush=True)
 
 
+def _check_parameter_reference(built: Path) -> None:
+    reference = ROOT / 'surfaces/docs/assets/reference'
+    if not (reference / 'dictionary.json').exists():
+        return
+    dictionary = json.loads((reference / 'dictionary.json').read_text())
+    links = json.loads((reference / 'parameter-links.json').read_text())
+    expected = {row['uid'] for row in dictionary['items']} | {
+        row['id'] for row in dictionary['categories']
+    }
+    if set(links) != expected:
+        raise SystemExit('Parameter links must cover the native dictionary exactly')
+    target = (built / 'physics/parameters/index.html').read_text()
+    from render_parameter_reference import anchor
+
+    for uid, url in links.items():
+        if url != 'physics/parameters/#' + anchor(uid) or f'id="{anchor(uid)}"' not in target:
+            raise SystemExit(f'Missing native documentation target: {uid}')
+    print('Complete native category/item documentation links: PASS', flush=True)
+
+
 def _write_redirects(root: Path, base_url: str) -> None:
     """Keep links to relocated shared guides valid without a theme plugin."""
     redirects = json.loads((ROOT / 'redirects.json').read_text(encoding='utf-8'))
@@ -210,6 +230,12 @@ def main() -> None:
     from render_experiments import render as render_experiments
 
     render_experiments()
+    from render_parameter_reference import render as render_parameter_reference
+
+    render_parameter_reference()
+    from render_learning import render as render_learning
+
+    render_learning()
     if args.base_url:
         parsed = urlsplit(args.base_url)
         if (
@@ -310,6 +336,7 @@ def main() -> None:
         if name == 'surfaces':
             _write_reference(built, args.base_url or 'http://127.0.0.1:8873/')
             _check_catalogue(built)
+            _check_parameter_reference(built)
         assembled = output if name == 'surfaces' else output / name
         if assembled.exists() and name != 'surfaces':
             shutil.rmtree(assembled)

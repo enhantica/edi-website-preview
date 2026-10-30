@@ -2,6 +2,8 @@
 
 Parameters describe both the sample and the experiment. Changing a cell length moves calculated reflections; changing a scale changes their contribution to intensity; changing a background coefficient changes the signal underneath the peaks.
 
+[Look up GUI labels, Edi keys, Python paths and CIF names](parameter-reference.md). The linked tables lead to a description of every category and field.
+
 ## A value and its context
 
 A parameter's value needs its name, units and place in the model to be meaningful. Typical groups include:

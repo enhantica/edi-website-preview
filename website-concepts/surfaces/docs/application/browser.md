@@ -15,11 +15,19 @@ The [application layout](workspace.md) and controls are identical in the browser
 | Chrome and Edge | Opening a local folder or archive can retain access to that location. **Save** writes back there; **Save project as…** chooses a new location. |
 | Firefox and Safari | Projects are kept in browser storage. **Save project as…** downloads a zip copy. |
 
-New projects and built-in examples initially use browser storage in every browser. Their location reads **In this browser only**. Download a copy to keep it outside the browser or move it to another computer.
+!!! note "Check where your project is saved"
+
+    New projects and built-in examples initially use browser storage in every browser. When the location reads **In this browser only**, use **Save project as…** to keep a copy outside the browser or move it to another computer.
+
+    Chrome and Edge can also retain access to a local folder or archive that you opened. Firefox and Safari download a zip copy instead.
 
 ## Return to your work
 
-Use **Recent projects** or **Continue where you left off** after reloading or reopening the app. Clearing the browser's site data removes browser-held projects; private browsing may remove them when the session ends.
+Use **Recent projects** or **Continue where you left off** after reloading or reopening the app.
+
+!!! warning "Keep a copy before clearing browser data"
+
+    Clearing the browser's site data removes browser-held projects. Private browsing may remove them when the session ends. Download the projects you want to keep first.
 
 ## Export reports
 

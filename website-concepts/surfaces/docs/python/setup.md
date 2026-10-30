@@ -17,6 +17,8 @@ pixi run python -c "import edi; print(edi.Project)"
 
 ## In a notebook
 
-Select a kernel from the environment containing `edi`. A notebook and a terminal should import the same installation.
+!!! tip "Use the matching notebook kernel"
+
+    Select a kernel from the environment containing `edi`. A notebook and a terminal should import the same installation.
 
 [Run an example](examples.md){ .md-button }

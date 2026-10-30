@@ -35,6 +35,7 @@ extra_css:
   - assets/wordmark.css?v=header-2
   - assets/site-components.css?v=shared
   - assets/experiment-tags.css?v=1
+  - assets/parameter-reference.css?v=1
 extra_javascript:
   - assets/example-catalogue.js?v=1
 extra:
@@ -63,6 +64,7 @@ nav:
     - Concept: user-guide/concepts.md
     - Data formats: user-guide/data-formats.md
     - Parameters: user-guide/parameters.md
+    - Parameter names: user-guide/parameter-reference.md
     - Experiment types and labels: user-guide/experiment-types.md
     - Glossary: user-guide/glossary.md
   - Analysis workflow:
@@ -190,6 +192,8 @@ markdown_extensions:
       permalink: true
   - pymdownx.superfences
   - pymdownx.details
+  - pymdownx.keys
+  - pymdownx.mark
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.emoji:

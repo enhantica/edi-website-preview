@@ -11,6 +11,8 @@ import struct
 from pathlib import Path
 from urllib.parse import urlsplit
 
+from defusedxml import ElementTree
+
 ROOT = Path(__file__).resolve().parent
 DOCS = ROOT / 'surfaces/docs'
 
@@ -28,9 +30,17 @@ def screenshot_radius(width: int) -> float:
 def preview(filename: str, description: str, crop_top: int = 0) -> str:
     source = DOCS / 'assets' / filename
     data = source.read_bytes()
-    if data[:8] != b'\x89PNG\r\n\x1a\n':
-        raise ValueError(f'Interface preview must be PNG: {filename}')
-    width, height = struct.unpack('!II', data[16:24])
+    if data[:8] == b'\x89PNG\r\n\x1a\n':
+        width, height = struct.unpack('!II', data[16:24])
+    elif source.suffix == '.svg':
+        root = ElementTree.fromstring(data)
+        if root.tag != '{http://www.w3.org/2000/svg}svg':
+            raise ValueError(f'Invalid generated SVG: {filename}')
+        width, height = int(root.attrib['width']), int(root.attrib['height'])
+    else:
+        raise ValueError(f'Preview must be PNG or generated SVG: {filename}')
+    if width <= 0 or height <= 0:
+        raise ValueError(f'Invalid preview size: {filename}')
     if not 0 <= crop_top < height:
         raise ValueError(f'Invalid preview crop: {filename}')
     shown_height = height - crop_top

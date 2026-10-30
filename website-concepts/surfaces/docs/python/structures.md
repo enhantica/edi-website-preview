@@ -58,3 +58,6 @@ For a complete runnable analysis, start from a project or a checked example. The
 ## Related Physics
 
 [Unit cell and symmetry](../physics/crystallography.md#eq-cell-metric) · [Occupancy and scattering](../physics/diffraction.md#eq-nuclear-structure-factor) · [Atomic displacement](../physics/displacement.md#eq-anisotropic-adp).
+
+
+[Compare Python paths with GUI labels, Edi keys and CIF names](../user-guide/parameter-reference.md).
