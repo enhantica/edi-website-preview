@@ -13,7 +13,7 @@ Work visually, with the pattern or crystal structure beside the controls you are
 
 <!-- interface-preview:application -->
 <figure class="ed-interface-preview" data-interface-hero>
-<a class="gui-image-link" href="../assets/edi-analysis-hero.png?v=f81b8f78f07a" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: EasyDiffraction graphical application"><svg class="gui-capture" viewBox="0 62 2992 1706" width="2992" height="1706" role="img" aria-label="EasyDiffraction graphical application"><title>EasyDiffraction graphical application</title><defs><clipPath id="interface-edi-analysis-hero"><rect y="62" width="2992" height="1706" rx="12" /></clipPath></defs><image href="../assets/edi-analysis-hero.png?v=f81b8f78f07a" width="2992" height="1768" clip-path="url(#interface-edi-analysis-hero)" /><rect class="gui-image-frame" y="62" width="2992" height="1706" rx="12" /></svg></a>
+<a class="gui-image-link" href="../assets/edi-analysis-hero.png?v=f81b8f78f07a" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: EasyDiffraction graphical application"><svg class="gui-capture" viewBox="0 62 2992 1706" width="2992" height="1706" role="img" aria-label="EasyDiffraction graphical application"><title>EasyDiffraction graphical application</title><defs><clipPath id="interface-edi-analysis-hero"><rect y="62" width="2992" height="1706" rx="35.904" /></clipPath></defs><image href="../assets/edi-analysis-hero.png?v=f81b8f78f07a" width="2992" height="1768" clip-path="url(#interface-edi-analysis-hero)" /><rect class="gui-image-frame" y="62" width="2992" height="1706" rx="35.904" /></svg></a>
 </figure>
 <!-- /interface-preview -->
 

@@ -36,8 +36,10 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def validate_bundle(root: Path) -> tuple[dict, list[dict]]:
+def validate_bundle(root: Path, *, workflow: str = 'creation') -> tuple[dict, list[dict]]:
     manifest = read_json(root / 'manifest.json')
+    require(workflow in {'creation', 'reference'}, 'Unknown capture workflow')
+    require(manifest.get('workflow', 'creation') == workflow, 'Wrong capture workflow')
     require(
         manifest.get('schema') == 1 and manifest.get('status') == 'complete',
         'Capture is incomplete',
@@ -49,6 +51,14 @@ def validate_bundle(root: Path) -> tuple[dict, list[dict]]:
     fixture = manifest.get('fixture')
     if fixture is not None:
         require(fixture.get('id') == manifest['example'], 'Fixture and example id disagree')
+    reference_kind = 'scan'
+    if workflow == 'reference':
+        modes = (fixture or {}).get('values', {}).get('fittingMode', [])
+        require(
+            any(mode in {'sequential', 'independent', 'joint'} for mode in modes),
+            'Reference requires a scan or joint-fit fixture',
+        )
+        reference_kind = 'joint' if 'joint' in modes else 'scan'
     for dependency in manifest.get('dependencies', []):
         require(
             sha256(local_file(root, dependency.get('file'))) == dependency.get('sha256'),
@@ -76,12 +86,18 @@ def validate_bundle(root: Path) -> tuple[dict, list[dict]]:
             'An input file changed',
         )
     actions = [item.get('action', '') for item in manifest.get('actions', [])]
-    require(
-        not any(
-            a.startswith(('examples.open.', 'open-project:', 'open-cli-project:')) for a in actions
-        ),
-        'Walkthrough opened a whole project',
-    )
+    loads = [
+        a
+        for a in actions
+        if a.startswith(('examples.open.', 'open-project:', 'open-cli-project:'))
+    ]
+    if workflow == 'creation':
+        require(not loads, 'Walkthrough opened a whole project')
+    else:
+        require(
+            loads == ['open-cli-project:' + manifest['example']],
+            'Reference must open only its declared example',
+        )
     expected = [
         'home.start',
         'project.create',
@@ -92,6 +108,8 @@ def validate_bundle(root: Path) -> tuple[dict, list[dict]]:
         'wait-fit',
         'close-fit-results',
     ]
+    if workflow == 'reference':
+        expected = [loads[0], 'statusBar.fit.button', 'wait-fit', 'close-fit-results']
     position = -1
     for action in expected:
         candidates = [
@@ -152,6 +170,17 @@ def validate_bundle(root: Path) -> tuple[dict, list[dict]]:
                 and state.get('fit_result_rows', 0) > 0,
                 'Post-fit scene has unfinished fit or open results',
             )
+            if workflow == 'reference' and reference_kind == 'scan':
+                require(
+                    state.get('scan_total', 0) > 1
+                    and state.get('scan_fitted') == state['scan_total']
+                    and state.get('scan_failed') == 0,
+                    'Scan reference needs a completed fit for every dataset',
+                )
+            if workflow == 'reference' and reference_kind == 'joint':
+                require(
+                    state.get('experiments', 0) > 1, 'Joint reference needs several experiments'
+                )
         items = metadata.get('items', {})
         for target in metadata.get('highlights', []):
             item = items.get(target, {})
@@ -173,16 +202,21 @@ def validate_bundle(root: Path) -> tuple[dict, list[dict]]:
                 f'Annotation lies outside the image: {target}',
             )
         captured.append({**scene, 'layout': metadata})
-    for name in [
-        '01-home',
-        '02-project-start',
-        '03-project-details',
-        '04-project-created',
-        '06-structure-import',
-        '07-structure-loaded',
-        '09-experiment-import',
-        '10-experiment-loaded',
-    ]:
+    checkpoints = (
+        [
+            '01-home',
+            '02-project-start',
+            '03-project-details',
+            '04-project-created',
+            '06-structure-import',
+            '07-structure-loaded',
+            '09-experiment-import',
+            '10-experiment-loaded',
+        ]
+        if workflow == 'creation'
+        else [reference_kind + '-experiment-before']
+    )
+    for name in checkpoints:
         require(any(s['id'] == name for s in captured), f'Missing workflow checkpoint: {name}')
     for page in PAGES:
         scenes = [s for s in captured if s.get('page') == page and s.get('sidebar')]
@@ -201,8 +235,9 @@ def validate_bundle(root: Path) -> tuple[dict, list[dict]]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('bundle', type=Path)
+    parser.add_argument('--workflow', choices=['creation', 'reference'], default='creation')
     args = parser.parse_args()
-    manifest, scenes = validate_bundle(args.bundle)
+    manifest, scenes = validate_bundle(args.bundle, workflow=args.workflow)
     print(
         json.dumps(
             {

@@ -80,18 +80,20 @@ return {overflow:document.documentElement.scrollWidth>innerWidth,
   title:svg.querySelector('title').textContent,
   captions:hero.querySelectorAll('figcaption').length,
   radius:svg.querySelector('.gui-image-frame').rx.baseVal.value*scale,
-  expectedRadius:parseFloat(getComputedStyle(hero.querySelector('a')).borderTopLeftRadius)};
+  expectedRadius:svg.getBoundingClientRect().width*parseFloat(getComputedStyle(svg).getPropertyValue('--ed-screenshot-radius'))/100};
 """)
             require(not result['overflow'] and not result['captions'], result)
             require(abs(result['width'] - result['column']) < 1, result)
             require(abs(result['radius'] - result['expectedRadius']) < 0.05, result)
+            require(0.01 < result['radius'] / result['width'] < 0.015, result)
             browser.execute("document.querySelector('[data-gui-open]').click();")
             browser.until("document.querySelector('.gui-lightbox')?.open")
             require(
                 browser.execute("""
 const stage=document.querySelector('.gui-lightbox-stage').getBoundingClientRect();
-const svg=document.querySelector('.gui-lightbox .gui-capture').getBoundingClientRect();
-return svg.width <= stage.width + 1 && svg.height <= stage.height + 1;
+const capture=document.querySelector('.gui-lightbox .gui-capture'), svg=capture.getBoundingClientRect();
+const ratio=capture.querySelector('.gui-image-frame').rx.baseVal.value/capture.viewBox.baseVal.width;
+return svg.width <= stage.width + 1 && svg.height <= stage.height + 1 && Math.abs(ratio-.012)<.00001;
 """),
                 result,
             )

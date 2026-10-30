@@ -147,3 +147,9 @@ Validation also rejected incomplete runs, mixed source revisions, whole-project 
 ## Detailed task inventory
 
 The complete inventory is the committed native `walkthrough.js` plus `manifest.json`; each action and capture/skip has an explicit entry. The how-to heading map is `gui-guide-scenes.json`. This includes uncertainty formatting, structure appearance and scattering, measurement ranges/points, peak cutoff, absorption/orientation, aliases/constraints, pre-fit values, parameter visibility and scan display updates. The importer derives practical option lists from the native selector metadata and links supported model tokens to Physics; it does not maintain another list of GUI choices.
+
+## Conditional workflow views
+
+Run the native `app/docs/workflow-reference.js` with its default scan id, then copy it and change only `EXAMPLE_ID` to a joint-fit example for the joint views. These explicitly declared reference runs open bundled projects; they do not replace the creation walkthrough. Import both with `--reference-bundle /path/to/scan --joint-bundle /path/to/joint`. Reference validation requires post-fit closed dialogs; scans also require a fitted result for every dataset and no failed datasets. `GUI-SCENES.md` includes action-only steps such as fitting as well as images and intentional skips.
+
+The documentation build checks every practical subsection in every Project–Report navigation topic against the capture registry, the rendered image and current native selector choices. Adding a heading without its illustration, referring to an absent scene or keeping stale option prose refuses the build.

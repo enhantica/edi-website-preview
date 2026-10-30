@@ -15,6 +15,16 @@ ROOT = Path(__file__).resolve().parent
 DOCS = ROOT / 'surfaces/docs'
 
 
+def screenshot_radius(width: int) -> float:
+    match = re.search(
+        r'--ed-screenshot-radius:\s*(\d+(?:\.\d+)?)%;',
+        (DOCS / 'assets/site-components.css').read_text(),
+    )
+    if not match:
+        raise ValueError('Screenshot radius must be a percentage of image width')
+    return width * float(match[1]) / 100
+
+
 def preview(filename: str, description: str, crop_top: int = 0) -> str:
     source = DOCS / 'assets' / filename
     data = source.read_bytes()
@@ -27,7 +37,9 @@ def preview(filename: str, description: str, crop_top: int = 0) -> str:
     image = html.escape('../assets/' + filename + '?v=' + hashlib.sha256(data).hexdigest()[:12])
     title = html.escape(description, quote=True)
     clip = 'interface-' + source.stem
-    frame = f'y="{crop_top}" width="{width}" height="{shown_height}" rx="12"'
+    frame = (
+        f'y="{crop_top}" width="{width}" height="{shown_height}" rx="{screenshot_radius(width):g}"'
+    )
     return (
         '<figure class="ed-interface-preview" data-interface-hero>\n'
         f'<a class="gui-image-link" href="{image}" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: {title}">'

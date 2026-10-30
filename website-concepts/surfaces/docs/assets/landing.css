@@ -107,7 +107,7 @@
   transform: translateX(-1rem);
   overflow: hidden;
   border: 1px solid #e5e5e5;
-  border-radius: var(--ed-screenshot-radius);
+  border-radius: var(--ed-screenshot-radius) / calc(var(--ed-screenshot-radius) * 2992 / 1706);
   box-shadow: 0 .8rem 2.4rem -.6rem rgb(18 50 68 / 12%);
 }
 .ed-landing .ed-landing__preview img {

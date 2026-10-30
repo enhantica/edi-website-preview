@@ -29,7 +29,7 @@ const figures = [...article.querySelectorAll('.gui-figure')].map(figure => {
   return {width: bounds.width, height: bounds.height, column: width, view:svg.dataset.guiView,
     frameRadius:svg.querySelector('.gui-image-frame').rx.baseVal.value*scale,
     clipRadius:svg.querySelector('clipPath rect').rx.baseVal.value*scale,
-    expectedRadius:parseFloat(getComputedStyle(figure.querySelector('.gui-image-link')).borderTopLeftRadius),
+    expectedRadius:bounds.width*parseFloat(getComputedStyle(svg).getPropertyValue('--ed-screenshot-radius'))/100,
     caption: !!figure.querySelector('figcaption'),
     overflow: getComputedStyle(svg).overflow, radius: getComputedStyle(svg).borderRadius,
     imageClip: svg.querySelector('image').hasAttribute('clip-path'),
@@ -240,7 +240,8 @@ return {dialogWidth: dialog.getBoundingClientRect().width, viewport: innerWidth,
             for filename, sections in registry.items():
                 browser.goto(base + filename.replace('.md', '/'))
                 expected = sum(
-                    len(value) if isinstance(value, list) else 1 for value in sections.values()
+                    len(value) if isinstance(value, (list, dict)) else 1
+                    for value in sections.values()
                 )
                 result = browser.execute(FIGURES)
                 require(len(result['figures']) >= expected, (filename, result))

@@ -7,7 +7,9 @@
     "Open a project": "guide-project-open",
     "Save or save a copy": "guide-project-save",
     "Recent projects and recovery": "guide-project-recent",
-    "What is saved": "guide-project-actions"
+    "What is saved": "guide-project-actions",
+    "Browser file handling": "guide-project-open",
+    "Move to another interface": "guide-project-save"
   },
   "application/structures.md": {
     "Load, create or duplicate": "guide-structure-create",
@@ -33,10 +35,18 @@
     "Select a fitting mode": "guide-analysis-modes",
     "Start and inspect the fit": "13-analysis-basic",
     "Save the project and report": "guide-report-saved",
-    "Inspect parameter correlations": "guide-analysis-correlations"
+    "Inspect parameter correlations": "guide-analysis-correlations",
+    "Read recorded fit statistics": {
+      "Fit result": "joint-result",
+      "Experiment fit result": "joint-experiment-results",
+      "Structure fit result": "joint-structure-results"
+    }
   },
   "application/fitting-modes.md": {
-    "Select the mode in the app": "guide-analysis-modes"
+    "Select the mode in the app": "guide-analysis-modes",
+    "Fit a scan": "scan-mode",
+    "Fit the shown scan dataset on its own": "scan-mode",
+    "Fit several experiments jointly": "joint-weights"
   },
   "application/reports.md": {
     "Review the document": "14-report-basic",
@@ -86,5 +96,21 @@
   "application/display.md": {
     "Choose which parameters are shown": "guide-analysis-shown-parameters",
     "Choose updates during a scan": "guide-analysis-pattern-updates"
+  },
+  "application/scans.md": {
+    "Choose a dataset": "scan-experiment-before",
+    "Choose the starting-point rule": "scan-mode",
+    "Inspect the scan declaration": {
+      "Sequential fit": "scan-declaration",
+      "Scan extraction rules": "scan-extraction"
+    },
+    "Run, stop and continue": "scan-progress-controls",
+    "Inspect the scan views": {
+      "Stacked": "scan-analysis-stacked",
+      "Map": "scan-analysis-map",
+      "Evolution": "scan-evolution",
+      "Correlations": "scan-correlations"
+    },
+    "Save the scan": "scan-report-basic"
   }
 }

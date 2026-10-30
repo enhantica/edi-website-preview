@@ -226,12 +226,25 @@ def main() -> None:
         if groups[: len(shared)] != shared:
             raise SystemExit(f'{interface}: workflow groups must be {shared}')
     print('Shared interface workflow navigation: PASS', flush=True)
+    from checks.gui_capture import validate_bundle
+
+    scenes = []
     capture = ROOT / 'surfaces/docs/assets/gui/y2o3'
     if (capture / 'manifest.json').exists():
-        from checks.gui_capture import validate_bundle
-
-        validate_bundle(capture)
+        _, captured = validate_bundle(capture)
+        scenes.extend(captured)
         print('Native GUI capture bundle: PASS', flush=True)
+    for folder in ('scan', 'joint'):
+        reference = ROOT / 'surfaces/docs/assets/gui' / folder
+        if (reference / 'manifest.json').exists():
+            _, captured = validate_bundle(reference, workflow='reference')
+            scenes.extend(captured)
+            print(f'Native {folder} reference bundle: PASS', flush=True)
+    if scenes:
+        from checks.gui_topics import validate_topics
+
+        validate_topics(ROOT, config_data, scenes)
+        print('Workflow topics and native illustration coverage: PASS', flush=True)
     version = importlib.metadata.version('zensical')
     if version != '0.0.73':
         raise SystemExit(f'Expected Zensical 0.0.73; found {version}. Install requirements.txt.')

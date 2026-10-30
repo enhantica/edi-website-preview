@@ -1,7 +1,7 @@
 /* Shared components. The homepage is the visual reference (ADR-0005). */
 :root {
   --ed-button-radius: .4rem;
-  --ed-screenshot-radius: .65rem;
+  --ed-screenshot-radius: 1.2%;
 }
 .md-typeset .md-button,
 .md-typeset .md-button:hover,

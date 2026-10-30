@@ -222,7 +222,7 @@ const f=frame.getBoundingClientRect(), i=image.getBoundingClientRect(), fs=getCo
 return {width:innerWidth, heroWidth:h.width, overflow:document.documentElement.scrollWidth>innerWidth,
  aligned:Math.abs(copy.left-range.getBoundingClientRect().left)<1,
  bleed:f.right-document.documentElement.clientWidth,
- frame:{border:fs.borderTopColor,width:fs.borderTopWidth,radius:parseFloat(fs.borderTopLeftRadius),crop:f.top+1-i.top,expectedCrop:i.width*62/2992},
+ frame:{border:fs.borderTopColor,width:fs.borderTopWidth,radius:parseFloat(fs.borderTopLeftRadius),relativeRadius:fs.borderTopLeftRadius.includes('%'),crop:f.top+1-i.top,expectedCrop:i.width*62/2992},
  fullWidth:Math.abs(h.left)<1 && Math.abs(a.left)<1 && Math.abs(h.width-a.width)<1,
  textAbove:nav.getBoundingClientRect().bottom<title.getBoundingClientRect().top,
  introFits:intro.getBoundingClientRect().width<=title.getBoundingClientRect().width+.1,
@@ -241,7 +241,12 @@ return {width:innerWidth, heroWidth:h.width, overflow:document.documentElement.s
             require(layout['aligned'] and 0 < layout['bleed'] < 80, layout)
         frame = layout['frame']
         require(frame['border'] == 'rgb(229, 229, 229)' and frame['width'] == '1px', frame)
-        require(frame['radius'] > 0 and abs(frame['crop'] - frame['expectedCrop']) < 0.2, frame)
+        require(
+            frame['relativeRadius']
+            and abs(frame['radius'] - 1.2) < 0.0001
+            and abs(frame['crop'] - frame['expectedCrop']) < 0.2,
+            frame,
+        )
         require(
             layout['introFits']
             and layout['transformMatched']

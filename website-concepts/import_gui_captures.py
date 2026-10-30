@@ -12,6 +12,7 @@ from itertools import starmap
 from pathlib import Path
 
 from checks.gui_capture import validate_bundle
+from render_interfaces import screenshot_radius
 
 ROOT = Path(__file__).resolve().parent
 DOCS = ROOT / 'surfaces/docs'
@@ -263,7 +264,14 @@ def figure(
     interactive: bool = True,
 ) -> str:
     meta = scene['layout']
-    image = '../assets/gui/y2o3/' + scene['image'] + '?v=' + meta['image_sha256'][:12]
+    image = (
+        '../assets/gui/'
+        + scene.get('asset_folder', 'y2o3')
+        + '/'
+        + scene['image']
+        + '?v='
+        + meta['image_sha256'][:12]
+    )
     description = html.escape(description or scene['description'], quote=True)
     identity = f'{scene["id"]}-{view}' + (f'-{instance}' if instance else '')
     if selection:
@@ -384,9 +392,9 @@ def figure(
         + f'<a class="gui-image-link" href="{image}" data-gui-open aria-haspopup="dialog" '
         f'aria-label="Enlarge screenshot: {description}">'
         f'<svg class="gui-capture" data-gui-view="{view}" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="{description}">'
-        f'<title>{description}</title><defs><clipPath id="{clip}"><rect width="1480" height="800" rx="12" /></clipPath></defs>'
+        f'<title>{description}</title><defs><clipPath id="{clip}"><rect width="1480" height="800" rx="{screenshot_radius(1480):g}" /></clipPath></defs>'
         f'<image href="{image}" width="1480" height="800" clip-path="url(#{clip})" />'
-        '<rect class="gui-image-frame" width="1480" height="800" rx="12" />'
+        f'<rect class="gui-image-frame" width="1480" height="800" rx="{screenshot_radius(1480):g}" />'
         + ''.join(paths)
         + navigation
         + arrows
@@ -452,10 +460,29 @@ def illustrate_guides(by_id: dict[str, dict]) -> None:
                 scenes = [scenes]
             slug = re.sub(r'[^a-z0-9]+', '-', match[1].lower()).strip('-')
             figures = []
-            for index, identity in enumerate(scenes):
+            choices = (
+                list(scenes.items())
+                if isinstance(scenes, dict)
+                else [('', identity) for identity in scenes]
+            )
+            for index, (title, identity) in enumerate(choices):
                 if identity not in by_id:
                     raise ValueError(f'{filename}: required capture {identity} is missing')
-                figures.append(figure(by_id[identity], instance=f'{source.stem}-{slug}-{index}'))
+                figures.append(
+                    figure(
+                        by_id[identity],
+                        instance=f'{source.stem}-{slug}-{index}',
+                        interactive=not title,
+                        explanation=by_id[identity]['description'] if title else '',
+                    )
+                )
+            if isinstance(scenes, dict):
+                titles = []
+                for title, identity in scenes.items():
+                    meta = by_id[identity]['layout']
+                    item = meta['items'][meta['highlights'][0]]
+                    titles.append(gui_icon(item) + html.escape(title))
+                figures = [viewer(list(zip(titles, figures, strict=True)))]
             end = headings[number + 1].start() if number + 1 < len(headings) else len(text)
             content = (
                 f'\n<!-- gui-guide:{slug} -->\n' + '\n'.join(figures) + '<!-- /gui-guide -->\n\n'
@@ -466,13 +493,8 @@ def illustrate_guides(by_id: dict[str, dict]) -> None:
         source.write_text(text.rstrip() + '\n')
 
 
-def render(bundle: Path) -> None:
-    manifest, scenes = validate_bundle(bundle)
-    by_id = {scene['id']: scene for scene in scenes}
-    fixture = manifest.get('fixture', {'samples': ['Y₂O₃'], 'origin': 'SPODI @ FRM II'})
-    structure_file = Path(manifest['inputs']['structure']['file']).name
-    experiment_file = Path(manifest['inputs']['experiment']['file']).name
-    destination = DOCS / 'assets/gui/y2o3'
+def copy_bundle(bundle: Path, manifest: dict, scenes: list[dict], folder: str) -> None:
+    destination = DOCS / 'assets/gui' / folder
     destination.mkdir(parents=True, exist_ok=True)
     artifacts = {'manifest.json', 'walkthrough.js'}
     artifacts.update(item['file'] for item in manifest['inputs'].values())
@@ -484,9 +506,111 @@ def render(bundle: Path) -> None:
         target.parent.mkdir(parents=True, exist_ok=True)
         if (bundle / artifact).resolve() != target.resolve():
             shutil.copy2(bundle / artifact, target)
+
+
+def capture_inventory() -> None:
+    """Expose the executed action sequence without a second hand-maintained scene list."""
+    lines = [
+        '# GUI screenshot and action inventory',
+        '',
+        'Generated from the committed native capture manifests. Change `EXAMPLE_ID` in the',
+        'corresponding native plan, run it, validate the bundle and import it again.',
+        'The creation run starts empty and imports separate inputs. Reference runs open',
+        'their declared example to illustrate controls specific to that project type.',
+        '',
+    ]
+    for folder in ('y2o3', 'scan', 'joint'):
+        directory = DOCS / 'assets/gui' / folder
+        if not (directory / 'manifest.json').is_file():
+            continue
+        manifest = json.loads((directory / 'manifest.json').read_text())
+        base = 'surfaces/docs/assets/gui/' + folder
+        lines += [
+            f'## {manifest["example"]}',
+            '',
+            f'[Executed plan]({base}/walkthrough.js) · [Native manifest]({base}/manifest.json)',
+            '',
+            '| Scene | Page / sidebar | Actions before capture | Highlights / result |',
+            '| --- | --- | --- | --- |',
+        ]
+        scenes = {scene['id']: scene for scene in manifest['scenes']}
+        identities = dict.fromkeys(
+            [action['scene'] for action in manifest['actions']] + list(scenes)
+        )
+        current_page = 'home'
+        for identity in identities:
+            scene = scenes.get(identity, {'id': identity, 'status': 'action only'})
+            actions = []
+            for item in manifest['actions']:
+                if item['scene'] != scene['id']:
+                    continue
+                action = item['action']
+                if action.startswith('appBar.tab.'):
+                    current_page = action.rsplit('.', 1)[1]
+                if action.startswith('fill:'):
+                    action = action.split('=', 1)[0]
+                elif action.startswith(('import-structure:', 'import-experiment:')):
+                    action = action.split(':', 1)[0] + ':<selected input>'
+                actions.append('`' + action.replace('|', '&#124;') + '`')
+            title = scene['id']
+            current_page = scene.get('page', current_page)
+            result = scene['status']
+            if result == 'captured':
+                metadata = json.loads((directory / scene['metadata']).read_text())
+                title = f'[{title}]({base}/{scene["image"]})'
+                result = ', '.join('`' + target + '`' for target in metadata['highlights'])
+            lines.append(
+                f'| {title} | {current_page} / {scene.get("sidebar") or "—"} | '
+                + ' → '.join(actions)
+                + f' | {result} |'
+            )
+        lines.append('')
+    (ROOT / 'GUI-SCENES.md').write_text('\n'.join(lines))
+
+
+def render(bundle: Path, reference: Path | None = None, joint: Path | None = None) -> None:
+    manifest, scenes = validate_bundle(bundle)
+    copy_bundle(bundle, manifest, scenes, 'y2o3')
+    by_id = {scene['id']: scene for scene in scenes}
+    for folder, provided in (('scan', reference), ('joint', joint)):
+        reference_path = provided or DOCS / 'assets/gui' / folder
+        if provided is None and not (reference_path / 'manifest.json').is_file():
+            continue
+        reference_manifest, reference_scenes = validate_bundle(
+            reference_path, workflow='reference'
+        )
+        copy_bundle(reference_path, reference_manifest, reference_scenes, folder)
+        for scene in reference_scenes:
+            if scene['id'] in by_id:
+                raise ValueError('Reference and creation scene ids must be distinct')
+            by_id[scene['id']] = {**scene, 'asset_folder': folder}
+        source = DOCS / (
+            'application/scans.md' if folder == 'scan' else 'application/fitting-modes.md'
+        )
+        text = source.read_text()
+        text = re.sub(
+            r'<!-- ' + folder + r'-example -->.*?<!-- /' + folder + r'-example -->',
+            '<!-- '
+            + folder
+            + '-example -->\nThis example is **'
+            + reference_manifest['example']
+            + '**: '
+            + ' + '.join(reference_manifest['fixture']['samples'])
+            + ', '
+            + reference_manifest['fixture']['origin']
+            + '.\n<!-- /'
+            + folder
+            + '-example -->',
+            text,
+            flags=re.DOTALL,
+        )
+        source.write_text(text)
+    fixture = manifest.get('fixture', {'samples': ['Y₂O₃'], 'origin': 'SPODI @ FRM II'})
+    structure_file = Path(manifest['inputs']['structure']['file']).name
+    experiment_file = Path(manifest['inputs']['experiment']['file']).name
     intro = f"""Build a project from its separate inputs, refine the model and review the report. This example is **{manifest['example']}**: {' + '.join(fixture['samples'])}, {fixture['origin']}.
 
-Select a numbered explanation to highlight that part of the interface. The [application layout](workspace.md) introduces the workspace and every enabled sidebar tab.
+Use the tabs to highlight parts of the interface. The [application layout](workspace.md) introduces the workspace and every enabled sidebar tab.
 
 ## Download the inputs
 
@@ -733,13 +857,17 @@ Selecting a structure or experiment changes the model being inspected. The statu
     )
     introduction.write_text(text)
     illustrate_guides(by_id)
+    capture_inventory()
     print(json.dumps({'imported': len(scenes), 'source': manifest['source_revision']}))
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('bundle', type=Path)
-    render(parser.parse_args().bundle.resolve())
+    parser.add_argument('--reference-bundle', type=Path)
+    parser.add_argument('--joint-bundle', type=Path)
+    args = parser.parse_args()
+    render(args.bundle.resolve(), args.reference_bundle, args.joint_bundle)
 
 
 if __name__ == '__main__':
