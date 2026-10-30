@@ -210,6 +210,12 @@ def main() -> None:
         ):
             parser.error('--base-url must be an HTTP(S) URL without a query or fragment')
         args.base_url = args.base_url.rstrip('/') + '/'
+    capture = ROOT / 'surfaces/docs/assets/gui/y2o3'
+    if (capture / 'manifest.json').exists():
+        from checks.gui_capture import validate_bundle
+
+        validate_bundle(capture)
+        print('Native GUI capture bundle: PASS', flush=True)
     version = importlib.metadata.version('zensical')
     if version != '0.0.73':
         raise SystemExit(f'Expected Zensical 0.0.73; found {version}. Install requirements.txt.')
