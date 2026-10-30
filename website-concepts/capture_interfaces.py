@@ -91,7 +91,11 @@ figure.show(renderer="plotly_mimetype")""",
         check=True,
     )
     (output / 'command-line.txt').write_text(
-        '$ python -m edi fit ' + example + ' --dry\n' + transcript.stdout
+        '$ python -m edi fit '
+        + example
+        + ' --dry\n'
+        + '\n'.join(line.rstrip() for line in transcript.stdout.splitlines())
+        + '\n'
     )
     (output / 'capture.json').write_text(
         json.dumps(
