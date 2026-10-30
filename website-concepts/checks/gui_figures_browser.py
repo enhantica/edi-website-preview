@@ -18,8 +18,6 @@ const width = article.getBoundingClientRect().width;
 const figures = [...article.querySelectorAll('.gui-figure')].map(figure => {
   const svg = figure.querySelector('svg.gui-capture');
   const bounds = svg.getBoundingClientRect();
-  const caption = figure.querySelector('figcaption');
-  const captionBounds = caption.getBoundingClientRect();
   const scale = bounds.width / 1480;
   const regions = [...svg.querySelectorAll('[data-gui-region]')].map(region => {
     const parts = JSON.parse(region.dataset.guiParts), box = region.getBBox();
@@ -29,9 +27,7 @@ const figures = [...article.querySelectorAll('.gui-figure')].map(figure => {
       paddingY: (top-box.y)*scale, square: getComputedStyle(region).strokeLinejoin === 'miter'};
   });
   return {width: bounds.width, height: bounds.height, column: width,
-    captionAbove: captionBounds.bottom <= bounds.top,
-    captionLeft: Math.abs(captionBounds.left - bounds.left) < 1,
-    captionAlign: getComputedStyle(caption).textAlign,
+    caption: !!figure.querySelector('figcaption'),
     overflow: getComputedStyle(svg).overflow, radius: getComputedStyle(svg).borderRadius,
     imageClip: svg.querySelector('image').hasAttribute('clip-path'),
     regions, active: svg.querySelectorAll('[data-gui-region].is-active').length};
@@ -53,12 +49,82 @@ def press(browser: Browser, selector: str, key: str) -> None:
         )
 
 
+def check_viewers(browser: Browser, width: int, output: Path) -> None:
+    require(browser.execute("return document.querySelectorAll('.tabbed-set').length === 5;"))
+    groups = browser.execute(
+        "return [...document.querySelectorAll('.tabbed-set')].map(group=>group.querySelectorAll('.tabbed-labels label').length);"
+    )
+    require(groups == [5, 5, 5, 7, 4], groups)
+    inventory = browser.execute(r"""
+return [...document.querySelectorAll('.tabbed-set')].map(group =>
+  [...group.querySelectorAll('.tabbed-labels label')].map(label => ({
+    title: label.textContent.trim().replace(/\s+/g, ' '),
+    icons: label.querySelectorAll('svg').length
+  })));
+""")
+    require(
+        [item['title'] for item in inventory[3]]
+        == [
+            'Overview',
+            'Main view: Pattern',
+            'Main view: Correlations',
+            'Sidebar: Main',
+            'Sidebar: Extra',
+            'Sidebar: Text',
+            'Sidebar: Settings',
+        ],
+        inventory,
+    )
+    require(
+        all(
+            item['icons'] == (0 if item['title'] == 'Overview' else 1)
+            for group in inventory
+            for item in group
+        ),
+        inventory,
+    )
+    require(browser.execute("return document.querySelector('h3#home') !== null;"))
+    for group, modes in enumerate(groups):
+        for mode in range(modes):
+            browser.execute(
+                "document.querySelectorAll('.tabbed-set')[arg[0]].querySelectorAll('.tabbed-labels label')[arg[1]].click();",
+                [group, mode],
+            )
+            browser.wait(0.05)
+            visible = browser.execute(
+                "return [...document.querySelectorAll('.tabbed-set')[arg].querySelectorAll('svg.gui-capture')].filter(svg=>svg.getBoundingClientRect().width>0).length;",
+                group,
+            )
+            require(visible == 1, (group, mode, visible))
+            selected = browser.execute(
+                """
+const group=document.querySelectorAll('.tabbed-set')[arg[0]];
+const label=group.querySelectorAll('.tabbed-labels label')[arg[1]];
+const svg=[...group.querySelectorAll('svg.gui-capture')].find(svg=>svg.getBoundingClientRect().width>0);
+return {label:label.textContent.trim(), title:svg.querySelector('title').textContent,
+  image:svg.querySelector('image').getAttribute('href')};
+""",
+                [group, mode],
+            )
+            if mode == 0:
+                require(selected['title'].endswith(' overview'), selected)
+            else:
+                require(selected['title'].endswith(selected['label']), selected)
+            if group == 3 and mode == 2:
+                require('guide-analysis-correlations.png' in selected['image'], selected)
+                browser.shot(output / f'{browser.kind}-{width}-correlations.png')
+        browser.execute(
+            "document.querySelectorAll('.tabbed-set')[arg].querySelector('.tabbed-labels label').click();",
+            group,
+        )
+
+
 def exercise(browser: Browser, base: str, output: Path) -> list[dict]:
     results = []
     for width in (1440, 390):
         browser.viewport(width, 1000)
         for route, count in [
-            ('application/workspace/', 21),
+            ('application/workspace/', 28),
             ('application/first-refinement/', 10),
             ('application/examples/', 1),
         ]:
@@ -69,7 +135,7 @@ def exercise(browser: Browser, base: str, output: Path) -> list[dict]:
             for figure in result['figures']:
                 if not figure['width']:
                     continue
-                require(figure['captionAbove'] and figure['captionLeft'] and figure['captionAlign'] == 'left', figure)
+                require(not figure['caption'], figure)
                 require(abs(figure['width'] - figure['column']) < 1, figure)
                 require(abs(figure['width'] / figure['height'] - 1480 / 800) < 0.01, figure)
                 require(figure['overflow'] == 'visible' and figure['radius'] == '0px', figure)
@@ -81,30 +147,7 @@ def exercise(browser: Browser, base: str, output: Path) -> list[dict]:
             if route.endswith('workspace/'):
                 require(all(f['regions'][0]['parts'] == 2 for f in result['figures'][1:]), result)
             if route.endswith('workspace/'):
-                require(
-                    browser.execute(
-                        "return document.querySelectorAll('.tabbed-set').length === 5;"
-                    )
-                )
-                groups = browser.execute(
-                    "return [...document.querySelectorAll('.tabbed-set')].map(group=>group.querySelectorAll('.tabbed-labels label').length);"
-                )
-                for group, modes in enumerate(groups):
-                    for mode in range(modes):
-                        browser.execute(
-                            "document.querySelectorAll('.tabbed-set')[arg[0]].querySelectorAll('.tabbed-labels label')[arg[1]].click();",
-                            [group, mode],
-                        )
-                        browser.wait(0.05)
-                        visible = browser.execute(
-                            "return [...document.querySelectorAll('.tabbed-set')[arg].querySelectorAll('svg.gui-capture')].filter(svg=>svg.getBoundingClientRect().width>0).length;",
-                            group,
-                        )
-                        require(visible == 1, (group, mode, visible))
-                    browser.execute(
-                        "document.querySelectorAll('.tabbed-set')[arg].querySelector('.tabbed-labels label').click();",
-                        group,
-                    )
+                check_viewers(browser, width, output)
             opener = 'article [data-gui-open]'
             browser.execute('document.querySelector(arg).focus();', opener)
             press(browser, opener, 'ENTER')

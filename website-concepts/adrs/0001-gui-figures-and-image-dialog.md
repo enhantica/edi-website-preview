@@ -11,7 +11,7 @@ The native screenshot importer and `gui-capture` renderer already pair PNGs with
 
 All generated GUI figures fill the text column. The rounded clip applies only to the screenshot image; its frame and square highlight paths are separate siblings. The SVG allows visible overflow. Each highlight expands by 1.5 displayed CSS pixels on each side, recalculated from the viewBox scale by one ResizeObserver. Its outline remains two display pixels through a non-scaling stroke.
 
-Descriptions precede the screenshot in the figure markup and align with its left edge. This placement applies to all generated figures, including tab viewers and individual how-to scenes. Browser checks verify the caption's position and alignment.
+Short explanations sit below subsection headings, without repeated image captions. SVG titles retain view-specific descriptions for assistive technology and the enlarged dialog.
 
 Sidebar paths join the selected native tab and the body below the tab strip, using the capture's geometry. Missing or inconsistent tab geometry refuses generation. All sidebar views show this compound shape. The same rendering path serves the walkthrough, layout guide and enlarged view; it does not alter native images or metadata.
 
@@ -25,7 +25,9 @@ Build validation checks the native capture bundle and generated links, including
 
 ## Native tab viewers and GUI icon parity
 
-The layout guide now uses Zensical's native content tabs: one viewer per workflow page, with an overview and the enabled Main, Extra, Text and Settings views. Switching tabs changes the image and its geometry as one pane. This replaces the repeated vertical gallery and its two overlay-choice buttons.
+The layout guide uses Zensical's native content tabs: one viewer per workflow page, with an overview, enabled main views and enabled sidebar views. Material dock-left and dock-right icons distinguish workspace tabs from sidebar tabs; hidden text gives each selector an explicit accessible prefix. Home precedes Project and has one overview because it has no tabbed panels. Switching tabs changes the image and its geometry as one pane. This replaces the repeated vertical gallery and its two overlay-choice buttons.
+
+Main views use captured native tab labels and bounds. Their stepped outline joins the selected main-view tab to its workspace, just as the existing sidebar path joins a sidebar tab to its panel. Secondary main views require an actual capture whose action record selects that tab; missing captures refuse generation. Overview titles describe the whole page and do not inherit the source screenshot's sidebar name.
 
 Highlight selectors use the actual captured Font Awesome icon name, mapped to the same Font Awesome 5 solid face bundled by the GUI. The font and its license are retained, and the glyph map is derived from that exact face. Controls with no GUI icon remain text-only. Figures always use their captured display labels, with explicit human-written explanations where useful.
 

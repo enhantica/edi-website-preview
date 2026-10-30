@@ -115,11 +115,24 @@ def label(target: str, page: str, native_label: str = '') -> tuple[str, str]:
 
 def region_parts(meta: dict, target: str) -> list[list[float]]:
     """Join a sidebar's active tab to its body using this capture's Qt bounds."""
+    if target.startswith('mainView.'):
+        _, name, key = target.split('.')
+        tab = meta['items'][f'mainArea.{name}.tab.{key}']
+        x, y, width, height = meta['items'][f'workflow.{name}.mainContent']['visible_bounds']
+        tx, ty, tw, th = tab['visible_bounds']
+        bottom = ty + th
+        if not tab['enabled'] or not (
+            x <= tx < tx + tw <= x + width and y <= ty < bottom < y + height
+        ):
+            raise ValueError('A main-view tab must be enabled and inside its workspace')
+        return [[x, bottom, width, y + height - bottom], [tx, ty, tw, th]]
     if target.endswith('.page'):
         name = target.split('.')[1]
         main = meta['items'][f'workflow.{name}.mainContent']['visible_bounds']
-        sidebar = meta['items'][f'workflow.{name}.manualSidebar']['visible_bounds']
         tab = meta['items'][f'appBar.tab.{name}']['visible_bounds']
+        if name == 'home':
+            return [main, tab]
+        sidebar = meta['items'][f'workflow.{name}.manualSidebar']['visible_bounds']
         x, y, width, height = main
         sx, sy, sw, sh = sidebar
         if abs(x + width - sx) > 0.1 or abs(y - sy) > 0.1 or abs(height - sh) > 0.1:
@@ -170,16 +183,25 @@ def gui_icon(item: dict) -> str:
     return f'<span class="gui-fa" aria-hidden="true">&#{code};</span>'
 
 
-def figure(scene: dict, *, view: str = 'overview', instance: str = '') -> str:
+def figure(
+    scene: dict,
+    *,
+    view: str = 'overview',
+    instance: str = '',
+    main_tab: str = '',
+    description: str = '',
+) -> str:
     meta = scene['layout']
     image = '../assets/gui/y2o3/' + scene['image'] + '?v=' + meta['image_sha256'][:12]
-    description = html.escape(scene['description'], quote=True)
+    description = html.escape(description or scene['description'], quote=True)
     identity = f'{scene["id"]}-{view}' + (f'-{instance}' if instance else '')
     targets = (
         [f'workflow.{scene["page"]}.manualSidebar']
         if view == 'sidebar'
         else ([f'workflow.{scene["page"]}.page'] if view == 'workflow' else meta['highlights'])
     )
+    if view == 'main':
+        targets = [f'mainView.{scene["page"]}.{main_tab.rsplit(".", 1)[1]}']
     navigation = ''
     if view == 'overview':
         targets = [target for target in targets if target != 'appBar']
@@ -210,7 +232,7 @@ def figure(scene: dict, *, view: str = 'overview', instance: str = '') -> str:
             f'<li><button type="button" data-gui-target="{key}" aria-pressed="{"true" if number == 1 and view != "layout" else "false"}">'
             f'{number}. {gui_icon(meta["items"].get(target, {}))}{html.escape(title)}</button> {html.escape(text)}</li>'
         )
-    if view in {'sidebar', 'workflow'}:
+    if view in {'sidebar', 'workflow', 'main'}:
         controls = ''
     else:
         overview = (
@@ -263,7 +285,6 @@ def figure(scene: dict, *, view: str = 'overview', instance: str = '') -> str:
     clip = f'gui-clip-{identity}'
     return (
         '<figure class="gui-figure" data-gui-figure>\n'
-        f'<figcaption>{description}.</figcaption>\n'
         f'<a class="gui-image-link" href="{image}" data-gui-open aria-haspopup="dialog" '
         f'aria-label="Enlarge screenshot: {description}">'
         f'<svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="{description}">'
@@ -274,7 +295,8 @@ def figure(scene: dict, *, view: str = 'overview', instance: str = '') -> str:
         + navigation
         + arrows
         + '</svg></a>\n'
-        + controls + '\n</figure>\n'
+        + controls
+        + '\n</figure>\n'
     )
 
 
@@ -428,7 +450,26 @@ The page views below introduce each enabled tab. Then follow [Example refinement
 
 Selecting a structure or experiment changes the model being inspected. The status bar reports the project state, messages and fitting progress. Read messages after importing data or when an operation is refused.
 """
-    gallery = '\n## Page and sidebar views\n\nThese views come from the same example refinement. Choose the page overview or a sidebar tab to explore the controls. The Analysis and Report views show a completed refinement.\n'
+    gallery = '\n## Page and sidebar views\n\nChoose **Overview** for the whole page. :material-dock-left: marks a main-view tab; :material-dock-right: marks a sidebar tab. Only enabled tabs are shown. Analysis and Report show the completed refinement.\n'
+    gallery += '\n### :material-home: Home\n\nStart a new analysis or open the Project page.\n\n'
+    gallery += figure(by_id['01-home'], view='workflow', description='Home overview')
+    introductions = {
+        'project': 'Create or open a project and keep its details together.',
+        'structure': 'Inspect the crystal structure and edit its symmetry, cell and atom sites.',
+        'experiment': 'Compare the measured pattern with the calculation and configure the measurement model.',
+        'analysis': 'Choose parameters to refine, run the fit and inspect the pattern and parameter correlations.',
+        'report': 'Review the results and choose what to include in an exported report.',
+    }
+
+    def pane(title: str, content: str) -> str:
+        return (
+            '\n=== "'
+            + title
+            + '"\n\n'
+            + '\n'.join('    ' + line if line else '' for line in content.splitlines())
+            + '\n'
+        )
+
     for name in ['project', 'structure', 'experiment', 'analysis', 'report']:
         icon = {
             'project': 'archive',
@@ -437,20 +478,50 @@ Selecting a structure or experiment changes the model being inspected. The statu
             'analysis': 'calculator',
             'report': 'clipboard-text',
         }[name]
-        gallery += f'\n### :material-{icon}: {name.title()}\n'
+        gallery += f'\n### :material-{icon}: {name.title()}\n\n{introductions[name]}\n'
         modes = [scene for scene in scenes if scene['page'] == name and scene['sidebar']]
-        overview = figure(modes[0], view='workflow')
-        gallery += (
-            '\n=== "Overview"\n\n'
-            + '\n'.join('    ' + line if line else '' for line in overview.splitlines())
-            + '\n'
+        base = modes[0]
+        gallery += pane(
+            'Overview', figure(base, view='workflow', description=f'{name.title()} overview')
         )
+        tabs = sorted(
+            (
+                (key, item)
+                for key, item in base['layout']['items'].items()
+                if key.startswith(f'mainArea.{name}.tab.') and item['enabled']
+            ),
+            key=lambda pair: pair[1]['visible_bounds'][0],
+        )
+        for index, (key, item) in enumerate(tabs):
+            selected = base
+            if index:
+                captures = [
+                    by_id[action['scene']]
+                    for action in manifest['actions']
+                    if action['action'] == key and action['scene'] in by_id
+                ]
+                if not captures:
+                    raise ValueError(f'Enabled main-view tab has no capture: {key}')
+                selected = captures[-1]
+            title = html.escape(item['label'])
+            gallery += pane(
+                f":material-dock-left: <span class='gui-sr-only'>Main view: </span>{title}",
+                figure(
+                    selected,
+                    view='main',
+                    main_tab=key,
+                    instance=key.rsplit('.', 1)[1],
+                    description=f'{name.title()} — Main view: {item["label"]}',
+                ),
+            )
         for scene in modes:
-            content = figure(scene, view='sidebar')
-            gallery += (
-                f'\n=== "{scene["sidebar"]}"\n\n'
-                + '\n'.join('    ' + line if line else '' for line in content.splitlines())
-                + '\n'
+            gallery += pane(
+                f":material-dock-right: <span class='gui-sr-only'>Sidebar: </span>{scene['sidebar']}",
+                figure(
+                    scene,
+                    view='sidebar',
+                    description=f'{name.title()} — Sidebar: {scene["sidebar"]}',
+                ),
             )
     (DOCS / 'application/workspace.md').write_text(page('Application layout', workspace + gallery))
     if '15-project-examples' in by_id:
