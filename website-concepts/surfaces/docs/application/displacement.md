@@ -1,8 +1,9 @@
 ---
+category_glyph: "\uf0b2"
 template: gui.html
 ---
 
-# :material-puzzle: Atomic displacement
+# <span class="ed-reference-icon" data-reference-category="atom-site-aniso" aria-hidden="true">&#61618;</span> Atomic displacement
 
 ## Choose and edit displacement parameters
 

@@ -1,8 +1,9 @@
 ---
+category_glyph: "\uf61f"
 template: gui.html
 ---
 
-# :material-microscope: Peak profiles
+# <span class="ed-reference-icon" data-reference-category="peak" aria-hidden="true">&#63007;</span> Peak profiles
 
 ## Choose a profile
 

@@ -6,7 +6,7 @@ template: physics.html
 
 Look up a GUI label, Edi key or CIF name. Each entry describes the current field; applicability depends on the experiment and selected model. [Compare the naming systems](../user-guide/parameter-reference.md).
 
-## Project {#metadata}
+## <span class="ed-reference-icon" data-reference-category="metadata" aria-hidden="true">&#61831;</span> Project {#metadata}
 
 <code>_metadata</code> — The project&#x27;s name, title, description and authors.
 
@@ -90,7 +90,7 @@ A machine-readable time of the last save.
 
 **CIF names:** <code>_edi_metadata.timestamp</code>, <code>_easydiffraction_project.timestamp</code>, <code>_software.timestamp</code>.
 
-## Standard uncertainties {#su-format}
+## <span class="ed-reference-icon" data-reference-category="su-format" aria-hidden="true">&#62030;</span> Standard uncertainties {#su-format}
 
 <code>_su_format</code> — How values with a standard uncertainty are written and shown.
 
@@ -109,7 +109,7 @@ How a value with a standard uncertainty is rounded when it is written and shown.
 | <code>iucr_19</code> | IUCr recommendation: 1 digit, or 2 from 10 to 19 | The IUCr recommendation 12: one significant digit in the uncertainty, two from 10 to 19. |
 | <code>iucr_99</code> | Always 2 digits, 10 to 99 | Always two significant digits in the uncertainty, the practice the IUCr also admits. |
 
-## Report {#report}
+## <span class="ed-reference-icon" data-reference-category="report" aria-hidden="true">&#61788;</span> Report {#report}
 
 <code>_report</code> — Which report formats are saved, and what they leave out.
 
@@ -153,7 +153,7 @@ The report sections left out.
 
 **CIF names:** <code>_edi_report.excluded</code>.
 
-## Correlation chart {#correlation-chart}
+## <span class="ed-reference-icon" data-reference-category="correlation-chart" aria-hidden="true">&#61450;</span> Correlation chart {#correlation-chart}
 
 <code>_correlation_chart</code> — Settings of the parameter-correlation chart.
 
@@ -165,7 +165,7 @@ The smallest absolute correlation the chart shows.
 
 **CIF names:** <code>_edi_correlation_chart.threshold</code>.
 
-## Pattern chart {#pattern-chart}
+## <span class="ed-reference-icon" data-reference-category="pattern-chart" aria-hidden="true">&#61953;</span> Pattern chart {#pattern-chart}
 
 <code>_pattern_chart</code> — Settings of the diffraction pattern chart.
 
@@ -182,7 +182,7 @@ The pattern chart&#x27;s horizontal axis.
 | <code>native</code> | Measured axis | The experiment&#x27;s own axis: 2θ or time of flight. |
 | <code>d_spacing</code> | d-spacing | The d-spacing of each point. |
 
-## Space group {#space-group}
+## <span class="ed-reference-icon" data-reference-category="space-group" aria-hidden="true">&#63423;</span> Space group {#space-group}
 
 <code>_space_group</code> — The structure&#x27;s space group.
 
@@ -216,7 +216,7 @@ The number of the space group in International Tables, from 1 to 230.
 
 **CIF names:** <code>_space_group.IT_number</code>, <code>_space_group_IT_number</code>, <code>_symmetry.Int_Tables_number</code>, <code>_symmetry_Int_Tables_number</code>.
 
-## Cell {#cell}
+## <span class="ed-reference-icon" data-reference-category="cell" aria-hidden="true">&#61874;</span> Cell {#cell}
 
 <code>_cell</code> — The lengths and angles of the unit cell.
 
@@ -292,7 +292,7 @@ Unit-cell angle between a and b (degrees; engine converts to radians).
 
 **CIF names:** <code>_cell.angle_gamma</code>, <code>_cell_angle_gamma</code>.
 
-## Atom site {#atom-site}
+## <span class="ed-reference-icon" data-reference-category="atom-site" aria-hidden="true">&#62930;</span> Atom site {#atom-site}
 
 <code>_atom_site</code> — The atom sites of the structure: position, occupancy and isotropic displacement.
 
@@ -422,7 +422,7 @@ Isotropic atomic displacement parameter in the site&#x27;s declared type: B for 
 | <code>Uani</code> | U eq | Å² | <code>_atom_site.U_iso_or_equiv</code> |
 | <code>beta</code> | B eq | Å² | <code>_atom_site.B_iso_or_equiv</code> |
 
-## Atomic displacement {#atom-site-aniso}
+## <span class="ed-reference-icon" data-reference-category="atom-site-aniso" aria-hidden="true">&#61618;</span> Atomic displacement {#atom-site-aniso}
 
 <code>_atom_site_aniso</code> — The anisotropic displacement of each anisotropic atom site.
 
@@ -548,7 +548,7 @@ Anisotropic displacement tensor component 23 (off-diagonal 23) in the site&#x27;
 | <code>Bani</code> | B₂₃ | Å² | <code>_atom_site_aniso.B_23</code> |
 | <code>beta</code> | β₂₃ | Å² | <code>_atom_site_aniso.beta_23</code> |
 
-## Scattering length {#scattering-length}
+## <span class="ed-reference-icon" data-reference-category="scattering-length" aria-hidden="true">&#62789;</span> Scattering length {#scattering-length}
 
 <code>_scattering_length</code> — Neutron coherent scattering lengths that replace the built-in table for an element or isotope.
 
@@ -568,7 +568,7 @@ The coherent neutron scattering length.
 
 **CIF names:** <code>_edi_scattering_length.length_fm</code>.
 
-## Bond settings {#geom}
+## <span class="ed-reference-icon" data-reference-category="geom" aria-hidden="true">&#62790;</span> Bond settings {#geom}
 
 <code>_geom</code> — How bonds between atoms are found.
 
@@ -592,7 +592,7 @@ How much longer than the sum of the covalent radii a bond may be.
 
 **CIF names:** <code>_geom.bond_distance_incr</code>.
 
-## Appearance {#structure-view}
+## <span class="ed-reference-icon" data-reference-category="structure-view" aria-hidden="true">&#62783;</span> Appearance {#structure-view}
 
 <code>_structure_view</code> — How the structure view draws the structure: atoms, colours, labels and what else it shows.
 
@@ -686,7 +686,7 @@ Whether the cell axes are drawn.
 
 **CIF names:** <code>_edi_structure_view.axes</code>.
 
-## Experiment type {#experiment-type}
+## <span class="ed-reference-icon" data-reference-category="experiment-type" aria-hidden="true">&#63417;</span> Experiment type {#experiment-type}
 
 <code>_experiment_type</code> — What kind of experiment this is: sample form, beam mode, probe and scattering type.
 
@@ -779,7 +779,7 @@ The polarisation of the incident beam; an X-ray experiment states the inapplicab
 | <code>unpolarised</code> | Unpolarised | An unpolarised neutron beam. |
 | <code>.</code> | Not applicable | An X-ray experiment, whose beam polarisation is not a setting here. |
 
-## Calculation range {#data-range}
+## <span class="ed-reference-icon" data-reference-category="data-range" aria-hidden="true">&#62263;</span> Calculation range {#data-range}
 
 <code>_data_range</code> — The grid a pattern is calculated on when no data are measured.
 
@@ -847,7 +847,7 @@ The time-of-flight points of the calculation grid.
 
 **CIF names:** <code>_edi_data_range.time_of_flight</code>.
 
-## Background {#background}
+## <span class="ed-reference-icon" data-reference-category="background" aria-hidden="true">&#63550;</span> Background {#background}
 
 <code>_background</code> — The background under the diffraction peaks.
 
@@ -957,7 +957,7 @@ The name of a background point or term.
 
 **CIF names:** <code>_pd_background.id</code>.
 
-## Background estimation {#background-estimate}
+## <span class="ed-reference-icon" data-reference-category="background-estimate" aria-hidden="true">&#61648;</span> Background estimation {#background-estimate}
 
 <code>_background_estimate</code> — How the background is estimated from the measured pattern.
 
@@ -1072,7 +1072,7 @@ A checksum of the background the last estimate wrote.
 
 **CIF names:** <code>_edi_background_estimate.points_digest</code>.
 
-## Instrument {#instrument}
+## <span class="ed-reference-icon" data-reference-category="instrument" aria-hidden="true">&#62992;</span> Instrument {#instrument}
 
 <code>_instrument</code> — The instrument setup and calibration.
 
@@ -1254,7 +1254,7 @@ The scattering angle of the time-of-flight detector bank.
 
 **CIF names:** <code>_pd_meas.2theta_fixed</code>, <code>_pd_meas_2theta_fixed</code>, <code>_instr.2theta_bank</code>.
 
-## Peak profile {#peak}
+## <span class="ed-reference-icon" data-reference-category="peak" aria-hidden="true">&#63007;</span> Peak profile {#peak}
 
 <code>_peak</code> — The shape and width of the diffraction peaks.
 
@@ -1626,7 +1626,7 @@ How far from its centre a peak is calculated, in units of its width.
 
 **CIF names:** <code>_edi_peak.cutoff_fwhm</code>, <code>_easydiffraction_peak.cutoff_fwhm</code>.
 
-## Excluded region {#excluded-region}
+## <span class="ed-reference-icon" data-reference-category="excluded-region" aria-hidden="true">&#61741;</span> Excluded region {#excluded-region}
 
 <code>_excluded_region</code> — Ranges of the pattern left out of the fit.
 
@@ -1664,7 +1664,7 @@ Where the excluded region ends.
 | <code>constant wavelength</code> | end | deg | — |
 | <code>time-of-flight</code> | end | µs | — |
 
-## Extinction {#extinction}
+## <span class="ed-reference-icon" data-reference-category="extinction" aria-hidden="true">&#62373;</span> Extinction {#extinction}
 
 <code>_extinction</code> — A single crystal&#x27;s extinction correction: its type, mosaic distribution and parameters.
 
@@ -1798,7 +1798,7 @@ The shape of a Becker-Coppens crystal&#x27;s mosaic distribution.
 | <code>gaussian</code> | Gaussian | A Gaussian mosaic distribution. |
 | <code>lorentzian</code> | Lorentzian | A Lorentzian mosaic distribution. |
 
-## Linked structure {#linked-structure}
+## <span class="ed-reference-icon" data-reference-category="linked-structure" aria-hidden="true">&#62973;</span> Linked structure {#linked-structure}
 
 <code>_linked_structure</code> — The structures that contribute to the pattern, each with its scale.
 
@@ -1844,7 +1844,7 @@ The structure&#x27;s weight fraction in the sample, from the scales (Hill and Ho
 
 **CIF names:** <code>_edi_linked_structure.weight_fraction</code>.
 
-## Absorption {#absorption}
+## <span class="ed-reference-icon" data-reference-category="absorption" aria-hidden="true">&#61507;</span> Absorption {#absorption}
 
 <code>_absorption</code> — The absorption correction.
 
@@ -1900,7 +1900,7 @@ The absorption correction.
 | <code>cylinder-hewat</code> | Cylinder (Hewat) | The Hewat (1979) polynomial for a cylindrical sample. |
 | <code>cylinder-lobanov</code> | Cylinder (Lobanov) | The Lobanov and Alte da Veiga (1998) fit for a cylindrical sample. |
 
-## Preferred orientation {#preferred-orientation}
+## <span class="ed-reference-icon" data-reference-category="preferred-orientation" aria-hidden="true">&#61774;</span> Preferred orientation {#preferred-orientation}
 
 <code>_preferred_orientation</code> — The March-Dollase preferred-orientation correction per structure.
 
@@ -1956,7 +1956,7 @@ The l index of the preferred-orientation direction.
 
 **CIF names:** <code>_pd_pref_orient_March_Dollase.index_l</code>, <code>_pref_orient.index_l</code>.
 
-## Observed reflections {#reflns}
+## <span class="ed-reference-icon" data-reference-category="reflns" aria-hidden="true">&#61616;</span> Observed reflections {#reflns}
 
 <code>_reflns</code> — Which of a single crystal&#x27;s reflections count as observed, for its counts and R factors.
 
@@ -1989,7 +1989,7 @@ The observed threshold as CIF writes it, such as I&gt;2u(I); a save writes it be
 
 **CIF names:** <code>_reflns.threshold_expression</code>, <code>_reflns_threshold_expression</code>, <code>_reflns_observed_criterion</code>, <code>_reflns.observed_criterion</code>.
 
-## Scattering source {#scattering-source}
+## <span class="ed-reference-icon" data-reference-category="scattering-source" aria-hidden="true">&#62930;</span> Scattering source {#scattering-source}
 
 <code>_scattering_source</code> — The published tables the scattering factors and lengths come from.
 
@@ -2034,7 +2034,7 @@ The published table the neutron scattering lengths come from.
 | <code>rauch2003ext</code> | Rauch &amp; Waschkowski (2003) | Rauch and Waschkowski (2003), extended with the isotopes it lacks. |
 | <code>sears1992</code> | Sears (1992) | Sears, Neutron News 3 (1992) 26. |
 
-## Calculator {#calculator}
+## <span class="ed-reference-icon" data-reference-category="calculator" aria-hidden="true">&#61932;</span> Calculator {#calculator}
 
 <code>_calculator</code> — The calculation engine an experiment names.
 
@@ -2050,7 +2050,7 @@ The calculation engine.
 | --- | --- | --- |
 | <code>crysta</code> | crysta | The crysta engine. |
 
-## Minimizer {#minimizer}
+## <span class="ed-reference-icon" data-reference-category="minimizer" aria-hidden="true">&#62398;</span> Minimizer {#minimizer}
 
 <code>_minimizer</code> — The minimizer and its settings.
 
@@ -2100,7 +2100,7 @@ The relative change of χ² at which a fit stops.
 
 **CIF names:** <code>_edi_minimizer.chi_square_tolerance</code>.
 
-## Fitting mode {#fitting-mode}
+## <span class="ed-reference-icon" data-reference-category="fitting-mode" aria-hidden="true">&#61918;</span> Fitting mode {#fitting-mode}
 
 <code>_fitting_mode</code> — How the experiments of a project are fitted.
 
@@ -2121,7 +2121,7 @@ How the experiments of the project are fitted.
 | <code>sequential</code> | Sequential: each from the previous | Each data file is fitted, starting from the previous result. |
 | <code>independent</code> | Independent: each from the same start | Each data file is fitted from the same start. |
 
-## Fitted reflections {#refine-ls}
+## <span class="ed-reference-icon" data-reference-category="refine-ls" aria-hidden="true">&#61636;</span> Fitted reflections {#refine-ls}
 
 <code>_refine_ls</code> — Which of a single crystal&#x27;s reflections a fit uses.
 
@@ -2133,7 +2133,7 @@ The multiple n of its su above which a single crystal&#x27;s reflection is fitte
 
 **CIF names:** <code>_edi_refine_ls.threshold_sigma</code>.
 
-## Alias {#alias}
+## <span class="ed-reference-icon" data-reference-category="alias" aria-hidden="true">&#61483;</span> Alias {#alias}
 
 <code>_alias</code> — Short names for parameters, used in constraints.
 
@@ -2153,7 +2153,7 @@ The parameter the short name stands for.
 
 **CIF names:** <code>_edi_alias.parameter_unique_name</code>, <code>_easydiffraction_alias.parameter_unique_name</code>, <code>_alias.param_unique_name</code>.
 
-## Constraint {#constraint}
+## <span class="ed-reference-icon" data-reference-category="constraint" aria-hidden="true">&#62764;</span> Constraint {#constraint}
 
 <code>_constraint</code> — Expressions that compute a parameter from others.
 
@@ -2181,7 +2181,7 @@ Whether the constraint applies.
 
 **CIF names:** <code>_edi_constraint.enabled</code>.
 
-## Joint-fit weights {#joint-fit}
+## <span class="ed-reference-icon" data-reference-category="joint-fit" aria-hidden="true">&#61633;</span> Joint-fit weights {#joint-fit}
 
 <code>_joint_fit</code> — Each experiment&#x27;s weight in a joint fit.
 
@@ -2195,7 +2195,7 @@ The experiment&#x27;s weight in a joint fit.
 
 **CIF names:** <code>_edi_joint_fit.weight</code>, <code>_easydiffraction_joint_fit.weight</code>.
 
-## Sequential fit {#sequential-fit}
+## <span class="ed-reference-icon" data-reference-category="sequential-fit" aria-hidden="true">&#61643;</span> Sequential fit {#sequential-fit}
 
 <code>_sequential_fit</code> — Which data files a sequential fit runs over.
 
@@ -2231,7 +2231,7 @@ The experiment every file is fitted with.
 
 **CIF names:** <code>_edi_sequential_fit.template_file</code>.
 
-## Scan extraction rule {#sequential-fit-extract}
+## <span class="ed-reference-icon" data-reference-category="sequential-fit-extract" aria-hidden="true">&#61616;</span> Scan extraction rule {#sequential-fit-extract}
 
 <code>_sequential_fit_extract</code> — Rules that read a value, such as a temperature, from each data file name.
 
@@ -2267,7 +2267,7 @@ Whether a file whose name does not match fails.
 
 **CIF names:** <code>_edi_sequential_fit_extract.required</code>, <code>_easydiffraction_sequential_fit_extract.required</code>.
 
-## File header {#edi}
+## <span class="ed-reference-icon" data-reference-category="edi" aria-hidden="true">&#61897;</span> File header {#edi}
 
 <code>_edi</code> — The header every .edi file starts with.
 
@@ -2279,7 +2279,7 @@ The version of the .edi format the file follows.
 
 **CIF names:** <code>_edi_edi.schema_version</code>.
 
-## Saved report {#report-file}
+## <span class="ed-reference-icon" data-reference-category="report-file" aria-hidden="true">&#61787;</span> Saved report {#report-file}
 
 <code>_report_file</code> — The report files saved from this project.
 
@@ -2329,7 +2329,7 @@ A checksum of the saved report file.
 
 **CIF names:** <code>_edi_report_file.digest</code>.
 
-## Symmetry operator {#space-group-symop}
+## <span class="ed-reference-icon" data-reference-category="space-group-symop" aria-hidden="true">&#62193;</span> Symmetry operator {#space-group-symop}
 
 <code>_space_group_symop</code> — The space group&#x27;s symmetry operators, in the order a symmetry code refers to them.
 
@@ -2341,7 +2341,7 @@ A symmetry operator as x, y, z expressions.
 
 **CIF names:** <code>_space_group_symop.operation_xyz</code>, <code>_space_group_symop_operation_xyz</code>, <code>_symmetry_equiv.pos_as_xyz</code>, <code>_symmetry_equiv_pos_as_xyz</code>.
 
-## Atom in the cell {#expanded-atom-site}
+## <span class="ed-reference-icon" data-reference-category="expanded-atom-site" aria-hidden="true">&#62113;</span> Atom in the cell {#expanded-atom-site}
 
 <code>_expanded_atom_site</code> — Every atom of the unit cell, generated from the atom sites by symmetry.
 
@@ -2433,7 +2433,7 @@ Atoms within one shared position carry the same cluster number.
 
 **CIF names:** <code>_edi_expanded_atom_site.cluster_id</code>.
 
-## Bond {#geom-bond}
+## <span class="ed-reference-icon" data-reference-category="geom-bond" aria-hidden="true">&#63396;</span> Bond {#geom-bond}
 
 <code>_geom_bond</code> — The bonds between the atoms of the cell.
 
@@ -2493,7 +2493,7 @@ The length of the bond.
 
 **CIF names:** <code>_geom_bond.distance</code>, <code>_geom_bond_distance</code>, <code>_geom_bond.dist</code>.
 
-## Cartesian frame {#atom-sites-cartn-transform}
+## <span class="ed-reference-icon" data-reference-category="atom-sites-cartn-transform" aria-hidden="true">&#62923;</span> Cartesian frame {#atom-sites-cartn-transform}
 
 <code>_atom_sites_cartn_transform</code> — The matrix from fractional to Cartesian coordinates.
 
@@ -2577,7 +2577,7 @@ How the Cartesian axes are placed in the cell.
 
 **CIF names:** <code>_atom_sites_Cartn_transform.axes</code>, <code>_atom_sites_Cartn_transform_axes</code>, <code>_atom_sites.Cartn_transform_axes</code>.
 
-## Data source {#data-source}
+## <span class="ed-reference-icon" data-reference-category="data-source" aria-hidden="true">&#62831;</span> Data source {#data-source}
 
 <code>_data_source</code> — The file the measured data were read from.
 
@@ -2589,7 +2589,7 @@ The file the measured data were read from.
 
 **CIF names:** <code>_edi_data_source.file_name</code>.
 
-## Measured data point {#data}
+## <span class="ed-reference-icon" data-reference-category="data" aria-hidden="true">&#62263;</span> Measured data point {#data}
 
 <code>_data</code> — The measured pattern and the values calculated at each of its points.
 
@@ -2662,7 +2662,7 @@ Whether the point takes part in the calculation and the fit.
 | <code>incl</code> | Included | The point is calculated and fitted. |
 | <code>excl</code> | Excluded | The point lies in an excluded region and is not calculated. |
 
-## Calculated point {#data-calc}
+## <span class="ed-reference-icon" data-reference-category="data-calc" aria-hidden="true">&#61950;</span> Calculated point {#data-calc}
 
 <code>_data_calc</code> — The calculated pattern the command line writes.
 
@@ -2674,7 +2674,7 @@ The index of the point in the calculated pattern.
 
 **CIF names:** <code>_pd_data.point_id</code>, <code>_pd_data_point_id</code>.
 
-## Structure curves {#pd-calc-overall}
+## <span class="ed-reference-icon" data-reference-category="pd-calc-overall" aria-hidden="true">&#61950;</span> Structure curves {#pd-calc-overall}
 
 <code>_pd_calc_overall</code> — The structures the per-point curves follow.
 
@@ -2686,7 +2686,7 @@ The structures whose curves the per-point lists hold, in their order.
 
 **CIF names:** <code>_edi_pd_calc_overall.component_presentation_order</code>.
 
-## Structure curve {#pd-calc}
+## <span class="ed-reference-icon" data-reference-category="pd-calc" aria-hidden="true">&#61950;</span> Structure curve {#pd-calc}
 
 <code>_pd_calc</code> — Each structure&#x27;s calculated curve, one value per structure at every point of the pattern.
 
@@ -2698,7 +2698,7 @@ Each structure&#x27;s calculated intensity at the point, the background excluded
 
 **CIF names:** <code>_pd_calc.component_intensities_net</code>.
 
-## Reflection {#refln}
+## <span class="ed-reference-icon" data-reference-category="refln" aria-hidden="true">&#61498;</span> Reflection {#refln}
 
 <code>_refln</code> — The Bragg reflections of each linked structure.
 
@@ -2822,7 +2822,7 @@ The time of flight of the reflection.
 
 **CIF names:** <code>_edi_refln.time_of_flight</code>, <code>_refln.time_of_flight</code>.
 
-## Fit start value {#fit-parameter}
+## <span class="ed-reference-icon" data-reference-category="fit-parameter" aria-hidden="true">&#61914;</span> Fit start value {#fit-parameter}
 
 <code>_fit_parameter</code> — The values the last fit started from, kept so the fit can be undone.
 
@@ -2858,7 +2858,7 @@ Whether the parameter was tied when the last fit started.
 
 **CIF names:** <code>_edi_fit_parameter.start_tied</code>.
 
-## Fit result {#fit-result}
+## <span class="ed-reference-icon" data-reference-category="fit-result" aria-hidden="true">&#61528;</span> Fit result {#fit-result}
 
 <code>_fit_result</code> — The outcome of the last fit.
 
@@ -3046,7 +3046,7 @@ The descent strategy the fit used.
 
 **CIF names:** <code>_edi_fit_result.descent</code>.
 
-## Experiment fit result {#fit-result-bank}
+## <span class="ed-reference-icon" data-reference-category="fit-result-bank" aria-hidden="true">&#61452;</span> Experiment fit result {#fit-result-bank}
 
 <code>_fit_result_bank</code> — The agreement factors of each experiment in the last fit.
 
@@ -3114,7 +3114,7 @@ The experiment&#x27;s reduced χ².
 
 **CIF names:** <code>_edi_fit_result_bank.chi_square</code>.
 
-## Structure fit result {#fit-result-phase}
+## <span class="ed-reference-icon" data-reference-category="fit-result-phase" aria-hidden="true">&#61452;</span> Structure fit result {#fit-result-phase}
 
 <code>_fit_result_phase</code> — The agreement factors of each structure in each experiment.
 
@@ -3134,7 +3134,7 @@ The structure&#x27;s structure-factor R factor in the experiment.
 
 **CIF names:** <code>_refine_ls.R_factor_all</code>, <code>_refine_ls_R_factor_all</code>, <code>_refine.ls_R_factor_all</code>.
 
-## Correlation {#fit-parameter-correlation}
+## <span class="ed-reference-icon" data-reference-category="fit-parameter-correlation" aria-hidden="true">&#61449;</span> Correlation {#fit-parameter-correlation}
 
 <code>_fit_parameter_correlation</code> — The correlations between the fitted parameters.
 
@@ -3186,7 +3186,7 @@ The data file of a sequential fit the correlation belongs to.
 
 **CIF names:** <code>_edi_fit_parameter_correlation.file_path</code>.
 
-## Report block {#pd-block}
+## <span class="ed-reference-icon" data-reference-category="pd-block" aria-hidden="true">&#61897;</span> Report block {#pd-block}
 
 <code>_pd_block</code> — The name each data block of the CIF report gives itself.
 

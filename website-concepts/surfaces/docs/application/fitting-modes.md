@@ -1,8 +1,9 @@
 ---
+category_glyph: "\uf1de"
 template: gui.html
 ---
 
-# :material-calculator: Choose a fitting mode
+# <span class="ed-reference-icon" data-reference-category="fitting-mode" aria-hidden="true">&#61918;</span> Choose a fitting mode
 
 The fitting mode determines how the project's experiments or scan datasets are fitted. It changes the relationship between fits, not the meaning of the structures and experiments.
 

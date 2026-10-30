@@ -15,7 +15,7 @@ print(parameter.value, parameter.free)
 
 === "GUI"
 
-    **[Space group](../physics/parameters.md#space-group)**
+    **[<span class="ed-reference-icon" data-reference-category="space-group" aria-hidden="true">&#63423;</span> Space group](../physics/parameters.md#space-group)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -23,7 +23,7 @@ print(parameter.value, parameter.free)
     | [code](../physics/parameters.md#space-group-coord-system-code) | code | — |
     | [number](../physics/parameters.md#space-group-it-number) | number | — |
 
-    **[Cell](../physics/parameters.md#cell)**
+    **[<span class="ed-reference-icon" data-reference-category="cell" aria-hidden="true">&#61874;</span> Cell](../physics/parameters.md#cell)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -34,7 +34,7 @@ print(parameter.value, parameter.free)
     | [β](../physics/parameters.md#cell-angle-beta) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61874;</span> <span class="ed-reference-icon" aria-hidden="true">&#62789;</span> β | deg |
     | [γ](../physics/parameters.md#cell-angle-gamma) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61874;</span> <span class="ed-reference-icon" aria-hidden="true">&#62789;</span> γ | deg |
 
-    **[Atom site](../physics/parameters.md#atom-site)**
+    **[<span class="ed-reference-icon" data-reference-category="atom-site" aria-hidden="true">&#62930;</span> Atom site](../physics/parameters.md#atom-site)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -48,7 +48,7 @@ print(parameter.value, parameter.free)
     | [occ](../physics/parameters.md#atom-site-occupancy) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> <span class="ed-reference-icon" aria-hidden="true">&#62837;</span> occ | — |
     | [iso/eq](../physics/parameters.md#atom-site-adp-iso) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> iso/eq | Å² |
 
-    **[Atomic displacement](../physics/parameters.md#atom-site-aniso)**
+    **[<span class="ed-reference-icon" data-reference-category="atom-site-aniso" aria-hidden="true">&#61618;</span> Atomic displacement](../physics/parameters.md#atom-site-aniso)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -60,21 +60,21 @@ print(parameter.value, parameter.free)
     | [13](../physics/parameters.md#atom-site-aniso-adp-13) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> 13 | Å² |
     | [23](../physics/parameters.md#atom-site-aniso-adp-23) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> 23 | Å² |
 
-    **[Scattering length](../physics/parameters.md#scattering-length)**
+    **[<span class="ed-reference-icon" data-reference-category="scattering-length" aria-hidden="true">&#62789;</span> Scattering length](../physics/parameters.md#scattering-length)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
     | [type](../physics/parameters.md#scattering-length-type-symbol) | type | — |
     | [b](../physics/parameters.md#scattering-length-length-fm) | b | fm |
 
-    **[Bond settings](../physics/parameters.md#geom)**
+    **[<span class="ed-reference-icon" data-reference-category="geom" aria-hidden="true">&#62790;</span> Bond settings](../physics/parameters.md#geom)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
     | [minimum distance](../physics/parameters.md#geom-min-bond-distance-cutoff) | minimum distance | Å |
     | [tolerance](../physics/parameters.md#geom-bond-distance-inc) | tolerance | Å |
 
-    **[Appearance](../physics/parameters.md#structure-view)**
+    **[<span class="ed-reference-icon" data-reference-category="structure-view" aria-hidden="true">&#62783;</span> Appearance](../physics/parameters.md#structure-view)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -88,13 +88,13 @@ print(parameter.value, parameter.free)
     | [cell](../physics/parameters.md#structure-view-cell) | cell | — |
     | [axes](../physics/parameters.md#structure-view-axes) | axes | — |
 
-    **[Symmetry operator](../physics/parameters.md#space-group-symop)**
+    **[<span class="ed-reference-icon" data-reference-category="space-group-symop" aria-hidden="true">&#62193;</span> Symmetry operator](../physics/parameters.md#space-group-symop)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
     | [operation](../physics/parameters.md#space-group-symop-operation-xyz) | operation | — |
 
-    **[Atom in the cell](../physics/parameters.md#expanded-atom-site)**
+    **[<span class="ed-reference-icon" data-reference-category="expanded-atom-site" aria-hidden="true">&#62113;</span> Atom in the cell](../physics/parameters.md#expanded-atom-site)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -110,7 +110,7 @@ print(parameter.value, parameter.free)
     | [U iso](../physics/parameters.md#expanded-atom-site-u-iso) | U iso | Å² |
     | [cluster](../physics/parameters.md#expanded-atom-site-cluster-id) | cluster | — |
 
-    **[Bond](../physics/parameters.md#geom-bond)**
+    **[<span class="ed-reference-icon" data-reference-category="geom-bond" aria-hidden="true">&#63396;</span> Bond](../physics/parameters.md#geom-bond)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -122,7 +122,7 @@ print(parameter.value, parameter.free)
     | [symmetry 2](../physics/parameters.md#geom-bond-site-symmetry-2) | symmetry 2 | — |
     | [distance](../physics/parameters.md#geom-bond-distance) | distance | Å |
 
-    **[Cartesian frame](../physics/parameters.md#atom-sites-cartn-transform)**
+    **[<span class="ed-reference-icon" data-reference-category="atom-sites-cartn-transform" aria-hidden="true">&#62923;</span> Cartesian frame](../physics/parameters.md#atom-sites-cartn-transform)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -139,7 +139,7 @@ print(parameter.value, parameter.free)
 
 === "Edi"
 
-    **[Space group](../physics/parameters.md#space-group)**
+    **[<span class="ed-reference-icon" data-reference-category="space-group" aria-hidden="true">&#63423;</span> Space group](../physics/parameters.md#space-group)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -147,7 +147,7 @@ print(parameter.value, parameter.free)
     | [code](../physics/parameters.md#space-group-coord-system-code) | <code>_space_group.coord_system_code</code> | — |
     | [number](../physics/parameters.md#space-group-it-number) | <code>_space_group.it_number</code> | — |
 
-    **[Cell](../physics/parameters.md#cell)**
+    **[<span class="ed-reference-icon" data-reference-category="cell" aria-hidden="true">&#61874;</span> Cell](../physics/parameters.md#cell)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -158,7 +158,7 @@ print(parameter.value, parameter.free)
     | [β](../physics/parameters.md#cell-angle-beta) | <code>_cell.angle_beta</code> | deg |
     | [γ](../physics/parameters.md#cell-angle-gamma) | <code>_cell.angle_gamma</code> | deg |
 
-    **[Atom site](../physics/parameters.md#atom-site)**
+    **[<span class="ed-reference-icon" data-reference-category="atom-site" aria-hidden="true">&#62930;</span> Atom site](../physics/parameters.md#atom-site)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -172,7 +172,7 @@ print(parameter.value, parameter.free)
     | [occ](../physics/parameters.md#atom-site-occupancy) | <code>_atom_site.occupancy</code> | — |
     | [iso/eq](../physics/parameters.md#atom-site-adp-iso) | <code>_atom_site.adp_iso</code> | Å² |
 
-    **[Atomic displacement](../physics/parameters.md#atom-site-aniso)**
+    **[<span class="ed-reference-icon" data-reference-category="atom-site-aniso" aria-hidden="true">&#61618;</span> Atomic displacement](../physics/parameters.md#atom-site-aniso)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -184,21 +184,21 @@ print(parameter.value, parameter.free)
     | [13](../physics/parameters.md#atom-site-aniso-adp-13) | <code>_atom_site_aniso.adp_13</code> | Å² |
     | [23](../physics/parameters.md#atom-site-aniso-adp-23) | <code>_atom_site_aniso.adp_23</code> | Å² |
 
-    **[Scattering length](../physics/parameters.md#scattering-length)**
+    **[<span class="ed-reference-icon" data-reference-category="scattering-length" aria-hidden="true">&#62789;</span> Scattering length](../physics/parameters.md#scattering-length)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
     | [type](../physics/parameters.md#scattering-length-type-symbol) | <code>_scattering_length.type_symbol</code> | — |
     | [b](../physics/parameters.md#scattering-length-length-fm) | <code>_scattering_length.length_fm</code> | fm |
 
-    **[Bond settings](../physics/parameters.md#geom)**
+    **[<span class="ed-reference-icon" data-reference-category="geom" aria-hidden="true">&#62790;</span> Bond settings](../physics/parameters.md#geom)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
     | [minimum distance](../physics/parameters.md#geom-min-bond-distance-cutoff) | <code>_geom.min_bond_distance_cutoff</code> | Å |
     | [tolerance](../physics/parameters.md#geom-bond-distance-inc) | <code>_geom.bond_distance_inc</code> | Å |
 
-    **[Appearance](../physics/parameters.md#structure-view)**
+    **[<span class="ed-reference-icon" data-reference-category="structure-view" aria-hidden="true">&#62783;</span> Appearance](../physics/parameters.md#structure-view)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -212,13 +212,13 @@ print(parameter.value, parameter.free)
     | [cell](../physics/parameters.md#structure-view-cell) | <code>_structure_view.cell</code> | — |
     | [axes](../physics/parameters.md#structure-view-axes) | <code>_structure_view.axes</code> | — |
 
-    **[Symmetry operator](../physics/parameters.md#space-group-symop)**
+    **[<span class="ed-reference-icon" data-reference-category="space-group-symop" aria-hidden="true">&#62193;</span> Symmetry operator](../physics/parameters.md#space-group-symop)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
     | [operation](../physics/parameters.md#space-group-symop-operation-xyz) | <code>_space_group_symop.operation_xyz</code> | — |
 
-    **[Atom in the cell](../physics/parameters.md#expanded-atom-site)**
+    **[<span class="ed-reference-icon" data-reference-category="expanded-atom-site" aria-hidden="true">&#62113;</span> Atom in the cell](../physics/parameters.md#expanded-atom-site)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -234,7 +234,7 @@ print(parameter.value, parameter.free)
     | [U iso](../physics/parameters.md#expanded-atom-site-u-iso) | <code>_expanded_atom_site.u_iso</code> | Å² |
     | [cluster](../physics/parameters.md#expanded-atom-site-cluster-id) | <code>_expanded_atom_site.cluster_id</code> | — |
 
-    **[Bond](../physics/parameters.md#geom-bond)**
+    **[<span class="ed-reference-icon" data-reference-category="geom-bond" aria-hidden="true">&#63396;</span> Bond](../physics/parameters.md#geom-bond)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -246,7 +246,7 @@ print(parameter.value, parameter.free)
     | [symmetry 2](../physics/parameters.md#geom-bond-site-symmetry-2) | <code>_geom_bond.site_symmetry_2</code> | — |
     | [distance](../physics/parameters.md#geom-bond-distance) | <code>_geom_bond.distance</code> | Å |
 
-    **[Cartesian frame](../physics/parameters.md#atom-sites-cartn-transform)**
+    **[<span class="ed-reference-icon" data-reference-category="atom-sites-cartn-transform" aria-hidden="true">&#62923;</span> Cartesian frame](../physics/parameters.md#atom-sites-cartn-transform)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -263,7 +263,7 @@ print(parameter.value, parameter.free)
 
 === "Python"
 
-    **[Space group](../physics/parameters.md#space-group)**
+    **[<span class="ed-reference-icon" data-reference-category="space-group" aria-hidden="true">&#63423;</span> Space group](../physics/parameters.md#space-group)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -271,7 +271,7 @@ print(parameter.value, parameter.free)
     | [code](../physics/parameters.md#space-group-coord-system-code) | <code>project.structures[0].space_group.coord_system_code</code> | — |
     | [number](../physics/parameters.md#space-group-it-number) | <code>project.structures[0].space_group.it_number</code> | — |
 
-    **[Cell](../physics/parameters.md#cell)**
+    **[<span class="ed-reference-icon" data-reference-category="cell" aria-hidden="true">&#61874;</span> Cell](../physics/parameters.md#cell)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -282,7 +282,7 @@ print(parameter.value, parameter.free)
     | [β](../physics/parameters.md#cell-angle-beta) | <code>project.structures[0].cell.angle_beta</code> | deg |
     | [γ](../physics/parameters.md#cell-angle-gamma) | <code>project.structures[0].cell.angle_gamma</code> | deg |
 
-    **[Atom site](../physics/parameters.md#atom-site)**
+    **[<span class="ed-reference-icon" data-reference-category="atom-site" aria-hidden="true">&#62930;</span> Atom site](../physics/parameters.md#atom-site)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -296,7 +296,7 @@ print(parameter.value, parameter.free)
     | [occ](../physics/parameters.md#atom-site-occupancy) | <code>project.structures[0].atom_sites[0].occupancy</code> | — |
     | [iso/eq](../physics/parameters.md#atom-site-adp-iso) | <code>project.structures[0].atom_sites[0].adp_iso</code> | Å² |
 
-    **[Atomic displacement](../physics/parameters.md#atom-site-aniso)**
+    **[<span class="ed-reference-icon" data-reference-category="atom-site-aniso" aria-hidden="true">&#61618;</span> Atomic displacement](../physics/parameters.md#atom-site-aniso)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -308,21 +308,21 @@ print(parameter.value, parameter.free)
     | [13](../physics/parameters.md#atom-site-aniso-adp-13) | <code>project.structures[0].atom_site_aniso[0].adp_13</code> | Å² |
     | [23](../physics/parameters.md#atom-site-aniso-adp-23) | <code>project.structures[0].atom_site_aniso[0].adp_23</code> | Å² |
 
-    **[Scattering length](../physics/parameters.md#scattering-length)**
+    **[<span class="ed-reference-icon" data-reference-category="scattering-length" aria-hidden="true">&#62789;</span> Scattering length](../physics/parameters.md#scattering-length)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
     | [type](../physics/parameters.md#scattering-length-type-symbol) | — | — |
     | [b](../physics/parameters.md#scattering-length-length-fm) | — | fm |
 
-    **[Bond settings](../physics/parameters.md#geom)**
+    **[<span class="ed-reference-icon" data-reference-category="geom" aria-hidden="true">&#62790;</span> Bond settings](../physics/parameters.md#geom)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
     | [minimum distance](../physics/parameters.md#geom-min-bond-distance-cutoff) | <code>project.structures[0].geom.min_bond_distance_cutoff</code> | Å |
     | [tolerance](../physics/parameters.md#geom-bond-distance-inc) | <code>project.structures[0].geom.bond_distance_inc</code> | Å |
 
-    **[Appearance](../physics/parameters.md#structure-view)**
+    **[<span class="ed-reference-icon" data-reference-category="structure-view" aria-hidden="true">&#62783;</span> Appearance](../physics/parameters.md#structure-view)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -336,13 +336,13 @@ print(parameter.value, parameter.free)
     | [cell](../physics/parameters.md#structure-view-cell) | — | — |
     | [axes](../physics/parameters.md#structure-view-axes) | — | — |
 
-    **[Symmetry operator](../physics/parameters.md#space-group-symop)**
+    **[<span class="ed-reference-icon" data-reference-category="space-group-symop" aria-hidden="true">&#62193;</span> Symmetry operator](../physics/parameters.md#space-group-symop)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
     | [operation](../physics/parameters.md#space-group-symop-operation-xyz) | — | — |
 
-    **[Atom in the cell](../physics/parameters.md#expanded-atom-site)**
+    **[<span class="ed-reference-icon" data-reference-category="expanded-atom-site" aria-hidden="true">&#62113;</span> Atom in the cell](../physics/parameters.md#expanded-atom-site)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -358,7 +358,7 @@ print(parameter.value, parameter.free)
     | [U iso](../physics/parameters.md#expanded-atom-site-u-iso) | — | Å² |
     | [cluster](../physics/parameters.md#expanded-atom-site-cluster-id) | — | — |
 
-    **[Bond](../physics/parameters.md#geom-bond)**
+    **[<span class="ed-reference-icon" data-reference-category="geom-bond" aria-hidden="true">&#63396;</span> Bond](../physics/parameters.md#geom-bond)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -370,7 +370,7 @@ print(parameter.value, parameter.free)
     | [symmetry 2](../physics/parameters.md#geom-bond-site-symmetry-2) | — | — |
     | [distance](../physics/parameters.md#geom-bond-distance) | — | Å |
 
-    **[Cartesian frame](../physics/parameters.md#atom-sites-cartn-transform)**
+    **[<span class="ed-reference-icon" data-reference-category="atom-sites-cartn-transform" aria-hidden="true">&#62923;</span> Cartesian frame](../physics/parameters.md#atom-sites-cartn-transform)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -387,7 +387,7 @@ print(parameter.value, parameter.free)
 
 === "CIF"
 
-    **[Space group](../physics/parameters.md#space-group)**
+    **[<span class="ed-reference-icon" data-reference-category="space-group" aria-hidden="true">&#63423;</span> Space group](../physics/parameters.md#space-group)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -395,7 +395,7 @@ print(parameter.value, parameter.free)
     | [code](../physics/parameters.md#space-group-coord-system-code) | <code>_space_group.IT_coordinate_system_code</code> | — |
     | [number](../physics/parameters.md#space-group-it-number) | <code>_space_group.IT_number</code> | — |
 
-    **[Cell](../physics/parameters.md#cell)**
+    **[<span class="ed-reference-icon" data-reference-category="cell" aria-hidden="true">&#61874;</span> Cell](../physics/parameters.md#cell)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -406,7 +406,7 @@ print(parameter.value, parameter.free)
     | [β](../physics/parameters.md#cell-angle-beta) | <code>_cell.angle_beta</code> | deg |
     | [γ](../physics/parameters.md#cell-angle-gamma) | <code>_cell.angle_gamma</code> | deg |
 
-    **[Atom site](../physics/parameters.md#atom-site)**
+    **[<span class="ed-reference-icon" data-reference-category="atom-site" aria-hidden="true">&#62930;</span> Atom site](../physics/parameters.md#atom-site)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -420,7 +420,7 @@ print(parameter.value, parameter.free)
     | [occ](../physics/parameters.md#atom-site-occupancy) | <code>_atom_site.occupancy</code> | — |
     | [iso/eq](../physics/parameters.md#atom-site-adp-iso) | <code>Biso</code>: <code>_atom_site.B_iso_or_equiv</code><br><code>Uiso</code>: <code>_atom_site.U_iso_or_equiv</code><br><code>Bani</code>: <code>_atom_site.B_iso_or_equiv</code><br><code>Uani</code>: <code>_atom_site.U_iso_or_equiv</code><br><code>beta</code>: <code>_atom_site.B_iso_or_equiv</code> | Å² |
 
-    **[Atomic displacement](../physics/parameters.md#atom-site-aniso)**
+    **[<span class="ed-reference-icon" data-reference-category="atom-site-aniso" aria-hidden="true">&#61618;</span> Atomic displacement](../physics/parameters.md#atom-site-aniso)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -432,21 +432,21 @@ print(parameter.value, parameter.free)
     | [13](../physics/parameters.md#atom-site-aniso-adp-13) | <code>Uani</code>: <code>_atom_site_aniso.U_13</code><br><code>Bani</code>: <code>_atom_site_aniso.B_13</code><br><code>beta</code>: <code>_atom_site_aniso.beta_13</code> | Å² |
     | [23](../physics/parameters.md#atom-site-aniso-adp-23) | <code>Uani</code>: <code>_atom_site_aniso.U_23</code><br><code>Bani</code>: <code>_atom_site_aniso.B_23</code><br><code>beta</code>: <code>_atom_site_aniso.beta_23</code> | Å² |
 
-    **[Scattering length](../physics/parameters.md#scattering-length)**
+    **[<span class="ed-reference-icon" data-reference-category="scattering-length" aria-hidden="true">&#62789;</span> Scattering length](../physics/parameters.md#scattering-length)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
     | [type](../physics/parameters.md#scattering-length-type-symbol) | <code>_edi_scattering_length.type_symbol</code> | — |
     | [b](../physics/parameters.md#scattering-length-length-fm) | <code>_edi_scattering_length.length_fm</code> | fm |
 
-    **[Bond settings](../physics/parameters.md#geom)**
+    **[<span class="ed-reference-icon" data-reference-category="geom" aria-hidden="true">&#62790;</span> Bond settings](../physics/parameters.md#geom)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
     | [minimum distance](../physics/parameters.md#geom-min-bond-distance-cutoff) | <code>_geom.min_bond_distance_cutoff</code> | Å |
     | [tolerance](../physics/parameters.md#geom-bond-distance-inc) | <code>_geom.bond_distance_incr</code> | Å |
 
-    **[Appearance](../physics/parameters.md#structure-view)**
+    **[<span class="ed-reference-icon" data-reference-category="structure-view" aria-hidden="true">&#62783;</span> Appearance](../physics/parameters.md#structure-view)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -460,13 +460,13 @@ print(parameter.value, parameter.free)
     | [cell](../physics/parameters.md#structure-view-cell) | <code>_edi_structure_view.cell</code> | — |
     | [axes](../physics/parameters.md#structure-view-axes) | <code>_edi_structure_view.axes</code> | — |
 
-    **[Symmetry operator](../physics/parameters.md#space-group-symop)**
+    **[<span class="ed-reference-icon" data-reference-category="space-group-symop" aria-hidden="true">&#62193;</span> Symmetry operator](../physics/parameters.md#space-group-symop)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
     | [operation](../physics/parameters.md#space-group-symop-operation-xyz) | <code>_space_group_symop.operation_xyz</code> | — |
 
-    **[Atom in the cell](../physics/parameters.md#expanded-atom-site)**
+    **[<span class="ed-reference-icon" data-reference-category="expanded-atom-site" aria-hidden="true">&#62113;</span> Atom in the cell](../physics/parameters.md#expanded-atom-site)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -482,7 +482,7 @@ print(parameter.value, parameter.free)
     | [U iso](../physics/parameters.md#expanded-atom-site-u-iso) | <code>_edi_expanded_atom_site.u_iso</code> | Å² |
     | [cluster](../physics/parameters.md#expanded-atom-site-cluster-id) | <code>_edi_expanded_atom_site.cluster_id</code> | — |
 
-    **[Bond](../physics/parameters.md#geom-bond)**
+    **[<span class="ed-reference-icon" data-reference-category="geom-bond" aria-hidden="true">&#63396;</span> Bond](../physics/parameters.md#geom-bond)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -494,7 +494,7 @@ print(parameter.value, parameter.free)
     | [symmetry 2](../physics/parameters.md#geom-bond-site-symmetry-2) | <code>_geom_bond.site_symmetry_2</code> | — |
     | [distance](../physics/parameters.md#geom-bond-distance) | <code>_geom_bond.distance</code> | Å |
 
-    **[Cartesian frame](../physics/parameters.md#atom-sites-cartn-transform)**
+    **[<span class="ed-reference-icon" data-reference-category="atom-sites-cartn-transform" aria-hidden="true">&#62923;</span> Cartesian frame](../physics/parameters.md#atom-sites-cartn-transform)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -513,7 +513,7 @@ print(parameter.value, parameter.free)
 
 === "GUI"
 
-    **[Experiment type](../physics/parameters.md#experiment-type)**
+    **[<span class="ed-reference-icon" data-reference-category="experiment-type" aria-hidden="true">&#63417;</span> Experiment type](../physics/parameters.md#experiment-type)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -524,7 +524,7 @@ print(parameter.value, parameter.free)
     | [dimensionality](../physics/parameters.md#experiment-type-dimensionality) | dimensionality | — |
     | [polarisation](../physics/parameters.md#experiment-type-polarisation) | polarisation | — |
 
-    **[Calculation range](../physics/parameters.md#data-range)**
+    **[<span class="ed-reference-icon" data-reference-category="data-range" aria-hidden="true">&#62263;</span> Calculation range](../physics/parameters.md#data-range)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -537,7 +537,7 @@ print(parameter.value, parameter.free)
     | [step](../physics/parameters.md#data-range-time-of-flight-step) | step | µs |
     | [TOF](../physics/parameters.md#data-range-time-of-flight) | TOF | µs |
 
-    **[Background](../physics/parameters.md#background)**
+    **[<span class="ed-reference-icon" data-reference-category="background" aria-hidden="true">&#63550;</span> Background](../physics/parameters.md#background)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -551,7 +551,7 @@ print(parameter.value, parameter.free)
     | [type](../physics/parameters.md#background-type) | type | — |
     | [id](../physics/parameters.md#background-id) | id | — |
 
-    **[Background estimation](../physics/parameters.md#background-estimate)**
+    **[<span class="ed-reference-icon" data-reference-category="background-estimate" aria-hidden="true">&#61648;</span> Background estimation](../physics/parameters.md#background-estimate)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -567,7 +567,7 @@ print(parameter.value, parameter.free)
     | [inputs digest](../physics/parameters.md#background-estimate-inputs-digest) | inputs digest | — |
     | [points digest](../physics/parameters.md#background-estimate-points-digest) | points digest | — |
 
-    **[Instrument](../physics/parameters.md#instrument)**
+    **[<span class="ed-reference-icon" data-reference-category="instrument" aria-hidden="true">&#62992;</span> Instrument](../physics/parameters.md#instrument)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -587,7 +587,7 @@ print(parameter.value, parameter.free)
     | [facility](../physics/parameters.md#instrument-facility) | facility | — |
     | [2θ bank](../physics/parameters.md#instrument-setup-twotheta-bank) | 2θ bank | deg |
 
-    **[Peak profile](../physics/parameters.md#peak)**
+    **[<span class="ed-reference-icon" data-reference-category="peak" aria-hidden="true">&#63007;</span> Peak profile](../physics/parameters.md#peak)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -622,7 +622,7 @@ print(parameter.value, parameter.free)
     | [profile](../physics/parameters.md#peak-type) | profile | — |
     | [cutoff (FWHM)](../physics/parameters.md#peak-cutoff-fwhm) | cutoff (FWHM) | — |
 
-    **[Excluded region](../physics/parameters.md#excluded-region)**
+    **[<span class="ed-reference-icon" data-reference-category="excluded-region" aria-hidden="true">&#61741;</span> Excluded region](../physics/parameters.md#excluded-region)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -630,7 +630,7 @@ print(parameter.value, parameter.free)
     | [start](../physics/parameters.md#excluded-region-start) | start | deg |
     | [end](../physics/parameters.md#excluded-region-end) | end | deg |
 
-    **[Extinction](../physics/parameters.md#extinction)**
+    **[<span class="ed-reference-icon" data-reference-category="extinction" aria-hidden="true">&#62373;</span> Extinction](../physics/parameters.md#extinction)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -647,7 +647,7 @@ print(parameter.value, parameter.free)
     | [type](../physics/parameters.md#extinction-type) | type | — |
     | [mosaic distribution](../physics/parameters.md#extinction-mosaic-distribution) | mosaic distribution | — |
 
-    **[Linked structure](../physics/parameters.md#linked-structure)**
+    **[<span class="ed-reference-icon" data-reference-category="linked-structure" aria-hidden="true">&#62973;</span> Linked structure](../physics/parameters.md#linked-structure)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -656,7 +656,7 @@ print(parameter.value, parameter.free)
     | [enabled](../physics/parameters.md#linked-structure-enabled) | enabled | — |
     | [weight fraction](../physics/parameters.md#linked-structure-weight-fraction) | weight fraction | — |
 
-    **[Absorption](../physics/parameters.md#absorption)**
+    **[<span class="ed-reference-icon" data-reference-category="absorption" aria-hidden="true">&#61507;</span> Absorption](../physics/parameters.md#absorption)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -665,7 +665,7 @@ print(parameter.value, parameter.free)
     | [μR](../physics/parameters.md#absorption-mu-r) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#61507;</span> μR | — |
     | [type](../physics/parameters.md#absorption-type) | type | — |
 
-    **[Preferred orientation](../physics/parameters.md#preferred-orientation)**
+    **[<span class="ed-reference-icon" data-reference-category="preferred-orientation" aria-hidden="true">&#61774;</span> Preferred orientation](../physics/parameters.md#preferred-orientation)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -676,7 +676,7 @@ print(parameter.value, parameter.free)
     | [k](../physics/parameters.md#preferred-orientation-index-k) | k | — |
     | [l](../physics/parameters.md#preferred-orientation-index-l) | l | — |
 
-    **[Observed reflections](../physics/parameters.md#reflns)**
+    **[<span class="ed-reference-icon" data-reference-category="reflns" aria-hidden="true">&#61616;</span> Observed reflections](../physics/parameters.md#reflns)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -684,7 +684,7 @@ print(parameter.value, parameter.free)
     | [on](../physics/parameters.md#reflns-threshold-basis) | on | — |
     | [threshold](../physics/parameters.md#reflns-threshold-expression) | threshold | — |
 
-    **[Scattering source](../physics/parameters.md#scattering-source)**
+    **[<span class="ed-reference-icon" data-reference-category="scattering-source" aria-hidden="true">&#62930;</span> Scattering source](../physics/parameters.md#scattering-source)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -692,13 +692,13 @@ print(parameter.value, parameter.free)
     | [X-ray dispersion](../physics/parameters.md#scattering-source-xray-dispersion) | X-ray dispersion | — |
     | [neutron scattering lengths](../physics/parameters.md#scattering-source-neutron-scattering-length) | neutron scattering lengths | — |
 
-    **[Data source](../physics/parameters.md#data-source)**
+    **[<span class="ed-reference-icon" data-reference-category="data-source" aria-hidden="true">&#62831;</span> Data source](../physics/parameters.md#data-source)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
     | [data file](../physics/parameters.md#data-source-file-name) | data file | — |
 
-    **[Measured data point](../physics/parameters.md#data)**
+    **[<span class="ed-reference-icon" data-reference-category="data" aria-hidden="true">&#62263;</span> Measured data point](../physics/parameters.md#data)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -711,25 +711,25 @@ print(parameter.value, parameter.free)
     | [bkg](../physics/parameters.md#data-intensity-bkg) | bkg | — |
     | [status](../physics/parameters.md#data-calc-status) | status | — |
 
-    **[Calculated point](../physics/parameters.md#data-calc)**
+    **[<span class="ed-reference-icon" data-reference-category="data-calc" aria-hidden="true">&#61950;</span> Calculated point](../physics/parameters.md#data-calc)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
     | [point](../physics/parameters.md#data-calc-point-id) | point | — |
 
-    **[Structure curves](../physics/parameters.md#pd-calc-overall)**
+    **[<span class="ed-reference-icon" data-reference-category="pd-calc-overall" aria-hidden="true">&#61950;</span> Structure curves](../physics/parameters.md#pd-calc-overall)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
     | [structure order](../physics/parameters.md#pd-calc-overall-component-presentation-order) | structure order | — |
 
-    **[Structure curve](../physics/parameters.md#pd-calc)**
+    **[<span class="ed-reference-icon" data-reference-category="pd-calc" aria-hidden="true">&#61950;</span> Structure curve](../physics/parameters.md#pd-calc)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
     | [structure calc](../physics/parameters.md#pd-calc-component-intensities-net) | structure calc | — |
 
-    **[Reflection](../physics/parameters.md#refln)**
+    **[<span class="ed-reference-icon" data-reference-category="refln" aria-hidden="true">&#61498;</span> Reflection](../physics/parameters.md#refln)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -751,7 +751,7 @@ print(parameter.value, parameter.free)
 
 === "Edi"
 
-    **[Experiment type](../physics/parameters.md#experiment-type)**
+    **[<span class="ed-reference-icon" data-reference-category="experiment-type" aria-hidden="true">&#63417;</span> Experiment type](../physics/parameters.md#experiment-type)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -762,7 +762,7 @@ print(parameter.value, parameter.free)
     | [dimensionality](../physics/parameters.md#experiment-type-dimensionality) | <code>_experiment_type.dimensionality</code> | — |
     | [polarisation](../physics/parameters.md#experiment-type-polarisation) | <code>_experiment_type.polarisation</code> | — |
 
-    **[Calculation range](../physics/parameters.md#data-range)**
+    **[<span class="ed-reference-icon" data-reference-category="data-range" aria-hidden="true">&#62263;</span> Calculation range](../physics/parameters.md#data-range)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -775,7 +775,7 @@ print(parameter.value, parameter.free)
     | [step](../physics/parameters.md#data-range-time-of-flight-step) | <code>_data_range.time_of_flight_step</code> | µs |
     | [TOF](../physics/parameters.md#data-range-time-of-flight) | <code>_data_range.time_of_flight</code> | µs |
 
-    **[Background](../physics/parameters.md#background)**
+    **[<span class="ed-reference-icon" data-reference-category="background" aria-hidden="true">&#63550;</span> Background](../physics/parameters.md#background)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -789,7 +789,7 @@ print(parameter.value, parameter.free)
     | [type](../physics/parameters.md#background-type) | <code>_background.type</code> | — |
     | [id](../physics/parameters.md#background-id) | <code>_background.id</code> | — |
 
-    **[Background estimation](../physics/parameters.md#background-estimate)**
+    **[<span class="ed-reference-icon" data-reference-category="background-estimate" aria-hidden="true">&#61648;</span> Background estimation](../physics/parameters.md#background-estimate)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -805,7 +805,7 @@ print(parameter.value, parameter.free)
     | [inputs digest](../physics/parameters.md#background-estimate-inputs-digest) | <code>_background_estimate.inputs_digest</code> | — |
     | [points digest](../physics/parameters.md#background-estimate-points-digest) | <code>_background_estimate.points_digest</code> | — |
 
-    **[Instrument](../physics/parameters.md#instrument)**
+    **[<span class="ed-reference-icon" data-reference-category="instrument" aria-hidden="true">&#62992;</span> Instrument](../physics/parameters.md#instrument)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -825,7 +825,7 @@ print(parameter.value, parameter.free)
     | [facility](../physics/parameters.md#instrument-facility) | <code>_instrument.facility</code> | — |
     | [2θ bank](../physics/parameters.md#instrument-setup-twotheta-bank) | <code>_instrument.setup_twotheta_bank</code> | deg |
 
-    **[Peak profile](../physics/parameters.md#peak)**
+    **[<span class="ed-reference-icon" data-reference-category="peak" aria-hidden="true">&#63007;</span> Peak profile](../physics/parameters.md#peak)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -860,7 +860,7 @@ print(parameter.value, parameter.free)
     | [profile](../physics/parameters.md#peak-type) | <code>_peak.type</code> | — |
     | [cutoff (FWHM)](../physics/parameters.md#peak-cutoff-fwhm) | <code>_peak.cutoff_fwhm</code> | — |
 
-    **[Excluded region](../physics/parameters.md#excluded-region)**
+    **[<span class="ed-reference-icon" data-reference-category="excluded-region" aria-hidden="true">&#61741;</span> Excluded region](../physics/parameters.md#excluded-region)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -868,7 +868,7 @@ print(parameter.value, parameter.free)
     | [start](../physics/parameters.md#excluded-region-start) | <code>_excluded_region.start</code> | deg |
     | [end](../physics/parameters.md#excluded-region-end) | <code>_excluded_region.end</code> | deg |
 
-    **[Extinction](../physics/parameters.md#extinction)**
+    **[<span class="ed-reference-icon" data-reference-category="extinction" aria-hidden="true">&#62373;</span> Extinction](../physics/parameters.md#extinction)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -885,7 +885,7 @@ print(parameter.value, parameter.free)
     | [type](../physics/parameters.md#extinction-type) | <code>_extinction.type</code> | — |
     | [mosaic distribution](../physics/parameters.md#extinction-mosaic-distribution) | <code>_extinction.mosaic_distribution</code> | — |
 
-    **[Linked structure](../physics/parameters.md#linked-structure)**
+    **[<span class="ed-reference-icon" data-reference-category="linked-structure" aria-hidden="true">&#62973;</span> Linked structure](../physics/parameters.md#linked-structure)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -894,7 +894,7 @@ print(parameter.value, parameter.free)
     | [enabled](../physics/parameters.md#linked-structure-enabled) | <code>_linked_structure.enabled</code> | — |
     | [weight fraction](../physics/parameters.md#linked-structure-weight-fraction) | <code>_linked_structure.weight_fraction</code> | — |
 
-    **[Absorption](../physics/parameters.md#absorption)**
+    **[<span class="ed-reference-icon" data-reference-category="absorption" aria-hidden="true">&#61507;</span> Absorption](../physics/parameters.md#absorption)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -903,7 +903,7 @@ print(parameter.value, parameter.free)
     | [μR](../physics/parameters.md#absorption-mu-r) | <code>_absorption.mu_r</code> | — |
     | [type](../physics/parameters.md#absorption-type) | <code>_absorption.type</code> | — |
 
-    **[Preferred orientation](../physics/parameters.md#preferred-orientation)**
+    **[<span class="ed-reference-icon" data-reference-category="preferred-orientation" aria-hidden="true">&#61774;</span> Preferred orientation](../physics/parameters.md#preferred-orientation)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -914,7 +914,7 @@ print(parameter.value, parameter.free)
     | [k](../physics/parameters.md#preferred-orientation-index-k) | <code>_preferred_orientation.index_k</code> | — |
     | [l](../physics/parameters.md#preferred-orientation-index-l) | <code>_preferred_orientation.index_l</code> | — |
 
-    **[Observed reflections](../physics/parameters.md#reflns)**
+    **[<span class="ed-reference-icon" data-reference-category="reflns" aria-hidden="true">&#61616;</span> Observed reflections](../physics/parameters.md#reflns)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -922,7 +922,7 @@ print(parameter.value, parameter.free)
     | [on](../physics/parameters.md#reflns-threshold-basis) | <code>_reflns.threshold_basis</code> | — |
     | [threshold](../physics/parameters.md#reflns-threshold-expression) | <code>_reflns.threshold_expression</code> | — |
 
-    **[Scattering source](../physics/parameters.md#scattering-source)**
+    **[<span class="ed-reference-icon" data-reference-category="scattering-source" aria-hidden="true">&#62930;</span> Scattering source](../physics/parameters.md#scattering-source)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -930,13 +930,13 @@ print(parameter.value, parameter.free)
     | [X-ray dispersion](../physics/parameters.md#scattering-source-xray-dispersion) | <code>_scattering_source.xray_dispersion</code> | — |
     | [neutron scattering lengths](../physics/parameters.md#scattering-source-neutron-scattering-length) | <code>_scattering_source.neutron_scattering_length</code> | — |
 
-    **[Data source](../physics/parameters.md#data-source)**
+    **[<span class="ed-reference-icon" data-reference-category="data-source" aria-hidden="true">&#62831;</span> Data source](../physics/parameters.md#data-source)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
     | [data file](../physics/parameters.md#data-source-file-name) | <code>_data_source.file_name</code> | — |
 
-    **[Measured data point](../physics/parameters.md#data)**
+    **[<span class="ed-reference-icon" data-reference-category="data" aria-hidden="true">&#62263;</span> Measured data point](../physics/parameters.md#data)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -949,25 +949,25 @@ print(parameter.value, parameter.free)
     | [bkg](../physics/parameters.md#data-intensity-bkg) | <code>_data.intensity_bkg</code> | — |
     | [status](../physics/parameters.md#data-calc-status) | <code>_data.calc_status</code> | — |
 
-    **[Calculated point](../physics/parameters.md#data-calc)**
+    **[<span class="ed-reference-icon" data-reference-category="data-calc" aria-hidden="true">&#61950;</span> Calculated point](../physics/parameters.md#data-calc)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
     | [point](../physics/parameters.md#data-calc-point-id) | <code>_data_calc.point_id</code> | — |
 
-    **[Structure curves](../physics/parameters.md#pd-calc-overall)**
+    **[<span class="ed-reference-icon" data-reference-category="pd-calc-overall" aria-hidden="true">&#61950;</span> Structure curves](../physics/parameters.md#pd-calc-overall)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
     | [structure order](../physics/parameters.md#pd-calc-overall-component-presentation-order) | <code>_pd_calc_overall.component_presentation_order</code> | — |
 
-    **[Structure curve](../physics/parameters.md#pd-calc)**
+    **[<span class="ed-reference-icon" data-reference-category="pd-calc" aria-hidden="true">&#61950;</span> Structure curve](../physics/parameters.md#pd-calc)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
     | [structure calc](../physics/parameters.md#pd-calc-component-intensities-net) | <code>_pd_calc.component_intensities_net</code> | — |
 
-    **[Reflection](../physics/parameters.md#refln)**
+    **[<span class="ed-reference-icon" data-reference-category="refln" aria-hidden="true">&#61498;</span> Reflection](../physics/parameters.md#refln)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -989,7 +989,7 @@ print(parameter.value, parameter.free)
 
 === "Python"
 
-    **[Experiment type](../physics/parameters.md#experiment-type)**
+    **[<span class="ed-reference-icon" data-reference-category="experiment-type" aria-hidden="true">&#63417;</span> Experiment type](../physics/parameters.md#experiment-type)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1000,7 +1000,7 @@ print(parameter.value, parameter.free)
     | [dimensionality](../physics/parameters.md#experiment-type-dimensionality) | <code>project.experiments[0].experiment_type.dimensionality</code> | — |
     | [polarisation](../physics/parameters.md#experiment-type-polarisation) | <code>project.experiments[0].experiment_type.polarisation</code> | — |
 
-    **[Calculation range](../physics/parameters.md#data-range)**
+    **[<span class="ed-reference-icon" data-reference-category="data-range" aria-hidden="true">&#62263;</span> Calculation range](../physics/parameters.md#data-range)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1013,7 +1013,7 @@ print(parameter.value, parameter.free)
     | [step](../physics/parameters.md#data-range-time-of-flight-step) | — | µs |
     | [TOF](../physics/parameters.md#data-range-time-of-flight) | — | µs |
 
-    **[Background](../physics/parameters.md#background)**
+    **[<span class="ed-reference-icon" data-reference-category="background" aria-hidden="true">&#63550;</span> Background](../physics/parameters.md#background)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1027,7 +1027,7 @@ print(parameter.value, parameter.free)
     | [type](../physics/parameters.md#background-type) | <code>project.experiments[0].background_type</code> | — |
     | [id](../physics/parameters.md#background-id) | <code>project.experiments[0].background[0].id</code> | — |
 
-    **[Background estimation](../physics/parameters.md#background-estimate)**
+    **[<span class="ed-reference-icon" data-reference-category="background-estimate" aria-hidden="true">&#61648;</span> Background estimation](../physics/parameters.md#background-estimate)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1043,7 +1043,7 @@ print(parameter.value, parameter.free)
     | [inputs digest](../physics/parameters.md#background-estimate-inputs-digest) | — | — |
     | [points digest](../physics/parameters.md#background-estimate-points-digest) | — | — |
 
-    **[Instrument](../physics/parameters.md#instrument)**
+    **[<span class="ed-reference-icon" data-reference-category="instrument" aria-hidden="true">&#62992;</span> Instrument](../physics/parameters.md#instrument)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1063,7 +1063,7 @@ print(parameter.value, parameter.free)
     | [facility](../physics/parameters.md#instrument-facility) | <code>project.experiments[0].instrument.facility</code> | — |
     | [2θ bank](../physics/parameters.md#instrument-setup-twotheta-bank) | <code>project.experiments[0].instrument.setup_twotheta_bank</code> | deg |
 
-    **[Peak profile](../physics/parameters.md#peak)**
+    **[<span class="ed-reference-icon" data-reference-category="peak" aria-hidden="true">&#63007;</span> Peak profile](../physics/parameters.md#peak)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1098,7 +1098,7 @@ print(parameter.value, parameter.free)
     | [profile](../physics/parameters.md#peak-type) | <code>project.experiments[0].peak.type</code> | — |
     | [cutoff (FWHM)](../physics/parameters.md#peak-cutoff-fwhm) | <code>project.experiments[0].peak.cutoff_fwhm</code> | — |
 
-    **[Excluded region](../physics/parameters.md#excluded-region)**
+    **[<span class="ed-reference-icon" data-reference-category="excluded-region" aria-hidden="true">&#61741;</span> Excluded region](../physics/parameters.md#excluded-region)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1106,7 +1106,7 @@ print(parameter.value, parameter.free)
     | [start](../physics/parameters.md#excluded-region-start) | — | deg |
     | [end](../physics/parameters.md#excluded-region-end) | — | deg |
 
-    **[Extinction](../physics/parameters.md#extinction)**
+    **[<span class="ed-reference-icon" data-reference-category="extinction" aria-hidden="true">&#62373;</span> Extinction](../physics/parameters.md#extinction)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1123,7 +1123,7 @@ print(parameter.value, parameter.free)
     | [type](../physics/parameters.md#extinction-type) | — | — |
     | [mosaic distribution](../physics/parameters.md#extinction-mosaic-distribution) | — | — |
 
-    **[Linked structure](../physics/parameters.md#linked-structure)**
+    **[<span class="ed-reference-icon" data-reference-category="linked-structure" aria-hidden="true">&#62973;</span> Linked structure](../physics/parameters.md#linked-structure)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1132,7 +1132,7 @@ print(parameter.value, parameter.free)
     | [enabled](../physics/parameters.md#linked-structure-enabled) | <code>project.experiments[0].linked_structures[0].enabled</code> | — |
     | [weight fraction](../physics/parameters.md#linked-structure-weight-fraction) | — | — |
 
-    **[Absorption](../physics/parameters.md#absorption)**
+    **[<span class="ed-reference-icon" data-reference-category="absorption" aria-hidden="true">&#61507;</span> Absorption](../physics/parameters.md#absorption)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1141,7 +1141,7 @@ print(parameter.value, parameter.free)
     | [μR](../physics/parameters.md#absorption-mu-r) | <code>project.experiments[0].absorption.mu_r</code> | — |
     | [type](../physics/parameters.md#absorption-type) | <code>project.experiments[0].absorption.type</code> | — |
 
-    **[Preferred orientation](../physics/parameters.md#preferred-orientation)**
+    **[<span class="ed-reference-icon" data-reference-category="preferred-orientation" aria-hidden="true">&#61774;</span> Preferred orientation](../physics/parameters.md#preferred-orientation)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1152,7 +1152,7 @@ print(parameter.value, parameter.free)
     | [k](../physics/parameters.md#preferred-orientation-index-k) | — | — |
     | [l](../physics/parameters.md#preferred-orientation-index-l) | — | — |
 
-    **[Observed reflections](../physics/parameters.md#reflns)**
+    **[<span class="ed-reference-icon" data-reference-category="reflns" aria-hidden="true">&#61616;</span> Observed reflections](../physics/parameters.md#reflns)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1160,7 +1160,7 @@ print(parameter.value, parameter.free)
     | [on](../physics/parameters.md#reflns-threshold-basis) | — | — |
     | [threshold](../physics/parameters.md#reflns-threshold-expression) | — | — |
 
-    **[Scattering source](../physics/parameters.md#scattering-source)**
+    **[<span class="ed-reference-icon" data-reference-category="scattering-source" aria-hidden="true">&#62930;</span> Scattering source](../physics/parameters.md#scattering-source)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1168,13 +1168,13 @@ print(parameter.value, parameter.free)
     | [X-ray dispersion](../physics/parameters.md#scattering-source-xray-dispersion) | — | — |
     | [neutron scattering lengths](../physics/parameters.md#scattering-source-neutron-scattering-length) | — | — |
 
-    **[Data source](../physics/parameters.md#data-source)**
+    **[<span class="ed-reference-icon" data-reference-category="data-source" aria-hidden="true">&#62831;</span> Data source](../physics/parameters.md#data-source)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
     | [data file](../physics/parameters.md#data-source-file-name) | — | — |
 
-    **[Measured data point](../physics/parameters.md#data)**
+    **[<span class="ed-reference-icon" data-reference-category="data" aria-hidden="true">&#62263;</span> Measured data point](../physics/parameters.md#data)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1187,25 +1187,25 @@ print(parameter.value, parameter.free)
     | [bkg](../physics/parameters.md#data-intensity-bkg) | — | — |
     | [status](../physics/parameters.md#data-calc-status) | — | — |
 
-    **[Calculated point](../physics/parameters.md#data-calc)**
+    **[<span class="ed-reference-icon" data-reference-category="data-calc" aria-hidden="true">&#61950;</span> Calculated point](../physics/parameters.md#data-calc)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
     | [point](../physics/parameters.md#data-calc-point-id) | — | — |
 
-    **[Structure curves](../physics/parameters.md#pd-calc-overall)**
+    **[<span class="ed-reference-icon" data-reference-category="pd-calc-overall" aria-hidden="true">&#61950;</span> Structure curves](../physics/parameters.md#pd-calc-overall)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
     | [structure order](../physics/parameters.md#pd-calc-overall-component-presentation-order) | — | — |
 
-    **[Structure curve](../physics/parameters.md#pd-calc)**
+    **[<span class="ed-reference-icon" data-reference-category="pd-calc" aria-hidden="true">&#61950;</span> Structure curve](../physics/parameters.md#pd-calc)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
     | [structure calc](../physics/parameters.md#pd-calc-component-intensities-net) | — | — |
 
-    **[Reflection](../physics/parameters.md#refln)**
+    **[<span class="ed-reference-icon" data-reference-category="refln" aria-hidden="true">&#61498;</span> Reflection](../physics/parameters.md#refln)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1227,7 +1227,7 @@ print(parameter.value, parameter.free)
 
 === "CIF"
 
-    **[Experiment type](../physics/parameters.md#experiment-type)**
+    **[<span class="ed-reference-icon" data-reference-category="experiment-type" aria-hidden="true">&#63417;</span> Experiment type](../physics/parameters.md#experiment-type)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -1238,7 +1238,7 @@ print(parameter.value, parameter.free)
     | [dimensionality](../physics/parameters.md#experiment-type-dimensionality) | <code>_edi_experiment_type.dimensionality</code> | — |
     | [polarisation](../physics/parameters.md#experiment-type-polarisation) | <code>_edi_experiment_type.polarisation</code> | — |
 
-    **[Calculation range](../physics/parameters.md#data-range)**
+    **[<span class="ed-reference-icon" data-reference-category="data-range" aria-hidden="true">&#62263;</span> Calculation range](../physics/parameters.md#data-range)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -1251,7 +1251,7 @@ print(parameter.value, parameter.free)
     | [step](../physics/parameters.md#data-range-time-of-flight-step) | <code>_edi_data_range.time_of_flight_step</code> | µs |
     | [TOF](../physics/parameters.md#data-range-time-of-flight) | <code>_edi_data_range.time_of_flight</code> | µs |
 
-    **[Background](../physics/parameters.md#background)**
+    **[<span class="ed-reference-icon" data-reference-category="background" aria-hidden="true">&#63550;</span> Background](../physics/parameters.md#background)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -1265,7 +1265,7 @@ print(parameter.value, parameter.free)
     | [type](../physics/parameters.md#background-type) | <code>_edi_background.type</code> | — |
     | [id](../physics/parameters.md#background-id) | <code>_pd_background.id</code> | — |
 
-    **[Background estimation](../physics/parameters.md#background-estimate)**
+    **[<span class="ed-reference-icon" data-reference-category="background-estimate" aria-hidden="true">&#61648;</span> Background estimation](../physics/parameters.md#background-estimate)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -1281,7 +1281,7 @@ print(parameter.value, parameter.free)
     | [inputs digest](../physics/parameters.md#background-estimate-inputs-digest) | <code>_edi_background_estimate.inputs_digest</code> | — |
     | [points digest](../physics/parameters.md#background-estimate-points-digest) | <code>_edi_background_estimate.points_digest</code> | — |
 
-    **[Instrument](../physics/parameters.md#instrument)**
+    **[<span class="ed-reference-icon" data-reference-category="instrument" aria-hidden="true">&#62992;</span> Instrument](../physics/parameters.md#instrument)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -1301,7 +1301,7 @@ print(parameter.value, parameter.free)
     | [facility](../physics/parameters.md#instrument-facility) | <code>_diffrn_source.facility</code> | — |
     | [2θ bank](../physics/parameters.md#instrument-setup-twotheta-bank) | <code>_pd_meas.2theta_fixed</code> | deg |
 
-    **[Peak profile](../physics/parameters.md#peak)**
+    **[<span class="ed-reference-icon" data-reference-category="peak" aria-hidden="true">&#63007;</span> Peak profile](../physics/parameters.md#peak)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -1336,7 +1336,7 @@ print(parameter.value, parameter.free)
     | [profile](../physics/parameters.md#peak-type) | <code>_edi_peak.type</code> | — |
     | [cutoff (FWHM)](../physics/parameters.md#peak-cutoff-fwhm) | <code>_edi_peak.cutoff_fwhm</code> | — |
 
-    **[Excluded region](../physics/parameters.md#excluded-region)**
+    **[<span class="ed-reference-icon" data-reference-category="excluded-region" aria-hidden="true">&#61741;</span> Excluded region](../physics/parameters.md#excluded-region)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -1344,7 +1344,7 @@ print(parameter.value, parameter.free)
     | [start](../physics/parameters.md#excluded-region-start) | <code>_edi_excluded_region.start</code> | deg |
     | [end](../physics/parameters.md#excluded-region-end) | <code>_edi_excluded_region.end</code> | deg |
 
-    **[Extinction](../physics/parameters.md#extinction)**
+    **[<span class="ed-reference-icon" data-reference-category="extinction" aria-hidden="true">&#62373;</span> Extinction](../physics/parameters.md#extinction)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -1361,7 +1361,7 @@ print(parameter.value, parameter.free)
     | [type](../physics/parameters.md#extinction-type) | <code>_edi_extinction.type</code> | — |
     | [mosaic distribution](../physics/parameters.md#extinction-mosaic-distribution) | <code>_edi_extinction.mosaic_distribution</code> | — |
 
-    **[Linked structure](../physics/parameters.md#linked-structure)**
+    **[<span class="ed-reference-icon" data-reference-category="linked-structure" aria-hidden="true">&#62973;</span> Linked structure](../physics/parameters.md#linked-structure)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -1370,7 +1370,7 @@ print(parameter.value, parameter.free)
     | [enabled](../physics/parameters.md#linked-structure-enabled) | <code>_edi_linked_structure.enabled</code> | — |
     | [weight fraction](../physics/parameters.md#linked-structure-weight-fraction) | <code>_edi_linked_structure.weight_fraction</code> | — |
 
-    **[Absorption](../physics/parameters.md#absorption)**
+    **[<span class="ed-reference-icon" data-reference-category="absorption" aria-hidden="true">&#61507;</span> Absorption](../physics/parameters.md#absorption)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -1379,7 +1379,7 @@ print(parameter.value, parameter.free)
     | [μR](../physics/parameters.md#absorption-mu-r) | <code>_edi_absorption.mu_r</code> | — |
     | [type](../physics/parameters.md#absorption-type) | <code>_edi_absorption.type</code> | — |
 
-    **[Preferred orientation](../physics/parameters.md#preferred-orientation)**
+    **[<span class="ed-reference-icon" data-reference-category="preferred-orientation" aria-hidden="true">&#61774;</span> Preferred orientation](../physics/parameters.md#preferred-orientation)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -1390,7 +1390,7 @@ print(parameter.value, parameter.free)
     | [k](../physics/parameters.md#preferred-orientation-index-k) | <code>_pd_pref_orient_March_Dollase.index_k</code> | — |
     | [l](../physics/parameters.md#preferred-orientation-index-l) | <code>_pd_pref_orient_March_Dollase.index_l</code> | — |
 
-    **[Observed reflections](../physics/parameters.md#reflns)**
+    **[<span class="ed-reference-icon" data-reference-category="reflns" aria-hidden="true">&#61616;</span> Observed reflections](../physics/parameters.md#reflns)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -1398,7 +1398,7 @@ print(parameter.value, parameter.free)
     | [on](../physics/parameters.md#reflns-threshold-basis) | <code>_edi_reflns.threshold_basis</code> | — |
     | [threshold](../physics/parameters.md#reflns-threshold-expression) | <code>_reflns.threshold_expression</code> | — |
 
-    **[Scattering source](../physics/parameters.md#scattering-source)**
+    **[<span class="ed-reference-icon" data-reference-category="scattering-source" aria-hidden="true">&#62930;</span> Scattering source](../physics/parameters.md#scattering-source)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -1406,13 +1406,13 @@ print(parameter.value, parameter.free)
     | [X-ray dispersion](../physics/parameters.md#scattering-source-xray-dispersion) | <code>_edi_scattering_source.xray_dispersion</code> | — |
     | [neutron scattering lengths](../physics/parameters.md#scattering-source-neutron-scattering-length) | <code>_edi_scattering_source.neutron_scattering_length</code> | — |
 
-    **[Data source](../physics/parameters.md#data-source)**
+    **[<span class="ed-reference-icon" data-reference-category="data-source" aria-hidden="true">&#62831;</span> Data source](../physics/parameters.md#data-source)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
     | [data file](../physics/parameters.md#data-source-file-name) | <code>_edi_data_source.file_name</code> | — |
 
-    **[Measured data point](../physics/parameters.md#data)**
+    **[<span class="ed-reference-icon" data-reference-category="data" aria-hidden="true">&#62263;</span> Measured data point](../physics/parameters.md#data)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -1425,25 +1425,25 @@ print(parameter.value, parameter.free)
     | [bkg](../physics/parameters.md#data-intensity-bkg) | <code>_pd_calc.intensity_bkg</code> | — |
     | [status](../physics/parameters.md#data-calc-status) | <code>_edi_data.calc_status</code> | — |
 
-    **[Calculated point](../physics/parameters.md#data-calc)**
+    **[<span class="ed-reference-icon" data-reference-category="data-calc" aria-hidden="true">&#61950;</span> Calculated point](../physics/parameters.md#data-calc)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
     | [point](../physics/parameters.md#data-calc-point-id) | <code>_pd_data.point_id</code> | — |
 
-    **[Structure curves](../physics/parameters.md#pd-calc-overall)**
+    **[<span class="ed-reference-icon" data-reference-category="pd-calc-overall" aria-hidden="true">&#61950;</span> Structure curves](../physics/parameters.md#pd-calc-overall)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
     | [structure order](../physics/parameters.md#pd-calc-overall-component-presentation-order) | <code>_edi_pd_calc_overall.component_presentation_order</code> | — |
 
-    **[Structure curve](../physics/parameters.md#pd-calc)**
+    **[<span class="ed-reference-icon" data-reference-category="pd-calc" aria-hidden="true">&#61950;</span> Structure curve](../physics/parameters.md#pd-calc)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
     | [structure calc](../physics/parameters.md#pd-calc-component-intensities-net) | <code>_pd_calc.component_intensities_net</code> | — |
 
-    **[Reflection](../physics/parameters.md#refln)**
+    **[<span class="ed-reference-icon" data-reference-category="refln" aria-hidden="true">&#61498;</span> Reflection](../physics/parameters.md#refln)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -1467,7 +1467,7 @@ print(parameter.value, parameter.free)
 
 === "GUI"
 
-    **[Project](../physics/parameters.md#metadata)**
+    **[<span class="ed-reference-icon" data-reference-category="metadata" aria-hidden="true">&#61831;</span> Project](../physics/parameters.md#metadata)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -1480,13 +1480,13 @@ print(parameter.value, parameter.free)
     | [last modified](../physics/parameters.md#metadata-last-modified) | last modified | — |
     | [timestamp](../physics/parameters.md#metadata-timestamp) | timestamp | — |
 
-    **[Standard uncertainties](../physics/parameters.md#su-format)**
+    **[<span class="ed-reference-icon" data-reference-category="su-format" aria-hidden="true">&#62030;</span> Standard uncertainties](../physics/parameters.md#su-format)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
     | [rule](../physics/parameters.md#su-format-rule) | rule | — |
 
-    **[Report](../physics/parameters.md#report)**
+    **[<span class="ed-reference-icon" data-reference-category="report" aria-hidden="true">&#61788;</span> Report](../physics/parameters.md#report)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -1496,25 +1496,25 @@ print(parameter.value, parameter.free)
     | [embed chart libraries](../physics/parameters.md#report-html-offline) | embed chart libraries | — |
     | [excluded](../physics/parameters.md#report-excluded) | excluded | — |
 
-    **[Correlation chart](../physics/parameters.md#correlation-chart)**
+    **[<span class="ed-reference-icon" data-reference-category="correlation-chart" aria-hidden="true">&#61450;</span> Correlation chart](../physics/parameters.md#correlation-chart)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
     | [threshold](../physics/parameters.md#correlation-chart-threshold) | threshold | — |
 
-    **[Pattern chart](../physics/parameters.md#pattern-chart)**
+    **[<span class="ed-reference-icon" data-reference-category="pattern-chart" aria-hidden="true">&#61953;</span> Pattern chart](../physics/parameters.md#pattern-chart)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
     | [x-axis](../physics/parameters.md#pattern-chart-x-axis) | x-axis | — |
 
-    **[Calculator](../physics/parameters.md#calculator)**
+    **[<span class="ed-reference-icon" data-reference-category="calculator" aria-hidden="true">&#61932;</span> Calculator](../physics/parameters.md#calculator)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
     | [calculator](../physics/parameters.md#calculator-type) | calculator | — |
 
-    **[Minimizer](../physics/parameters.md#minimizer)**
+    **[<span class="ed-reference-icon" data-reference-category="minimizer" aria-hidden="true">&#62398;</span> Minimizer](../physics/parameters.md#minimizer)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -1523,26 +1523,26 @@ print(parameter.value, parameter.free)
     | [descent](../physics/parameters.md#minimizer-descent) | descent | — |
     | [tolerance](../physics/parameters.md#minimizer-chi-square-tolerance) | tolerance | — |
 
-    **[Fitting mode](../physics/parameters.md#fitting-mode)**
+    **[<span class="ed-reference-icon" data-reference-category="fitting-mode" aria-hidden="true">&#61918;</span> Fitting mode](../physics/parameters.md#fitting-mode)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
     | [mode](../physics/parameters.md#fitting-mode-type) | mode | — |
 
-    **[Fitted reflections](../physics/parameters.md#refine-ls)**
+    **[<span class="ed-reference-icon" data-reference-category="refine-ls" aria-hidden="true">&#61636;</span> Fitted reflections](../physics/parameters.md#refine-ls)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
     | [fit reflections above (su)](../physics/parameters.md#refine-ls-threshold-sigma) | fit reflections above (su) | — |
 
-    **[Alias](../physics/parameters.md#alias)**
+    **[<span class="ed-reference-icon" data-reference-category="alias" aria-hidden="true">&#61483;</span> Alias](../physics/parameters.md#alias)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
     | [alias](../physics/parameters.md#alias-id) | alias | — |
     | [parameter](../physics/parameters.md#alias-parameter-unique-name) | parameter | — |
 
-    **[Constraint](../physics/parameters.md#constraint)**
+    **[<span class="ed-reference-icon" data-reference-category="constraint" aria-hidden="true">&#62764;</span> Constraint](../physics/parameters.md#constraint)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -1550,13 +1550,13 @@ print(parameter.value, parameter.free)
     | [expression](../physics/parameters.md#constraint-expression) | expression | — |
     | [enabled](../physics/parameters.md#constraint-enabled) | enabled | — |
 
-    **[Joint-fit weights](../physics/parameters.md#joint-fit)**
+    **[<span class="ed-reference-icon" data-reference-category="joint-fit" aria-hidden="true">&#61633;</span> Joint-fit weights](../physics/parameters.md#joint-fit)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
     | [weight](../physics/parameters.md#joint-fit-weight) | weight | — |
 
-    **[Sequential fit](../physics/parameters.md#sequential-fit)**
+    **[<span class="ed-reference-icon" data-reference-category="sequential-fit" aria-hidden="true">&#61643;</span> Sequential fit](../physics/parameters.md#sequential-fit)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -1565,7 +1565,7 @@ print(parameter.value, parameter.free)
     | [reverse](../physics/parameters.md#sequential-fit-reverse) | reverse | — |
     | [template](../physics/parameters.md#sequential-fit-template-file) | template | — |
 
-    **[Scan extraction rule](../physics/parameters.md#sequential-fit-extract)**
+    **[<span class="ed-reference-icon" data-reference-category="sequential-fit-extract" aria-hidden="true">&#61616;</span> Scan extraction rule](../physics/parameters.md#sequential-fit-extract)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -1574,13 +1574,13 @@ print(parameter.value, parameter.free)
     | [pattern](../physics/parameters.md#sequential-fit-extract-pattern) | pattern | — |
     | [required](../physics/parameters.md#sequential-fit-extract-required) | required | — |
 
-    **[File header](../physics/parameters.md#edi)**
+    **[<span class="ed-reference-icon" data-reference-category="edi" aria-hidden="true">&#61897;</span> File header](../physics/parameters.md#edi)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
     | [schema version](../physics/parameters.md#edi-schema-version) | schema version | — |
 
-    **[Saved report](../physics/parameters.md#report-file)**
+    **[<span class="ed-reference-icon" data-reference-category="report-file" aria-hidden="true">&#61787;</span> Saved report](../physics/parameters.md#report-file)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -1590,7 +1590,7 @@ print(parameter.value, parameter.free)
     | [project saved](../physics/parameters.md#report-file-project-last-modified) | project saved | — |
     | [digest](../physics/parameters.md#report-file-digest) | digest | — |
 
-    **[Fit start value](../physics/parameters.md#fit-parameter)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-parameter" aria-hidden="true">&#61914;</span> Fit start value](../physics/parameters.md#fit-parameter)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -1599,7 +1599,7 @@ print(parameter.value, parameter.free)
     | [start error](../physics/parameters.md#fit-parameter-start-uncertainty) | start error | — |
     | [start tied](../physics/parameters.md#fit-parameter-start-tied) | start tied | — |
 
-    **[Fit result](../physics/parameters.md#fit-result)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-result" aria-hidden="true">&#61528;</span> Fit result](../physics/parameters.md#fit-result)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -1626,7 +1626,7 @@ print(parameter.value, parameter.free)
     | [background](../physics/parameters.md#fit-result-background-function) | background | — |
     | [descent](../physics/parameters.md#fit-result-descent) | descent | — |
 
-    **[Experiment fit result](../physics/parameters.md#fit-result-bank)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-result-bank" aria-hidden="true">&#61452;</span> Experiment fit result](../physics/parameters.md#fit-result-bank)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -1638,14 +1638,14 @@ print(parameter.value, parameter.free)
     | [cRwp](../physics/parameters.md#fit-result-bank-prof-cwr-factor) | cRwp | % |
     | [reduced χ²](../physics/parameters.md#fit-result-bank-chi-square) | reduced χ² | — |
 
-    **[Structure fit result](../physics/parameters.md#fit-result-phase)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-result-phase" aria-hidden="true">&#61452;</span> Structure fit result](../physics/parameters.md#fit-result-phase)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
     | [R Bragg](../physics/parameters.md#fit-result-phase-bragg-r-factor) | R Bragg | % |
     | [R F](../physics/parameters.md#fit-result-phase-f-r-factor) | R F | % |
 
-    **[Correlation](../physics/parameters.md#fit-parameter-correlation)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-parameter-correlation" aria-hidden="true">&#61449;</span> Correlation](../physics/parameters.md#fit-parameter-correlation)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -1656,7 +1656,7 @@ print(parameter.value, parameter.free)
     | [correlation](../physics/parameters.md#fit-parameter-correlation-correlation) | correlation | — |
     | [file](../physics/parameters.md#fit-parameter-correlation-file-path) | file | — |
 
-    **[Report block](../physics/parameters.md#pd-block)**
+    **[<span class="ed-reference-icon" data-reference-category="pd-block" aria-hidden="true">&#61897;</span> Report block](../physics/parameters.md#pd-block)**
 
     | Parameter or field | GUI name | Units |
     | --- | --- | --- |
@@ -1664,7 +1664,7 @@ print(parameter.value, parameter.free)
 
 === "Edi"
 
-    **[Project](../physics/parameters.md#metadata)**
+    **[<span class="ed-reference-icon" data-reference-category="metadata" aria-hidden="true">&#61831;</span> Project](../physics/parameters.md#metadata)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -1677,13 +1677,13 @@ print(parameter.value, parameter.free)
     | [last modified](../physics/parameters.md#metadata-last-modified) | <code>_metadata.last_modified</code> | — |
     | [timestamp](../physics/parameters.md#metadata-timestamp) | <code>_metadata.timestamp</code> | — |
 
-    **[Standard uncertainties](../physics/parameters.md#su-format)**
+    **[<span class="ed-reference-icon" data-reference-category="su-format" aria-hidden="true">&#62030;</span> Standard uncertainties](../physics/parameters.md#su-format)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
     | [rule](../physics/parameters.md#su-format-rule) | <code>_su_format.rule</code> | — |
 
-    **[Report](../physics/parameters.md#report)**
+    **[<span class="ed-reference-icon" data-reference-category="report" aria-hidden="true">&#61788;</span> Report](../physics/parameters.md#report)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -1693,25 +1693,25 @@ print(parameter.value, parameter.free)
     | [embed chart libraries](../physics/parameters.md#report-html-offline) | <code>_report.html_offline</code> | — |
     | [excluded](../physics/parameters.md#report-excluded) | <code>_report.excluded</code> | — |
 
-    **[Correlation chart](../physics/parameters.md#correlation-chart)**
+    **[<span class="ed-reference-icon" data-reference-category="correlation-chart" aria-hidden="true">&#61450;</span> Correlation chart](../physics/parameters.md#correlation-chart)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
     | [threshold](../physics/parameters.md#correlation-chart-threshold) | <code>_correlation_chart.threshold</code> | — |
 
-    **[Pattern chart](../physics/parameters.md#pattern-chart)**
+    **[<span class="ed-reference-icon" data-reference-category="pattern-chart" aria-hidden="true">&#61953;</span> Pattern chart](../physics/parameters.md#pattern-chart)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
     | [x-axis](../physics/parameters.md#pattern-chart-x-axis) | <code>_pattern_chart.x_axis</code> | — |
 
-    **[Calculator](../physics/parameters.md#calculator)**
+    **[<span class="ed-reference-icon" data-reference-category="calculator" aria-hidden="true">&#61932;</span> Calculator](../physics/parameters.md#calculator)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
     | [calculator](../physics/parameters.md#calculator-type) | <code>_calculator.type</code> | — |
 
-    **[Minimizer](../physics/parameters.md#minimizer)**
+    **[<span class="ed-reference-icon" data-reference-category="minimizer" aria-hidden="true">&#62398;</span> Minimizer](../physics/parameters.md#minimizer)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -1720,26 +1720,26 @@ print(parameter.value, parameter.free)
     | [descent](../physics/parameters.md#minimizer-descent) | <code>_minimizer.descent</code> | — |
     | [tolerance](../physics/parameters.md#minimizer-chi-square-tolerance) | <code>_minimizer.chi_square_tolerance</code> | — |
 
-    **[Fitting mode](../physics/parameters.md#fitting-mode)**
+    **[<span class="ed-reference-icon" data-reference-category="fitting-mode" aria-hidden="true">&#61918;</span> Fitting mode](../physics/parameters.md#fitting-mode)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
     | [mode](../physics/parameters.md#fitting-mode-type) | <code>_fitting_mode.type</code> | — |
 
-    **[Fitted reflections](../physics/parameters.md#refine-ls)**
+    **[<span class="ed-reference-icon" data-reference-category="refine-ls" aria-hidden="true">&#61636;</span> Fitted reflections](../physics/parameters.md#refine-ls)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
     | [fit reflections above (su)](../physics/parameters.md#refine-ls-threshold-sigma) | <code>_refine_ls.threshold_sigma</code> | — |
 
-    **[Alias](../physics/parameters.md#alias)**
+    **[<span class="ed-reference-icon" data-reference-category="alias" aria-hidden="true">&#61483;</span> Alias](../physics/parameters.md#alias)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
     | [alias](../physics/parameters.md#alias-id) | <code>_alias.id</code> | — |
     | [parameter](../physics/parameters.md#alias-parameter-unique-name) | <code>_alias.parameter_unique_name</code> | — |
 
-    **[Constraint](../physics/parameters.md#constraint)**
+    **[<span class="ed-reference-icon" data-reference-category="constraint" aria-hidden="true">&#62764;</span> Constraint](../physics/parameters.md#constraint)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -1747,13 +1747,13 @@ print(parameter.value, parameter.free)
     | [expression](../physics/parameters.md#constraint-expression) | <code>_constraint.expression</code> | — |
     | [enabled](../physics/parameters.md#constraint-enabled) | <code>_constraint.enabled</code> | — |
 
-    **[Joint-fit weights](../physics/parameters.md#joint-fit)**
+    **[<span class="ed-reference-icon" data-reference-category="joint-fit" aria-hidden="true">&#61633;</span> Joint-fit weights](../physics/parameters.md#joint-fit)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
     | [weight](../physics/parameters.md#joint-fit-weight) | <code>_joint_fit.weight</code> | — |
 
-    **[Sequential fit](../physics/parameters.md#sequential-fit)**
+    **[<span class="ed-reference-icon" data-reference-category="sequential-fit" aria-hidden="true">&#61643;</span> Sequential fit](../physics/parameters.md#sequential-fit)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -1762,7 +1762,7 @@ print(parameter.value, parameter.free)
     | [reverse](../physics/parameters.md#sequential-fit-reverse) | <code>_sequential_fit.reverse</code> | — |
     | [template](../physics/parameters.md#sequential-fit-template-file) | <code>_sequential_fit.template_file</code> | — |
 
-    **[Scan extraction rule](../physics/parameters.md#sequential-fit-extract)**
+    **[<span class="ed-reference-icon" data-reference-category="sequential-fit-extract" aria-hidden="true">&#61616;</span> Scan extraction rule](../physics/parameters.md#sequential-fit-extract)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -1771,13 +1771,13 @@ print(parameter.value, parameter.free)
     | [pattern](../physics/parameters.md#sequential-fit-extract-pattern) | <code>_sequential_fit_extract.pattern</code> | — |
     | [required](../physics/parameters.md#sequential-fit-extract-required) | <code>_sequential_fit_extract.required</code> | — |
 
-    **[File header](../physics/parameters.md#edi)**
+    **[<span class="ed-reference-icon" data-reference-category="edi" aria-hidden="true">&#61897;</span> File header](../physics/parameters.md#edi)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
     | [schema version](../physics/parameters.md#edi-schema-version) | <code>_edi.schema_version</code> | — |
 
-    **[Saved report](../physics/parameters.md#report-file)**
+    **[<span class="ed-reference-icon" data-reference-category="report-file" aria-hidden="true">&#61787;</span> Saved report](../physics/parameters.md#report-file)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -1787,7 +1787,7 @@ print(parameter.value, parameter.free)
     | [project saved](../physics/parameters.md#report-file-project-last-modified) | <code>_report_file.project_last_modified</code> | — |
     | [digest](../physics/parameters.md#report-file-digest) | <code>_report_file.digest</code> | — |
 
-    **[Fit start value](../physics/parameters.md#fit-parameter)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-parameter" aria-hidden="true">&#61914;</span> Fit start value](../physics/parameters.md#fit-parameter)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -1796,7 +1796,7 @@ print(parameter.value, parameter.free)
     | [start error](../physics/parameters.md#fit-parameter-start-uncertainty) | <code>_fit_parameter.start_uncertainty</code> | — |
     | [start tied](../physics/parameters.md#fit-parameter-start-tied) | <code>_fit_parameter.start_tied</code> | — |
 
-    **[Fit result](../physics/parameters.md#fit-result)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-result" aria-hidden="true">&#61528;</span> Fit result](../physics/parameters.md#fit-result)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -1823,7 +1823,7 @@ print(parameter.value, parameter.free)
     | [background](../physics/parameters.md#fit-result-background-function) | <code>_fit_result.background_function</code> | — |
     | [descent](../physics/parameters.md#fit-result-descent) | <code>_fit_result.descent</code> | — |
 
-    **[Experiment fit result](../physics/parameters.md#fit-result-bank)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-result-bank" aria-hidden="true">&#61452;</span> Experiment fit result](../physics/parameters.md#fit-result-bank)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -1835,14 +1835,14 @@ print(parameter.value, parameter.free)
     | [cRwp](../physics/parameters.md#fit-result-bank-prof-cwr-factor) | <code>_fit_result_bank.prof_cwr_factor</code> | % |
     | [reduced χ²](../physics/parameters.md#fit-result-bank-chi-square) | <code>_fit_result_bank.chi_square</code> | — |
 
-    **[Structure fit result](../physics/parameters.md#fit-result-phase)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-result-phase" aria-hidden="true">&#61452;</span> Structure fit result](../physics/parameters.md#fit-result-phase)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
     | [R Bragg](../physics/parameters.md#fit-result-phase-bragg-r-factor) | <code>_fit_result_phase.bragg_r_factor</code> | % |
     | [R F](../physics/parameters.md#fit-result-phase-f-r-factor) | <code>_fit_result_phase.f_r_factor</code> | % |
 
-    **[Correlation](../physics/parameters.md#fit-parameter-correlation)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-parameter-correlation" aria-hidden="true">&#61449;</span> Correlation](../physics/parameters.md#fit-parameter-correlation)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -1853,7 +1853,7 @@ print(parameter.value, parameter.free)
     | [correlation](../physics/parameters.md#fit-parameter-correlation-correlation) | <code>_fit_parameter_correlation.correlation</code> | — |
     | [file](../physics/parameters.md#fit-parameter-correlation-file-path) | <code>_fit_parameter_correlation.file_path</code> | — |
 
-    **[Report block](../physics/parameters.md#pd-block)**
+    **[<span class="ed-reference-icon" data-reference-category="pd-block" aria-hidden="true">&#61897;</span> Report block](../physics/parameters.md#pd-block)**
 
     | Parameter or field | Edi name | Units |
     | --- | --- | --- |
@@ -1861,7 +1861,7 @@ print(parameter.value, parameter.free)
 
 === "Python"
 
-    **[Project](../physics/parameters.md#metadata)**
+    **[<span class="ed-reference-icon" data-reference-category="metadata" aria-hidden="true">&#61831;</span> Project](../physics/parameters.md#metadata)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1874,13 +1874,13 @@ print(parameter.value, parameter.free)
     | [last modified](../physics/parameters.md#metadata-last-modified) | <code>project.metadata.last_modified</code> | — |
     | [timestamp](../physics/parameters.md#metadata-timestamp) | <code>project.metadata.timestamp</code> | — |
 
-    **[Standard uncertainties](../physics/parameters.md#su-format)**
+    **[<span class="ed-reference-icon" data-reference-category="su-format" aria-hidden="true">&#62030;</span> Standard uncertainties](../physics/parameters.md#su-format)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
     | [rule](../physics/parameters.md#su-format-rule) | <code>project.su_rule</code> | — |
 
-    **[Report](../physics/parameters.md#report)**
+    **[<span class="ed-reference-icon" data-reference-category="report" aria-hidden="true">&#61788;</span> Report](../physics/parameters.md#report)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1890,25 +1890,25 @@ print(parameter.value, parameter.free)
     | [embed chart libraries](../physics/parameters.md#report-html-offline) | — | — |
     | [excluded](../physics/parameters.md#report-excluded) | — | — |
 
-    **[Correlation chart](../physics/parameters.md#correlation-chart)**
+    **[<span class="ed-reference-icon" data-reference-category="correlation-chart" aria-hidden="true">&#61450;</span> Correlation chart](../physics/parameters.md#correlation-chart)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
     | [threshold](../physics/parameters.md#correlation-chart-threshold) | — | — |
 
-    **[Pattern chart](../physics/parameters.md#pattern-chart)**
+    **[<span class="ed-reference-icon" data-reference-category="pattern-chart" aria-hidden="true">&#61953;</span> Pattern chart](../physics/parameters.md#pattern-chart)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
     | [x-axis](../physics/parameters.md#pattern-chart-x-axis) | — | — |
 
-    **[Calculator](../physics/parameters.md#calculator)**
+    **[<span class="ed-reference-icon" data-reference-category="calculator" aria-hidden="true">&#61932;</span> Calculator](../physics/parameters.md#calculator)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
     | [calculator](../physics/parameters.md#calculator-type) | — | — |
 
-    **[Minimizer](../physics/parameters.md#minimizer)**
+    **[<span class="ed-reference-icon" data-reference-category="minimizer" aria-hidden="true">&#62398;</span> Minimizer](../physics/parameters.md#minimizer)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1917,26 +1917,26 @@ print(parameter.value, parameter.free)
     | [descent](../physics/parameters.md#minimizer-descent) | <code>project.descent</code> | — |
     | [tolerance](../physics/parameters.md#minimizer-chi-square-tolerance) | — | — |
 
-    **[Fitting mode](../physics/parameters.md#fitting-mode)**
+    **[<span class="ed-reference-icon" data-reference-category="fitting-mode" aria-hidden="true">&#61918;</span> Fitting mode](../physics/parameters.md#fitting-mode)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
     | [mode](../physics/parameters.md#fitting-mode-type) | <code>project.fitting_mode</code> | — |
 
-    **[Fitted reflections](../physics/parameters.md#refine-ls)**
+    **[<span class="ed-reference-icon" data-reference-category="refine-ls" aria-hidden="true">&#61636;</span> Fitted reflections](../physics/parameters.md#refine-ls)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
     | [fit reflections above (su)](../physics/parameters.md#refine-ls-threshold-sigma) | — | — |
 
-    **[Alias](../physics/parameters.md#alias)**
+    **[<span class="ed-reference-icon" data-reference-category="alias" aria-hidden="true">&#61483;</span> Alias](../physics/parameters.md#alias)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
     | [alias](../physics/parameters.md#alias-id) | — | — |
     | [parameter](../physics/parameters.md#alias-parameter-unique-name) | — | — |
 
-    **[Constraint](../physics/parameters.md#constraint)**
+    **[<span class="ed-reference-icon" data-reference-category="constraint" aria-hidden="true">&#62764;</span> Constraint](../physics/parameters.md#constraint)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1944,13 +1944,13 @@ print(parameter.value, parameter.free)
     | [expression](../physics/parameters.md#constraint-expression) | — | — |
     | [enabled](../physics/parameters.md#constraint-enabled) | — | — |
 
-    **[Joint-fit weights](../physics/parameters.md#joint-fit)**
+    **[<span class="ed-reference-icon" data-reference-category="joint-fit" aria-hidden="true">&#61633;</span> Joint-fit weights](../physics/parameters.md#joint-fit)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
     | [weight](../physics/parameters.md#joint-fit-weight) | <code>project.experiments[0].dataset_weight</code> | — |
 
-    **[Sequential fit](../physics/parameters.md#sequential-fit)**
+    **[<span class="ed-reference-icon" data-reference-category="sequential-fit" aria-hidden="true">&#61643;</span> Sequential fit](../physics/parameters.md#sequential-fit)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1959,7 +1959,7 @@ print(parameter.value, parameter.free)
     | [reverse](../physics/parameters.md#sequential-fit-reverse) | — | — |
     | [template](../physics/parameters.md#sequential-fit-template-file) | — | — |
 
-    **[Scan extraction rule](../physics/parameters.md#sequential-fit-extract)**
+    **[<span class="ed-reference-icon" data-reference-category="sequential-fit-extract" aria-hidden="true">&#61616;</span> Scan extraction rule](../physics/parameters.md#sequential-fit-extract)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1968,13 +1968,13 @@ print(parameter.value, parameter.free)
     | [pattern](../physics/parameters.md#sequential-fit-extract-pattern) | — | — |
     | [required](../physics/parameters.md#sequential-fit-extract-required) | — | — |
 
-    **[File header](../physics/parameters.md#edi)**
+    **[<span class="ed-reference-icon" data-reference-category="edi" aria-hidden="true">&#61897;</span> File header](../physics/parameters.md#edi)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
     | [schema version](../physics/parameters.md#edi-schema-version) | — | — |
 
-    **[Saved report](../physics/parameters.md#report-file)**
+    **[<span class="ed-reference-icon" data-reference-category="report-file" aria-hidden="true">&#61787;</span> Saved report](../physics/parameters.md#report-file)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1984,7 +1984,7 @@ print(parameter.value, parameter.free)
     | [project saved](../physics/parameters.md#report-file-project-last-modified) | — | — |
     | [digest](../physics/parameters.md#report-file-digest) | — | — |
 
-    **[Fit start value](../physics/parameters.md#fit-parameter)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-parameter" aria-hidden="true">&#61914;</span> Fit start value](../physics/parameters.md#fit-parameter)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -1993,7 +1993,7 @@ print(parameter.value, parameter.free)
     | [start error](../physics/parameters.md#fit-parameter-start-uncertainty) | — | — |
     | [start tied](../physics/parameters.md#fit-parameter-start-tied) | — | — |
 
-    **[Fit result](../physics/parameters.md#fit-result)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-result" aria-hidden="true">&#61528;</span> Fit result](../physics/parameters.md#fit-result)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -2020,7 +2020,7 @@ print(parameter.value, parameter.free)
     | [background](../physics/parameters.md#fit-result-background-function) | — | — |
     | [descent](../physics/parameters.md#fit-result-descent) | — | — |
 
-    **[Experiment fit result](../physics/parameters.md#fit-result-bank)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-result-bank" aria-hidden="true">&#61452;</span> Experiment fit result](../physics/parameters.md#fit-result-bank)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -2032,14 +2032,14 @@ print(parameter.value, parameter.free)
     | [cRwp](../physics/parameters.md#fit-result-bank-prof-cwr-factor) | — | % |
     | [reduced χ²](../physics/parameters.md#fit-result-bank-chi-square) | — | — |
 
-    **[Structure fit result](../physics/parameters.md#fit-result-phase)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-result-phase" aria-hidden="true">&#61452;</span> Structure fit result](../physics/parameters.md#fit-result-phase)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
     | [R Bragg](../physics/parameters.md#fit-result-phase-bragg-r-factor) | — | % |
     | [R F](../physics/parameters.md#fit-result-phase-f-r-factor) | — | % |
 
-    **[Correlation](../physics/parameters.md#fit-parameter-correlation)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-parameter-correlation" aria-hidden="true">&#61449;</span> Correlation](../physics/parameters.md#fit-parameter-correlation)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -2050,7 +2050,7 @@ print(parameter.value, parameter.free)
     | [correlation](../physics/parameters.md#fit-parameter-correlation-correlation) | — | — |
     | [file](../physics/parameters.md#fit-parameter-correlation-file-path) | — | — |
 
-    **[Report block](../physics/parameters.md#pd-block)**
+    **[<span class="ed-reference-icon" data-reference-category="pd-block" aria-hidden="true">&#61897;</span> Report block](../physics/parameters.md#pd-block)**
 
     | Parameter or field | Python name | Units |
     | --- | --- | --- |
@@ -2058,7 +2058,7 @@ print(parameter.value, parameter.free)
 
 === "CIF"
 
-    **[Project](../physics/parameters.md#metadata)**
+    **[<span class="ed-reference-icon" data-reference-category="metadata" aria-hidden="true">&#61831;</span> Project](../physics/parameters.md#metadata)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -2071,13 +2071,13 @@ print(parameter.value, parameter.free)
     | [last modified](../physics/parameters.md#metadata-last-modified) | <code>_edi_metadata.last_modified</code> | — |
     | [timestamp](../physics/parameters.md#metadata-timestamp) | <code>_edi_metadata.timestamp</code> | — |
 
-    **[Standard uncertainties](../physics/parameters.md#su-format)**
+    **[<span class="ed-reference-icon" data-reference-category="su-format" aria-hidden="true">&#62030;</span> Standard uncertainties](../physics/parameters.md#su-format)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
     | [rule](../physics/parameters.md#su-format-rule) | <code>_edi_su_format.rule</code> | — |
 
-    **[Report](../physics/parameters.md#report)**
+    **[<span class="ed-reference-icon" data-reference-category="report" aria-hidden="true">&#61788;</span> Report](../physics/parameters.md#report)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -2087,25 +2087,25 @@ print(parameter.value, parameter.free)
     | [embed chart libraries](../physics/parameters.md#report-html-offline) | <code>_edi_report.html_offline</code> | — |
     | [excluded](../physics/parameters.md#report-excluded) | <code>_edi_report.excluded</code> | — |
 
-    **[Correlation chart](../physics/parameters.md#correlation-chart)**
+    **[<span class="ed-reference-icon" data-reference-category="correlation-chart" aria-hidden="true">&#61450;</span> Correlation chart](../physics/parameters.md#correlation-chart)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
     | [threshold](../physics/parameters.md#correlation-chart-threshold) | <code>_edi_correlation_chart.threshold</code> | — |
 
-    **[Pattern chart](../physics/parameters.md#pattern-chart)**
+    **[<span class="ed-reference-icon" data-reference-category="pattern-chart" aria-hidden="true">&#61953;</span> Pattern chart](../physics/parameters.md#pattern-chart)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
     | [x-axis](../physics/parameters.md#pattern-chart-x-axis) | <code>_edi_pattern_chart.x_axis</code> | — |
 
-    **[Calculator](../physics/parameters.md#calculator)**
+    **[<span class="ed-reference-icon" data-reference-category="calculator" aria-hidden="true">&#61932;</span> Calculator](../physics/parameters.md#calculator)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
     | [calculator](../physics/parameters.md#calculator-type) | <code>_edi_calculator.type</code> | — |
 
-    **[Minimizer](../physics/parameters.md#minimizer)**
+    **[<span class="ed-reference-icon" data-reference-category="minimizer" aria-hidden="true">&#62398;</span> Minimizer](../physics/parameters.md#minimizer)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -2114,26 +2114,26 @@ print(parameter.value, parameter.free)
     | [descent](../physics/parameters.md#minimizer-descent) | <code>_edi_minimizer.descent</code> | — |
     | [tolerance](../physics/parameters.md#minimizer-chi-square-tolerance) | <code>_edi_minimizer.chi_square_tolerance</code> | — |
 
-    **[Fitting mode](../physics/parameters.md#fitting-mode)**
+    **[<span class="ed-reference-icon" data-reference-category="fitting-mode" aria-hidden="true">&#61918;</span> Fitting mode](../physics/parameters.md#fitting-mode)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
     | [mode](../physics/parameters.md#fitting-mode-type) | <code>_edi_fitting_mode.type</code> | — |
 
-    **[Fitted reflections](../physics/parameters.md#refine-ls)**
+    **[<span class="ed-reference-icon" data-reference-category="refine-ls" aria-hidden="true">&#61636;</span> Fitted reflections](../physics/parameters.md#refine-ls)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
     | [fit reflections above (su)](../physics/parameters.md#refine-ls-threshold-sigma) | <code>_edi_refine_ls.threshold_sigma</code> | — |
 
-    **[Alias](../physics/parameters.md#alias)**
+    **[<span class="ed-reference-icon" data-reference-category="alias" aria-hidden="true">&#61483;</span> Alias](../physics/parameters.md#alias)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
     | [alias](../physics/parameters.md#alias-id) | <code>_edi_alias.id</code> | — |
     | [parameter](../physics/parameters.md#alias-parameter-unique-name) | <code>_edi_alias.parameter_unique_name</code> | — |
 
-    **[Constraint](../physics/parameters.md#constraint)**
+    **[<span class="ed-reference-icon" data-reference-category="constraint" aria-hidden="true">&#62764;</span> Constraint](../physics/parameters.md#constraint)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -2141,13 +2141,13 @@ print(parameter.value, parameter.free)
     | [expression](../physics/parameters.md#constraint-expression) | <code>_edi_constraint.expression</code> | — |
     | [enabled](../physics/parameters.md#constraint-enabled) | <code>_edi_constraint.enabled</code> | — |
 
-    **[Joint-fit weights](../physics/parameters.md#joint-fit)**
+    **[<span class="ed-reference-icon" data-reference-category="joint-fit" aria-hidden="true">&#61633;</span> Joint-fit weights](../physics/parameters.md#joint-fit)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
     | [weight](../physics/parameters.md#joint-fit-weight) | <code>_edi_joint_fit.weight</code> | — |
 
-    **[Sequential fit](../physics/parameters.md#sequential-fit)**
+    **[<span class="ed-reference-icon" data-reference-category="sequential-fit" aria-hidden="true">&#61643;</span> Sequential fit](../physics/parameters.md#sequential-fit)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -2156,7 +2156,7 @@ print(parameter.value, parameter.free)
     | [reverse](../physics/parameters.md#sequential-fit-reverse) | <code>_edi_sequential_fit.reverse</code> | — |
     | [template](../physics/parameters.md#sequential-fit-template-file) | <code>_edi_sequential_fit.template_file</code> | — |
 
-    **[Scan extraction rule](../physics/parameters.md#sequential-fit-extract)**
+    **[<span class="ed-reference-icon" data-reference-category="sequential-fit-extract" aria-hidden="true">&#61616;</span> Scan extraction rule](../physics/parameters.md#sequential-fit-extract)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -2165,13 +2165,13 @@ print(parameter.value, parameter.free)
     | [pattern](../physics/parameters.md#sequential-fit-extract-pattern) | <code>_edi_sequential_fit_extract.pattern</code> | — |
     | [required](../physics/parameters.md#sequential-fit-extract-required) | <code>_edi_sequential_fit_extract.required</code> | — |
 
-    **[File header](../physics/parameters.md#edi)**
+    **[<span class="ed-reference-icon" data-reference-category="edi" aria-hidden="true">&#61897;</span> File header](../physics/parameters.md#edi)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
     | [schema version](../physics/parameters.md#edi-schema-version) | <code>_edi_edi.schema_version</code> | — |
 
-    **[Saved report](../physics/parameters.md#report-file)**
+    **[<span class="ed-reference-icon" data-reference-category="report-file" aria-hidden="true">&#61787;</span> Saved report](../physics/parameters.md#report-file)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -2181,7 +2181,7 @@ print(parameter.value, parameter.free)
     | [project saved](../physics/parameters.md#report-file-project-last-modified) | <code>_edi_report_file.project_last_modified</code> | — |
     | [digest](../physics/parameters.md#report-file-digest) | <code>_edi_report_file.digest</code> | — |
 
-    **[Fit start value](../physics/parameters.md#fit-parameter)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-parameter" aria-hidden="true">&#61914;</span> Fit start value](../physics/parameters.md#fit-parameter)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -2190,7 +2190,7 @@ print(parameter.value, parameter.free)
     | [start error](../physics/parameters.md#fit-parameter-start-uncertainty) | <code>_edi_fit_parameter.start_uncertainty</code> | — |
     | [start tied](../physics/parameters.md#fit-parameter-start-tied) | <code>_edi_fit_parameter.start_tied</code> | — |
 
-    **[Fit result](../physics/parameters.md#fit-result)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-result" aria-hidden="true">&#61528;</span> Fit result](../physics/parameters.md#fit-result)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -2217,7 +2217,7 @@ print(parameter.value, parameter.free)
     | [background](../physics/parameters.md#fit-result-background-function) | <code>_edi_fit_result.background_function</code> | — |
     | [descent](../physics/parameters.md#fit-result-descent) | <code>_edi_fit_result.descent</code> | — |
 
-    **[Experiment fit result](../physics/parameters.md#fit-result-bank)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-result-bank" aria-hidden="true">&#61452;</span> Experiment fit result](../physics/parameters.md#fit-result-bank)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -2229,14 +2229,14 @@ print(parameter.value, parameter.free)
     | [cRwp](../physics/parameters.md#fit-result-bank-prof-cwr-factor) | <code>_edi_fit_result_bank.prof_cwr_factor</code> | % |
     | [reduced χ²](../physics/parameters.md#fit-result-bank-chi-square) | <code>_edi_fit_result_bank.chi_square</code> | — |
 
-    **[Structure fit result](../physics/parameters.md#fit-result-phase)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-result-phase" aria-hidden="true">&#61452;</span> Structure fit result](../physics/parameters.md#fit-result-phase)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
     | [R Bragg](../physics/parameters.md#fit-result-phase-bragg-r-factor) | <code>_refine_ls.R_I_factor</code> | % |
     | [R F](../physics/parameters.md#fit-result-phase-f-r-factor) | <code>_refine_ls.R_factor_all</code> | % |
 
-    **[Correlation](../physics/parameters.md#fit-parameter-correlation)**
+    **[<span class="ed-reference-icon" data-reference-category="fit-parameter-correlation" aria-hidden="true">&#61449;</span> Correlation](../physics/parameters.md#fit-parameter-correlation)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |
@@ -2247,7 +2247,7 @@ print(parameter.value, parameter.free)
     | [correlation](../physics/parameters.md#fit-parameter-correlation-correlation) | <code>_edi_fit_parameter_correlation.correlation</code> | — |
     | [file](../physics/parameters.md#fit-parameter-correlation-file-path) | <code>_edi_fit_parameter_correlation.file_path</code> | — |
 
-    **[Report block](../physics/parameters.md#pd-block)**
+    **[<span class="ed-reference-icon" data-reference-category="pd-block" aria-hidden="true">&#61897;</span> Report block](../physics/parameters.md#pd-block)**
 
     | Parameter or field | CIF name | Units |
     | --- | --- | --- |

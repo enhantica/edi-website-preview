@@ -1,8 +1,9 @@
 ---
+category_glyph: "\uf3be"
 template: gui.html
 ---
 
-# :material-calculator: Minimizer
+# <span class="ed-reference-icon" data-reference-category="minimizer" aria-hidden="true">&#62398;</span> Minimizer
 
 ## Choose the search settings
 

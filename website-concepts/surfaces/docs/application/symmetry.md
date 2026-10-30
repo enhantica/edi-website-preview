@@ -1,8 +1,9 @@
 ---
+category_glyph: "\uf1b2"
 template: gui.html
 ---
 
-# :material-puzzle: Symmetry and cell
+# <span class="ed-reference-icon" data-reference-category="cell" aria-hidden="true">&#61874;</span> Symmetry and cell
 
 ## Choose the space-group setting
 

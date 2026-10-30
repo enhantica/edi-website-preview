@@ -1,8 +1,9 @@
 ---
+category_glyph: "\uf610"
 template: gui.html
 ---
 
-# :material-microscope: Instrument
+# <span class="ed-reference-icon" data-reference-category="instrument" aria-hidden="true">&#62992;</span> Instrument
 
 ## Set the measurement conditions
 

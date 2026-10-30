@@ -1,8 +1,9 @@
 ---
+category_glyph: "\uf5d2"
 template: gui.html
 ---
 
-# :material-puzzle: Atom sites
+# <span class="ed-reference-icon" data-reference-category="atom-site" aria-hidden="true">&#62930;</span> Atom sites
 
 ## Edit a site
 

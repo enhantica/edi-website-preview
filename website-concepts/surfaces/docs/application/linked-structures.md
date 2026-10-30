@@ -1,8 +1,9 @@
 ---
+category_glyph: "\uf5fd"
 template: gui.html
 ---
 
-# :material-microscope: Linked structures
+# <span class="ed-reference-icon" data-reference-category="linked-structure" aria-hidden="true">&#62973;</span> Linked structures
 
 ## Choose the contributing phases
 

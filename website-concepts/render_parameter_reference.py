@@ -52,6 +52,21 @@ EXPERIMENT = {
 }
 
 
+# Category-specific guides use the native category symbol; broad workflow groups
+# retain the existing Material workflow icons (ADR-0002).
+CATEGORY_PAGES = {
+    'application/symmetry.md': 'cell',
+    'application/atoms.md': 'atom_site',
+    'application/displacement.md': 'atom_site_aniso',
+    'application/instrument.md': 'instrument',
+    'application/peak-profiles.md': 'peak',
+    'application/background.md': 'background',
+    'application/linked-structures.md': 'linked_structure',
+    'application/minimizer.md': 'minimizer',
+    'application/fitting-modes.md': 'fitting_mode',
+}
+
+
 def anchor(uid: str) -> str:
     if not re.fullmatch(r'[a-z][a-z0-9_]*(?:\.[a-z][a-z0-9_]*)?', uid):
         raise ValueError('Invalid dictionary identity: ' + uid)
@@ -68,13 +83,14 @@ def code(value: str) -> str:
     return '<code>' + html.escape(value).replace('|', '&#124;') + '</code>'
 
 
-def icon(name: str, glyphs: dict) -> str:
+def icon(name: str, glyphs: dict, *, category: str = '') -> str:
     if not name:
         return ''
     value = glyphs.get(name)
     if value is None:
-        return ''
-    return f'<span class="ed-reference-icon" aria-hidden="true">&#{value};</span> '
+        raise ValueError('Native icon has no exported Font Awesome glyph: ' + name)
+    marker = f' data-reference-category="{anchor(category)}"' if category else ''
+    return f'<span class="ed-reference-icon"{marker} aria-hidden="true">&#{value};</span> '
 
 
 def parameter_icon(name: str, rules: list) -> str:
@@ -165,7 +181,12 @@ def render() -> None:
                     continue
                 url = '../physics/parameters.md#' + anchor(category['id'])
                 tables += [
-                    '    **[' + category['title'] + '](' + url + ')**',
+                    '    **['
+                    + icon(category['icon'], glyphs, category=category['id'])
+                    + category['title']
+                    + ']('
+                    + url
+                    + ')**',
                     '',
                     '    | Parameter or field | ' + projection + ' name | Units |',
                     '    | --- | --- | --- |',
@@ -197,7 +218,12 @@ def render() -> None:
         if not entries:
             continue
         details += [
-            '## ' + category['title'] + ' {#' + anchor(category['id']) + '}',
+            '## '
+            + icon(category['icon'], glyphs, category=category['id'])
+            + category['title']
+            + ' {#'
+            + anchor(category['id'])
+            + '}',
             '',
             code(category['edi_name']) + ' — ' + plain(category['description']),
             '',
@@ -273,6 +299,34 @@ def render() -> None:
                 details += ['']
     (DOCS / 'physics/parameters.md').write_text('\n'.join(details))
     (DOCS / 'user-guide/parameter-reference.md').write_text('\n'.join(tables))
+    for filename, uid in CATEGORY_PAGES.items():
+        category = lookup[uid]
+        glyph = glyphs[category['icon']]
+        path = DOCS / filename
+        text = path.read_text()
+        # This metadata is generated from the same exported dictionary as headings.
+        text = re.sub(r'^category_glyph:.*\n', '', text, flags=re.MULTILINE)
+        if not text.startswith('---\n'):
+            raise ValueError('Category guide must retain its template front matter: ' + filename)
+        text = text.replace('---\n', '---\ncategory_glyph: ' + json.dumps(chr(glyph)) + '\n', 1)
+        text = re.sub(
+            r'^(# )<span[^>]*data-reference-category="[^"\n]+"[^>]*>.*?</span>\s*',
+            r'\1',
+            text,
+            count=1,
+            flags=re.MULTILINE,
+        )
+        text = re.sub(r'^(# ):material-[a-z-]+:\s*', r'\1', text, count=1, flags=re.MULTILINE)
+        text, count = re.subn(
+            r'^# ',
+            '# ' + icon(category['icon'], glyphs, category=uid),
+            text,
+            count=1,
+            flags=re.MULTILINE,
+        )
+        if count != 1:
+            raise ValueError('Category guide must have a title: ' + filename)
+        path.write_text(text)
     # A portable exact lookup also consumed by native help verification and future integrations.
     (ASSETS / 'parameter-links.json').write_text(
         json.dumps(
@@ -315,9 +369,7 @@ def main() -> None:
                     source / 'data/category-census.json',
                 ]
             },
-            'sdk_library_sha256': hashlib.sha256(
-                args.sdk_library.read_bytes()
-            ).hexdigest(),
+            'sdk_library_sha256': hashlib.sha256(args.sdk_library.read_bytes()).hexdigest(),
         }
         (ASSETS / 'parameter-provenance.json').write_text(json.dumps(provenance, indent=2) + '\n')
     render()
