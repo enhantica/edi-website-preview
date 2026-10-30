@@ -861,7 +861,6 @@ Start with an empty project. Set up the experiment in the app; the measured-data
     body += '\n!!! note "Keep the project as well as the report"\n\n    A report is an export of the result. Keep the saved project to reopen the model, change parameters or repeat the fit. In the browser, [check the save location](browser.md#open-and-save-files).\n'
     body += '\n## Try it\n\nChange the cell length **a** slightly on **Structure** and watch the peak positions move. Use **Undo** to restore the fitted model.\n\n??? tip "Where to look"\n\n    Expand **Cell** on **Structure → Main**. A cell change affects peak positions; compare several peaks across the pattern.\n'
     body += '\n## Continue with the same project\n\nOpen the saved project in [Python](../python/examples.md) or run it from the [Command Line](../cli/examples.md). Try [joint refinement](refine.md) or a [scan](scans.md) when you are ready for several measurements.\n'
-    body += '\n## Explore the workspace\n\nSee [Application layout](workspace.md) for an annotated overview of every workflow page and its enabled sidebar tabs.\n'
     (DOCS / 'application/first-refinement.md').write_text(page('Example refinement', body))
     workspace = """The interface follows the same analysis workflow as the [User guide](../user-guide/analysis-workflow/index.md). The top bar selects a page, the central workspace shows its main view, and the sidebar contains the related controls.
 

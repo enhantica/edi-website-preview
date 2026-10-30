@@ -74,7 +74,3 @@ Check the process exit status and retain stderr. A machine report is a versioned
     ```
 
 Use the [report guide](reports.md) to choose contents and check freshness.
-
-## Related Physics
-
-[Single and joint fitting](../physics/rietveld.md#joint-refinement) · [Sequential and independent scans](../physics/rietveld.md#scan-refinement).

@@ -45,7 +45,3 @@ Sequential and independent modes produce one record per measured file and keep s
 ## Save evidence with the model
 
 Prepare an [interactive report](reports.md) for inspection and save the project when you want the refined values to persist. Reopening the project provides the editable model behind the report.
-
-## Related Physics
-
-[Agreement factors](../physics/reliability.md) · [Uncertainty and correlations](../physics/minimization.md#eq-covariance).

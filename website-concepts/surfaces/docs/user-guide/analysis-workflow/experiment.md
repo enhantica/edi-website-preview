@@ -18,13 +18,13 @@ For powder text input, verify the independent variable, its units, intensity and
 
 ## Instrument and peak profile
 
-Instrument settings describe the measurement geometry and calibration, such as wavelength or the relationship between time of flight and diffraction spacing. The peak profile describes reflection shapes and broadening.
+[Instrument settings](../../physics/calibration.md) describe the measurement geometry and calibration, such as wavelength or the relationship between time of flight and diffraction spacing. The [peak profile](../../physics/profiles.md) describes reflection shapes and broadening.
 
 Check peak positions and widths before changing structural parameters to compensate for disagreement. A profile appropriate to one instrument or measurement need not describe another.
 
 ## Background and excluded regions
 
-The background accounts for the contribution beneath the diffraction peaks. Select a representation appropriate to the measurement and inspect its behaviour between and under peaks. An automatic estimate is a starting model that still needs inspection.
+The [background](../../physics/background.md) accounts for the contribution beneath the diffraction peaks. Select a representation appropriate to the measurement and inspect its behaviour between and under peaks. An automatic estimate is a starting model that still needs inspection.
 
 Excluded intervals remove observations from the fitting objective. Record why a region is excluded; an exclusion changes the evidence used to assess the model and its agreement factors.
 
@@ -34,14 +34,4 @@ Link each contributing structure and review its scale. One experiment can sum co
 
 Scales connect phase contributions to the experiment. Interpret any derived composition or phase fraction in the context of the model and its conventions.
 
-## Work with experiments
-
-- [Application: load data and edit experiment controls](../../application/experiments.md), including [background and exclusions](../../application/background.md).
-- [Python: inspect or construct experiments](../../python/experiments.md).
-- [Command Line: run the experiment model saved in a project](../../cli/calculate.md).
-
-Continue with [Analysis](analysis.md).
-
-## Related Physics
-
-[Peak profiles](../../physics/profiles.md) · [Calibration](../../physics/calibration.md) · [Absorption](../../physics/corrections/absorption.md) · [Extinction](../../physics/corrections/extinction.md) · [Preferred orientation](../../physics/corrections/orientation.md).
+Configure experiments in the [Application](../../application/experiments.md) or [Python](../../python/experiments.md), then [use the saved experiments from Command Line](../../cli/experiments.md).

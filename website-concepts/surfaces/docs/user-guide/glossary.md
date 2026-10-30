@@ -60,9 +60,6 @@ The catalogue uses `pd` for powder, `sc` for single crystal, `neut` for neutron,
 
 These labels identify measurement types and scientific terms. Current feature availability and model coverage are described by the interface guides and checked examples.
 
-## Related Physics
-
-[Unit cell and symmetry](../physics/crystallography.md#eq-cell-metric) · [Occupancy and scattering](../physics/diffraction.md#eq-nuclear-structure-factor) · [Atomic displacement](../physics/displacement.md#eq-anisotropic-adp).
 
 
 <!-- experiment-labels -->

@@ -88,5 +88,3 @@ These are spherical/isotropic Becker–Coppens approximations and the stated emp
 1. Becker, P. J. & Coppens, P. (1974). **Acta Crystallographica A**, 30, 129–147. [DOI](https://doi.org/10.1107/S0567739474000337). Extinction theory and spherical approximations.
 2. Becker, P. J. & Coppens, P. (1974). **Acta Crystallographica A**, 30, 148–153. Application of the extinction treatment.
 3. Larson extinction convention, as used in SHELXL and the Mag2Pol manual, §5.1.3. The operative intensity factor and units for this reference are stated above.
-
-Related documentation: [extinction parameter definitions](../parameters.md#extinction) · [reliability factors](../reliability.md).

@@ -65,5 +65,3 @@ An excluded powder interval removes observations from the fitting objective and 
 1. Baek, S.-J., Park, A., Ahn, Y.-J. & Choo, J. (2015). *Baseline correction using asymmetrically reweighted penalized least squares smoothing*. **Analyst**, 140, 250–257. [DOI](https://doi.org/10.1039/C4AN01061B). arPLS baseline estimation.
 2. Ryan, C. G., Clayton, E., Griffin, W. L., Sie, S. H. & Cousens, D. R. (1988). *SNIP, a statistics-sensitive background treatment for the quantitative analysis of PIXE spectra in geoscience applications*. **Nuclear Instruments and Methods in Physics Research B**, 34, 396–402. [DOI](https://doi.org/10.1016/0168-583X%2888%2990063-8). SNIP peak clipping.
 3. Cobas, J. C., Bernstein, M. A., Martín-Pastor, M. & García Tahoces, P. (2006). *A new general-purpose fully automatic baseline-correction procedure for 1D and 2D NMR data*. **Journal of Magnetic Resonance**, 183, 145–151. [DOI](https://doi.org/10.1016/j.jmr.2006.07.013). FABC baseline classification.
-
-Related documentation: [background parameters](parameters.md#background) · [application controls](../application/background.md).

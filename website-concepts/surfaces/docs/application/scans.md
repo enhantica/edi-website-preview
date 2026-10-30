@@ -173,7 +173,3 @@ Use **Save project as…** to keep the example together with its data and result
 
 </div>
 <!-- /gui-guide -->
-
-## Related Physics
-
-[Sequential and independent refinement](../physics/rietveld.md#scan-refinement) · [Uncertainties and correlations](../physics/minimization.md#eq-covariance).

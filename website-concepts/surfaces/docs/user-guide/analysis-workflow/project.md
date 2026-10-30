@@ -31,10 +31,4 @@ A runnable experiment needs valid structure links and either observations with u
 
 For scans, retain the declared source files and their order along with the template and results. Moving a project may require checking that the scan's external input location is still available.
 
-## Work with a project
-
-- [Application: create a project](../../application/new-project.md) and [open, save or export](../../application/projects.md).
-- [Python: load and save projects](../../python/projects.md).
-- [Command Line: project inputs and output destinations](../../cli/files.md).
-
-Continue with [Structure](structure.md).
+Create, open and save a project in the [Application](../../application/projects.md), [Python](../../python/projects.md) or [Command Line](../../cli/files.md).

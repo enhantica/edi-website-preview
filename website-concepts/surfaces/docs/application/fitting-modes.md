@@ -79,7 +79,3 @@ A scan can use `single` to fit the shown dataset. That result becomes the templa
 
 </div>
 <!-- /gui-guide -->
-
-## Related Physics
-
-[Single and joint fitting](../physics/rietveld.md#joint-refinement) · [Sequential and independent scans](../physics/rietveld.md#scan-refinement).

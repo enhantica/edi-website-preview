@@ -27,5 +27,3 @@ A preferred-orientation row belongs to a linked structure in a CW experiment. It
 ## References
 
 1. Dollase, W. A. (1986). *Correction of intensities for preferred orientation in powder diffractometry: application of the March model*. **Journal of Applied Crystallography**, 19, 267–272.
-
-Related documentation: [preferred-orientation parameters](../parameters.md#preferred-orientation) · [phase scales](../diffraction.md#occupancy-and-scale) · [crystallography](../crystallography.md#eq-cell-metric).

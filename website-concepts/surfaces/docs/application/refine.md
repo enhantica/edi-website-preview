@@ -226,7 +226,3 @@ The same project can be opened in [Python](../python/fit.md) or run with [the Co
 
 </div>
 <!-- /gui-guide -->
-
-## Related Physics
-
-[Least-squares objective](../physics/rietveld.md#eq-weighted-residual) · [Minimization and covariance](../physics/minimization.md) · [Agreement factors](../physics/reliability.md).

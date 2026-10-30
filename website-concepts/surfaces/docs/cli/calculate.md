@@ -73,7 +73,3 @@ Unlike `fit`, `calc` defaults to machine output. Ask for a readable summary with
 ## Prepare a document
 
 After keeping the calculated project, use [the report command](reports.md) to save an HTML report. Calculating a project and rendering its report are separate actions.
-
-## Related Physics
-
-[Calculated pattern](../physics/rietveld.md#eq-rietveld-pattern) · [Peak profiles](../physics/profiles.md) · [Background](../physics/background.md).

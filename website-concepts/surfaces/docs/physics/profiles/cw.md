@@ -74,5 +74,3 @@ $$\Omega(x)=\frac{\sum_k w_kG(\delta_k)\,pV(x-\delta_k+2\theta_h)}{\sum_k w_kG(\
 2. Thompson, P., Cox, D. E. & Hastings, J. B. (1987). **Journal of Applied Crystallography**, 20, 79–83. [DOI](https://doi.org/10.1107/S0021889887087090). TCH width and mixing.
 3. Bérar, J.-F. & Baldinozzi, G. (1993). **Journal of Applied Crystallography**, 26, 128–129. Empirical profile asymmetry.
 4. Finger, L. W., Cox, D. E. & Jephcoat, A. P. (1994). **Journal of Applied Crystallography**, 27, 892–900. Axial-divergence asymmetry.
-
-Related documentation: [peak parameter names and units](../parameters.md#peak) · [profile catalogue](../models.md#peak-profiles).

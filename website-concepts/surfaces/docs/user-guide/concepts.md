@@ -40,7 +40,3 @@ Inspect the observed and calculated signal, the residual, parameter uncertaintie
 ## The same ideas in every interface
 
 The app makes these relationships visible. Python lets you express them in a script or notebook. The Command Line runs the analysis already declared by a saved project. All use the same [project model](analysis-workflow/project.md).
-
-## Related Physics
-
-[Calculated pattern](../physics/rietveld.md#eq-rietveld-pattern) · [Peak profiles](../physics/profiles.md) · [Background](../physics/background.md).

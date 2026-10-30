@@ -63,5 +63,3 @@ The high-$u$ expression is tabulated as a percentage before the $0.01$ conversio
 
 1. Hewat, A. W. (1979). **Acta Crystallographica A**, 35, 248. Cylinder absorption approximation.
 2. Lobanov, N. N. & Alte da Veiga, L. (1998). Cylinder-transmission parameterisation, as used by the GSAS-II absorption implementation. The coefficients and branch conventions reproduced above identify the implemented approximation.
-
-Related documentation: [absorption parameters](../parameters.md#absorption) · [experiment workflow](../../user-guide/analysis-workflow/experiment.md) · [extinction](extinction.md).

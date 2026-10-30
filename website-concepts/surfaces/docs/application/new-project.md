@@ -55,7 +55,6 @@ On **Project → Extra**, expand **Standard uncertainties**. Choose the display 
 
 The formatting changes how a result is written, not the fitted value or its uncertainty. See [uncertainty conventions](../physics/minimization.md).
 
-Continue with [a structure](structures.md), then [an experiment](experiments.md), or follow the complete [example refinement](first-refinement.md).
 
 <!-- gui-guide:choose-uncertainty-formatting -->
 <div class="gui-viewer" markdown="1">

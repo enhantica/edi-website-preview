@@ -48,7 +48,3 @@ Keep completed results tied to the template and conditions that produced them. C
 - [Command Line: saved mode, progress and output behaviour](../cli/fit.md).
 
 Keep the mode, free-parameter choices and minimizer conditions with the saved project when sharing a result.
-
-## Related Physics
-
-[Single and joint fitting](../physics/rietveld.md#joint-refinement) · [Sequential and independent scans](../physics/rietveld.md#scan-refinement).

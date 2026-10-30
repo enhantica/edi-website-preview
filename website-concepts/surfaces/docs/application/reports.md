@@ -165,7 +165,3 @@ The same report settings can be used from [Python](../python/reports.md) or [the
 
 </div>
 <!-- /gui-guide -->
-
-## Related Physics
-
-[Agreement factors](../physics/reliability.md) · [Uncertainty and correlations](../physics/minimization.md#eq-covariance).

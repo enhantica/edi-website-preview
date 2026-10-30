@@ -55,7 +55,3 @@ The factory creates the experiment and reads its data. You still need to choose 
 A measured pattern supports comparison and fitting. A simulation range supports a forward calculation without observations. A project can contain both kinds; fitting uses experiments with measured data.
 
 Read [calculate a pattern](calculate.md) or [load and fit](fit.md) for the next step.
-
-## Related Physics
-
-[Peak profiles](../physics/profiles.md) · [Calibration](../physics/calibration.md) · [Absorption](../physics/corrections/absorption.md) · [Extinction](../physics/corrections/extinction.md) · [Preferred orientation](../physics/corrections/orientation.md).

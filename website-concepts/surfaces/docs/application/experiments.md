@@ -89,7 +89,6 @@ See [data formats](../user-guide/data-formats.md) for file conventions.
 
 The main **Pattern** view compares measured and calculated intensities. Inspect the residual and Bragg marks as well as the total curve. Use the dataset selector above the plot to change the displayed measurement.
 
-Continue with [Instrument](instrument.md), [Peak profiles](peak-profiles.md), [Background and exclusions](background.md), [Linked structures](linked-structures.md) and [Intensity corrections](corrections.md). For a sequence of datasets, see [Work with a scan](scans.md).
 
 <!-- gui-guide:read-the-pattern -->
 <div class="gui-viewer" markdown="1">

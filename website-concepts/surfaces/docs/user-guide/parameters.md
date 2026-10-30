@@ -20,13 +20,13 @@ The [project model](analysis-workflow/project.md) keeps structure quantities sep
 
 ## Free and fixed
 
-A **free** parameter is allowed to change during refinement. An active **fixed** parameter contributes to the calculation but keeps the value you supplied. A stored-only field is different: retaining it does not establish a calculation effect. The [parameter index](../physics/parameters.md) identifies the known stored-only fields and model-specific roles.
+A **free** parameter is allowed to change during [refinement](../physics/rietveld.md#eq-weighted-residual). An active **fixed** parameter contributes to the calculation but keeps the value you supplied. A stored-only field is different: retaining it does not establish a calculation effect. The [parameter index](../physics/parameters.md) identifies the known stored-only fields and model-specific roles.
 
-Review the free set before fitting. Only quantities that can vary independently belong in it; symmetry-related or constrained values do not add independent degrees of freedom. Keep the chosen free set with the saved project. Interface instructions for editing or inspecting it are linked below.
+Review the free set before fitting. Only quantities that can vary independently belong in it; symmetry-related or constrained values do not add independent degrees of freedom. Keep the chosen free set with the saved project. Edit the free set in the [Application](../application/parameters.md) or [Python](../python/structures.md). [Command Line](../cli/fit.md) uses the choices saved in the project.
 
 ## Uncertainties
 
-A fitted parameter may have a standard uncertainty. Interpret it together with the measurement uncertainties, the model and correlations with other parameters.
+A fitted parameter may have a [standard uncertainty](../physics/minimization.md#eq-covariance). Interpret it together with the measurement uncertainties, the model and correlations with other parameters.
 
 A small standard uncertainty describes precision under the fit's assumptions. It does not remove uncertainty from calibration, sample effects, missing phases, an unsuitable background, or another systematic source.
 
@@ -48,16 +48,6 @@ When interpreting a constrained or limited value, check the applicable model and
 
 For scan analyses, the [fitting mode](fitting-modes.md) determines whether each dataset starts from the same template values or from the previous fit.
 
-## Work with parameters
-
-- [Application: free-parameter table](../application/refine.md#choose-free-parameters).
-- [Python: parameter values and free flags](../python/structures.md).
-- [Command Line: run the free-set choices saved in the project](../cli/fit.md).
-
 ## Names in code and files
 
 A parameter can have a Python access path, an Edi persistence key, and a scientific CIF report name. These have different jobs. Use the current [Python documentation](../python/index.md) for code and [data formats](data-formats.md) for saved files. The code access path and the saved-file key need not be identical.
-
-## Related Physics
-
-[Least-squares objective](../physics/rietveld.md#eq-weighted-residual) · [Minimization and covariance](../physics/minimization.md) · [Agreement factors](../physics/reliability.md).

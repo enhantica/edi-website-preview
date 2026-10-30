@@ -597,7 +597,3 @@ Change the cell length **a** slightly on **Structure** and watch the peak positi
 ## Continue with the same project
 
 Open the saved project in [Python](../python/examples.md) or run it from the [Command Line](../cli/examples.md). Try [joint refinement](refine.md) or a [scan](scans.md) when you are ready for several measurements.
-
-## Explore the workspace
-
-See [Application layout](workspace.md) for an annotated overview of every workflow page and its enabled sidebar tabs.

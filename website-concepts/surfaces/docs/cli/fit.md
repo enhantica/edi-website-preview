@@ -133,7 +133,3 @@ The first command writes the selected report formats except PDF. The second chec
 ## Continue visually
 
 Open the saved project in [the application](../application/index.md). Its structures and experiments are the same ones the command line reads.
-
-## Related Physics
-
-[Least-squares objective](../physics/rietveld.md#eq-weighted-residual) · [Minimization and covariance](../physics/minimization.md) · [Agreement factors](../physics/reliability.md).

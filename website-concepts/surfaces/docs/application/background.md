@@ -150,7 +150,3 @@ Save the project to keep its background settings and excluded regions.
 
 </div>
 <!-- /gui-guide -->
-
-## Related Physics
-
-[Background equations and estimation](../physics/background.md) · [Excluded observations](../physics/background.md#excluded-regions).

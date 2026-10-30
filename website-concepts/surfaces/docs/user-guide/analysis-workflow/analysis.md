@@ -37,9 +37,3 @@ For a scan, inspect individual failed or out-of-date results before interpreting
 - [Application: free-parameter controls and refinement](../../application/refine.md), [mode selection](../../application/fitting-modes.md) and [scan controls](../../application/scans.md).
 - [Python: calculation](../../python/calculate.md), [refinement](../../python/fit.md) and [result objects](../../python/results.md).
 - [Command Line: calculation](../../cli/calculate.md) and [refinement commands](../../cli/fit.md).
-
-Continue with [Report](report.md).
-
-## Related Physics
-
-[Least-squares objective](../../physics/rietveld.md#eq-weighted-residual) · [Minimization and covariance](../../physics/minimization.md) · [Agreement factors](../../physics/reliability.md).

@@ -4,13 +4,13 @@ A structure describes a crystalline phase used to calculate diffraction. It comb
 
 ## Symmetry and setting
 
-The space group and its setting determine which positions and cell parameters are independent. Check that the chosen setting matches the coordinate system of the structural data you are using.
+The [space group and its setting](../../physics/crystallography.md#symmetry) determine which positions and cell parameters are independent. Check that the chosen setting matches the coordinate system of the structural data you are using.
 
 A symmetry-related value is not an additional independent fitting direction. A table can display several coordinates or cell dimensions even when symmetry relates or fixes them.
 
 ## Unit cell
 
-Cell lengths and angles define the repeating geometry. Their units and allowed relationships depend on the crystallographic setting. Inspect the starting calculated reflection positions before refining the cell: an instrumental calibration error can also move peaks.
+[Cell lengths and angles](../../physics/crystallography.md#eq-cell-metric) define the repeating geometry. Their units and allowed relationships depend on the crystallographic setting. Inspect the starting calculated reflection positions before refining the cell: an instrumental calibration error can also move peaks.
 
 ## Atom sites
 
@@ -22,7 +22,7 @@ Cell lengths and angles define the repeating geometry. Their units and allowed r
 | Displacement parameters | Describe displacement around the average position | Isotropic/anisotropic convention, units and physically meaningful values |
 | Wyckoff position | Describes the site's symmetry position | Restrictions on coordinates and site multiplicity |
 
-Keep the displacement convention used by the source structure; quantities expressed with different conventions should not be compared by name alone. Use [parameters](../parameters.md) for free/fixed values, uncertainty and constraints.
+Keep the [displacement convention](../../physics/displacement.md) used by the source structure; quantities expressed with different conventions should not be compared by name alone. Use [parameters](../parameters.md) for free/fixed values, uncertainty and constraints.
 
 ## Phases and experiment links
 
@@ -30,14 +30,4 @@ A project may contain several structures. An experiment links the structures tha
 
 Check which phases should contribute and whether their links are enabled. Structural quantities describe the sample; background and peak-profile terms belong to the experiment even though they also affect the calculated pattern.
 
-## Work with structures
-
-- [Application: structure controls and phase links](../../application/structures.md).
-- [Python: structure objects and parameter access](../../python/structures.md).
-- [Command Line: calculate a prepared project](../../cli/calculate.md). Structural definitions are read from the project.
-
-Continue with [Experiment](experiment.md).
-
-## Related Physics
-
-[Unit cell and symmetry](../../physics/crystallography.md#eq-cell-metric) · [Occupancy and scattering](../../physics/diffraction.md#eq-nuclear-structure-factor) · [Atomic displacement](../../physics/displacement.md#eq-anisotropic-adp).
+Edit structures in the [Application](../../application/structures.md) or [Python](../../python/structures.md), then [calculate the saved model from Command Line](../../cli/calculate.md).

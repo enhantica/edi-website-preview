@@ -50,5 +50,3 @@ Refinement improves agreement under the model and its uncertainties. Convergence
 ## References
 
 1. McCusker, L. B., Von Dreele, R. B., Cox, D. E., Louër, D. & Scardi, P. (1999). *Rietveld refinement guidelines*. **Journal of Applied Crystallography**, 32, 36–50.
-
-Related documentation: [model catalogue and reference snapshot](models.md).

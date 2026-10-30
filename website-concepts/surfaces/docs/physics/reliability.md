@@ -73,5 +73,3 @@ There is no universal threshold that proves structural correctness. Changing the
 
 1. McCusker, L. B., Von Dreele, R. B., Cox, D. E., Louër, D. & Scardi, P. (1999). *Rietveld refinement guidelines*. **Journal of Applied Crystallography**, 32, 36–50.
 2. Toby, B. H. (2006). *R factors in Rietveld analysis: How good is good enough?* **Powder Diffraction**, 21, 67–70.
-
-Related documentation: [practical fit assessment](../user-guide/fit-quality.md) · [minimization and uncertainty](minimization.md).

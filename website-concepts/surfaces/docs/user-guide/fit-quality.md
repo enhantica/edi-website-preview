@@ -57,7 +57,3 @@ Single-crystal examples fit reflection observations rather than a powder profile
 Save both the project and an appropriate [report](analysis-workflow/report.md). Include enough information to identify the measured data, structure model, fitting mode, free set, excluded regions, software version and minimizer conditions.
 
 For a scan, inspect failed datasets and out-of-date results before interpreting parameter evolution. See [fitting modes](fitting-modes.md).
-
-## Related Physics
-
-[Agreement factors](../physics/reliability.md) · [Uncertainty and correlations](../physics/minimization.md#eq-covariance).
