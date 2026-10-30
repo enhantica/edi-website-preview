@@ -72,16 +72,18 @@
       show(link);
       return;
     }
-    const button = event.target.closest('[data-gui-target]');
+    const button = event.target.closest('[data-gui-target], [data-gui-overview]');
     if (!button) return;
     const figure = button.closest('[data-gui-figure]');
     const active = button.getAttribute('aria-pressed') !== 'true';
-    figure.querySelectorAll('[data-gui-target]').forEach(item => {
+    const overview = button.hasAttribute('data-gui-overview');
+    figure.querySelectorAll('[data-gui-target], [data-gui-overview]').forEach(item => {
       item.setAttribute('aria-pressed', String(active && item === button));
     });
     figure.querySelectorAll('[data-gui-region]').forEach(region => {
-      region.classList.toggle('is-active', active && region.dataset.guiRegion === button.dataset.guiTarget);
+      region.classList.toggle('is-active', active && (overview || region.dataset.guiRegion === button.dataset.guiTarget));
     });
+    figure.querySelectorAll('[data-gui-direction]').forEach(arrow => arrow.classList.toggle('is-active', active && overview));
   });
   const initialize = () => {
     close();

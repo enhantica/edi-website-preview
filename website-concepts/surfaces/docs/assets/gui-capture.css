@@ -8,9 +8,9 @@
 .md-typeset .gui-figure figcaption { color: var(--md-default-fg-color--light); font-size: .7rem; margin-top: .65rem; text-align: left; font-style: normal; }
 .md-typeset .gui-regions { list-style: none; padding: 0; margin: .8rem 0 0; }
 .md-typeset .gui-regions li { margin: .45rem 0; font-size: .75rem; }
-.gui-regions button { font: inherit; cursor: pointer; border-radius: .25rem; color: var(--md-typeset-a-color); padding: .15rem .25rem; margin-right: .25rem; }
-.gui-regions button:hover, .gui-regions button[aria-pressed="true"] { background: var(--md-accent-fg-color--transparent); }
-.gui-regions button:focus-visible { outline: 2px solid var(--md-accent-fg-color); outline-offset: 2px; }
+.gui-regions button, .gui-region-choice { font: inherit; cursor: pointer; border-radius: .25rem; color: var(--md-typeset-a-color); padding: .15rem .25rem; margin-right: .25rem; }
+.gui-regions button:hover, .gui-regions button[aria-pressed="true"], .gui-region-choice:hover, .gui-region-choice[aria-pressed="true"] { background: var(--md-accent-fg-color--transparent); }
+.gui-regions button:focus-visible, .gui-region-choice:focus-visible { outline: 2px solid var(--md-accent-fg-color); outline-offset: 2px; }
 .gui-lightbox { box-sizing: border-box; width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; border: 0; padding: clamp(1rem, 3vw, 2.5rem); background: var(--md-default-bg-color, #fff); color: var(--md-default-fg-color, #222); }
 .gui-lightbox[open] { display: flex; flex-direction: column; gap: 1rem; }
 .gui-lightbox::backdrop { background: rgb(0 0 0 / .2); }
@@ -25,3 +25,7 @@
 @media (prefers-reduced-motion: reduce) { .gui-capture [data-gui-region] { transition: none; } }
 
 html.gui-lightbox-open { overflow: hidden; }
+
+.gui-view-options { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .65rem; font-size: .7rem; }
+.gui-direction { display: none; fill: #d19966; fill-opacity: .72; pointer-events: none; }
+.gui-direction.is-active { display: block; }

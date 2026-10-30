@@ -33,7 +33,7 @@
             "scene": "03-project-details"
         },
         {
-            "action": "fill:createProject.location=/tmp/EasyDiffraction-cqyRZK/pd-neut-cwl_y2o3-spodi",
+            "action": "fill:createProject.location=/tmp/EasyDiffraction-JRtevb/pd-neut-cwl_y2o3-spodi",
             "scene": "03-project-details"
         },
         {
@@ -101,7 +101,7 @@
             "scene": "06-structure-import"
         },
         {
-            "action": "import-structure:/tmp/edi-docs-y2o3-final/inputs/y2o3.edi",
+            "action": "import-structure:/tmp/edi-docs-y2o3-examples/inputs/y2o3.edi",
             "scene": "07-structure-loaded"
         },
         {
@@ -161,7 +161,7 @@
             "scene": "09-experiment-import"
         },
         {
-            "action": "import-experiment:/tmp/edi-docs-y2o3-final/inputs/spodi.edi",
+            "action": "import-experiment:/tmp/edi-docs-y2o3-examples/inputs/spodi.edi",
             "scene": "10-experiment-loaded"
         },
         {
@@ -315,9 +315,25 @@
         {
             "action": "if-enabled:sideBar.tab.settings",
             "scene": "14-report-settings"
+        },
+        {
+            "action": "appBar.tab.project",
+            "scene": "15-project-examples"
+        },
+        {
+            "action": "sideBar.tab.basic",
+            "scene": "15-project-examples"
+        },
+        {
+            "action": "group.getStarted",
+            "scene": "15-project-examples"
+        },
+        {
+            "action": "expand:group.examples",
+            "scene": "15-project-examples"
         }
     ],
-    "binary_sha256": "c6562fc45a9b622bcccb08474c05b1e2dc29d76cb8d6958808ba4399449409c4",
+    "binary_sha256": "85c31d967be998ff374ddd60ad69de9cf3051e54a3c933c1e81bcee71aad8e14",
     "error": "",
     "example": "pd-neut-cwl_y2o3-spodi",
     "gui_components_revision": "10dc5828020c90666a1ef015835475936d56e819",
@@ -577,10 +593,19 @@
             "reason": "sidebar tab is disabled",
             "sidebar": "Settings",
             "status": "skipped"
+        },
+        {
+            "description": "Browse the built-in examples",
+            "id": "15-project-examples",
+            "image": "15-project-examples.png",
+            "metadata": "15-project-examples.json",
+            "page": "project",
+            "sidebar": "",
+            "status": "captured"
         }
     ],
     "schema": 1,
-    "script_sha256": "a971882ab1a441ea29c5a41a2282cea9db00341461b54ce2e62905a7158a4b29",
-    "source_revision": "eb945aa8fb5964658daeab4a5bdc488b653e3bf3",
+    "script_sha256": "e4e0560b8d376afcabcd87a95437d283e28202cec3d85181e305e2d73cb2243f",
+    "source_revision": "8996a2b6093bd51fb153b5c815638d6f644df705",
     "status": "complete"
 }

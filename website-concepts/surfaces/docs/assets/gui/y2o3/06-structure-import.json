@@ -7,7 +7,7 @@
     ],
     "id": "06-structure-import",
     "image": "06-structure-import.png",
-    "image_sha256": "b9a7452b004e05921afa3cbc0a8b338a6c0034e57db2f565bd608cee4b1777da",
+    "image_sha256": "51f2d0cb292eca2625c26d05ca05b0126ac03f4c3f881a6b19b74a7137adc9b6",
     "items": {
         "ApplicationWindow": {
             "bounds": [
@@ -890,8 +890,8 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "a971882ab1a441ea29c5a41a2282cea9db00341461b54ce2e62905a7158a4b29",
-    "source_revision": "eb945aa8fb5964658daeab4a5bdc488b653e3bf3",
+    "script_sha256": "e4e0560b8d376afcabcd87a95437d283e28202cec3d85181e305e2d73cb2243f",
+    "source_revision": "8996a2b6093bd51fb153b5c815638d6f644df705",
     "state": {
         "experiments": 0,
         "fit_outcome": "",

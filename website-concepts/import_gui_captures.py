@@ -52,11 +52,26 @@ def label(target: str, page: str) -> tuple[str, str]:
             'Sidebar',
             'Use the enabled Main, Extra, Text and Settings tabs to inspect and edit this page.',
         )
+    if target.endswith('.page'):
+        return (
+            'Workflow page',
+            'The selected toolbar tab opens this workspace and its sidebar together.',
+        )
     return LABELS.get(target, (target, ''))
 
 
 def region_parts(meta: dict, target: str) -> list[list[float]]:
     """Join a sidebar's active tab to its body using this capture's Qt bounds."""
+    if target.endswith('.page'):
+        name = target.split('.')[1]
+        main = meta['items'][f'workflow.{name}.mainContent']['visible_bounds']
+        sidebar = meta['items'][f'workflow.{name}.manualSidebar']['visible_bounds']
+        tab = meta['items'][f'appBar.tab.{name}']['visible_bounds']
+        x, y, width, height = main
+        sx, sy, sw, sh = sidebar
+        if abs(x + width - sx) > 0.1 or abs(y - sy) > 0.1 or abs(height - sh) > 0.1:
+            raise ValueError('Workflow regions must form one adjoining page')
+        return [[x, y, width + sw, height], tab]
     bounds = meta['items'][target]['visible_bounds']
     if not target.endswith('.manualSidebar'):
         return [bounds]
@@ -95,10 +110,12 @@ def figure(scene: dict, *, view: str = 'overview') -> str:
     meta = scene['layout']
     image = '../assets/gui/y2o3/' + scene['image']
     description = html.escape(scene['description'], quote=True)
-    identity = f"{scene['id']}-{view}"
+    identity = f'{scene["id"]}-{view}'
     targets = (
         [f'workflow.{scene["page"]}.manualSidebar'] if view == 'sidebar' else meta['highlights']
     )
+    if view == 'sidebar':
+        targets.append(f'workflow.{scene["page"]}.page')
     paths, buttons = [], []
     for number, target in enumerate(targets, 1):
         parts = region_parts(meta, target)
@@ -106,16 +123,71 @@ def figure(scene: dict, *, view: str = 'overview') -> str:
         key = f'{identity}-{number}'
         data = html.escape(json.dumps(parts, separators=(',', ':')), quote=True)
         paths.append(
-            f'<path class="{"is-active" if number == 1 else ""}" data-gui-region="{key}" '
+            f'<path class="{"is-active" if number == 1 or view == "layout" else ""}" data-gui-region="{key}" '
             f'data-gui-parts="{data}" d="{region_path(parts)}" />'
         )
         buttons.append(
-            f'<li><button type="button" data-gui-target="{key}" aria-pressed="{"true" if number == 1 else "false"}">'
+            f'<li><button type="button" data-gui-target="{key}" aria-pressed="{"true" if number == 1 and view != "layout" else "false"}">'
             f'{number}. {html.escape(title)}</button> {html.escape(text)}</li>'
         )
-    controls = (
-        '<ol class="gui-regions">' + ''.join(buttons) + '</ol>' if view == 'overview' else ''
-    )
+    if view == 'sidebar':
+        buttons = [
+            f'<button type="button" class="gui-region-choice" data-gui-target="{identity}-1" aria-pressed="true">Tab and panel</button>',
+            f'<button type="button" class="gui-region-choice" data-gui-target="{identity}-2" aria-pressed="false">Workflow page</button>',
+        ]
+        controls = (
+            '<div class="gui-view-options" role="group" aria-label="Highlight">'
+            + ''.join(buttons)
+            + '</div>'
+        )
+    else:
+        overview = (
+            '<li><button type="button" data-gui-overview aria-pressed="true">Layout overview</button> Follow the workflow from left to right, then the sidebar from top to bottom.</li>'
+            if view == 'layout'
+            else ''
+        )
+        controls = '<ol class="gui-regions">' + overview + ''.join(buttons) + '</ol>'
+    arrows = ''
+    if view == 'layout':
+        for axis, name in [
+            ('x', 'appBar.workflow'),
+            ('y', f'workflow.{scene["page"]}.manualSidebar'),
+        ]:
+            x, y, width, height = meta['items'][name]['visible_bounds']
+            if axis == 'x':
+                start, end, centre, half = (
+                    x + width * 0.08,
+                    x + width * 0.92,
+                    y + height * 0.5,
+                    height * 0.16,
+                )
+                points = [
+                    (start, centre - half),
+                    (end - half * 2, centre - half),
+                    (end - half * 2, centre - half * 2),
+                    (end, centre),
+                    (end - half * 2, centre + half * 2),
+                    (end - half * 2, centre + half),
+                    (start, centre + half),
+                ]
+            else:
+                start, end, centre, half = (
+                    y + height * 0.12,
+                    y + height * 0.88,
+                    x + width * 0.73,
+                    width * 0.025,
+                )
+                points = [
+                    (centre - half, start),
+                    (centre + half, start),
+                    (centre + half, end - half * 2),
+                    (centre + half * 2, end - half * 2),
+                    (centre, end),
+                    (centre - half * 2, end - half * 2),
+                    (centre - half, end - half * 2),
+                ]
+            data = 'M' + ' L'.join(f'{px:.2f} {py:.2f}' for px, py in points) + ' Z'
+            arrows += f'<path class="gui-direction is-active" data-gui-direction d="{data}" aria-hidden="true" />'
     clip = f'gui-clip-{identity}'
     return (
         '<figure class="gui-figure" data-gui-figure>\n'
@@ -126,6 +198,7 @@ def figure(scene: dict, *, view: str = 'overview') -> str:
         f'<image href="{image}" width="1480" height="800" clip-path="url(#{clip})" />'
         '<rect class="gui-image-frame" width="1480" height="800" rx="12" />'
         + ''.join(paths)
+        + arrows
         + '</svg></a>\n'
         f'<figcaption>{description}.</figcaption>\n' + controls + '\n</figure>\n'
     )
@@ -213,10 +286,10 @@ The experiment input contains the measured pattern, instrument, profile, backgro
 
 ## Main regions
 
-Select an explanation below the screenshot to highlight the corresponding region. The example shows **Analysis after fitting**, with the results popup closed.
+The arrows show how to follow the workflow and read the controls. Select an explanation below to highlight a region. The example shows **Analysis after fitting**, with the results popup closed.
 
 """
-    workspace += figure(by_id['13-analysis-basic'])
+    workspace += figure(by_id['13-analysis-basic'], view='layout')
     workspace += """
 ## Workflow pages
 
@@ -239,7 +312,7 @@ The page views below introduce each enabled tab. Then follow [Example refinement
 
 Selecting a structure or experiment changes the model being inspected. The status bar reports the project state, messages and fitting progress. Read messages after importing data or when an operation is refused.
 """
-    gallery = '\n## Page and sidebar views\n\nThese views come from the same Y₂O₃/SPODI walkthrough. Every enabled sidebar tab is shown. All **Analysis** and **Report** views were captured after the fit completed and its results popup was closed.\n'
+    gallery = '\n## Page and sidebar views\n\nThese views come from the same Y₂O₃/SPODI walkthrough. Every enabled sidebar tab is shown. Select **Workflow page** to see how its toolbar tab connects to the whole page. All **Analysis** and **Report** views were captured after the fit completed and its results popup was closed.\n'
     for name in ['project', 'structure', 'experiment', 'analysis', 'report']:
         gallery += f'\n### {name.title()}\n'
         for scene in scenes:
@@ -249,6 +322,11 @@ Selecting a structure or experiment changes the model being inspected. The statu
     gallery += f'App source: [`{manifest["source_revision"][:8]}`](https://github.com/enhantica/edi/commit/{manifest["source_revision"]}). '
     gallery += 'Image dimensions, native page/sidebar/fit state and annotation geometry are recorded in the [capture manifest](../assets/gui/y2o3/manifest.json) and matching JSON sidecars. The [JavaScript walkthrough](../assets/gui/y2o3/walkthrough.js) drives the run.\n'
     (DOCS / 'application/workspace.md').write_text(page('Application layout', workspace + gallery))
+    if '15-project-examples' in by_id:
+        examples = 'The web and desktop applications both include built-in example projects. Go to **Project**, select **Main** and expand **Examples**. Use the search and filters to find a case.\n\n'
+        examples += figure(by_id['15-project-examples'])
+        examples += '\nChoose a **Fitting** example to analyse measured data, or a **Simulation** example to inspect a calculated pattern. Examples open as working copies; use **Save project as…** to keep your changes.\n\nFor a guided analysis, follow [Example refinement](first-refinement.md). The shared [example catalogue](../user-guide/examples.md) describes the scientific cases.\n'
+        (DOCS / 'application/examples.md').write_text(page('Example projects', examples))
     print(json.dumps({'imported': len(scenes), 'source': manifest['source_revision']}))
 
 

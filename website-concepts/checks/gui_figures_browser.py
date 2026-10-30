@@ -29,7 +29,7 @@ const figures = [...article.querySelectorAll('.gui-figure')].map(figure => {
   return {width: bounds.width, height: bounds.height, column: width,
     overflow: getComputedStyle(svg).overflow, radius: getComputedStyle(svg).borderRadius,
     imageClip: svg.querySelector('image').hasAttribute('clip-path'),
-    regions, active: svg.querySelectorAll('.is-active').length};
+    regions, active: svg.querySelectorAll('[data-gui-region].is-active').length};
 });
 return {figures, overflow: document.documentElement.scrollWidth > innerWidth,
   oldCaption: article.textContent.includes('Open full-size screenshot')};
@@ -54,7 +54,7 @@ def exercise(browser: Browser, base: str, output: Path) -> list[dict]:
         browser.viewport(width, 1000)
         for route, count in [
             ('application/workspace/', 16),
-            ('application/first-refinement/', 10),
+            ('application/first-refinement/', 10), ('application/examples/', 1),
         ]:
             browser.goto(base + route)
             result = browser.execute(FIGURES)
@@ -64,7 +64,7 @@ def exercise(browser: Browser, base: str, output: Path) -> list[dict]:
                 require(abs(figure['width'] - figure['column']) < 1, figure)
                 require(abs(figure['width'] / figure['height'] - 1480 / 800) < 0.01, figure)
                 require(figure['overflow'] == 'visible' and figure['radius'] == '0px', figure)
-                require(figure['imageClip'] and figure['active'] == 1, figure)
+                require(figure['imageClip'] and figure['active'] in {1, 4}, figure)
                 for region in figure['regions']:
                     require(abs(region['paddingX'] - 1.5) < 0.05, region)
                     require(abs(region['paddingY'] - 1.5) < 0.05, region)
