@@ -3,13 +3,13 @@
 Use the EasyDiffraction application to build a crystallographic model, compare calculated and measured diffraction data, refine parameters, and prepare a report. The desktop and browser applications share the same visual workspace and project model.
 
 [Open the web app](https://enhantica.github.io/edi/webapp/){ .md-button .md-button--primary }
-[Follow your first refinement](first-refinement.md){ .md-button }
+[Explore the application layout](workspace.md){ .md-button }
 
 ![EasyDiffraction showing measured and calculated diffraction patterns with experiment controls](../assets/edi-app.png)
 
 ## Start here
 
-Use the [browser application](browser.md) or [set up the desktop application](desktop.md), then follow [your first refinement](first-refinement.md). The [workspace tour](workspace.md) introduces the controls.
+Use the [browser application](browser.md) or [set up the desktop application](desktop.md). Read [Application layout](workspace.md) to learn the controls and workflow, then follow [Example refinement](first-refinement.md).
 
 ## A workflow you can follow
 

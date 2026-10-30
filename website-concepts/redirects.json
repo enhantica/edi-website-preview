@@ -11,5 +11,7 @@
   "get-started/": "user-guide/",
   "get-started/interfaces/": "user-guide/",
   "get-started/setup/": "user-guide/",
-  "get-started/first-refinement/": "user-guide/"
+  "get-started/first-refinement/": "user-guide/",
+  "application/y2o3-walkthrough/": "application/first-refinement/",
+  "application/screen-reference/": "application/workspace/"
 }

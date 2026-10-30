@@ -55,34 +55,79 @@ def label(target: str, page: str) -> tuple[str, str]:
     return LABELS.get(target, (target, ''))
 
 
-def figure(scene: dict, *, annotations: bool = True) -> str:
+def region_parts(meta: dict, target: str) -> list[list[float]]:
+    """Join a sidebar's active tab to its body using this capture's Qt bounds."""
+    bounds = meta['items'][target]['visible_bounds']
+    if not target.endswith('.manualSidebar'):
+        return [bounds]
+    selected = [tab for tab in meta['state']['sidebar_tabs'] if tab['checked']]
+    if len(selected) != 1:
+        raise ValueError('A sidebar outline requires one selected native tab')
+    tab = meta['items'].get(selected[0]['id'], {})
+    if tab.get('ambiguous') or 'visible_bounds' not in tab:
+        raise ValueError('The selected native tab has no unique visible geometry')
+    tx, ty, tw, th = tab['visible_bounds']
+    x, y, width, height = bounds
+    bottom = ty + th
+    if not (x <= tx < tx + tw <= x + width and y <= ty < bottom < y + height):
+        raise ValueError('The selected tab must sit inside its sidebar')
+    return [[x, bottom, width, y + height - bottom], [tx, ty, tw, th]]
+
+
+def region_path(parts: list[list[float]], padding: float = 2) -> str:
+    """Trace a square outline; the browser adjusts padding to display pixels."""
+    x, y, width, height = parts[0]
+    left, top, right, bottom = x - padding, y - padding, x + width + padding, y + height + padding
+    points = [(left, top)]
+    if len(parts) == 2:
+        tx, ty, tw, _ = parts[1]
+        points += [
+            (tx - padding, top),
+            (tx - padding, ty - padding),
+            (tx + tw + padding, ty - padding),
+            (tx + tw + padding, top),
+        ]
+    points += [(right, top), (right, bottom), (left, bottom)]
+    return 'M' + ' L'.join(f'{px:.3f} {py:.3f}' for px, py in points) + ' Z'
+
+
+def figure(scene: dict, *, view: str = 'overview') -> str:
     meta = scene['layout']
     image = '../assets/gui/y2o3/' + scene['image']
     description = html.escape(scene['description'], quote=True)
-    identity = scene['id']
-    targets = meta['highlights'] if annotations else []
-    rects, buttons = [], []
+    identity = f"{scene['id']}-{view}"
+    targets = (
+        [f'workflow.{scene["page"]}.manualSidebar'] if view == 'sidebar' else meta['highlights']
+    )
+    paths, buttons = [], []
     for number, target in enumerate(targets, 1):
-        x, y, width, height = meta['items'][target]['visible_bounds']
+        parts = region_parts(meta, target)
         title, text = label(target, scene['page'])
         key = f'{identity}-{number}'
-        rects.append(
-            f'<rect class="{"is-active" if number == 1 else ""}" data-gui-region="{key}" x="{x:.2f}" y="{y:.2f}" width="{width:.2f}" height="{height:.2f}" />'
+        data = html.escape(json.dumps(parts, separators=(',', ':')), quote=True)
+        paths.append(
+            f'<path class="{"is-active" if number == 1 else ""}" data-gui-region="{key}" '
+            f'data-gui-parts="{data}" d="{region_path(parts)}" />'
         )
         buttons.append(
             f'<li><button type="button" data-gui-target="{key}" aria-pressed="{"true" if number == 1 else "false"}">'
             f'{number}. {html.escape(title)}</button> {html.escape(text)}</li>'
         )
-    controls = '<ol class="gui-regions">' + ''.join(buttons) + '</ol>' if targets else ''
+    controls = (
+        '<ol class="gui-regions">' + ''.join(buttons) + '</ol>' if view == 'overview' else ''
+    )
+    clip = f'gui-clip-{identity}'
     return (
         '<figure class="gui-figure" data-gui-figure>\n'
-        f'<svg class="gui-capture" viewBox="0 0 1480 800" role="img" aria-label="{description}">'
-        f'<title>{description}</title><image href="{image}" width="1480" height="800" />'
-        + ''.join(rects)
-        + '</svg>\n'
-        f'<figcaption>{description}. <a href="{image}">Open full-size screenshot</a></figcaption>\n'
-        + controls
-        + '\n</figure>\n'
+        f'<a class="gui-image-link" href="{image}" data-gui-open aria-haspopup="dialog" '
+        f'aria-label="Enlarge screenshot: {description}">'
+        f'<svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="{description}">'
+        f'<title>{description}</title><defs><clipPath id="{clip}"><rect width="1480" height="800" rx="12" /></clipPath></defs>'
+        f'<image href="{image}" width="1480" height="800" clip-path="url(#{clip})" />'
+        '<rect class="gui-image-frame" width="1480" height="800" rx="12" />'
+        + ''.join(paths)
+        + '</svg></a>\n'
+        f'<figcaption>{description}.</figcaption>\n' + controls + '\n</figure>\n'
     )
 
 
@@ -106,7 +151,7 @@ def render(bundle: Path) -> None:
             shutil.copy2(bundle / artifact, target)
     intro = """Build a project from its separate inputs, refine the model and review the report. This example is **pd-neut-cwl_y2o3-spodi**, constant-wavelength neutron powder diffraction from SPODI at FRM II.
 
-The screenshots below follow an actual application run at **1480 by 800 pixels**. Select a numbered explanation to highlight that part of the interface. The [page and sidebar reference](screen-reference.md) shows every enabled sidebar tab.
+The screenshots below follow an actual application run at **1480 by 800 pixels**. Select a numbered explanation to highlight that part of the interface. The [application layout](workspace.md) introduces the workspace and every enabled sidebar tab.
 
 ## Download the inputs
 
@@ -162,10 +207,8 @@ The experiment input contains the measured pattern, instrument, profile, backgro
     body = intro
     for title, explanation, identity in sections:
         body += f'\n## {title}\n\n{explanation}\n\n' + figure(by_id[identity])
-    body += '\n## All page and sidebar views\n\nContinue to the [screen reference](screen-reference.md) for every enabled tab, or [find your way around the workspace](workspace.md).\n'
-    (DOCS / 'application/y2o3-walkthrough.md').write_text(
-        page('Y₂O₃ on SPODI: a complete GUI walkthrough', body)
-    )
+    body += '\n## Explore the workspace\n\nSee [Application layout](workspace.md) for an annotated overview of every workflow page and its enabled sidebar tabs.\n'
+    (DOCS / 'application/first-refinement.md').write_text(page('Example refinement', body))
     workspace = """The interface follows the same analysis workflow as the [User guide](../user-guide/analysis-workflow/index.md). The top bar selects a page, the central workspace shows its main view, and the sidebar contains the related controls.
 
 ## Main regions
@@ -190,31 +233,22 @@ Select an explanation below the screenshot to highlight the corresponding region
 
 **Main** contains the primary controls for the active page. **Extra**, **Text** and **Settings** provide additional controls or representations where available. A disabled tab has no available view in the current state.
 
-See the [screen reference](screen-reference.md) for each enabled tab, or follow the [Y₂O₃ walkthrough](y2o3-walkthrough.md) to build the analysis step by step.
+The page views below introduce each enabled tab. Then follow [Example refinement](first-refinement.md) to build the analysis step by step.
 
 ## Selection and messages
 
 Selecting a structure or experiment changes the model being inspected. The status bar reports the project state, messages and fitting progress. Read messages after importing data or when an operation is refused.
 """
-    (DOCS / 'application/workspace.md').write_text(page('Find your way around', workspace))
-    gallery = 'These views come from the same Y₂O₃/SPODI walkthrough. Every enabled sidebar tab is shown. All **Analysis** and **Report** views were captured after the fit completed and its results popup was closed.\n'
+    gallery = '\n## Page and sidebar views\n\nThese views come from the same Y₂O₃/SPODI walkthrough. Every enabled sidebar tab is shown. All **Analysis** and **Report** views were captured after the fit completed and its results popup was closed.\n'
     for name in ['project', 'structure', 'experiment', 'analysis', 'report']:
-        gallery += f'\n## {name.title()}\n'
+        gallery += f'\n### {name.title()}\n'
         for scene in scenes:
             if scene['page'] == name and scene['sidebar']:
-                gallery += f'\n### {scene["sidebar"]}\n\n' + figure(scene, annotations=False)
+                gallery += f'\n#### {scene["sidebar"]}\n\n' + figure(scene, view='sidebar')
     gallery += '\n## Capture provenance\n\n'
     gallery += f'App source: [`{manifest["source_revision"][:8]}`](https://github.com/enhantica/edi/commit/{manifest["source_revision"]}). '
     gallery += 'Image dimensions, native page/sidebar/fit state and annotation geometry are recorded in the [capture manifest](../assets/gui/y2o3/manifest.json) and matching JSON sidecars. The [JavaScript walkthrough](../assets/gui/y2o3/walkthrough.js) drives the run.\n'
-    (DOCS / 'application/screen-reference.md').write_text(
-        page('Page and sidebar reference', gallery)
-    )
-    (DOCS / 'application/first-refinement.md').write_text("""# Your first refinement
-
-Follow the [illustrated Y₂O₃/SPODI walkthrough](y2o3-walkthrough.md) to create a project, import its structure and experiment, run a refinement and review the report.
-
-For an overview of the controls, see [the workspace](workspace.md). The [page and sidebar reference](screen-reference.md) shows each enabled sidebar tab.
-""")
+    (DOCS / 'application/workspace.md').write_text(page('Application layout', workspace + gallery))
     print(json.dumps({'imported': len(scenes), 'source': manifest['source_revision']}))
 
 

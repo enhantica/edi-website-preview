@@ -1,4 +1,4 @@
-name: Check homepage in Chromium and Safari
+name: Check website in Chromium and Safari
 on:
   workflow_dispatch:
 permissions:
@@ -32,6 +32,10 @@ jobs:
         run: python website-concepts/build.py surfaces
       - name: Check actual homepage
         run: python website-concepts/checks/network_browser.py --browser "$CHECK_BROWSER" --output browser-evidence
+        env:
+          CHECK_BROWSER: ${{ matrix.browser }}
+      - name: Check GUI figures and image dialog
+        run: python website-concepts/checks/gui_figures_browser.py --browser "$CHECK_BROWSER" --output browser-evidence
         env:
           CHECK_BROWSER: ${{ matrix.browser }}
       - uses: actions/upload-artifact@v4

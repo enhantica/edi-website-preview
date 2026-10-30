@@ -1,5 +1,120 @@
-# Your first refinement
+---
+template: gui.html
+---
 
-Follow the [illustrated Y₂O₃/SPODI walkthrough](y2o3-walkthrough.md) to create a project, import its structure and experiment, run a refinement and review the report.
+# Example refinement
 
-For an overview of the controls, see [the workspace](workspace.md). The [page and sidebar reference](screen-reference.md) shows each enabled sidebar tab.
+Build a project from its separate inputs, refine the model and review the report. This example is **pd-neut-cwl_y2o3-spodi**, constant-wavelength neutron powder diffraction from SPODI at FRM II.
+
+The screenshots below follow an actual application run at **1480 by 800 pixels**. Select a numbered explanation to highlight that part of the interface. The [application layout](workspace.md) introduces the workspace and every enabled sidebar tab.
+
+## Download the inputs
+
+- [Y₂O₃ crystal structure](../assets/gui/y2o3/inputs/y2o3.edi)
+- [SPODI experiment and measured intensities](../assets/gui/y2o3/inputs/spodi.edi)
+
+The experiment input contains the measured pattern, instrument, profile, background and starting free parameters. Import these files separately; start with an empty project.
+
+## Home
+
+Open EasyDiffraction and press **Start**.
+
+<figure class="gui-figure" data-gui-figure>
+<a class="gui-image-link" href="../assets/gui/y2o3/01-home.png" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Start a new diffraction analysis"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Start a new diffraction analysis"><title>Start a new diffraction analysis</title><defs><clipPath id="gui-clip-01-home-overview"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/01-home.png" width="1480" height="800" clip-path="url(#gui-clip-01-home-overview)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="01-home-overview-1" data-gui-parts="[[0,0,1480,77]]" d="M-2.000 -2.000 L1482.000 -2.000 L1482.000 79.000 L-2.000 79.000 Z" /><path class="" data-gui-region="01-home-overview-2" data-gui-parts="[[0,77,1480,681]]" d="M-2.000 75.000 L1482.000 75.000 L1482.000 760.000 L-2.000 760.000 Z" /><path class="" data-gui-region="01-home-overview-3" data-gui-parts="[[573,404,334,39]]" d="M571.000 402.000 L909.000 402.000 L909.000 445.000 L571.000 445.000 Z" /></svg></a>
+<figcaption>Start a new diffraction analysis.</figcaption>
+<ol class="gui-regions"><li><button type="button" data-gui-target="01-home-overview-1" aria-pressed="true">1. Workflow navigation</button> Move between Home, Project, Structure, Experiment, Analysis and Report.</li><li><button type="button" data-gui-target="01-home-overview-2" aria-pressed="false">2. Main workspace</button> Inspect the home view here. Its content changes with the active page and selection.</li><li><button type="button" data-gui-target="01-home-overview-3" aria-pressed="false">3. Start</button> Begin a new analysis on the Project page.</li></ol>
+</figure>
+
+## Create a project
+
+Choose **Create a new project**.
+
+<figure class="gui-figure" data-gui-figure>
+<a class="gui-image-link" href="../assets/gui/y2o3/02-project-start.png" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Choose Create a new project"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Choose Create a new project"><title>Choose Create a new project</title><defs><clipPath id="gui-clip-02-project-start-overview"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/02-project-start.png" width="1480" height="800" clip-path="url(#gui-clip-02-project-start-overview)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="02-project-start-overview-1" data-gui-parts="[[784,168,334,39]]" d="M782.000 166.000 L1120.000 166.000 L1120.000 209.000 L782.000 209.000 Z" /><path class="" data-gui-region="02-project-start-overview-2" data-gui-parts="[[770,119,710,155]]" d="M768.000 117.000 L1482.000 117.000 L1482.000 276.000 L768.000 276.000 Z" /></svg></a>
+<figcaption>Choose Create a new project.</figcaption>
+<ol class="gui-regions"><li><button type="button" data-gui-target="02-project-start-overview-1" aria-pressed="true">1. Create a new project</button> Open the project-details form.</li><li><button type="button" data-gui-target="02-project-start-overview-2" aria-pressed="false">2. Project actions</button> Create a project or open an existing one.</li></ol>
+</figure>
+
+## Enter the project details
+
+Enter the name **pd-neut-cwl_y2o3-spodi**, a title, authors and description. Choose a location on your computer, then confirm.
+
+<figure class="gui-figure" data-gui-figure>
+<a class="gui-image-link" href="../assets/gui/y2o3/03-project-details.png" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Enter the project details and choose its location"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Enter the project details and choose its location"><title>Enter the project details and choose its location</title><defs><clipPath id="gui-clip-03-project-details-overview"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/03-project-details.png" width="1480" height="800" clip-path="url(#gui-clip-03-project-details-overview)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="03-project-details-overview-1" data-gui-parts="[[495,237,490,35]]" d="M493.000 235.000 L987.000 235.000 L987.000 274.000 L493.000 274.000 Z" /><path class="" data-gui-region="03-project-details-overview-2" data-gui-parts="[[495,305,490,35]]" d="M493.000 303.000 L987.000 303.000 L987.000 342.000 L493.000 342.000 Z" /><path class="" data-gui-region="03-project-details-overview-3" data-gui-parts="[[495,441,490,73]]" d="M493.000 439.000 L987.000 439.000 L987.000 516.000 L493.000 516.000 Z" /><path class="" data-gui-region="03-project-details-overview-4" data-gui-parts="[[495,547,490,35]]" d="M493.000 545.000 L987.000 545.000 L987.000 584.000 L493.000 584.000 Z" /></svg></a>
+<figcaption>Enter the project details and choose its location.</figcaption>
+<ol class="gui-regions"><li><button type="button" data-gui-target="03-project-details-overview-1" aria-pressed="true">1. Name</button> Use a short project identifier.</li><li><button type="button" data-gui-target="03-project-details-overview-2" aria-pressed="false">2. Title</button> Give the analysis a descriptive title.</li><li><button type="button" data-gui-target="03-project-details-overview-3" aria-pressed="false">3. Description</button> Record the sample, measurement and purpose.</li><li><button type="button" data-gui-target="03-project-details-overview-4" aria-pressed="false">4. Location</button> Choose where the project will be saved.</li></ol>
+</figure>
+
+## Inspect the project
+
+The Project page keeps the analysis details together. The enabled sidebar tabs offer additional views of this state.
+
+<figure class="gui-figure" data-gui-figure>
+<a class="gui-image-link" href="../assets/gui/y2o3/04-project-created.png" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Create the project"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Create the project"><title>Create the project</title><defs><clipPath id="gui-clip-04-project-created-overview"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/04-project-created.png" width="1480" height="800" clip-path="url(#gui-clip-04-project-created-overview)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="04-project-created-overview-1" data-gui-parts="[[0,77,770,681]]" d="M-2.000 75.000 L772.000 75.000 L772.000 760.000 L-2.000 760.000 Z" /><path class="" data-gui-region="04-project-created-overview-2" data-gui-parts="[[770,119,710,639],[770,77,43.515625,42]]" d="M768.000 117.000 L768.000 117.000 L768.000 75.000 L815.516 75.000 L815.516 117.000 L1482.000 117.000 L1482.000 760.000 L768.000 760.000 Z" /></svg></a>
+<figcaption>Create the project.</figcaption>
+<ol class="gui-regions"><li><button type="button" data-gui-target="04-project-created-overview-1" aria-pressed="true">1. Main workspace</button> Inspect the project view here. Its content changes with the active page and selection.</li><li><button type="button" data-gui-target="04-project-created-overview-2" aria-pressed="false">2. Sidebar</button> Use the enabled Main, Extra, Text and Settings tabs to inspect and edit this page.</li></ol>
+</figure>
+
+## Load the structure
+
+Open **Structure**, expand **Structures**, choose **Load** and select **y2o3.edi**.
+
+<figure class="gui-figure" data-gui-figure>
+<a class="gui-image-link" href="../assets/gui/y2o3/06-structure-import.png" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Load the Y2O3 structure into the empty project"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Load the Y2O3 structure into the empty project"><title>Load the Y2O3 structure into the empty project</title><defs><clipPath id="gui-clip-06-structure-import-overview"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/06-structure-import.png" width="1480" height="800" clip-path="url(#gui-clip-06-structure-import-overview)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="06-structure-import-overview-1" data-gui-parts="[[784,260,334,39]]" d="M782.000 258.000 L1120.000 258.000 L1120.000 301.000 L782.000 301.000 Z" /><path class="" data-gui-region="06-structure-import-overview-2" data-gui-parts="[[0,77,770,681]]" d="M-2.000 75.000 L772.000 75.000 L772.000 760.000 L-2.000 760.000 Z" /></svg></a>
+<figcaption>Load the Y2O3 structure into the empty project.</figcaption>
+<ol class="gui-regions"><li><button type="button" data-gui-target="06-structure-import-overview-1" aria-pressed="true">1. Load structure</button> Import the separate y2o3.edi structure file.</li><li><button type="button" data-gui-target="06-structure-import-overview-2" aria-pressed="false">2. Main workspace</button> Inspect the structure view here. Its content changes with the active page and selection.</li></ol>
+</figure>
+
+## Inspect the crystal structure
+
+Inspect the cell, symmetry and atom sites. See [crystallography](../physics/crystallography.md) and [atomic displacement parameters](../physics/displacement.md) for their physical meaning.
+
+<figure class="gui-figure" data-gui-figure>
+<a class="gui-image-link" href="../assets/gui/y2o3/07-structure-loaded.png" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Inspect the imported crystal structure"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Inspect the imported crystal structure"><title>Inspect the imported crystal structure</title><defs><clipPath id="gui-clip-07-structure-loaded-overview"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/07-structure-loaded.png" width="1480" height="800" clip-path="url(#gui-clip-07-structure-loaded-overview)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="07-structure-loaded-overview-1" data-gui-parts="[[784,168,682,78]]" d="M782.000 166.000 L1468.000 166.000 L1468.000 248.000 L782.000 248.000 Z" /><path class="" data-gui-region="07-structure-loaded-overview-2" data-gui-parts="[[0,77,770,681]]" d="M-2.000 75.000 L772.000 75.000 L772.000 760.000 L-2.000 760.000 Z" /></svg></a>
+<figcaption>Inspect the imported crystal structure.</figcaption>
+<ol class="gui-regions"><li><button type="button" data-gui-target="07-structure-loaded-overview-1" aria-pressed="true">1. Structures</button> Select the structure whose cell and atom sites you want to inspect.</li><li><button type="button" data-gui-target="07-structure-loaded-overview-2" aria-pressed="false">2. Main workspace</button> Inspect the structure view here. Its content changes with the active page and selection.</li></ol>
+</figure>
+
+## Load the experiment
+
+Open **Experiment**, expand **Experiments**, choose **Load** and select **spodi.edi**.
+
+<figure class="gui-figure" data-gui-figure>
+<a class="gui-image-link" href="../assets/gui/y2o3/09-experiment-import.png" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Load the SPODI experiment and measured intensities"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Load the SPODI experiment and measured intensities"><title>Load the SPODI experiment and measured intensities</title><defs><clipPath id="gui-clip-09-experiment-import-overview"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/09-experiment-import.png" width="1480" height="800" clip-path="url(#gui-clip-09-experiment-import-overview)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="09-experiment-import-overview-1" data-gui-parts="[[784,260,218,39]]" d="M782.000 258.000 L1004.000 258.000 L1004.000 301.000 L782.000 301.000 Z" /><path class="" data-gui-region="09-experiment-import-overview-2" data-gui-parts="[[0,77,770,681]]" d="M-2.000 75.000 L772.000 75.000 L772.000 760.000 L-2.000 760.000 Z" /></svg></a>
+<figcaption>Load the SPODI experiment and measured intensities.</figcaption>
+<ol class="gui-regions"><li><button type="button" data-gui-target="09-experiment-import-overview-1" aria-pressed="true">1. Load experiment</button> Import spodi.edi, including its measured intensities and instrument settings.</li><li><button type="button" data-gui-target="09-experiment-import-overview-2" aria-pressed="false">2. Main workspace</button> Inspect the experiment view here. Its content changes with the active page and selection.</li></ol>
+</figure>
+
+## Inspect the initial pattern
+
+Compare the measured and calculated intensities before fitting. Review the [peak profile](../physics/profiles/cw.md), [background](../physics/background.md), reflection marks and residual.
+
+<figure class="gui-figure" data-gui-figure>
+<a class="gui-image-link" href="../assets/gui/y2o3/10-experiment-loaded.png" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Compare the measured pattern with the initial calculation"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Compare the measured pattern with the initial calculation"><title>Compare the measured pattern with the initial calculation</title><defs><clipPath id="gui-clip-10-experiment-loaded-overview"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/10-experiment-loaded.png" width="1480" height="800" clip-path="url(#gui-clip-10-experiment-loaded-overview)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="10-experiment-loaded-overview-1" data-gui-parts="[[0,77,770,681]]" d="M-2.000 75.000 L772.000 75.000 L772.000 760.000 L-2.000 760.000 Z" /><path class="" data-gui-region="10-experiment-loaded-overview-2" data-gui-parts="[[770,119,710,639],[770,77,43.515625,42]]" d="M768.000 117.000 L768.000 117.000 L768.000 75.000 L815.516 75.000 L815.516 117.000 L1482.000 117.000 L1482.000 760.000 L768.000 760.000 Z" /></svg></a>
+<figcaption>Compare the measured pattern with the initial calculation.</figcaption>
+<ol class="gui-regions"><li><button type="button" data-gui-target="10-experiment-loaded-overview-1" aria-pressed="true">1. Main workspace</button> Inspect the experiment view here. Its content changes with the active page and selection.</li><li><button type="button" data-gui-target="10-experiment-loaded-overview-2" aria-pressed="false">2. Sidebar</button> Use the enabled Main, Extra, Text and Settings tabs to inspect and edit this page.</li></ol>
+</figure>
+
+## Refine the model
+
+Open **Analysis**, inspect the free parameters and press **Fit**. Wait for fitting to finish, review the result and close the results popup. This screenshot shows the completed fit with that popup closed. See [Rietveld refinement](../physics/rietveld.md), [uncertainties](../physics/minimization.md) and [reliability factors](../physics/reliability.md).
+
+<figure class="gui-figure" data-gui-figure>
+<a class="gui-image-link" href="../assets/gui/y2o3/13-analysis-basic.png" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Completed Rietveld refinement — Main"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Completed Rietveld refinement — Main"><title>Completed Rietveld refinement — Main</title><defs><clipPath id="gui-clip-13-analysis-basic-overview"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/13-analysis-basic.png" width="1480" height="800" clip-path="url(#gui-clip-13-analysis-basic-overview)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="13-analysis-basic-overview-1" data-gui-parts="[[0,0,1480,77]]" d="M-2.000 -2.000 L1482.000 -2.000 L1482.000 79.000 L-2.000 79.000 Z" /><path class="" data-gui-region="13-analysis-basic-overview-2" data-gui-parts="[[0,77,770,681]]" d="M-2.000 75.000 L772.000 75.000 L772.000 760.000 L-2.000 760.000 Z" /><path class="" data-gui-region="13-analysis-basic-overview-3" data-gui-parts="[[770,119,710,639],[770,77,43.515625,42]]" d="M768.000 117.000 L768.000 117.000 L768.000 75.000 L815.516 75.000 L815.516 117.000 L1482.000 117.000 L1482.000 760.000 L768.000 760.000 Z" /><path class="" data-gui-region="13-analysis-basic-overview-4" data-gui-parts="[[0,758,1480,42]]" d="M-2.000 756.000 L1482.000 756.000 L1482.000 802.000 L-2.000 802.000 Z" /></svg></a>
+<figcaption>Completed Rietveld refinement — Main.</figcaption>
+<ol class="gui-regions"><li><button type="button" data-gui-target="13-analysis-basic-overview-1" aria-pressed="true">1. Workflow navigation</button> Move between Home, Project, Structure, Experiment, Analysis and Report.</li><li><button type="button" data-gui-target="13-analysis-basic-overview-2" aria-pressed="false">2. Main workspace</button> Inspect the analysis view here. Its content changes with the active page and selection.</li><li><button type="button" data-gui-target="13-analysis-basic-overview-3" aria-pressed="false">3. Sidebar</button> Use the enabled Main, Extra, Text and Settings tabs to inspect and edit this page.</li><li><button type="button" data-gui-target="13-analysis-basic-overview-4" aria-pressed="false">4. Status bar</button> Read project counts, messages, calculation and fitting state here.</li></ol>
+</figure>
+
+## Review the report
+
+Open **Report** to review the structure, measurement and fitted results. Use the sidebar to choose the report contents and export format.
+
+<figure class="gui-figure" data-gui-figure>
+<a class="gui-image-link" href="../assets/gui/y2o3/14-report-basic.png" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Review the fitted structure and report — Main"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Review the fitted structure and report — Main"><title>Review the fitted structure and report — Main</title><defs><clipPath id="gui-clip-14-report-basic-overview"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/14-report-basic.png" width="1480" height="800" clip-path="url(#gui-clip-14-report-basic-overview)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="14-report-basic-overview-1" data-gui-parts="[[0,0,1480,77]]" d="M-2.000 -2.000 L1482.000 -2.000 L1482.000 79.000 L-2.000 79.000 Z" /><path class="" data-gui-region="14-report-basic-overview-2" data-gui-parts="[[0,77,770,681]]" d="M-2.000 75.000 L772.000 75.000 L772.000 760.000 L-2.000 760.000 Z" /><path class="" data-gui-region="14-report-basic-overview-3" data-gui-parts="[[770,119,710,639],[770,77,43.515625,42]]" d="M768.000 117.000 L768.000 117.000 L768.000 75.000 L815.516 75.000 L815.516 117.000 L1482.000 117.000 L1482.000 760.000 L768.000 760.000 Z" /><path class="" data-gui-region="14-report-basic-overview-4" data-gui-parts="[[0,758,1480,42]]" d="M-2.000 756.000 L1482.000 756.000 L1482.000 802.000 L-2.000 802.000 Z" /></svg></a>
+<figcaption>Review the fitted structure and report — Main.</figcaption>
+<ol class="gui-regions"><li><button type="button" data-gui-target="14-report-basic-overview-1" aria-pressed="true">1. Workflow navigation</button> Move between Home, Project, Structure, Experiment, Analysis and Report.</li><li><button type="button" data-gui-target="14-report-basic-overview-2" aria-pressed="false">2. Main workspace</button> Inspect the report view here. Its content changes with the active page and selection.</li><li><button type="button" data-gui-target="14-report-basic-overview-3" aria-pressed="false">3. Sidebar</button> Use the enabled Main, Extra, Text and Settings tabs to inspect and edit this page.</li><li><button type="button" data-gui-target="14-report-basic-overview-4" aria-pressed="false">4. Status bar</button> Read project counts, messages, calculation and fitting state here.</li></ol>
+</figure>
+
+## Explore the workspace
+
+See [Application layout](workspace.md) for an annotated overview of every workflow page and its enabled sidebar tabs.

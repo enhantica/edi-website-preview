@@ -1,6 +1,6 @@
 # GUI documentation captures and annotations
 
-Status: implemented and published, 2026-10-30. The native exporter, bundled JavaScript walkthrough and documentation overlay renderer are working. The source-matched default run at `eb945aa8fb5964658daeab4a5bdc488b653e3bf3` produced the verified Y2O3/SPODI capture set. See the [illustrated walkthrough](https://enhantica.github.io/edi-website-preview/application/y2o3-walkthrough/), [workspace](https://enhantica.github.io/edi-website-preview/application/workspace/) and [page/sidebar reference](https://enhantica.github.io/edi-website-preview/application/screen-reference/).
+Status: implemented and published, 2026-10-30. The native exporter, bundled JavaScript walkthrough and documentation overlay renderer are working. The source-matched default run at `eb945aa8fb5964658daeab4a5bdc488b653e3bf3` produced the verified Y2O3/SPODI capture set. See the [Example refinement](https://enhantica.github.io/edi-website-preview/application/first-refinement/) and [Application layout](https://enhantica.github.io/edi-website-preview/application/workspace/).
 
 ## Recommendation
 
@@ -135,3 +135,7 @@ python website-concepts/build.py --base-url https://enhantica.github.io/edi-webs
 The committed capture manifest lists 23 captured scenes and skips for disabled tabs. Its image hashes, dimensions, source/script identity, actual sidebar state and closed post-fit popup state are validated on every documentation build. The first successful fit reports native outcome `success`. File imports use the existing file chooser acceptance methods; platform file picker dialogs are not automated. Native capture is manual for now; the documentation validation already runs in the Pages build.
 
 Validation also rejected incomplete runs, mixed source revisions, whole-project actions, missing enabled tabs, paths escaping the bundle, open fit popups, invalid highlight bounds, wrong sidebar labels and changed PNGs. Chromium checks exercised desktop/mobile layouts and keyboard/click highlight selection. Safari was not available for this new documentation check.
+
+## Figure and navigation revision
+
+[ADR-0001](adrs/0001-gui-figures-and-image-dialog.md) extends the original renderer. Only the screenshot image is clipped to rounded corners; a separate square path remains visible beyond the frame and expands by 1.5 display pixels. Sidebar outlines join the actual checked tab to its body using native geometry. All figures explicitly fill their text column. Clicking an image opens a themed fullscreen dialog with the current highlight, keyboard containment, Close/Escape and focus return. The page introduction now has one Application layout page (including all sidebar views), followed by one Example refinement page. Previous URLs redirect to the consolidated pages.

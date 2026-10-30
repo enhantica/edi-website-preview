@@ -59,10 +59,8 @@ nav:
   - Start here:
     - In your browser: application/browser.md
     - On your desktop: application/desktop.md
-    - First refinement: application/first-refinement.md
-    - Y₂O₃ walkthrough: application/y2o3-walkthrough.md
-    - The workspace: application/workspace.md
-    - Page and sidebar reference: application/screen-reference.md
+    - Application layout: application/workspace.md
+    - Example refinement: application/first-refinement.md
     - Example projects: application/examples.md
   - Project:
     - Create a project: application/new-project.md
