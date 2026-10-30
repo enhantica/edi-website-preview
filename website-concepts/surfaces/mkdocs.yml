@@ -36,7 +36,7 @@ extra_css:
   - assets/wordmark.css?v=header-2
   - assets/site-components.css?v=shared
   - assets/experiment-tags.css?v=2
-  - assets/parameter-reference.css?v=2
+  - assets/parameter-reference.css?v=3
 extra_javascript:
   - assets/example-catalogue.js?v=1
 extra:
@@ -176,7 +176,7 @@ nav:
   - Reference:
     - Conventions: physics/conventions.md
     - Model catalogue: physics/models.md
-    - Parameter index: physics/parameters.md
+    - Parameter explanations: physics/parameters.md
 - About:
   - about/index.md
   - Get involved: about/community.md

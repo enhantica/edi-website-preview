@@ -1452,7 +1452,7 @@
   "assistant_rules": [
     "Identify sample form, beam mode, radiation and selected model before selecting an equation.",
     "Cite the exact explanatory section and equation anchor.",
-    "Do not infer a GUI editor or a CLI option from engine model support.",
+    "Do not infer a GUI editor or a Command Line option from engine model support.",
     "Do not describe stored-only items as active or refinable.",
     "Use Features and roadmap for surface-specific availability; planned work is not available functionality.",
     "If the installed build differs or a topic is absent, say the reference does not establish support and inspect the build instead of inventing behaviour.",

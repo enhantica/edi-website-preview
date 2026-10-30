@@ -97,6 +97,64 @@ def parameter_icon(name: str, rules: list) -> str:
     return next((value for prefix, value in rules if name.startswith(prefix)), '')
 
 
+def readable_name(item: dict) -> str:
+    name = item['name']
+    if item['category'] == 'cell':
+        if name.startswith('length_'):
+            return 'Cell length ' + name.removeprefix('length_')
+        if name.startswith('angle_'):
+            return 'Cell angle ' + item['label']
+    names = {
+        'name_h_m': 'Hermann-Mauguin symbol',
+        'coord_system_code': 'Space-group setting',
+        'it_number': 'Space-group number',
+        'intensity_meas': 'Measured intensity',
+        'intensity_meas_su': 'Measured intensity uncertainty',
+        'intensity_calc': 'Calculated intensity',
+        'intensity_bkg': 'Background intensity',
+        'adp_iso': 'Isotropic or equivalent displacement',
+    }
+    if name in names:
+        return names[name]
+    coordinate = re.fullmatch(r'(fract|cartn)_([xyz])', name)
+    if coordinate:
+        return (
+            ('Fractional ' if coordinate[1] == 'fract' else 'Cartesian ')
+            + coordinate[2]
+            + '-coordinate'
+        )
+    # Native descriptions supply the actual scientific vocabulary. Use their short
+    # noun phrase where possible, with a readable field name as the fallback.
+    description = re.sub(r'\s*\(ADR-\d+[^)]*\)', '', item['description'])
+    phrase = re.split(r'[;(]|\.(?=\s|$)', description, maxsplit=1)[0].strip()
+    if (
+        phrase
+        and len(phrase) <= 90
+        and not re.match(r'^(Whether|If|When|Select|Controls|Sets|Enable|The|A|An)\b', phrase)
+    ):
+        return phrase
+    label = item['label'].strip() or name.replace('_', ' ')
+    if len(label) < 3 or label in {'name', 'type', 'id', 'value', 'on', 'min', 'max'}:
+        label = name.replace('_', ' ')
+    return label[:1].upper() + label[1:]
+
+
+def explanation(item: dict) -> str:
+    if item['category'] == 'cell' and item['name'].startswith('length_'):
+        axis = item['name'].removeprefix('length_')
+        return f'Length of the unit-cell edge along the {axis} axis. Cell geometry determines calculated reflection positions; check the space-group symmetry before freeing cell dimensions.'
+    coordinate = re.fullmatch(r'fract_([xyz])', item['name'])
+    if coordinate and item['category'] in {'atom_site', 'expanded_atom_site'}:
+        axis = {'x': 'a', 'y': 'b', 'z': 'c'}[coordinate[1]]
+        subject = (
+            'representative atom site'
+            if item['category'] == 'atom_site'
+            else 'symmetry-generated atom'
+        )
+        return f'Position of the {subject} along the {axis} lattice vector, expressed as a fraction of the unit cell rather than a Cartesian distance.'
+    return plain(item['description'])
+
+
 def render() -> None:
     if not (ASSETS / 'dictionary.json').exists():
         return
@@ -137,33 +195,45 @@ def render() -> None:
 
     def cif(item: dict) -> str:
         variants = [v for v in item['variants'] if v['cif_names']]
-        if variants:
-            return '<br>'.join(code(v['token']) + ': ' + code(v['cif_names'][0]) for v in variants)
-        return code(item['cif_names'][0]) if item['cif_names'] else '—'
+        shown = [v['cif_names'][0] for v in variants] if variants else item['cif_names'][:1]
+        value = (
+            '<br>'.join(code(v['token']) + ': ' + code(v['cif_names'][0]) for v in variants)
+            if variants
+            else (code(shown[0]) if shown else '—')
+        )
+        aliases = list(
+            dict.fromkeys(
+                name
+                for name in item['cif_names'] + [name for v in variants for name in v['cif_names']]
+                if name not in shown
+            )
+        )
+        if aliases:
+            value += (
+                '<details><summary>Accepted aliases</summary>'
+                + '<br>'.join(code(name) for name in aliases)
+                + '</details>'
+            )
+        return value
 
     details = [
         '---',
         'template: physics.html',
         '---',
         '',
-        '# Parameter and category reference',
+        '# Parameter explanations {#parameter-and-category-reference}',
         '',
-        'Look up a GUI label, Edi key or CIF name. Each entry describes the current field; applicability depends on the experiment and selected model. [Compare the naming systems](../user-guide/parameter-reference.md).',
+        'Read what each parameter describes, its units and the models that use it. Applicability depends on the experiment and selected model. [Compare names across interfaces](../user-guide/parameter-reference.md).',
         '',
     ]
     tables = [
         '# Parameter names across interfaces',
         '',
-        'Choose the names you are working with. Each category and field links to its description and scientific meaning.',
+        'Compare names used in the app, saved Edi projects, Python and CIF. Select a parameter to read its meaning, units and model restrictions.',
         '',
-        'The **GUI** view shows control labels and the icon pattern used by Analysis parameters. The selected block, atom-site identifier and colours provide additional context in the app. **Edi** gives the keys shown in the Text tab and saved projects. **Python** gives access paths checked against the example projects; use `.value` or `.free` on a parameter. **CIF** gives the primary exchange name, including type-dependent forms.',
+        '??? note "About these names"',
         '',
-        'A dash means no mapping was declared, or no direct Python field was found in the checked examples. It does not imply that an Edi key is an IUCr CIF item. A listed field is not necessarily applicable, editable or independently refinable in every model.',
-        '',
-        '```python',
-        'parameter = project.structures[0].cell.length_a',
-        'print(parameter.value, parameter.free)',
-        '```',
+        '    GUI names use the application icon patterns. Python paths are checked against the supplied examples; use `.value` or `.free` on a parameter. CIF mappings can include EasyDiffraction extensions. A dash means no declared mapping was found; a listed field is not necessarily editable or independently refinable in every model.',
         '',
     ]
     for heading, group in [
@@ -180,40 +250,58 @@ def render() -> None:
                 if not entries:
                     continue
                 url = '../physics/parameters.md#' + anchor(category['id'])
-                tables += [
-                    '    **['
+                caption = (
+                    '**['
                     + icon(category['icon'], glyphs, category=category['id'])
                     + category['title']
                     + ']('
                     + url
-                    + ')**',
+                    + ')**'
+                )
+                if projection == 'GUI':
+                    caption = (
+                        '<span class="ed-reference-anchor" id="names-'
+                        + anchor(category['id'])
+                        + '">'
+                        + caption
+                        + '</span>'
+                    )
+                tables += [
+                    '    ' + caption,
                     '',
-                    '    | Parameter or field | ' + projection + ' name | Units |',
-                    '    | --- | --- | --- |',
+                    '    | Parameter or field | ' + projection + ' name |',
+                    '    | --- | --- |',
                 ]
                 for item in entries:
                     url = '../physics/parameters.md#' + anchor(item['uid'])
-                    name = '[' + plain(item['label']) + '](' + url + ')'
+                    name = '[' + plain(readable_name(item)) + '](' + url + ')'
                     value = (
                         gui(item)
                         if projection == 'GUI'
                         else code(item['edi_tag'])
+                        + (
+                            (
+                                '<br><small>Also accepted: '
+                                + ', '.join(code(v) for v in item['edi_aliases'])
+                                + '</small>'
+                            )
+                            if item['edi_aliases']
+                            else ''
+                        )
                         if projection == 'Edi'
                         else '<br>'.join(code(p) for p in paths.get(item['uid'], [])) or '—'
                         if projection == 'Python'
                         else cif(item)
                     )
-                    tables.append(
-                        '    | '
-                        + name
-                        + ' | '
-                        + value
-                        + ' | '
-                        + (plain(item['units']) or '—')
-                        + ' |'
-                    )
+                    tables.append('    | ' + name + ' | ' + value + ' |')
                 tables.append('')
-    for category in categories:
+    for category in sorted(
+        categories,
+        key=lambda c: (
+            0 if c['id'] in STRUCTURE else 1 if c['id'] in EXPERIMENT else 2,
+            c['order'],
+        ),
+    ):
         entries = [item for item in items if item['category'] == category['id']]
         if not entries:
             continue
@@ -225,78 +313,66 @@ def render() -> None:
             + anchor(category['id'])
             + '}',
             '',
-            code(category['edi_name']) + ' — ' + plain(category['description']),
+            plain(category['description']),
             '',
         ]
         for item in entries:
             identity = anchor(item['uid'])
             details += [
-                '### ' + code(item['edi_tag']) + ' {#' + identity + '}',
+                '<section class="ed-parameter-entry" markdown="1" aria-labelledby="'
+                + identity
+                + '">',
                 '',
-                plain(item['description']),
+                '### ' + plain(readable_name(item)) + ' {#' + identity + '}',
                 '',
-                '**GUI:** '
-                + gui(item)
-                + '. **Units:** '
-                + (plain(item['units']) or 'not applicable')
-                + '.',
+                explanation(item),
                 '',
             ]
+            links = []
+            units = item['units'] or scientific.get(item['uid'], {}).get('units', '')
+            if category['id'] == 'atom_site_aniso' and item['variants']:
+                units = 'Å² for B/U; dimensionless for β'
+            if units:
+                details += ['**Units:** ' + plain(units) + '.', '']
             if item['uid'] in scientific:
                 entry = scientific[item['uid']]
-                details += [
-                    '**Calculation role:** '
-                    + entry['role']
-                    + '. [Scientific explanation]('
+                if entry['role'] == 'stored-only':
+                    details += [
+                        '**Stored only.** Retained in project input but not applied in this calculation.',
+                        '',
+                    ]
+                links.append(
+                    '[Equation and conventions]('
                     + entry['explanation_url'].replace('/#', '.md#')
-                    + ').',
-                    '',
-                ]
-            if paths.get(item['uid']):
-                details += [
-                    '**Python:** ' + ', '.join(code(p) for p in paths[item['uid']]) + '.',
-                    '',
-                ]
-            if item['cif_names']:
-                details += [
-                    '**CIF names:** ' + ', '.join(code(v) for v in item['cif_names']) + '.',
-                    '',
-                ]
-            if item['edi_aliases']:
-                details += [
-                    '**Earlier Edi spellings accepted on import:** '
-                    + ', '.join(code(v) for v in item['edi_aliases'])
-                    + '.',
-                    '',
-                ]
+                    + ')'
+                )
             if item['options']:
-                details += ['| Stored value | GUI option | Meaning |', '| --- | --- | --- |']
+                details += ['| Option | Meaning |', '| --- | --- |']
                 for option in item['options']:
                     details += [
                         '| '
-                        + code(option['token'])
-                        + ' | '
-                        + plain(option['label'])
+                        + plain(option['label'] or option['token'])
                         + ' | '
                         + plain(option['description'])
                         + ' |'
                     ]
                 details += ['']
             if item['variants']:
-                details += ['| Form | GUI label | Units | CIF name |', '| --- | --- | --- | --- |']
+                details += ['| Form | Units |', '| --- | --- |']
                 for variant in item['variants']:
+                    unit = variant['units'] or item['units']
+                    if category['id'] == 'atom_site_aniso' and variant['token'] == 'beta':  # noqa: S105 -- scientific CIF displacement type
+                        unit = 'dimensionless'
                     details += [
-                        '| '
-                        + code(variant['token'])
-                        + ' | '
-                        + plain(variant['label'] or item['label'])
-                        + ' | '
-                        + plain(variant['units'] or item['units'])
-                        + ' | '
-                        + (code(variant['cif_names'][0]) if variant['cif_names'] else '—')
-                        + ' |'
+                        '| ' + code(variant['token']) + ' | ' + (plain(unit) or '—') + ' |'
                     ]
                 details += ['']
+            links.append(
+                '[Names across interfaces](../user-guide/parameter-reference.md#names-'
+                + anchor(category['id'])
+                + ')'
+            )
+            details += [' · '.join(links), '', '</section>', '']
     (DOCS / 'physics/parameters.md').write_text('\n'.join(details))
     (DOCS / 'user-guide/parameter-reference.md').write_text('\n'.join(tables))
     for filename, uid in CATEGORY_PAGES.items():
@@ -326,6 +402,38 @@ def render() -> None:
         )
         if count != 1:
             raise ValueError('Category guide must have a title: ' + filename)
+        path.write_text(text)
+    heading_categories = {
+        'Absorption': 'absorption',
+        'Preferred orientation': 'preferred_orientation',
+        'Background': 'background',
+        'Background models': 'background',
+        'Background estimation': 'background_estimate',
+        'Observation exclusions': 'excluded_region',
+        'Single-crystal extinction': 'extinction',
+        'Extinction': 'extinction',
+        'Atomic displacement': 'atom_site_aniso',
+        'Fitting mode': 'fitting_mode',
+        'Fitting modes': 'fitting_mode',
+        'Calibration': 'instrument',
+    }
+    for filename in ['user-guide/features.md', 'physics/models.md']:
+        path = DOCS / filename
+        text = path.read_text()
+
+        def decorate(match):
+            level, title = match[1], match[2]
+            title = re.sub(
+                r'^<span[^>]*data-reference-category="[^"\n]+"[^>]*>.*?</span>\s*', '', title
+            )
+            title, marker = re.match(r'^(.*?)( \{#[^}]+\})?$', title).groups()
+            uid = heading_categories.get(title)
+            if not uid:
+                return match[0]
+            marker = marker or ' {#' + re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-') + '}'
+            return level + ' ' + icon(lookup[uid]['icon'], glyphs, category=uid) + title + marker
+
+        text = re.sub(r'^(#{2,3}) (.+)$', decorate, text, flags=re.MULTILINE)
         path.write_text(text)
     # A portable exact lookup also consumed by native help verification and future integrations.
     (ASSETS / 'parameter-links.json').write_text(

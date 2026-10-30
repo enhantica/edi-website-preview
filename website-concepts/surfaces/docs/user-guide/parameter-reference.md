@@ -1,2254 +1,2249 @@
 # Parameter names across interfaces
 
-Choose the names you are working with. Each category and field links to its description and scientific meaning.
+Compare names used in the app, saved Edi projects, Python and CIF. Select a parameter to read its meaning, units and model restrictions.
 
-The **GUI** view shows control labels and the icon pattern used by Analysis parameters. The selected block, atom-site identifier and colours provide additional context in the app. **Edi** gives the keys shown in the Text tab and saved projects. **Python** gives access paths checked against the example projects; use `.value` or `.free` on a parameter. **CIF** gives the primary exchange name, including type-dependent forms.
+??? note "About these names"
 
-A dash means no mapping was declared, or no direct Python field was found in the checked examples. It does not imply that an Edi key is an IUCr CIF item. A listed field is not necessarily applicable, editable or independently refinable in every model.
-
-```python
-parameter = project.structures[0].cell.length_a
-print(parameter.value, parameter.free)
-```
+    GUI names use the application icon patterns. Python paths are checked against the supplied examples; use `.value` or `.free` on a parameter. CIF mappings can include EasyDiffraction extensions. A dash means no declared mapping was found; a listed field is not necessarily editable or independently refinable in every model.
 
 ## Structure parameters
 
 === "GUI"
 
-    **[<span class="ed-reference-icon" data-reference-category="space-group" aria-hidden="true">&#63423;</span> Space group](../physics/parameters.md#space-group)**
+    <span class="ed-reference-anchor" id="names-space-group">**[<span class="ed-reference-icon" data-reference-category="space-group" aria-hidden="true">&#63423;</span> Space group](../physics/parameters.md#space-group)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [name](../physics/parameters.md#space-group-name-h-m) | name | — |
-    | [code](../physics/parameters.md#space-group-coord-system-code) | code | — |
-    | [number](../physics/parameters.md#space-group-it-number) | number | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Hermann-Mauguin symbol](../physics/parameters.md#space-group-name-h-m) | name |
+    | [Space-group setting](../physics/parameters.md#space-group-coord-system-code) | code |
+    | [Space-group number](../physics/parameters.md#space-group-it-number) | number |
 
-    **[<span class="ed-reference-icon" data-reference-category="cell" aria-hidden="true">&#61874;</span> Cell](../physics/parameters.md#cell)**
+    <span class="ed-reference-anchor" id="names-cell">**[<span class="ed-reference-icon" data-reference-category="cell" aria-hidden="true">&#61874;</span> Cell](../physics/parameters.md#cell)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [a](../physics/parameters.md#cell-length-a) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61874;</span> <span class="ed-reference-icon" aria-hidden="true">&#62789;</span> a | Å |
-    | [b](../physics/parameters.md#cell-length-b) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61874;</span> <span class="ed-reference-icon" aria-hidden="true">&#62789;</span> b | Å |
-    | [c](../physics/parameters.md#cell-length-c) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61874;</span> <span class="ed-reference-icon" aria-hidden="true">&#62789;</span> c | Å |
-    | [α](../physics/parameters.md#cell-angle-alpha) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61874;</span> <span class="ed-reference-icon" aria-hidden="true">&#62789;</span> α | deg |
-    | [β](../physics/parameters.md#cell-angle-beta) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61874;</span> <span class="ed-reference-icon" aria-hidden="true">&#62789;</span> β | deg |
-    | [γ](../physics/parameters.md#cell-angle-gamma) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61874;</span> <span class="ed-reference-icon" aria-hidden="true">&#62789;</span> γ | deg |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Cell length a](../physics/parameters.md#cell-length-a) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61874;</span> <span class="ed-reference-icon" aria-hidden="true">&#62789;</span> a |
+    | [Cell length b](../physics/parameters.md#cell-length-b) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61874;</span> <span class="ed-reference-icon" aria-hidden="true">&#62789;</span> b |
+    | [Cell length c](../physics/parameters.md#cell-length-c) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61874;</span> <span class="ed-reference-icon" aria-hidden="true">&#62789;</span> c |
+    | [Cell angle α](../physics/parameters.md#cell-angle-alpha) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61874;</span> <span class="ed-reference-icon" aria-hidden="true">&#62789;</span> α |
+    | [Cell angle β](../physics/parameters.md#cell-angle-beta) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61874;</span> <span class="ed-reference-icon" aria-hidden="true">&#62789;</span> β |
+    | [Cell angle γ](../physics/parameters.md#cell-angle-gamma) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61874;</span> <span class="ed-reference-icon" aria-hidden="true">&#62789;</span> γ |
 
-    **[<span class="ed-reference-icon" data-reference-category="atom-site" aria-hidden="true">&#62930;</span> Atom site](../physics/parameters.md#atom-site)**
+    <span class="ed-reference-anchor" id="names-atom-site">**[<span class="ed-reference-icon" data-reference-category="atom-site" aria-hidden="true">&#62930;</span> Atom site](../physics/parameters.md#atom-site)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#atom-site-id) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> id | — |
-    | [type](../physics/parameters.md#atom-site-type-symbol) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> type | — |
-    | [WP](../physics/parameters.md#atom-site-wyckoff-letter) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> WP | — |
-    | [ADP type](../physics/parameters.md#atom-site-adp-type) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> ADP type | — |
-    | [x](../physics/parameters.md#atom-site-fract-x) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> <span class="ed-reference-icon" aria-hidden="true">&#62405;</span> x | — |
-    | [y](../physics/parameters.md#atom-site-fract-y) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> <span class="ed-reference-icon" aria-hidden="true">&#62405;</span> y | — |
-    | [z](../physics/parameters.md#atom-site-fract-z) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> <span class="ed-reference-icon" aria-hidden="true">&#62405;</span> z | — |
-    | [occ](../physics/parameters.md#atom-site-occupancy) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> <span class="ed-reference-icon" aria-hidden="true">&#62837;</span> occ | — |
-    | [iso/eq](../physics/parameters.md#atom-site-adp-iso) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> iso/eq | Å² |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Unique atom-site identifier](../physics/parameters.md#atom-site-id) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> id |
+    | [Chemical symbol of the atom at this site](../physics/parameters.md#atom-site-type-symbol) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> type |
+    | [Wyckoff letter of the site in its space group](../physics/parameters.md#atom-site-wyckoff-letter) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> WP |
+    | [Atomic displacement parameter type: Biso, Uiso, Bani, Uani or beta](../physics/parameters.md#atom-site-adp-type) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> ADP type |
+    | [Fractional x-coordinate](../physics/parameters.md#atom-site-fract-x) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> <span class="ed-reference-icon" aria-hidden="true">&#62405;</span> x |
+    | [Fractional y-coordinate](../physics/parameters.md#atom-site-fract-y) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> <span class="ed-reference-icon" aria-hidden="true">&#62405;</span> y |
+    | [Fractional z-coordinate](../physics/parameters.md#atom-site-fract-z) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> <span class="ed-reference-icon" aria-hidden="true">&#62405;</span> z |
+    | [Site occupancy](../physics/parameters.md#atom-site-occupancy) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> <span class="ed-reference-icon" aria-hidden="true">&#62837;</span> occ |
+    | [Isotropic or equivalent displacement](../physics/parameters.md#atom-site-adp-iso) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> iso/eq |
 
-    **[<span class="ed-reference-icon" data-reference-category="atom-site-aniso" aria-hidden="true">&#61618;</span> Atomic displacement](../physics/parameters.md#atom-site-aniso)**
+    <span class="ed-reference-anchor" id="names-atom-site-aniso">**[<span class="ed-reference-icon" data-reference-category="atom-site-aniso" aria-hidden="true">&#61618;</span> Atomic displacement](../physics/parameters.md#atom-site-aniso)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#atom-site-aniso-id) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> id | — |
-    | [11](../physics/parameters.md#atom-site-aniso-adp-11) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> 11 | Å² |
-    | [22](../physics/parameters.md#atom-site-aniso-adp-22) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> 22 | Å² |
-    | [33](../physics/parameters.md#atom-site-aniso-adp-33) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> 33 | Å² |
-    | [12](../physics/parameters.md#atom-site-aniso-adp-12) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> 12 | Å² |
-    | [13](../physics/parameters.md#atom-site-aniso-adp-13) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> 13 | Å² |
-    | [23](../physics/parameters.md#atom-site-aniso-adp-23) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> 23 | Å² |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#atom-site-aniso-id) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> id |
+    | [Anisotropic displacement tensor component 11](../physics/parameters.md#atom-site-aniso-adp-11) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> 11 |
+    | [Anisotropic displacement tensor component 22](../physics/parameters.md#atom-site-aniso-adp-22) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> 22 |
+    | [Anisotropic displacement tensor component 33](../physics/parameters.md#atom-site-aniso-adp-33) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> 33 |
+    | [Anisotropic displacement tensor component 12](../physics/parameters.md#atom-site-aniso-adp-12) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> 12 |
+    | [Anisotropic displacement tensor component 13](../physics/parameters.md#atom-site-aniso-adp-13) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> 13 |
+    | [Anisotropic displacement tensor component 23](../physics/parameters.md#atom-site-aniso-adp-23) | <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> <span class="ed-reference-icon" aria-hidden="true">&#61618;</span> 23 |
 
-    **[<span class="ed-reference-icon" data-reference-category="scattering-length" aria-hidden="true">&#62789;</span> Scattering length](../physics/parameters.md#scattering-length)**
+    <span class="ed-reference-anchor" id="names-scattering-length">**[<span class="ed-reference-icon" data-reference-category="scattering-length" aria-hidden="true">&#62789;</span> Scattering length](../physics/parameters.md#scattering-length)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [type](../physics/parameters.md#scattering-length-type-symbol) | type | — |
-    | [b](../physics/parameters.md#scattering-length-length-fm) | b | fm |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Type symbol](../physics/parameters.md#scattering-length-type-symbol) | type |
+    | [Length fm](../physics/parameters.md#scattering-length-length-fm) | b |
 
-    **[<span class="ed-reference-icon" data-reference-category="geom" aria-hidden="true">&#62790;</span> Bond settings](../physics/parameters.md#geom)**
+    <span class="ed-reference-anchor" id="names-geom">**[<span class="ed-reference-icon" data-reference-category="geom" aria-hidden="true">&#62790;</span> Bond settings](../physics/parameters.md#geom)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [minimum distance](../physics/parameters.md#geom-min-bond-distance-cutoff) | minimum distance | Å |
-    | [tolerance](../physics/parameters.md#geom-bond-distance-inc) | tolerance | Å |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Atoms closer than this are not bonded](../physics/parameters.md#geom-min-bond-distance-cutoff) | minimum distance |
+    | [How much longer than the sum of the covalent radii a bond may be](../physics/parameters.md#geom-bond-distance-inc) | tolerance |
 
-    **[<span class="ed-reference-icon" data-reference-category="structure-view" aria-hidden="true">&#62783;</span> Appearance](../physics/parameters.md#structure-view)**
+    <span class="ed-reference-anchor" id="names-structure-view">**[<span class="ed-reference-icon" data-reference-category="structure-view" aria-hidden="true">&#62783;</span> Appearance](../physics/parameters.md#structure-view)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [atoms as](../physics/parameters.md#structure-view-atom-view) | atoms as | — |
-    | [colours](../physics/parameters.md#structure-view-colour-scheme) | colours | — |
-    | [atom scale](../physics/parameters.md#structure-view-atom-scale) | atom scale | — |
-    | [probability](../physics/parameters.md#structure-view-adp-probability) | probability | — |
-    | [labels](../physics/parameters.md#structure-view-labels) | labels | — |
-    | [atoms shown](../physics/parameters.md#structure-view-atoms) | atoms shown | — |
-    | [bonds](../physics/parameters.md#structure-view-bonds) | bonds | — |
-    | [cell](../physics/parameters.md#structure-view-cell) | cell | — |
-    | [axes](../physics/parameters.md#structure-view-axes) | axes | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [What sets the size of each atom](../physics/parameters.md#structure-view-atom-view) | atoms as |
+    | [Colours](../physics/parameters.md#structure-view-colour-scheme) | colours |
+    | [Atom scale](../physics/parameters.md#structure-view-atom-scale) | atom scale |
+    | [Probability](../physics/parameters.md#structure-view-adp-probability) | probability |
+    | [Labels](../physics/parameters.md#structure-view-labels) | labels |
+    | [Which atoms are drawn](../physics/parameters.md#structure-view-atoms) | atoms shown |
+    | [Bonds](../physics/parameters.md#structure-view-bonds) | bonds |
+    | [Cell](../physics/parameters.md#structure-view-cell) | cell |
+    | [Axes](../physics/parameters.md#structure-view-axes) | axes |
 
-    **[<span class="ed-reference-icon" data-reference-category="space-group-symop" aria-hidden="true">&#62193;</span> Symmetry operator](../physics/parameters.md#space-group-symop)**
+    <span class="ed-reference-anchor" id="names-space-group-symop">**[<span class="ed-reference-icon" data-reference-category="space-group-symop" aria-hidden="true">&#62193;</span> Symmetry operator](../physics/parameters.md#space-group-symop)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [operation](../physics/parameters.md#space-group-symop-operation-xyz) | operation | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Operation](../physics/parameters.md#space-group-symop-operation-xyz) | operation |
 
-    **[<span class="ed-reference-icon" data-reference-category="expanded-atom-site" aria-hidden="true">&#62113;</span> Atom in the cell](../physics/parameters.md#expanded-atom-site)**
+    <span class="ed-reference-anchor" id="names-expanded-atom-site">**[<span class="ed-reference-icon" data-reference-category="expanded-atom-site" aria-hidden="true">&#62113;</span> Atom in the cell](../physics/parameters.md#expanded-atom-site)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [site](../physics/parameters.md#expanded-atom-site-atom-site-id) | site | — |
-    | [symmetry](../physics/parameters.md#expanded-atom-site-site-symmetry) | symmetry | — |
-    | [x](../physics/parameters.md#expanded-atom-site-fract-x) | x | — |
-    | [y](../physics/parameters.md#expanded-atom-site-fract-y) | y | — |
-    | [z](../physics/parameters.md#expanded-atom-site-fract-z) | z | — |
-    | [X](../physics/parameters.md#expanded-atom-site-cartn-x) | X | Å |
-    | [Y](../physics/parameters.md#expanded-atom-site-cartn-y) | Y | Å |
-    | [Z](../physics/parameters.md#expanded-atom-site-cartn-z) | Z | Å |
-    | [occ](../physics/parameters.md#expanded-atom-site-occupancy) | occ | — |
-    | [U iso](../physics/parameters.md#expanded-atom-site-u-iso) | U iso | Å² |
-    | [cluster](../physics/parameters.md#expanded-atom-site-cluster-id) | cluster | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Site](../physics/parameters.md#expanded-atom-site-atom-site-id) | site |
+    | [Symmetry](../physics/parameters.md#expanded-atom-site-site-symmetry) | symmetry |
+    | [Fractional x-coordinate](../physics/parameters.md#expanded-atom-site-fract-x) | x |
+    | [Fractional y-coordinate](../physics/parameters.md#expanded-atom-site-fract-y) | y |
+    | [Fractional z-coordinate](../physics/parameters.md#expanded-atom-site-fract-z) | z |
+    | [Cartesian x-coordinate](../physics/parameters.md#expanded-atom-site-cartn-x) | X |
+    | [Cartesian y-coordinate](../physics/parameters.md#expanded-atom-site-cartn-y) | Y |
+    | [Cartesian z-coordinate](../physics/parameters.md#expanded-atom-site-cartn-z) | Z |
+    | [Occupancy of the atom](../physics/parameters.md#expanded-atom-site-occupancy) | occ |
+    | [Isotropic displacement of the atom, as U](../physics/parameters.md#expanded-atom-site-u-iso) | U iso |
+    | [Atoms within one shared position carry the same cluster number](../physics/parameters.md#expanded-atom-site-cluster-id) | cluster |
 
-    **[<span class="ed-reference-icon" data-reference-category="geom-bond" aria-hidden="true">&#63396;</span> Bond](../physics/parameters.md#geom-bond)**
+    <span class="ed-reference-anchor" id="names-geom-bond">**[<span class="ed-reference-icon" data-reference-category="geom-bond" aria-hidden="true">&#63396;</span> Bond](../physics/parameters.md#geom-bond)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [atom 1](../physics/parameters.md#geom-bond-expanded-atom-site-id-1) | atom 1 | — |
-    | [atom 2](../physics/parameters.md#geom-bond-expanded-atom-site-id-2) | atom 2 | — |
-    | [site 1](../physics/parameters.md#geom-bond-atom-site-label-1) | site 1 | — |
-    | [site 2](../physics/parameters.md#geom-bond-atom-site-label-2) | site 2 | — |
-    | [symmetry 1](../physics/parameters.md#geom-bond-site-symmetry-1) | symmetry 1 | — |
-    | [symmetry 2](../physics/parameters.md#geom-bond-site-symmetry-2) | symmetry 2 | — |
-    | [distance](../physics/parameters.md#geom-bond-distance) | distance | Å |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Atom 1](../physics/parameters.md#geom-bond-expanded-atom-site-id-1) | atom 1 |
+    | [Atom 2](../physics/parameters.md#geom-bond-expanded-atom-site-id-2) | atom 2 |
+    | [Site 1](../physics/parameters.md#geom-bond-atom-site-label-1) | site 1 |
+    | [Site 2](../physics/parameters.md#geom-bond-atom-site-label-2) | site 2 |
+    | [Symmetry 1](../physics/parameters.md#geom-bond-site-symmetry-1) | symmetry 1 |
+    | [Symmetry 2](../physics/parameters.md#geom-bond-site-symmetry-2) | symmetry 2 |
+    | [Distance](../physics/parameters.md#geom-bond-distance) | distance |
 
-    **[<span class="ed-reference-icon" data-reference-category="atom-sites-cartn-transform" aria-hidden="true">&#62923;</span> Cartesian frame](../physics/parameters.md#atom-sites-cartn-transform)**
+    <span class="ed-reference-anchor" id="names-atom-sites-cartn-transform">**[<span class="ed-reference-icon" data-reference-category="atom-sites-cartn-transform" aria-hidden="true">&#62923;</span> Cartesian frame](../physics/parameters.md#atom-sites-cartn-transform)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [M₁₁](../physics/parameters.md#atom-sites-cartn-transform-mat-11) | M₁₁ | Å |
-    | [M₁₂](../physics/parameters.md#atom-sites-cartn-transform-mat-12) | M₁₂ | Å |
-    | [M₁₃](../physics/parameters.md#atom-sites-cartn-transform-mat-13) | M₁₃ | Å |
-    | [M₂₁](../physics/parameters.md#atom-sites-cartn-transform-mat-21) | M₂₁ | Å |
-    | [M₂₂](../physics/parameters.md#atom-sites-cartn-transform-mat-22) | M₂₂ | Å |
-    | [M₂₃](../physics/parameters.md#atom-sites-cartn-transform-mat-23) | M₂₃ | Å |
-    | [M₃₁](../physics/parameters.md#atom-sites-cartn-transform-mat-31) | M₃₁ | Å |
-    | [M₃₂](../physics/parameters.md#atom-sites-cartn-transform-mat-32) | M₃₂ | Å |
-    | [M₃₃](../physics/parameters.md#atom-sites-cartn-transform-mat-33) | M₃₃ | Å |
-    | [axes](../physics/parameters.md#atom-sites-cartn-transform-axes) | axes | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Element 11 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-11) | M₁₁ |
+    | [Element 12 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-12) | M₁₂ |
+    | [Element 13 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-13) | M₁₃ |
+    | [Element 21 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-21) | M₂₁ |
+    | [Element 22 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-22) | M₂₂ |
+    | [Element 23 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-23) | M₂₃ |
+    | [Element 31 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-31) | M₃₁ |
+    | [Element 32 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-32) | M₃₂ |
+    | [Element 33 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-33) | M₃₃ |
+    | [How the Cartesian axes are placed in the cell](../physics/parameters.md#atom-sites-cartn-transform-axes) | axes |
 
 === "Edi"
 
     **[<span class="ed-reference-icon" data-reference-category="space-group" aria-hidden="true">&#63423;</span> Space group](../physics/parameters.md#space-group)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [name](../physics/parameters.md#space-group-name-h-m) | <code>_space_group.name_h_m</code> | — |
-    | [code](../physics/parameters.md#space-group-coord-system-code) | <code>_space_group.coord_system_code</code> | — |
-    | [number](../physics/parameters.md#space-group-it-number) | <code>_space_group.it_number</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Hermann-Mauguin symbol](../physics/parameters.md#space-group-name-h-m) | <code>_space_group.name_h_m</code> |
+    | [Space-group setting](../physics/parameters.md#space-group-coord-system-code) | <code>_space_group.coord_system_code</code> |
+    | [Space-group number](../physics/parameters.md#space-group-it-number) | <code>_space_group.it_number</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="cell" aria-hidden="true">&#61874;</span> Cell](../physics/parameters.md#cell)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [a](../physics/parameters.md#cell-length-a) | <code>_cell.length_a</code> | Å |
-    | [b](../physics/parameters.md#cell-length-b) | <code>_cell.length_b</code> | Å |
-    | [c](../physics/parameters.md#cell-length-c) | <code>_cell.length_c</code> | Å |
-    | [α](../physics/parameters.md#cell-angle-alpha) | <code>_cell.angle_alpha</code> | deg |
-    | [β](../physics/parameters.md#cell-angle-beta) | <code>_cell.angle_beta</code> | deg |
-    | [γ](../physics/parameters.md#cell-angle-gamma) | <code>_cell.angle_gamma</code> | deg |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Cell length a](../physics/parameters.md#cell-length-a) | <code>_cell.length_a</code> |
+    | [Cell length b](../physics/parameters.md#cell-length-b) | <code>_cell.length_b</code> |
+    | [Cell length c](../physics/parameters.md#cell-length-c) | <code>_cell.length_c</code> |
+    | [Cell angle α](../physics/parameters.md#cell-angle-alpha) | <code>_cell.angle_alpha</code> |
+    | [Cell angle β](../physics/parameters.md#cell-angle-beta) | <code>_cell.angle_beta</code> |
+    | [Cell angle γ](../physics/parameters.md#cell-angle-gamma) | <code>_cell.angle_gamma</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="atom-site" aria-hidden="true">&#62930;</span> Atom site](../physics/parameters.md#atom-site)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#atom-site-id) | <code>_atom_site.id</code> | — |
-    | [type](../physics/parameters.md#atom-site-type-symbol) | <code>_atom_site.type_symbol</code> | — |
-    | [WP](../physics/parameters.md#atom-site-wyckoff-letter) | <code>_atom_site.wyckoff_letter</code> | — |
-    | [ADP type](../physics/parameters.md#atom-site-adp-type) | <code>_atom_site.adp_type</code> | — |
-    | [x](../physics/parameters.md#atom-site-fract-x) | <code>_atom_site.fract_x</code> | — |
-    | [y](../physics/parameters.md#atom-site-fract-y) | <code>_atom_site.fract_y</code> | — |
-    | [z](../physics/parameters.md#atom-site-fract-z) | <code>_atom_site.fract_z</code> | — |
-    | [occ](../physics/parameters.md#atom-site-occupancy) | <code>_atom_site.occupancy</code> | — |
-    | [iso/eq](../physics/parameters.md#atom-site-adp-iso) | <code>_atom_site.adp_iso</code> | Å² |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Unique atom-site identifier](../physics/parameters.md#atom-site-id) | <code>_atom_site.id</code><br><small>Also accepted: <code>_atom_site.label</code></small> |
+    | [Chemical symbol of the atom at this site](../physics/parameters.md#atom-site-type-symbol) | <code>_atom_site.type_symbol</code> |
+    | [Wyckoff letter of the site in its space group](../physics/parameters.md#atom-site-wyckoff-letter) | <code>_atom_site.wyckoff_letter</code> |
+    | [Atomic displacement parameter type: Biso, Uiso, Bani, Uani or beta](../physics/parameters.md#atom-site-adp-type) | <code>_atom_site.adp_type</code> |
+    | [Fractional x-coordinate](../physics/parameters.md#atom-site-fract-x) | <code>_atom_site.fract_x</code> |
+    | [Fractional y-coordinate](../physics/parameters.md#atom-site-fract-y) | <code>_atom_site.fract_y</code> |
+    | [Fractional z-coordinate](../physics/parameters.md#atom-site-fract-z) | <code>_atom_site.fract_z</code> |
+    | [Site occupancy](../physics/parameters.md#atom-site-occupancy) | <code>_atom_site.occupancy</code> |
+    | [Isotropic or equivalent displacement](../physics/parameters.md#atom-site-adp-iso) | <code>_atom_site.adp_iso</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="atom-site-aniso" aria-hidden="true">&#61618;</span> Atomic displacement](../physics/parameters.md#atom-site-aniso)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#atom-site-aniso-id) | <code>_atom_site_aniso.id</code> | — |
-    | [11](../physics/parameters.md#atom-site-aniso-adp-11) | <code>_atom_site_aniso.adp_11</code> | Å² |
-    | [22](../physics/parameters.md#atom-site-aniso-adp-22) | <code>_atom_site_aniso.adp_22</code> | Å² |
-    | [33](../physics/parameters.md#atom-site-aniso-adp-33) | <code>_atom_site_aniso.adp_33</code> | Å² |
-    | [12](../physics/parameters.md#atom-site-aniso-adp-12) | <code>_atom_site_aniso.adp_12</code> | Å² |
-    | [13](../physics/parameters.md#atom-site-aniso-adp-13) | <code>_atom_site_aniso.adp_13</code> | Å² |
-    | [23](../physics/parameters.md#atom-site-aniso-adp-23) | <code>_atom_site_aniso.adp_23</code> | Å² |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#atom-site-aniso-id) | <code>_atom_site_aniso.id</code><br><small>Also accepted: <code>_atom_site_aniso.label</code></small> |
+    | [Anisotropic displacement tensor component 11](../physics/parameters.md#atom-site-aniso-adp-11) | <code>_atom_site_aniso.adp_11</code> |
+    | [Anisotropic displacement tensor component 22](../physics/parameters.md#atom-site-aniso-adp-22) | <code>_atom_site_aniso.adp_22</code> |
+    | [Anisotropic displacement tensor component 33](../physics/parameters.md#atom-site-aniso-adp-33) | <code>_atom_site_aniso.adp_33</code> |
+    | [Anisotropic displacement tensor component 12](../physics/parameters.md#atom-site-aniso-adp-12) | <code>_atom_site_aniso.adp_12</code> |
+    | [Anisotropic displacement tensor component 13](../physics/parameters.md#atom-site-aniso-adp-13) | <code>_atom_site_aniso.adp_13</code> |
+    | [Anisotropic displacement tensor component 23](../physics/parameters.md#atom-site-aniso-adp-23) | <code>_atom_site_aniso.adp_23</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="scattering-length" aria-hidden="true">&#62789;</span> Scattering length](../physics/parameters.md#scattering-length)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [type](../physics/parameters.md#scattering-length-type-symbol) | <code>_scattering_length.type_symbol</code> | — |
-    | [b](../physics/parameters.md#scattering-length-length-fm) | <code>_scattering_length.length_fm</code> | fm |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Type symbol](../physics/parameters.md#scattering-length-type-symbol) | <code>_scattering_length.type_symbol</code> |
+    | [Length fm](../physics/parameters.md#scattering-length-length-fm) | <code>_scattering_length.length_fm</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="geom" aria-hidden="true">&#62790;</span> Bond settings](../physics/parameters.md#geom)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [minimum distance](../physics/parameters.md#geom-min-bond-distance-cutoff) | <code>_geom.min_bond_distance_cutoff</code> | Å |
-    | [tolerance](../physics/parameters.md#geom-bond-distance-inc) | <code>_geom.bond_distance_inc</code> | Å |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Atoms closer than this are not bonded](../physics/parameters.md#geom-min-bond-distance-cutoff) | <code>_geom.min_bond_distance_cutoff</code> |
+    | [How much longer than the sum of the covalent radii a bond may be](../physics/parameters.md#geom-bond-distance-inc) | <code>_geom.bond_distance_inc</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="structure-view" aria-hidden="true">&#62783;</span> Appearance](../physics/parameters.md#structure-view)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [atoms as](../physics/parameters.md#structure-view-atom-view) | <code>_structure_view.atom_view</code> | — |
-    | [colours](../physics/parameters.md#structure-view-colour-scheme) | <code>_structure_view.colour_scheme</code> | — |
-    | [atom scale](../physics/parameters.md#structure-view-atom-scale) | <code>_structure_view.atom_scale</code> | — |
-    | [probability](../physics/parameters.md#structure-view-adp-probability) | <code>_structure_view.adp_probability</code> | — |
-    | [labels](../physics/parameters.md#structure-view-labels) | <code>_structure_view.labels</code> | — |
-    | [atoms shown](../physics/parameters.md#structure-view-atoms) | <code>_structure_view.atoms</code> | — |
-    | [bonds](../physics/parameters.md#structure-view-bonds) | <code>_structure_view.bonds</code> | — |
-    | [cell](../physics/parameters.md#structure-view-cell) | <code>_structure_view.cell</code> | — |
-    | [axes](../physics/parameters.md#structure-view-axes) | <code>_structure_view.axes</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [What sets the size of each atom](../physics/parameters.md#structure-view-atom-view) | <code>_structure_view.atom_view</code> |
+    | [Colours](../physics/parameters.md#structure-view-colour-scheme) | <code>_structure_view.colour_scheme</code> |
+    | [Atom scale](../physics/parameters.md#structure-view-atom-scale) | <code>_structure_view.atom_scale</code> |
+    | [Probability](../physics/parameters.md#structure-view-adp-probability) | <code>_structure_view.adp_probability</code> |
+    | [Labels](../physics/parameters.md#structure-view-labels) | <code>_structure_view.labels</code> |
+    | [Which atoms are drawn](../physics/parameters.md#structure-view-atoms) | <code>_structure_view.atoms</code> |
+    | [Bonds](../physics/parameters.md#structure-view-bonds) | <code>_structure_view.bonds</code> |
+    | [Cell](../physics/parameters.md#structure-view-cell) | <code>_structure_view.cell</code> |
+    | [Axes](../physics/parameters.md#structure-view-axes) | <code>_structure_view.axes</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="space-group-symop" aria-hidden="true">&#62193;</span> Symmetry operator](../physics/parameters.md#space-group-symop)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [operation](../physics/parameters.md#space-group-symop-operation-xyz) | <code>_space_group_symop.operation_xyz</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Operation](../physics/parameters.md#space-group-symop-operation-xyz) | <code>_space_group_symop.operation_xyz</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="expanded-atom-site" aria-hidden="true">&#62113;</span> Atom in the cell](../physics/parameters.md#expanded-atom-site)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [site](../physics/parameters.md#expanded-atom-site-atom-site-id) | <code>_expanded_atom_site.atom_site_id</code> | — |
-    | [symmetry](../physics/parameters.md#expanded-atom-site-site-symmetry) | <code>_expanded_atom_site.site_symmetry</code> | — |
-    | [x](../physics/parameters.md#expanded-atom-site-fract-x) | <code>_expanded_atom_site.fract_x</code> | — |
-    | [y](../physics/parameters.md#expanded-atom-site-fract-y) | <code>_expanded_atom_site.fract_y</code> | — |
-    | [z](../physics/parameters.md#expanded-atom-site-fract-z) | <code>_expanded_atom_site.fract_z</code> | — |
-    | [X](../physics/parameters.md#expanded-atom-site-cartn-x) | <code>_expanded_atom_site.cartn_x</code> | Å |
-    | [Y](../physics/parameters.md#expanded-atom-site-cartn-y) | <code>_expanded_atom_site.cartn_y</code> | Å |
-    | [Z](../physics/parameters.md#expanded-atom-site-cartn-z) | <code>_expanded_atom_site.cartn_z</code> | Å |
-    | [occ](../physics/parameters.md#expanded-atom-site-occupancy) | <code>_expanded_atom_site.occupancy</code> | — |
-    | [U iso](../physics/parameters.md#expanded-atom-site-u-iso) | <code>_expanded_atom_site.u_iso</code> | Å² |
-    | [cluster](../physics/parameters.md#expanded-atom-site-cluster-id) | <code>_expanded_atom_site.cluster_id</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Site](../physics/parameters.md#expanded-atom-site-atom-site-id) | <code>_expanded_atom_site.atom_site_id</code> |
+    | [Symmetry](../physics/parameters.md#expanded-atom-site-site-symmetry) | <code>_expanded_atom_site.site_symmetry</code> |
+    | [Fractional x-coordinate](../physics/parameters.md#expanded-atom-site-fract-x) | <code>_expanded_atom_site.fract_x</code> |
+    | [Fractional y-coordinate](../physics/parameters.md#expanded-atom-site-fract-y) | <code>_expanded_atom_site.fract_y</code> |
+    | [Fractional z-coordinate](../physics/parameters.md#expanded-atom-site-fract-z) | <code>_expanded_atom_site.fract_z</code> |
+    | [Cartesian x-coordinate](../physics/parameters.md#expanded-atom-site-cartn-x) | <code>_expanded_atom_site.cartn_x</code> |
+    | [Cartesian y-coordinate](../physics/parameters.md#expanded-atom-site-cartn-y) | <code>_expanded_atom_site.cartn_y</code> |
+    | [Cartesian z-coordinate](../physics/parameters.md#expanded-atom-site-cartn-z) | <code>_expanded_atom_site.cartn_z</code> |
+    | [Occupancy of the atom](../physics/parameters.md#expanded-atom-site-occupancy) | <code>_expanded_atom_site.occupancy</code> |
+    | [Isotropic displacement of the atom, as U](../physics/parameters.md#expanded-atom-site-u-iso) | <code>_expanded_atom_site.u_iso</code> |
+    | [Atoms within one shared position carry the same cluster number](../physics/parameters.md#expanded-atom-site-cluster-id) | <code>_expanded_atom_site.cluster_id</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="geom-bond" aria-hidden="true">&#63396;</span> Bond](../physics/parameters.md#geom-bond)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [atom 1](../physics/parameters.md#geom-bond-expanded-atom-site-id-1) | <code>_geom_bond.expanded_atom_site_id_1</code> | — |
-    | [atom 2](../physics/parameters.md#geom-bond-expanded-atom-site-id-2) | <code>_geom_bond.expanded_atom_site_id_2</code> | — |
-    | [site 1](../physics/parameters.md#geom-bond-atom-site-label-1) | <code>_geom_bond.atom_site_label_1</code> | — |
-    | [site 2](../physics/parameters.md#geom-bond-atom-site-label-2) | <code>_geom_bond.atom_site_label_2</code> | — |
-    | [symmetry 1](../physics/parameters.md#geom-bond-site-symmetry-1) | <code>_geom_bond.site_symmetry_1</code> | — |
-    | [symmetry 2](../physics/parameters.md#geom-bond-site-symmetry-2) | <code>_geom_bond.site_symmetry_2</code> | — |
-    | [distance](../physics/parameters.md#geom-bond-distance) | <code>_geom_bond.distance</code> | Å |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Atom 1](../physics/parameters.md#geom-bond-expanded-atom-site-id-1) | <code>_geom_bond.expanded_atom_site_id_1</code> |
+    | [Atom 2](../physics/parameters.md#geom-bond-expanded-atom-site-id-2) | <code>_geom_bond.expanded_atom_site_id_2</code> |
+    | [Site 1](../physics/parameters.md#geom-bond-atom-site-label-1) | <code>_geom_bond.atom_site_label_1</code> |
+    | [Site 2](../physics/parameters.md#geom-bond-atom-site-label-2) | <code>_geom_bond.atom_site_label_2</code> |
+    | [Symmetry 1](../physics/parameters.md#geom-bond-site-symmetry-1) | <code>_geom_bond.site_symmetry_1</code> |
+    | [Symmetry 2](../physics/parameters.md#geom-bond-site-symmetry-2) | <code>_geom_bond.site_symmetry_2</code> |
+    | [Distance](../physics/parameters.md#geom-bond-distance) | <code>_geom_bond.distance</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="atom-sites-cartn-transform" aria-hidden="true">&#62923;</span> Cartesian frame](../physics/parameters.md#atom-sites-cartn-transform)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [M₁₁](../physics/parameters.md#atom-sites-cartn-transform-mat-11) | <code>_atom_sites_cartn_transform.mat_11</code> | Å |
-    | [M₁₂](../physics/parameters.md#atom-sites-cartn-transform-mat-12) | <code>_atom_sites_cartn_transform.mat_12</code> | Å |
-    | [M₁₃](../physics/parameters.md#atom-sites-cartn-transform-mat-13) | <code>_atom_sites_cartn_transform.mat_13</code> | Å |
-    | [M₂₁](../physics/parameters.md#atom-sites-cartn-transform-mat-21) | <code>_atom_sites_cartn_transform.mat_21</code> | Å |
-    | [M₂₂](../physics/parameters.md#atom-sites-cartn-transform-mat-22) | <code>_atom_sites_cartn_transform.mat_22</code> | Å |
-    | [M₂₃](../physics/parameters.md#atom-sites-cartn-transform-mat-23) | <code>_atom_sites_cartn_transform.mat_23</code> | Å |
-    | [M₃₁](../physics/parameters.md#atom-sites-cartn-transform-mat-31) | <code>_atom_sites_cartn_transform.mat_31</code> | Å |
-    | [M₃₂](../physics/parameters.md#atom-sites-cartn-transform-mat-32) | <code>_atom_sites_cartn_transform.mat_32</code> | Å |
-    | [M₃₃](../physics/parameters.md#atom-sites-cartn-transform-mat-33) | <code>_atom_sites_cartn_transform.mat_33</code> | Å |
-    | [axes](../physics/parameters.md#atom-sites-cartn-transform-axes) | <code>_atom_sites_cartn_transform.axes</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Element 11 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-11) | <code>_atom_sites_cartn_transform.mat_11</code> |
+    | [Element 12 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-12) | <code>_atom_sites_cartn_transform.mat_12</code> |
+    | [Element 13 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-13) | <code>_atom_sites_cartn_transform.mat_13</code> |
+    | [Element 21 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-21) | <code>_atom_sites_cartn_transform.mat_21</code> |
+    | [Element 22 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-22) | <code>_atom_sites_cartn_transform.mat_22</code> |
+    | [Element 23 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-23) | <code>_atom_sites_cartn_transform.mat_23</code> |
+    | [Element 31 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-31) | <code>_atom_sites_cartn_transform.mat_31</code> |
+    | [Element 32 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-32) | <code>_atom_sites_cartn_transform.mat_32</code> |
+    | [Element 33 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-33) | <code>_atom_sites_cartn_transform.mat_33</code> |
+    | [How the Cartesian axes are placed in the cell](../physics/parameters.md#atom-sites-cartn-transform-axes) | <code>_atom_sites_cartn_transform.axes</code> |
 
 === "Python"
 
     **[<span class="ed-reference-icon" data-reference-category="space-group" aria-hidden="true">&#63423;</span> Space group](../physics/parameters.md#space-group)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [name](../physics/parameters.md#space-group-name-h-m) | <code>project.structures[0].space_group.name_h_m</code> | — |
-    | [code](../physics/parameters.md#space-group-coord-system-code) | <code>project.structures[0].space_group.coord_system_code</code> | — |
-    | [number](../physics/parameters.md#space-group-it-number) | <code>project.structures[0].space_group.it_number</code> | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Hermann-Mauguin symbol](../physics/parameters.md#space-group-name-h-m) | <code>project.structures[0].space_group.name_h_m</code> |
+    | [Space-group setting](../physics/parameters.md#space-group-coord-system-code) | <code>project.structures[0].space_group.coord_system_code</code> |
+    | [Space-group number](../physics/parameters.md#space-group-it-number) | <code>project.structures[0].space_group.it_number</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="cell" aria-hidden="true">&#61874;</span> Cell](../physics/parameters.md#cell)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [a](../physics/parameters.md#cell-length-a) | <code>project.structures[0].cell.length_a</code> | Å |
-    | [b](../physics/parameters.md#cell-length-b) | <code>project.structures[0].cell.length_b</code> | Å |
-    | [c](../physics/parameters.md#cell-length-c) | <code>project.structures[0].cell.length_c</code> | Å |
-    | [α](../physics/parameters.md#cell-angle-alpha) | <code>project.structures[0].cell.angle_alpha</code> | deg |
-    | [β](../physics/parameters.md#cell-angle-beta) | <code>project.structures[0].cell.angle_beta</code> | deg |
-    | [γ](../physics/parameters.md#cell-angle-gamma) | <code>project.structures[0].cell.angle_gamma</code> | deg |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Cell length a](../physics/parameters.md#cell-length-a) | <code>project.structures[0].cell.length_a</code> |
+    | [Cell length b](../physics/parameters.md#cell-length-b) | <code>project.structures[0].cell.length_b</code> |
+    | [Cell length c](../physics/parameters.md#cell-length-c) | <code>project.structures[0].cell.length_c</code> |
+    | [Cell angle α](../physics/parameters.md#cell-angle-alpha) | <code>project.structures[0].cell.angle_alpha</code> |
+    | [Cell angle β](../physics/parameters.md#cell-angle-beta) | <code>project.structures[0].cell.angle_beta</code> |
+    | [Cell angle γ](../physics/parameters.md#cell-angle-gamma) | <code>project.structures[0].cell.angle_gamma</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="atom-site" aria-hidden="true">&#62930;</span> Atom site](../physics/parameters.md#atom-site)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#atom-site-id) | <code>project.structures[0].atom_sites[0].id</code> | — |
-    | [type](../physics/parameters.md#atom-site-type-symbol) | <code>project.structures[0].atom_sites[0].type_symbol</code> | — |
-    | [WP](../physics/parameters.md#atom-site-wyckoff-letter) | <code>project.structures[0].atom_sites[0].wyckoff_letter</code> | — |
-    | [ADP type](../physics/parameters.md#atom-site-adp-type) | <code>project.structures[0].atom_sites[0].adp_type</code> | — |
-    | [x](../physics/parameters.md#atom-site-fract-x) | <code>project.structures[0].atom_sites[0].fract_x</code> | — |
-    | [y](../physics/parameters.md#atom-site-fract-y) | <code>project.structures[0].atom_sites[0].fract_y</code> | — |
-    | [z](../physics/parameters.md#atom-site-fract-z) | <code>project.structures[0].atom_sites[0].fract_z</code> | — |
-    | [occ](../physics/parameters.md#atom-site-occupancy) | <code>project.structures[0].atom_sites[0].occupancy</code> | — |
-    | [iso/eq](../physics/parameters.md#atom-site-adp-iso) | <code>project.structures[0].atom_sites[0].adp_iso</code> | Å² |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Unique atom-site identifier](../physics/parameters.md#atom-site-id) | <code>project.structures[0].atom_sites[0].id</code> |
+    | [Chemical symbol of the atom at this site](../physics/parameters.md#atom-site-type-symbol) | <code>project.structures[0].atom_sites[0].type_symbol</code> |
+    | [Wyckoff letter of the site in its space group](../physics/parameters.md#atom-site-wyckoff-letter) | <code>project.structures[0].atom_sites[0].wyckoff_letter</code> |
+    | [Atomic displacement parameter type: Biso, Uiso, Bani, Uani or beta](../physics/parameters.md#atom-site-adp-type) | <code>project.structures[0].atom_sites[0].adp_type</code> |
+    | [Fractional x-coordinate](../physics/parameters.md#atom-site-fract-x) | <code>project.structures[0].atom_sites[0].fract_x</code> |
+    | [Fractional y-coordinate](../physics/parameters.md#atom-site-fract-y) | <code>project.structures[0].atom_sites[0].fract_y</code> |
+    | [Fractional z-coordinate](../physics/parameters.md#atom-site-fract-z) | <code>project.structures[0].atom_sites[0].fract_z</code> |
+    | [Site occupancy](../physics/parameters.md#atom-site-occupancy) | <code>project.structures[0].atom_sites[0].occupancy</code> |
+    | [Isotropic or equivalent displacement](../physics/parameters.md#atom-site-adp-iso) | <code>project.structures[0].atom_sites[0].adp_iso</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="atom-site-aniso" aria-hidden="true">&#61618;</span> Atomic displacement](../physics/parameters.md#atom-site-aniso)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#atom-site-aniso-id) | <code>project.structures[0].atom_site_aniso[0].id</code> | — |
-    | [11](../physics/parameters.md#atom-site-aniso-adp-11) | <code>project.structures[0].atom_site_aniso[0].adp_11</code> | Å² |
-    | [22](../physics/parameters.md#atom-site-aniso-adp-22) | <code>project.structures[0].atom_site_aniso[0].adp_22</code> | Å² |
-    | [33](../physics/parameters.md#atom-site-aniso-adp-33) | <code>project.structures[0].atom_site_aniso[0].adp_33</code> | Å² |
-    | [12](../physics/parameters.md#atom-site-aniso-adp-12) | <code>project.structures[0].atom_site_aniso[0].adp_12</code> | Å² |
-    | [13](../physics/parameters.md#atom-site-aniso-adp-13) | <code>project.structures[0].atom_site_aniso[0].adp_13</code> | Å² |
-    | [23](../physics/parameters.md#atom-site-aniso-adp-23) | <code>project.structures[0].atom_site_aniso[0].adp_23</code> | Å² |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#atom-site-aniso-id) | <code>project.structures[0].atom_site_aniso[0].id</code> |
+    | [Anisotropic displacement tensor component 11](../physics/parameters.md#atom-site-aniso-adp-11) | <code>project.structures[0].atom_site_aniso[0].adp_11</code> |
+    | [Anisotropic displacement tensor component 22](../physics/parameters.md#atom-site-aniso-adp-22) | <code>project.structures[0].atom_site_aniso[0].adp_22</code> |
+    | [Anisotropic displacement tensor component 33](../physics/parameters.md#atom-site-aniso-adp-33) | <code>project.structures[0].atom_site_aniso[0].adp_33</code> |
+    | [Anisotropic displacement tensor component 12](../physics/parameters.md#atom-site-aniso-adp-12) | <code>project.structures[0].atom_site_aniso[0].adp_12</code> |
+    | [Anisotropic displacement tensor component 13](../physics/parameters.md#atom-site-aniso-adp-13) | <code>project.structures[0].atom_site_aniso[0].adp_13</code> |
+    | [Anisotropic displacement tensor component 23](../physics/parameters.md#atom-site-aniso-adp-23) | <code>project.structures[0].atom_site_aniso[0].adp_23</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="scattering-length" aria-hidden="true">&#62789;</span> Scattering length](../physics/parameters.md#scattering-length)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [type](../physics/parameters.md#scattering-length-type-symbol) | — | — |
-    | [b](../physics/parameters.md#scattering-length-length-fm) | — | fm |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Type symbol](../physics/parameters.md#scattering-length-type-symbol) | — |
+    | [Length fm](../physics/parameters.md#scattering-length-length-fm) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="geom" aria-hidden="true">&#62790;</span> Bond settings](../physics/parameters.md#geom)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [minimum distance](../physics/parameters.md#geom-min-bond-distance-cutoff) | <code>project.structures[0].geom.min_bond_distance_cutoff</code> | Å |
-    | [tolerance](../physics/parameters.md#geom-bond-distance-inc) | <code>project.structures[0].geom.bond_distance_inc</code> | Å |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Atoms closer than this are not bonded](../physics/parameters.md#geom-min-bond-distance-cutoff) | <code>project.structures[0].geom.min_bond_distance_cutoff</code> |
+    | [How much longer than the sum of the covalent radii a bond may be](../physics/parameters.md#geom-bond-distance-inc) | <code>project.structures[0].geom.bond_distance_inc</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="structure-view" aria-hidden="true">&#62783;</span> Appearance](../physics/parameters.md#structure-view)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [atoms as](../physics/parameters.md#structure-view-atom-view) | — | — |
-    | [colours](../physics/parameters.md#structure-view-colour-scheme) | — | — |
-    | [atom scale](../physics/parameters.md#structure-view-atom-scale) | — | — |
-    | [probability](../physics/parameters.md#structure-view-adp-probability) | — | — |
-    | [labels](../physics/parameters.md#structure-view-labels) | — | — |
-    | [atoms shown](../physics/parameters.md#structure-view-atoms) | — | — |
-    | [bonds](../physics/parameters.md#structure-view-bonds) | — | — |
-    | [cell](../physics/parameters.md#structure-view-cell) | — | — |
-    | [axes](../physics/parameters.md#structure-view-axes) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [What sets the size of each atom](../physics/parameters.md#structure-view-atom-view) | — |
+    | [Colours](../physics/parameters.md#structure-view-colour-scheme) | — |
+    | [Atom scale](../physics/parameters.md#structure-view-atom-scale) | — |
+    | [Probability](../physics/parameters.md#structure-view-adp-probability) | — |
+    | [Labels](../physics/parameters.md#structure-view-labels) | — |
+    | [Which atoms are drawn](../physics/parameters.md#structure-view-atoms) | — |
+    | [Bonds](../physics/parameters.md#structure-view-bonds) | — |
+    | [Cell](../physics/parameters.md#structure-view-cell) | — |
+    | [Axes](../physics/parameters.md#structure-view-axes) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="space-group-symop" aria-hidden="true">&#62193;</span> Symmetry operator](../physics/parameters.md#space-group-symop)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [operation](../physics/parameters.md#space-group-symop-operation-xyz) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Operation](../physics/parameters.md#space-group-symop-operation-xyz) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="expanded-atom-site" aria-hidden="true">&#62113;</span> Atom in the cell](../physics/parameters.md#expanded-atom-site)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [site](../physics/parameters.md#expanded-atom-site-atom-site-id) | — | — |
-    | [symmetry](../physics/parameters.md#expanded-atom-site-site-symmetry) | — | — |
-    | [x](../physics/parameters.md#expanded-atom-site-fract-x) | — | — |
-    | [y](../physics/parameters.md#expanded-atom-site-fract-y) | — | — |
-    | [z](../physics/parameters.md#expanded-atom-site-fract-z) | — | — |
-    | [X](../physics/parameters.md#expanded-atom-site-cartn-x) | — | Å |
-    | [Y](../physics/parameters.md#expanded-atom-site-cartn-y) | — | Å |
-    | [Z](../physics/parameters.md#expanded-atom-site-cartn-z) | — | Å |
-    | [occ](../physics/parameters.md#expanded-atom-site-occupancy) | — | — |
-    | [U iso](../physics/parameters.md#expanded-atom-site-u-iso) | — | Å² |
-    | [cluster](../physics/parameters.md#expanded-atom-site-cluster-id) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Site](../physics/parameters.md#expanded-atom-site-atom-site-id) | — |
+    | [Symmetry](../physics/parameters.md#expanded-atom-site-site-symmetry) | — |
+    | [Fractional x-coordinate](../physics/parameters.md#expanded-atom-site-fract-x) | — |
+    | [Fractional y-coordinate](../physics/parameters.md#expanded-atom-site-fract-y) | — |
+    | [Fractional z-coordinate](../physics/parameters.md#expanded-atom-site-fract-z) | — |
+    | [Cartesian x-coordinate](../physics/parameters.md#expanded-atom-site-cartn-x) | — |
+    | [Cartesian y-coordinate](../physics/parameters.md#expanded-atom-site-cartn-y) | — |
+    | [Cartesian z-coordinate](../physics/parameters.md#expanded-atom-site-cartn-z) | — |
+    | [Occupancy of the atom](../physics/parameters.md#expanded-atom-site-occupancy) | — |
+    | [Isotropic displacement of the atom, as U](../physics/parameters.md#expanded-atom-site-u-iso) | — |
+    | [Atoms within one shared position carry the same cluster number](../physics/parameters.md#expanded-atom-site-cluster-id) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="geom-bond" aria-hidden="true">&#63396;</span> Bond](../physics/parameters.md#geom-bond)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [atom 1](../physics/parameters.md#geom-bond-expanded-atom-site-id-1) | — | — |
-    | [atom 2](../physics/parameters.md#geom-bond-expanded-atom-site-id-2) | — | — |
-    | [site 1](../physics/parameters.md#geom-bond-atom-site-label-1) | — | — |
-    | [site 2](../physics/parameters.md#geom-bond-atom-site-label-2) | — | — |
-    | [symmetry 1](../physics/parameters.md#geom-bond-site-symmetry-1) | — | — |
-    | [symmetry 2](../physics/parameters.md#geom-bond-site-symmetry-2) | — | — |
-    | [distance](../physics/parameters.md#geom-bond-distance) | — | Å |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Atom 1](../physics/parameters.md#geom-bond-expanded-atom-site-id-1) | — |
+    | [Atom 2](../physics/parameters.md#geom-bond-expanded-atom-site-id-2) | — |
+    | [Site 1](../physics/parameters.md#geom-bond-atom-site-label-1) | — |
+    | [Site 2](../physics/parameters.md#geom-bond-atom-site-label-2) | — |
+    | [Symmetry 1](../physics/parameters.md#geom-bond-site-symmetry-1) | — |
+    | [Symmetry 2](../physics/parameters.md#geom-bond-site-symmetry-2) | — |
+    | [Distance](../physics/parameters.md#geom-bond-distance) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="atom-sites-cartn-transform" aria-hidden="true">&#62923;</span> Cartesian frame](../physics/parameters.md#atom-sites-cartn-transform)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [M₁₁](../physics/parameters.md#atom-sites-cartn-transform-mat-11) | — | Å |
-    | [M₁₂](../physics/parameters.md#atom-sites-cartn-transform-mat-12) | — | Å |
-    | [M₁₃](../physics/parameters.md#atom-sites-cartn-transform-mat-13) | — | Å |
-    | [M₂₁](../physics/parameters.md#atom-sites-cartn-transform-mat-21) | — | Å |
-    | [M₂₂](../physics/parameters.md#atom-sites-cartn-transform-mat-22) | — | Å |
-    | [M₂₃](../physics/parameters.md#atom-sites-cartn-transform-mat-23) | — | Å |
-    | [M₃₁](../physics/parameters.md#atom-sites-cartn-transform-mat-31) | — | Å |
-    | [M₃₂](../physics/parameters.md#atom-sites-cartn-transform-mat-32) | — | Å |
-    | [M₃₃](../physics/parameters.md#atom-sites-cartn-transform-mat-33) | — | Å |
-    | [axes](../physics/parameters.md#atom-sites-cartn-transform-axes) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Element 11 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-11) | — |
+    | [Element 12 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-12) | — |
+    | [Element 13 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-13) | — |
+    | [Element 21 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-21) | — |
+    | [Element 22 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-22) | — |
+    | [Element 23 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-23) | — |
+    | [Element 31 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-31) | — |
+    | [Element 32 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-32) | — |
+    | [Element 33 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-33) | — |
+    | [How the Cartesian axes are placed in the cell](../physics/parameters.md#atom-sites-cartn-transform-axes) | — |
 
 === "CIF"
 
     **[<span class="ed-reference-icon" data-reference-category="space-group" aria-hidden="true">&#63423;</span> Space group](../physics/parameters.md#space-group)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [name](../physics/parameters.md#space-group-name-h-m) | <code>_space_group.name_H-M_alt</code> | — |
-    | [code](../physics/parameters.md#space-group-coord-system-code) | <code>_space_group.IT_coordinate_system_code</code> | — |
-    | [number](../physics/parameters.md#space-group-it-number) | <code>_space_group.IT_number</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Hermann-Mauguin symbol](../physics/parameters.md#space-group-name-h-m) | <code>_space_group.name_H-M_alt</code><details><summary>Accepted aliases</summary><code>_space_group_name_H-M_alt</code><br><code>_symmetry.space_group_name_H-M</code><br><code>_symmetry_space_group_name_H-M</code></details> |
+    | [Space-group setting](../physics/parameters.md#space-group-coord-system-code) | <code>_space_group.IT_coordinate_system_code</code><details><summary>Accepted aliases</summary><code>_space_group_IT_coordinate_system_code</code><br><code>_symmetry.IT_coordinate_system_code</code><br><code>_symmetry_IT_coordinate_system_code</code></details> |
+    | [Space-group number](../physics/parameters.md#space-group-it-number) | <code>_space_group.IT_number</code><details><summary>Accepted aliases</summary><code>_space_group_IT_number</code><br><code>_symmetry.Int_Tables_number</code><br><code>_symmetry_Int_Tables_number</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="cell" aria-hidden="true">&#61874;</span> Cell](../physics/parameters.md#cell)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [a](../physics/parameters.md#cell-length-a) | <code>_cell.length_a</code> | Å |
-    | [b](../physics/parameters.md#cell-length-b) | <code>_cell.length_b</code> | Å |
-    | [c](../physics/parameters.md#cell-length-c) | <code>_cell.length_c</code> | Å |
-    | [α](../physics/parameters.md#cell-angle-alpha) | <code>_cell.angle_alpha</code> | deg |
-    | [β](../physics/parameters.md#cell-angle-beta) | <code>_cell.angle_beta</code> | deg |
-    | [γ](../physics/parameters.md#cell-angle-gamma) | <code>_cell.angle_gamma</code> | deg |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Cell length a](../physics/parameters.md#cell-length-a) | <code>_cell.length_a</code><details><summary>Accepted aliases</summary><code>_cell_length_a</code></details> |
+    | [Cell length b](../physics/parameters.md#cell-length-b) | <code>_cell.length_b</code><details><summary>Accepted aliases</summary><code>_cell_length_b</code></details> |
+    | [Cell length c](../physics/parameters.md#cell-length-c) | <code>_cell.length_c</code><details><summary>Accepted aliases</summary><code>_cell_length_c</code></details> |
+    | [Cell angle α](../physics/parameters.md#cell-angle-alpha) | <code>_cell.angle_alpha</code><details><summary>Accepted aliases</summary><code>_cell_angle_alpha</code></details> |
+    | [Cell angle β](../physics/parameters.md#cell-angle-beta) | <code>_cell.angle_beta</code><details><summary>Accepted aliases</summary><code>_cell_angle_beta</code></details> |
+    | [Cell angle γ](../physics/parameters.md#cell-angle-gamma) | <code>_cell.angle_gamma</code><details><summary>Accepted aliases</summary><code>_cell_angle_gamma</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="atom-site" aria-hidden="true">&#62930;</span> Atom site](../physics/parameters.md#atom-site)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#atom-site-id) | <code>_atom_site.label</code> | — |
-    | [type](../physics/parameters.md#atom-site-type-symbol) | <code>_atom_site.type_symbol</code> | — |
-    | [WP](../physics/parameters.md#atom-site-wyckoff-letter) | <code>_atom_site.Wyckoff_symbol</code> | — |
-    | [ADP type](../physics/parameters.md#atom-site-adp-type) | <code>_atom_site.ADP_type</code> | — |
-    | [x](../physics/parameters.md#atom-site-fract-x) | <code>_atom_site.fract_x</code> | — |
-    | [y](../physics/parameters.md#atom-site-fract-y) | <code>_atom_site.fract_y</code> | — |
-    | [z](../physics/parameters.md#atom-site-fract-z) | <code>_atom_site.fract_z</code> | — |
-    | [occ](../physics/parameters.md#atom-site-occupancy) | <code>_atom_site.occupancy</code> | — |
-    | [iso/eq](../physics/parameters.md#atom-site-adp-iso) | <code>Biso</code>: <code>_atom_site.B_iso_or_equiv</code><br><code>Uiso</code>: <code>_atom_site.U_iso_or_equiv</code><br><code>Bani</code>: <code>_atom_site.B_iso_or_equiv</code><br><code>Uani</code>: <code>_atom_site.U_iso_or_equiv</code><br><code>beta</code>: <code>_atom_site.B_iso_or_equiv</code> | Å² |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Unique atom-site identifier](../physics/parameters.md#atom-site-id) | <code>_atom_site.label</code><details><summary>Accepted aliases</summary><code>_atom_site_label</code><br><code>_atom_site.id</code></details> |
+    | [Chemical symbol of the atom at this site](../physics/parameters.md#atom-site-type-symbol) | <code>_atom_site.type_symbol</code><details><summary>Accepted aliases</summary><code>_atom_site_type_symbol</code></details> |
+    | [Wyckoff letter of the site in its space group](../physics/parameters.md#atom-site-wyckoff-letter) | <code>_atom_site.Wyckoff_symbol</code><details><summary>Accepted aliases</summary><code>_atom_site_Wyckoff_symbol</code><br><code>_atom_site.Wyckoff_letter</code></details> |
+    | [Atomic displacement parameter type: Biso, Uiso, Bani, Uani or beta](../physics/parameters.md#atom-site-adp-type) | <code>_atom_site.ADP_type</code><details><summary>Accepted aliases</summary><code>_atom_site_ADP_type</code><br><code>_atom_site_thermal_displace_type</code><br><code>_atom_site.thermal_displace_type</code></details> |
+    | [Fractional x-coordinate](../physics/parameters.md#atom-site-fract-x) | <code>_atom_site.fract_x</code><details><summary>Accepted aliases</summary><code>_atom_site_fract_x</code></details> |
+    | [Fractional y-coordinate](../physics/parameters.md#atom-site-fract-y) | <code>_atom_site.fract_y</code><details><summary>Accepted aliases</summary><code>_atom_site_fract_y</code></details> |
+    | [Fractional z-coordinate](../physics/parameters.md#atom-site-fract-z) | <code>_atom_site.fract_z</code><details><summary>Accepted aliases</summary><code>_atom_site_fract_z</code></details> |
+    | [Site occupancy](../physics/parameters.md#atom-site-occupancy) | <code>_atom_site.occupancy</code><details><summary>Accepted aliases</summary><code>_atom_site_occupancy</code></details> |
+    | [Isotropic or equivalent displacement](../physics/parameters.md#atom-site-adp-iso) | <code>Biso</code>: <code>_atom_site.B_iso_or_equiv</code><br><code>Uiso</code>: <code>_atom_site.U_iso_or_equiv</code><br><code>Bani</code>: <code>_atom_site.B_iso_or_equiv</code><br><code>Uani</code>: <code>_atom_site.U_iso_or_equiv</code><br><code>beta</code>: <code>_atom_site.B_iso_or_equiv</code><details><summary>Accepted aliases</summary><code>_atom_site_B_iso_or_equiv</code><br><code>_atom_site_U_iso_or_equiv</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="atom-site-aniso" aria-hidden="true">&#61618;</span> Atomic displacement](../physics/parameters.md#atom-site-aniso)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#atom-site-aniso-id) | <code>_atom_site_aniso.label</code> | — |
-    | [11](../physics/parameters.md#atom-site-aniso-adp-11) | <code>Uani</code>: <code>_atom_site_aniso.U_11</code><br><code>Bani</code>: <code>_atom_site_aniso.B_11</code><br><code>beta</code>: <code>_atom_site_aniso.beta_11</code> | Å² |
-    | [22](../physics/parameters.md#atom-site-aniso-adp-22) | <code>Uani</code>: <code>_atom_site_aniso.U_22</code><br><code>Bani</code>: <code>_atom_site_aniso.B_22</code><br><code>beta</code>: <code>_atom_site_aniso.beta_22</code> | Å² |
-    | [33](../physics/parameters.md#atom-site-aniso-adp-33) | <code>Uani</code>: <code>_atom_site_aniso.U_33</code><br><code>Bani</code>: <code>_atom_site_aniso.B_33</code><br><code>beta</code>: <code>_atom_site_aniso.beta_33</code> | Å² |
-    | [12](../physics/parameters.md#atom-site-aniso-adp-12) | <code>Uani</code>: <code>_atom_site_aniso.U_12</code><br><code>Bani</code>: <code>_atom_site_aniso.B_12</code><br><code>beta</code>: <code>_atom_site_aniso.beta_12</code> | Å² |
-    | [13](../physics/parameters.md#atom-site-aniso-adp-13) | <code>Uani</code>: <code>_atom_site_aniso.U_13</code><br><code>Bani</code>: <code>_atom_site_aniso.B_13</code><br><code>beta</code>: <code>_atom_site_aniso.beta_13</code> | Å² |
-    | [23](../physics/parameters.md#atom-site-aniso-adp-23) | <code>Uani</code>: <code>_atom_site_aniso.U_23</code><br><code>Bani</code>: <code>_atom_site_aniso.B_23</code><br><code>beta</code>: <code>_atom_site_aniso.beta_23</code> | Å² |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#atom-site-aniso-id) | <code>_atom_site_aniso.label</code><details><summary>Accepted aliases</summary><code>_atom_site_aniso_label</code><br><code>_atom_site_anisotrop.id</code></details> |
+    | [Anisotropic displacement tensor component 11](../physics/parameters.md#atom-site-aniso-adp-11) | <code>Uani</code>: <code>_atom_site_aniso.U_11</code><br><code>Bani</code>: <code>_atom_site_aniso.B_11</code><br><code>beta</code>: <code>_atom_site_aniso.beta_11</code><details><summary>Accepted aliases</summary><code>_atom_site_aniso_B_11</code><br><code>_atom_site.aniso_B[1][1]</code><br><code>_atom_site_anisotrop.B[1][1]</code><br><code>_atom_site_aniso_U_11</code><br><code>_atom_site.aniso_U[1][1]</code><br><code>_atom_site_anisotrop.U[1][1]</code><br><code>_atom_site_aniso_beta_11</code></details> |
+    | [Anisotropic displacement tensor component 22](../physics/parameters.md#atom-site-aniso-adp-22) | <code>Uani</code>: <code>_atom_site_aniso.U_22</code><br><code>Bani</code>: <code>_atom_site_aniso.B_22</code><br><code>beta</code>: <code>_atom_site_aniso.beta_22</code><details><summary>Accepted aliases</summary><code>_atom_site_aniso_B_22</code><br><code>_atom_site.aniso_B[2][2]</code><br><code>_atom_site_anisotrop.B[2][2]</code><br><code>_atom_site_aniso_U_22</code><br><code>_atom_site.aniso_U[2][2]</code><br><code>_atom_site_anisotrop.U[2][2]</code><br><code>_atom_site_aniso_beta_22</code></details> |
+    | [Anisotropic displacement tensor component 33](../physics/parameters.md#atom-site-aniso-adp-33) | <code>Uani</code>: <code>_atom_site_aniso.U_33</code><br><code>Bani</code>: <code>_atom_site_aniso.B_33</code><br><code>beta</code>: <code>_atom_site_aniso.beta_33</code><details><summary>Accepted aliases</summary><code>_atom_site_aniso_B_33</code><br><code>_atom_site.aniso_B[3][3]</code><br><code>_atom_site_anisotrop.B[3][3]</code><br><code>_atom_site_aniso_U_33</code><br><code>_atom_site.aniso_U[3][3]</code><br><code>_atom_site_anisotrop.U[3][3]</code><br><code>_atom_site_aniso_beta_33</code></details> |
+    | [Anisotropic displacement tensor component 12](../physics/parameters.md#atom-site-aniso-adp-12) | <code>Uani</code>: <code>_atom_site_aniso.U_12</code><br><code>Bani</code>: <code>_atom_site_aniso.B_12</code><br><code>beta</code>: <code>_atom_site_aniso.beta_12</code><details><summary>Accepted aliases</summary><code>_atom_site_aniso_B_12</code><br><code>_atom_site.aniso_B[1][2]</code><br><code>_atom_site_anisotrop.B[1][2]</code><br><code>_atom_site_aniso_U_12</code><br><code>_atom_site.aniso_U[1][2]</code><br><code>_atom_site_anisotrop.U[1][2]</code><br><code>_atom_site_aniso_beta_12</code></details> |
+    | [Anisotropic displacement tensor component 13](../physics/parameters.md#atom-site-aniso-adp-13) | <code>Uani</code>: <code>_atom_site_aniso.U_13</code><br><code>Bani</code>: <code>_atom_site_aniso.B_13</code><br><code>beta</code>: <code>_atom_site_aniso.beta_13</code><details><summary>Accepted aliases</summary><code>_atom_site_aniso_B_13</code><br><code>_atom_site.aniso_B[1][3]</code><br><code>_atom_site_anisotrop.B[1][3]</code><br><code>_atom_site_aniso_U_13</code><br><code>_atom_site.aniso_U[1][3]</code><br><code>_atom_site_anisotrop.U[1][3]</code><br><code>_atom_site_aniso_beta_13</code></details> |
+    | [Anisotropic displacement tensor component 23](../physics/parameters.md#atom-site-aniso-adp-23) | <code>Uani</code>: <code>_atom_site_aniso.U_23</code><br><code>Bani</code>: <code>_atom_site_aniso.B_23</code><br><code>beta</code>: <code>_atom_site_aniso.beta_23</code><details><summary>Accepted aliases</summary><code>_atom_site_aniso_B_23</code><br><code>_atom_site.aniso_B[2][3]</code><br><code>_atom_site_anisotrop.B[2][3]</code><br><code>_atom_site_aniso_U_23</code><br><code>_atom_site.aniso_U[2][3]</code><br><code>_atom_site_anisotrop.U[2][3]</code><br><code>_atom_site_aniso_beta_23</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="scattering-length" aria-hidden="true">&#62789;</span> Scattering length](../physics/parameters.md#scattering-length)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [type](../physics/parameters.md#scattering-length-type-symbol) | <code>_edi_scattering_length.type_symbol</code> | — |
-    | [b](../physics/parameters.md#scattering-length-length-fm) | <code>_edi_scattering_length.length_fm</code> | fm |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Type symbol](../physics/parameters.md#scattering-length-type-symbol) | <code>_edi_scattering_length.type_symbol</code> |
+    | [Length fm](../physics/parameters.md#scattering-length-length-fm) | <code>_edi_scattering_length.length_fm</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="geom" aria-hidden="true">&#62790;</span> Bond settings](../physics/parameters.md#geom)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [minimum distance](../physics/parameters.md#geom-min-bond-distance-cutoff) | <code>_geom.min_bond_distance_cutoff</code> | Å |
-    | [tolerance](../physics/parameters.md#geom-bond-distance-inc) | <code>_geom.bond_distance_incr</code> | Å |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Atoms closer than this are not bonded](../physics/parameters.md#geom-min-bond-distance-cutoff) | <code>_geom.min_bond_distance_cutoff</code> |
+    | [How much longer than the sum of the covalent radii a bond may be](../physics/parameters.md#geom-bond-distance-inc) | <code>_geom.bond_distance_incr</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="structure-view" aria-hidden="true">&#62783;</span> Appearance](../physics/parameters.md#structure-view)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [atoms as](../physics/parameters.md#structure-view-atom-view) | <code>_edi_structure_view.atom_view</code> | — |
-    | [colours](../physics/parameters.md#structure-view-colour-scheme) | <code>_edi_structure_view.colour_scheme</code> | — |
-    | [atom scale](../physics/parameters.md#structure-view-atom-scale) | <code>_edi_structure_view.atom_scale</code> | — |
-    | [probability](../physics/parameters.md#structure-view-adp-probability) | <code>_edi_structure_view.adp_probability</code> | — |
-    | [labels](../physics/parameters.md#structure-view-labels) | <code>_edi_structure_view.labels</code> | — |
-    | [atoms shown](../physics/parameters.md#structure-view-atoms) | <code>_edi_structure_view.atoms</code> | — |
-    | [bonds](../physics/parameters.md#structure-view-bonds) | <code>_edi_structure_view.bonds</code> | — |
-    | [cell](../physics/parameters.md#structure-view-cell) | <code>_edi_structure_view.cell</code> | — |
-    | [axes](../physics/parameters.md#structure-view-axes) | <code>_edi_structure_view.axes</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [What sets the size of each atom](../physics/parameters.md#structure-view-atom-view) | <code>_edi_structure_view.atom_view</code> |
+    | [Colours](../physics/parameters.md#structure-view-colour-scheme) | <code>_edi_structure_view.colour_scheme</code> |
+    | [Atom scale](../physics/parameters.md#structure-view-atom-scale) | <code>_edi_structure_view.atom_scale</code> |
+    | [Probability](../physics/parameters.md#structure-view-adp-probability) | <code>_edi_structure_view.adp_probability</code> |
+    | [Labels](../physics/parameters.md#structure-view-labels) | <code>_edi_structure_view.labels</code> |
+    | [Which atoms are drawn](../physics/parameters.md#structure-view-atoms) | <code>_edi_structure_view.atoms</code> |
+    | [Bonds](../physics/parameters.md#structure-view-bonds) | <code>_edi_structure_view.bonds</code> |
+    | [Cell](../physics/parameters.md#structure-view-cell) | <code>_edi_structure_view.cell</code> |
+    | [Axes](../physics/parameters.md#structure-view-axes) | <code>_edi_structure_view.axes</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="space-group-symop" aria-hidden="true">&#62193;</span> Symmetry operator](../physics/parameters.md#space-group-symop)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [operation](../physics/parameters.md#space-group-symop-operation-xyz) | <code>_space_group_symop.operation_xyz</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Operation](../physics/parameters.md#space-group-symop-operation-xyz) | <code>_space_group_symop.operation_xyz</code><details><summary>Accepted aliases</summary><code>_space_group_symop_operation_xyz</code><br><code>_symmetry_equiv.pos_as_xyz</code><br><code>_symmetry_equiv_pos_as_xyz</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="expanded-atom-site" aria-hidden="true">&#62113;</span> Atom in the cell](../physics/parameters.md#expanded-atom-site)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [site](../physics/parameters.md#expanded-atom-site-atom-site-id) | <code>_edi_expanded_atom_site.atom_site_id</code> | — |
-    | [symmetry](../physics/parameters.md#expanded-atom-site-site-symmetry) | <code>_edi_expanded_atom_site.site_symmetry</code> | — |
-    | [x](../physics/parameters.md#expanded-atom-site-fract-x) | <code>_edi_expanded_atom_site.fract_x</code> | — |
-    | [y](../physics/parameters.md#expanded-atom-site-fract-y) | <code>_edi_expanded_atom_site.fract_y</code> | — |
-    | [z](../physics/parameters.md#expanded-atom-site-fract-z) | <code>_edi_expanded_atom_site.fract_z</code> | — |
-    | [X](../physics/parameters.md#expanded-atom-site-cartn-x) | <code>_edi_expanded_atom_site.cartn_x</code> | Å |
-    | [Y](../physics/parameters.md#expanded-atom-site-cartn-y) | <code>_edi_expanded_atom_site.cartn_y</code> | Å |
-    | [Z](../physics/parameters.md#expanded-atom-site-cartn-z) | <code>_edi_expanded_atom_site.cartn_z</code> | Å |
-    | [occ](../physics/parameters.md#expanded-atom-site-occupancy) | <code>_edi_expanded_atom_site.occupancy</code> | — |
-    | [U iso](../physics/parameters.md#expanded-atom-site-u-iso) | <code>_edi_expanded_atom_site.u_iso</code> | Å² |
-    | [cluster](../physics/parameters.md#expanded-atom-site-cluster-id) | <code>_edi_expanded_atom_site.cluster_id</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Site](../physics/parameters.md#expanded-atom-site-atom-site-id) | <code>_edi_expanded_atom_site.atom_site_id</code> |
+    | [Symmetry](../physics/parameters.md#expanded-atom-site-site-symmetry) | <code>_edi_expanded_atom_site.site_symmetry</code> |
+    | [Fractional x-coordinate](../physics/parameters.md#expanded-atom-site-fract-x) | <code>_edi_expanded_atom_site.fract_x</code> |
+    | [Fractional y-coordinate](../physics/parameters.md#expanded-atom-site-fract-y) | <code>_edi_expanded_atom_site.fract_y</code> |
+    | [Fractional z-coordinate](../physics/parameters.md#expanded-atom-site-fract-z) | <code>_edi_expanded_atom_site.fract_z</code> |
+    | [Cartesian x-coordinate](../physics/parameters.md#expanded-atom-site-cartn-x) | <code>_edi_expanded_atom_site.cartn_x</code> |
+    | [Cartesian y-coordinate](../physics/parameters.md#expanded-atom-site-cartn-y) | <code>_edi_expanded_atom_site.cartn_y</code> |
+    | [Cartesian z-coordinate](../physics/parameters.md#expanded-atom-site-cartn-z) | <code>_edi_expanded_atom_site.cartn_z</code> |
+    | [Occupancy of the atom](../physics/parameters.md#expanded-atom-site-occupancy) | <code>_edi_expanded_atom_site.occupancy</code> |
+    | [Isotropic displacement of the atom, as U](../physics/parameters.md#expanded-atom-site-u-iso) | <code>_edi_expanded_atom_site.u_iso</code> |
+    | [Atoms within one shared position carry the same cluster number](../physics/parameters.md#expanded-atom-site-cluster-id) | <code>_edi_expanded_atom_site.cluster_id</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="geom-bond" aria-hidden="true">&#63396;</span> Bond](../physics/parameters.md#geom-bond)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [atom 1](../physics/parameters.md#geom-bond-expanded-atom-site-id-1) | <code>_edi_geom_bond.expanded_atom_site_id_1</code> | — |
-    | [atom 2](../physics/parameters.md#geom-bond-expanded-atom-site-id-2) | <code>_edi_geom_bond.expanded_atom_site_id_2</code> | — |
-    | [site 1](../physics/parameters.md#geom-bond-atom-site-label-1) | <code>_geom_bond.atom_site_label_1</code> | — |
-    | [site 2](../physics/parameters.md#geom-bond-atom-site-label-2) | <code>_geom_bond.atom_site_label_2</code> | — |
-    | [symmetry 1](../physics/parameters.md#geom-bond-site-symmetry-1) | <code>_geom_bond.site_symmetry_1</code> | — |
-    | [symmetry 2](../physics/parameters.md#geom-bond-site-symmetry-2) | <code>_geom_bond.site_symmetry_2</code> | — |
-    | [distance](../physics/parameters.md#geom-bond-distance) | <code>_geom_bond.distance</code> | Å |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Atom 1](../physics/parameters.md#geom-bond-expanded-atom-site-id-1) | <code>_edi_geom_bond.expanded_atom_site_id_1</code> |
+    | [Atom 2](../physics/parameters.md#geom-bond-expanded-atom-site-id-2) | <code>_edi_geom_bond.expanded_atom_site_id_2</code> |
+    | [Site 1](../physics/parameters.md#geom-bond-atom-site-label-1) | <code>_geom_bond.atom_site_label_1</code><details><summary>Accepted aliases</summary><code>_geom_bond_atom_site_label_1</code><br><code>_geom_bond.atom_site_id_1</code></details> |
+    | [Site 2](../physics/parameters.md#geom-bond-atom-site-label-2) | <code>_geom_bond.atom_site_label_2</code><details><summary>Accepted aliases</summary><code>_geom_bond_atom_site_label_2</code><br><code>_geom_bond.atom_site_id_2</code></details> |
+    | [Symmetry 1](../physics/parameters.md#geom-bond-site-symmetry-1) | <code>_geom_bond.site_symmetry_1</code><details><summary>Accepted aliases</summary><code>_geom_bond_site_symmetry_1</code></details> |
+    | [Symmetry 2](../physics/parameters.md#geom-bond-site-symmetry-2) | <code>_geom_bond.site_symmetry_2</code><details><summary>Accepted aliases</summary><code>_geom_bond_site_symmetry_2</code></details> |
+    | [Distance](../physics/parameters.md#geom-bond-distance) | <code>_geom_bond.distance</code><details><summary>Accepted aliases</summary><code>_geom_bond_distance</code><br><code>_geom_bond.dist</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="atom-sites-cartn-transform" aria-hidden="true">&#62923;</span> Cartesian frame](../physics/parameters.md#atom-sites-cartn-transform)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [M₁₁](../physics/parameters.md#atom-sites-cartn-transform-mat-11) | <code>_atom_sites_Cartn_transform.mat_11</code> | Å |
-    | [M₁₂](../physics/parameters.md#atom-sites-cartn-transform-mat-12) | <code>_atom_sites_Cartn_transform.mat_12</code> | Å |
-    | [M₁₃](../physics/parameters.md#atom-sites-cartn-transform-mat-13) | <code>_atom_sites_Cartn_transform.mat_13</code> | Å |
-    | [M₂₁](../physics/parameters.md#atom-sites-cartn-transform-mat-21) | <code>_atom_sites_Cartn_transform.mat_21</code> | Å |
-    | [M₂₂](../physics/parameters.md#atom-sites-cartn-transform-mat-22) | <code>_atom_sites_Cartn_transform.mat_22</code> | Å |
-    | [M₂₃](../physics/parameters.md#atom-sites-cartn-transform-mat-23) | <code>_atom_sites_Cartn_transform.mat_23</code> | Å |
-    | [M₃₁](../physics/parameters.md#atom-sites-cartn-transform-mat-31) | <code>_atom_sites_Cartn_transform.mat_31</code> | Å |
-    | [M₃₂](../physics/parameters.md#atom-sites-cartn-transform-mat-32) | <code>_atom_sites_Cartn_transform.mat_32</code> | Å |
-    | [M₃₃](../physics/parameters.md#atom-sites-cartn-transform-mat-33) | <code>_atom_sites_Cartn_transform.mat_33</code> | Å |
-    | [axes](../physics/parameters.md#atom-sites-cartn-transform-axes) | <code>_atom_sites_Cartn_transform.axes</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Element 11 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-11) | <code>_atom_sites_Cartn_transform.mat_11</code><details><summary>Accepted aliases</summary><code>_atom_sites_Cartn_tran_matrix_11</code><br><code>_atom_sites.Cartn_transf_matrix[1][1]</code></details> |
+    | [Element 12 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-12) | <code>_atom_sites_Cartn_transform.mat_12</code><details><summary>Accepted aliases</summary><code>_atom_sites_Cartn_tran_matrix_12</code><br><code>_atom_sites.Cartn_transf_matrix[1][2]</code></details> |
+    | [Element 13 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-13) | <code>_atom_sites_Cartn_transform.mat_13</code><details><summary>Accepted aliases</summary><code>_atom_sites_Cartn_tran_matrix_13</code><br><code>_atom_sites.Cartn_transf_matrix[1][3]</code></details> |
+    | [Element 21 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-21) | <code>_atom_sites_Cartn_transform.mat_21</code><details><summary>Accepted aliases</summary><code>_atom_sites_Cartn_tran_matrix_21</code><br><code>_atom_sites.Cartn_transf_matrix[2][1]</code></details> |
+    | [Element 22 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-22) | <code>_atom_sites_Cartn_transform.mat_22</code><details><summary>Accepted aliases</summary><code>_atom_sites_Cartn_tran_matrix_22</code><br><code>_atom_sites.Cartn_transf_matrix[2][2]</code></details> |
+    | [Element 23 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-23) | <code>_atom_sites_Cartn_transform.mat_23</code><details><summary>Accepted aliases</summary><code>_atom_sites_Cartn_tran_matrix_23</code><br><code>_atom_sites.Cartn_transf_matrix[2][3]</code></details> |
+    | [Element 31 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-31) | <code>_atom_sites_Cartn_transform.mat_31</code><details><summary>Accepted aliases</summary><code>_atom_sites_Cartn_tran_matrix_31</code><br><code>_atom_sites.Cartn_transf_matrix[3][1]</code></details> |
+    | [Element 32 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-32) | <code>_atom_sites_Cartn_transform.mat_32</code><details><summary>Accepted aliases</summary><code>_atom_sites_Cartn_tran_matrix_32</code><br><code>_atom_sites.Cartn_transf_matrix[3][2]</code></details> |
+    | [Element 33 of the fractional-to-Cartesian matrix](../physics/parameters.md#atom-sites-cartn-transform-mat-33) | <code>_atom_sites_Cartn_transform.mat_33</code><details><summary>Accepted aliases</summary><code>_atom_sites_Cartn_tran_matrix_33</code><br><code>_atom_sites.Cartn_transf_matrix[3][3]</code></details> |
+    | [How the Cartesian axes are placed in the cell](../physics/parameters.md#atom-sites-cartn-transform-axes) | <code>_atom_sites_Cartn_transform.axes</code><details><summary>Accepted aliases</summary><code>_atom_sites_Cartn_transform_axes</code><br><code>_atom_sites.Cartn_transform_axes</code></details> |
 
 ## Experiment parameters
 
 === "GUI"
 
-    **[<span class="ed-reference-icon" data-reference-category="experiment-type" aria-hidden="true">&#63417;</span> Experiment type](../physics/parameters.md#experiment-type)**
+    <span class="ed-reference-anchor" id="names-experiment-type">**[<span class="ed-reference-icon" data-reference-category="experiment-type" aria-hidden="true">&#63417;</span> Experiment type](../physics/parameters.md#experiment-type)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [beam mode](../physics/parameters.md#experiment-type-beam-mode) | beam mode | — |
-    | [sample form](../physics/parameters.md#experiment-type-sample-form) | sample form | — |
-    | [probe](../physics/parameters.md#experiment-type-radiation-probe) | probe | — |
-    | [scattering type](../physics/parameters.md#experiment-type-scattering-type) | scattering type | — |
-    | [dimensionality](../physics/parameters.md#experiment-type-dimensionality) | dimensionality | — |
-    | [polarisation](../physics/parameters.md#experiment-type-polarisation) | polarisation | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [How the pattern is measured](../physics/parameters.md#experiment-type-beam-mode) | beam mode |
+    | [Sample form](../physics/parameters.md#experiment-type-sample-form) | sample form |
+    | [Probe](../physics/parameters.md#experiment-type-radiation-probe) | probe |
+    | [Which scattering the pattern is modelled with](../physics/parameters.md#experiment-type-scattering-type) | scattering type |
+    | [Dimensionality](../physics/parameters.md#experiment-type-dimensionality) | dimensionality |
+    | [Polarisation](../physics/parameters.md#experiment-type-polarisation) | polarisation |
 
-    **[<span class="ed-reference-icon" data-reference-category="data-range" aria-hidden="true">&#62263;</span> Calculation range](../physics/parameters.md#data-range)**
+    <span class="ed-reference-anchor" id="names-data-range">**[<span class="ed-reference-icon" data-reference-category="data-range" aria-hidden="true">&#62263;</span> Calculation range](../physics/parameters.md#data-range)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [min](../physics/parameters.md#data-range-two-theta-min) | min | deg |
-    | [max](../physics/parameters.md#data-range-two-theta-max) | max | deg |
-    | [step](../physics/parameters.md#data-range-two-theta-step) | step | deg |
-    | [2θ](../physics/parameters.md#data-range-two-theta) | 2θ | deg |
-    | [min](../physics/parameters.md#data-range-time-of-flight-min) | min | µs |
-    | [max](../physics/parameters.md#data-range-time-of-flight-max) | max | µs |
-    | [step](../physics/parameters.md#data-range-time-of-flight-step) | step | µs |
-    | [TOF](../physics/parameters.md#data-range-time-of-flight) | TOF | µs |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Two theta min](../physics/parameters.md#data-range-two-theta-min) | min |
+    | [Two theta max](../physics/parameters.md#data-range-two-theta-max) | max |
+    | [Step](../physics/parameters.md#data-range-two-theta-step) | step |
+    | [Two theta](../physics/parameters.md#data-range-two-theta) | 2θ |
+    | [Time of flight min](../physics/parameters.md#data-range-time-of-flight-min) | min |
+    | [Time of flight max](../physics/parameters.md#data-range-time-of-flight-max) | max |
+    | [Step](../physics/parameters.md#data-range-time-of-flight-step) | step |
+    | [TOF](../physics/parameters.md#data-range-time-of-flight) | TOF |
 
-    **[<span class="ed-reference-icon" data-reference-category="background" aria-hidden="true">&#63550;</span> Background](../physics/parameters.md#background)**
+    <span class="ed-reference-anchor" id="names-background">**[<span class="ed-reference-icon" data-reference-category="background" aria-hidden="true">&#63550;</span> Background](../physics/parameters.md#background)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [intensity](../physics/parameters.md#background-intensity) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63550;</span> <span class="ed-reference-icon" aria-hidden="true">&#63228;</span> intensity | — |
-    | [position](../physics/parameters.md#background-position) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63550;</span> position | µs |
-    | [coefficient](../physics/parameters.md#background-coef) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63550;</span> coefficient | — |
-    | [order](../physics/parameters.md#background-order) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63550;</span> order | — |
-    | [origin](../physics/parameters.md#background-origin) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63550;</span> origin | — |
-    | [x min](../physics/parameters.md#background-x-min) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63550;</span> x min | — |
-    | [x max](../physics/parameters.md#background-x-max) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63550;</span> x max | — |
-    | [type](../physics/parameters.md#background-type) | type | — |
-    | [id](../physics/parameters.md#background-id) | id | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Line-segment background intensity anchor](../physics/parameters.md#background-intensity) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63550;</span> <span class="ed-reference-icon" aria-hidden="true">&#63228;</span> intensity |
+    | [Background anchor position](../physics/parameters.md#background-position) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63550;</span> position |
+    | [Polynomial or Chebyshev background coefficient of the row&#x27;s order](../physics/parameters.md#background-coef) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63550;</span> coefficient |
+    | [Order m of a polynomial or Chebyshev background term](../physics/parameters.md#background-order) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63550;</span> order |
+    | [Origin of the polynomial background, FullProf Bkpos: the terms are powers of x/origin - 1](../physics/parameters.md#background-origin) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63550;</span> origin |
+    | [Lower end of the Chebyshev background&#x27;s normalisation domain](../physics/parameters.md#background-x-min) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63550;</span> x min |
+    | [Upper end of the Chebyshev background&#x27;s normalisation domain](../physics/parameters.md#background-x-max) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63550;</span> x max |
+    | [Type](../physics/parameters.md#background-type) | type |
+    | [Id](../physics/parameters.md#background-id) | id |
 
-    **[<span class="ed-reference-icon" data-reference-category="background-estimate" aria-hidden="true">&#61648;</span> Background estimation](../physics/parameters.md#background-estimate)**
+    <span class="ed-reference-anchor" id="names-background-estimate">**[<span class="ed-reference-icon" data-reference-category="background-estimate" aria-hidden="true">&#61648;</span> Background estimation](../physics/parameters.md#background-estimate)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [estimation mode](../physics/parameters.md#background-estimate-mode) | estimation mode | — |
-    | [method](../physics/parameters.md#background-estimate-method) | method | — |
-    | [peak width](../physics/parameters.md#background-estimate-width) | peak width | — |
-    | [smoothness](../physics/parameters.md#background-estimate-smoothness) | smoothness | — |
-    | [points](../physics/parameters.md#background-estimate-n-points) | points | — |
-    | [tolerance](../physics/parameters.md#background-estimate-tolerance) | tolerance | — |
-    | [points in peaks](../physics/parameters.md#background-estimate-in-peaks) | points in peaks | — |
-    | [calculated peaks](../physics/parameters.md#background-estimate-use-model) | calculated peaks | — |
-    | [max terms](../physics/parameters.md#background-estimate-max-terms) | max terms | — |
-    | [inputs digest](../physics/parameters.md#background-estimate-inputs-digest) | inputs digest | — |
-    | [points digest](../physics/parameters.md#background-estimate-points-digest) | points digest | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Estimation mode](../physics/parameters.md#background-estimate-mode) | estimation mode |
+    | [Method](../physics/parameters.md#background-estimate-method) | method |
+    | [Peak width](../physics/parameters.md#background-estimate-width) | peak width |
+    | [How smooth the estimated background is](../physics/parameters.md#background-estimate-smoothness) | smoothness |
+    | [How many background points the estimation keeps](../physics/parameters.md#background-estimate-n-points) | points |
+    | [How far, in units of the noise, the thinned background may stray](../physics/parameters.md#background-estimate-tolerance) | tolerance |
+    | [What happens to a background point that falls in a peak](../physics/parameters.md#background-estimate-in-peaks) | points in peaks |
+    | [What the estimation does with the peaks of the calculated pattern](../physics/parameters.md#background-estimate-use-model) | calculated peaks |
+    | [Max terms](../physics/parameters.md#background-estimate-max-terms) | max terms |
+    | [Inputs digest](../physics/parameters.md#background-estimate-inputs-digest) | inputs digest |
+    | [Points digest](../physics/parameters.md#background-estimate-points-digest) | points digest |
 
-    **[<span class="ed-reference-icon" data-reference-category="instrument" aria-hidden="true">&#62992;</span> Instrument](../physics/parameters.md#instrument)**
+    <span class="ed-reference-anchor" id="names-instrument">**[<span class="ed-reference-icon" data-reference-category="instrument" aria-hidden="true">&#62992;</span> Instrument](../physics/parameters.md#instrument)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [TOF offset](../physics/parameters.md#instrument-calib-d-to-tof-offset) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62263;</span> TOF offset | µs |
-    | [TOF linear](../physics/parameters.md#instrument-calib-d-to-tof-linear) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63417;</span> TOF linear | µs/Å |
-    | [TOF quadratic](../physics/parameters.md#instrument-calib-d-to-tof-quadratic) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63417;</span> TOF quadratic | µs/Å² |
-    | [TOF reciprocal](../physics/parameters.md#instrument-calib-d-to-tof-reciprocal) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63417;</span> TOF reciprocal | µs·Å |
-    | [2θ offset](../physics/parameters.md#instrument-calib-twotheta-offset) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62263;</span> 2θ offset | deg |
-    | [Wavelength](../physics/parameters.md#instrument-setup-wavelength) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63417;</span> Wavelength | Å |
-    | [Sample displacement](../physics/parameters.md#instrument-calib-sample-displacement) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62263;</span> Sample displacement | deg |
-    | [Sample transparency](../physics/parameters.md#instrument-calib-sample-transparency) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62263;</span> Sample transparency | deg |
-    | [Polarization coefficient](../physics/parameters.md#instrument-setup-polarization-coefficient) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> Polarization coefficient | — |
-    | [Monochromator 2θ](../physics/parameters.md#instrument-setup-monochromator-twotheta) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> Monochromator 2θ | deg |
-    | [Wavelength 2](../physics/parameters.md#instrument-setup-wavelength-2) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63417;</span> Wavelength 2 | Å |
-    | [Intensity ratio 2/1](../physics/parameters.md#instrument-setup-wavelength-2-to-1-ratio) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63417;</span> Intensity ratio 2/1 | — |
-    | [instrument](../physics/parameters.md#instrument-name) | instrument | — |
-    | [facility](../physics/parameters.md#instrument-facility) | facility | — |
-    | [2θ bank](../physics/parameters.md#instrument-setup-twotheta-bank) | 2θ bank | deg |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [TOF calibration zero offset](../physics/parameters.md#instrument-calib-d-to-tof-offset) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62263;</span> TOF offset |
+    | [TOF calibration linear coefficient Dtt1](../physics/parameters.md#instrument-calib-d-to-tof-linear) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63417;</span> TOF linear |
+    | [TOF calibration quadratic coefficient Dtt2](../physics/parameters.md#instrument-calib-d-to-tof-quadratic) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63417;</span> TOF quadratic |
+    | [TOF calibration reciprocal](../physics/parameters.md#instrument-calib-d-to-tof-reciprocal) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63417;</span> TOF reciprocal |
+    | [CW zero-point offset in degrees 2theta, subtracted from the observed axis](../physics/parameters.md#instrument-calib-twotheta-offset) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62263;</span> 2θ offset |
+    | [Incident neutron wavelength in angstroms](../physics/parameters.md#instrument-setup-wavelength) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63417;</span> Wavelength |
+    | [CW sample-displacement line shift in degrees 2theta](../physics/parameters.md#instrument-calib-sample-displacement) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62263;</span> Sample displacement |
+    | [CW sample-transparency line shift in degrees 2theta](../physics/parameters.md#instrument-calib-sample-transparency) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62263;</span> Sample transparency |
+    | [X-ray CW polarization coefficient K](../physics/parameters.md#instrument-setup-polarization-coefficient) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> Polarization coefficient |
+    | [X-ray CW pre-specimen monochromator angle 2theta_m in degrees](../physics/parameters.md#instrument-setup-monochromator-twotheta) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> Monochromator 2θ |
+    | [X-ray CW second incident wavelength in angstroms](../physics/parameters.md#instrument-setup-wavelength-2) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63417;</span> Wavelength 2 |
+    | [X-ray CW intensity of the second wavelength relative to the first](../physics/parameters.md#instrument-setup-wavelength-2-to-1-ratio) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63417;</span> Intensity ratio 2/1 |
+    | [Instrument](../physics/parameters.md#instrument-name) | instrument |
+    | [Facility](../physics/parameters.md#instrument-facility) | facility |
+    | [2θ bank](../physics/parameters.md#instrument-setup-twotheta-bank) | 2θ bank |
 
-    **[<span class="ed-reference-icon" data-reference-category="peak" aria-hidden="true">&#63007;</span> Peak profile](../physics/parameters.md#peak)**
+    <span class="ed-reference-anchor" id="names-peak">**[<span class="ed-reference-icon" data-reference-category="peak" aria-hidden="true">&#63007;</span> Peak profile](../physics/parameters.md#peak)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [α₀](../physics/parameters.md#peak-rise-alpha-0) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> α₀ | — |
-    | [α₁](../physics/parameters.md#peak-rise-alpha-1) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> α₁ | — |
-    | [β₀](../physics/parameters.md#peak-decay-beta-0) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> β₀ | — |
-    | [β₁](../physics/parameters.md#peak-decay-beta-1) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> β₁ | — |
-    | [σ₀²](../physics/parameters.md#peak-broad-gauss-sigma-0) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> σ₀² | µs² |
-    | [σ₁²](../physics/parameters.md#peak-broad-gauss-sigma-1) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> σ₁² | µs²/Å² |
-    | [σ₂²](../physics/parameters.md#peak-broad-gauss-sigma-2) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> σ₂² | µs²/Å⁴ |
-    | [size G](../physics/parameters.md#peak-broad-gauss-size) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> size G | — |
-    | [strain G](../physics/parameters.md#peak-broad-gauss-strain) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> strain G | — |
-    | [γ₀](../physics/parameters.md#peak-broad-lorentz-gamma-0) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> γ₀ | µs |
-    | [γ₁](../physics/parameters.md#peak-broad-lorentz-gamma-1) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> γ₁ | µs/Å |
-    | [γ₂](../physics/parameters.md#peak-broad-lorentz-gamma-2) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> γ₂ | µs/Å² |
-    | [size L](../physics/parameters.md#peak-broad-lorentz-size) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> size L | — |
-    | [strain L](../physics/parameters.md#peak-broad-lorentz-strain) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> strain L | — |
-    | [U](../physics/parameters.md#peak-broad-gauss-u) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> U | deg² |
-    | [V](../physics/parameters.md#peak-broad-gauss-v) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> V | deg² |
-    | [W](../physics/parameters.md#peak-broad-gauss-w) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> W | deg² |
-    | [X](../physics/parameters.md#peak-broad-lorentz-x) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> X | deg |
-    | [Y](../physics/parameters.md#peak-broad-lorentz-y) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> Y | deg |
-    | [Eta0](../physics/parameters.md#peak-mixing-eta-0) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> Eta0 | — |
-    | [Eta1](../physics/parameters.md#peak-mixing-eta-1) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> Eta1 | 1/deg |
-    | [S/L](../physics/parameters.md#peak-asym-fcj-1) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#62741;</span> S/L | — |
-    | [D/L](../physics/parameters.md#peak-asym-fcj-2) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#62741;</span> D/L | — |
-    | [A₀](../physics/parameters.md#peak-asym-beba-a0) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#62741;</span> A₀ | — |
-    | [B₀](../physics/parameters.md#peak-asym-beba-b0) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#62741;</span> B₀ | — |
-    | [A₁](../physics/parameters.md#peak-asym-beba-a1) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#62741;</span> A₁ | — |
-    | [B₁](../physics/parameters.md#peak-asym-beba-b1) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#62741;</span> B₁ | — |
-    | [AsyLim](../physics/parameters.md#peak-asym-beba-limit) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#62741;</span> AsyLim | deg |
-    | [profile](../physics/parameters.md#peak-type) | profile | — |
-    | [cutoff (FWHM)](../physics/parameters.md#peak-cutoff-fwhm) | cutoff (FWHM) | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Back-to-back exponential rise-rate coefficient alpha_0](../physics/parameters.md#peak-rise-alpha-0) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> α₀ |
+    | [Back-to-back exponential rise-rate coefficient alpha_1](../physics/parameters.md#peak-rise-alpha-1) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> α₁ |
+    | [Back-to-back exponential decay-rate coefficient beta_0](../physics/parameters.md#peak-decay-beta-0) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> β₀ |
+    | [Back-to-back exponential decay-rate coefficient beta_1](../physics/parameters.md#peak-decay-beta-1) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> β₁ |
+    | [Gaussian VARIANCE coefficient sigma_0^2](../physics/parameters.md#peak-broad-gauss-sigma-0) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> σ₀² |
+    | [Gaussian VARIANCE coefficient sigma_1^2](../physics/parameters.md#peak-broad-gauss-sigma-1) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> σ₁² |
+    | [Gaussian VARIANCE coefficient sigma_2^2](../physics/parameters.md#peak-broad-gauss-sigma-2) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> σ₂² |
+    | [Gaussian isotropic size broadening](../physics/parameters.md#peak-broad-gauss-size) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> size G |
+    | [Gaussian isotropic strain broadening](../physics/parameters.md#peak-broad-gauss-strain) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> strain G |
+    | [Lorentzian FWHM coefficient gamma_0](../physics/parameters.md#peak-broad-lorentz-gamma-0) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> γ₀ |
+    | [Lorentzian FWHM coefficient gamma_1](../physics/parameters.md#peak-broad-lorentz-gamma-1) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> γ₁ |
+    | [Lorentzian FWHM coefficient gamma_2](../physics/parameters.md#peak-broad-lorentz-gamma-2) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> γ₂ |
+    | [Lorentzian isotropic size broadening](../physics/parameters.md#peak-broad-lorentz-size) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> size L |
+    | [Lorentzian isotropic strain broadening](../physics/parameters.md#peak-broad-lorentz-strain) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> strain L |
+    | [Caglioti Gaussian FWHM coefficient U](../physics/parameters.md#peak-broad-gauss-u) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> U |
+    | [Caglioti Gaussian FWHM coefficient V](../physics/parameters.md#peak-broad-gauss-v) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> V |
+    | [Caglioti Gaussian FWHM coefficient W](../physics/parameters.md#peak-broad-gauss-w) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> W |
+    | [Lorentzian FWHM coefficient X, strain-like](../physics/parameters.md#peak-broad-lorentz-x) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> X |
+    | [Lorentzian FWHM coefficient Y, size-like](../physics/parameters.md#peak-broad-lorentz-y) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> Y |
+    | [Pseudo-Voigt mixing at 2theta = 0: eta = eta_0 + eta_1 2theta](../physics/parameters.md#peak-mixing-eta-0) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> Eta0 |
+    | [Pseudo-Voigt mixing slope per degree 2theta: eta = eta_0 + eta_1 2theta](../physics/parameters.md#peak-mixing-eta-1) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> Eta1 |
+    | [S/L](../physics/parameters.md#peak-asym-fcj-1) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#62741;</span> S/L |
+    | [D/L](../physics/parameters.md#peak-asym-fcj-2) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#62741;</span> D/L |
+    | [Berar-Baldinozzi asymmetry coefficient A0](../physics/parameters.md#peak-asym-beba-a0) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#62741;</span> A₀ |
+    | [Berar-Baldinozzi asymmetry coefficient B0](../physics/parameters.md#peak-asym-beba-b0) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#62741;</span> B₀ |
+    | [Berar-Baldinozzi asymmetry coefficient A1](../physics/parameters.md#peak-asym-beba-a1) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#62741;</span> A₁ |
+    | [Berar-Baldinozzi asymmetry coefficient B1](../physics/parameters.md#peak-asym-beba-b1) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#62741;</span> B₁ |
+    | [Berar-Baldinozzi limit angle](../physics/parameters.md#peak-asym-beba-limit) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#63007;</span> <span class="ed-reference-icon" aria-hidden="true">&#62741;</span> AsyLim |
+    | [Profile](../physics/parameters.md#peak-type) | profile |
+    | [How far from its centre a peak is calculated, in units of its width](../physics/parameters.md#peak-cutoff-fwhm) | cutoff (FWHM) |
 
-    **[<span class="ed-reference-icon" data-reference-category="excluded-region" aria-hidden="true">&#61741;</span> Excluded region](../physics/parameters.md#excluded-region)**
+    <span class="ed-reference-anchor" id="names-excluded-region">**[<span class="ed-reference-icon" data-reference-category="excluded-region" aria-hidden="true">&#61741;</span> Excluded region](../physics/parameters.md#excluded-region)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#excluded-region-id) | id | — |
-    | [start](../physics/parameters.md#excluded-region-start) | start | deg |
-    | [end](../physics/parameters.md#excluded-region-end) | end | deg |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#excluded-region-id) | id |
+    | [Where the excluded region starts](../physics/parameters.md#excluded-region-start) | start |
+    | [Where the excluded region ends](../physics/parameters.md#excluded-region-end) | end |
 
-    **[<span class="ed-reference-icon" data-reference-category="extinction" aria-hidden="true">&#62373;</span> Extinction](../physics/parameters.md#extinction)**
+    <span class="ed-reference-anchor" id="names-extinction">**[<span class="ed-reference-icon" data-reference-category="extinction" aria-hidden="true">&#62373;</span> Extinction](../physics/parameters.md#extinction)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [Domain radius](../physics/parameters.md#extinction-domain-radius) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> Domain radius | μm |
-    | [Mosaic spread](../physics/parameters.md#extinction-mosaic-spread) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> Mosaic spread | rad⁻¹ |
-    | [Crystal radius](../physics/parameters.md#extinction-crystal-radius) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> Crystal radius | mm |
-    | [Extinction coefficient](../physics/parameters.md#extinction-coefficient) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> Extinction coefficient | — |
-    | [x11](../physics/parameters.md#extinction-coefficient-11) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> x11 | — |
-    | [x22](../physics/parameters.md#extinction-coefficient-22) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> x22 | — |
-    | [x33](../physics/parameters.md#extinction-coefficient-33) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> x33 | — |
-    | [x12](../physics/parameters.md#extinction-coefficient-12) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> x12 | — |
-    | [x13](../physics/parameters.md#extinction-coefficient-13) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> x13 | — |
-    | [x23](../physics/parameters.md#extinction-coefficient-23) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> x23 | — |
-    | [type](../physics/parameters.md#extinction-type) | type | — |
-    | [mosaic distribution](../physics/parameters.md#extinction-mosaic-distribution) | mosaic distribution | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Becker-Coppens domain](../physics/parameters.md#extinction-domain-radius) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> Domain radius |
+    | [Mosaic spread](../physics/parameters.md#extinction-mosaic-spread) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> Mosaic spread |
+    | [Crystal radius](../physics/parameters.md#extinction-crystal-radius) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> Crystal radius |
+    | [Extinction coefficient](../physics/parameters.md#extinction-coefficient) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> Extinction coefficient |
+    | [X11](../physics/parameters.md#extinction-coefficient-11) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> x11 |
+    | [X22](../physics/parameters.md#extinction-coefficient-22) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> x22 |
+    | [X33](../physics/parameters.md#extinction-coefficient-33) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> x33 |
+    | [X12](../physics/parameters.md#extinction-coefficient-12) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> x12 |
+    | [X13](../physics/parameters.md#extinction-coefficient-13) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> x13 |
+    | [X23](../physics/parameters.md#extinction-coefficient-23) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62373;</span> x23 |
+    | [Type](../physics/parameters.md#extinction-type) | type |
+    | [Mosaic distribution](../physics/parameters.md#extinction-mosaic-distribution) | mosaic distribution |
 
-    **[<span class="ed-reference-icon" data-reference-category="linked-structure" aria-hidden="true">&#62973;</span> Linked structure](../physics/parameters.md#linked-structure)**
+    <span class="ed-reference-anchor" id="names-linked-structure">**[<span class="ed-reference-icon" data-reference-category="linked-structure" aria-hidden="true">&#62973;</span> Linked structure](../physics/parameters.md#linked-structure)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [scale](../physics/parameters.md#linked-structure-scale) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62614;</span> scale | — |
-    | [structure](../physics/parameters.md#linked-structure-structure-id) | structure | — |
-    | [enabled](../physics/parameters.md#linked-structure-enabled) | enabled | — |
-    | [weight fraction](../physics/parameters.md#linked-structure-weight-fraction) | weight fraction | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Scale factor of one linked structure&#x27;s](../physics/parameters.md#linked-structure-scale) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#62973;</span> <span class="ed-reference-icon" aria-hidden="true">&#62614;</span> scale |
+    | [Structure](../physics/parameters.md#linked-structure-structure-id) | structure |
+    | [Enabled](../physics/parameters.md#linked-structure-enabled) | enabled |
+    | [Weight fraction](../physics/parameters.md#linked-structure-weight-fraction) | weight fraction |
 
-    **[<span class="ed-reference-icon" data-reference-category="absorption" aria-hidden="true">&#61507;</span> Absorption](../physics/parameters.md#absorption)**
+    <span class="ed-reference-anchor" id="names-absorption">**[<span class="ed-reference-icon" data-reference-category="absorption" aria-hidden="true">&#61507;</span> Absorption](../physics/parameters.md#absorption)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [ABSCOR1](../physics/parameters.md#absorption-abscor1) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#61507;</span> ABSCOR1 | Å⁻¹ |
-    | [ABSCOR2](../physics/parameters.md#absorption-abscor2) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#61507;</span> ABSCOR2 | — |
-    | [μR](../physics/parameters.md#absorption-mu-r) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#61507;</span> μR | — |
-    | [type](../physics/parameters.md#absorption-type) | type | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [TOF sample absorption coefficient ABSCOR1](../physics/parameters.md#absorption-abscor1) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#61507;</span> ABSCOR1 |
+    | [TOF sample absorption lambda-power ABSCOR2](../physics/parameters.md#absorption-abscor2) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#61507;</span> ABSCOR2 |
+    | [CW cylinder sample absorption mu*R](../physics/parameters.md#absorption-mu-r) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#61507;</span> μR |
+    | [Type](../physics/parameters.md#absorption-type) | type |
 
-    **[<span class="ed-reference-icon" data-reference-category="preferred-orientation" aria-hidden="true">&#61774;</span> Preferred orientation](../physics/parameters.md#preferred-orientation)**
+    <span class="ed-reference-anchor" id="names-preferred-orientation">**[<span class="ed-reference-icon" data-reference-category="preferred-orientation" aria-hidden="true">&#61774;</span> Preferred orientation](../physics/parameters.md#preferred-orientation)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [r](../physics/parameters.md#preferred-orientation-march-r) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#61774;</span> r | — |
-    | [f rand](../physics/parameters.md#preferred-orientation-march-random-fract) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#61774;</span> f rand | — |
-    | [structure](../physics/parameters.md#preferred-orientation-structure-id) | structure | — |
-    | [h](../physics/parameters.md#preferred-orientation-index-h) | h | — |
-    | [k](../physics/parameters.md#preferred-orientation-index-k) | k | — |
-    | [l](../physics/parameters.md#preferred-orientation-index-l) | l | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [March-Dollase coefficient r](../physics/parameters.md#preferred-orientation-march-r) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#61774;</span> r |
+    | [Random](../physics/parameters.md#preferred-orientation-march-random-fract) | <span class="ed-reference-icon" aria-hidden="true">&#62992;</span> <span class="ed-reference-icon" aria-hidden="true">&#61774;</span> f rand |
+    | [Structure](../physics/parameters.md#preferred-orientation-structure-id) | structure |
+    | [Index h](../physics/parameters.md#preferred-orientation-index-h) | h |
+    | [Index k](../physics/parameters.md#preferred-orientation-index-k) | k |
+    | [Index l](../physics/parameters.md#preferred-orientation-index-l) | l |
 
-    **[<span class="ed-reference-icon" data-reference-category="reflns" aria-hidden="true">&#61616;</span> Observed reflections](../physics/parameters.md#reflns)**
+    <span class="ed-reference-anchor" id="names-reflns">**[<span class="ed-reference-icon" data-reference-category="reflns" aria-hidden="true">&#61616;</span> Observed reflections](../physics/parameters.md#reflns)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [observed above (su)](../physics/parameters.md#reflns-threshold-sigma) | observed above (su) | — |
-    | [on](../physics/parameters.md#reflns-threshold-basis) | on | — |
-    | [threshold](../physics/parameters.md#reflns-threshold-expression) | threshold | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Observed above (su)](../physics/parameters.md#reflns-threshold-sigma) | observed above (su) |
+    | [Threshold basis](../physics/parameters.md#reflns-threshold-basis) | on |
+    | [Threshold](../physics/parameters.md#reflns-threshold-expression) | threshold |
 
-    **[<span class="ed-reference-icon" data-reference-category="scattering-source" aria-hidden="true">&#62930;</span> Scattering source](../physics/parameters.md#scattering-source)**
+    <span class="ed-reference-anchor" id="names-scattering-source">**[<span class="ed-reference-icon" data-reference-category="scattering-source" aria-hidden="true">&#62930;</span> Scattering source](../physics/parameters.md#scattering-source)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [X-ray form factors](../physics/parameters.md#scattering-source-xray-form-factor) | X-ray form factors | — |
-    | [X-ray dispersion](../physics/parameters.md#scattering-source-xray-dispersion) | X-ray dispersion | — |
-    | [neutron scattering lengths](../physics/parameters.md#scattering-source-neutron-scattering-length) | neutron scattering lengths | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [X-ray form factors](../physics/parameters.md#scattering-source-xray-form-factor) | X-ray form factors |
+    | [X-ray dispersion](../physics/parameters.md#scattering-source-xray-dispersion) | X-ray dispersion |
+    | [Neutron scattering lengths](../physics/parameters.md#scattering-source-neutron-scattering-length) | neutron scattering lengths |
 
-    **[<span class="ed-reference-icon" data-reference-category="data-source" aria-hidden="true">&#62831;</span> Data source](../physics/parameters.md#data-source)**
+    <span class="ed-reference-anchor" id="names-data-source">**[<span class="ed-reference-icon" data-reference-category="data-source" aria-hidden="true">&#62831;</span> Data source](../physics/parameters.md#data-source)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [data file](../physics/parameters.md#data-source-file-name) | data file | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Data file](../physics/parameters.md#data-source-file-name) | data file |
 
-    **[<span class="ed-reference-icon" data-reference-category="data" aria-hidden="true">&#62263;</span> Measured data point](../physics/parameters.md#data)**
+    <span class="ed-reference-anchor" id="names-data">**[<span class="ed-reference-icon" data-reference-category="data" aria-hidden="true">&#62263;</span> Measured data point](../physics/parameters.md#data)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [2θ](../physics/parameters.md#data-two-theta) | 2θ | deg |
-    | [TOF](../physics/parameters.md#data-time-of-flight) | TOF | µs |
-    | [meas](../physics/parameters.md#data-intensity-meas) | meas | — |
-    | [s.u.](../physics/parameters.md#data-intensity-meas-su) | s.u. | — |
-    | [d](../physics/parameters.md#data-d-spacing) | d | Å |
-    | [calc](../physics/parameters.md#data-intensity-calc) | calc | — |
-    | [bkg](../physics/parameters.md#data-intensity-bkg) | bkg | — |
-    | [status](../physics/parameters.md#data-calc-status) | status | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Two theta](../physics/parameters.md#data-two-theta) | 2θ |
+    | [TOF](../physics/parameters.md#data-time-of-flight) | TOF |
+    | [Measured intensity](../physics/parameters.md#data-intensity-meas) | meas |
+    | [Measured intensity uncertainty](../physics/parameters.md#data-intensity-meas-su) | s.u. |
+    | [D spacing](../physics/parameters.md#data-d-spacing) | d |
+    | [Calculated intensity](../physics/parameters.md#data-intensity-calc) | calc |
+    | [Background intensity](../physics/parameters.md#data-intensity-bkg) | bkg |
+    | [Status](../physics/parameters.md#data-calc-status) | status |
 
-    **[<span class="ed-reference-icon" data-reference-category="data-calc" aria-hidden="true">&#61950;</span> Calculated point](../physics/parameters.md#data-calc)**
+    <span class="ed-reference-anchor" id="names-data-calc">**[<span class="ed-reference-icon" data-reference-category="data-calc" aria-hidden="true">&#61950;</span> Calculated point](../physics/parameters.md#data-calc)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [point](../physics/parameters.md#data-calc-point-id) | point | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Point](../physics/parameters.md#data-calc-point-id) | point |
 
-    **[<span class="ed-reference-icon" data-reference-category="pd-calc-overall" aria-hidden="true">&#61950;</span> Structure curves](../physics/parameters.md#pd-calc-overall)**
+    <span class="ed-reference-anchor" id="names-pd-calc-overall">**[<span class="ed-reference-icon" data-reference-category="pd-calc-overall" aria-hidden="true">&#61950;</span> Structure curves](../physics/parameters.md#pd-calc-overall)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [structure order](../physics/parameters.md#pd-calc-overall-component-presentation-order) | structure order | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Structure order](../physics/parameters.md#pd-calc-overall-component-presentation-order) | structure order |
 
-    **[<span class="ed-reference-icon" data-reference-category="pd-calc" aria-hidden="true">&#61950;</span> Structure curve](../physics/parameters.md#pd-calc)**
+    <span class="ed-reference-anchor" id="names-pd-calc">**[<span class="ed-reference-icon" data-reference-category="pd-calc" aria-hidden="true">&#61950;</span> Structure curve](../physics/parameters.md#pd-calc)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [structure calc](../physics/parameters.md#pd-calc-component-intensities-net) | structure calc | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Structure calc](../physics/parameters.md#pd-calc-component-intensities-net) | structure calc |
 
-    **[<span class="ed-reference-icon" data-reference-category="refln" aria-hidden="true">&#61498;</span> Reflection](../physics/parameters.md#refln)**
+    <span class="ed-reference-anchor" id="names-refln">**[<span class="ed-reference-icon" data-reference-category="refln" aria-hidden="true">&#61498;</span> Reflection](../physics/parameters.md#refln)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [structure](../physics/parameters.md#refln-structure-id) | structure | — |
-    | [d](../physics/parameters.md#refln-d-spacing) | d | Å |
-    | [sin θ/λ](../physics/parameters.md#refln-sin-theta-over-lambda) | sin θ/λ | 1/Å |
-    | [h](../physics/parameters.md#refln-index-h) | h | — |
-    | [k](../physics/parameters.md#refln-index-k) | k | — |
-    | [l](../physics/parameters.md#refln-index-l) | l | — |
-    | [F calc](../physics/parameters.md#refln-f-calc) | F calc | — |
-    | [F meas](../physics/parameters.md#refln-f-meas) | F meas | — |
-    | [F² calc](../physics/parameters.md#refln-f-squared-calc) | F² calc | — |
-    | [F² meas](../physics/parameters.md#refln-intensity-meas) | F² meas | — |
-    | [s.u.](../physics/parameters.md#refln-intensity-meas-su) | s.u. | — |
-    | [F² calc](../physics/parameters.md#refln-intensity-calc) | F² calc | — |
-    | [λ](../physics/parameters.md#refln-wavelength) | λ | Å |
-    | [2θ](../physics/parameters.md#refln-two-theta) | 2θ | deg |
-    | [TOF](../physics/parameters.md#refln-time-of-flight) | TOF | µs |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Structure](../physics/parameters.md#refln-structure-id) | structure |
+    | [D spacing](../physics/parameters.md#refln-d-spacing) | d |
+    | [sin θ over λ of the reflection](../physics/parameters.md#refln-sin-theta-over-lambda) | sin θ/λ |
+    | [Index h](../physics/parameters.md#refln-index-h) | h |
+    | [Index k](../physics/parameters.md#refln-index-k) | k |
+    | [Index l](../physics/parameters.md#refln-index-l) | l |
+    | [F calc](../physics/parameters.md#refln-f-calc) | F calc |
+    | [F meas](../physics/parameters.md#refln-f-meas) | F meas |
+    | [F² calc](../physics/parameters.md#refln-f-squared-calc) | F² calc |
+    | [Measured intensity](../physics/parameters.md#refln-intensity-meas) | F² meas |
+    | [Measured intensity uncertainty](../physics/parameters.md#refln-intensity-meas-su) | s.u. |
+    | [Calculated intensity](../physics/parameters.md#refln-intensity-calc) | F² calc |
+    | [Wavelength](../physics/parameters.md#refln-wavelength) | λ |
+    | [Two theta](../physics/parameters.md#refln-two-theta) | 2θ |
+    | [TOF](../physics/parameters.md#refln-time-of-flight) | TOF |
 
 === "Edi"
 
     **[<span class="ed-reference-icon" data-reference-category="experiment-type" aria-hidden="true">&#63417;</span> Experiment type](../physics/parameters.md#experiment-type)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [beam mode](../physics/parameters.md#experiment-type-beam-mode) | <code>_experiment_type.beam_mode</code> | — |
-    | [sample form](../physics/parameters.md#experiment-type-sample-form) | <code>_experiment_type.sample_form</code> | — |
-    | [probe](../physics/parameters.md#experiment-type-radiation-probe) | <code>_experiment_type.radiation_probe</code> | — |
-    | [scattering type](../physics/parameters.md#experiment-type-scattering-type) | <code>_experiment_type.scattering_type</code> | — |
-    | [dimensionality](../physics/parameters.md#experiment-type-dimensionality) | <code>_experiment_type.dimensionality</code> | — |
-    | [polarisation](../physics/parameters.md#experiment-type-polarisation) | <code>_experiment_type.polarisation</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [How the pattern is measured](../physics/parameters.md#experiment-type-beam-mode) | <code>_experiment_type.beam_mode</code> |
+    | [Sample form](../physics/parameters.md#experiment-type-sample-form) | <code>_experiment_type.sample_form</code> |
+    | [Probe](../physics/parameters.md#experiment-type-radiation-probe) | <code>_experiment_type.radiation_probe</code> |
+    | [Which scattering the pattern is modelled with](../physics/parameters.md#experiment-type-scattering-type) | <code>_experiment_type.scattering_type</code> |
+    | [Dimensionality](../physics/parameters.md#experiment-type-dimensionality) | <code>_experiment_type.dimensionality</code> |
+    | [Polarisation](../physics/parameters.md#experiment-type-polarisation) | <code>_experiment_type.polarisation</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="data-range" aria-hidden="true">&#62263;</span> Calculation range](../physics/parameters.md#data-range)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [min](../physics/parameters.md#data-range-two-theta-min) | <code>_data_range.two_theta_min</code> | deg |
-    | [max](../physics/parameters.md#data-range-two-theta-max) | <code>_data_range.two_theta_max</code> | deg |
-    | [step](../physics/parameters.md#data-range-two-theta-step) | <code>_data_range.two_theta_step</code> | deg |
-    | [2θ](../physics/parameters.md#data-range-two-theta) | <code>_data_range.two_theta</code> | deg |
-    | [min](../physics/parameters.md#data-range-time-of-flight-min) | <code>_data_range.time_of_flight_min</code> | µs |
-    | [max](../physics/parameters.md#data-range-time-of-flight-max) | <code>_data_range.time_of_flight_max</code> | µs |
-    | [step](../physics/parameters.md#data-range-time-of-flight-step) | <code>_data_range.time_of_flight_step</code> | µs |
-    | [TOF](../physics/parameters.md#data-range-time-of-flight) | <code>_data_range.time_of_flight</code> | µs |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Two theta min](../physics/parameters.md#data-range-two-theta-min) | <code>_data_range.two_theta_min</code> |
+    | [Two theta max](../physics/parameters.md#data-range-two-theta-max) | <code>_data_range.two_theta_max</code> |
+    | [Step](../physics/parameters.md#data-range-two-theta-step) | <code>_data_range.two_theta_step</code> |
+    | [Two theta](../physics/parameters.md#data-range-two-theta) | <code>_data_range.two_theta</code> |
+    | [Time of flight min](../physics/parameters.md#data-range-time-of-flight-min) | <code>_data_range.time_of_flight_min</code> |
+    | [Time of flight max](../physics/parameters.md#data-range-time-of-flight-max) | <code>_data_range.time_of_flight_max</code> |
+    | [Step](../physics/parameters.md#data-range-time-of-flight-step) | <code>_data_range.time_of_flight_step</code> |
+    | [TOF](../physics/parameters.md#data-range-time-of-flight) | <code>_data_range.time_of_flight</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="background" aria-hidden="true">&#63550;</span> Background](../physics/parameters.md#background)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [intensity](../physics/parameters.md#background-intensity) | <code>_background.intensity</code> | — |
-    | [position](../physics/parameters.md#background-position) | <code>_background.position</code> | µs |
-    | [coefficient](../physics/parameters.md#background-coef) | <code>_background.coef</code> | — |
-    | [order](../physics/parameters.md#background-order) | <code>_background.order</code> | — |
-    | [origin](../physics/parameters.md#background-origin) | <code>_background.origin</code> | — |
-    | [x min](../physics/parameters.md#background-x-min) | <code>_background.x_min</code> | — |
-    | [x max](../physics/parameters.md#background-x-max) | <code>_background.x_max</code> | — |
-    | [type](../physics/parameters.md#background-type) | <code>_background.type</code> | — |
-    | [id](../physics/parameters.md#background-id) | <code>_background.id</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Line-segment background intensity anchor](../physics/parameters.md#background-intensity) | <code>_background.intensity</code> |
+    | [Background anchor position](../physics/parameters.md#background-position) | <code>_background.position</code> |
+    | [Polynomial or Chebyshev background coefficient of the row&#x27;s order](../physics/parameters.md#background-coef) | <code>_background.coef</code> |
+    | [Order m of a polynomial or Chebyshev background term](../physics/parameters.md#background-order) | <code>_background.order</code> |
+    | [Origin of the polynomial background, FullProf Bkpos: the terms are powers of x/origin - 1](../physics/parameters.md#background-origin) | <code>_background.origin</code> |
+    | [Lower end of the Chebyshev background&#x27;s normalisation domain](../physics/parameters.md#background-x-min) | <code>_background.x_min</code> |
+    | [Upper end of the Chebyshev background&#x27;s normalisation domain](../physics/parameters.md#background-x-max) | <code>_background.x_max</code> |
+    | [Type](../physics/parameters.md#background-type) | <code>_background.type</code> |
+    | [Id](../physics/parameters.md#background-id) | <code>_background.id</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="background-estimate" aria-hidden="true">&#61648;</span> Background estimation](../physics/parameters.md#background-estimate)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [estimation mode](../physics/parameters.md#background-estimate-mode) | <code>_background_estimate.mode</code> | — |
-    | [method](../physics/parameters.md#background-estimate-method) | <code>_background_estimate.method</code> | — |
-    | [peak width](../physics/parameters.md#background-estimate-width) | <code>_background_estimate.width</code> | — |
-    | [smoothness](../physics/parameters.md#background-estimate-smoothness) | <code>_background_estimate.smoothness</code> | — |
-    | [points](../physics/parameters.md#background-estimate-n-points) | <code>_background_estimate.n_points</code> | — |
-    | [tolerance](../physics/parameters.md#background-estimate-tolerance) | <code>_background_estimate.tolerance</code> | — |
-    | [points in peaks](../physics/parameters.md#background-estimate-in-peaks) | <code>_background_estimate.in_peaks</code> | — |
-    | [calculated peaks](../physics/parameters.md#background-estimate-use-model) | <code>_background_estimate.use_model</code> | — |
-    | [max terms](../physics/parameters.md#background-estimate-max-terms) | <code>_background_estimate.max_terms</code> | — |
-    | [inputs digest](../physics/parameters.md#background-estimate-inputs-digest) | <code>_background_estimate.inputs_digest</code> | — |
-    | [points digest](../physics/parameters.md#background-estimate-points-digest) | <code>_background_estimate.points_digest</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Estimation mode](../physics/parameters.md#background-estimate-mode) | <code>_background_estimate.mode</code> |
+    | [Method](../physics/parameters.md#background-estimate-method) | <code>_background_estimate.method</code> |
+    | [Peak width](../physics/parameters.md#background-estimate-width) | <code>_background_estimate.width</code> |
+    | [How smooth the estimated background is](../physics/parameters.md#background-estimate-smoothness) | <code>_background_estimate.smoothness</code> |
+    | [How many background points the estimation keeps](../physics/parameters.md#background-estimate-n-points) | <code>_background_estimate.n_points</code> |
+    | [How far, in units of the noise, the thinned background may stray](../physics/parameters.md#background-estimate-tolerance) | <code>_background_estimate.tolerance</code> |
+    | [What happens to a background point that falls in a peak](../physics/parameters.md#background-estimate-in-peaks) | <code>_background_estimate.in_peaks</code> |
+    | [What the estimation does with the peaks of the calculated pattern](../physics/parameters.md#background-estimate-use-model) | <code>_background_estimate.use_model</code> |
+    | [Max terms](../physics/parameters.md#background-estimate-max-terms) | <code>_background_estimate.max_terms</code> |
+    | [Inputs digest](../physics/parameters.md#background-estimate-inputs-digest) | <code>_background_estimate.inputs_digest</code> |
+    | [Points digest](../physics/parameters.md#background-estimate-points-digest) | <code>_background_estimate.points_digest</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="instrument" aria-hidden="true">&#62992;</span> Instrument](../physics/parameters.md#instrument)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [TOF offset](../physics/parameters.md#instrument-calib-d-to-tof-offset) | <code>_instrument.calib_d_to_tof_offset</code> | µs |
-    | [TOF linear](../physics/parameters.md#instrument-calib-d-to-tof-linear) | <code>_instrument.calib_d_to_tof_linear</code> | µs/Å |
-    | [TOF quadratic](../physics/parameters.md#instrument-calib-d-to-tof-quadratic) | <code>_instrument.calib_d_to_tof_quadratic</code> | µs/Å² |
-    | [TOF reciprocal](../physics/parameters.md#instrument-calib-d-to-tof-reciprocal) | <code>_instrument.calib_d_to_tof_reciprocal</code> | µs·Å |
-    | [2θ offset](../physics/parameters.md#instrument-calib-twotheta-offset) | <code>_instrument.calib_twotheta_offset</code> | deg |
-    | [Wavelength](../physics/parameters.md#instrument-setup-wavelength) | <code>_instrument.setup_wavelength</code> | Å |
-    | [Sample displacement](../physics/parameters.md#instrument-calib-sample-displacement) | <code>_instrument.calib_sample_displacement</code> | deg |
-    | [Sample transparency](../physics/parameters.md#instrument-calib-sample-transparency) | <code>_instrument.calib_sample_transparency</code> | deg |
-    | [Polarization coefficient](../physics/parameters.md#instrument-setup-polarization-coefficient) | <code>_instrument.setup_polarization_coefficient</code> | — |
-    | [Monochromator 2θ](../physics/parameters.md#instrument-setup-monochromator-twotheta) | <code>_instrument.setup_monochromator_twotheta</code> | deg |
-    | [Wavelength 2](../physics/parameters.md#instrument-setup-wavelength-2) | <code>_instrument.setup_wavelength_2</code> | Å |
-    | [Intensity ratio 2/1](../physics/parameters.md#instrument-setup-wavelength-2-to-1-ratio) | <code>_instrument.setup_wavelength_2_to_1_ratio</code> | — |
-    | [instrument](../physics/parameters.md#instrument-name) | <code>_instrument.name</code> | — |
-    | [facility](../physics/parameters.md#instrument-facility) | <code>_instrument.facility</code> | — |
-    | [2θ bank](../physics/parameters.md#instrument-setup-twotheta-bank) | <code>_instrument.setup_twotheta_bank</code> | deg |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [TOF calibration zero offset](../physics/parameters.md#instrument-calib-d-to-tof-offset) | <code>_instrument.calib_d_to_tof_offset</code> |
+    | [TOF calibration linear coefficient Dtt1](../physics/parameters.md#instrument-calib-d-to-tof-linear) | <code>_instrument.calib_d_to_tof_linear</code> |
+    | [TOF calibration quadratic coefficient Dtt2](../physics/parameters.md#instrument-calib-d-to-tof-quadratic) | <code>_instrument.calib_d_to_tof_quadratic</code> |
+    | [TOF calibration reciprocal](../physics/parameters.md#instrument-calib-d-to-tof-reciprocal) | <code>_instrument.calib_d_to_tof_reciprocal</code> |
+    | [CW zero-point offset in degrees 2theta, subtracted from the observed axis](../physics/parameters.md#instrument-calib-twotheta-offset) | <code>_instrument.calib_twotheta_offset</code> |
+    | [Incident neutron wavelength in angstroms](../physics/parameters.md#instrument-setup-wavelength) | <code>_instrument.setup_wavelength</code> |
+    | [CW sample-displacement line shift in degrees 2theta](../physics/parameters.md#instrument-calib-sample-displacement) | <code>_instrument.calib_sample_displacement</code> |
+    | [CW sample-transparency line shift in degrees 2theta](../physics/parameters.md#instrument-calib-sample-transparency) | <code>_instrument.calib_sample_transparency</code> |
+    | [X-ray CW polarization coefficient K](../physics/parameters.md#instrument-setup-polarization-coefficient) | <code>_instrument.setup_polarization_coefficient</code> |
+    | [X-ray CW pre-specimen monochromator angle 2theta_m in degrees](../physics/parameters.md#instrument-setup-monochromator-twotheta) | <code>_instrument.setup_monochromator_twotheta</code> |
+    | [X-ray CW second incident wavelength in angstroms](../physics/parameters.md#instrument-setup-wavelength-2) | <code>_instrument.setup_wavelength_2</code> |
+    | [X-ray CW intensity of the second wavelength relative to the first](../physics/parameters.md#instrument-setup-wavelength-2-to-1-ratio) | <code>_instrument.setup_wavelength_2_to_1_ratio</code> |
+    | [Instrument](../physics/parameters.md#instrument-name) | <code>_instrument.name</code> |
+    | [Facility](../physics/parameters.md#instrument-facility) | <code>_instrument.facility</code> |
+    | [2θ bank](../physics/parameters.md#instrument-setup-twotheta-bank) | <code>_instrument.setup_twotheta_bank</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="peak" aria-hidden="true">&#63007;</span> Peak profile](../physics/parameters.md#peak)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [α₀](../physics/parameters.md#peak-rise-alpha-0) | <code>_peak.rise_alpha_0</code> | — |
-    | [α₁](../physics/parameters.md#peak-rise-alpha-1) | <code>_peak.rise_alpha_1</code> | — |
-    | [β₀](../physics/parameters.md#peak-decay-beta-0) | <code>_peak.decay_beta_0</code> | — |
-    | [β₁](../physics/parameters.md#peak-decay-beta-1) | <code>_peak.decay_beta_1</code> | — |
-    | [σ₀²](../physics/parameters.md#peak-broad-gauss-sigma-0) | <code>_peak.broad_gauss_sigma_0</code> | µs² |
-    | [σ₁²](../physics/parameters.md#peak-broad-gauss-sigma-1) | <code>_peak.broad_gauss_sigma_1</code> | µs²/Å² |
-    | [σ₂²](../physics/parameters.md#peak-broad-gauss-sigma-2) | <code>_peak.broad_gauss_sigma_2</code> | µs²/Å⁴ |
-    | [size G](../physics/parameters.md#peak-broad-gauss-size) | <code>_peak.broad_gauss_size</code> | — |
-    | [strain G](../physics/parameters.md#peak-broad-gauss-strain) | <code>_peak.broad_gauss_strain</code> | — |
-    | [γ₀](../physics/parameters.md#peak-broad-lorentz-gamma-0) | <code>_peak.broad_lorentz_gamma_0</code> | µs |
-    | [γ₁](../physics/parameters.md#peak-broad-lorentz-gamma-1) | <code>_peak.broad_lorentz_gamma_1</code> | µs/Å |
-    | [γ₂](../physics/parameters.md#peak-broad-lorentz-gamma-2) | <code>_peak.broad_lorentz_gamma_2</code> | µs/Å² |
-    | [size L](../physics/parameters.md#peak-broad-lorentz-size) | <code>_peak.broad_lorentz_size</code> | — |
-    | [strain L](../physics/parameters.md#peak-broad-lorentz-strain) | <code>_peak.broad_lorentz_strain</code> | — |
-    | [U](../physics/parameters.md#peak-broad-gauss-u) | <code>_peak.broad_gauss_u</code> | deg² |
-    | [V](../physics/parameters.md#peak-broad-gauss-v) | <code>_peak.broad_gauss_v</code> | deg² |
-    | [W](../physics/parameters.md#peak-broad-gauss-w) | <code>_peak.broad_gauss_w</code> | deg² |
-    | [X](../physics/parameters.md#peak-broad-lorentz-x) | <code>_peak.broad_lorentz_x</code> | deg |
-    | [Y](../physics/parameters.md#peak-broad-lorentz-y) | <code>_peak.broad_lorentz_y</code> | deg |
-    | [Eta0](../physics/parameters.md#peak-mixing-eta-0) | <code>_peak.mixing_eta_0</code> | — |
-    | [Eta1](../physics/parameters.md#peak-mixing-eta-1) | <code>_peak.mixing_eta_1</code> | 1/deg |
-    | [S/L](../physics/parameters.md#peak-asym-fcj-1) | <code>_peak.asym_fcj_1</code> | — |
-    | [D/L](../physics/parameters.md#peak-asym-fcj-2) | <code>_peak.asym_fcj_2</code> | — |
-    | [A₀](../physics/parameters.md#peak-asym-beba-a0) | <code>_peak.asym_beba_a0</code> | — |
-    | [B₀](../physics/parameters.md#peak-asym-beba-b0) | <code>_peak.asym_beba_b0</code> | — |
-    | [A₁](../physics/parameters.md#peak-asym-beba-a1) | <code>_peak.asym_beba_a1</code> | — |
-    | [B₁](../physics/parameters.md#peak-asym-beba-b1) | <code>_peak.asym_beba_b1</code> | — |
-    | [AsyLim](../physics/parameters.md#peak-asym-beba-limit) | <code>_peak.asym_beba_limit</code> | deg |
-    | [profile](../physics/parameters.md#peak-type) | <code>_peak.type</code> | — |
-    | [cutoff (FWHM)](../physics/parameters.md#peak-cutoff-fwhm) | <code>_peak.cutoff_fwhm</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Back-to-back exponential rise-rate coefficient alpha_0](../physics/parameters.md#peak-rise-alpha-0) | <code>_peak.rise_alpha_0</code> |
+    | [Back-to-back exponential rise-rate coefficient alpha_1](../physics/parameters.md#peak-rise-alpha-1) | <code>_peak.rise_alpha_1</code> |
+    | [Back-to-back exponential decay-rate coefficient beta_0](../physics/parameters.md#peak-decay-beta-0) | <code>_peak.decay_beta_0</code> |
+    | [Back-to-back exponential decay-rate coefficient beta_1](../physics/parameters.md#peak-decay-beta-1) | <code>_peak.decay_beta_1</code> |
+    | [Gaussian VARIANCE coefficient sigma_0^2](../physics/parameters.md#peak-broad-gauss-sigma-0) | <code>_peak.broad_gauss_sigma_0</code> |
+    | [Gaussian VARIANCE coefficient sigma_1^2](../physics/parameters.md#peak-broad-gauss-sigma-1) | <code>_peak.broad_gauss_sigma_1</code> |
+    | [Gaussian VARIANCE coefficient sigma_2^2](../physics/parameters.md#peak-broad-gauss-sigma-2) | <code>_peak.broad_gauss_sigma_2</code> |
+    | [Gaussian isotropic size broadening](../physics/parameters.md#peak-broad-gauss-size) | <code>_peak.broad_gauss_size</code> |
+    | [Gaussian isotropic strain broadening](../physics/parameters.md#peak-broad-gauss-strain) | <code>_peak.broad_gauss_strain</code> |
+    | [Lorentzian FWHM coefficient gamma_0](../physics/parameters.md#peak-broad-lorentz-gamma-0) | <code>_peak.broad_lorentz_gamma_0</code> |
+    | [Lorentzian FWHM coefficient gamma_1](../physics/parameters.md#peak-broad-lorentz-gamma-1) | <code>_peak.broad_lorentz_gamma_1</code> |
+    | [Lorentzian FWHM coefficient gamma_2](../physics/parameters.md#peak-broad-lorentz-gamma-2) | <code>_peak.broad_lorentz_gamma_2</code> |
+    | [Lorentzian isotropic size broadening](../physics/parameters.md#peak-broad-lorentz-size) | <code>_peak.broad_lorentz_size</code> |
+    | [Lorentzian isotropic strain broadening](../physics/parameters.md#peak-broad-lorentz-strain) | <code>_peak.broad_lorentz_strain</code> |
+    | [Caglioti Gaussian FWHM coefficient U](../physics/parameters.md#peak-broad-gauss-u) | <code>_peak.broad_gauss_u</code> |
+    | [Caglioti Gaussian FWHM coefficient V](../physics/parameters.md#peak-broad-gauss-v) | <code>_peak.broad_gauss_v</code> |
+    | [Caglioti Gaussian FWHM coefficient W](../physics/parameters.md#peak-broad-gauss-w) | <code>_peak.broad_gauss_w</code> |
+    | [Lorentzian FWHM coefficient X, strain-like](../physics/parameters.md#peak-broad-lorentz-x) | <code>_peak.broad_lorentz_x</code> |
+    | [Lorentzian FWHM coefficient Y, size-like](../physics/parameters.md#peak-broad-lorentz-y) | <code>_peak.broad_lorentz_y</code> |
+    | [Pseudo-Voigt mixing at 2theta = 0: eta = eta_0 + eta_1 2theta](../physics/parameters.md#peak-mixing-eta-0) | <code>_peak.mixing_eta_0</code> |
+    | [Pseudo-Voigt mixing slope per degree 2theta: eta = eta_0 + eta_1 2theta](../physics/parameters.md#peak-mixing-eta-1) | <code>_peak.mixing_eta_1</code> |
+    | [S/L](../physics/parameters.md#peak-asym-fcj-1) | <code>_peak.asym_fcj_1</code> |
+    | [D/L](../physics/parameters.md#peak-asym-fcj-2) | <code>_peak.asym_fcj_2</code> |
+    | [Berar-Baldinozzi asymmetry coefficient A0](../physics/parameters.md#peak-asym-beba-a0) | <code>_peak.asym_beba_a0</code> |
+    | [Berar-Baldinozzi asymmetry coefficient B0](../physics/parameters.md#peak-asym-beba-b0) | <code>_peak.asym_beba_b0</code> |
+    | [Berar-Baldinozzi asymmetry coefficient A1](../physics/parameters.md#peak-asym-beba-a1) | <code>_peak.asym_beba_a1</code> |
+    | [Berar-Baldinozzi asymmetry coefficient B1](../physics/parameters.md#peak-asym-beba-b1) | <code>_peak.asym_beba_b1</code> |
+    | [Berar-Baldinozzi limit angle](../physics/parameters.md#peak-asym-beba-limit) | <code>_peak.asym_beba_limit</code> |
+    | [Profile](../physics/parameters.md#peak-type) | <code>_peak.type</code> |
+    | [How far from its centre a peak is calculated, in units of its width](../physics/parameters.md#peak-cutoff-fwhm) | <code>_peak.cutoff_fwhm</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="excluded-region" aria-hidden="true">&#61741;</span> Excluded region](../physics/parameters.md#excluded-region)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#excluded-region-id) | <code>_excluded_region.id</code> | — |
-    | [start](../physics/parameters.md#excluded-region-start) | <code>_excluded_region.start</code> | deg |
-    | [end](../physics/parameters.md#excluded-region-end) | <code>_excluded_region.end</code> | deg |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#excluded-region-id) | <code>_excluded_region.id</code> |
+    | [Where the excluded region starts](../physics/parameters.md#excluded-region-start) | <code>_excluded_region.start</code> |
+    | [Where the excluded region ends](../physics/parameters.md#excluded-region-end) | <code>_excluded_region.end</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="extinction" aria-hidden="true">&#62373;</span> Extinction](../physics/parameters.md#extinction)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [Domain radius](../physics/parameters.md#extinction-domain-radius) | <code>_extinction.domain_radius</code> | μm |
-    | [Mosaic spread](../physics/parameters.md#extinction-mosaic-spread) | <code>_extinction.mosaic_spread</code> | rad⁻¹ |
-    | [Crystal radius](../physics/parameters.md#extinction-crystal-radius) | <code>_extinction.crystal_radius</code> | mm |
-    | [Extinction coefficient](../physics/parameters.md#extinction-coefficient) | <code>_extinction.coefficient</code> | — |
-    | [x11](../physics/parameters.md#extinction-coefficient-11) | <code>_extinction.coefficient_11</code> | — |
-    | [x22](../physics/parameters.md#extinction-coefficient-22) | <code>_extinction.coefficient_22</code> | — |
-    | [x33](../physics/parameters.md#extinction-coefficient-33) | <code>_extinction.coefficient_33</code> | — |
-    | [x12](../physics/parameters.md#extinction-coefficient-12) | <code>_extinction.coefficient_12</code> | — |
-    | [x13](../physics/parameters.md#extinction-coefficient-13) | <code>_extinction.coefficient_13</code> | — |
-    | [x23](../physics/parameters.md#extinction-coefficient-23) | <code>_extinction.coefficient_23</code> | — |
-    | [type](../physics/parameters.md#extinction-type) | <code>_extinction.type</code> | — |
-    | [mosaic distribution](../physics/parameters.md#extinction-mosaic-distribution) | <code>_extinction.mosaic_distribution</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Becker-Coppens domain](../physics/parameters.md#extinction-domain-radius) | <code>_extinction.domain_radius</code> |
+    | [Mosaic spread](../physics/parameters.md#extinction-mosaic-spread) | <code>_extinction.mosaic_spread</code> |
+    | [Crystal radius](../physics/parameters.md#extinction-crystal-radius) | <code>_extinction.crystal_radius</code> |
+    | [Extinction coefficient](../physics/parameters.md#extinction-coefficient) | <code>_extinction.coefficient</code> |
+    | [X11](../physics/parameters.md#extinction-coefficient-11) | <code>_extinction.coefficient_11</code> |
+    | [X22](../physics/parameters.md#extinction-coefficient-22) | <code>_extinction.coefficient_22</code> |
+    | [X33](../physics/parameters.md#extinction-coefficient-33) | <code>_extinction.coefficient_33</code> |
+    | [X12](../physics/parameters.md#extinction-coefficient-12) | <code>_extinction.coefficient_12</code> |
+    | [X13](../physics/parameters.md#extinction-coefficient-13) | <code>_extinction.coefficient_13</code> |
+    | [X23](../physics/parameters.md#extinction-coefficient-23) | <code>_extinction.coefficient_23</code> |
+    | [Type](../physics/parameters.md#extinction-type) | <code>_extinction.type</code> |
+    | [Mosaic distribution](../physics/parameters.md#extinction-mosaic-distribution) | <code>_extinction.mosaic_distribution</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="linked-structure" aria-hidden="true">&#62973;</span> Linked structure](../physics/parameters.md#linked-structure)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [scale](../physics/parameters.md#linked-structure-scale) | <code>_linked_structure.scale</code> | — |
-    | [structure](../physics/parameters.md#linked-structure-structure-id) | <code>_linked_structure.structure_id</code> | — |
-    | [enabled](../physics/parameters.md#linked-structure-enabled) | <code>_linked_structure.enabled</code> | — |
-    | [weight fraction](../physics/parameters.md#linked-structure-weight-fraction) | <code>_linked_structure.weight_fraction</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Scale factor of one linked structure&#x27;s](../physics/parameters.md#linked-structure-scale) | <code>_linked_structure.scale</code><br><small>Also accepted: <code>_scale.value</code></small> |
+    | [Structure](../physics/parameters.md#linked-structure-structure-id) | <code>_linked_structure.structure_id</code> |
+    | [Enabled](../physics/parameters.md#linked-structure-enabled) | <code>_linked_structure.enabled</code> |
+    | [Weight fraction](../physics/parameters.md#linked-structure-weight-fraction) | <code>_linked_structure.weight_fraction</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="absorption" aria-hidden="true">&#61507;</span> Absorption](../physics/parameters.md#absorption)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [ABSCOR1](../physics/parameters.md#absorption-abscor1) | <code>_absorption.abscor1</code> | Å⁻¹ |
-    | [ABSCOR2](../physics/parameters.md#absorption-abscor2) | <code>_absorption.abscor2</code> | — |
-    | [μR](../physics/parameters.md#absorption-mu-r) | <code>_absorption.mu_r</code> | — |
-    | [type](../physics/parameters.md#absorption-type) | <code>_absorption.type</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [TOF sample absorption coefficient ABSCOR1](../physics/parameters.md#absorption-abscor1) | <code>_absorption.abscor1</code> |
+    | [TOF sample absorption lambda-power ABSCOR2](../physics/parameters.md#absorption-abscor2) | <code>_absorption.abscor2</code> |
+    | [CW cylinder sample absorption mu*R](../physics/parameters.md#absorption-mu-r) | <code>_absorption.mu_r</code> |
+    | [Type](../physics/parameters.md#absorption-type) | <code>_absorption.type</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="preferred-orientation" aria-hidden="true">&#61774;</span> Preferred orientation](../physics/parameters.md#preferred-orientation)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [r](../physics/parameters.md#preferred-orientation-march-r) | <code>_preferred_orientation.march_r</code> | — |
-    | [f rand](../physics/parameters.md#preferred-orientation-march-random-fract) | <code>_preferred_orientation.march_random_fract</code> | — |
-    | [structure](../physics/parameters.md#preferred-orientation-structure-id) | <code>_preferred_orientation.structure_id</code> | — |
-    | [h](../physics/parameters.md#preferred-orientation-index-h) | <code>_preferred_orientation.index_h</code> | — |
-    | [k](../physics/parameters.md#preferred-orientation-index-k) | <code>_preferred_orientation.index_k</code> | — |
-    | [l](../physics/parameters.md#preferred-orientation-index-l) | <code>_preferred_orientation.index_l</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [March-Dollase coefficient r](../physics/parameters.md#preferred-orientation-march-r) | <code>_preferred_orientation.march_r</code> |
+    | [Random](../physics/parameters.md#preferred-orientation-march-random-fract) | <code>_preferred_orientation.march_random_fract</code> |
+    | [Structure](../physics/parameters.md#preferred-orientation-structure-id) | <code>_preferred_orientation.structure_id</code> |
+    | [Index h](../physics/parameters.md#preferred-orientation-index-h) | <code>_preferred_orientation.index_h</code> |
+    | [Index k](../physics/parameters.md#preferred-orientation-index-k) | <code>_preferred_orientation.index_k</code> |
+    | [Index l](../physics/parameters.md#preferred-orientation-index-l) | <code>_preferred_orientation.index_l</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="reflns" aria-hidden="true">&#61616;</span> Observed reflections](../physics/parameters.md#reflns)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [observed above (su)](../physics/parameters.md#reflns-threshold-sigma) | <code>_reflns.threshold_sigma</code> | — |
-    | [on](../physics/parameters.md#reflns-threshold-basis) | <code>_reflns.threshold_basis</code> | — |
-    | [threshold](../physics/parameters.md#reflns-threshold-expression) | <code>_reflns.threshold_expression</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Observed above (su)](../physics/parameters.md#reflns-threshold-sigma) | <code>_reflns.threshold_sigma</code> |
+    | [Threshold basis](../physics/parameters.md#reflns-threshold-basis) | <code>_reflns.threshold_basis</code> |
+    | [Threshold](../physics/parameters.md#reflns-threshold-expression) | <code>_reflns.threshold_expression</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="scattering-source" aria-hidden="true">&#62930;</span> Scattering source](../physics/parameters.md#scattering-source)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [X-ray form factors](../physics/parameters.md#scattering-source-xray-form-factor) | <code>_scattering_source.xray_form_factor</code> | — |
-    | [X-ray dispersion](../physics/parameters.md#scattering-source-xray-dispersion) | <code>_scattering_source.xray_dispersion</code> | — |
-    | [neutron scattering lengths](../physics/parameters.md#scattering-source-neutron-scattering-length) | <code>_scattering_source.neutron_scattering_length</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [X-ray form factors](../physics/parameters.md#scattering-source-xray-form-factor) | <code>_scattering_source.xray_form_factor</code> |
+    | [X-ray dispersion](../physics/parameters.md#scattering-source-xray-dispersion) | <code>_scattering_source.xray_dispersion</code> |
+    | [Neutron scattering lengths](../physics/parameters.md#scattering-source-neutron-scattering-length) | <code>_scattering_source.neutron_scattering_length</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="data-source" aria-hidden="true">&#62831;</span> Data source](../physics/parameters.md#data-source)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [data file](../physics/parameters.md#data-source-file-name) | <code>_data_source.file_name</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Data file](../physics/parameters.md#data-source-file-name) | <code>_data_source.file_name</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="data" aria-hidden="true">&#62263;</span> Measured data point](../physics/parameters.md#data)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [2θ](../physics/parameters.md#data-two-theta) | <code>_data.two_theta</code> | deg |
-    | [TOF](../physics/parameters.md#data-time-of-flight) | <code>_data.time_of_flight</code> | µs |
-    | [meas](../physics/parameters.md#data-intensity-meas) | <code>_data.intensity_meas</code> | — |
-    | [s.u.](../physics/parameters.md#data-intensity-meas-su) | <code>_data.intensity_meas_su</code> | — |
-    | [d](../physics/parameters.md#data-d-spacing) | <code>_data.d_spacing</code> | Å |
-    | [calc](../physics/parameters.md#data-intensity-calc) | <code>_data.intensity_calc</code> | — |
-    | [bkg](../physics/parameters.md#data-intensity-bkg) | <code>_data.intensity_bkg</code> | — |
-    | [status](../physics/parameters.md#data-calc-status) | <code>_data.calc_status</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Two theta](../physics/parameters.md#data-two-theta) | <code>_data.two_theta</code> |
+    | [TOF](../physics/parameters.md#data-time-of-flight) | <code>_data.time_of_flight</code> |
+    | [Measured intensity](../physics/parameters.md#data-intensity-meas) | <code>_data.intensity_meas</code> |
+    | [Measured intensity uncertainty](../physics/parameters.md#data-intensity-meas-su) | <code>_data.intensity_meas_su</code> |
+    | [D spacing](../physics/parameters.md#data-d-spacing) | <code>_data.d_spacing</code> |
+    | [Calculated intensity](../physics/parameters.md#data-intensity-calc) | <code>_data.intensity_calc</code> |
+    | [Background intensity](../physics/parameters.md#data-intensity-bkg) | <code>_data.intensity_bkg</code> |
+    | [Status](../physics/parameters.md#data-calc-status) | <code>_data.calc_status</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="data-calc" aria-hidden="true">&#61950;</span> Calculated point](../physics/parameters.md#data-calc)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [point](../physics/parameters.md#data-calc-point-id) | <code>_data_calc.point_id</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Point](../physics/parameters.md#data-calc-point-id) | <code>_data_calc.point_id</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="pd-calc-overall" aria-hidden="true">&#61950;</span> Structure curves](../physics/parameters.md#pd-calc-overall)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [structure order](../physics/parameters.md#pd-calc-overall-component-presentation-order) | <code>_pd_calc_overall.component_presentation_order</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Structure order](../physics/parameters.md#pd-calc-overall-component-presentation-order) | <code>_pd_calc_overall.component_presentation_order</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="pd-calc" aria-hidden="true">&#61950;</span> Structure curve](../physics/parameters.md#pd-calc)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [structure calc](../physics/parameters.md#pd-calc-component-intensities-net) | <code>_pd_calc.component_intensities_net</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Structure calc](../physics/parameters.md#pd-calc-component-intensities-net) | <code>_pd_calc.component_intensities_net</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="refln" aria-hidden="true">&#61498;</span> Reflection](../physics/parameters.md#refln)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [structure](../physics/parameters.md#refln-structure-id) | <code>_refln.structure_id</code> | — |
-    | [d](../physics/parameters.md#refln-d-spacing) | <code>_refln.d_spacing</code> | Å |
-    | [sin θ/λ](../physics/parameters.md#refln-sin-theta-over-lambda) | <code>_refln.sin_theta_over_lambda</code> | 1/Å |
-    | [h](../physics/parameters.md#refln-index-h) | <code>_refln.index_h</code> | — |
-    | [k](../physics/parameters.md#refln-index-k) | <code>_refln.index_k</code> | — |
-    | [l](../physics/parameters.md#refln-index-l) | <code>_refln.index_l</code> | — |
-    | [F calc](../physics/parameters.md#refln-f-calc) | <code>_refln.f_calc</code> | — |
-    | [F meas](../physics/parameters.md#refln-f-meas) | <code>_refln.f_meas</code> | — |
-    | [F² calc](../physics/parameters.md#refln-f-squared-calc) | <code>_refln.f_squared_calc</code> | — |
-    | [F² meas](../physics/parameters.md#refln-intensity-meas) | <code>_refln.intensity_meas</code> | — |
-    | [s.u.](../physics/parameters.md#refln-intensity-meas-su) | <code>_refln.intensity_meas_su</code> | — |
-    | [F² calc](../physics/parameters.md#refln-intensity-calc) | <code>_refln.intensity_calc</code> | — |
-    | [λ](../physics/parameters.md#refln-wavelength) | <code>_refln.wavelength</code> | Å |
-    | [2θ](../physics/parameters.md#refln-two-theta) | <code>_refln.two_theta</code> | deg |
-    | [TOF](../physics/parameters.md#refln-time-of-flight) | <code>_refln.time_of_flight</code> | µs |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Structure](../physics/parameters.md#refln-structure-id) | <code>_refln.structure_id</code> |
+    | [D spacing](../physics/parameters.md#refln-d-spacing) | <code>_refln.d_spacing</code> |
+    | [sin θ over λ of the reflection](../physics/parameters.md#refln-sin-theta-over-lambda) | <code>_refln.sin_theta_over_lambda</code> |
+    | [Index h](../physics/parameters.md#refln-index-h) | <code>_refln.index_h</code> |
+    | [Index k](../physics/parameters.md#refln-index-k) | <code>_refln.index_k</code> |
+    | [Index l](../physics/parameters.md#refln-index-l) | <code>_refln.index_l</code> |
+    | [F calc](../physics/parameters.md#refln-f-calc) | <code>_refln.f_calc</code> |
+    | [F meas](../physics/parameters.md#refln-f-meas) | <code>_refln.f_meas</code> |
+    | [F² calc](../physics/parameters.md#refln-f-squared-calc) | <code>_refln.f_squared_calc</code> |
+    | [Measured intensity](../physics/parameters.md#refln-intensity-meas) | <code>_refln.intensity_meas</code> |
+    | [Measured intensity uncertainty](../physics/parameters.md#refln-intensity-meas-su) | <code>_refln.intensity_meas_su</code> |
+    | [Calculated intensity](../physics/parameters.md#refln-intensity-calc) | <code>_refln.intensity_calc</code> |
+    | [Wavelength](../physics/parameters.md#refln-wavelength) | <code>_refln.wavelength</code> |
+    | [Two theta](../physics/parameters.md#refln-two-theta) | <code>_refln.two_theta</code> |
+    | [TOF](../physics/parameters.md#refln-time-of-flight) | <code>_refln.time_of_flight</code> |
 
 === "Python"
 
     **[<span class="ed-reference-icon" data-reference-category="experiment-type" aria-hidden="true">&#63417;</span> Experiment type](../physics/parameters.md#experiment-type)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [beam mode](../physics/parameters.md#experiment-type-beam-mode) | <code>project.experiments[0].experiment_type.beam_mode</code> | — |
-    | [sample form](../physics/parameters.md#experiment-type-sample-form) | <code>project.experiments[0].experiment_type.sample_form</code> | — |
-    | [probe](../physics/parameters.md#experiment-type-radiation-probe) | <code>project.experiments[0].experiment_type.radiation_probe</code> | — |
-    | [scattering type](../physics/parameters.md#experiment-type-scattering-type) | <code>project.experiments[0].experiment_type.scattering_type</code> | — |
-    | [dimensionality](../physics/parameters.md#experiment-type-dimensionality) | <code>project.experiments[0].experiment_type.dimensionality</code> | — |
-    | [polarisation](../physics/parameters.md#experiment-type-polarisation) | <code>project.experiments[0].experiment_type.polarisation</code> | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [How the pattern is measured](../physics/parameters.md#experiment-type-beam-mode) | <code>project.experiments[0].experiment_type.beam_mode</code> |
+    | [Sample form](../physics/parameters.md#experiment-type-sample-form) | <code>project.experiments[0].experiment_type.sample_form</code> |
+    | [Probe](../physics/parameters.md#experiment-type-radiation-probe) | <code>project.experiments[0].experiment_type.radiation_probe</code> |
+    | [Which scattering the pattern is modelled with](../physics/parameters.md#experiment-type-scattering-type) | <code>project.experiments[0].experiment_type.scattering_type</code> |
+    | [Dimensionality](../physics/parameters.md#experiment-type-dimensionality) | <code>project.experiments[0].experiment_type.dimensionality</code> |
+    | [Polarisation](../physics/parameters.md#experiment-type-polarisation) | <code>project.experiments[0].experiment_type.polarisation</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="data-range" aria-hidden="true">&#62263;</span> Calculation range](../physics/parameters.md#data-range)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [min](../physics/parameters.md#data-range-two-theta-min) | — | deg |
-    | [max](../physics/parameters.md#data-range-two-theta-max) | — | deg |
-    | [step](../physics/parameters.md#data-range-two-theta-step) | — | deg |
-    | [2θ](../physics/parameters.md#data-range-two-theta) | — | deg |
-    | [min](../physics/parameters.md#data-range-time-of-flight-min) | — | µs |
-    | [max](../physics/parameters.md#data-range-time-of-flight-max) | — | µs |
-    | [step](../physics/parameters.md#data-range-time-of-flight-step) | — | µs |
-    | [TOF](../physics/parameters.md#data-range-time-of-flight) | — | µs |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Two theta min](../physics/parameters.md#data-range-two-theta-min) | — |
+    | [Two theta max](../physics/parameters.md#data-range-two-theta-max) | — |
+    | [Step](../physics/parameters.md#data-range-two-theta-step) | — |
+    | [Two theta](../physics/parameters.md#data-range-two-theta) | — |
+    | [Time of flight min](../physics/parameters.md#data-range-time-of-flight-min) | — |
+    | [Time of flight max](../physics/parameters.md#data-range-time-of-flight-max) | — |
+    | [Step](../physics/parameters.md#data-range-time-of-flight-step) | — |
+    | [TOF](../physics/parameters.md#data-range-time-of-flight) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="background" aria-hidden="true">&#63550;</span> Background](../physics/parameters.md#background)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [intensity](../physics/parameters.md#background-intensity) | <code>project.experiments[0].background[0].intensity</code> | — |
-    | [position](../physics/parameters.md#background-position) | <code>project.experiments[0].background[0].position</code> | µs |
-    | [coefficient](../physics/parameters.md#background-coef) | — | — |
-    | [order](../physics/parameters.md#background-order) | — | — |
-    | [origin](../physics/parameters.md#background-origin) | <code>project.experiments[0].background_origin</code> | — |
-    | [x min](../physics/parameters.md#background-x-min) | <code>project.experiments[0].background_x_min</code> | — |
-    | [x max](../physics/parameters.md#background-x-max) | <code>project.experiments[0].background_x_max</code> | — |
-    | [type](../physics/parameters.md#background-type) | <code>project.experiments[0].background_type</code> | — |
-    | [id](../physics/parameters.md#background-id) | <code>project.experiments[0].background[0].id</code> | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Line-segment background intensity anchor](../physics/parameters.md#background-intensity) | <code>project.experiments[0].background[0].intensity</code> |
+    | [Background anchor position](../physics/parameters.md#background-position) | <code>project.experiments[0].background[0].position</code> |
+    | [Polynomial or Chebyshev background coefficient of the row&#x27;s order](../physics/parameters.md#background-coef) | — |
+    | [Order m of a polynomial or Chebyshev background term](../physics/parameters.md#background-order) | — |
+    | [Origin of the polynomial background, FullProf Bkpos: the terms are powers of x/origin - 1](../physics/parameters.md#background-origin) | <code>project.experiments[0].background_origin</code> |
+    | [Lower end of the Chebyshev background&#x27;s normalisation domain](../physics/parameters.md#background-x-min) | <code>project.experiments[0].background_x_min</code> |
+    | [Upper end of the Chebyshev background&#x27;s normalisation domain](../physics/parameters.md#background-x-max) | <code>project.experiments[0].background_x_max</code> |
+    | [Type](../physics/parameters.md#background-type) | <code>project.experiments[0].background_type</code> |
+    | [Id](../physics/parameters.md#background-id) | <code>project.experiments[0].background[0].id</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="background-estimate" aria-hidden="true">&#61648;</span> Background estimation](../physics/parameters.md#background-estimate)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [estimation mode](../physics/parameters.md#background-estimate-mode) | — | — |
-    | [method](../physics/parameters.md#background-estimate-method) | — | — |
-    | [peak width](../physics/parameters.md#background-estimate-width) | — | — |
-    | [smoothness](../physics/parameters.md#background-estimate-smoothness) | — | — |
-    | [points](../physics/parameters.md#background-estimate-n-points) | — | — |
-    | [tolerance](../physics/parameters.md#background-estimate-tolerance) | — | — |
-    | [points in peaks](../physics/parameters.md#background-estimate-in-peaks) | — | — |
-    | [calculated peaks](../physics/parameters.md#background-estimate-use-model) | — | — |
-    | [max terms](../physics/parameters.md#background-estimate-max-terms) | — | — |
-    | [inputs digest](../physics/parameters.md#background-estimate-inputs-digest) | — | — |
-    | [points digest](../physics/parameters.md#background-estimate-points-digest) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Estimation mode](../physics/parameters.md#background-estimate-mode) | — |
+    | [Method](../physics/parameters.md#background-estimate-method) | — |
+    | [Peak width](../physics/parameters.md#background-estimate-width) | — |
+    | [How smooth the estimated background is](../physics/parameters.md#background-estimate-smoothness) | — |
+    | [How many background points the estimation keeps](../physics/parameters.md#background-estimate-n-points) | — |
+    | [How far, in units of the noise, the thinned background may stray](../physics/parameters.md#background-estimate-tolerance) | — |
+    | [What happens to a background point that falls in a peak](../physics/parameters.md#background-estimate-in-peaks) | — |
+    | [What the estimation does with the peaks of the calculated pattern](../physics/parameters.md#background-estimate-use-model) | — |
+    | [Max terms](../physics/parameters.md#background-estimate-max-terms) | — |
+    | [Inputs digest](../physics/parameters.md#background-estimate-inputs-digest) | — |
+    | [Points digest](../physics/parameters.md#background-estimate-points-digest) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="instrument" aria-hidden="true">&#62992;</span> Instrument](../physics/parameters.md#instrument)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [TOF offset](../physics/parameters.md#instrument-calib-d-to-tof-offset) | <code>project.experiments[0].instrument.calib_d_to_tof_offset</code> | µs |
-    | [TOF linear](../physics/parameters.md#instrument-calib-d-to-tof-linear) | <code>project.experiments[0].instrument.calib_d_to_tof_linear</code> | µs/Å |
-    | [TOF quadratic](../physics/parameters.md#instrument-calib-d-to-tof-quadratic) | <code>project.experiments[0].instrument.calib_d_to_tof_quadratic</code> | µs/Å² |
-    | [TOF reciprocal](../physics/parameters.md#instrument-calib-d-to-tof-reciprocal) | <code>project.experiments[0].instrument.calib_d_to_tof_reciprocal</code> | µs·Å |
-    | [2θ offset](../physics/parameters.md#instrument-calib-twotheta-offset) | <code>project.experiments[0].instrument.calib_twotheta_offset</code> | deg |
-    | [Wavelength](../physics/parameters.md#instrument-setup-wavelength) | <code>project.experiments[0].instrument.setup_wavelength</code> | Å |
-    | [Sample displacement](../physics/parameters.md#instrument-calib-sample-displacement) | <code>project.experiments[0].instrument.calib_sample_displacement</code> | deg |
-    | [Sample transparency](../physics/parameters.md#instrument-calib-sample-transparency) | <code>project.experiments[0].instrument.calib_sample_transparency</code> | deg |
-    | [Polarization coefficient](../physics/parameters.md#instrument-setup-polarization-coefficient) | <code>project.experiments[0].instrument.setup_polarization_coefficient</code> | — |
-    | [Monochromator 2θ](../physics/parameters.md#instrument-setup-monochromator-twotheta) | <code>project.experiments[0].instrument.setup_monochromator_twotheta</code> | deg |
-    | [Wavelength 2](../physics/parameters.md#instrument-setup-wavelength-2) | <code>project.experiments[0].instrument.setup_wavelength_2</code> | Å |
-    | [Intensity ratio 2/1](../physics/parameters.md#instrument-setup-wavelength-2-to-1-ratio) | <code>project.experiments[0].instrument.setup_wavelength_2_to_1_ratio</code> | — |
-    | [instrument](../physics/parameters.md#instrument-name) | <code>project.experiments[0].instrument.name</code> | — |
-    | [facility](../physics/parameters.md#instrument-facility) | <code>project.experiments[0].instrument.facility</code> | — |
-    | [2θ bank](../physics/parameters.md#instrument-setup-twotheta-bank) | <code>project.experiments[0].instrument.setup_twotheta_bank</code> | deg |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [TOF calibration zero offset](../physics/parameters.md#instrument-calib-d-to-tof-offset) | <code>project.experiments[0].instrument.calib_d_to_tof_offset</code> |
+    | [TOF calibration linear coefficient Dtt1](../physics/parameters.md#instrument-calib-d-to-tof-linear) | <code>project.experiments[0].instrument.calib_d_to_tof_linear</code> |
+    | [TOF calibration quadratic coefficient Dtt2](../physics/parameters.md#instrument-calib-d-to-tof-quadratic) | <code>project.experiments[0].instrument.calib_d_to_tof_quadratic</code> |
+    | [TOF calibration reciprocal](../physics/parameters.md#instrument-calib-d-to-tof-reciprocal) | <code>project.experiments[0].instrument.calib_d_to_tof_reciprocal</code> |
+    | [CW zero-point offset in degrees 2theta, subtracted from the observed axis](../physics/parameters.md#instrument-calib-twotheta-offset) | <code>project.experiments[0].instrument.calib_twotheta_offset</code> |
+    | [Incident neutron wavelength in angstroms](../physics/parameters.md#instrument-setup-wavelength) | <code>project.experiments[0].instrument.setup_wavelength</code> |
+    | [CW sample-displacement line shift in degrees 2theta](../physics/parameters.md#instrument-calib-sample-displacement) | <code>project.experiments[0].instrument.calib_sample_displacement</code> |
+    | [CW sample-transparency line shift in degrees 2theta](../physics/parameters.md#instrument-calib-sample-transparency) | <code>project.experiments[0].instrument.calib_sample_transparency</code> |
+    | [X-ray CW polarization coefficient K](../physics/parameters.md#instrument-setup-polarization-coefficient) | <code>project.experiments[0].instrument.setup_polarization_coefficient</code> |
+    | [X-ray CW pre-specimen monochromator angle 2theta_m in degrees](../physics/parameters.md#instrument-setup-monochromator-twotheta) | <code>project.experiments[0].instrument.setup_monochromator_twotheta</code> |
+    | [X-ray CW second incident wavelength in angstroms](../physics/parameters.md#instrument-setup-wavelength-2) | <code>project.experiments[0].instrument.setup_wavelength_2</code> |
+    | [X-ray CW intensity of the second wavelength relative to the first](../physics/parameters.md#instrument-setup-wavelength-2-to-1-ratio) | <code>project.experiments[0].instrument.setup_wavelength_2_to_1_ratio</code> |
+    | [Instrument](../physics/parameters.md#instrument-name) | <code>project.experiments[0].instrument.name</code> |
+    | [Facility](../physics/parameters.md#instrument-facility) | <code>project.experiments[0].instrument.facility</code> |
+    | [2θ bank](../physics/parameters.md#instrument-setup-twotheta-bank) | <code>project.experiments[0].instrument.setup_twotheta_bank</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="peak" aria-hidden="true">&#63007;</span> Peak profile](../physics/parameters.md#peak)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [α₀](../physics/parameters.md#peak-rise-alpha-0) | <code>project.experiments[0].peak.rise_alpha_0</code> | — |
-    | [α₁](../physics/parameters.md#peak-rise-alpha-1) | <code>project.experiments[0].peak.rise_alpha_1</code> | — |
-    | [β₀](../physics/parameters.md#peak-decay-beta-0) | <code>project.experiments[0].peak.decay_beta_0</code> | — |
-    | [β₁](../physics/parameters.md#peak-decay-beta-1) | <code>project.experiments[0].peak.decay_beta_1</code> | — |
-    | [σ₀²](../physics/parameters.md#peak-broad-gauss-sigma-0) | <code>project.experiments[0].peak.broad_gauss_sigma_0</code> | µs² |
-    | [σ₁²](../physics/parameters.md#peak-broad-gauss-sigma-1) | <code>project.experiments[0].peak.broad_gauss_sigma_1</code> | µs²/Å² |
-    | [σ₂²](../physics/parameters.md#peak-broad-gauss-sigma-2) | <code>project.experiments[0].peak.broad_gauss_sigma_2</code> | µs²/Å⁴ |
-    | [size G](../physics/parameters.md#peak-broad-gauss-size) | <code>project.experiments[0].peak.broad_gauss_size</code> | — |
-    | [strain G](../physics/parameters.md#peak-broad-gauss-strain) | <code>project.experiments[0].peak.broad_gauss_strain</code> | — |
-    | [γ₀](../physics/parameters.md#peak-broad-lorentz-gamma-0) | <code>project.experiments[0].peak.broad_lorentz_gamma_0</code> | µs |
-    | [γ₁](../physics/parameters.md#peak-broad-lorentz-gamma-1) | <code>project.experiments[0].peak.broad_lorentz_gamma_1</code> | µs/Å |
-    | [γ₂](../physics/parameters.md#peak-broad-lorentz-gamma-2) | <code>project.experiments[0].peak.broad_lorentz_gamma_2</code> | µs/Å² |
-    | [size L](../physics/parameters.md#peak-broad-lorentz-size) | <code>project.experiments[0].peak.broad_lorentz_size</code> | — |
-    | [strain L](../physics/parameters.md#peak-broad-lorentz-strain) | <code>project.experiments[0].peak.broad_lorentz_strain</code> | — |
-    | [U](../physics/parameters.md#peak-broad-gauss-u) | <code>project.experiments[0].peak.broad_gauss_u</code> | deg² |
-    | [V](../physics/parameters.md#peak-broad-gauss-v) | <code>project.experiments[0].peak.broad_gauss_v</code> | deg² |
-    | [W](../physics/parameters.md#peak-broad-gauss-w) | <code>project.experiments[0].peak.broad_gauss_w</code> | deg² |
-    | [X](../physics/parameters.md#peak-broad-lorentz-x) | <code>project.experiments[0].peak.broad_lorentz_x</code> | deg |
-    | [Y](../physics/parameters.md#peak-broad-lorentz-y) | <code>project.experiments[0].peak.broad_lorentz_y</code> | deg |
-    | [Eta0](../physics/parameters.md#peak-mixing-eta-0) | <code>project.experiments[0].peak.mixing_eta_0</code> | — |
-    | [Eta1](../physics/parameters.md#peak-mixing-eta-1) | <code>project.experiments[0].peak.mixing_eta_1</code> | 1/deg |
-    | [S/L](../physics/parameters.md#peak-asym-fcj-1) | <code>project.experiments[0].peak.asym_fcj_1</code> | — |
-    | [D/L](../physics/parameters.md#peak-asym-fcj-2) | <code>project.experiments[0].peak.asym_fcj_2</code> | — |
-    | [A₀](../physics/parameters.md#peak-asym-beba-a0) | <code>project.experiments[0].peak.asym_beba_a0</code> | — |
-    | [B₀](../physics/parameters.md#peak-asym-beba-b0) | <code>project.experiments[0].peak.asym_beba_b0</code> | — |
-    | [A₁](../physics/parameters.md#peak-asym-beba-a1) | <code>project.experiments[0].peak.asym_beba_a1</code> | — |
-    | [B₁](../physics/parameters.md#peak-asym-beba-b1) | <code>project.experiments[0].peak.asym_beba_b1</code> | — |
-    | [AsyLim](../physics/parameters.md#peak-asym-beba-limit) | <code>project.experiments[0].peak.asym_beba_limit</code> | deg |
-    | [profile](../physics/parameters.md#peak-type) | <code>project.experiments[0].peak.type</code> | — |
-    | [cutoff (FWHM)](../physics/parameters.md#peak-cutoff-fwhm) | <code>project.experiments[0].peak.cutoff_fwhm</code> | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Back-to-back exponential rise-rate coefficient alpha_0](../physics/parameters.md#peak-rise-alpha-0) | <code>project.experiments[0].peak.rise_alpha_0</code> |
+    | [Back-to-back exponential rise-rate coefficient alpha_1](../physics/parameters.md#peak-rise-alpha-1) | <code>project.experiments[0].peak.rise_alpha_1</code> |
+    | [Back-to-back exponential decay-rate coefficient beta_0](../physics/parameters.md#peak-decay-beta-0) | <code>project.experiments[0].peak.decay_beta_0</code> |
+    | [Back-to-back exponential decay-rate coefficient beta_1](../physics/parameters.md#peak-decay-beta-1) | <code>project.experiments[0].peak.decay_beta_1</code> |
+    | [Gaussian VARIANCE coefficient sigma_0^2](../physics/parameters.md#peak-broad-gauss-sigma-0) | <code>project.experiments[0].peak.broad_gauss_sigma_0</code> |
+    | [Gaussian VARIANCE coefficient sigma_1^2](../physics/parameters.md#peak-broad-gauss-sigma-1) | <code>project.experiments[0].peak.broad_gauss_sigma_1</code> |
+    | [Gaussian VARIANCE coefficient sigma_2^2](../physics/parameters.md#peak-broad-gauss-sigma-2) | <code>project.experiments[0].peak.broad_gauss_sigma_2</code> |
+    | [Gaussian isotropic size broadening](../physics/parameters.md#peak-broad-gauss-size) | <code>project.experiments[0].peak.broad_gauss_size</code> |
+    | [Gaussian isotropic strain broadening](../physics/parameters.md#peak-broad-gauss-strain) | <code>project.experiments[0].peak.broad_gauss_strain</code> |
+    | [Lorentzian FWHM coefficient gamma_0](../physics/parameters.md#peak-broad-lorentz-gamma-0) | <code>project.experiments[0].peak.broad_lorentz_gamma_0</code> |
+    | [Lorentzian FWHM coefficient gamma_1](../physics/parameters.md#peak-broad-lorentz-gamma-1) | <code>project.experiments[0].peak.broad_lorentz_gamma_1</code> |
+    | [Lorentzian FWHM coefficient gamma_2](../physics/parameters.md#peak-broad-lorentz-gamma-2) | <code>project.experiments[0].peak.broad_lorentz_gamma_2</code> |
+    | [Lorentzian isotropic size broadening](../physics/parameters.md#peak-broad-lorentz-size) | <code>project.experiments[0].peak.broad_lorentz_size</code> |
+    | [Lorentzian isotropic strain broadening](../physics/parameters.md#peak-broad-lorentz-strain) | <code>project.experiments[0].peak.broad_lorentz_strain</code> |
+    | [Caglioti Gaussian FWHM coefficient U](../physics/parameters.md#peak-broad-gauss-u) | <code>project.experiments[0].peak.broad_gauss_u</code> |
+    | [Caglioti Gaussian FWHM coefficient V](../physics/parameters.md#peak-broad-gauss-v) | <code>project.experiments[0].peak.broad_gauss_v</code> |
+    | [Caglioti Gaussian FWHM coefficient W](../physics/parameters.md#peak-broad-gauss-w) | <code>project.experiments[0].peak.broad_gauss_w</code> |
+    | [Lorentzian FWHM coefficient X, strain-like](../physics/parameters.md#peak-broad-lorentz-x) | <code>project.experiments[0].peak.broad_lorentz_x</code> |
+    | [Lorentzian FWHM coefficient Y, size-like](../physics/parameters.md#peak-broad-lorentz-y) | <code>project.experiments[0].peak.broad_lorentz_y</code> |
+    | [Pseudo-Voigt mixing at 2theta = 0: eta = eta_0 + eta_1 2theta](../physics/parameters.md#peak-mixing-eta-0) | <code>project.experiments[0].peak.mixing_eta_0</code> |
+    | [Pseudo-Voigt mixing slope per degree 2theta: eta = eta_0 + eta_1 2theta](../physics/parameters.md#peak-mixing-eta-1) | <code>project.experiments[0].peak.mixing_eta_1</code> |
+    | [S/L](../physics/parameters.md#peak-asym-fcj-1) | <code>project.experiments[0].peak.asym_fcj_1</code> |
+    | [D/L](../physics/parameters.md#peak-asym-fcj-2) | <code>project.experiments[0].peak.asym_fcj_2</code> |
+    | [Berar-Baldinozzi asymmetry coefficient A0](../physics/parameters.md#peak-asym-beba-a0) | <code>project.experiments[0].peak.asym_beba_a0</code> |
+    | [Berar-Baldinozzi asymmetry coefficient B0](../physics/parameters.md#peak-asym-beba-b0) | <code>project.experiments[0].peak.asym_beba_b0</code> |
+    | [Berar-Baldinozzi asymmetry coefficient A1](../physics/parameters.md#peak-asym-beba-a1) | <code>project.experiments[0].peak.asym_beba_a1</code> |
+    | [Berar-Baldinozzi asymmetry coefficient B1](../physics/parameters.md#peak-asym-beba-b1) | <code>project.experiments[0].peak.asym_beba_b1</code> |
+    | [Berar-Baldinozzi limit angle](../physics/parameters.md#peak-asym-beba-limit) | <code>project.experiments[0].peak.asym_beba_limit</code> |
+    | [Profile](../physics/parameters.md#peak-type) | <code>project.experiments[0].peak.type</code> |
+    | [How far from its centre a peak is calculated, in units of its width](../physics/parameters.md#peak-cutoff-fwhm) | <code>project.experiments[0].peak.cutoff_fwhm</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="excluded-region" aria-hidden="true">&#61741;</span> Excluded region](../physics/parameters.md#excluded-region)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#excluded-region-id) | — | — |
-    | [start](../physics/parameters.md#excluded-region-start) | — | deg |
-    | [end](../physics/parameters.md#excluded-region-end) | — | deg |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#excluded-region-id) | — |
+    | [Where the excluded region starts](../physics/parameters.md#excluded-region-start) | — |
+    | [Where the excluded region ends](../physics/parameters.md#excluded-region-end) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="extinction" aria-hidden="true">&#62373;</span> Extinction](../physics/parameters.md#extinction)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [Domain radius](../physics/parameters.md#extinction-domain-radius) | — | μm |
-    | [Mosaic spread](../physics/parameters.md#extinction-mosaic-spread) | — | rad⁻¹ |
-    | [Crystal radius](../physics/parameters.md#extinction-crystal-radius) | — | mm |
-    | [Extinction coefficient](../physics/parameters.md#extinction-coefficient) | — | — |
-    | [x11](../physics/parameters.md#extinction-coefficient-11) | — | — |
-    | [x22](../physics/parameters.md#extinction-coefficient-22) | — | — |
-    | [x33](../physics/parameters.md#extinction-coefficient-33) | — | — |
-    | [x12](../physics/parameters.md#extinction-coefficient-12) | — | — |
-    | [x13](../physics/parameters.md#extinction-coefficient-13) | — | — |
-    | [x23](../physics/parameters.md#extinction-coefficient-23) | — | — |
-    | [type](../physics/parameters.md#extinction-type) | — | — |
-    | [mosaic distribution](../physics/parameters.md#extinction-mosaic-distribution) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Becker-Coppens domain](../physics/parameters.md#extinction-domain-radius) | — |
+    | [Mosaic spread](../physics/parameters.md#extinction-mosaic-spread) | — |
+    | [Crystal radius](../physics/parameters.md#extinction-crystal-radius) | — |
+    | [Extinction coefficient](../physics/parameters.md#extinction-coefficient) | — |
+    | [X11](../physics/parameters.md#extinction-coefficient-11) | — |
+    | [X22](../physics/parameters.md#extinction-coefficient-22) | — |
+    | [X33](../physics/parameters.md#extinction-coefficient-33) | — |
+    | [X12](../physics/parameters.md#extinction-coefficient-12) | — |
+    | [X13](../physics/parameters.md#extinction-coefficient-13) | — |
+    | [X23](../physics/parameters.md#extinction-coefficient-23) | — |
+    | [Type](../physics/parameters.md#extinction-type) | — |
+    | [Mosaic distribution](../physics/parameters.md#extinction-mosaic-distribution) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="linked-structure" aria-hidden="true">&#62973;</span> Linked structure](../physics/parameters.md#linked-structure)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [scale](../physics/parameters.md#linked-structure-scale) | <code>project.experiments[0].linked_structures[0].scale</code> | — |
-    | [structure](../physics/parameters.md#linked-structure-structure-id) | <code>project.experiments[0].linked_structures[0].structure_id</code> | — |
-    | [enabled](../physics/parameters.md#linked-structure-enabled) | <code>project.experiments[0].linked_structures[0].enabled</code> | — |
-    | [weight fraction](../physics/parameters.md#linked-structure-weight-fraction) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Scale factor of one linked structure&#x27;s](../physics/parameters.md#linked-structure-scale) | <code>project.experiments[0].linked_structures[0].scale</code> |
+    | [Structure](../physics/parameters.md#linked-structure-structure-id) | <code>project.experiments[0].linked_structures[0].structure_id</code> |
+    | [Enabled](../physics/parameters.md#linked-structure-enabled) | <code>project.experiments[0].linked_structures[0].enabled</code> |
+    | [Weight fraction](../physics/parameters.md#linked-structure-weight-fraction) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="absorption" aria-hidden="true">&#61507;</span> Absorption](../physics/parameters.md#absorption)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [ABSCOR1](../physics/parameters.md#absorption-abscor1) | <code>project.experiments[0].absorption.abscor1</code> | Å⁻¹ |
-    | [ABSCOR2](../physics/parameters.md#absorption-abscor2) | <code>project.experiments[0].absorption.abscor2</code> | — |
-    | [μR](../physics/parameters.md#absorption-mu-r) | <code>project.experiments[0].absorption.mu_r</code> | — |
-    | [type](../physics/parameters.md#absorption-type) | <code>project.experiments[0].absorption.type</code> | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [TOF sample absorption coefficient ABSCOR1](../physics/parameters.md#absorption-abscor1) | <code>project.experiments[0].absorption.abscor1</code> |
+    | [TOF sample absorption lambda-power ABSCOR2](../physics/parameters.md#absorption-abscor2) | <code>project.experiments[0].absorption.abscor2</code> |
+    | [CW cylinder sample absorption mu*R](../physics/parameters.md#absorption-mu-r) | <code>project.experiments[0].absorption.mu_r</code> |
+    | [Type](../physics/parameters.md#absorption-type) | <code>project.experiments[0].absorption.type</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="preferred-orientation" aria-hidden="true">&#61774;</span> Preferred orientation](../physics/parameters.md#preferred-orientation)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [r](../physics/parameters.md#preferred-orientation-march-r) | — | — |
-    | [f rand](../physics/parameters.md#preferred-orientation-march-random-fract) | — | — |
-    | [structure](../physics/parameters.md#preferred-orientation-structure-id) | — | — |
-    | [h](../physics/parameters.md#preferred-orientation-index-h) | — | — |
-    | [k](../physics/parameters.md#preferred-orientation-index-k) | — | — |
-    | [l](../physics/parameters.md#preferred-orientation-index-l) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [March-Dollase coefficient r](../physics/parameters.md#preferred-orientation-march-r) | — |
+    | [Random](../physics/parameters.md#preferred-orientation-march-random-fract) | — |
+    | [Structure](../physics/parameters.md#preferred-orientation-structure-id) | — |
+    | [Index h](../physics/parameters.md#preferred-orientation-index-h) | — |
+    | [Index k](../physics/parameters.md#preferred-orientation-index-k) | — |
+    | [Index l](../physics/parameters.md#preferred-orientation-index-l) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="reflns" aria-hidden="true">&#61616;</span> Observed reflections](../physics/parameters.md#reflns)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [observed above (su)](../physics/parameters.md#reflns-threshold-sigma) | — | — |
-    | [on](../physics/parameters.md#reflns-threshold-basis) | — | — |
-    | [threshold](../physics/parameters.md#reflns-threshold-expression) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Observed above (su)](../physics/parameters.md#reflns-threshold-sigma) | — |
+    | [Threshold basis](../physics/parameters.md#reflns-threshold-basis) | — |
+    | [Threshold](../physics/parameters.md#reflns-threshold-expression) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="scattering-source" aria-hidden="true">&#62930;</span> Scattering source](../physics/parameters.md#scattering-source)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [X-ray form factors](../physics/parameters.md#scattering-source-xray-form-factor) | — | — |
-    | [X-ray dispersion](../physics/parameters.md#scattering-source-xray-dispersion) | — | — |
-    | [neutron scattering lengths](../physics/parameters.md#scattering-source-neutron-scattering-length) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [X-ray form factors](../physics/parameters.md#scattering-source-xray-form-factor) | — |
+    | [X-ray dispersion](../physics/parameters.md#scattering-source-xray-dispersion) | — |
+    | [Neutron scattering lengths](../physics/parameters.md#scattering-source-neutron-scattering-length) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="data-source" aria-hidden="true">&#62831;</span> Data source](../physics/parameters.md#data-source)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [data file](../physics/parameters.md#data-source-file-name) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Data file](../physics/parameters.md#data-source-file-name) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="data" aria-hidden="true">&#62263;</span> Measured data point](../physics/parameters.md#data)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [2θ](../physics/parameters.md#data-two-theta) | — | deg |
-    | [TOF](../physics/parameters.md#data-time-of-flight) | — | µs |
-    | [meas](../physics/parameters.md#data-intensity-meas) | — | — |
-    | [s.u.](../physics/parameters.md#data-intensity-meas-su) | — | — |
-    | [d](../physics/parameters.md#data-d-spacing) | — | Å |
-    | [calc](../physics/parameters.md#data-intensity-calc) | — | — |
-    | [bkg](../physics/parameters.md#data-intensity-bkg) | — | — |
-    | [status](../physics/parameters.md#data-calc-status) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Two theta](../physics/parameters.md#data-two-theta) | — |
+    | [TOF](../physics/parameters.md#data-time-of-flight) | — |
+    | [Measured intensity](../physics/parameters.md#data-intensity-meas) | — |
+    | [Measured intensity uncertainty](../physics/parameters.md#data-intensity-meas-su) | — |
+    | [D spacing](../physics/parameters.md#data-d-spacing) | — |
+    | [Calculated intensity](../physics/parameters.md#data-intensity-calc) | — |
+    | [Background intensity](../physics/parameters.md#data-intensity-bkg) | — |
+    | [Status](../physics/parameters.md#data-calc-status) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="data-calc" aria-hidden="true">&#61950;</span> Calculated point](../physics/parameters.md#data-calc)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [point](../physics/parameters.md#data-calc-point-id) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Point](../physics/parameters.md#data-calc-point-id) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="pd-calc-overall" aria-hidden="true">&#61950;</span> Structure curves](../physics/parameters.md#pd-calc-overall)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [structure order](../physics/parameters.md#pd-calc-overall-component-presentation-order) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Structure order](../physics/parameters.md#pd-calc-overall-component-presentation-order) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="pd-calc" aria-hidden="true">&#61950;</span> Structure curve](../physics/parameters.md#pd-calc)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [structure calc](../physics/parameters.md#pd-calc-component-intensities-net) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Structure calc](../physics/parameters.md#pd-calc-component-intensities-net) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="refln" aria-hidden="true">&#61498;</span> Reflection](../physics/parameters.md#refln)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [structure](../physics/parameters.md#refln-structure-id) | — | — |
-    | [d](../physics/parameters.md#refln-d-spacing) | — | Å |
-    | [sin θ/λ](../physics/parameters.md#refln-sin-theta-over-lambda) | — | 1/Å |
-    | [h](../physics/parameters.md#refln-index-h) | — | — |
-    | [k](../physics/parameters.md#refln-index-k) | — | — |
-    | [l](../physics/parameters.md#refln-index-l) | — | — |
-    | [F calc](../physics/parameters.md#refln-f-calc) | — | — |
-    | [F meas](../physics/parameters.md#refln-f-meas) | — | — |
-    | [F² calc](../physics/parameters.md#refln-f-squared-calc) | — | — |
-    | [F² meas](../physics/parameters.md#refln-intensity-meas) | — | — |
-    | [s.u.](../physics/parameters.md#refln-intensity-meas-su) | — | — |
-    | [F² calc](../physics/parameters.md#refln-intensity-calc) | — | — |
-    | [λ](../physics/parameters.md#refln-wavelength) | — | Å |
-    | [2θ](../physics/parameters.md#refln-two-theta) | — | deg |
-    | [TOF](../physics/parameters.md#refln-time-of-flight) | — | µs |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Structure](../physics/parameters.md#refln-structure-id) | — |
+    | [D spacing](../physics/parameters.md#refln-d-spacing) | — |
+    | [sin θ over λ of the reflection](../physics/parameters.md#refln-sin-theta-over-lambda) | — |
+    | [Index h](../physics/parameters.md#refln-index-h) | — |
+    | [Index k](../physics/parameters.md#refln-index-k) | — |
+    | [Index l](../physics/parameters.md#refln-index-l) | — |
+    | [F calc](../physics/parameters.md#refln-f-calc) | — |
+    | [F meas](../physics/parameters.md#refln-f-meas) | — |
+    | [F² calc](../physics/parameters.md#refln-f-squared-calc) | — |
+    | [Measured intensity](../physics/parameters.md#refln-intensity-meas) | — |
+    | [Measured intensity uncertainty](../physics/parameters.md#refln-intensity-meas-su) | — |
+    | [Calculated intensity](../physics/parameters.md#refln-intensity-calc) | — |
+    | [Wavelength](../physics/parameters.md#refln-wavelength) | — |
+    | [Two theta](../physics/parameters.md#refln-two-theta) | — |
+    | [TOF](../physics/parameters.md#refln-time-of-flight) | — |
 
 === "CIF"
 
     **[<span class="ed-reference-icon" data-reference-category="experiment-type" aria-hidden="true">&#63417;</span> Experiment type](../physics/parameters.md#experiment-type)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [beam mode](../physics/parameters.md#experiment-type-beam-mode) | <code>_edi_experiment_type.beam_mode</code> | — |
-    | [sample form](../physics/parameters.md#experiment-type-sample-form) | <code>_edi_experiment_type.sample_form</code> | — |
-    | [probe](../physics/parameters.md#experiment-type-radiation-probe) | <code>_diffrn_radiation.probe</code> | — |
-    | [scattering type](../physics/parameters.md#experiment-type-scattering-type) | <code>_edi_experiment_type.scattering_type</code> | — |
-    | [dimensionality](../physics/parameters.md#experiment-type-dimensionality) | <code>_edi_experiment_type.dimensionality</code> | — |
-    | [polarisation](../physics/parameters.md#experiment-type-polarisation) | <code>_edi_experiment_type.polarisation</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [How the pattern is measured](../physics/parameters.md#experiment-type-beam-mode) | <code>_edi_experiment_type.beam_mode</code><details><summary>Accepted aliases</summary><code>_easydiffraction_experiment_type.beam_mode</code><br><code>_expt_type.beam_mode</code></details> |
+    | [Sample form](../physics/parameters.md#experiment-type-sample-form) | <code>_edi_experiment_type.sample_form</code><details><summary>Accepted aliases</summary><code>_easydiffraction_experiment_type.sample_form</code><br><code>_expt_type.sample_form</code></details> |
+    | [Probe](../physics/parameters.md#experiment-type-radiation-probe) | <code>_diffrn_radiation.probe</code><details><summary>Accepted aliases</summary><code>_diffrn_radiation_probe</code><br><code>_easydiffraction_experiment_type.radiation_probe</code><br><code>_expt_type.radiation_probe</code></details> |
+    | [Which scattering the pattern is modelled with](../physics/parameters.md#experiment-type-scattering-type) | <code>_edi_experiment_type.scattering_type</code><details><summary>Accepted aliases</summary><code>_easydiffraction_experiment_type.scattering_type</code><br><code>_expt_type.scattering_type</code></details> |
+    | [Dimensionality](../physics/parameters.md#experiment-type-dimensionality) | <code>_edi_experiment_type.dimensionality</code> |
+    | [Polarisation](../physics/parameters.md#experiment-type-polarisation) | <code>_edi_experiment_type.polarisation</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="data-range" aria-hidden="true">&#62263;</span> Calculation range](../physics/parameters.md#data-range)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [min](../physics/parameters.md#data-range-two-theta-min) | <code>_pd_meas.2theta_range_min</code> | deg |
-    | [max](../physics/parameters.md#data-range-two-theta-max) | <code>_pd_meas.2theta_range_max</code> | deg |
-    | [step](../physics/parameters.md#data-range-two-theta-step) | <code>_pd_meas.2theta_range_inc</code> | deg |
-    | [2θ](../physics/parameters.md#data-range-two-theta) | <code>_edi_data_range.two_theta</code> | deg |
-    | [min](../physics/parameters.md#data-range-time-of-flight-min) | <code>_edi_data_range.time_of_flight_min</code> | µs |
-    | [max](../physics/parameters.md#data-range-time-of-flight-max) | <code>_edi_data_range.time_of_flight_max</code> | µs |
-    | [step](../physics/parameters.md#data-range-time-of-flight-step) | <code>_edi_data_range.time_of_flight_step</code> | µs |
-    | [TOF](../physics/parameters.md#data-range-time-of-flight) | <code>_edi_data_range.time_of_flight</code> | µs |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Two theta min](../physics/parameters.md#data-range-two-theta-min) | <code>_pd_meas.2theta_range_min</code><details><summary>Accepted aliases</summary><code>_pd_meas_2theta_range_min</code></details> |
+    | [Two theta max](../physics/parameters.md#data-range-two-theta-max) | <code>_pd_meas.2theta_range_max</code><details><summary>Accepted aliases</summary><code>_pd_meas_2theta_range_max</code></details> |
+    | [Step](../physics/parameters.md#data-range-two-theta-step) | <code>_pd_meas.2theta_range_inc</code><details><summary>Accepted aliases</summary><code>_pd_meas_2theta_range_inc</code></details> |
+    | [Two theta](../physics/parameters.md#data-range-two-theta) | <code>_edi_data_range.two_theta</code> |
+    | [Time of flight min](../physics/parameters.md#data-range-time-of-flight-min) | <code>_edi_data_range.time_of_flight_min</code><details><summary>Accepted aliases</summary><code>_pd_meas.time_of_flight_range_min</code></details> |
+    | [Time of flight max](../physics/parameters.md#data-range-time-of-flight-max) | <code>_edi_data_range.time_of_flight_max</code><details><summary>Accepted aliases</summary><code>_pd_meas.time_of_flight_range_max</code></details> |
+    | [Step](../physics/parameters.md#data-range-time-of-flight-step) | <code>_edi_data_range.time_of_flight_step</code> |
+    | [TOF](../physics/parameters.md#data-range-time-of-flight) | <code>_edi_data_range.time_of_flight</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="background" aria-hidden="true">&#63550;</span> Background](../physics/parameters.md#background)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [intensity](../physics/parameters.md#background-intensity) | <code>_pd_background.line_segment_intensity</code> | — |
-    | [position](../physics/parameters.md#background-position) | <code>_pd_background.line_segment_X</code> | µs |
-    | [coefficient](../physics/parameters.md#background-coef) | <code>_pd_background.Chebyshev_coef</code> | — |
-    | [order](../physics/parameters.md#background-order) | <code>_pd_background.Chebyshev_order</code> | — |
-    | [origin](../physics/parameters.md#background-origin) | <code>_edi_background.origin</code> | — |
-    | [x min](../physics/parameters.md#background-x-min) | <code>_edi_background.x_min</code> | — |
-    | [x max](../physics/parameters.md#background-x-max) | <code>_edi_background.x_max</code> | — |
-    | [type](../physics/parameters.md#background-type) | <code>_edi_background.type</code> | — |
-    | [id](../physics/parameters.md#background-id) | <code>_pd_background.id</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Line-segment background intensity anchor](../physics/parameters.md#background-intensity) | <code>_pd_background.line_segment_intensity</code><details><summary>Accepted aliases</summary><code>_pd_background_line_segment_intensity</code></details> |
+    | [Background anchor position](../physics/parameters.md#background-position) | <code>_pd_background.line_segment_X</code><details><summary>Accepted aliases</summary><code>_pd_background_line_segment_X</code></details> |
+    | [Polynomial or Chebyshev background coefficient of the row&#x27;s order](../physics/parameters.md#background-coef) | <code>_pd_background.Chebyshev_coef</code> |
+    | [Order m of a polynomial or Chebyshev background term](../physics/parameters.md#background-order) | <code>_pd_background.Chebyshev_order</code> |
+    | [Origin of the polynomial background, FullProf Bkpos: the terms are powers of x/origin - 1](../physics/parameters.md#background-origin) | <code>_edi_background.origin</code> |
+    | [Lower end of the Chebyshev background&#x27;s normalisation domain](../physics/parameters.md#background-x-min) | <code>_edi_background.x_min</code> |
+    | [Upper end of the Chebyshev background&#x27;s normalisation domain](../physics/parameters.md#background-x-max) | <code>_edi_background.x_max</code> |
+    | [Type](../physics/parameters.md#background-type) | <code>_edi_background.type</code><details><summary>Accepted aliases</summary><code>_easydiffraction_background.type</code></details> |
+    | [Id](../physics/parameters.md#background-id) | <code>_pd_background.id</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="background-estimate" aria-hidden="true">&#61648;</span> Background estimation](../physics/parameters.md#background-estimate)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [estimation mode](../physics/parameters.md#background-estimate-mode) | <code>_edi_background_estimate.mode</code> | — |
-    | [method](../physics/parameters.md#background-estimate-method) | <code>_edi_background_estimate.method</code> | — |
-    | [peak width](../physics/parameters.md#background-estimate-width) | <code>_edi_background_estimate.width</code> | — |
-    | [smoothness](../physics/parameters.md#background-estimate-smoothness) | <code>_edi_background_estimate.smoothness</code> | — |
-    | [points](../physics/parameters.md#background-estimate-n-points) | <code>_edi_background_estimate.n_points</code> | — |
-    | [tolerance](../physics/parameters.md#background-estimate-tolerance) | <code>_edi_background_estimate.tolerance</code> | — |
-    | [points in peaks](../physics/parameters.md#background-estimate-in-peaks) | <code>_edi_background_estimate.in_peaks</code> | — |
-    | [calculated peaks](../physics/parameters.md#background-estimate-use-model) | <code>_edi_background_estimate.use_model</code> | — |
-    | [max terms](../physics/parameters.md#background-estimate-max-terms) | <code>_edi_background_estimate.max_terms</code> | — |
-    | [inputs digest](../physics/parameters.md#background-estimate-inputs-digest) | <code>_edi_background_estimate.inputs_digest</code> | — |
-    | [points digest](../physics/parameters.md#background-estimate-points-digest) | <code>_edi_background_estimate.points_digest</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Estimation mode](../physics/parameters.md#background-estimate-mode) | <code>_edi_background_estimate.mode</code> |
+    | [Method](../physics/parameters.md#background-estimate-method) | <code>_edi_background_estimate.method</code> |
+    | [Peak width](../physics/parameters.md#background-estimate-width) | <code>_edi_background_estimate.width</code> |
+    | [How smooth the estimated background is](../physics/parameters.md#background-estimate-smoothness) | <code>_edi_background_estimate.smoothness</code> |
+    | [How many background points the estimation keeps](../physics/parameters.md#background-estimate-n-points) | <code>_edi_background_estimate.n_points</code> |
+    | [How far, in units of the noise, the thinned background may stray](../physics/parameters.md#background-estimate-tolerance) | <code>_edi_background_estimate.tolerance</code> |
+    | [What happens to a background point that falls in a peak](../physics/parameters.md#background-estimate-in-peaks) | <code>_edi_background_estimate.in_peaks</code> |
+    | [What the estimation does with the peaks of the calculated pattern](../physics/parameters.md#background-estimate-use-model) | <code>_edi_background_estimate.use_model</code> |
+    | [Max terms](../physics/parameters.md#background-estimate-max-terms) | <code>_edi_background_estimate.max_terms</code> |
+    | [Inputs digest](../physics/parameters.md#background-estimate-inputs-digest) | <code>_edi_background_estimate.inputs_digest</code> |
+    | [Points digest](../physics/parameters.md#background-estimate-points-digest) | <code>_edi_background_estimate.points_digest</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="instrument" aria-hidden="true">&#62992;</span> Instrument](../physics/parameters.md#instrument)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [TOF offset](../physics/parameters.md#instrument-calib-d-to-tof-offset) | <code>_edi_instrument.calib_d_to_tof_offset</code> | µs |
-    | [TOF linear](../physics/parameters.md#instrument-calib-d-to-tof-linear) | <code>_edi_instrument.calib_d_to_tof_linear</code> | µs/Å |
-    | [TOF quadratic](../physics/parameters.md#instrument-calib-d-to-tof-quadratic) | <code>_edi_instrument.calib_d_to_tof_quadratic</code> | µs/Å² |
-    | [TOF reciprocal](../physics/parameters.md#instrument-calib-d-to-tof-reciprocal) | <code>_edi_instrument.calib_d_to_tof_reciprocal</code> | µs·Å |
-    | [2θ offset](../physics/parameters.md#instrument-calib-twotheta-offset) | <code>_pd_calib.2theta_offset</code> | deg |
-    | [Wavelength](../physics/parameters.md#instrument-setup-wavelength) | <code>_diffrn_radiation_wavelength.value</code> | Å |
-    | [Sample displacement](../physics/parameters.md#instrument-calib-sample-displacement) | <code>_edi_instrument.calib_sample_displacement</code> | deg |
-    | [Sample transparency](../physics/parameters.md#instrument-calib-sample-transparency) | <code>_edi_instrument.calib_sample_transparency</code> | deg |
-    | [Polarization coefficient](../physics/parameters.md#instrument-setup-polarization-coefficient) | <code>_edi_instrument.setup_polarization_coefficient</code> | — |
-    | [Monochromator 2θ](../physics/parameters.md#instrument-setup-monochromator-twotheta) | <code>_edi_instrument.setup_monochromator_twotheta</code> | deg |
-    | [Wavelength 2](../physics/parameters.md#instrument-setup-wavelength-2) | <code>_edi_instrument.setup_wavelength_2</code> | Å |
-    | [Intensity ratio 2/1](../physics/parameters.md#instrument-setup-wavelength-2-to-1-ratio) | <code>_edi_instrument.setup_wavelength_2_to_1_ratio</code> | — |
-    | [instrument](../physics/parameters.md#instrument-name) | <code>_diffrn_source.beamline</code> | — |
-    | [facility](../physics/parameters.md#instrument-facility) | <code>_diffrn_source.facility</code> | — |
-    | [2θ bank](../physics/parameters.md#instrument-setup-twotheta-bank) | <code>_pd_meas.2theta_fixed</code> | deg |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [TOF calibration zero offset](../physics/parameters.md#instrument-calib-d-to-tof-offset) | <code>_edi_instrument.calib_d_to_tof_offset</code><details><summary>Accepted aliases</summary><code>_instr.d_to_tof_offset</code></details> |
+    | [TOF calibration linear coefficient Dtt1](../physics/parameters.md#instrument-calib-d-to-tof-linear) | <code>_edi_instrument.calib_d_to_tof_linear</code><details><summary>Accepted aliases</summary><code>_instr.d_to_tof_linear</code></details> |
+    | [TOF calibration quadratic coefficient Dtt2](../physics/parameters.md#instrument-calib-d-to-tof-quadratic) | <code>_edi_instrument.calib_d_to_tof_quadratic</code><details><summary>Accepted aliases</summary><code>_instr.d_to_tof_quad</code></details> |
+    | [TOF calibration reciprocal](../physics/parameters.md#instrument-calib-d-to-tof-reciprocal) | <code>_edi_instrument.calib_d_to_tof_reciprocal</code><details><summary>Accepted aliases</summary><code>_instr.d_to_tof_recip</code></details> |
+    | [CW zero-point offset in degrees 2theta, subtracted from the observed axis](../physics/parameters.md#instrument-calib-twotheta-offset) | <code>_pd_calib.2theta_offset</code><details><summary>Accepted aliases</summary><code>_pd_calib_2theta_offset</code><br><code>_instr.2theta_offset</code></details> |
+    | [Incident neutron wavelength in angstroms](../physics/parameters.md#instrument-setup-wavelength) | <code>_diffrn_radiation_wavelength.value</code><details><summary>Accepted aliases</summary><code>_diffrn_radiation_wavelength</code><br><code>_diffrn_radiation_wavelength.wavelength</code><br><code>_instr.wavelength</code></details> |
+    | [CW sample-displacement line shift in degrees 2theta](../physics/parameters.md#instrument-calib-sample-displacement) | <code>_edi_instrument.calib_sample_displacement</code><details><summary>Accepted aliases</summary><code>_instr.sample_displacement</code></details> |
+    | [CW sample-transparency line shift in degrees 2theta](../physics/parameters.md#instrument-calib-sample-transparency) | <code>_edi_instrument.calib_sample_transparency</code><details><summary>Accepted aliases</summary><code>_instr.sample_transparency</code></details> |
+    | [X-ray CW polarization coefficient K](../physics/parameters.md#instrument-setup-polarization-coefficient) | <code>_edi_instrument.setup_polarization_coefficient</code> |
+    | [X-ray CW pre-specimen monochromator angle 2theta_m in degrees](../physics/parameters.md#instrument-setup-monochromator-twotheta) | <code>_edi_instrument.setup_monochromator_twotheta</code> |
+    | [X-ray CW second incident wavelength in angstroms](../physics/parameters.md#instrument-setup-wavelength-2) | <code>_edi_instrument.setup_wavelength_2</code> |
+    | [X-ray CW intensity of the second wavelength relative to the first](../physics/parameters.md#instrument-setup-wavelength-2-to-1-ratio) | <code>_edi_instrument.setup_wavelength_2_to_1_ratio</code> |
+    | [Instrument](../physics/parameters.md#instrument-name) | <code>_diffrn_source.beamline</code> |
+    | [Facility](../physics/parameters.md#instrument-facility) | <code>_diffrn_source.facility</code> |
+    | [2θ bank](../physics/parameters.md#instrument-setup-twotheta-bank) | <code>_pd_meas.2theta_fixed</code><details><summary>Accepted aliases</summary><code>_pd_meas_2theta_fixed</code><br><code>_instr.2theta_bank</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="peak" aria-hidden="true">&#63007;</span> Peak profile](../physics/parameters.md#peak)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [α₀](../physics/parameters.md#peak-rise-alpha-0) | <code>_edi_peak.rise_alpha_0</code> | — |
-    | [α₁](../physics/parameters.md#peak-rise-alpha-1) | <code>_edi_peak.rise_alpha_1</code> | — |
-    | [β₀](../physics/parameters.md#peak-decay-beta-0) | <code>_edi_peak.decay_beta_0</code> | — |
-    | [β₁](../physics/parameters.md#peak-decay-beta-1) | <code>_edi_peak.decay_beta_1</code> | — |
-    | [σ₀²](../physics/parameters.md#peak-broad-gauss-sigma-0) | <code>_edi_peak.broad_gauss_sigma_0</code> | µs² |
-    | [σ₁²](../physics/parameters.md#peak-broad-gauss-sigma-1) | <code>_edi_peak.broad_gauss_sigma_1</code> | µs²/Å² |
-    | [σ₂²](../physics/parameters.md#peak-broad-gauss-sigma-2) | <code>_edi_peak.broad_gauss_sigma_2</code> | µs²/Å⁴ |
-    | [size G](../physics/parameters.md#peak-broad-gauss-size) | <code>_edi_peak.broad_gauss_size</code> | — |
-    | [strain G](../physics/parameters.md#peak-broad-gauss-strain) | <code>_edi_peak.broad_gauss_strain</code> | — |
-    | [γ₀](../physics/parameters.md#peak-broad-lorentz-gamma-0) | <code>_edi_peak.broad_lorentz_gamma_0</code> | µs |
-    | [γ₁](../physics/parameters.md#peak-broad-lorentz-gamma-1) | <code>_edi_peak.broad_lorentz_gamma_1</code> | µs/Å |
-    | [γ₂](../physics/parameters.md#peak-broad-lorentz-gamma-2) | <code>_edi_peak.broad_lorentz_gamma_2</code> | µs/Å² |
-    | [size L](../physics/parameters.md#peak-broad-lorentz-size) | <code>_edi_peak.broad_lorentz_size</code> | — |
-    | [strain L](../physics/parameters.md#peak-broad-lorentz-strain) | <code>_edi_peak.broad_lorentz_strain</code> | — |
-    | [U](../physics/parameters.md#peak-broad-gauss-u) | <code>_edi_peak.broad_gauss_u</code> | deg² |
-    | [V](../physics/parameters.md#peak-broad-gauss-v) | <code>_edi_peak.broad_gauss_v</code> | deg² |
-    | [W](../physics/parameters.md#peak-broad-gauss-w) | <code>_edi_peak.broad_gauss_w</code> | deg² |
-    | [X](../physics/parameters.md#peak-broad-lorentz-x) | <code>_edi_peak.broad_lorentz_x</code> | deg |
-    | [Y](../physics/parameters.md#peak-broad-lorentz-y) | <code>_edi_peak.broad_lorentz_y</code> | deg |
-    | [Eta0](../physics/parameters.md#peak-mixing-eta-0) | <code>_edi_peak.mixing_eta_0</code> | — |
-    | [Eta1](../physics/parameters.md#peak-mixing-eta-1) | <code>_edi_peak.mixing_eta_1</code> | 1/deg |
-    | [S/L](../physics/parameters.md#peak-asym-fcj-1) | <code>_edi_peak.asym_fcj_1</code> | — |
-    | [D/L](../physics/parameters.md#peak-asym-fcj-2) | <code>_edi_peak.asym_fcj_2</code> | — |
-    | [A₀](../physics/parameters.md#peak-asym-beba-a0) | <code>_edi_peak.asym_beba_a0</code> | — |
-    | [B₀](../physics/parameters.md#peak-asym-beba-b0) | <code>_edi_peak.asym_beba_b0</code> | — |
-    | [A₁](../physics/parameters.md#peak-asym-beba-a1) | <code>_edi_peak.asym_beba_a1</code> | — |
-    | [B₁](../physics/parameters.md#peak-asym-beba-b1) | <code>_edi_peak.asym_beba_b1</code> | — |
-    | [AsyLim](../physics/parameters.md#peak-asym-beba-limit) | <code>_edi_peak.asym_beba_limit</code> | deg |
-    | [profile](../physics/parameters.md#peak-type) | <code>_edi_peak.type</code> | — |
-    | [cutoff (FWHM)](../physics/parameters.md#peak-cutoff-fwhm) | <code>_edi_peak.cutoff_fwhm</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Back-to-back exponential rise-rate coefficient alpha_0](../physics/parameters.md#peak-rise-alpha-0) | <code>_edi_peak.rise_alpha_0</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.rise_alpha_0</code></details> |
+    | [Back-to-back exponential rise-rate coefficient alpha_1](../physics/parameters.md#peak-rise-alpha-1) | <code>_edi_peak.rise_alpha_1</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.rise_alpha_1</code></details> |
+    | [Back-to-back exponential decay-rate coefficient beta_0](../physics/parameters.md#peak-decay-beta-0) | <code>_edi_peak.decay_beta_0</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.decay_beta_0</code></details> |
+    | [Back-to-back exponential decay-rate coefficient beta_1](../physics/parameters.md#peak-decay-beta-1) | <code>_edi_peak.decay_beta_1</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.decay_beta_1</code></details> |
+    | [Gaussian VARIANCE coefficient sigma_0^2](../physics/parameters.md#peak-broad-gauss-sigma-0) | <code>_edi_peak.broad_gauss_sigma_0</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.broad_gauss_sigma_0</code></details> |
+    | [Gaussian VARIANCE coefficient sigma_1^2](../physics/parameters.md#peak-broad-gauss-sigma-1) | <code>_edi_peak.broad_gauss_sigma_1</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.broad_gauss_sigma_1</code></details> |
+    | [Gaussian VARIANCE coefficient sigma_2^2](../physics/parameters.md#peak-broad-gauss-sigma-2) | <code>_edi_peak.broad_gauss_sigma_2</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.broad_gauss_sigma_2</code></details> |
+    | [Gaussian isotropic size broadening](../physics/parameters.md#peak-broad-gauss-size) | <code>_edi_peak.broad_gauss_size</code> |
+    | [Gaussian isotropic strain broadening](../physics/parameters.md#peak-broad-gauss-strain) | <code>_edi_peak.broad_gauss_strain</code> |
+    | [Lorentzian FWHM coefficient gamma_0](../physics/parameters.md#peak-broad-lorentz-gamma-0) | <code>_edi_peak.broad_lorentz_gamma_0</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.broad_lorentz_gamma_0</code></details> |
+    | [Lorentzian FWHM coefficient gamma_1](../physics/parameters.md#peak-broad-lorentz-gamma-1) | <code>_edi_peak.broad_lorentz_gamma_1</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.broad_lorentz_gamma_1</code></details> |
+    | [Lorentzian FWHM coefficient gamma_2](../physics/parameters.md#peak-broad-lorentz-gamma-2) | <code>_edi_peak.broad_lorentz_gamma_2</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.broad_lorentz_gamma_2</code></details> |
+    | [Lorentzian isotropic size broadening](../physics/parameters.md#peak-broad-lorentz-size) | <code>_edi_peak.broad_lorentz_size</code> |
+    | [Lorentzian isotropic strain broadening](../physics/parameters.md#peak-broad-lorentz-strain) | <code>_edi_peak.broad_lorentz_strain</code> |
+    | [Caglioti Gaussian FWHM coefficient U](../physics/parameters.md#peak-broad-gauss-u) | <code>_edi_peak.broad_gauss_u</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.broad_gauss_u</code></details> |
+    | [Caglioti Gaussian FWHM coefficient V](../physics/parameters.md#peak-broad-gauss-v) | <code>_edi_peak.broad_gauss_v</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.broad_gauss_v</code></details> |
+    | [Caglioti Gaussian FWHM coefficient W](../physics/parameters.md#peak-broad-gauss-w) | <code>_edi_peak.broad_gauss_w</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.broad_gauss_w</code></details> |
+    | [Lorentzian FWHM coefficient X, strain-like](../physics/parameters.md#peak-broad-lorentz-x) | <code>_edi_peak.broad_lorentz_x</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.broad_lorentz_x</code></details> |
+    | [Lorentzian FWHM coefficient Y, size-like](../physics/parameters.md#peak-broad-lorentz-y) | <code>_edi_peak.broad_lorentz_y</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.broad_lorentz_y</code></details> |
+    | [Pseudo-Voigt mixing at 2theta = 0: eta = eta_0 + eta_1 2theta](../physics/parameters.md#peak-mixing-eta-0) | <code>_edi_peak.mixing_eta_0</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.mixing_eta_0</code></details> |
+    | [Pseudo-Voigt mixing slope per degree 2theta: eta = eta_0 + eta_1 2theta](../physics/parameters.md#peak-mixing-eta-1) | <code>_edi_peak.mixing_eta_1</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.mixing_eta_1</code></details> |
+    | [S/L](../physics/parameters.md#peak-asym-fcj-1) | <code>_edi_peak.asym_fcj_1</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.asym_fcj_1</code></details> |
+    | [D/L](../physics/parameters.md#peak-asym-fcj-2) | <code>_edi_peak.asym_fcj_2</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.asym_fcj_2</code></details> |
+    | [Berar-Baldinozzi asymmetry coefficient A0](../physics/parameters.md#peak-asym-beba-a0) | <code>_edi_peak.asym_beba_a0</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.asym_beba_a0</code></details> |
+    | [Berar-Baldinozzi asymmetry coefficient B0](../physics/parameters.md#peak-asym-beba-b0) | <code>_edi_peak.asym_beba_b0</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.asym_beba_b0</code></details> |
+    | [Berar-Baldinozzi asymmetry coefficient A1](../physics/parameters.md#peak-asym-beba-a1) | <code>_edi_peak.asym_beba_a1</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.asym_beba_a1</code></details> |
+    | [Berar-Baldinozzi asymmetry coefficient B1](../physics/parameters.md#peak-asym-beba-b1) | <code>_edi_peak.asym_beba_b1</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.asym_beba_b1</code></details> |
+    | [Berar-Baldinozzi limit angle](../physics/parameters.md#peak-asym-beba-limit) | <code>_edi_peak.asym_beba_limit</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.asym_beba_limit</code></details> |
+    | [Profile](../physics/parameters.md#peak-type) | <code>_edi_peak.type</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.type</code></details> |
+    | [How far from its centre a peak is calculated, in units of its width](../physics/parameters.md#peak-cutoff-fwhm) | <code>_edi_peak.cutoff_fwhm</code><details><summary>Accepted aliases</summary><code>_easydiffraction_peak.cutoff_fwhm</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="excluded-region" aria-hidden="true">&#61741;</span> Excluded region](../physics/parameters.md#excluded-region)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#excluded-region-id) | <code>_edi_excluded_region.id</code> | — |
-    | [start](../physics/parameters.md#excluded-region-start) | <code>_edi_excluded_region.start</code> | deg |
-    | [end](../physics/parameters.md#excluded-region-end) | <code>_edi_excluded_region.end</code> | deg |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#excluded-region-id) | <code>_edi_excluded_region.id</code><details><summary>Accepted aliases</summary><code>_easydiffraction_excluded_region.id</code></details> |
+    | [Where the excluded region starts](../physics/parameters.md#excluded-region-start) | <code>_edi_excluded_region.start</code><details><summary>Accepted aliases</summary><code>_easydiffraction_excluded_region.start</code></details> |
+    | [Where the excluded region ends](../physics/parameters.md#excluded-region-end) | <code>_edi_excluded_region.end</code><details><summary>Accepted aliases</summary><code>_easydiffraction_excluded_region.end</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="extinction" aria-hidden="true">&#62373;</span> Extinction](../physics/parameters.md#extinction)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [Domain radius](../physics/parameters.md#extinction-domain-radius) | <code>_edi_extinction.domain_radius</code> | μm |
-    | [Mosaic spread](../physics/parameters.md#extinction-mosaic-spread) | <code>_edi_extinction.mosaic_spread</code> | rad⁻¹ |
-    | [Crystal radius](../physics/parameters.md#extinction-crystal-radius) | <code>_exptl_crystal.size_rad</code> | mm |
-    | [Extinction coefficient](../physics/parameters.md#extinction-coefficient) | <code>_edi_extinction.coefficient</code> | — |
-    | [x11](../physics/parameters.md#extinction-coefficient-11) | <code>_edi_extinction.coefficient_11</code> | — |
-    | [x22](../physics/parameters.md#extinction-coefficient-22) | <code>_edi_extinction.coefficient_22</code> | — |
-    | [x33](../physics/parameters.md#extinction-coefficient-33) | <code>_edi_extinction.coefficient_33</code> | — |
-    | [x12](../physics/parameters.md#extinction-coefficient-12) | <code>_edi_extinction.coefficient_12</code> | — |
-    | [x13](../physics/parameters.md#extinction-coefficient-13) | <code>_edi_extinction.coefficient_13</code> | — |
-    | [x23](../physics/parameters.md#extinction-coefficient-23) | <code>_edi_extinction.coefficient_23</code> | — |
-    | [type](../physics/parameters.md#extinction-type) | <code>_edi_extinction.type</code> | — |
-    | [mosaic distribution](../physics/parameters.md#extinction-mosaic-distribution) | <code>_edi_extinction.mosaic_distribution</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Becker-Coppens domain](../physics/parameters.md#extinction-domain-radius) | <code>_edi_extinction.domain_radius</code> |
+    | [Mosaic spread](../physics/parameters.md#extinction-mosaic-spread) | <code>_edi_extinction.mosaic_spread</code> |
+    | [Crystal radius](../physics/parameters.md#extinction-crystal-radius) | <code>_exptl_crystal.size_rad</code><details><summary>Accepted aliases</summary><code>_exptl_crystal_size_rad</code></details> |
+    | [Extinction coefficient](../physics/parameters.md#extinction-coefficient) | <code>_edi_extinction.coefficient</code> |
+    | [X11](../physics/parameters.md#extinction-coefficient-11) | <code>_edi_extinction.coefficient_11</code> |
+    | [X22](../physics/parameters.md#extinction-coefficient-22) | <code>_edi_extinction.coefficient_22</code> |
+    | [X33](../physics/parameters.md#extinction-coefficient-33) | <code>_edi_extinction.coefficient_33</code> |
+    | [X12](../physics/parameters.md#extinction-coefficient-12) | <code>_edi_extinction.coefficient_12</code> |
+    | [X13](../physics/parameters.md#extinction-coefficient-13) | <code>_edi_extinction.coefficient_13</code> |
+    | [X23](../physics/parameters.md#extinction-coefficient-23) | <code>_edi_extinction.coefficient_23</code> |
+    | [Type](../physics/parameters.md#extinction-type) | <code>_edi_extinction.type</code><details><summary>Accepted aliases</summary><code>_easydiffraction_extinction.type</code></details> |
+    | [Mosaic distribution](../physics/parameters.md#extinction-mosaic-distribution) | <code>_edi_extinction.mosaic_distribution</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="linked-structure" aria-hidden="true">&#62973;</span> Linked structure](../physics/parameters.md#linked-structure)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [scale](../physics/parameters.md#linked-structure-scale) | <code>_edi_linked_structure.scale</code> | — |
-    | [structure](../physics/parameters.md#linked-structure-structure-id) | <code>_pd_phase_block.id</code> | — |
-    | [enabled](../physics/parameters.md#linked-structure-enabled) | <code>_edi_linked_structure.enabled</code> | — |
-    | [weight fraction](../physics/parameters.md#linked-structure-weight-fraction) | <code>_edi_linked_structure.weight_fraction</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Scale factor of one linked structure&#x27;s](../physics/parameters.md#linked-structure-scale) | <code>_edi_linked_structure.scale</code><details><summary>Accepted aliases</summary><code>_pd_phase_block.scale</code><br><code>_easydiffraction_sc_crystal_block.scale</code><br><code>_sc_crystal_block.scale</code></details> |
+    | [Structure](../physics/parameters.md#linked-structure-structure-id) | <code>_pd_phase_block.id</code><details><summary>Accepted aliases</summary><code>_pd_phase_block_id</code><br><code>_easydiffraction_sc_crystal_block.id</code><br><code>_sc_crystal_block.id</code></details> |
+    | [Enabled](../physics/parameters.md#linked-structure-enabled) | <code>_edi_linked_structure.enabled</code> |
+    | [Weight fraction](../physics/parameters.md#linked-structure-weight-fraction) | <code>_edi_linked_structure.weight_fraction</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="absorption" aria-hidden="true">&#61507;</span> Absorption](../physics/parameters.md#absorption)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [ABSCOR1](../physics/parameters.md#absorption-abscor1) | <code>_edi_absorption.abscor1</code> | Å⁻¹ |
-    | [ABSCOR2](../physics/parameters.md#absorption-abscor2) | <code>_edi_absorption.abscor2</code> | — |
-    | [μR](../physics/parameters.md#absorption-mu-r) | <code>_edi_absorption.mu_r</code> | — |
-    | [type](../physics/parameters.md#absorption-type) | <code>_edi_absorption.type</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [TOF sample absorption coefficient ABSCOR1](../physics/parameters.md#absorption-abscor1) | <code>_edi_absorption.abscor1</code> |
+    | [TOF sample absorption lambda-power ABSCOR2](../physics/parameters.md#absorption-abscor2) | <code>_edi_absorption.abscor2</code> |
+    | [CW cylinder sample absorption mu*R](../physics/parameters.md#absorption-mu-r) | <code>_edi_absorption.mu_r</code><details><summary>Accepted aliases</summary><code>_easydiffraction_absorption.mu_r</code></details> |
+    | [Type](../physics/parameters.md#absorption-type) | <code>_edi_absorption.type</code><details><summary>Accepted aliases</summary><code>_easydiffraction_absorption.type</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="preferred-orientation" aria-hidden="true">&#61774;</span> Preferred orientation](../physics/parameters.md#preferred-orientation)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [r](../physics/parameters.md#preferred-orientation-march-r) | <code>_pd_pref_orient_March_Dollase.r</code> | — |
-    | [f rand](../physics/parameters.md#preferred-orientation-march-random-fract) | <code>_edi_preferred_orientation.march_random_fract</code> | — |
-    | [structure](../physics/parameters.md#preferred-orientation-structure-id) | <code>_pd_pref_orient_March_Dollase.phase_id</code> | — |
-    | [h](../physics/parameters.md#preferred-orientation-index-h) | <code>_pd_pref_orient_March_Dollase.index_h</code> | — |
-    | [k](../physics/parameters.md#preferred-orientation-index-k) | <code>_pd_pref_orient_March_Dollase.index_k</code> | — |
-    | [l](../physics/parameters.md#preferred-orientation-index-l) | <code>_pd_pref_orient_March_Dollase.index_l</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [March-Dollase coefficient r](../physics/parameters.md#preferred-orientation-march-r) | <code>_pd_pref_orient_March_Dollase.r</code><details><summary>Accepted aliases</summary><code>_pref_orient.march_r</code></details> |
+    | [Random](../physics/parameters.md#preferred-orientation-march-random-fract) | <code>_edi_preferred_orientation.march_random_fract</code><details><summary>Accepted aliases</summary><code>_easydiffraction_pref_orient.march_random_fract</code><br><code>_pref_orient.march_random_fract</code></details> |
+    | [Structure](../physics/parameters.md#preferred-orientation-structure-id) | <code>_pd_pref_orient_March_Dollase.phase_id</code><details><summary>Accepted aliases</summary><code>_pref_orient.phase_id</code></details> |
+    | [Index h](../physics/parameters.md#preferred-orientation-index-h) | <code>_pd_pref_orient_March_Dollase.index_h</code><details><summary>Accepted aliases</summary><code>_pref_orient.index_h</code></details> |
+    | [Index k](../physics/parameters.md#preferred-orientation-index-k) | <code>_pd_pref_orient_March_Dollase.index_k</code><details><summary>Accepted aliases</summary><code>_pref_orient.index_k</code></details> |
+    | [Index l](../physics/parameters.md#preferred-orientation-index-l) | <code>_pd_pref_orient_March_Dollase.index_l</code><details><summary>Accepted aliases</summary><code>_pref_orient.index_l</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="reflns" aria-hidden="true">&#61616;</span> Observed reflections](../physics/parameters.md#reflns)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [observed above (su)](../physics/parameters.md#reflns-threshold-sigma) | <code>_edi_reflns.threshold_sigma</code> | — |
-    | [on](../physics/parameters.md#reflns-threshold-basis) | <code>_edi_reflns.threshold_basis</code> | — |
-    | [threshold](../physics/parameters.md#reflns-threshold-expression) | <code>_reflns.threshold_expression</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Observed above (su)](../physics/parameters.md#reflns-threshold-sigma) | <code>_edi_reflns.threshold_sigma</code> |
+    | [Threshold basis](../physics/parameters.md#reflns-threshold-basis) | <code>_edi_reflns.threshold_basis</code> |
+    | [Threshold](../physics/parameters.md#reflns-threshold-expression) | <code>_reflns.threshold_expression</code><details><summary>Accepted aliases</summary><code>_reflns_threshold_expression</code><br><code>_reflns_observed_criterion</code><br><code>_reflns.observed_criterion</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="scattering-source" aria-hidden="true">&#62930;</span> Scattering source](../physics/parameters.md#scattering-source)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [X-ray form factors](../physics/parameters.md#scattering-source-xray-form-factor) | <code>_edi_scattering_source.xray_form_factor</code> | — |
-    | [X-ray dispersion](../physics/parameters.md#scattering-source-xray-dispersion) | <code>_edi_scattering_source.xray_dispersion</code> | — |
-    | [neutron scattering lengths](../physics/parameters.md#scattering-source-neutron-scattering-length) | <code>_edi_scattering_source.neutron_scattering_length</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [X-ray form factors](../physics/parameters.md#scattering-source-xray-form-factor) | <code>_edi_scattering_source.xray_form_factor</code> |
+    | [X-ray dispersion](../physics/parameters.md#scattering-source-xray-dispersion) | <code>_edi_scattering_source.xray_dispersion</code> |
+    | [Neutron scattering lengths](../physics/parameters.md#scattering-source-neutron-scattering-length) | <code>_edi_scattering_source.neutron_scattering_length</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="data-source" aria-hidden="true">&#62831;</span> Data source](../physics/parameters.md#data-source)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [data file](../physics/parameters.md#data-source-file-name) | <code>_edi_data_source.file_name</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Data file](../physics/parameters.md#data-source-file-name) | <code>_edi_data_source.file_name</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="data" aria-hidden="true">&#62263;</span> Measured data point](../physics/parameters.md#data)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [2θ](../physics/parameters.md#data-two-theta) | <code>_pd_meas.2theta_scan</code> | deg |
-    | [TOF](../physics/parameters.md#data-time-of-flight) | <code>_pd_meas.time_of_flight</code> | µs |
-    | [meas](../physics/parameters.md#data-intensity-meas) | <code>_pd_meas.intensity_total</code> | — |
-    | [s.u.](../physics/parameters.md#data-intensity-meas-su) | <code>_pd_meas.intensity_total_su</code> | — |
-    | [d](../physics/parameters.md#data-d-spacing) | <code>_pd_proc.d_spacing</code> | Å |
-    | [calc](../physics/parameters.md#data-intensity-calc) | <code>_pd_calc.intensity_total</code> | — |
-    | [bkg](../physics/parameters.md#data-intensity-bkg) | <code>_pd_calc.intensity_bkg</code> | — |
-    | [status](../physics/parameters.md#data-calc-status) | <code>_edi_data.calc_status</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Two theta](../physics/parameters.md#data-two-theta) | <code>_pd_meas.2theta_scan</code><details><summary>Accepted aliases</summary><code>_pd_meas_2theta_scan</code><br><code>_pd_meas_angle_2theta</code><br><code>_pd_proc.2theta_scan</code></details> |
+    | [TOF](../physics/parameters.md#data-time-of-flight) | <code>_pd_meas.time_of_flight</code><details><summary>Accepted aliases</summary><code>_pd_meas_time_of_flight</code></details> |
+    | [Measured intensity](../physics/parameters.md#data-intensity-meas) | <code>_pd_meas.intensity_total</code><details><summary>Accepted aliases</summary><code>_pd_meas_intensity_total</code><br><code>_pd_proc.intensity_norm</code></details> |
+    | [Measured intensity uncertainty](../physics/parameters.md#data-intensity-meas-su) | <code>_pd_meas.intensity_total_su</code><details><summary>Accepted aliases</summary><code>_pd_proc.intensity_norm_su</code></details> |
+    | [D spacing](../physics/parameters.md#data-d-spacing) | <code>_pd_proc.d_spacing</code><details><summary>Accepted aliases</summary><code>_pd_proc_d_spacing</code></details> |
+    | [Calculated intensity](../physics/parameters.md#data-intensity-calc) | <code>_pd_calc.intensity_total</code><details><summary>Accepted aliases</summary><code>_pd_calc_intensity_total</code></details> |
+    | [Background intensity](../physics/parameters.md#data-intensity-bkg) | <code>_pd_calc.intensity_bkg</code> |
+    | [Status](../physics/parameters.md#data-calc-status) | <code>_edi_data.calc_status</code><details><summary>Accepted aliases</summary><code>_pd_data.refinement_status</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="data-calc" aria-hidden="true">&#61950;</span> Calculated point](../physics/parameters.md#data-calc)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [point](../physics/parameters.md#data-calc-point-id) | <code>_pd_data.point_id</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Point](../physics/parameters.md#data-calc-point-id) | <code>_pd_data.point_id</code><details><summary>Accepted aliases</summary><code>_pd_data_point_id</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="pd-calc-overall" aria-hidden="true">&#61950;</span> Structure curves](../physics/parameters.md#pd-calc-overall)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [structure order](../physics/parameters.md#pd-calc-overall-component-presentation-order) | <code>_edi_pd_calc_overall.component_presentation_order</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Structure order](../physics/parameters.md#pd-calc-overall-component-presentation-order) | <code>_edi_pd_calc_overall.component_presentation_order</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="pd-calc" aria-hidden="true">&#61950;</span> Structure curve](../physics/parameters.md#pd-calc)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [structure calc](../physics/parameters.md#pd-calc-component-intensities-net) | <code>_pd_calc.component_intensities_net</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Structure calc](../physics/parameters.md#pd-calc-component-intensities-net) | <code>_pd_calc.component_intensities_net</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="refln" aria-hidden="true">&#61498;</span> Reflection](../physics/parameters.md#refln)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [structure](../physics/parameters.md#refln-structure-id) | <code>_pd_refln.phase_id</code> | — |
-    | [d](../physics/parameters.md#refln-d-spacing) | <code>_refln.d_spacing</code> | Å |
-    | [sin θ/λ](../physics/parameters.md#refln-sin-theta-over-lambda) | <code>_refln.sin_theta_over_lambda</code> | 1/Å |
-    | [h](../physics/parameters.md#refln-index-h) | <code>_refln.index_h</code> | — |
-    | [k](../physics/parameters.md#refln-index-k) | <code>_refln.index_k</code> | — |
-    | [l](../physics/parameters.md#refln-index-l) | <code>_refln.index_l</code> | — |
-    | [F calc](../physics/parameters.md#refln-f-calc) | <code>_refln.F_calc</code> | — |
-    | [F meas](../physics/parameters.md#refln-f-meas) | <code>_refln.F_meas</code> | — |
-    | [F² calc](../physics/parameters.md#refln-f-squared-calc) | <code>_refln.F_squared_calc</code> | — |
-    | [F² meas](../physics/parameters.md#refln-intensity-meas) | <code>_refln.intensity_meas</code> | — |
-    | [s.u.](../physics/parameters.md#refln-intensity-meas-su) | <code>_refln.intensity_meas_su</code> | — |
-    | [F² calc](../physics/parameters.md#refln-intensity-calc) | <code>_refln.intensity_calc</code> | — |
-    | [λ](../physics/parameters.md#refln-wavelength) | <code>_refln.wavelength</code> | Å |
-    | [2θ](../physics/parameters.md#refln-two-theta) | <code>_edi_refln.two_theta</code> | deg |
-    | [TOF](../physics/parameters.md#refln-time-of-flight) | <code>_edi_refln.time_of_flight</code> | µs |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Structure](../physics/parameters.md#refln-structure-id) | <code>_pd_refln.phase_id</code><details><summary>Accepted aliases</summary><code>_pd_refln_phase_id</code><br><code>_refln.phase_id</code></details> |
+    | [D spacing](../physics/parameters.md#refln-d-spacing) | <code>_refln.d_spacing</code><details><summary>Accepted aliases</summary><code>_refln_d_spacing</code></details> |
+    | [sin θ over λ of the reflection](../physics/parameters.md#refln-sin-theta-over-lambda) | <code>_refln.sin_theta_over_lambda</code><details><summary>Accepted aliases</summary><code>_refln_sint/lambda</code><br><code>_refln_sin_theta_over_lambda</code><br><code>_refln.sint_over_lambda</code></details> |
+    | [Index h](../physics/parameters.md#refln-index-h) | <code>_refln.index_h</code><details><summary>Accepted aliases</summary><code>_refln_index_h</code></details> |
+    | [Index k](../physics/parameters.md#refln-index-k) | <code>_refln.index_k</code><details><summary>Accepted aliases</summary><code>_refln_index_k</code></details> |
+    | [Index l](../physics/parameters.md#refln-index-l) | <code>_refln.index_l</code><details><summary>Accepted aliases</summary><code>_refln_index_l</code></details> |
+    | [F calc](../physics/parameters.md#refln-f-calc) | <code>_refln.F_calc</code><details><summary>Accepted aliases</summary><code>_refln_F_calc</code><br><code>_refln.f_calc</code></details> |
+    | [F meas](../physics/parameters.md#refln-f-meas) | <code>_refln.F_meas</code><details><summary>Accepted aliases</summary><code>_refln_F_meas</code></details> |
+    | [F² calc](../physics/parameters.md#refln-f-squared-calc) | <code>_refln.F_squared_calc</code><details><summary>Accepted aliases</summary><code>_refln_F_squared_calc</code><br><code>_refln.f_squared_calc</code></details> |
+    | [Measured intensity](../physics/parameters.md#refln-intensity-meas) | <code>_refln.intensity_meas</code><details><summary>Accepted aliases</summary><code>_refln_intensity_meas</code></details> |
+    | [Measured intensity uncertainty](../physics/parameters.md#refln-intensity-meas-su) | <code>_refln.intensity_meas_su</code><details><summary>Accepted aliases</summary><code>_refln_intensity_meas_su</code><br><code>_refln.intensity_sigma</code><br><code>_refln_intensity_sigma</code></details> |
+    | [Calculated intensity](../physics/parameters.md#refln-intensity-calc) | <code>_refln.intensity_calc</code><details><summary>Accepted aliases</summary><code>_refln_intensity_calc</code></details> |
+    | [Wavelength](../physics/parameters.md#refln-wavelength) | <code>_refln.wavelength</code><details><summary>Accepted aliases</summary><code>_refln_wavelength</code></details> |
+    | [Two theta](../physics/parameters.md#refln-two-theta) | <code>_edi_refln.two_theta</code><details><summary>Accepted aliases</summary><code>_refln.two_theta</code></details> |
+    | [TOF](../physics/parameters.md#refln-time-of-flight) | <code>_edi_refln.time_of_flight</code><details><summary>Accepted aliases</summary><code>_refln.time_of_flight</code></details> |
 
 ## Project and analysis settings
 
 === "GUI"
 
-    **[<span class="ed-reference-icon" data-reference-category="metadata" aria-hidden="true">&#61831;</span> Project](../physics/parameters.md#metadata)**
+    <span class="ed-reference-anchor" id="names-metadata">**[<span class="ed-reference-icon" data-reference-category="metadata" aria-hidden="true">&#61831;</span> Project](../physics/parameters.md#metadata)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [name](../physics/parameters.md#metadata-name) | name | — |
-    | [title](../physics/parameters.md#metadata-title) | title | — |
-    | [description](../physics/parameters.md#metadata-description) | description | — |
-    | [authors](../physics/parameters.md#metadata-authors) | authors | — |
-    | [location](../physics/parameters.md#metadata-path) | location | — |
-    | [created](../physics/parameters.md#metadata-created) | created | — |
-    | [last modified](../physics/parameters.md#metadata-last-modified) | last modified | — |
-    | [timestamp](../physics/parameters.md#metadata-timestamp) | timestamp | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Name](../physics/parameters.md#metadata-name) | name |
+    | [Title](../physics/parameters.md#metadata-title) | title |
+    | [What the project is about](../physics/parameters.md#metadata-description) | description |
+    | [Authors](../physics/parameters.md#metadata-authors) | authors |
+    | [Location](../physics/parameters.md#metadata-path) | location |
+    | [Created](../physics/parameters.md#metadata-created) | created |
+    | [Last modified](../physics/parameters.md#metadata-last-modified) | last modified |
+    | [Timestamp](../physics/parameters.md#metadata-timestamp) | timestamp |
 
-    **[<span class="ed-reference-icon" data-reference-category="su-format" aria-hidden="true">&#62030;</span> Standard uncertainties](../physics/parameters.md#su-format)**
+    <span class="ed-reference-anchor" id="names-su-format">**[<span class="ed-reference-icon" data-reference-category="su-format" aria-hidden="true">&#62030;</span> Standard uncertainties](../physics/parameters.md#su-format)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [rule](../physics/parameters.md#su-format-rule) | rule | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [How a value with a standard uncertainty is rounded when it is written and shown](../physics/parameters.md#su-format-rule) | rule |
 
-    **[<span class="ed-reference-icon" data-reference-category="report" aria-hidden="true">&#61788;</span> Report](../physics/parameters.md#report)**
+    <span class="ed-reference-anchor" id="names-report">**[<span class="ed-reference-icon" data-reference-category="report" aria-hidden="true">&#61788;</span> Report](../physics/parameters.md#report)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [HTML](../physics/parameters.md#report-html) | HTML | — |
-    | [PDF](../physics/parameters.md#report-pdf) | PDF | — |
-    | [CIF](../physics/parameters.md#report-cif) | CIF | — |
-    | [embed chart libraries](../physics/parameters.md#report-html-offline) | embed chart libraries | — |
-    | [excluded](../physics/parameters.md#report-excluded) | excluded | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [HTML](../physics/parameters.md#report-html) | HTML |
+    | [PDF](../physics/parameters.md#report-pdf) | PDF |
+    | [CIF](../physics/parameters.md#report-cif) | CIF |
+    | [Embed chart libraries](../physics/parameters.md#report-html-offline) | embed chart libraries |
+    | [Excluded](../physics/parameters.md#report-excluded) | excluded |
 
-    **[<span class="ed-reference-icon" data-reference-category="correlation-chart" aria-hidden="true">&#61450;</span> Correlation chart](../physics/parameters.md#correlation-chart)**
+    <span class="ed-reference-anchor" id="names-correlation-chart">**[<span class="ed-reference-icon" data-reference-category="correlation-chart" aria-hidden="true">&#61450;</span> Correlation chart](../physics/parameters.md#correlation-chart)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [threshold](../physics/parameters.md#correlation-chart-threshold) | threshold | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Threshold](../physics/parameters.md#correlation-chart-threshold) | threshold |
 
-    **[<span class="ed-reference-icon" data-reference-category="pattern-chart" aria-hidden="true">&#61953;</span> Pattern chart](../physics/parameters.md#pattern-chart)**
+    <span class="ed-reference-anchor" id="names-pattern-chart">**[<span class="ed-reference-icon" data-reference-category="pattern-chart" aria-hidden="true">&#61953;</span> Pattern chart](../physics/parameters.md#pattern-chart)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [x-axis](../physics/parameters.md#pattern-chart-x-axis) | x-axis | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [X-axis](../physics/parameters.md#pattern-chart-x-axis) | x-axis |
 
-    **[<span class="ed-reference-icon" data-reference-category="calculator" aria-hidden="true">&#61932;</span> Calculator](../physics/parameters.md#calculator)**
+    <span class="ed-reference-anchor" id="names-calculator">**[<span class="ed-reference-icon" data-reference-category="calculator" aria-hidden="true">&#61932;</span> Calculator](../physics/parameters.md#calculator)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [calculator](../physics/parameters.md#calculator-type) | calculator | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Calculator](../physics/parameters.md#calculator-type) | calculator |
 
-    **[<span class="ed-reference-icon" data-reference-category="minimizer" aria-hidden="true">&#62398;</span> Minimizer](../physics/parameters.md#minimizer)**
+    <span class="ed-reference-anchor" id="names-minimizer">**[<span class="ed-reference-icon" data-reference-category="minimizer" aria-hidden="true">&#62398;</span> Minimizer](../physics/parameters.md#minimizer)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [minimizer](../physics/parameters.md#minimizer-type) | minimizer | — |
-    | [max iterations](../physics/parameters.md#minimizer-max-iterations) | max iterations | — |
-    | [descent](../physics/parameters.md#minimizer-descent) | descent | — |
-    | [tolerance](../physics/parameters.md#minimizer-chi-square-tolerance) | tolerance | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Minimizer](../physics/parameters.md#minimizer-type) | minimizer |
+    | [Max iterations](../physics/parameters.md#minimizer-max-iterations) | max iterations |
+    | [Descent](../physics/parameters.md#minimizer-descent) | descent |
+    | [Tolerance](../physics/parameters.md#minimizer-chi-square-tolerance) | tolerance |
 
-    **[<span class="ed-reference-icon" data-reference-category="fitting-mode" aria-hidden="true">&#61918;</span> Fitting mode](../physics/parameters.md#fitting-mode)**
+    <span class="ed-reference-anchor" id="names-fitting-mode">**[<span class="ed-reference-icon" data-reference-category="fitting-mode" aria-hidden="true">&#61918;</span> Fitting mode](../physics/parameters.md#fitting-mode)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [mode](../physics/parameters.md#fitting-mode-type) | mode | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [How the experiments of the project are fitted](../physics/parameters.md#fitting-mode-type) | mode |
 
-    **[<span class="ed-reference-icon" data-reference-category="refine-ls" aria-hidden="true">&#61636;</span> Fitted reflections](../physics/parameters.md#refine-ls)**
+    <span class="ed-reference-anchor" id="names-refine-ls">**[<span class="ed-reference-icon" data-reference-category="refine-ls" aria-hidden="true">&#61636;</span> Fitted reflections](../physics/parameters.md#refine-ls)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [fit reflections above (su)](../physics/parameters.md#refine-ls-threshold-sigma) | fit reflections above (su) | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Fit reflections above (su)](../physics/parameters.md#refine-ls-threshold-sigma) | fit reflections above (su) |
 
-    **[<span class="ed-reference-icon" data-reference-category="alias" aria-hidden="true">&#61483;</span> Alias](../physics/parameters.md#alias)**
+    <span class="ed-reference-anchor" id="names-alias">**[<span class="ed-reference-icon" data-reference-category="alias" aria-hidden="true">&#61483;</span> Alias](../physics/parameters.md#alias)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [alias](../physics/parameters.md#alias-id) | alias | — |
-    | [parameter](../physics/parameters.md#alias-parameter-unique-name) | parameter | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Alias](../physics/parameters.md#alias-id) | alias |
+    | [Parameter](../physics/parameters.md#alias-parameter-unique-name) | parameter |
 
-    **[<span class="ed-reference-icon" data-reference-category="constraint" aria-hidden="true">&#62764;</span> Constraint](../physics/parameters.md#constraint)**
+    <span class="ed-reference-anchor" id="names-constraint">**[<span class="ed-reference-icon" data-reference-category="constraint" aria-hidden="true">&#62764;</span> Constraint](../physics/parameters.md#constraint)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#constraint-id) | id | — |
-    | [expression](../physics/parameters.md#constraint-expression) | expression | — |
-    | [enabled](../physics/parameters.md#constraint-enabled) | enabled | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#constraint-id) | id |
+    | [Expression](../physics/parameters.md#constraint-expression) | expression |
+    | [Enabled](../physics/parameters.md#constraint-enabled) | enabled |
 
-    **[<span class="ed-reference-icon" data-reference-category="joint-fit" aria-hidden="true">&#61633;</span> Joint-fit weights](../physics/parameters.md#joint-fit)**
+    <span class="ed-reference-anchor" id="names-joint-fit">**[<span class="ed-reference-icon" data-reference-category="joint-fit" aria-hidden="true">&#61633;</span> Joint-fit weights](../physics/parameters.md#joint-fit)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [weight](../physics/parameters.md#joint-fit-weight) | weight | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Weight](../physics/parameters.md#joint-fit-weight) | weight |
 
-    **[<span class="ed-reference-icon" data-reference-category="sequential-fit" aria-hidden="true">&#61643;</span> Sequential fit](../physics/parameters.md#sequential-fit)**
+    <span class="ed-reference-anchor" id="names-sequential-fit">**[<span class="ed-reference-icon" data-reference-category="sequential-fit" aria-hidden="true">&#61643;</span> Sequential fit](../physics/parameters.md#sequential-fit)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [data directory](../physics/parameters.md#sequential-fit-data-dir) | data directory | — |
-    | [files](../physics/parameters.md#sequential-fit-file-pattern) | files | — |
-    | [reverse](../physics/parameters.md#sequential-fit-reverse) | reverse | — |
-    | [template](../physics/parameters.md#sequential-fit-template-file) | template | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Data directory](../physics/parameters.md#sequential-fit-data-dir) | data directory |
+    | [Which files of the folder are fitted](../physics/parameters.md#sequential-fit-file-pattern) | files |
+    | [Reverse](../physics/parameters.md#sequential-fit-reverse) | reverse |
+    | [Template](../physics/parameters.md#sequential-fit-template-file) | template |
 
-    **[<span class="ed-reference-icon" data-reference-category="sequential-fit-extract" aria-hidden="true">&#61616;</span> Scan extraction rule](../physics/parameters.md#sequential-fit-extract)**
+    <span class="ed-reference-anchor" id="names-sequential-fit-extract">**[<span class="ed-reference-icon" data-reference-category="sequential-fit-extract" aria-hidden="true">&#61616;</span> Scan extraction rule](../physics/parameters.md#sequential-fit-extract)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#sequential-fit-extract-id) | id | — |
-    | [target](../physics/parameters.md#sequential-fit-extract-target) | target | — |
-    | [pattern](../physics/parameters.md#sequential-fit-extract-pattern) | pattern | — |
-    | [required](../physics/parameters.md#sequential-fit-extract-required) | required | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#sequential-fit-extract-id) | id |
+    | [What the value is stored as](../physics/parameters.md#sequential-fit-extract-target) | target |
+    | [Pattern](../physics/parameters.md#sequential-fit-extract-pattern) | pattern |
+    | [Required](../physics/parameters.md#sequential-fit-extract-required) | required |
 
-    **[<span class="ed-reference-icon" data-reference-category="edi" aria-hidden="true">&#61897;</span> File header](../physics/parameters.md#edi)**
+    <span class="ed-reference-anchor" id="names-edi">**[<span class="ed-reference-icon" data-reference-category="edi" aria-hidden="true">&#61897;</span> File header](../physics/parameters.md#edi)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [schema version](../physics/parameters.md#edi-schema-version) | schema version | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Schema version](../physics/parameters.md#edi-schema-version) | schema version |
 
-    **[<span class="ed-reference-icon" data-reference-category="report-file" aria-hidden="true">&#61787;</span> Saved report](../physics/parameters.md#report-file)**
+    <span class="ed-reference-anchor" id="names-report-file">**[<span class="ed-reference-icon" data-reference-category="report-file" aria-hidden="true">&#61787;</span> Saved report](../physics/parameters.md#report-file)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [format](../physics/parameters.md#report-file-format) | format | — |
-    | [file](../physics/parameters.md#report-file-name) | file | — |
-    | [saved](../physics/parameters.md#report-file-saved) | saved | — |
-    | [project saved](../physics/parameters.md#report-file-project-last-modified) | project saved | — |
-    | [digest](../physics/parameters.md#report-file-digest) | digest | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Format](../physics/parameters.md#report-file-format) | format |
+    | [File](../physics/parameters.md#report-file-name) | file |
+    | [Saved](../physics/parameters.md#report-file-saved) | saved |
+    | [Project saved](../physics/parameters.md#report-file-project-last-modified) | project saved |
+    | [Digest](../physics/parameters.md#report-file-digest) | digest |
 
-    **[<span class="ed-reference-icon" data-reference-category="fit-parameter" aria-hidden="true">&#61914;</span> Fit start value](../physics/parameters.md#fit-parameter)**
+    <span class="ed-reference-anchor" id="names-fit-parameter">**[<span class="ed-reference-icon" data-reference-category="fit-parameter" aria-hidden="true">&#61914;</span> Fit start value](../physics/parameters.md#fit-parameter)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [parameter](../physics/parameters.md#fit-parameter-id) | parameter | — |
-    | [start value](../physics/parameters.md#fit-parameter-start-value) | start value | — |
-    | [start error](../physics/parameters.md#fit-parameter-start-uncertainty) | start error | — |
-    | [start tied](../physics/parameters.md#fit-parameter-start-tied) | start tied | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Parameter](../physics/parameters.md#fit-parameter-id) | parameter |
+    | [Start value](../physics/parameters.md#fit-parameter-start-value) | start value |
+    | [Start error](../physics/parameters.md#fit-parameter-start-uncertainty) | start error |
+    | [Start tied](../physics/parameters.md#fit-parameter-start-tied) | start tied |
 
-    **[<span class="ed-reference-icon" data-reference-category="fit-result" aria-hidden="true">&#61528;</span> Fit result](../physics/parameters.md#fit-result)**
+    <span class="ed-reference-anchor" id="names-fit-result">**[<span class="ed-reference-icon" data-reference-category="fit-result" aria-hidden="true">&#61528;</span> Fit result](../physics/parameters.md#fit-result)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [kind](../physics/parameters.md#fit-result-result-kind) | kind | — |
-    | [success](../physics/parameters.md#fit-result-success) | success | — |
-    | [message](../physics/parameters.md#fit-result-message) | message | — |
-    | [iterations](../physics/parameters.md#fit-result-iterations) | iterations | — |
-    | [time](../physics/parameters.md#fit-result-fitting-time) | time | s |
-    | [reduced χ²](../physics/parameters.md#fit-result-reduced-chi-square) | reduced χ² | — |
-    | [objective](../physics/parameters.md#fit-result-objective-name) | objective | — |
-    | [objective value](../physics/parameters.md#fit-result-objective-value) | objective value | — |
-    | [points](../physics/parameters.md#fit-result-n-data-points) | points | — |
-    | [parameters](../physics/parameters.md#fit-result-n-parameters) | parameters | — |
-    | [free parameters](../physics/parameters.md#fit-result-n-free-parameters) | free parameters | — |
-    | [degrees of freedom](../physics/parameters.md#fit-result-degrees-of-freedom) | degrees of freedom | — |
-    | [covariance](../physics/parameters.md#fit-result-covariance-available) | covariance | — |
-    | [exit reason](../physics/parameters.md#fit-result-exit-reason) | exit reason | — |
-    | [Rwp](../physics/parameters.md#fit-result-prof-wr-factor) | Rwp | % |
-    | [Rp](../physics/parameters.md#fit-result-prof-r-factor) | Rp | % |
-    | [Rexp](../physics/parameters.md#fit-result-prof-wr-expected) | Rexp | % |
-    | [cRp](../physics/parameters.md#fit-result-prof-cr-factor) | cRp | % |
-    | [cRwp](../physics/parameters.md#fit-result-prof-cwr-factor) | cRwp | % |
-    | [profile](../physics/parameters.md#fit-result-profile-function) | profile | — |
-    | [background](../physics/parameters.md#fit-result-background-function) | background | — |
-    | [descent](../physics/parameters.md#fit-result-descent) | descent | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [What kind of fit gave the result](../physics/parameters.md#fit-result-result-kind) | kind |
+    | [Success](../physics/parameters.md#fit-result-success) | success |
+    | [Message](../physics/parameters.md#fit-result-message) | message |
+    | [How many iterations the fit took](../physics/parameters.md#fit-result-iterations) | iterations |
+    | [How long the fit took](../physics/parameters.md#fit-result-fitting-time) | time |
+    | [χ² divided by the degrees of freedom](../physics/parameters.md#fit-result-reduced-chi-square) | reduced χ² |
+    | [Objective](../physics/parameters.md#fit-result-objective-name) | objective |
+    | [Objective value](../physics/parameters.md#fit-result-objective-value) | objective value |
+    | [How many data points the fit used](../physics/parameters.md#fit-result-n-data-points) | points |
+    | [How many parameters the project has](../physics/parameters.md#fit-result-n-parameters) | parameters |
+    | [How many parameters the fit refined](../physics/parameters.md#fit-result-n-free-parameters) | free parameters |
+    | [Degrees of freedom](../physics/parameters.md#fit-result-degrees-of-freedom) | degrees of freedom |
+    | [Covariance](../physics/parameters.md#fit-result-covariance-available) | covariance |
+    | [Why the fit stopped](../physics/parameters.md#fit-result-exit-reason) | exit reason |
+    | [Rwp](../physics/parameters.md#fit-result-prof-wr-factor) | Rwp |
+    | [Prof r factor](../physics/parameters.md#fit-result-prof-r-factor) | Rp |
+    | [Rexp](../physics/parameters.md#fit-result-prof-wr-expected) | Rexp |
+    | [CRp](../physics/parameters.md#fit-result-prof-cr-factor) | cRp |
+    | [CRwp](../physics/parameters.md#fit-result-prof-cwr-factor) | cRwp |
+    | [Profile](../physics/parameters.md#fit-result-profile-function) | profile |
+    | [Background](../physics/parameters.md#fit-result-background-function) | background |
+    | [Descent](../physics/parameters.md#fit-result-descent) | descent |
 
-    **[<span class="ed-reference-icon" data-reference-category="fit-result-bank" aria-hidden="true">&#61452;</span> Experiment fit result](../physics/parameters.md#fit-result-bank)**
+    <span class="ed-reference-anchor" id="names-fit-result-bank">**[<span class="ed-reference-icon" data-reference-category="fit-result-bank" aria-hidden="true">&#61452;</span> Experiment fit result](../physics/parameters.md#fit-result-bank)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [points](../physics/parameters.md#fit-result-bank-n-data-points) | points | — |
-    | [Rp](../physics/parameters.md#fit-result-bank-prof-r-factor) | Rp | % |
-    | [Rwp](../physics/parameters.md#fit-result-bank-prof-wr-factor) | Rwp | % |
-    | [Rexp](../physics/parameters.md#fit-result-bank-prof-wr-expected) | Rexp | % |
-    | [cRp](../physics/parameters.md#fit-result-bank-prof-cr-factor) | cRp | % |
-    | [cRwp](../physics/parameters.md#fit-result-bank-prof-cwr-factor) | cRwp | % |
-    | [reduced χ²](../physics/parameters.md#fit-result-bank-chi-square) | reduced χ² | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [How many data points of the experiment the fit used](../physics/parameters.md#fit-result-bank-n-data-points) | points |
+    | [Prof r factor](../physics/parameters.md#fit-result-bank-prof-r-factor) | Rp |
+    | [Rwp](../physics/parameters.md#fit-result-bank-prof-wr-factor) | Rwp |
+    | [Rexp](../physics/parameters.md#fit-result-bank-prof-wr-expected) | Rexp |
+    | [CRp](../physics/parameters.md#fit-result-bank-prof-cr-factor) | cRp |
+    | [CRwp](../physics/parameters.md#fit-result-bank-prof-cwr-factor) | cRwp |
+    | [Reduced χ²](../physics/parameters.md#fit-result-bank-chi-square) | reduced χ² |
 
-    **[<span class="ed-reference-icon" data-reference-category="fit-result-phase" aria-hidden="true">&#61452;</span> Structure fit result](../physics/parameters.md#fit-result-phase)**
+    <span class="ed-reference-anchor" id="names-fit-result-phase">**[<span class="ed-reference-icon" data-reference-category="fit-result-phase" aria-hidden="true">&#61452;</span> Structure fit result](../physics/parameters.md#fit-result-phase)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [R Bragg](../physics/parameters.md#fit-result-phase-bragg-r-factor) | R Bragg | % |
-    | [R F](../physics/parameters.md#fit-result-phase-f-r-factor) | R F | % |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [R Bragg](../physics/parameters.md#fit-result-phase-bragg-r-factor) | R Bragg |
+    | [R F](../physics/parameters.md#fit-result-phase-f-r-factor) | R F |
 
-    **[<span class="ed-reference-icon" data-reference-category="fit-parameter-correlation" aria-hidden="true">&#61449;</span> Correlation](../physics/parameters.md#fit-parameter-correlation)**
+    <span class="ed-reference-anchor" id="names-fit-parameter-correlation">**[<span class="ed-reference-icon" data-reference-category="fit-parameter-correlation" aria-hidden="true">&#61449;</span> Correlation](../physics/parameters.md#fit-parameter-correlation)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#fit-parameter-correlation-id) | id | — |
-    | [source](../physics/parameters.md#fit-parameter-correlation-source-kind) | source | — |
-    | [parameter 1](../physics/parameters.md#fit-parameter-correlation-parameter-unique-name-i) | parameter 1 | — |
-    | [parameter 2](../physics/parameters.md#fit-parameter-correlation-parameter-unique-name-j) | parameter 2 | — |
-    | [correlation](../physics/parameters.md#fit-parameter-correlation-correlation) | correlation | — |
-    | [file](../physics/parameters.md#fit-parameter-correlation-file-path) | file | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#fit-parameter-correlation-id) | id |
+    | [What kind of fit the correlation comes from](../physics/parameters.md#fit-parameter-correlation-source-kind) | source |
+    | [Parameter 1](../physics/parameters.md#fit-parameter-correlation-parameter-unique-name-i) | parameter 1 |
+    | [Parameter 2](../physics/parameters.md#fit-parameter-correlation-parameter-unique-name-j) | parameter 2 |
+    | [Correlation](../physics/parameters.md#fit-parameter-correlation-correlation) | correlation |
+    | [File](../physics/parameters.md#fit-parameter-correlation-file-path) | file |
 
-    **[<span class="ed-reference-icon" data-reference-category="pd-block" aria-hidden="true">&#61897;</span> Report block](../physics/parameters.md#pd-block)**
+    <span class="ed-reference-anchor" id="names-pd-block">**[<span class="ed-reference-icon" data-reference-category="pd-block" aria-hidden="true">&#61897;</span> Report block](../physics/parameters.md#pd-block)**</span>
 
-    | Parameter or field | GUI name | Units |
-    | --- | --- | --- |
-    | [block](../physics/parameters.md#pd-block-id) | block | — |
+    | Parameter or field | GUI name |
+    | --- | --- |
+    | [Block](../physics/parameters.md#pd-block-id) | block |
 
 === "Edi"
 
     **[<span class="ed-reference-icon" data-reference-category="metadata" aria-hidden="true">&#61831;</span> Project](../physics/parameters.md#metadata)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [name](../physics/parameters.md#metadata-name) | <code>_metadata.name</code> | — |
-    | [title](../physics/parameters.md#metadata-title) | <code>_metadata.title</code> | — |
-    | [description](../physics/parameters.md#metadata-description) | <code>_metadata.description</code> | — |
-    | [authors](../physics/parameters.md#metadata-authors) | <code>_metadata.authors</code> | — |
-    | [location](../physics/parameters.md#metadata-path) | <code>_metadata.path</code> | — |
-    | [created](../physics/parameters.md#metadata-created) | <code>_metadata.created</code> | — |
-    | [last modified](../physics/parameters.md#metadata-last-modified) | <code>_metadata.last_modified</code> | — |
-    | [timestamp](../physics/parameters.md#metadata-timestamp) | <code>_metadata.timestamp</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Name](../physics/parameters.md#metadata-name) | <code>_metadata.name</code> |
+    | [Title](../physics/parameters.md#metadata-title) | <code>_metadata.title</code> |
+    | [What the project is about](../physics/parameters.md#metadata-description) | <code>_metadata.description</code> |
+    | [Authors](../physics/parameters.md#metadata-authors) | <code>_metadata.authors</code> |
+    | [Location](../physics/parameters.md#metadata-path) | <code>_metadata.path</code> |
+    | [Created](../physics/parameters.md#metadata-created) | <code>_metadata.created</code> |
+    | [Last modified](../physics/parameters.md#metadata-last-modified) | <code>_metadata.last_modified</code> |
+    | [Timestamp](../physics/parameters.md#metadata-timestamp) | <code>_metadata.timestamp</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="su-format" aria-hidden="true">&#62030;</span> Standard uncertainties](../physics/parameters.md#su-format)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [rule](../physics/parameters.md#su-format-rule) | <code>_su_format.rule</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [How a value with a standard uncertainty is rounded when it is written and shown](../physics/parameters.md#su-format-rule) | <code>_su_format.rule</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="report" aria-hidden="true">&#61788;</span> Report](../physics/parameters.md#report)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [HTML](../physics/parameters.md#report-html) | <code>_report.html</code> | — |
-    | [PDF](../physics/parameters.md#report-pdf) | <code>_report.pdf</code> | — |
-    | [CIF](../physics/parameters.md#report-cif) | <code>_report.cif</code> | — |
-    | [embed chart libraries](../physics/parameters.md#report-html-offline) | <code>_report.html_offline</code> | — |
-    | [excluded](../physics/parameters.md#report-excluded) | <code>_report.excluded</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [HTML](../physics/parameters.md#report-html) | <code>_report.html</code> |
+    | [PDF](../physics/parameters.md#report-pdf) | <code>_report.pdf</code> |
+    | [CIF](../physics/parameters.md#report-cif) | <code>_report.cif</code> |
+    | [Embed chart libraries](../physics/parameters.md#report-html-offline) | <code>_report.html_offline</code> |
+    | [Excluded](../physics/parameters.md#report-excluded) | <code>_report.excluded</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="correlation-chart" aria-hidden="true">&#61450;</span> Correlation chart](../physics/parameters.md#correlation-chart)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [threshold](../physics/parameters.md#correlation-chart-threshold) | <code>_correlation_chart.threshold</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Threshold](../physics/parameters.md#correlation-chart-threshold) | <code>_correlation_chart.threshold</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="pattern-chart" aria-hidden="true">&#61953;</span> Pattern chart](../physics/parameters.md#pattern-chart)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [x-axis](../physics/parameters.md#pattern-chart-x-axis) | <code>_pattern_chart.x_axis</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [X-axis](../physics/parameters.md#pattern-chart-x-axis) | <code>_pattern_chart.x_axis</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="calculator" aria-hidden="true">&#61932;</span> Calculator](../physics/parameters.md#calculator)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [calculator](../physics/parameters.md#calculator-type) | <code>_calculator.type</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Calculator](../physics/parameters.md#calculator-type) | <code>_calculator.type</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="minimizer" aria-hidden="true">&#62398;</span> Minimizer](../physics/parameters.md#minimizer)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [minimizer](../physics/parameters.md#minimizer-type) | <code>_minimizer.type</code> | — |
-    | [max iterations](../physics/parameters.md#minimizer-max-iterations) | <code>_minimizer.max_iterations</code> | — |
-    | [descent](../physics/parameters.md#minimizer-descent) | <code>_minimizer.descent</code> | — |
-    | [tolerance](../physics/parameters.md#minimizer-chi-square-tolerance) | <code>_minimizer.chi_square_tolerance</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Minimizer](../physics/parameters.md#minimizer-type) | <code>_minimizer.type</code> |
+    | [Max iterations](../physics/parameters.md#minimizer-max-iterations) | <code>_minimizer.max_iterations</code> |
+    | [Descent](../physics/parameters.md#minimizer-descent) | <code>_minimizer.descent</code> |
+    | [Tolerance](../physics/parameters.md#minimizer-chi-square-tolerance) | <code>_minimizer.chi_square_tolerance</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="fitting-mode" aria-hidden="true">&#61918;</span> Fitting mode](../physics/parameters.md#fitting-mode)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [mode](../physics/parameters.md#fitting-mode-type) | <code>_fitting_mode.type</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [How the experiments of the project are fitted](../physics/parameters.md#fitting-mode-type) | <code>_fitting_mode.type</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="refine-ls" aria-hidden="true">&#61636;</span> Fitted reflections](../physics/parameters.md#refine-ls)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [fit reflections above (su)](../physics/parameters.md#refine-ls-threshold-sigma) | <code>_refine_ls.threshold_sigma</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Fit reflections above (su)](../physics/parameters.md#refine-ls-threshold-sigma) | <code>_refine_ls.threshold_sigma</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="alias" aria-hidden="true">&#61483;</span> Alias](../physics/parameters.md#alias)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [alias](../physics/parameters.md#alias-id) | <code>_alias.id</code> | — |
-    | [parameter](../physics/parameters.md#alias-parameter-unique-name) | <code>_alias.parameter_unique_name</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Alias](../physics/parameters.md#alias-id) | <code>_alias.id</code> |
+    | [Parameter](../physics/parameters.md#alias-parameter-unique-name) | <code>_alias.parameter_unique_name</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="constraint" aria-hidden="true">&#62764;</span> Constraint](../physics/parameters.md#constraint)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#constraint-id) | <code>_constraint.id</code> | — |
-    | [expression](../physics/parameters.md#constraint-expression) | <code>_constraint.expression</code> | — |
-    | [enabled](../physics/parameters.md#constraint-enabled) | <code>_constraint.enabled</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#constraint-id) | <code>_constraint.id</code> |
+    | [Expression](../physics/parameters.md#constraint-expression) | <code>_constraint.expression</code> |
+    | [Enabled](../physics/parameters.md#constraint-enabled) | <code>_constraint.enabled</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="joint-fit" aria-hidden="true">&#61633;</span> Joint-fit weights](../physics/parameters.md#joint-fit)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [weight](../physics/parameters.md#joint-fit-weight) | <code>_joint_fit.weight</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Weight](../physics/parameters.md#joint-fit-weight) | <code>_joint_fit.weight</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="sequential-fit" aria-hidden="true">&#61643;</span> Sequential fit](../physics/parameters.md#sequential-fit)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [data directory](../physics/parameters.md#sequential-fit-data-dir) | <code>_sequential_fit.data_dir</code> | — |
-    | [files](../physics/parameters.md#sequential-fit-file-pattern) | <code>_sequential_fit.file_pattern</code> | — |
-    | [reverse](../physics/parameters.md#sequential-fit-reverse) | <code>_sequential_fit.reverse</code> | — |
-    | [template](../physics/parameters.md#sequential-fit-template-file) | <code>_sequential_fit.template_file</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Data directory](../physics/parameters.md#sequential-fit-data-dir) | <code>_sequential_fit.data_dir</code> |
+    | [Which files of the folder are fitted](../physics/parameters.md#sequential-fit-file-pattern) | <code>_sequential_fit.file_pattern</code> |
+    | [Reverse](../physics/parameters.md#sequential-fit-reverse) | <code>_sequential_fit.reverse</code> |
+    | [Template](../physics/parameters.md#sequential-fit-template-file) | <code>_sequential_fit.template_file</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="sequential-fit-extract" aria-hidden="true">&#61616;</span> Scan extraction rule](../physics/parameters.md#sequential-fit-extract)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#sequential-fit-extract-id) | <code>_sequential_fit_extract.id</code> | — |
-    | [target](../physics/parameters.md#sequential-fit-extract-target) | <code>_sequential_fit_extract.target</code> | — |
-    | [pattern](../physics/parameters.md#sequential-fit-extract-pattern) | <code>_sequential_fit_extract.pattern</code> | — |
-    | [required](../physics/parameters.md#sequential-fit-extract-required) | <code>_sequential_fit_extract.required</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#sequential-fit-extract-id) | <code>_sequential_fit_extract.id</code> |
+    | [What the value is stored as](../physics/parameters.md#sequential-fit-extract-target) | <code>_sequential_fit_extract.target</code> |
+    | [Pattern](../physics/parameters.md#sequential-fit-extract-pattern) | <code>_sequential_fit_extract.pattern</code> |
+    | [Required](../physics/parameters.md#sequential-fit-extract-required) | <code>_sequential_fit_extract.required</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="edi" aria-hidden="true">&#61897;</span> File header](../physics/parameters.md#edi)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [schema version](../physics/parameters.md#edi-schema-version) | <code>_edi.schema_version</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Schema version](../physics/parameters.md#edi-schema-version) | <code>_edi.schema_version</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="report-file" aria-hidden="true">&#61787;</span> Saved report](../physics/parameters.md#report-file)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [format](../physics/parameters.md#report-file-format) | <code>_report_file.format</code> | — |
-    | [file](../physics/parameters.md#report-file-name) | <code>_report_file.name</code> | — |
-    | [saved](../physics/parameters.md#report-file-saved) | <code>_report_file.saved</code> | — |
-    | [project saved](../physics/parameters.md#report-file-project-last-modified) | <code>_report_file.project_last_modified</code> | — |
-    | [digest](../physics/parameters.md#report-file-digest) | <code>_report_file.digest</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Format](../physics/parameters.md#report-file-format) | <code>_report_file.format</code> |
+    | [File](../physics/parameters.md#report-file-name) | <code>_report_file.name</code> |
+    | [Saved](../physics/parameters.md#report-file-saved) | <code>_report_file.saved</code> |
+    | [Project saved](../physics/parameters.md#report-file-project-last-modified) | <code>_report_file.project_last_modified</code> |
+    | [Digest](../physics/parameters.md#report-file-digest) | <code>_report_file.digest</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="fit-parameter" aria-hidden="true">&#61914;</span> Fit start value](../physics/parameters.md#fit-parameter)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [parameter](../physics/parameters.md#fit-parameter-id) | <code>_fit_parameter.id</code> | — |
-    | [start value](../physics/parameters.md#fit-parameter-start-value) | <code>_fit_parameter.start_value</code> | — |
-    | [start error](../physics/parameters.md#fit-parameter-start-uncertainty) | <code>_fit_parameter.start_uncertainty</code> | — |
-    | [start tied](../physics/parameters.md#fit-parameter-start-tied) | <code>_fit_parameter.start_tied</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Parameter](../physics/parameters.md#fit-parameter-id) | <code>_fit_parameter.id</code> |
+    | [Start value](../physics/parameters.md#fit-parameter-start-value) | <code>_fit_parameter.start_value</code> |
+    | [Start error](../physics/parameters.md#fit-parameter-start-uncertainty) | <code>_fit_parameter.start_uncertainty</code> |
+    | [Start tied](../physics/parameters.md#fit-parameter-start-tied) | <code>_fit_parameter.start_tied</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="fit-result" aria-hidden="true">&#61528;</span> Fit result](../physics/parameters.md#fit-result)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [kind](../physics/parameters.md#fit-result-result-kind) | <code>_fit_result.result_kind</code> | — |
-    | [success](../physics/parameters.md#fit-result-success) | <code>_fit_result.success</code> | — |
-    | [message](../physics/parameters.md#fit-result-message) | <code>_fit_result.message</code> | — |
-    | [iterations](../physics/parameters.md#fit-result-iterations) | <code>_fit_result.iterations</code> | — |
-    | [time](../physics/parameters.md#fit-result-fitting-time) | <code>_fit_result.fitting_time</code> | s |
-    | [reduced χ²](../physics/parameters.md#fit-result-reduced-chi-square) | <code>_fit_result.reduced_chi_square</code> | — |
-    | [objective](../physics/parameters.md#fit-result-objective-name) | <code>_fit_result.objective_name</code> | — |
-    | [objective value](../physics/parameters.md#fit-result-objective-value) | <code>_fit_result.objective_value</code> | — |
-    | [points](../physics/parameters.md#fit-result-n-data-points) | <code>_fit_result.n_data_points</code> | — |
-    | [parameters](../physics/parameters.md#fit-result-n-parameters) | <code>_fit_result.n_parameters</code> | — |
-    | [free parameters](../physics/parameters.md#fit-result-n-free-parameters) | <code>_fit_result.n_free_parameters</code> | — |
-    | [degrees of freedom](../physics/parameters.md#fit-result-degrees-of-freedom) | <code>_fit_result.degrees_of_freedom</code> | — |
-    | [covariance](../physics/parameters.md#fit-result-covariance-available) | <code>_fit_result.covariance_available</code> | — |
-    | [exit reason](../physics/parameters.md#fit-result-exit-reason) | <code>_fit_result.exit_reason</code> | — |
-    | [Rwp](../physics/parameters.md#fit-result-prof-wr-factor) | <code>_fit_result.prof_wr_factor</code> | % |
-    | [Rp](../physics/parameters.md#fit-result-prof-r-factor) | <code>_fit_result.prof_r_factor</code> | % |
-    | [Rexp](../physics/parameters.md#fit-result-prof-wr-expected) | <code>_fit_result.prof_wr_expected</code> | % |
-    | [cRp](../physics/parameters.md#fit-result-prof-cr-factor) | <code>_fit_result.prof_cr_factor</code> | % |
-    | [cRwp](../physics/parameters.md#fit-result-prof-cwr-factor) | <code>_fit_result.prof_cwr_factor</code> | % |
-    | [profile](../physics/parameters.md#fit-result-profile-function) | <code>_fit_result.profile_function</code> | — |
-    | [background](../physics/parameters.md#fit-result-background-function) | <code>_fit_result.background_function</code> | — |
-    | [descent](../physics/parameters.md#fit-result-descent) | <code>_fit_result.descent</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [What kind of fit gave the result](../physics/parameters.md#fit-result-result-kind) | <code>_fit_result.result_kind</code> |
+    | [Success](../physics/parameters.md#fit-result-success) | <code>_fit_result.success</code> |
+    | [Message](../physics/parameters.md#fit-result-message) | <code>_fit_result.message</code> |
+    | [How many iterations the fit took](../physics/parameters.md#fit-result-iterations) | <code>_fit_result.iterations</code> |
+    | [How long the fit took](../physics/parameters.md#fit-result-fitting-time) | <code>_fit_result.fitting_time</code> |
+    | [χ² divided by the degrees of freedom](../physics/parameters.md#fit-result-reduced-chi-square) | <code>_fit_result.reduced_chi_square</code> |
+    | [Objective](../physics/parameters.md#fit-result-objective-name) | <code>_fit_result.objective_name</code> |
+    | [Objective value](../physics/parameters.md#fit-result-objective-value) | <code>_fit_result.objective_value</code> |
+    | [How many data points the fit used](../physics/parameters.md#fit-result-n-data-points) | <code>_fit_result.n_data_points</code> |
+    | [How many parameters the project has](../physics/parameters.md#fit-result-n-parameters) | <code>_fit_result.n_parameters</code> |
+    | [How many parameters the fit refined](../physics/parameters.md#fit-result-n-free-parameters) | <code>_fit_result.n_free_parameters</code> |
+    | [Degrees of freedom](../physics/parameters.md#fit-result-degrees-of-freedom) | <code>_fit_result.degrees_of_freedom</code> |
+    | [Covariance](../physics/parameters.md#fit-result-covariance-available) | <code>_fit_result.covariance_available</code> |
+    | [Why the fit stopped](../physics/parameters.md#fit-result-exit-reason) | <code>_fit_result.exit_reason</code> |
+    | [Rwp](../physics/parameters.md#fit-result-prof-wr-factor) | <code>_fit_result.prof_wr_factor</code> |
+    | [Prof r factor](../physics/parameters.md#fit-result-prof-r-factor) | <code>_fit_result.prof_r_factor</code> |
+    | [Rexp](../physics/parameters.md#fit-result-prof-wr-expected) | <code>_fit_result.prof_wr_expected</code> |
+    | [CRp](../physics/parameters.md#fit-result-prof-cr-factor) | <code>_fit_result.prof_cr_factor</code> |
+    | [CRwp](../physics/parameters.md#fit-result-prof-cwr-factor) | <code>_fit_result.prof_cwr_factor</code> |
+    | [Profile](../physics/parameters.md#fit-result-profile-function) | <code>_fit_result.profile_function</code> |
+    | [Background](../physics/parameters.md#fit-result-background-function) | <code>_fit_result.background_function</code> |
+    | [Descent](../physics/parameters.md#fit-result-descent) | <code>_fit_result.descent</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="fit-result-bank" aria-hidden="true">&#61452;</span> Experiment fit result](../physics/parameters.md#fit-result-bank)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [points](../physics/parameters.md#fit-result-bank-n-data-points) | <code>_fit_result_bank.n_data_points</code> | — |
-    | [Rp](../physics/parameters.md#fit-result-bank-prof-r-factor) | <code>_fit_result_bank.prof_r_factor</code> | % |
-    | [Rwp](../physics/parameters.md#fit-result-bank-prof-wr-factor) | <code>_fit_result_bank.prof_wr_factor</code> | % |
-    | [Rexp](../physics/parameters.md#fit-result-bank-prof-wr-expected) | <code>_fit_result_bank.prof_wr_expected</code> | % |
-    | [cRp](../physics/parameters.md#fit-result-bank-prof-cr-factor) | <code>_fit_result_bank.prof_cr_factor</code> | % |
-    | [cRwp](../physics/parameters.md#fit-result-bank-prof-cwr-factor) | <code>_fit_result_bank.prof_cwr_factor</code> | % |
-    | [reduced χ²](../physics/parameters.md#fit-result-bank-chi-square) | <code>_fit_result_bank.chi_square</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [How many data points of the experiment the fit used](../physics/parameters.md#fit-result-bank-n-data-points) | <code>_fit_result_bank.n_data_points</code> |
+    | [Prof r factor](../physics/parameters.md#fit-result-bank-prof-r-factor) | <code>_fit_result_bank.prof_r_factor</code> |
+    | [Rwp](../physics/parameters.md#fit-result-bank-prof-wr-factor) | <code>_fit_result_bank.prof_wr_factor</code> |
+    | [Rexp](../physics/parameters.md#fit-result-bank-prof-wr-expected) | <code>_fit_result_bank.prof_wr_expected</code> |
+    | [CRp](../physics/parameters.md#fit-result-bank-prof-cr-factor) | <code>_fit_result_bank.prof_cr_factor</code> |
+    | [CRwp](../physics/parameters.md#fit-result-bank-prof-cwr-factor) | <code>_fit_result_bank.prof_cwr_factor</code> |
+    | [Reduced χ²](../physics/parameters.md#fit-result-bank-chi-square) | <code>_fit_result_bank.chi_square</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="fit-result-phase" aria-hidden="true">&#61452;</span> Structure fit result](../physics/parameters.md#fit-result-phase)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [R Bragg](../physics/parameters.md#fit-result-phase-bragg-r-factor) | <code>_fit_result_phase.bragg_r_factor</code> | % |
-    | [R F](../physics/parameters.md#fit-result-phase-f-r-factor) | <code>_fit_result_phase.f_r_factor</code> | % |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [R Bragg](../physics/parameters.md#fit-result-phase-bragg-r-factor) | <code>_fit_result_phase.bragg_r_factor</code> |
+    | [R F](../physics/parameters.md#fit-result-phase-f-r-factor) | <code>_fit_result_phase.f_r_factor</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="fit-parameter-correlation" aria-hidden="true">&#61449;</span> Correlation](../physics/parameters.md#fit-parameter-correlation)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#fit-parameter-correlation-id) | <code>_fit_parameter_correlation.id</code> | — |
-    | [source](../physics/parameters.md#fit-parameter-correlation-source-kind) | <code>_fit_parameter_correlation.source_kind</code> | — |
-    | [parameter 1](../physics/parameters.md#fit-parameter-correlation-parameter-unique-name-i) | <code>_fit_parameter_correlation.parameter_unique_name_i</code> | — |
-    | [parameter 2](../physics/parameters.md#fit-parameter-correlation-parameter-unique-name-j) | <code>_fit_parameter_correlation.parameter_unique_name_j</code> | — |
-    | [correlation](../physics/parameters.md#fit-parameter-correlation-correlation) | <code>_fit_parameter_correlation.correlation</code> | — |
-    | [file](../physics/parameters.md#fit-parameter-correlation-file-path) | <code>_fit_parameter_correlation.file_path</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#fit-parameter-correlation-id) | <code>_fit_parameter_correlation.id</code> |
+    | [What kind of fit the correlation comes from](../physics/parameters.md#fit-parameter-correlation-source-kind) | <code>_fit_parameter_correlation.source_kind</code> |
+    | [Parameter 1](../physics/parameters.md#fit-parameter-correlation-parameter-unique-name-i) | <code>_fit_parameter_correlation.parameter_unique_name_i</code> |
+    | [Parameter 2](../physics/parameters.md#fit-parameter-correlation-parameter-unique-name-j) | <code>_fit_parameter_correlation.parameter_unique_name_j</code> |
+    | [Correlation](../physics/parameters.md#fit-parameter-correlation-correlation) | <code>_fit_parameter_correlation.correlation</code> |
+    | [File](../physics/parameters.md#fit-parameter-correlation-file-path) | <code>_fit_parameter_correlation.file_path</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="pd-block" aria-hidden="true">&#61897;</span> Report block](../physics/parameters.md#pd-block)**
 
-    | Parameter or field | Edi name | Units |
-    | --- | --- | --- |
-    | [block](../physics/parameters.md#pd-block-id) | <code>_pd_block.id</code> | — |
+    | Parameter or field | Edi name |
+    | --- | --- |
+    | [Block](../physics/parameters.md#pd-block-id) | <code>_pd_block.id</code> |
 
 === "Python"
 
     **[<span class="ed-reference-icon" data-reference-category="metadata" aria-hidden="true">&#61831;</span> Project](../physics/parameters.md#metadata)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [name](../physics/parameters.md#metadata-name) | <code>project.metadata.name</code> | — |
-    | [title](../physics/parameters.md#metadata-title) | <code>project.metadata.title</code> | — |
-    | [description](../physics/parameters.md#metadata-description) | <code>project.metadata.description</code> | — |
-    | [authors](../physics/parameters.md#metadata-authors) | <code>project.metadata.authors</code> | — |
-    | [location](../physics/parameters.md#metadata-path) | <code>project.metadata.path</code> | — |
-    | [created](../physics/parameters.md#metadata-created) | <code>project.metadata.created</code> | — |
-    | [last modified](../physics/parameters.md#metadata-last-modified) | <code>project.metadata.last_modified</code> | — |
-    | [timestamp](../physics/parameters.md#metadata-timestamp) | <code>project.metadata.timestamp</code> | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Name](../physics/parameters.md#metadata-name) | <code>project.metadata.name</code> |
+    | [Title](../physics/parameters.md#metadata-title) | <code>project.metadata.title</code> |
+    | [What the project is about](../physics/parameters.md#metadata-description) | <code>project.metadata.description</code> |
+    | [Authors](../physics/parameters.md#metadata-authors) | <code>project.metadata.authors</code> |
+    | [Location](../physics/parameters.md#metadata-path) | <code>project.metadata.path</code> |
+    | [Created](../physics/parameters.md#metadata-created) | <code>project.metadata.created</code> |
+    | [Last modified](../physics/parameters.md#metadata-last-modified) | <code>project.metadata.last_modified</code> |
+    | [Timestamp](../physics/parameters.md#metadata-timestamp) | <code>project.metadata.timestamp</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="su-format" aria-hidden="true">&#62030;</span> Standard uncertainties](../physics/parameters.md#su-format)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [rule](../physics/parameters.md#su-format-rule) | <code>project.su_rule</code> | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [How a value with a standard uncertainty is rounded when it is written and shown](../physics/parameters.md#su-format-rule) | <code>project.su_rule</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="report" aria-hidden="true">&#61788;</span> Report](../physics/parameters.md#report)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [HTML](../physics/parameters.md#report-html) | — | — |
-    | [PDF](../physics/parameters.md#report-pdf) | — | — |
-    | [CIF](../physics/parameters.md#report-cif) | — | — |
-    | [embed chart libraries](../physics/parameters.md#report-html-offline) | — | — |
-    | [excluded](../physics/parameters.md#report-excluded) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [HTML](../physics/parameters.md#report-html) | — |
+    | [PDF](../physics/parameters.md#report-pdf) | — |
+    | [CIF](../physics/parameters.md#report-cif) | — |
+    | [Embed chart libraries](../physics/parameters.md#report-html-offline) | — |
+    | [Excluded](../physics/parameters.md#report-excluded) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="correlation-chart" aria-hidden="true">&#61450;</span> Correlation chart](../physics/parameters.md#correlation-chart)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [threshold](../physics/parameters.md#correlation-chart-threshold) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Threshold](../physics/parameters.md#correlation-chart-threshold) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="pattern-chart" aria-hidden="true">&#61953;</span> Pattern chart](../physics/parameters.md#pattern-chart)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [x-axis](../physics/parameters.md#pattern-chart-x-axis) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [X-axis](../physics/parameters.md#pattern-chart-x-axis) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="calculator" aria-hidden="true">&#61932;</span> Calculator](../physics/parameters.md#calculator)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [calculator](../physics/parameters.md#calculator-type) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Calculator](../physics/parameters.md#calculator-type) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="minimizer" aria-hidden="true">&#62398;</span> Minimizer](../physics/parameters.md#minimizer)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [minimizer](../physics/parameters.md#minimizer-type) | — | — |
-    | [max iterations](../physics/parameters.md#minimizer-max-iterations) | — | — |
-    | [descent](../physics/parameters.md#minimizer-descent) | <code>project.descent</code> | — |
-    | [tolerance](../physics/parameters.md#minimizer-chi-square-tolerance) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Minimizer](../physics/parameters.md#minimizer-type) | — |
+    | [Max iterations](../physics/parameters.md#minimizer-max-iterations) | — |
+    | [Descent](../physics/parameters.md#minimizer-descent) | <code>project.descent</code> |
+    | [Tolerance](../physics/parameters.md#minimizer-chi-square-tolerance) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="fitting-mode" aria-hidden="true">&#61918;</span> Fitting mode](../physics/parameters.md#fitting-mode)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [mode](../physics/parameters.md#fitting-mode-type) | <code>project.fitting_mode</code> | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [How the experiments of the project are fitted](../physics/parameters.md#fitting-mode-type) | <code>project.fitting_mode</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="refine-ls" aria-hidden="true">&#61636;</span> Fitted reflections](../physics/parameters.md#refine-ls)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [fit reflections above (su)](../physics/parameters.md#refine-ls-threshold-sigma) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Fit reflections above (su)](../physics/parameters.md#refine-ls-threshold-sigma) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="alias" aria-hidden="true">&#61483;</span> Alias](../physics/parameters.md#alias)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [alias](../physics/parameters.md#alias-id) | — | — |
-    | [parameter](../physics/parameters.md#alias-parameter-unique-name) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Alias](../physics/parameters.md#alias-id) | — |
+    | [Parameter](../physics/parameters.md#alias-parameter-unique-name) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="constraint" aria-hidden="true">&#62764;</span> Constraint](../physics/parameters.md#constraint)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#constraint-id) | — | — |
-    | [expression](../physics/parameters.md#constraint-expression) | — | — |
-    | [enabled](../physics/parameters.md#constraint-enabled) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#constraint-id) | — |
+    | [Expression](../physics/parameters.md#constraint-expression) | — |
+    | [Enabled](../physics/parameters.md#constraint-enabled) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="joint-fit" aria-hidden="true">&#61633;</span> Joint-fit weights](../physics/parameters.md#joint-fit)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [weight](../physics/parameters.md#joint-fit-weight) | <code>project.experiments[0].dataset_weight</code> | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Weight](../physics/parameters.md#joint-fit-weight) | <code>project.experiments[0].dataset_weight</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="sequential-fit" aria-hidden="true">&#61643;</span> Sequential fit](../physics/parameters.md#sequential-fit)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [data directory](../physics/parameters.md#sequential-fit-data-dir) | — | — |
-    | [files](../physics/parameters.md#sequential-fit-file-pattern) | — | — |
-    | [reverse](../physics/parameters.md#sequential-fit-reverse) | — | — |
-    | [template](../physics/parameters.md#sequential-fit-template-file) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Data directory](../physics/parameters.md#sequential-fit-data-dir) | — |
+    | [Which files of the folder are fitted](../physics/parameters.md#sequential-fit-file-pattern) | — |
+    | [Reverse](../physics/parameters.md#sequential-fit-reverse) | — |
+    | [Template](../physics/parameters.md#sequential-fit-template-file) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="sequential-fit-extract" aria-hidden="true">&#61616;</span> Scan extraction rule](../physics/parameters.md#sequential-fit-extract)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#sequential-fit-extract-id) | — | — |
-    | [target](../physics/parameters.md#sequential-fit-extract-target) | — | — |
-    | [pattern](../physics/parameters.md#sequential-fit-extract-pattern) | — | — |
-    | [required](../physics/parameters.md#sequential-fit-extract-required) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#sequential-fit-extract-id) | — |
+    | [What the value is stored as](../physics/parameters.md#sequential-fit-extract-target) | — |
+    | [Pattern](../physics/parameters.md#sequential-fit-extract-pattern) | — |
+    | [Required](../physics/parameters.md#sequential-fit-extract-required) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="edi" aria-hidden="true">&#61897;</span> File header](../physics/parameters.md#edi)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [schema version](../physics/parameters.md#edi-schema-version) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Schema version](../physics/parameters.md#edi-schema-version) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="report-file" aria-hidden="true">&#61787;</span> Saved report](../physics/parameters.md#report-file)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [format](../physics/parameters.md#report-file-format) | — | — |
-    | [file](../physics/parameters.md#report-file-name) | — | — |
-    | [saved](../physics/parameters.md#report-file-saved) | — | — |
-    | [project saved](../physics/parameters.md#report-file-project-last-modified) | — | — |
-    | [digest](../physics/parameters.md#report-file-digest) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Format](../physics/parameters.md#report-file-format) | — |
+    | [File](../physics/parameters.md#report-file-name) | — |
+    | [Saved](../physics/parameters.md#report-file-saved) | — |
+    | [Project saved](../physics/parameters.md#report-file-project-last-modified) | — |
+    | [Digest](../physics/parameters.md#report-file-digest) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="fit-parameter" aria-hidden="true">&#61914;</span> Fit start value](../physics/parameters.md#fit-parameter)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [parameter](../physics/parameters.md#fit-parameter-id) | — | — |
-    | [start value](../physics/parameters.md#fit-parameter-start-value) | — | — |
-    | [start error](../physics/parameters.md#fit-parameter-start-uncertainty) | — | — |
-    | [start tied](../physics/parameters.md#fit-parameter-start-tied) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Parameter](../physics/parameters.md#fit-parameter-id) | — |
+    | [Start value](../physics/parameters.md#fit-parameter-start-value) | — |
+    | [Start error](../physics/parameters.md#fit-parameter-start-uncertainty) | — |
+    | [Start tied](../physics/parameters.md#fit-parameter-start-tied) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="fit-result" aria-hidden="true">&#61528;</span> Fit result](../physics/parameters.md#fit-result)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [kind](../physics/parameters.md#fit-result-result-kind) | — | — |
-    | [success](../physics/parameters.md#fit-result-success) | — | — |
-    | [message](../physics/parameters.md#fit-result-message) | — | — |
-    | [iterations](../physics/parameters.md#fit-result-iterations) | — | — |
-    | [time](../physics/parameters.md#fit-result-fitting-time) | — | s |
-    | [reduced χ²](../physics/parameters.md#fit-result-reduced-chi-square) | — | — |
-    | [objective](../physics/parameters.md#fit-result-objective-name) | — | — |
-    | [objective value](../physics/parameters.md#fit-result-objective-value) | — | — |
-    | [points](../physics/parameters.md#fit-result-n-data-points) | — | — |
-    | [parameters](../physics/parameters.md#fit-result-n-parameters) | — | — |
-    | [free parameters](../physics/parameters.md#fit-result-n-free-parameters) | — | — |
-    | [degrees of freedom](../physics/parameters.md#fit-result-degrees-of-freedom) | — | — |
-    | [covariance](../physics/parameters.md#fit-result-covariance-available) | — | — |
-    | [exit reason](../physics/parameters.md#fit-result-exit-reason) | — | — |
-    | [Rwp](../physics/parameters.md#fit-result-prof-wr-factor) | — | % |
-    | [Rp](../physics/parameters.md#fit-result-prof-r-factor) | — | % |
-    | [Rexp](../physics/parameters.md#fit-result-prof-wr-expected) | — | % |
-    | [cRp](../physics/parameters.md#fit-result-prof-cr-factor) | — | % |
-    | [cRwp](../physics/parameters.md#fit-result-prof-cwr-factor) | — | % |
-    | [profile](../physics/parameters.md#fit-result-profile-function) | — | — |
-    | [background](../physics/parameters.md#fit-result-background-function) | — | — |
-    | [descent](../physics/parameters.md#fit-result-descent) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [What kind of fit gave the result](../physics/parameters.md#fit-result-result-kind) | — |
+    | [Success](../physics/parameters.md#fit-result-success) | — |
+    | [Message](../physics/parameters.md#fit-result-message) | — |
+    | [How many iterations the fit took](../physics/parameters.md#fit-result-iterations) | — |
+    | [How long the fit took](../physics/parameters.md#fit-result-fitting-time) | — |
+    | [χ² divided by the degrees of freedom](../physics/parameters.md#fit-result-reduced-chi-square) | — |
+    | [Objective](../physics/parameters.md#fit-result-objective-name) | — |
+    | [Objective value](../physics/parameters.md#fit-result-objective-value) | — |
+    | [How many data points the fit used](../physics/parameters.md#fit-result-n-data-points) | — |
+    | [How many parameters the project has](../physics/parameters.md#fit-result-n-parameters) | — |
+    | [How many parameters the fit refined](../physics/parameters.md#fit-result-n-free-parameters) | — |
+    | [Degrees of freedom](../physics/parameters.md#fit-result-degrees-of-freedom) | — |
+    | [Covariance](../physics/parameters.md#fit-result-covariance-available) | — |
+    | [Why the fit stopped](../physics/parameters.md#fit-result-exit-reason) | — |
+    | [Rwp](../physics/parameters.md#fit-result-prof-wr-factor) | — |
+    | [Prof r factor](../physics/parameters.md#fit-result-prof-r-factor) | — |
+    | [Rexp](../physics/parameters.md#fit-result-prof-wr-expected) | — |
+    | [CRp](../physics/parameters.md#fit-result-prof-cr-factor) | — |
+    | [CRwp](../physics/parameters.md#fit-result-prof-cwr-factor) | — |
+    | [Profile](../physics/parameters.md#fit-result-profile-function) | — |
+    | [Background](../physics/parameters.md#fit-result-background-function) | — |
+    | [Descent](../physics/parameters.md#fit-result-descent) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="fit-result-bank" aria-hidden="true">&#61452;</span> Experiment fit result](../physics/parameters.md#fit-result-bank)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [points](../physics/parameters.md#fit-result-bank-n-data-points) | — | — |
-    | [Rp](../physics/parameters.md#fit-result-bank-prof-r-factor) | — | % |
-    | [Rwp](../physics/parameters.md#fit-result-bank-prof-wr-factor) | — | % |
-    | [Rexp](../physics/parameters.md#fit-result-bank-prof-wr-expected) | — | % |
-    | [cRp](../physics/parameters.md#fit-result-bank-prof-cr-factor) | — | % |
-    | [cRwp](../physics/parameters.md#fit-result-bank-prof-cwr-factor) | — | % |
-    | [reduced χ²](../physics/parameters.md#fit-result-bank-chi-square) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [How many data points of the experiment the fit used](../physics/parameters.md#fit-result-bank-n-data-points) | — |
+    | [Prof r factor](../physics/parameters.md#fit-result-bank-prof-r-factor) | — |
+    | [Rwp](../physics/parameters.md#fit-result-bank-prof-wr-factor) | — |
+    | [Rexp](../physics/parameters.md#fit-result-bank-prof-wr-expected) | — |
+    | [CRp](../physics/parameters.md#fit-result-bank-prof-cr-factor) | — |
+    | [CRwp](../physics/parameters.md#fit-result-bank-prof-cwr-factor) | — |
+    | [Reduced χ²](../physics/parameters.md#fit-result-bank-chi-square) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="fit-result-phase" aria-hidden="true">&#61452;</span> Structure fit result](../physics/parameters.md#fit-result-phase)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [R Bragg](../physics/parameters.md#fit-result-phase-bragg-r-factor) | — | % |
-    | [R F](../physics/parameters.md#fit-result-phase-f-r-factor) | — | % |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [R Bragg](../physics/parameters.md#fit-result-phase-bragg-r-factor) | — |
+    | [R F](../physics/parameters.md#fit-result-phase-f-r-factor) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="fit-parameter-correlation" aria-hidden="true">&#61449;</span> Correlation](../physics/parameters.md#fit-parameter-correlation)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#fit-parameter-correlation-id) | — | — |
-    | [source](../physics/parameters.md#fit-parameter-correlation-source-kind) | — | — |
-    | [parameter 1](../physics/parameters.md#fit-parameter-correlation-parameter-unique-name-i) | — | — |
-    | [parameter 2](../physics/parameters.md#fit-parameter-correlation-parameter-unique-name-j) | — | — |
-    | [correlation](../physics/parameters.md#fit-parameter-correlation-correlation) | — | — |
-    | [file](../physics/parameters.md#fit-parameter-correlation-file-path) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#fit-parameter-correlation-id) | — |
+    | [What kind of fit the correlation comes from](../physics/parameters.md#fit-parameter-correlation-source-kind) | — |
+    | [Parameter 1](../physics/parameters.md#fit-parameter-correlation-parameter-unique-name-i) | — |
+    | [Parameter 2](../physics/parameters.md#fit-parameter-correlation-parameter-unique-name-j) | — |
+    | [Correlation](../physics/parameters.md#fit-parameter-correlation-correlation) | — |
+    | [File](../physics/parameters.md#fit-parameter-correlation-file-path) | — |
 
     **[<span class="ed-reference-icon" data-reference-category="pd-block" aria-hidden="true">&#61897;</span> Report block](../physics/parameters.md#pd-block)**
 
-    | Parameter or field | Python name | Units |
-    | --- | --- | --- |
-    | [block](../physics/parameters.md#pd-block-id) | — | — |
+    | Parameter or field | Python name |
+    | --- | --- |
+    | [Block](../physics/parameters.md#pd-block-id) | — |
 
 === "CIF"
 
     **[<span class="ed-reference-icon" data-reference-category="metadata" aria-hidden="true">&#61831;</span> Project](../physics/parameters.md#metadata)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [name](../physics/parameters.md#metadata-name) | <code>_edi_metadata.name</code> | — |
-    | [title](../physics/parameters.md#metadata-title) | <code>_edi_metadata.title</code> | — |
-    | [description](../physics/parameters.md#metadata-description) | <code>_edi_metadata.description</code> | — |
-    | [authors](../physics/parameters.md#metadata-authors) | <code>_edi_metadata.authors</code> | — |
-    | [location](../physics/parameters.md#metadata-path) | <code>_edi_metadata.path</code> | — |
-    | [created](../physics/parameters.md#metadata-created) | <code>_edi_metadata.created</code> | — |
-    | [last modified](../physics/parameters.md#metadata-last-modified) | <code>_edi_metadata.last_modified</code> | — |
-    | [timestamp](../physics/parameters.md#metadata-timestamp) | <code>_edi_metadata.timestamp</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Name](../physics/parameters.md#metadata-name) | <code>_edi_metadata.name</code><details><summary>Accepted aliases</summary><code>_project.id</code></details> |
+    | [Title](../physics/parameters.md#metadata-title) | <code>_edi_metadata.title</code><details><summary>Accepted aliases</summary><code>_project.title</code></details> |
+    | [What the project is about](../physics/parameters.md#metadata-description) | <code>_edi_metadata.description</code><details><summary>Accepted aliases</summary><code>_project.description</code></details> |
+    | [Authors](../physics/parameters.md#metadata-authors) | <code>_edi_metadata.authors</code> |
+    | [Location](../physics/parameters.md#metadata-path) | <code>_edi_metadata.path</code> |
+    | [Created](../physics/parameters.md#metadata-created) | <code>_edi_metadata.created</code><details><summary>Accepted aliases</summary><code>_project.created</code></details> |
+    | [Last modified](../physics/parameters.md#metadata-last-modified) | <code>_edi_metadata.last_modified</code><details><summary>Accepted aliases</summary><code>_project.last_modified</code></details> |
+    | [Timestamp](../physics/parameters.md#metadata-timestamp) | <code>_edi_metadata.timestamp</code><details><summary>Accepted aliases</summary><code>_easydiffraction_project.timestamp</code><br><code>_software.timestamp</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="su-format" aria-hidden="true">&#62030;</span> Standard uncertainties](../physics/parameters.md#su-format)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [rule](../physics/parameters.md#su-format-rule) | <code>_edi_su_format.rule</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [How a value with a standard uncertainty is rounded when it is written and shown](../physics/parameters.md#su-format-rule) | <code>_edi_su_format.rule</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="report" aria-hidden="true">&#61788;</span> Report](../physics/parameters.md#report)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [HTML](../physics/parameters.md#report-html) | <code>_edi_report.html</code> | — |
-    | [PDF](../physics/parameters.md#report-pdf) | <code>_edi_report.pdf</code> | — |
-    | [CIF](../physics/parameters.md#report-cif) | <code>_edi_report.cif</code> | — |
-    | [embed chart libraries](../physics/parameters.md#report-html-offline) | <code>_edi_report.html_offline</code> | — |
-    | [excluded](../physics/parameters.md#report-excluded) | <code>_edi_report.excluded</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [HTML](../physics/parameters.md#report-html) | <code>_edi_report.html</code><details><summary>Accepted aliases</summary><code>_report.html</code></details> |
+    | [PDF](../physics/parameters.md#report-pdf) | <code>_edi_report.pdf</code><details><summary>Accepted aliases</summary><code>_report.pdf</code></details> |
+    | [CIF](../physics/parameters.md#report-cif) | <code>_edi_report.cif</code><details><summary>Accepted aliases</summary><code>_report.cif</code></details> |
+    | [Embed chart libraries](../physics/parameters.md#report-html-offline) | <code>_edi_report.html_offline</code><details><summary>Accepted aliases</summary><code>_report.html_offline</code></details> |
+    | [Excluded](../physics/parameters.md#report-excluded) | <code>_edi_report.excluded</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="correlation-chart" aria-hidden="true">&#61450;</span> Correlation chart](../physics/parameters.md#correlation-chart)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [threshold](../physics/parameters.md#correlation-chart-threshold) | <code>_edi_correlation_chart.threshold</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Threshold](../physics/parameters.md#correlation-chart-threshold) | <code>_edi_correlation_chart.threshold</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="pattern-chart" aria-hidden="true">&#61953;</span> Pattern chart](../physics/parameters.md#pattern-chart)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [x-axis](../physics/parameters.md#pattern-chart-x-axis) | <code>_edi_pattern_chart.x_axis</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [X-axis](../physics/parameters.md#pattern-chart-x-axis) | <code>_edi_pattern_chart.x_axis</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="calculator" aria-hidden="true">&#61932;</span> Calculator](../physics/parameters.md#calculator)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [calculator](../physics/parameters.md#calculator-type) | <code>_edi_calculator.type</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Calculator](../physics/parameters.md#calculator-type) | <code>_edi_calculator.type</code><details><summary>Accepted aliases</summary><code>_easydiffraction_calculator.type</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="minimizer" aria-hidden="true">&#62398;</span> Minimizer](../physics/parameters.md#minimizer)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [minimizer](../physics/parameters.md#minimizer-type) | <code>_edi_minimizer.type</code> | — |
-    | [max iterations](../physics/parameters.md#minimizer-max-iterations) | <code>_edi_minimizer.max_iterations</code> | — |
-    | [descent](../physics/parameters.md#minimizer-descent) | <code>_edi_minimizer.descent</code> | — |
-    | [tolerance](../physics/parameters.md#minimizer-chi-square-tolerance) | <code>_edi_minimizer.chi_square_tolerance</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Minimizer](../physics/parameters.md#minimizer-type) | <code>_edi_minimizer.type</code><details><summary>Accepted aliases</summary><code>_easydiffraction_minimizer.type</code></details> |
+    | [Max iterations](../physics/parameters.md#minimizer-max-iterations) | <code>_edi_minimizer.max_iterations</code><details><summary>Accepted aliases</summary><code>_easydiffraction_minimizer.max_iterations</code></details> |
+    | [Descent](../physics/parameters.md#minimizer-descent) | <code>_edi_minimizer.descent</code> |
+    | [Tolerance](../physics/parameters.md#minimizer-chi-square-tolerance) | <code>_edi_minimizer.chi_square_tolerance</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="fitting-mode" aria-hidden="true">&#61918;</span> Fitting mode](../physics/parameters.md#fitting-mode)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [mode](../physics/parameters.md#fitting-mode-type) | <code>_edi_fitting_mode.type</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [How the experiments of the project are fitted](../physics/parameters.md#fitting-mode-type) | <code>_edi_fitting_mode.type</code><details><summary>Accepted aliases</summary><code>_easydiffraction_fitting_mode.type</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="refine-ls" aria-hidden="true">&#61636;</span> Fitted reflections](../physics/parameters.md#refine-ls)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [fit reflections above (su)](../physics/parameters.md#refine-ls-threshold-sigma) | <code>_edi_refine_ls.threshold_sigma</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Fit reflections above (su)](../physics/parameters.md#refine-ls-threshold-sigma) | <code>_edi_refine_ls.threshold_sigma</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="alias" aria-hidden="true">&#61483;</span> Alias](../physics/parameters.md#alias)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [alias](../physics/parameters.md#alias-id) | <code>_edi_alias.id</code> | — |
-    | [parameter](../physics/parameters.md#alias-parameter-unique-name) | <code>_edi_alias.parameter_unique_name</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Alias](../physics/parameters.md#alias-id) | <code>_edi_alias.id</code><details><summary>Accepted aliases</summary><code>_easydiffraction_alias.id</code><br><code>_alias.label</code></details> |
+    | [Parameter](../physics/parameters.md#alias-parameter-unique-name) | <code>_edi_alias.parameter_unique_name</code><details><summary>Accepted aliases</summary><code>_easydiffraction_alias.parameter_unique_name</code><br><code>_alias.param_unique_name</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="constraint" aria-hidden="true">&#62764;</span> Constraint](../physics/parameters.md#constraint)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#constraint-id) | <code>_edi_constraint.id</code> | — |
-    | [expression](../physics/parameters.md#constraint-expression) | <code>_edi_constraint.expression</code> | — |
-    | [enabled](../physics/parameters.md#constraint-enabled) | <code>_edi_constraint.enabled</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#constraint-id) | <code>_edi_constraint.id</code><details><summary>Accepted aliases</summary><code>_easydiffraction_constraint.id</code></details> |
+    | [Expression](../physics/parameters.md#constraint-expression) | <code>_edi_constraint.expression</code><details><summary>Accepted aliases</summary><code>_easydiffraction_constraint.expression</code></details> |
+    | [Enabled](../physics/parameters.md#constraint-enabled) | <code>_edi_constraint.enabled</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="joint-fit" aria-hidden="true">&#61633;</span> Joint-fit weights](../physics/parameters.md#joint-fit)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [weight](../physics/parameters.md#joint-fit-weight) | <code>_edi_joint_fit.weight</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Weight](../physics/parameters.md#joint-fit-weight) | <code>_edi_joint_fit.weight</code><details><summary>Accepted aliases</summary><code>_easydiffraction_joint_fit.weight</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="sequential-fit" aria-hidden="true">&#61643;</span> Sequential fit](../physics/parameters.md#sequential-fit)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [data directory](../physics/parameters.md#sequential-fit-data-dir) | <code>_edi_sequential_fit.data_dir</code> | — |
-    | [files](../physics/parameters.md#sequential-fit-file-pattern) | <code>_edi_sequential_fit.file_pattern</code> | — |
-    | [reverse](../physics/parameters.md#sequential-fit-reverse) | <code>_edi_sequential_fit.reverse</code> | — |
-    | [template](../physics/parameters.md#sequential-fit-template-file) | <code>_edi_sequential_fit.template_file</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Data directory](../physics/parameters.md#sequential-fit-data-dir) | <code>_edi_sequential_fit.data_dir</code><details><summary>Accepted aliases</summary><code>_easydiffraction_sequential_fit.data_dir</code></details> |
+    | [Which files of the folder are fitted](../physics/parameters.md#sequential-fit-file-pattern) | <code>_edi_sequential_fit.file_pattern</code><details><summary>Accepted aliases</summary><code>_easydiffraction_sequential_fit.file_pattern</code></details> |
+    | [Reverse](../physics/parameters.md#sequential-fit-reverse) | <code>_edi_sequential_fit.reverse</code><details><summary>Accepted aliases</summary><code>_easydiffraction_sequential_fit.reverse</code></details> |
+    | [Template](../physics/parameters.md#sequential-fit-template-file) | <code>_edi_sequential_fit.template_file</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="sequential-fit-extract" aria-hidden="true">&#61616;</span> Scan extraction rule](../physics/parameters.md#sequential-fit-extract)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#sequential-fit-extract-id) | <code>_edi_sequential_fit_extract.id</code> | — |
-    | [target](../physics/parameters.md#sequential-fit-extract-target) | <code>_edi_sequential_fit_extract.target</code> | — |
-    | [pattern](../physics/parameters.md#sequential-fit-extract-pattern) | <code>_edi_sequential_fit_extract.pattern</code> | — |
-    | [required](../physics/parameters.md#sequential-fit-extract-required) | <code>_edi_sequential_fit_extract.required</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#sequential-fit-extract-id) | <code>_edi_sequential_fit_extract.id</code><details><summary>Accepted aliases</summary><code>_easydiffraction_sequential_fit_extract.id</code></details> |
+    | [What the value is stored as](../physics/parameters.md#sequential-fit-extract-target) | <code>_edi_sequential_fit_extract.target</code><details><summary>Accepted aliases</summary><code>_easydiffraction_sequential_fit_extract.target</code></details> |
+    | [Pattern](../physics/parameters.md#sequential-fit-extract-pattern) | <code>_edi_sequential_fit_extract.pattern</code><details><summary>Accepted aliases</summary><code>_easydiffraction_sequential_fit_extract.pattern</code></details> |
+    | [Required](../physics/parameters.md#sequential-fit-extract-required) | <code>_edi_sequential_fit_extract.required</code><details><summary>Accepted aliases</summary><code>_easydiffraction_sequential_fit_extract.required</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="edi" aria-hidden="true">&#61897;</span> File header](../physics/parameters.md#edi)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [schema version](../physics/parameters.md#edi-schema-version) | <code>_edi_edi.schema_version</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Schema version](../physics/parameters.md#edi-schema-version) | <code>_edi_edi.schema_version</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="report-file" aria-hidden="true">&#61787;</span> Saved report](../physics/parameters.md#report-file)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [format](../physics/parameters.md#report-file-format) | <code>_edi_report_file.format</code> | — |
-    | [file](../physics/parameters.md#report-file-name) | <code>_edi_report_file.name</code> | — |
-    | [saved](../physics/parameters.md#report-file-saved) | <code>_edi_report_file.saved</code> | — |
-    | [project saved](../physics/parameters.md#report-file-project-last-modified) | <code>_edi_report_file.project_last_modified</code> | — |
-    | [digest](../physics/parameters.md#report-file-digest) | <code>_edi_report_file.digest</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Format](../physics/parameters.md#report-file-format) | <code>_edi_report_file.format</code> |
+    | [File](../physics/parameters.md#report-file-name) | <code>_edi_report_file.name</code> |
+    | [Saved](../physics/parameters.md#report-file-saved) | <code>_edi_report_file.saved</code> |
+    | [Project saved](../physics/parameters.md#report-file-project-last-modified) | <code>_edi_report_file.project_last_modified</code> |
+    | [Digest](../physics/parameters.md#report-file-digest) | <code>_edi_report_file.digest</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="fit-parameter" aria-hidden="true">&#61914;</span> Fit start value](../physics/parameters.md#fit-parameter)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [parameter](../physics/parameters.md#fit-parameter-id) | <code>_edi_fit_parameter.id</code> | — |
-    | [start value](../physics/parameters.md#fit-parameter-start-value) | <code>_edi_fit_parameter.start_value</code> | — |
-    | [start error](../physics/parameters.md#fit-parameter-start-uncertainty) | <code>_edi_fit_parameter.start_uncertainty</code> | — |
-    | [start tied](../physics/parameters.md#fit-parameter-start-tied) | <code>_edi_fit_parameter.start_tied</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Parameter](../physics/parameters.md#fit-parameter-id) | <code>_edi_fit_parameter.id</code> |
+    | [Start value](../physics/parameters.md#fit-parameter-start-value) | <code>_edi_fit_parameter.start_value</code><details><summary>Accepted aliases</summary><code>_fit_parameter.start_value</code></details> |
+    | [Start error](../physics/parameters.md#fit-parameter-start-uncertainty) | <code>_edi_fit_parameter.start_uncertainty</code><details><summary>Accepted aliases</summary><code>_fit_parameter.start_uncertainty</code></details> |
+    | [Start tied](../physics/parameters.md#fit-parameter-start-tied) | <code>_edi_fit_parameter.start_tied</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="fit-result" aria-hidden="true">&#61528;</span> Fit result](../physics/parameters.md#fit-result)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [kind](../physics/parameters.md#fit-result-result-kind) | <code>_edi_fit_result.result_kind</code> | — |
-    | [success](../physics/parameters.md#fit-result-success) | <code>_edi_fit_result.success</code> | — |
-    | [message](../physics/parameters.md#fit-result-message) | <code>_edi_fit_result.message</code> | — |
-    | [iterations](../physics/parameters.md#fit-result-iterations) | <code>_edi_fit_result.iterations</code> | — |
-    | [time](../physics/parameters.md#fit-result-fitting-time) | <code>_edi_fit_result.fitting_time</code> | s |
-    | [reduced χ²](../physics/parameters.md#fit-result-reduced-chi-square) | <code>_edi_fit_result.reduced_chi_square</code> | — |
-    | [objective](../physics/parameters.md#fit-result-objective-name) | <code>_edi_fit_result.objective_name</code> | — |
-    | [objective value](../physics/parameters.md#fit-result-objective-value) | <code>_edi_fit_result.objective_value</code> | — |
-    | [points](../physics/parameters.md#fit-result-n-data-points) | <code>_edi_fit_result.n_data_points</code> | — |
-    | [parameters](../physics/parameters.md#fit-result-n-parameters) | <code>_edi_fit_result.n_parameters</code> | — |
-    | [free parameters](../physics/parameters.md#fit-result-n-free-parameters) | <code>_edi_fit_result.n_free_parameters</code> | — |
-    | [degrees of freedom](../physics/parameters.md#fit-result-degrees-of-freedom) | <code>_edi_fit_result.degrees_of_freedom</code> | — |
-    | [covariance](../physics/parameters.md#fit-result-covariance-available) | <code>_edi_fit_result.covariance_available</code> | — |
-    | [exit reason](../physics/parameters.md#fit-result-exit-reason) | <code>_edi_fit_result.exit_reason</code> | — |
-    | [Rwp](../physics/parameters.md#fit-result-prof-wr-factor) | <code>_edi_fit_result.prof_wr_factor</code> | % |
-    | [Rp](../physics/parameters.md#fit-result-prof-r-factor) | <code>_edi_fit_result.prof_r_factor</code> | % |
-    | [Rexp](../physics/parameters.md#fit-result-prof-wr-expected) | <code>_edi_fit_result.prof_wr_expected</code> | % |
-    | [cRp](../physics/parameters.md#fit-result-prof-cr-factor) | <code>_edi_fit_result.prof_cr_factor</code> | % |
-    | [cRwp](../physics/parameters.md#fit-result-prof-cwr-factor) | <code>_edi_fit_result.prof_cwr_factor</code> | % |
-    | [profile](../physics/parameters.md#fit-result-profile-function) | <code>_edi_fit_result.profile_function</code> | — |
-    | [background](../physics/parameters.md#fit-result-background-function) | <code>_edi_fit_result.background_function</code> | — |
-    | [descent](../physics/parameters.md#fit-result-descent) | <code>_edi_fit_result.descent</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [What kind of fit gave the result](../physics/parameters.md#fit-result-result-kind) | <code>_edi_fit_result.result_kind</code><details><summary>Accepted aliases</summary><code>_fit_result.result_kind</code></details> |
+    | [Success](../physics/parameters.md#fit-result-success) | <code>_edi_fit_result.success</code><details><summary>Accepted aliases</summary><code>_fit_result.success</code></details> |
+    | [Message](../physics/parameters.md#fit-result-message) | <code>_edi_fit_result.message</code><details><summary>Accepted aliases</summary><code>_fit_result.message</code></details> |
+    | [How many iterations the fit took](../physics/parameters.md#fit-result-iterations) | <code>_edi_fit_result.iterations</code><details><summary>Accepted aliases</summary><code>_fit_result.iterations</code></details> |
+    | [How long the fit took](../physics/parameters.md#fit-result-fitting-time) | <code>_edi_fit_result.fitting_time</code><details><summary>Accepted aliases</summary><code>_fit_result.fitting_time</code></details> |
+    | [χ² divided by the degrees of freedom](../physics/parameters.md#fit-result-reduced-chi-square) | <code>_edi_fit_result.reduced_chi_square</code><details><summary>Accepted aliases</summary><code>_fit_result.reduced_chi_square</code></details> |
+    | [Objective](../physics/parameters.md#fit-result-objective-name) | <code>_edi_fit_result.objective_name</code><details><summary>Accepted aliases</summary><code>_fit_result.objective_name</code></details> |
+    | [Objective value](../physics/parameters.md#fit-result-objective-value) | <code>_edi_fit_result.objective_value</code><details><summary>Accepted aliases</summary><code>_fit_result.objective_value</code></details> |
+    | [How many data points the fit used](../physics/parameters.md#fit-result-n-data-points) | <code>_edi_fit_result.n_data_points</code><details><summary>Accepted aliases</summary><code>_fit_result.n_data_points</code></details> |
+    | [How many parameters the project has](../physics/parameters.md#fit-result-n-parameters) | <code>_edi_fit_result.n_parameters</code><details><summary>Accepted aliases</summary><code>_fit_result.n_parameters</code></details> |
+    | [How many parameters the fit refined](../physics/parameters.md#fit-result-n-free-parameters) | <code>_edi_fit_result.n_free_parameters</code><details><summary>Accepted aliases</summary><code>_fit_result.n_free_parameters</code></details> |
+    | [Degrees of freedom](../physics/parameters.md#fit-result-degrees-of-freedom) | <code>_edi_fit_result.degrees_of_freedom</code><details><summary>Accepted aliases</summary><code>_fit_result.degrees_of_freedom</code></details> |
+    | [Covariance](../physics/parameters.md#fit-result-covariance-available) | <code>_edi_fit_result.covariance_available</code><details><summary>Accepted aliases</summary><code>_fit_result.covariance_available</code></details> |
+    | [Why the fit stopped](../physics/parameters.md#fit-result-exit-reason) | <code>_edi_fit_result.exit_reason</code><details><summary>Accepted aliases</summary><code>_fit_result.exit_reason</code></details> |
+    | [Rwp](../physics/parameters.md#fit-result-prof-wr-factor) | <code>_edi_fit_result.prof_wr_factor</code><details><summary>Accepted aliases</summary><code>_fit_result.prof_wR_factor</code></details> |
+    | [Prof r factor](../physics/parameters.md#fit-result-prof-r-factor) | <code>_edi_fit_result.prof_r_factor</code><details><summary>Accepted aliases</summary><code>_fit_result.prof_R_factor</code></details> |
+    | [Rexp](../physics/parameters.md#fit-result-prof-wr-expected) | <code>_edi_fit_result.prof_wr_expected</code><details><summary>Accepted aliases</summary><code>_fit_result.prof_wR_expected</code></details> |
+    | [CRp](../physics/parameters.md#fit-result-prof-cr-factor) | <code>_edi_fit_result.prof_cr_factor</code> |
+    | [CRwp](../physics/parameters.md#fit-result-prof-cwr-factor) | <code>_edi_fit_result.prof_cwr_factor</code> |
+    | [Profile](../physics/parameters.md#fit-result-profile-function) | <code>_edi_fit_result.profile_function</code><details><summary>Accepted aliases</summary><code>_fit_result.profile_function</code></details> |
+    | [Background](../physics/parameters.md#fit-result-background-function) | <code>_edi_fit_result.background_function</code><details><summary>Accepted aliases</summary><code>_fit_result.background_function</code></details> |
+    | [Descent](../physics/parameters.md#fit-result-descent) | <code>_edi_fit_result.descent</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="fit-result-bank" aria-hidden="true">&#61452;</span> Experiment fit result](../physics/parameters.md#fit-result-bank)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [points](../physics/parameters.md#fit-result-bank-n-data-points) | <code>_edi_fit_result_bank.n_data_points</code> | — |
-    | [Rp](../physics/parameters.md#fit-result-bank-prof-r-factor) | <code>_pd_proc_ls.prof_R_factor</code> | % |
-    | [Rwp](../physics/parameters.md#fit-result-bank-prof-wr-factor) | <code>_pd_proc_ls.prof_wR_factor</code> | % |
-    | [Rexp](../physics/parameters.md#fit-result-bank-prof-wr-expected) | <code>_pd_proc_ls.prof_wR_expected</code> | % |
-    | [cRp](../physics/parameters.md#fit-result-bank-prof-cr-factor) | <code>_edi_fit_result_bank.prof_cr_factor</code> | % |
-    | [cRwp](../physics/parameters.md#fit-result-bank-prof-cwr-factor) | <code>_edi_fit_result_bank.prof_cwr_factor</code> | % |
-    | [reduced χ²](../physics/parameters.md#fit-result-bank-chi-square) | <code>_edi_fit_result_bank.chi_square</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [How many data points of the experiment the fit used](../physics/parameters.md#fit-result-bank-n-data-points) | <code>_edi_fit_result_bank.n_data_points</code> |
+    | [Prof r factor](../physics/parameters.md#fit-result-bank-prof-r-factor) | <code>_pd_proc_ls.prof_R_factor</code><details><summary>Accepted aliases</summary><code>_pd_proc_ls_prof_R_factor</code></details> |
+    | [Rwp](../physics/parameters.md#fit-result-bank-prof-wr-factor) | <code>_pd_proc_ls.prof_wR_factor</code><details><summary>Accepted aliases</summary><code>_pd_proc_ls_prof_wR_factor</code></details> |
+    | [Rexp](../physics/parameters.md#fit-result-bank-prof-wr-expected) | <code>_pd_proc_ls.prof_wR_expected</code><details><summary>Accepted aliases</summary><code>_pd_proc_ls_prof_wR_expected</code></details> |
+    | [CRp](../physics/parameters.md#fit-result-bank-prof-cr-factor) | <code>_edi_fit_result_bank.prof_cr_factor</code> |
+    | [CRwp](../physics/parameters.md#fit-result-bank-prof-cwr-factor) | <code>_edi_fit_result_bank.prof_cwr_factor</code> |
+    | [Reduced χ²](../physics/parameters.md#fit-result-bank-chi-square) | <code>_edi_fit_result_bank.chi_square</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="fit-result-phase" aria-hidden="true">&#61452;</span> Structure fit result](../physics/parameters.md#fit-result-phase)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [R Bragg](../physics/parameters.md#fit-result-phase-bragg-r-factor) | <code>_refine_ls.R_I_factor</code> | % |
-    | [R F](../physics/parameters.md#fit-result-phase-f-r-factor) | <code>_refine_ls.R_factor_all</code> | % |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [R Bragg](../physics/parameters.md#fit-result-phase-bragg-r-factor) | <code>_refine_ls.R_I_factor</code><details><summary>Accepted aliases</summary><code>_refine_ls_R_I_factor</code><br><code>_refine.ls_R_I_factor_obs</code></details> |
+    | [R F](../physics/parameters.md#fit-result-phase-f-r-factor) | <code>_refine_ls.R_factor_all</code><details><summary>Accepted aliases</summary><code>_refine_ls_R_factor_all</code><br><code>_refine.ls_R_factor_all</code></details> |
 
     **[<span class="ed-reference-icon" data-reference-category="fit-parameter-correlation" aria-hidden="true">&#61449;</span> Correlation](../physics/parameters.md#fit-parameter-correlation)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [id](../physics/parameters.md#fit-parameter-correlation-id) | <code>_edi_fit_parameter_correlation.id</code> | — |
-    | [source](../physics/parameters.md#fit-parameter-correlation-source-kind) | <code>_edi_fit_parameter_correlation.source_kind</code> | — |
-    | [parameter 1](../physics/parameters.md#fit-parameter-correlation-parameter-unique-name-i) | <code>_edi_fit_parameter_correlation.parameter_unique_name_i</code> | — |
-    | [parameter 2](../physics/parameters.md#fit-parameter-correlation-parameter-unique-name-j) | <code>_edi_fit_parameter_correlation.parameter_unique_name_j</code> | — |
-    | [correlation](../physics/parameters.md#fit-parameter-correlation-correlation) | <code>_edi_fit_parameter_correlation.correlation</code> | — |
-    | [file](../physics/parameters.md#fit-parameter-correlation-file-path) | <code>_edi_fit_parameter_correlation.file_path</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Id](../physics/parameters.md#fit-parameter-correlation-id) | <code>_edi_fit_parameter_correlation.id</code><details><summary>Accepted aliases</summary><code>_fit_parameter_correlation.id</code></details> |
+    | [What kind of fit the correlation comes from](../physics/parameters.md#fit-parameter-correlation-source-kind) | <code>_edi_fit_parameter_correlation.source_kind</code><details><summary>Accepted aliases</summary><code>_fit_parameter_correlation.source_kind</code></details> |
+    | [Parameter 1](../physics/parameters.md#fit-parameter-correlation-parameter-unique-name-i) | <code>_edi_fit_parameter_correlation.parameter_unique_name_i</code><details><summary>Accepted aliases</summary><code>_fit_parameter_correlation.param_unique_name_i</code></details> |
+    | [Parameter 2](../physics/parameters.md#fit-parameter-correlation-parameter-unique-name-j) | <code>_edi_fit_parameter_correlation.parameter_unique_name_j</code><details><summary>Accepted aliases</summary><code>_fit_parameter_correlation.param_unique_name_j</code></details> |
+    | [Correlation](../physics/parameters.md#fit-parameter-correlation-correlation) | <code>_edi_fit_parameter_correlation.correlation</code><details><summary>Accepted aliases</summary><code>_fit_parameter_correlation.correlation</code></details> |
+    | [File](../physics/parameters.md#fit-parameter-correlation-file-path) | <code>_edi_fit_parameter_correlation.file_path</code> |
 
     **[<span class="ed-reference-icon" data-reference-category="pd-block" aria-hidden="true">&#61897;</span> Report block](../physics/parameters.md#pd-block)**
 
-    | Parameter or field | CIF name | Units |
-    | --- | --- | --- |
-    | [block](../physics/parameters.md#pd-block-id) | <code>_pd_block.id</code> | — |
+    | Parameter or field | CIF name |
+    | --- | --- |
+    | [Block](../physics/parameters.md#pd-block-id) | <code>_pd_block.id</code><details><summary>Accepted aliases</summary><code>_pd_block_id</code></details> |

@@ -41,7 +41,7 @@ Both scan modes run a sequence of fits against a template experiment. Sequential
 
 ## Le Bail / Pawley intensity extraction {#intensity-extraction}
 
-**Proposed.** Le Bail / Pawley intensity extraction is a proposed capability. It is not an available fitting mode in this reference snapshot. See [Calculation and fitting modes](../user-guide/features.md#calculation-and-fitting-modes) for the current alternatives.
+**Proposed.** Le Bail / Pawley intensity extraction is a proposed capability. It is not an available fitting mode in this reference snapshot. See [Pattern fitting](../user-guide/features.md#pattern-fitting) for the current alternatives.
 
 ## Interpretation
 

@@ -57,7 +57,7 @@ $$wR(F^2)=\sqrt{\frac{\sum_{h\in\mathcal H}w_h(F_{o,h}^2-F_{c,h}^2)^2}{\sum_{h\i
 
 ### Single-crystal reflection exclusions {#single-crystal-reflection-exclusions}
 
-**Planned.** Single-crystal reflection exclusions are planned. The reporting and refinement-threshold rules above describe the current behaviour. See [Background and excluded observations](../user-guide/features.md#background-and-excluded-observations) for the status alongside powder exclusions.
+**Planned.** Single-crystal reflection exclusions are planned. The reporting and refinement-threshold rules above describe the current behaviour. See [Background and excluded observations](../user-guide/features.md#observation-exclusions) for the status alongside powder exclusions.
 
 ## Per-experiment and pooled summaries {#pooled-factors}
 

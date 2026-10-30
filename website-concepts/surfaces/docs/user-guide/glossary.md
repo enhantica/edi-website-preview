@@ -14,13 +14,13 @@ These terms are shared by the application, Python library and command line. The 
 
 ## Diffraction
 
-**Powder diffraction** <!-- glossary-label:powder --><a class="ed-tag ed-tag--technique" href="../user-guide/experiment-types/#powder-diffraction" title="Powder diffraction">pd</a><!-- /glossary-label --> describes diffraction from a sample containing many crystallite orientations. The measured signal is commonly an intensity profile in which reflections can overlap.
+**Powder diffraction** <!-- glossary-label:powder --><a class="ed-tag ed-tag--technique" data-ed-tag="sampleForm" data-ed-token="powder" href="../user-guide/experiment-types/#powder-diffraction" title="Powder diffraction">pd</a><!-- /glossary-label --> describes diffraction from a sample containing many crystallite orientations. The measured signal is commonly an intensity profile in which reflections can overlap.
 
-**Single-crystal diffraction** <!-- glossary-label:single-crystal --><a class="ed-tag ed-tag--neutral" href="../user-guide/experiment-types/#single-crystal-diffraction" title="Single-crystal diffraction">sc</a><!-- /glossary-label --> measures individual reflections from an oriented crystal. Its observations and fit assessment differ from those of a powder profile.
+**Single-crystal diffraction** <!-- glossary-label:single-crystal --><a class="ed-tag ed-tag--neutral" data-ed-tag="sampleForm" data-ed-token="single crystal" href="../user-guide/experiment-types/#single-crystal-diffraction" title="Single-crystal diffraction">sc</a><!-- /glossary-label --> measures individual reflections from an oriented crystal. Its observations and fit assessment differ from those of a powder profile.
 
-**Constant wavelength (CWL)** <!-- glossary-label:constant-wavelength --><a class="ed-tag ed-tag--neutral" href="../user-guide/experiment-types/#constant-wavelength" title="Constant wavelength">cwl</a><!-- /glossary-label --> describes a measurement using a specified wavelength, with a powder pattern commonly expressed against the scattering angle 2θ.
+**Constant wavelength (CWL)** <!-- glossary-label:constant-wavelength --><a class="ed-tag ed-tag--neutral" data-ed-tag="beamMode" data-ed-token="constant wavelength" href="../user-guide/experiment-types/#constant-wavelength" title="Constant wavelength">cwl</a><!-- /glossary-label --> describes a measurement using a specified wavelength, with a powder pattern commonly expressed against the scattering angle 2θ.
 
-**Time of flight (TOF)** <!-- glossary-label:time-of-flight --><a class="ed-tag ed-tag--technique" href="../user-guide/experiment-types/#time-of-flight" title="Time of flight">tof</a><!-- /glossary-label --> separates neutron wavelengths through arrival time. The instrument calibration relates time of flight to the diffraction geometry.
+**Time of flight (TOF)** <!-- glossary-label:time-of-flight --><a class="ed-tag ed-tag--technique" data-ed-tag="beamMode" data-ed-token="time-of-flight" href="../user-guide/experiment-types/#time-of-flight" title="Time of flight">tof</a><!-- /glossary-label --> separates neutron wavelengths through arrival time. The instrument calibration relates time of flight to the diffraction geometry.
 
 **Reflection** refers to diffraction associated with a set of lattice planes. A **Bragg-position mark** indicates where that reflection is expected in the pattern.
 

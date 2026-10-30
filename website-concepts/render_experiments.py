@@ -28,7 +28,7 @@ def badge(family: str, token: str, *, prefix: str = '../') -> str:
         else ''
     )
     return (
-        f'<a class="ed-tag ed-tag--{item["tone"]}" href="{prefix}user-guide/experiment-types/#{item["anchor"]}" '
+        f'<a class="ed-tag ed-tag--{item["tone"]}" data-ed-tag="{family}" data-ed-token="{html.escape(token, quote=True)}" href="{prefix}user-guide/experiment-types/#{item["anchor"]}" '
         f'title="{html.escape(item["meaning"], quote=True)}">{symbol}{html.escape(item["label"])}</a>'
     )
 
@@ -183,6 +183,67 @@ def render() -> None:
     for path in DOCS.rglob('*.md'):
         source = path.read_text()
         relative = '../' * len(path.relative_to(DOCS).parent.parts)
+        source = re.sub(
+            r'<a class="ed-tag[^"\n]*" data-ed-tag="([^"\n]+)" data-ed-token="([^"\n]+)"[^>]*>.*?</a>',
+            lambda match, relative=relative: badge(
+                match[1], html.unescape(match[2]), prefix=relative
+            ),
+            source,
+        )
+        if path.relative_to(DOCS).as_posix() == 'physics/models.md':
+            lines = source.splitlines()
+            for index, line in enumerate(lines):
+                if line.startswith('|') and not line.startswith('| ---'):
+                    cells = line.split('|')
+                    if len(cells) == 5:
+                        cells[2] = re.sub(
+                            r'\b(?:CW|CWL|TOF)\b',
+                            lambda match, relative=relative: badge(
+                                'beamMode',
+                                'time-of-flight' if match[0] == 'TOF' else 'constant wavelength',
+                                prefix=relative,
+                            ),
+                            cells[2],
+                        )
+                        lines[index] = '|'.join(cells)
+            source = '\n'.join(lines) + '\n'
+        if path.relative_to(DOCS).as_posix() == 'user-guide/features.md':
+
+            def feature_scope(match, relative=relative):
+                title, scope, url = match[1], match[2], match[3]
+                values = []
+                combined = title + ' ' + scope
+                if 'powder' in combined.lower():
+                    values.append(('sampleForm', 'powder'))
+                if 'single crystal' in combined.lower():
+                    values.append(('sampleForm', 'single crystal'))
+                if 'neutron' in title.lower():
+                    values.append(('probe', 'neutron'))
+                if 'x-ray' in title.lower():
+                    values.append(('probe', 'xray'))
+                if 'CW' in scope or 'constant wavelength' in scope:
+                    values.append(('beamMode', 'constant wavelength'))
+                if 'TOF' in scope or 'time of flight' in scope:
+                    values.append(('beamMode', 'time-of-flight'))
+                if not values:
+                    return match[0]
+                if 'ABSCOR1' in scope:
+                    title += ' (ABSCOR1)'
+                return (
+                    '['
+                    + title
+                    + ']('
+                    + url
+                    + ') '
+                    + ' '.join(badge(family, token, prefix=relative) for family, token in values)
+                )
+
+            source = re.sub(
+                r'\[([^]\n]+?) · ((?:CW|TOF|constant wavelength|time of flight)[^]\n]*)\]\(([^)]+)\)',
+                feature_scope,
+                source,
+            )
+
         blocks = re.split(r'(^```[^\n]*\n.*?^```[^\n]*$)', source, flags=re.MULTILINE | re.DOTALL)
         for index in range(0, len(blocks), 2):
             for label, (family, token) in tokens.items():
