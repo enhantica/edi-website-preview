@@ -1,5 +1,6 @@
 /* Generated from the app experiment tag registry. */
-.ed-tag {display:inline-flex;align-items:center;white-space:nowrap;border-radius:3px;padding:.08em .38em;margin:.12em .16em .12em 0;font-size:.82em;line-height:1.5;text-decoration:none!important}
+.ed-tag {display:inline-flex;align-items:center;gap:.28em;white-space:nowrap;border-radius:3px;padding:.08em .38em;margin:.12em .16em .12em 0;font-size:.82em;line-height:1.5;text-decoration:none!important}
+.ed-tag .ed-reference-icon {margin:0}
 .ed-tag:hover,.ed-tag:focus-visible {text-decoration:underline!important;outline-offset:2px}
 .ed-example-filters {display:flex;flex-wrap:wrap;gap:.5rem;margin-block:.7rem}
 .ed-example-filters input,.ed-example-filters select {font:inherit;max-width:100%;padding:.4em .6em;border:1px solid var(--md-default-fg-color--lightest);border-radius:5px;background:var(--md-default-bg-color);color:var(--md-default-fg-color)}

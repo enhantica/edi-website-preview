@@ -66,4 +66,4 @@ File selection, import diagnostics and write-back behaviour are interface-specif
 - [Python: experiment input](../python/experiments.md) and [project loading and saving](../python/projects.md).
 - [Command Line: accepted project inputs and output destinations](../cli/files.md).
 
-See the shared [Report](analysis-workflow/report.md) stage for document formats and provenance.
+See the shared [:material-clipboard-text: Report](analysis-workflow/report.md) stage for document formats and provenance.

@@ -21,9 +21,15 @@ ASSETS = DOCS / 'assets/reference'
 def badge(family: str, token: str, *, prefix: str = '../') -> str:
     definitions = json.loads((ASSETS / 'experiment-tags.json').read_text())
     item = definitions['tags'][family][token]
+    glyph = item.get('glyph', '')
+    symbol = (
+        f'<span class="ed-reference-icon" aria-hidden="true">{html.escape(glyph)}</span>'
+        if glyph
+        else ''
+    )
     return (
         f'<a class="ed-tag ed-tag--{item["tone"]}" href="{prefix}user-guide/experiment-types/#{item["anchor"]}" '
-        f'title="{html.escape(item["meaning"], quote=True)}">{html.escape(item["label"])}</a>'
+        f'title="{html.escape(item["meaning"], quote=True)}">{symbol}{html.escape(item["label"])}</a>'
     )
 
 
@@ -50,7 +56,8 @@ def render() -> None:
     metadata = json.loads((ASSETS / 'examples.json').read_text())['examples']
     css = [
         '/* Generated from the app experiment tag registry. */',
-        '.ed-tag {display:inline-flex;align-items:center;white-space:nowrap;border-radius:3px;padding:.08em .38em;margin:.12em .16em .12em 0;font-size:.82em;line-height:1.5;text-decoration:none!important}',
+        '.ed-tag {display:inline-flex;align-items:center;gap:.28em;white-space:nowrap;border-radius:3px;padding:.08em .38em;margin:.12em .16em .12em 0;font-size:.82em;line-height:1.5;text-decoration:none!important}',
+        '.ed-tag .ed-reference-icon {margin:0}',
         '.ed-tag:hover,.ed-tag:focus-visible {text-decoration:underline!important;outline-offset:2px}',
         '.ed-example-filters {display:flex;flex-wrap:wrap;gap:.5rem;margin-block:.7rem}',
         '.ed-example-filters input,.ed-example-filters select {font:inherit;max-width:100%;padding:.4em .6em;border:1px solid var(--md-default-fg-color--lightest);border-radius:5px;background:var(--md-default-bg-color);color:var(--md-default-fg-color)}',
@@ -70,7 +77,7 @@ def render() -> None:
     prose = {
         'purpose': (
             'Purpose',
-            'Simulation calculates a pattern. Fitting compares a model with measured observations.',
+            'Choose whether to calculate a model alone or fit it to observations.',
         ),
         'fittingMode': (
             'Fitting mode',
@@ -94,6 +101,9 @@ def render() -> None:
         ),
     }
     meanings = {
+        'fitting': 'Compare a calculated model with measured intensities and refine its parameters.',
+        'simulation': 'Calculate the pattern from the current model without measured intensities.',
+        'bragg-diffraction': 'Model the crystalline contribution from lattice reflections.',
         'single-fit': 'Refine one experiment.',
         'joint-fit': 'Refine several experiments together with shared model quantities.',
         'sequential-fit': 'Fit a scan in order, using the preceding result as the next starting point.',
@@ -129,24 +139,57 @@ def render() -> None:
     seen = set()
     for family, values in registry['tags'].items():
         title, explanation = prose[family]
-        lines += ['## ' + title, '', explanation, '']
+        lines += ['## ' + title, '', explanation, '', '| Label | Meaning |', '| --- | --- |']
         for token, item in values.items():
             if item['anchor'] in seen:
                 continue
             seen.add(item['anchor'])
-            lines += [
-                '### ' + item['meaning'] + ' {#' + item['anchor'] + '}',
-                '',
-                badge(family, token) + ' ' + meanings.get(item['anchor'], explanation),
-                '',
-            ]
-    lines += [
-        '## Next steps',
-        '',
-        '[Choose an example](examples.md) · [Fitting modes](fitting-modes.md) · [Instrument and profiles](../physics/profiles.md)',
-        '',
-    ]
+            lines.append(
+                '| <span id="'
+                + item['anchor']
+                + '"></span>'
+                + badge(family, token)
+                + ' | '
+                + meanings.get(item['anchor'], item['meaning'])
+                + ' |'
+            )
+        lines.append('')
     (DOCS / 'user-guide/experiment-types.md').write_text('\n'.join(lines))
+    glossary = DOCS / 'user-guide/glossary.md'
+    text = glossary.read_text()
+    for phrase, family, token in [
+        ('**Powder diffraction**', 'sampleForm', 'powder'),
+        ('**Single-crystal diffraction**', 'sampleForm', 'single crystal'),
+        ('**Constant wavelength (CWL)**', 'beamMode', 'constant wavelength'),
+        ('**Time of flight (TOF)**', 'beamMode', 'time-of-flight'),
+    ]:
+        marker = '<!-- glossary-label:' + token.replace(' ', '-') + ' -->'
+        text = re.sub(' ?' + re.escape(marker) + r'.*?<!-- /glossary-label -->', '', text)
+        text = text.replace(
+            phrase, phrase + ' ' + marker + badge(family, token) + '<!-- /glossary-label -->', 1
+        )
+    text = re.sub(
+        r'\nFor linked definitions of .*?see \[Experiment types and labels\]\(experiment-types.md\)\.\n?',
+        '\n',
+        text,
+    )
+    glossary.write_text(text.rstrip() + '\n')
+    tokens = {
+        item['label']: (family, token)
+        for family, values in registry['tags'].items()
+        for token, item in values.items()
+        if family in {'sampleForm', 'probe', 'beamMode'}
+    }
+    for path in DOCS.rglob('*.md'):
+        source = path.read_text()
+        relative = '../' * len(path.relative_to(DOCS).parent.parts)
+        blocks = re.split(r'(^```[^\n]*\n.*?^```[^\n]*$)', source, flags=re.MULTILINE | re.DOTALL)
+        for index in range(0, len(blocks), 2):
+            for label, (family, token) in tokens.items():
+                blocks[index] = blocks[index].replace(
+                    '`' + label + '`', badge(family, token, prefix=relative)
+                )
+        path.write_text(''.join(blocks))
     # One compact, progressively disclosed catalogue; all entries remain readable without JS.
     controls = [
         '<div class="ed-example-filters"><input type="search" data-example-search aria-label="Search examples" placeholder="Search sample, instrument or label">'

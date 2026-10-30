@@ -41,3 +41,6 @@
 .md-typeset .tabbed-labels .twemoji { display: inline-flex; flex: none; align-items: center; margin: 0; width: 1em; height: 1em; line-height: 1; }
 .md-typeset .tabbed-labels .gui-fa { flex: none; margin-right: 0; }
 @media (prefers-reduced-motion: reduce) { .md-typeset .md-button { transition: none; } }
+
+.ed-workflow-diagram {overflow-x:auto;margin-block:1.5rem;color:var(--md-default-fg-color)}
+.md-typeset .ed-workflow-diagram > svg {display:block;width:100%;min-width:36rem;max-width:none;height:auto}

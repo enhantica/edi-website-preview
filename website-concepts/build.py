@@ -230,6 +230,9 @@ def main() -> None:
     from render_experiments import render as render_experiments
 
     render_experiments()
+    from render_workflow import render as render_workflow
+
+    render_workflow()
     from render_parameter_reference import render as render_parameter_reference
 
     render_parameter_reference()

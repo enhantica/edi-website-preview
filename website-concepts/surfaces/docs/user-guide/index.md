@@ -10,7 +10,7 @@ Start in the interface you want to use. Each section has its own setup and first
 | --- | --- | --- |
 | Visually, in a browser or on your desktop | [Application](../application/index.md) | [Follow an example](../application/first-refinement.md) |
 | In a Python script or notebook | [Python](../python/index.md) | [Run an example](../python/examples.md) |
-| From a terminal or shell script | [CLI](../cli/index.md) | [Run an example](../cli/examples.md) |
+| From a terminal or shell script | [Command Line](../cli/index.md) | [Run an example](../cli/examples.md) |
 
 ## Understand the analysis
 
@@ -18,7 +18,7 @@ The [introduction](introduction.md) and [concept](concepts.md) explain what an a
 
 ## Follow the workflow
 
-**[Project](analysis-workflow/project.md) → [Structure](analysis-workflow/structure.md) → [Experiment](analysis-workflow/experiment.md) → [Analysis](analysis-workflow/analysis.md) → [Report](analysis-workflow/report.md)**
+**[:material-archive: Project](analysis-workflow/project.md) → [:material-puzzle: Structure](analysis-workflow/structure.md) → [:material-microscope: Experiment](analysis-workflow/experiment.md) → [:material-calculator: Analysis](analysis-workflow/analysis.md) → [:material-clipboard-text: Report](analysis-workflow/report.md)**
 
 The [workflow overview](analysis-workflow/index.md) connects these stages. Choose the [fitting mode](fitting-modes.md) for your observations and use [fit quality](fit-quality.md) to assess the result. [Example projects](examples.md) provide complete starting models and measurements.
 

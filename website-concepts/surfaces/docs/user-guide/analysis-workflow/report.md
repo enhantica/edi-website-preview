@@ -12,8 +12,8 @@ Report settings select optional material such as charts, correlations, reflectio
 
 | Output | Purpose | Current interface support |
 | --- | --- | --- |
-| Interactive HTML | Share a readable document with interactive figures | Application, Python and CLI |
-| Offline HTML | Embed chart libraries so the document can be opened without fetching them | Application, Python and CLI |
+| Interactive HTML | Share a readable document with interactive figures | Application, Python and Command Line |
+| Offline HTML | Embed chart libraries so the document can be opened without fetching them | Application, Python and Command Line |
 | PDF | Share a paginated document with static figures | Application |
 | CIF report | Exchange a scientific account of structures, experiments and results | Not available in this reference version |
 

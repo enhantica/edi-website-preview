@@ -14,13 +14,13 @@ These terms are shared by the application, Python library and command line. The 
 
 ## Diffraction
 
-**Powder diffraction** describes diffraction from a sample containing many crystallite orientations. The measured signal is commonly an intensity profile in which reflections can overlap.
+**Powder diffraction** <!-- glossary-label:powder --><a class="ed-tag ed-tag--technique" href="../user-guide/experiment-types/#powder-diffraction" title="Powder diffraction">pd</a><!-- /glossary-label --> describes diffraction from a sample containing many crystallite orientations. The measured signal is commonly an intensity profile in which reflections can overlap.
 
-**Single-crystal diffraction** measures individual reflections from an oriented crystal. Its observations and fit assessment differ from those of a powder profile.
+**Single-crystal diffraction** <!-- glossary-label:single-crystal --><a class="ed-tag ed-tag--neutral" href="../user-guide/experiment-types/#single-crystal-diffraction" title="Single-crystal diffraction">sc</a><!-- /glossary-label --> measures individual reflections from an oriented crystal. Its observations and fit assessment differ from those of a powder profile.
 
-**Constant wavelength (CWL)** describes a measurement using a specified wavelength, with a powder pattern commonly expressed against the scattering angle 2θ.
+**Constant wavelength (CWL)** <!-- glossary-label:constant-wavelength --><a class="ed-tag ed-tag--neutral" href="../user-guide/experiment-types/#constant-wavelength" title="Constant wavelength">cwl</a><!-- /glossary-label --> describes a measurement using a specified wavelength, with a powder pattern commonly expressed against the scattering angle 2θ.
 
-**Time of flight (TOF)** separates neutron wavelengths through arrival time. The instrument calibration relates time of flight to the diffraction geometry.
+**Time of flight (TOF)** <!-- glossary-label:time-of-flight --><a class="ed-tag ed-tag--technique" href="../user-guide/experiment-types/#time-of-flight" title="Time of flight">tof</a><!-- /glossary-label --> separates neutron wavelengths through arrival time. The instrument calibration relates time of flight to the diffraction geometry.
 
 **Reflection** refers to diffraction associated with a set of lattice planes. A **Bragg-position mark** indicates where that reflection is expected in the pattern.
 
@@ -56,7 +56,7 @@ These terms are shared by the application, Python library and command line. The 
 
 The **coreCIF** dictionary defines general crystallographic quantities; **pdCIF** defines powder-diffraction quantities; **magCIF** covers magnetic structures. Edi project keys are EasyDiffraction's persistence vocabulary and should not all be assumed to be IUCr dictionary items.
 
-The catalogue uses `pd` for powder, `sc` for single crystal, `neut` for neutron, `xray` for X-ray, `cwl` for constant wavelength and `tof` for time of flight.
+The catalogue uses <a class="ed-tag ed-tag--technique" href="../user-guide/experiment-types/#powder-diffraction" title="Powder diffraction">pd</a> for powder, <a class="ed-tag ed-tag--neutral" href="../user-guide/experiment-types/#single-crystal-diffraction" title="Single-crystal diffraction">sc</a> for single crystal, <a class="ed-tag ed-tag--technique" href="../user-guide/experiment-types/#neutron-diffraction" title="Neutron diffraction">neut</a> for neutron, <a class="ed-tag ed-tag--neutral" href="../user-guide/experiment-types/#x-ray-diffraction" title="X-ray diffraction">xray</a> for X-ray, <a class="ed-tag ed-tag--neutral" href="../user-guide/experiment-types/#constant-wavelength" title="Constant wavelength">cwl</a> for constant wavelength and <a class="ed-tag ed-tag--technique" href="../user-guide/experiment-types/#time-of-flight" title="Time of flight">tof</a> for time of flight.
 
 These labels identify measurement types and scientific terms. Current feature availability and model coverage are described by the interface guides and checked examples.
 

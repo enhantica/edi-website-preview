@@ -8,80 +8,55 @@ Choose the measurement type before loading data. The app enables combinations it
 
 ## Purpose
 
-Simulation calculates a pattern. Fitting compares a model with measured observations.
+Choose whether to calculate a model alone or fit it to observations.
 
-### Fitting measured data {#fitting}
-
-<a class="ed-tag ed-tag--fitting" href="../user-guide/experiment-types/#fitting" title="Fitting measured data">Fitting</a> Simulation calculates a pattern. Fitting compares a model with measured observations.
-
-### Calculation without measured data {#simulation}
-
-<a class="ed-tag ed-tag--simulation" href="../user-guide/experiment-types/#simulation" title="Calculation without measured data">Simulation</a> Simulation calculates a pattern. Fitting compares a model with measured observations.
+| Label | Meaning |
+| --- | --- |
+| <span id="fitting"></span><a class="ed-tag ed-tag--fitting" href="../user-guide/experiment-types/#fitting" title="Fitting measured data"><span class="ed-reference-icon" aria-hidden="true"></span>Fitting</a> | Compare a calculated model with measured intensities and refine its parameters. |
+| <span id="simulation"></span><a class="ed-tag ed-tag--simulation" href="../user-guide/experiment-types/#simulation" title="Calculation without measured data"><span class="ed-reference-icon" aria-hidden="true"></span>Simulation</a> | Calculate the pattern from the current model without measured intensities. |
 
 ## Fitting mode
 
 Choose how experiments contribute to a fit. This is separate from their measurement type.
 
-### Fit one experiment {#single-fit}
-
-<a class="ed-tag ed-tag--mode" href="../user-guide/experiment-types/#single-fit" title="Fit one experiment">Single</a> Refine one experiment.
-
-### Fit several experiments together {#joint-fit}
-
-<a class="ed-tag ed-tag--mode" href="../user-guide/experiment-types/#joint-fit" title="Fit several experiments together">Joint</a> Refine several experiments together with shared model quantities.
-
-### Fit a scan using the preceding result {#sequential-fit}
-
-<a class="ed-tag ed-tag--mode" href="../user-guide/experiment-types/#sequential-fit" title="Fit a scan using the preceding result">Sequential</a> Fit a scan in order, using the preceding result as the next starting point.
-
-### Fit a scan from common starting values {#independent-fit}
-
-<a class="ed-tag ed-tag--mode" href="../user-guide/experiment-types/#independent-fit" title="Fit a scan from common starting values">Independent</a> Fit each dataset from the same starting model.
+| Label | Meaning |
+| --- | --- |
+| <span id="single-fit"></span><a class="ed-tag ed-tag--mode" href="../user-guide/experiment-types/#single-fit" title="Fit one experiment"><span class="ed-reference-icon" aria-hidden="true"></span>Single</a> | Refine one experiment. |
+| <span id="joint-fit"></span><a class="ed-tag ed-tag--mode" href="../user-guide/experiment-types/#joint-fit" title="Fit several experiments together"><span class="ed-reference-icon" aria-hidden="true"></span>Joint</a> | Refine several experiments together with shared model quantities. |
+| <span id="sequential-fit"></span><a class="ed-tag ed-tag--mode" href="../user-guide/experiment-types/#sequential-fit" title="Fit a scan using the preceding result"><span class="ed-reference-icon" aria-hidden="true"></span>Sequential</a> | Fit a scan in order, using the preceding result as the next starting point. |
+| <span id="independent-fit"></span><a class="ed-tag ed-tag--mode" href="../user-guide/experiment-types/#independent-fit" title="Fit a scan from common starting values"><span class="ed-reference-icon" aria-hidden="true"></span>Independent</a> | Fit each dataset from the same starting model. |
 
 ## Sample form
 
 Powder profiles contain overlapping reflections; single-crystal data identify individual reflections.
 
-### Powder diffraction {#powder-diffraction}
-
-<a class="ed-tag ed-tag--technique" href="../user-guide/experiment-types/#powder-diffraction" title="Powder diffraction">pd</a> Diffraction from many crystallite orientations, usually measured as an intensity profile.
-
-### Single-crystal diffraction {#single-crystal-diffraction}
-
-<a class="ed-tag ed-tag--neutral" href="../user-guide/experiment-types/#single-crystal-diffraction" title="Single-crystal diffraction">sc</a> Diffraction from an oriented crystal, measured as individual reflection intensities.
+| Label | Meaning |
+| --- | --- |
+| <span id="powder-diffraction"></span><a class="ed-tag ed-tag--technique" href="../user-guide/experiment-types/#powder-diffraction" title="Powder diffraction">pd</a> | Diffraction from many crystallite orientations, usually measured as an intensity profile. |
+| <span id="single-crystal-diffraction"></span><a class="ed-tag ed-tag--neutral" href="../user-guide/experiment-types/#single-crystal-diffraction" title="Single-crystal diffraction">sc</a> | Diffraction from an oriented crystal, measured as individual reflection intensities. |
 
 ## Probe
 
 Neutrons and X-rays interact with the sample differently. Select the probe used for the measurement.
 
-### Neutron diffraction {#neutron-diffraction}
-
-<a class="ed-tag ed-tag--technique" href="../user-guide/experiment-types/#neutron-diffraction" title="Neutron diffraction">neut</a> Diffraction using neutrons; nuclear scattering and, where modelled, magnetic scattering contribute.
-
-### X-ray diffraction {#x-ray-diffraction}
-
-<a class="ed-tag ed-tag--neutral" href="../user-guide/experiment-types/#x-ray-diffraction" title="X-ray diffraction">xray</a> Diffraction using X-rays; the scattering model depends on the electron distribution.
+| Label | Meaning |
+| --- | --- |
+| <span id="neutron-diffraction"></span><a class="ed-tag ed-tag--technique" href="../user-guide/experiment-types/#neutron-diffraction" title="Neutron diffraction">neut</a> | Diffraction using neutrons; nuclear scattering and, where modelled, magnetic scattering contribute. |
+| <span id="x-ray-diffraction"></span><a class="ed-tag ed-tag--neutral" href="../user-guide/experiment-types/#x-ray-diffraction" title="X-ray diffraction">xray</a> | Diffraction using X-rays; the scattering model depends on the electron distribution. |
 
 ## Beam mode
 
 Constant-wavelength powder data use scattering angle; time-of-flight data use arrival time and an instrument calibration.
 
-### Constant wavelength {#constant-wavelength}
-
-<a class="ed-tag ed-tag--neutral" href="../user-guide/experiment-types/#constant-wavelength" title="Constant wavelength">cwl</a> A specified incident wavelength; powder patterns are commonly expressed against 2θ.
-
-### Time of flight {#time-of-flight}
-
-<a class="ed-tag ed-tag--technique" href="../user-guide/experiment-types/#time-of-flight" title="Time of flight">tof</a> Neutron wavelengths are separated by arrival time. Calibration relates flight time to diffraction geometry.
+| Label | Meaning |
+| --- | --- |
+| <span id="constant-wavelength"></span><a class="ed-tag ed-tag--neutral" href="../user-guide/experiment-types/#constant-wavelength" title="Constant wavelength">cwl</a> | A specified incident wavelength; powder patterns are commonly expressed against 2θ. |
+| <span id="time-of-flight"></span><a class="ed-tag ed-tag--technique" href="../user-guide/experiment-types/#time-of-flight" title="Time of flight">tof</a> | Neutron wavelengths are separated by arrival time. Calibration relates flight time to diffraction geometry. |
 
 ## Scattering type
 
 Bragg diffraction describes the crystalline contribution from lattice reflections.
 
-### Bragg diffraction {#bragg-diffraction}
-
-<a class="ed-tag ed-tag--technique" href="../user-guide/experiment-types/#bragg-diffraction" title="Bragg diffraction">Bragg</a> Bragg diffraction describes the crystalline contribution from lattice reflections.
-
-## Next steps
-
-[Choose an example](examples.md) · [Fitting modes](fitting-modes.md) · [Instrument and profiles](../physics/profiles.md)
+| Label | Meaning |
+| --- | --- |
+| <span id="bragg-diffraction"></span><a class="ed-tag ed-tag--technique" href="../user-guide/experiment-types/#bragg-diffraction" title="Bragg diffraction">Bragg</a> | Model the crystalline contribution from lattice reflections. |
