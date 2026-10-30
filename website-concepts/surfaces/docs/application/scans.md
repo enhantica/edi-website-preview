@@ -8,8 +8,6 @@ On **Experiment**, the **Experiments** table and the selector above the pattern 
 
 Before fitting, a selected dataset is shown with the template's settings. After a scan has been fitted, the page can show that dataset's fitted values and the pattern calculated from them. Selecting a dataset also updates the relevant Structure page values.
 
-![A selected scan dataset with experiment settings](../assets/edi-app.png)
-
 ## Choose the starting-point rule
 
 On **Analysis**, select `sequential` or `independent`:

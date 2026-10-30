@@ -1,3 +1,7 @@
+---
+template: gui.html
+---
+
 # :material-microscope: Experiments and measured data
 
 An experiment connects the measurement to the structural model. It holds measured data or a simulation range, instrument settings, peak and background descriptions, excluded regions, and links to the structures that contribute to its calculation.
@@ -47,7 +51,12 @@ Several structures can contribute to one experiment. The displayed [weight fract
 
 Compare the measured points with the total calculated curve, background and residual. Bragg marks locate the reflection positions. For a scan, the dataset selector chooses which measurement is shown; see [scan fitting](scans.md).
 
-![Experiment controls beside the measured and calculated pattern](../assets/edi-app.png)
+<figure class="gui-figure" data-gui-figure>
+<a class="gui-image-link" href="../assets/gui/y2o3/10-experiment-loaded.png" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Compare the measured pattern with the initial calculation"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Compare the measured pattern with the initial calculation"><title>Compare the measured pattern with the initial calculation</title><defs><clipPath id="gui-clip-10-experiment-loaded-overview"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/10-experiment-loaded.png" width="1480" height="800" clip-path="url(#gui-clip-10-experiment-loaded-overview)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="10-experiment-loaded-overview-1" data-gui-parts="[[0,77,770,681]]" d="M-2.000 75.000 L772.000 75.000 L772.000 760.000 L-2.000 760.000 Z" /><path class="" data-gui-region="10-experiment-loaded-overview-2" data-gui-parts="[[770,119,710,639],[770,77,43.515625,42]]" d="M768.000 117.000 L768.000 117.000 L768.000 75.000 L815.516 75.000 L815.516 117.000 L1482.000 117.000 L1482.000 760.000 L768.000 760.000 Z" /></svg></a>
+<figcaption>Compare the measured pattern with the initial calculation.</figcaption>
+<ol class="gui-regions"><li><button type="button" data-gui-target="10-experiment-loaded-overview-1" aria-pressed="true">1. Main workspace</button> Inspect the experiment view here. Its content changes with the active page and selection.</li><li><button type="button" data-gui-target="10-experiment-loaded-overview-2" aria-pressed="false">2. Sidebar</button> Use the enabled Main, Extra, Text and Settings tabs to inspect and edit this page.</li></ol>
+</figure>
+
 
 ## Related Physics
 
