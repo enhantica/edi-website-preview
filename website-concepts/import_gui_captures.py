@@ -25,7 +25,7 @@ LABELS = {
     ),
     'home.start': ('Start', 'Begin a new analysis on the Project page.'),
     'project.create': ('Create a new project', 'Open the project-details form.'),
-    'group.getStarted': ('Project actions', 'Create a project or open an existing one.'),
+    'group.getStarted': ('Get started', 'Create a project or open an existing one.'),
     'createProject.name': ('Name', 'Use a short project identifier.'),
     'createProject.title': ('Title', 'Give the analysis a descriptive title.'),
     'createProject.description': ('Description', 'Record the sample, measurement and purpose.'),
@@ -89,7 +89,9 @@ LABELS.update({
 })
 
 
-def label(target: str, page: str) -> tuple[str, str]:
+def label(target: str, page: str, native_label: str = '') -> tuple[str, str]:
+    if target in LABELS:
+        return LABELS[target]
     if target.endswith('.mainContent'):
         return (
             'Main workspace',
@@ -106,10 +108,9 @@ def label(target: str, page: str) -> tuple[str, str]:
             'The selected toolbar tab opens this workspace and its sidebar together.',
         )
     if target.startswith('group.'):
-        return target[6:].replace('_', ' ').replace('reportContents', 'Report contents').replace(
-            'reportExport', 'Report export'
-        ).title(), 'Use the controls in this group.'
-    return LABELS.get(target, (target, ''))
+        title = native_label or re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', target[6:]).replace('_', ' ')
+        return title[:1].upper() + title[1:], ''
+    return native_label or target, ''
 
 
 def region_parts(meta: dict, target: str) -> list[list[float]]:
@@ -187,7 +188,7 @@ def figure(scene: dict, *, view: str = 'overview', instance: str = '') -> str:
     paths, buttons = [], []
     for number, target in enumerate(targets, 1):
         parts = region_parts(meta, target)
-        title, text = label(target, scene['page'])
+        title, text = label(target, scene['page'], meta['items'].get(target, {}).get('label', ''))
         key = f'{identity}-{number}'
         data = html.escape(json.dumps(parts, separators=(',', ':')), quote=True)
         paths.append(

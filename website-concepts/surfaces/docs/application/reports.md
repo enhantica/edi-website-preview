@@ -30,7 +30,7 @@ These choices are saved with the project. They do not change which data were fit
 <figure class="gui-figure" data-gui-figure>
 <a class="gui-image-link" href="../assets/gui/y2o3/guide-report-contents.png" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Choose which sections appear in the report"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Choose which sections appear in the report"><title>Choose which sections appear in the report</title><defs><clipPath id="gui-clip-guide-report-contents-overview-reports-choose-the-contents-0"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-report-contents.png" width="1480" height="800" clip-path="url(#gui-clip-guide-report-contents-overview-reports-choose-the-contents-0)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-report-contents-overview-reports-choose-the-contents-0-1" data-gui-parts="[[770,161,710,189]]" d="M768.000 159.000 L1482.000 159.000 L1482.000 352.000 L768.000 352.000 Z" /><path data-gui-navigation data-gui-parts="[[880.203125,0,58.25,77]]" d="M878.203 -2.000 L940.453 -2.000 L940.453 79.000 L878.203 79.000 Z" /></svg></a>
 <figcaption>Choose which sections appear in the report.</figcaption>
-<ol class="gui-regions"><li><button type="button" data-gui-target="guide-report-contents-overview-reports-choose-the-contents-0-1" aria-pressed="true">1. Report Contents</button> Use the controls in this group.</li></ol>
+<ol class="gui-regions"><li><button type="button" data-gui-target="guide-report-contents-overview-reports-choose-the-contents-0-1" aria-pressed="true">1. Contents</button> </li></ol>
 </figure>
 <!-- /gui-guide -->
 
@@ -64,7 +64,7 @@ Turning off a format leaves any previously saved file in place; it does not dele
 <figure class="gui-figure" data-gui-figure>
 <a class="gui-image-link" href="../assets/gui/y2o3/guide-report-saved.png" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Review the saved report status"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Review the saved report status"><title>Review the saved report status</title><defs><clipPath id="gui-clip-guide-report-saved-overview-reports-save-the-report-0"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-report-saved.png" width="1480" height="800" clip-path="url(#gui-clip-guide-report-saved-overview-reports-save-the-report-0)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-report-saved-overview-reports-save-the-report-0-1" data-gui-parts="[[770,119,710,249]]" d="M768.000 117.000 L1482.000 117.000 L1482.000 370.000 L768.000 370.000 Z" /><path data-gui-navigation data-gui-parts="[[880.203125,0,58.25,77]]" d="M878.203 -2.000 L940.453 -2.000 L940.453 79.000 L878.203 79.000 Z" /></svg></a>
 <figcaption>Review the saved report status.</figcaption>
-<ol class="gui-regions"><li><button type="button" data-gui-target="guide-report-saved-overview-reports-save-the-report-0-1" aria-pressed="true">1. Report Export</button> Use the controls in this group.</li></ol>
+<ol class="gui-regions"><li><button type="button" data-gui-target="guide-report-saved-overview-reports-save-the-report-0-1" aria-pressed="true">1. Export</button> </li></ol>
 </figure>
 <!-- /gui-guide -->
 
@@ -78,7 +78,7 @@ Use **Save report** again to bring the selected formats up to date. The status s
 <figure class="gui-figure" data-gui-figure>
 <a class="gui-image-link" href="../assets/gui/y2o3/guide-report-saved.png" data-gui-open aria-haspopup="dialog" aria-label="Enlarge screenshot: Review the saved report status"><svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="Review the saved report status"><title>Review the saved report status</title><defs><clipPath id="gui-clip-guide-report-saved-overview-reports-keep-saved-reports-current-0"><rect width="1480" height="800" rx="12" /></clipPath></defs><image href="../assets/gui/y2o3/guide-report-saved.png" width="1480" height="800" clip-path="url(#gui-clip-guide-report-saved-overview-reports-keep-saved-reports-current-0)" /><rect class="gui-image-frame" width="1480" height="800" rx="12" /><path class="is-active" data-gui-region="guide-report-saved-overview-reports-keep-saved-reports-current-0-1" data-gui-parts="[[770,119,710,249]]" d="M768.000 117.000 L1482.000 117.000 L1482.000 370.000 L768.000 370.000 Z" /><path data-gui-navigation data-gui-parts="[[880.203125,0,58.25,77]]" d="M878.203 -2.000 L940.453 -2.000 L940.453 79.000 L878.203 79.000 Z" /></svg></a>
 <figcaption>Review the saved report status.</figcaption>
-<ol class="gui-regions"><li><button type="button" data-gui-target="guide-report-saved-overview-reports-keep-saved-reports-current-0-1" aria-pressed="true">1. Report Export</button> Use the controls in this group.</li></ol>
+<ol class="gui-regions"><li><button type="button" data-gui-target="guide-report-saved-overview-reports-keep-saved-reports-current-0-1" aria-pressed="true">1. Export</button> </li></ol>
 </figure>
 <!-- /gui-guide -->
 
