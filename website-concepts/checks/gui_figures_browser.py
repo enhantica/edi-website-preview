@@ -18,6 +18,8 @@ const width = article.getBoundingClientRect().width;
 const figures = [...article.querySelectorAll('.gui-figure')].map(figure => {
   const svg = figure.querySelector('svg.gui-capture');
   const bounds = svg.getBoundingClientRect();
+  const caption = figure.querySelector('figcaption');
+  const captionBounds = caption.getBoundingClientRect();
   const scale = bounds.width / 1480;
   const regions = [...svg.querySelectorAll('[data-gui-region]')].map(region => {
     const parts = JSON.parse(region.dataset.guiParts), box = region.getBBox();
@@ -27,6 +29,9 @@ const figures = [...article.querySelectorAll('.gui-figure')].map(figure => {
       paddingY: (top-box.y)*scale, square: getComputedStyle(region).strokeLinejoin === 'miter'};
   });
   return {width: bounds.width, height: bounds.height, column: width,
+    captionAbove: captionBounds.bottom <= bounds.top,
+    captionLeft: Math.abs(captionBounds.left - bounds.left) < 1,
+    captionAlign: getComputedStyle(caption).textAlign,
     overflow: getComputedStyle(svg).overflow, radius: getComputedStyle(svg).borderRadius,
     imageClip: svg.querySelector('image').hasAttribute('clip-path'),
     regions, active: svg.querySelectorAll('[data-gui-region].is-active').length};
@@ -64,6 +69,7 @@ def exercise(browser: Browser, base: str, output: Path) -> list[dict]:
             for figure in result['figures']:
                 if not figure['width']:
                     continue
+                require(figure['captionAbove'] and figure['captionLeft'] and figure['captionAlign'] == 'left', figure)
                 require(abs(figure['width'] - figure['column']) < 1, figure)
                 require(abs(figure['width'] / figure['height'] - 1480 / 800) < 0.01, figure)
                 require(figure['overflow'] == 'visible' and figure['radius'] == '0px', figure)

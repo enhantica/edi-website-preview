@@ -263,6 +263,7 @@ def figure(scene: dict, *, view: str = 'overview', instance: str = '') -> str:
     clip = f'gui-clip-{identity}'
     return (
         '<figure class="gui-figure" data-gui-figure>\n'
+        f'<figcaption>{description}.</figcaption>\n'
         f'<a class="gui-image-link" href="{image}" data-gui-open aria-haspopup="dialog" '
         f'aria-label="Enlarge screenshot: {description}">'
         f'<svg class="gui-capture" viewBox="0 0 1480 800" width="1480" height="800" role="img" aria-label="{description}">'
@@ -273,7 +274,7 @@ def figure(scene: dict, *, view: str = 'overview', instance: str = '') -> str:
         + navigation
         + arrows
         + '</svg></a>\n'
-        f'<figcaption>{description}.</figcaption>\n' + controls + '\n</figure>\n'
+        + controls + '\n</figure>\n'
     )
 
 

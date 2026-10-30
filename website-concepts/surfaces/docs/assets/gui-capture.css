@@ -5,7 +5,7 @@
 .gui-image-frame { fill: none; stroke: #d6d6d6; stroke-width: 1; vector-effect: non-scaling-stroke; pointer-events: none; }
 .gui-capture [data-gui-region] { fill: #d19966; fill-opacity: 0; stroke: #d19966; stroke-width: 0; stroke-linejoin: miter; vector-effect: non-scaling-stroke; pointer-events: none; transition: fill-opacity .15s; }
 .gui-capture [data-gui-region].is-active { fill-opacity: .16; stroke-width: 2; }
-.md-typeset .gui-figure figcaption { color: var(--md-default-fg-color--light); font-size: .7rem; margin-top: .65rem; text-align: left; font-style: normal; }
+.md-typeset .gui-figure figcaption { color: var(--md-default-fg-color--light); font-size: .7rem; margin: 0 0 .65rem; text-align: left; font-style: normal; }
 .md-typeset .gui-regions { list-style: none; padding: 0; margin: .8rem 0 0; }
 .md-typeset .gui-regions li { margin: .45rem 0; font-size: .75rem; }
 .gui-regions button, .gui-region-choice { font: inherit; cursor: pointer; border-radius: .25rem; color: var(--md-typeset-a-color); padding: .15rem .25rem; margin-right: .25rem; }
