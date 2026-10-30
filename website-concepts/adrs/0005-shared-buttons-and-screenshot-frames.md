@@ -20,3 +20,5 @@ The homepage frame, guide captures, interface previews and enlarged image dialog
 ## Validation
 
 Browser checks compare screenshot radii with the homepage frame at desktop/mobile widths, confirm square unclipped highlights, and verify button sizes and typography remain fixed through hover while their colors change. Theme colors and disabled download behavior remain inherited from the existing palettes.
+
+Zensical replaces each tab label's contents with an anchor after page initialization. Icon centering and spacing apply to both the label and this runtime anchor. The browser check measures the real icon-to-text distance after initialization for Font Awesome and SVG icons, rather than checking only the outer label's computed style.

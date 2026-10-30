@@ -36,7 +36,8 @@
 .md-typeset .md-button:focus-visible { outline: 2px solid var(--md-primary-fg-color); outline-offset: 3px; }
 .md-typeset .md-button:disabled { opacity: .5; cursor: default; }
 .md-typeset p:has(> .md-button) { display: flex; flex-wrap: wrap; gap: .65rem; }
-.md-typeset .tabbed-labels > label { display: flex; align-items: center; gap: .3em; }
+.md-typeset .tabbed-labels > label,
+.md-typeset .tabbed-labels > label > a { display: flex; align-items: center; gap: .3em; }
 .md-typeset .tabbed-labels .twemoji { display: inline-flex; flex: none; align-items: center; margin: 0; width: 1em; height: 1em; line-height: 1; }
 .md-typeset .tabbed-labels .gui-fa { flex: none; margin-right: 0; }
 @media (prefers-reduced-motion: reduce) { .md-typeset .md-button { transition: none; } }
