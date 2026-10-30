@@ -1,0 +1,586 @@
+{
+    "actions": [
+        {
+            "action": "platform:light",
+            "scene": "01-home"
+        },
+        {
+            "action": "theme:light",
+            "scene": "01-home"
+        },
+        {
+            "action": "home.start",
+            "scene": "02-project-start"
+        },
+        {
+            "action": "project.create",
+            "scene": "03-project-details"
+        },
+        {
+            "action": "fill:createProject.name=pd-neut-cwl_y2o3-spodi",
+            "scene": "03-project-details"
+        },
+        {
+            "action": "fill:createProject.title=Y2O3 on SPODI",
+            "scene": "03-project-details"
+        },
+        {
+            "action": "fill:createProject.authors=EasyDiffraction documentation",
+            "scene": "03-project-details"
+        },
+        {
+            "action": "fill:createProject.description=Constant-wavelength neutron powder diffraction from SPODI at FRM II.",
+            "scene": "03-project-details"
+        },
+        {
+            "action": "fill:createProject.location=/tmp/EasyDiffraction-cqyRZK/pd-neut-cwl_y2o3-spodi",
+            "scene": "03-project-details"
+        },
+        {
+            "action": "createProject.accept",
+            "scene": "04-project-created"
+        },
+        {
+            "action": "pin-time:2026-01-01T12:00:00",
+            "scene": "04-project-created"
+        },
+        {
+            "action": "appBar.tab.project",
+            "scene": "05-project-basic"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.basic",
+            "scene": "05-project-basic"
+        },
+        {
+            "action": "sideBar.tab.basic",
+            "scene": "05-project-basic"
+        },
+        {
+            "action": "appBar.tab.project",
+            "scene": "05-project-extras"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.extras",
+            "scene": "05-project-extras"
+        },
+        {
+            "action": "sideBar.tab.extras",
+            "scene": "05-project-extras"
+        },
+        {
+            "action": "appBar.tab.project",
+            "scene": "05-project-text"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.text",
+            "scene": "05-project-text"
+        },
+        {
+            "action": "sideBar.tab.text",
+            "scene": "05-project-text"
+        },
+        {
+            "action": "appBar.tab.project",
+            "scene": "05-project-settings"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.settings",
+            "scene": "05-project-settings"
+        },
+        {
+            "action": "appBar.tab.structure",
+            "scene": "06-structure-import"
+        },
+        {
+            "action": "sideBar.tab.basic",
+            "scene": "06-structure-import"
+        },
+        {
+            "action": "expand:group.structures",
+            "scene": "06-structure-import"
+        },
+        {
+            "action": "import-structure:/tmp/edi-docs-y2o3-final/inputs/y2o3.edi",
+            "scene": "07-structure-loaded"
+        },
+        {
+            "action": "appBar.tab.structure",
+            "scene": "08-structure-basic"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.basic",
+            "scene": "08-structure-basic"
+        },
+        {
+            "action": "sideBar.tab.basic",
+            "scene": "08-structure-basic"
+        },
+        {
+            "action": "appBar.tab.structure",
+            "scene": "08-structure-extras"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.extras",
+            "scene": "08-structure-extras"
+        },
+        {
+            "action": "sideBar.tab.extras",
+            "scene": "08-structure-extras"
+        },
+        {
+            "action": "appBar.tab.structure",
+            "scene": "08-structure-text"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.text",
+            "scene": "08-structure-text"
+        },
+        {
+            "action": "sideBar.tab.text",
+            "scene": "08-structure-text"
+        },
+        {
+            "action": "appBar.tab.structure",
+            "scene": "08-structure-settings"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.settings",
+            "scene": "08-structure-settings"
+        },
+        {
+            "action": "appBar.tab.experiment",
+            "scene": "09-experiment-import"
+        },
+        {
+            "action": "sideBar.tab.basic",
+            "scene": "09-experiment-import"
+        },
+        {
+            "action": "expand:group.experiments",
+            "scene": "09-experiment-import"
+        },
+        {
+            "action": "import-experiment:/tmp/edi-docs-y2o3-final/inputs/spodi.edi",
+            "scene": "10-experiment-loaded"
+        },
+        {
+            "action": "appBar.tab.experiment",
+            "scene": "11-experiment-basic"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.basic",
+            "scene": "11-experiment-basic"
+        },
+        {
+            "action": "sideBar.tab.basic",
+            "scene": "11-experiment-basic"
+        },
+        {
+            "action": "appBar.tab.experiment",
+            "scene": "11-experiment-extras"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.extras",
+            "scene": "11-experiment-extras"
+        },
+        {
+            "action": "sideBar.tab.extras",
+            "scene": "11-experiment-extras"
+        },
+        {
+            "action": "appBar.tab.experiment",
+            "scene": "11-experiment-text"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.text",
+            "scene": "11-experiment-text"
+        },
+        {
+            "action": "sideBar.tab.text",
+            "scene": "11-experiment-text"
+        },
+        {
+            "action": "appBar.tab.experiment",
+            "scene": "11-experiment-settings"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.settings",
+            "scene": "11-experiment-settings"
+        },
+        {
+            "action": "appBar.tab.analysis",
+            "scene": "12-run-refinement"
+        },
+        {
+            "action": "sideBar.tab.basic",
+            "scene": "12-run-refinement"
+        },
+        {
+            "action": "statusBar.fit.button",
+            "scene": "12-run-refinement"
+        },
+        {
+            "action": "wait-fit",
+            "scene": "12-run-refinement"
+        },
+        {
+            "action": "close-fit-results",
+            "scene": "12-run-refinement"
+        },
+        {
+            "action": "appBar.tab.analysis",
+            "scene": "13-analysis-basic"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.basic",
+            "scene": "13-analysis-basic"
+        },
+        {
+            "action": "sideBar.tab.basic",
+            "scene": "13-analysis-basic"
+        },
+        {
+            "action": "appBar.tab.analysis",
+            "scene": "13-analysis-extras"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.extras",
+            "scene": "13-analysis-extras"
+        },
+        {
+            "action": "sideBar.tab.extras",
+            "scene": "13-analysis-extras"
+        },
+        {
+            "action": "appBar.tab.analysis",
+            "scene": "13-analysis-text"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.text",
+            "scene": "13-analysis-text"
+        },
+        {
+            "action": "sideBar.tab.text",
+            "scene": "13-analysis-text"
+        },
+        {
+            "action": "appBar.tab.analysis",
+            "scene": "13-analysis-settings"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.settings",
+            "scene": "13-analysis-settings"
+        },
+        {
+            "action": "sideBar.tab.settings",
+            "scene": "13-analysis-settings"
+        },
+        {
+            "action": "appBar.tab.report",
+            "scene": "14-report-basic"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.basic",
+            "scene": "14-report-basic"
+        },
+        {
+            "action": "sideBar.tab.basic",
+            "scene": "14-report-basic"
+        },
+        {
+            "action": "appBar.tab.report",
+            "scene": "14-report-extras"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.extras",
+            "scene": "14-report-extras"
+        },
+        {
+            "action": "appBar.tab.report",
+            "scene": "14-report-text"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.text",
+            "scene": "14-report-text"
+        },
+        {
+            "action": "sideBar.tab.text",
+            "scene": "14-report-text"
+        },
+        {
+            "action": "appBar.tab.report",
+            "scene": "14-report-settings"
+        },
+        {
+            "action": "if-enabled:sideBar.tab.settings",
+            "scene": "14-report-settings"
+        }
+    ],
+    "binary_sha256": "c6562fc45a9b622bcccb08474c05b1e2dc29d76cb8d6958808ba4399449409c4",
+    "error": "",
+    "example": "pd-neut-cwl_y2o3-spodi",
+    "gui_components_revision": "10dc5828020c90666a1ef015835475936d56e819",
+    "inputs": {
+        "experiment": {
+            "file": "inputs/spodi.edi",
+            "sha256": "c6ff7236515100d6a5559271a52772142d435583d2b477f87b82411848a45eb3"
+        },
+        "structure": {
+            "file": "inputs/y2o3.edi",
+            "sha256": "0035a2409b1fa26521d4b59c9520c37d8c4bb8c2ec9e53c50ff227ad87d53ccf"
+        }
+    },
+    "logical_size": [
+        1480,
+        800
+    ],
+    "scenes": [
+        {
+            "description": "Start a new diffraction analysis",
+            "id": "01-home",
+            "image": "01-home.png",
+            "metadata": "01-home.json",
+            "page": "home",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Choose Create a new project",
+            "id": "02-project-start",
+            "image": "02-project-start.png",
+            "metadata": "02-project-start.json",
+            "page": "project",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Enter the project details and choose its location",
+            "id": "03-project-details",
+            "image": "03-project-details.png",
+            "metadata": "03-project-details.json",
+            "page": "project",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Create the project",
+            "id": "04-project-created",
+            "image": "04-project-created.png",
+            "metadata": "04-project-created.json",
+            "page": "project",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Project details and controls — Main",
+            "id": "05-project-basic",
+            "image": "05-project-basic.png",
+            "metadata": "05-project-basic.json",
+            "page": "project",
+            "sidebar": "Main",
+            "status": "captured"
+        },
+        {
+            "description": "Project details and controls — Extra",
+            "id": "05-project-extras",
+            "image": "05-project-extras.png",
+            "metadata": "05-project-extras.json",
+            "page": "project",
+            "sidebar": "Extra",
+            "status": "captured"
+        },
+        {
+            "description": "Project details and controls — Text",
+            "id": "05-project-text",
+            "image": "05-project-text.png",
+            "metadata": "05-project-text.json",
+            "page": "project",
+            "sidebar": "Text",
+            "status": "captured"
+        },
+        {
+            "id": "05-project-settings",
+            "page": "project",
+            "reason": "sidebar tab is disabled",
+            "sidebar": "Settings",
+            "status": "skipped"
+        },
+        {
+            "description": "Load the Y2O3 structure into the empty project",
+            "id": "06-structure-import",
+            "image": "06-structure-import.png",
+            "metadata": "06-structure-import.json",
+            "page": "structure",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Inspect the imported crystal structure",
+            "id": "07-structure-loaded",
+            "image": "07-structure-loaded.png",
+            "metadata": "07-structure-loaded.json",
+            "page": "structure",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Crystal structure — Main",
+            "id": "08-structure-basic",
+            "image": "08-structure-basic.png",
+            "metadata": "08-structure-basic.json",
+            "page": "structure",
+            "sidebar": "Main",
+            "status": "captured"
+        },
+        {
+            "description": "Crystal structure — Extra",
+            "id": "08-structure-extras",
+            "image": "08-structure-extras.png",
+            "metadata": "08-structure-extras.json",
+            "page": "structure",
+            "sidebar": "Extra",
+            "status": "captured"
+        },
+        {
+            "description": "Crystal structure — Text",
+            "id": "08-structure-text",
+            "image": "08-structure-text.png",
+            "metadata": "08-structure-text.json",
+            "page": "structure",
+            "sidebar": "Text",
+            "status": "captured"
+        },
+        {
+            "id": "08-structure-settings",
+            "page": "structure",
+            "reason": "sidebar tab is disabled",
+            "sidebar": "Settings",
+            "status": "skipped"
+        },
+        {
+            "description": "Load the SPODI experiment and measured intensities",
+            "id": "09-experiment-import",
+            "image": "09-experiment-import.png",
+            "metadata": "09-experiment-import.json",
+            "page": "experiment",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "Compare the measured pattern with the initial calculation",
+            "id": "10-experiment-loaded",
+            "image": "10-experiment-loaded.png",
+            "metadata": "10-experiment-loaded.json",
+            "page": "experiment",
+            "sidebar": "",
+            "status": "captured"
+        },
+        {
+            "description": "SPODI experiment — Main",
+            "id": "11-experiment-basic",
+            "image": "11-experiment-basic.png",
+            "metadata": "11-experiment-basic.json",
+            "page": "experiment",
+            "sidebar": "Main",
+            "status": "captured"
+        },
+        {
+            "description": "SPODI experiment — Extra",
+            "id": "11-experiment-extras",
+            "image": "11-experiment-extras.png",
+            "metadata": "11-experiment-extras.json",
+            "page": "experiment",
+            "sidebar": "Extra",
+            "status": "captured"
+        },
+        {
+            "description": "SPODI experiment — Text",
+            "id": "11-experiment-text",
+            "image": "11-experiment-text.png",
+            "metadata": "11-experiment-text.json",
+            "page": "experiment",
+            "sidebar": "Text",
+            "status": "captured"
+        },
+        {
+            "id": "11-experiment-settings",
+            "page": "experiment",
+            "reason": "sidebar tab is disabled",
+            "sidebar": "Settings",
+            "status": "skipped"
+        },
+        {
+            "description": "Completed Rietveld refinement — Main",
+            "id": "13-analysis-basic",
+            "image": "13-analysis-basic.png",
+            "metadata": "13-analysis-basic.json",
+            "page": "analysis",
+            "sidebar": "Main",
+            "status": "captured"
+        },
+        {
+            "description": "Completed Rietveld refinement — Extra",
+            "id": "13-analysis-extras",
+            "image": "13-analysis-extras.png",
+            "metadata": "13-analysis-extras.json",
+            "page": "analysis",
+            "sidebar": "Extra",
+            "status": "captured"
+        },
+        {
+            "description": "Completed Rietveld refinement — Text",
+            "id": "13-analysis-text",
+            "image": "13-analysis-text.png",
+            "metadata": "13-analysis-text.json",
+            "page": "analysis",
+            "sidebar": "Text",
+            "status": "captured"
+        },
+        {
+            "description": "Completed Rietveld refinement — Settings",
+            "id": "13-analysis-settings",
+            "image": "13-analysis-settings.png",
+            "metadata": "13-analysis-settings.json",
+            "page": "analysis",
+            "sidebar": "Settings",
+            "status": "captured"
+        },
+        {
+            "description": "Review the fitted structure and report — Main",
+            "id": "14-report-basic",
+            "image": "14-report-basic.png",
+            "metadata": "14-report-basic.json",
+            "page": "report",
+            "sidebar": "Main",
+            "status": "captured"
+        },
+        {
+            "id": "14-report-extras",
+            "page": "report",
+            "reason": "sidebar tab is disabled",
+            "sidebar": "Extra",
+            "status": "skipped"
+        },
+        {
+            "description": "Review the fitted structure and report — Text",
+            "id": "14-report-text",
+            "image": "14-report-text.png",
+            "metadata": "14-report-text.json",
+            "page": "report",
+            "sidebar": "Text",
+            "status": "captured"
+        },
+        {
+            "id": "14-report-settings",
+            "page": "report",
+            "reason": "sidebar tab is disabled",
+            "sidebar": "Settings",
+            "status": "skipped"
+        }
+    ],
+    "schema": 1,
+    "script_sha256": "a971882ab1a441ea29c5a41a2282cea9db00341461b54ce2e62905a7158a4b29",
+    "source_revision": "eb945aa8fb5964658daeab4a5bdc488b653e3bf3",
+    "status": "complete"
+}

@@ -78,7 +78,7 @@ def validate_bundle(root: Path) -> tuple[dict, list[dict]]:
         'createProject.accept',
         'import-structure:',
         'import-experiment:',
-        'fitting.start',
+        'statusBar.fit.button',
         'wait-fit',
         'close-fit-results',
     ]

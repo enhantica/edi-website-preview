@@ -165,7 +165,7 @@ def _check_links(root: Path, base_url: str | None) -> None:
 
     class Links(HTMLParser):
         def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
-            if tag not in {'a', 'img', 'script', 'link'}:
+            if tag not in {'a', 'img', 'image', 'script', 'link'}:
                 return
             for key, value in attrs:
                 if key not in {'href', 'src'} or not value:

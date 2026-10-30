@@ -1,39 +1,38 @@
+---
+template: gui.html
+---
+
 # Find your way around
 
-The application separates the analysis into pages, each with a main working view and related controls in the sidebar. The top bar moves between **Project**, **Structure**, **Experiment**, **Analysis** and **Report**.
+The interface follows the same analysis workflow as the [User guide](../user-guide/analysis-workflow/index.md). The top bar selects a page, the central workspace shows its main view, and the sidebar contains the related controls.
 
-## Project
+## Main regions
 
-Start with **Create a new project**, **Open project…**, or an example. Project information describes the work you are doing, while the project itself keeps structures, experiments and analysis settings together.
+Select an explanation below the screenshot to highlight the corresponding region. The example shows **Analysis after fitting**, with the results popup closed.
 
-An example opens as a temporary working copy. Save a copy to keep changes you make to it.
+<figure class="gui-figure" data-gui-figure>
+<svg class="gui-capture" viewBox="0 0 1480 800" role="img" aria-label="Completed Rietveld refinement — Main"><title>Completed Rietveld refinement — Main</title><image href="../assets/gui/y2o3/13-analysis-basic.png" width="1480" height="800" /><rect class="is-active" data-gui-region="13-analysis-basic-1" x="0.00" y="0.00" width="1480.00" height="77.00" /><rect class="" data-gui-region="13-analysis-basic-2" x="0.00" y="77.00" width="770.00" height="681.00" /><rect class="" data-gui-region="13-analysis-basic-3" x="770.00" y="77.00" width="710.00" height="681.00" /><rect class="" data-gui-region="13-analysis-basic-4" x="0.00" y="758.00" width="1480.00" height="42.00" /></svg>
+<figcaption>Completed Rietveld refinement — Main. <a href="../assets/gui/y2o3/13-analysis-basic.png">Open full-size screenshot</a></figcaption>
+<ol class="gui-regions"><li><button type="button" data-gui-target="13-analysis-basic-1" aria-pressed="true">1. Workflow navigation</button> Move between Home, Project, Structure, Experiment, Analysis and Report.</li><li><button type="button" data-gui-target="13-analysis-basic-2" aria-pressed="false">2. Main workspace</button> Inspect the analysis view here. Its content changes with the active page and selection.</li><li><button type="button" data-gui-target="13-analysis-basic-3" aria-pressed="false">3. Sidebar</button> Use the enabled Main, Extra, Text and Settings tabs to inspect and edit this page.</li><li><button type="button" data-gui-target="13-analysis-basic-4" aria-pressed="false">4. Status bar</button> Read project counts, messages, calculation and fitting state here.</li></ol>
+</figure>
 
-## Structure
+## Workflow pages
 
-Select a structure from the **Structures** table, then edit its space group, cell and atom sites. A project can contain several structures. The selected structure determines which values the page displays.
+| Page | What you do here |
+| --- | --- |
+| Home | Start an analysis. |
+| Project | Create or open a project and record its details. |
+| Structure | Load and inspect the crystal structure, cell and atom sites. |
+| Experiment | Load measured intensities and configure the instrument, profile and background. |
+| Analysis | Choose free parameters, run fitting and inspect the fitted pattern and results. |
+| Report | Review and export a report of the analysis. |
 
-Use **Structure** to inspect and edit the crystallographic model. See [work with structures](structures.md).
+## Sidebar tabs
 
-## Experiment
+**Main** contains the primary controls for the active page. **Extra**, **Text** and **Settings** provide additional controls or representations where available. A disabled tab has no available view in the current state.
 
-Select an experiment or scan dataset. The main view compares measured and calculated intensities; the sidebar contains the instrument, profile, background and other experiment settings.
+See the [screen reference](screen-reference.md) for each enabled tab, or follow the [Y₂O₃ walkthrough](y2o3-walkthrough.md) to build the analysis step by step.
 
-The residual shows the difference between measured and calculated intensity. Reflection marks locate the calculated Bragg positions.
+## Selection and messages
 
-![Measured pattern, calculated pattern, reflection marks and residual in the application](../assets/edi-app.png)
-
-## Analysis
-
-The parameter table controls which parameters are free to vary. The fitting-mode control selects the analysis that applies to the project; **Start fitting** runs it.
-
-For scan projects, additional controls let you follow the current dataset, inspect fitted-parameter evolution, stop and continue a run. See [fitting modes](fitting-modes.md) and [scans](scans.md).
-
-## Report
-
-The report combines structures, experiments, fit information and selected figures. Its sidebar controls the saved formats and which sections appear. A report is a document you can share; the project is the state you continue working on.
-
-## Messages, selection and undo
-
-The status bar reports messages and the state of the project. Read a message after importing data or when an operation is refused: it can explain a changed value or an unavailable action.
-
-Changing the selected structure, experiment or dataset changes the values shown on the relevant pages. Undo returns project changes to their earlier state.
+Selecting a structure or experiment changes the model being inspected. The status bar reports the project state, messages and fitting progress. Read messages after importing data or when an operation is refused.

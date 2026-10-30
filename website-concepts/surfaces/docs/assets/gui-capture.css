@@ -9,3 +9,5 @@
 .gui-regions button:hover, .gui-regions button[aria-pressed="true"] { background: var(--md-accent-fg-color--transparent); }
 .gui-regions button:focus-visible { outline: 2px solid var(--md-accent-fg-color); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) { .gui-capture [data-gui-region] { transition: none; } }
+.md-typeset .gui-figure { text-align: left; }
+.md-typeset .gui-figure figcaption { font-style: normal; text-align: left; }

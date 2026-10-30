@@ -57,7 +57,7 @@ def label(target: str, page: str) -> tuple[str, str]:
 
 def figure(scene: dict, *, annotations: bool = True) -> str:
     meta = scene['layout']
-    image = '../../assets/gui/y2o3/' + scene['image']
+    image = '../assets/gui/y2o3/' + scene['image']
     description = html.escape(scene['description'], quote=True)
     identity = scene['id']
     targets = meta['highlights'] if annotations else []
@@ -67,10 +67,10 @@ def figure(scene: dict, *, annotations: bool = True) -> str:
         title, text = label(target, scene['page'])
         key = f'{identity}-{number}'
         rects.append(
-            f'<rect data-gui-region="{key}" x="{x:.2f}" y="{y:.2f}" width="{width:.2f}" height="{height:.2f}" />'
+            f'<rect class="{"is-active" if number == 1 else ""}" data-gui-region="{key}" x="{x:.2f}" y="{y:.2f}" width="{width:.2f}" height="{height:.2f}" />'
         )
         buttons.append(
-            f'<li><button type="button" data-gui-target="{key}" aria-pressed="false">'
+            f'<li><button type="button" data-gui-target="{key}" aria-pressed="{"true" if number == 1 else "false"}">'
             f'{number}. {html.escape(title)}</button> {html.escape(text)}</li>'
         )
     controls = '<ol class="gui-regions">' + ''.join(buttons) + '</ol>' if targets else ''
@@ -87,7 +87,7 @@ def figure(scene: dict, *, annotations: bool = True) -> str:
 
 
 def page(title: str, body: str) -> str:
-    return f'---\ntemplate: gui.html\n---\n\n# {title}\n\n{body}\n'
+    return f'---\ntemplate: gui.html\n---\n\n# {title}\n\n{body.rstrip()}\n'
 
 
 def render(bundle: Path) -> None:
