@@ -168,6 +168,22 @@ def figure(scene: dict, *, view: str = 'overview', instance: str = '') -> str:
     )
     if view == 'sidebar':
         targets.append(f'workflow.{scene["page"]}.page')
+    navigation = ''
+    if view == 'overview':
+        targets = [target for target in targets if target != 'appBar']
+        empty = (
+            scene['page'] == 'home'
+            or (scene['page'] == 'structure' and not meta['state']['structures'])
+            or (scene['page'] == 'experiment' and not meta['state']['experiments'])
+        )
+        if empty:
+            targets = [target for target in targets if not target.endswith('.mainContent')]
+        tab = f'appBar.tab.{scene["page"]}'
+        parts = region_parts(meta, tab)
+        data = html.escape(json.dumps(parts, separators=(',', ':')), quote=True)
+        navigation = (
+            f'<path data-gui-navigation data-gui-parts="{data}" d="{region_path(parts)}" />'
+        )
     paths, buttons = [], []
     for number, target in enumerate(targets, 1):
         parts = region_parts(meta, target)
@@ -250,6 +266,7 @@ def figure(scene: dict, *, view: str = 'overview', instance: str = '') -> str:
         f'<image href="{image}" width="1480" height="800" clip-path="url(#{clip})" />'
         '<rect class="gui-image-frame" width="1480" height="800" rx="12" />'
         + ''.join(paths)
+        + navigation
         + arrows
         + '</svg></a>\n'
         f'<figcaption>{description}.</figcaption>\n' + controls + '\n</figure>\n'

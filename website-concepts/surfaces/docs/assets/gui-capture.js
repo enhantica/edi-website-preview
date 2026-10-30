@@ -6,7 +6,7 @@
     const scale = svg.getBoundingClientRect().width / svg.viewBox.baseVal.width;
     if (!scale) return;
     const padding = 1.5 / scale;
-    svg.querySelectorAll('[data-gui-region]').forEach(region => {
+    svg.querySelectorAll('[data-gui-region], [data-gui-navigation]').forEach(region => {
       const parts = JSON.parse(region.dataset.guiParts);
       const [x, y, width, height] = parts[0];
       const left = x - padding, top = y - padding;
