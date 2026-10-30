@@ -187,7 +187,7 @@ for (const path of svg.querySelectorAll('[data-pulses] path:not([display=none])'
 }
 const state = document.querySelector('[data-network-hero]').__pulseController.snapshot();
 for (const pulse of state.pulses) {
-  if (pulse.speed<280 || pulse.speed>420 || pulse.tailLength<57 || pulse.tailLength>74 ||
+  if (pulse.speed<280 || pulse.speed>840 || pulse.tailLength<57 || pulse.tailLength>74 ||
       pulse.life<6 || pulse.life>10) throw Error('Pulse settings outside owner-approved ranges');
   for (let i=1;i<pulse.route.length;i++) {
     const a=pulse.route[i-1],b=pulse.route[i];

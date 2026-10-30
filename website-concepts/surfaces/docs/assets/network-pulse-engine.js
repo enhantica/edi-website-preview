@@ -154,7 +154,7 @@
       pulse.current = directed(edge, from);
       pulse.offset = (from === edge.a ? t : 1 - t) * edge.length;
       pulse.history = [];
-      pulse.speed = random(280, 420);
+      pulse.speed = random(280, 840);
       pulse.currentSpeed = pulse.speed;
       pulse.tailLength = random(57, 74);
       pulse.life = random(6, 10);
