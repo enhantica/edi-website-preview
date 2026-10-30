@@ -8,8 +8,8 @@
     const host = svg.closest('.gui-image-link, .gui-lightbox-stage');
     const radius = parseFloat(getComputedStyle(host).borderTopLeftRadius) / scale;
     svg.querySelectorAll('clipPath rect, .gui-image-frame').forEach(frame => frame.setAttribute('rx', radius));
-    const padding = 1.5 / scale;
     svg.querySelectorAll('[data-gui-region], [data-gui-navigation]').forEach(region => {
+      const padding = (region.hasAttribute('data-gui-inset') ? -Number(region.dataset.guiInset) : 1.5) / scale;
       const parts = JSON.parse(region.dataset.guiParts);
       const [x, y, width, height] = parts[0];
       const left = x - padding, top = y - padding;

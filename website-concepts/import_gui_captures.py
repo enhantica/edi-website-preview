@@ -249,7 +249,7 @@ def figure(
                     view=view,
                     instance=instance,
                     interactive=False,
-                    explanation='Follow the workflow from left to right, then read the sidebar controls from top to bottom.',
+                    explanation='The page bar, main view, sidebar and status bar stay in the same places as you work.',
                 ),
             ))
         for target in targets:
@@ -272,26 +272,28 @@ def figure(
         targets = [selection]
     paths = []
     for number, target in enumerate(targets, 1):
-        parts = region_parts(meta, target)
+        inset = view in {'layout', 'flow'}
+        parts = [meta['items'][target]['visible_bounds']] if inset else region_parts(meta, target)
         key = f'{identity}-{number}'
         data = html.escape(json.dumps(parts, separators=(',', ':')), quote=True)
         paths.append(
-            f'<path class="{"is-active" if number == 1 or view == "layout" else ""}" data-gui-region="{key}" '
-            f'data-gui-parts="{data}" d="{region_path(parts)}" />'
+            f'<path class="{"is-active" if number == 1 or view in {"layout", "flow"} else ""}" data-gui-region="{key}" '
+            + ('data-gui-inset="2" ' if inset else '')
+            + f'data-gui-parts="{data}" d="{region_path(parts, -2 if inset else 2)}" />'
         )
     arrows = ''
-    if view == 'layout' and not selection:
+    if view == 'flow':
+        half = meta['items']['appBar']['visible_bounds'][3] * 0.18
         for axis, name in [
             ('x', 'appBar.workflow'),
             ('y', f'workflow.{scene["page"]}.manualSidebar'),
         ]:
             x, y, width, height = meta['items'][name]['visible_bounds']
             if axis == 'x':
-                start, end, centre, half = (
+                start, end, centre = (
                     x + width * 0.08,
                     x + width * 0.92,
                     y + height * 0.5,
-                    height * 0.16,
                 )
                 points = [
                     (start, centre - half),
@@ -303,11 +305,10 @@ def figure(
                     (start, centre + half),
                 ]
             else:
-                start, end, centre, half = (
+                start, end, centre = (
                     y + height * 0.12,
                     y + height * 0.88,
-                    x + width * 0.73,
-                    width * 0.025,
+                    x + width * 0.5,
                 )
                 points = [
                     (centre - half, start),
@@ -319,7 +320,7 @@ def figure(
                     (centre - half, end - half * 2),
                 ]
             data = 'M' + ' L'.join(f'{px:.2f} {py:.2f}' for px, py in points) + ' Z'
-            arrows += f'<path class="gui-direction is-active" data-gui-direction d="{data}" aria-hidden="true" />'
+            arrows += f'<path class="gui-direction is-active" data-gui-direction data-gui-axis="{axis}" d="{data}" aria-hidden="true" />'
     clip = f'gui-clip-{identity}'
     return (
         '<figure class="gui-figure" data-gui-figure>\n'
@@ -466,10 +467,17 @@ The experiment input contains the measured pattern, instrument, profile, backgro
 
 ## Main regions
 
-The arrows show how to follow the workflow and read the controls. Choose a tab to highlight a region. The example shows **Analysis after fitting**, with the results popup closed.
+Choose a tab to inspect each region. These four areas stay in the same places on every workflow page.
 
 """
-    workspace += figure(by_id['13-analysis-basic'], view='layout')
+    workspace += figure(by_id['11-experiment-basic'], view='layout')
+    workspace += '\n## Following the workflow\n\nMove through the pages from left to right. Within each page, work down the sidebar from top to bottom.\n\n'
+    workspace += figure(
+        by_id['11-experiment-basic'],
+        view='flow',
+        interactive=False,
+        description='Follow the pages from left to right and the sidebar controls from top to bottom',
+    )
     workspace += """
 ## Workflow pages
 

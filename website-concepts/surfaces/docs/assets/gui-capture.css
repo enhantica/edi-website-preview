@@ -23,7 +23,7 @@
 
 html.gui-lightbox-open { overflow: hidden; }
 
-.gui-direction { display: none; fill: #d19966; fill-opacity: .72; pointer-events: none; }
+.gui-direction { display: none; fill: var(--ed-brand-accent); fill-opacity: .55; pointer-events: none; }
 .gui-direction.is-active { display: block; }
 
 .gui-capture [data-gui-navigation] { fill: #d19966; fill-opacity: .16; stroke: #d19966; stroke-width: 2; stroke-linejoin: miter; vector-effect: non-scaling-stroke; pointer-events: none; }

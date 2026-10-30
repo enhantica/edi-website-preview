@@ -17,6 +17,8 @@ A ResizeObserver measures the natural height of each viewer's explanations at it
 
 Sidebar paths join the selected native tab and the body below the tab strip, using the capture's geometry. Missing or inconsistent tab geometry refuses generation. All sidebar views show this compound shape. The same rendering path serves the walkthrough, layout guide and enlarged view; it does not alter native images or metadata.
 
+The introductory Main regions and Following the workflow diagrams use the Experiment capture. Their four area highlights are plain rectangles inset by two display pixels, rather than tab-and-panel paths. Following the workflow is a separate section immediately after Main regions. Its two blue arrows share one shaft/head width; the downward arrow is centered in the native sidebar bounds. Regular task and sidebar views retain expanded, compound highlights.
+
 Clicking a screenshot opens a native HTML dialog filling the viewport, with the current highlights retained. It has an accessible title, visible Close button, Escape handling, modal focus containment and focus return. The image link remains a fallback without JavaScript and supports ordinary modified clicks. The dialog uses the site's theme colors. Keyboard behavior follows the [WAI modal dialog pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/).
 
 The close check waits for the native dialog's queued close event to restore focus and scroll, rather than assuming that removing the `open` attribute already completed that event. A faster hosted Chromium run exposed this timing difference from local Chromium.
