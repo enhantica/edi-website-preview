@@ -1,5 +1,5 @@
 {
-    "description": "Load the Y2O3 structure into the empty project",
+    "description": "Load the structure into the empty project",
     "gui_components_revision": "10dc5828020c90666a1ef015835475936d56e819",
     "highlights": [
         "structures.load",
@@ -7,7 +7,7 @@
     ],
     "id": "06-structure-import",
     "image": "06-structure-import.png",
-    "image_sha256": "51f2d0cb292eca2625c26d05ca05b0126ac03f4c3f881a6b19b74a7137adc9b6",
+    "image_sha256": "9f048eb03663a91b790f82bec93e17f3305851a1d2f60068cc92dee3bcb68f64",
     "items": {
         "ApplicationWindow": {
             "bounds": [
@@ -890,8 +890,8 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "e4e0560b8d376afcabcd87a95437d283e28202cec3d85181e305e2d73cb2243f",
-    "source_revision": "8996a2b6093bd51fb153b5c815638d6f644df705",
+    "script_sha256": "f8b28e655938b21364826a3e2f1620621f061ba3e7f5019ec64c19f0032032df",
+    "source_revision": "ce108caedfe7f6637328bae9aad009deed328ddb",
     "state": {
         "experiments": 0,
         "fit_outcome": "",

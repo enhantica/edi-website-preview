@@ -10,7 +10,6 @@ import re
 import struct
 from pathlib import Path
 
-EXAMPLE = 'pd-neut-cwl_y2o3-spodi'
 SIZE = [1480, 800]
 PAGES = ['project', 'structure', 'experiment', 'analysis', 'report']
 
@@ -43,7 +42,18 @@ def validate_bundle(root: Path) -> tuple[dict, list[dict]]:
         manifest.get('schema') == 1 and manifest.get('status') == 'complete',
         'Capture is incomplete',
     )
-    require(manifest.get('example') == EXAMPLE, 'Wrong walkthrough example')
+    require(
+        bool(re.fullmatch(r'[a-z0-9][a-z0-9_-]*', manifest.get('example', ''))),
+        'Invalid walkthrough example id',
+    )
+    fixture = manifest.get('fixture')
+    if fixture is not None:
+        require(fixture.get('id') == manifest['example'], 'Fixture and example id disagree')
+    for dependency in manifest.get('dependencies', []):
+        require(
+            sha256(local_file(root, dependency.get('file'))) == dependency.get('sha256'),
+            'A data dependency changed',
+        )
     require(manifest.get('logical_size') == SIZE, 'Wrong capture size')
     revision = manifest.get('source_revision', '')
     require(bool(re.fullmatch(r'[0-9a-f]{40}', revision)), 'Capture needs a clean source revision')

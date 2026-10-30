@@ -9,7 +9,7 @@
     ],
     "id": "14-report-text",
     "image": "14-report-text.png",
-    "image_sha256": "dba37e861f8bfe94feb0034e6168dd48a3c21882ddba9b6965207133264b8f48",
+    "image_sha256": "30c0ece254a773c00ef5daf48300caefe920518832275c8a04895951013bf4fa",
     "items": {
         "ApplicationWindow": {
             "bounds": [
@@ -358,7 +358,7 @@
                 32
             ],
             "enabled": true,
-            "label": "Y2O3 on SPODI",
+            "label": "Y₂O₃ [Ia-3] · SPODI @ FRM II",
             "visible_bounds": [
                 35,
                 199.5219123505976,
@@ -553,7 +553,7 @@
                 18.109375
             ],
             "enabled": true,
-            "label": "5 0.13s 127.71→1.20",
+            "label": "5 0.12s 127.71→1.20",
             "visible_bounds": [
                 1178,
                 770,
@@ -767,8 +767,8 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "e4e0560b8d376afcabcd87a95437d283e28202cec3d85181e305e2d73cb2243f",
-    "source_revision": "8996a2b6093bd51fb153b5c815638d6f644df705",
+    "script_sha256": "f8b28e655938b21364826a3e2f1620621f061ba3e7f5019ec64c19f0032032df",
+    "source_revision": "ce108caedfe7f6637328bae9aad009deed328ddb",
     "state": {
         "experiments": 1,
         "fit_outcome": "success",

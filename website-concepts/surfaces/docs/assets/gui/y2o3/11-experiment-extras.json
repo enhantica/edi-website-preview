@@ -1,5 +1,5 @@
 {
-    "description": "SPODI experiment — Extra",
+    "description": "Experiment and measured data — Extra",
     "gui_components_revision": "10dc5828020c90666a1ef015835475936d56e819",
     "highlights": [
         "appBar",
@@ -9,7 +9,7 @@
     ],
     "id": "11-experiment-extras",
     "image": "11-experiment-extras.png",
-    "image_sha256": "ae0d2a63b340cb0738103901c8baa68645aa168547790995d34915a5e3ca05bf",
+    "image_sha256": "6fbfe86e58e6acfcd3ca7e80e1e86622649e7a760e74120bddaf6ca578132b38",
     "items": {
         "ApplicationWindow": {
             "bounds": [
@@ -1375,8 +1375,8 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "e4e0560b8d376afcabcd87a95437d283e28202cec3d85181e305e2d73cb2243f",
-    "source_revision": "8996a2b6093bd51fb153b5c815638d6f644df705",
+    "script_sha256": "f8b28e655938b21364826a3e2f1620621f061ba3e7f5019ec64c19f0032032df",
+    "source_revision": "ce108caedfe7f6637328bae9aad009deed328ddb",
     "state": {
         "experiments": 1,
         "fit_outcome": "",

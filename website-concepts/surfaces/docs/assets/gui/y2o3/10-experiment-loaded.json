@@ -7,7 +7,7 @@
     ],
     "id": "10-experiment-loaded",
     "image": "10-experiment-loaded.png",
-    "image_sha256": "13e533cd2dcfd1af8803d2e9cbfdcfa0cd38d009af5df0a933642197d0a109b5",
+    "image_sha256": "d87a3121754f9b02a64e3d095b42742b1be5d6f84ea23358aa55bfc4457f6ebf",
     "items": {
         "ApplicationWindow": {
             "bounds": [
@@ -1565,8 +1565,8 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "e4e0560b8d376afcabcd87a95437d283e28202cec3d85181e305e2d73cb2243f",
-    "source_revision": "8996a2b6093bd51fb153b5c815638d6f644df705",
+    "script_sha256": "f8b28e655938b21364826a3e2f1620621f061ba3e7f5019ec64c19f0032032df",
+    "source_revision": "ce108caedfe7f6637328bae9aad009deed328ddb",
     "state": {
         "experiments": 1,
         "fit_outcome": "",

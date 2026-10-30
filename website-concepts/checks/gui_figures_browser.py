@@ -110,6 +110,24 @@ return {dialogWidth: dialog.getBoundingClientRect().width, viewport: innerWidth,
                 )
             )
             results.append({'width': width, 'route': route, 'figures': count, 'dialog': 'PASS'})
+        if width == 1440:
+            registry = json.loads((ROOT / 'gui-guide-scenes.json').read_text())
+            for filename, sections in registry.items():
+                browser.goto(base + filename.replace('.md', '/'))
+                expected = sum(
+                    len(value) if isinstance(value, list) else 1 for value in sections.values()
+                )
+                result = browser.execute(FIGURES)
+                require(len(result['figures']) == expected, (filename, result))
+                require(
+                    browser.execute(
+                        "const ids=[...document.querySelectorAll('[id]')].map(e=>e.id);return ids.length === new Set(ids).size;"
+                    ),
+                    filename,
+                )
+                require(
+                    all(abs(f['width'] - f['column']) < 1 for f in result['figures']), filename
+                )
         browser.goto(base + 'application/y2o3-walkthrough/')
         require(
             browser.execute(

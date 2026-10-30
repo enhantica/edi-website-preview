@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import re
 import shutil
 from pathlib import Path
 
@@ -29,16 +30,63 @@ LABELS = {
     'createProject.title': ('Title', 'Give the analysis a descriptive title.'),
     'createProject.description': ('Description', 'Record the sample, measurement and purpose.'),
     'createProject.location': ('Location', 'Choose where the project will be saved.'),
-    'structures.load': ('Load structure', 'Import the separate y2o3.edi structure file.'),
+    'structures.load': ('Load structure', 'Import the structure file for this example.'),
     'structures.list': (
         'Structures',
         'Select the structure whose cell and atom sites you want to inspect.',
     ),
     'experiments.load': (
         'Load experiment',
-        'Import spodi.edi, including its measured intensities and instrument settings.',
+        'Import the experiment file, including measured intensities and instrument settings.',
     ),
 }
+
+LABELS.update({
+    'group.examples': (
+        'Built-in examples',
+        'Search or filter the example catalogue and select a case.',
+    ),
+    'project.openChoice': ('Project source', 'Choose a folder or a zip archive.'),
+    'project.saveChoice': ('Save options', 'Choose the output format and whether to save a copy.'),
+    'structures.create': ('Create structure', 'Add a starting structure to edit.'),
+    'structures.duplicate': ('Duplicate structure', 'Copy the selected structure.'),
+    'spaceGroup.itNumber': ('Space-group number', 'Select the symmetry of your model.'),
+    'spaceGroup.nameHM': ('Space-group symbol', 'Check the Hermann-Mauguin symbol and setting.'),
+    'cell.length_a': ('Cell length a', 'Inspect the cell length and its uncertainty.'),
+    'cell.length_b': ('Cell length b', 'Values controlled by symmetry are linked.'),
+    'cell.length_c': ('Cell length c', 'Use the cell convention of the selected space group.'),
+    'atomSites.list': (
+        'Atom sites',
+        'Inspect atom types, fractional coordinates and occupancies.',
+    ),
+    'experiments.list': ('Experiments', 'Select the measurement to inspect.'),
+    'experiments.loadData.0': (
+        'Measured-data file',
+        'Load the observed intensities for this experiment.',
+    ),
+    'experiments.create': (
+        'Create experiment',
+        'Add an experiment and choose its measurement type.',
+    ),
+    'background.type': ('Background model', 'Choose the background representation.'),
+    'background.rows': (
+        'Background values',
+        'Inspect or edit the values in the selected representation.',
+    ),
+    'excludedRegions.list': (
+        'Excluded intervals',
+        'Set the boundaries of regions omitted from fitting.',
+    ),
+    'linkedStructure.list': (
+        'Linked structures',
+        'Inspect phase links, scales and derived fractions.',
+    ),
+    'fittingMode.type': ('Fitting mode', 'The available choices depend on the project.'),
+    'report.writesHtml': ('HTML report', 'Select an HTML document.'),
+    'report.writesPdf': ('PDF report', 'Select a PDF document.'),
+    'report.writesCif': ('CIF report', 'Select a crystallographic report.'),
+    'report.save': ('Save report', 'Write the selected report formats.'),
+})
 
 
 def label(target: str, page: str) -> tuple[str, str]:
@@ -57,6 +105,10 @@ def label(target: str, page: str) -> tuple[str, str]:
             'Workflow page',
             'The selected toolbar tab opens this workspace and its sidebar together.',
         )
+    if target.startswith('group.'):
+        return target[6:].replace('_', ' ').replace('reportContents', 'Report contents').replace(
+            'reportExport', 'Report export'
+        ).title(), 'Use the controls in this group.'
     return LABELS.get(target, (target, ''))
 
 
@@ -106,11 +158,11 @@ def region_path(parts: list[list[float]], padding: float = 2) -> str:
     return 'M' + ' L'.join(f'{px:.3f} {py:.3f}' for px, py in points) + ' Z'
 
 
-def figure(scene: dict, *, view: str = 'overview') -> str:
+def figure(scene: dict, *, view: str = 'overview', instance: str = '') -> str:
     meta = scene['layout']
     image = '../assets/gui/y2o3/' + scene['image']
     description = html.escape(scene['description'], quote=True)
-    identity = f'{scene["id"]}-{view}'
+    identity = f'{scene["id"]}-{view}' + (f'-{instance}' if instance else '')
     targets = (
         [f'workflow.{scene["page"]}.manualSidebar'] if view == 'sidebar' else meta['highlights']
     )
@@ -208,13 +260,55 @@ def page(title: str, body: str) -> str:
     return f'---\ntemplate: gui.html\n---\n\n# {title}\n\n{body.rstrip()}\n'
 
 
+def illustrate_guides(by_id: dict[str, dict]) -> None:
+    """Place source-matched scenes after their corresponding how-to instructions."""
+    if 'guide-project-open' not in by_id:
+        return
+    registry = json.loads((ROOT / 'gui-guide-scenes.json').read_text())
+    for filename, sections in registry.items():
+        source = DOCS / filename
+        text = source.read_text()
+        text = re.sub(r'<!-- gui-guide:.*?<!-- /gui-guide -->\n?', '', text, flags=re.DOTALL)
+        text = re.sub(r'<figure class="gui-figure".*?</figure>\n?', '', text, flags=re.DOTALL)
+        headings = list(re.finditer(r'^## (.+)$', text, re.MULTILINE))
+        present = {match[1] for match in headings}
+        missing = set(sections) - present
+        if missing:
+            raise ValueError(f'{filename}: missing authored headings {sorted(missing)}')
+        for number in reversed(range(len(headings))):
+            match = headings[number]
+            if match[1] not in sections:
+                continue
+            scenes = sections[match[1]]
+            if isinstance(scenes, str):
+                scenes = [scenes]
+            slug = re.sub(r'[^a-z0-9]+', '-', match[1].lower()).strip('-')
+            figures = []
+            for index, identity in enumerate(scenes):
+                if identity not in by_id:
+                    raise ValueError(f'{filename}: required capture {identity} is missing')
+                figures.append(figure(by_id[identity], instance=f'{source.stem}-{slug}-{index}'))
+            end = headings[number + 1].start() if number + 1 < len(headings) else len(text)
+            content = (
+                f'\n<!-- gui-guide:{slug} -->\n' + '\n'.join(figures) + '<!-- /gui-guide -->\n\n'
+            )
+            text = text[:end].rstrip() + '\n' + content + text[end:]
+        if not text.startswith('---\n'):
+            text = '---\ntemplate: gui.html\n---\n\n' + text
+        source.write_text(text.rstrip() + '\n')
+
+
 def render(bundle: Path) -> None:
     manifest, scenes = validate_bundle(bundle)
     by_id = {scene['id']: scene for scene in scenes}
+    fixture = manifest.get('fixture', {'samples': ['Y₂O₃'], 'origin': 'SPODI @ FRM II'})
+    structure_file = Path(manifest['inputs']['structure']['file']).name
+    experiment_file = Path(manifest['inputs']['experiment']['file']).name
     destination = DOCS / 'assets/gui/y2o3'
     destination.mkdir(parents=True, exist_ok=True)
     artifacts = {'manifest.json', 'walkthrough.js'}
     artifacts.update(item['file'] for item in manifest['inputs'].values())
+    artifacts.update(item['file'] for item in manifest.get('dependencies', []))
     for scene in scenes:
         artifacts.update((scene['image'], scene['metadata']))
     for artifact in sorted(artifacts):
@@ -222,14 +316,14 @@ def render(bundle: Path) -> None:
         target.parent.mkdir(parents=True, exist_ok=True)
         if (bundle / artifact).resolve() != target.resolve():
             shutil.copy2(bundle / artifact, target)
-    intro = """Build a project from its separate inputs, refine the model and review the report. This example is **pd-neut-cwl_y2o3-spodi**, constant-wavelength neutron powder diffraction from SPODI at FRM II.
+    intro = f"""Build a project from its separate inputs, refine the model and review the report. This example is **{manifest['example']}**: {' + '.join(fixture['samples'])}, {fixture['origin']}.
 
 The screenshots below follow an actual application run at **1480 by 800 pixels**. Select a numbered explanation to highlight that part of the interface. The [application layout](workspace.md) introduces the workspace and every enabled sidebar tab.
 
 ## Download the inputs
 
-- [Y₂O₃ crystal structure](../assets/gui/y2o3/inputs/y2o3.edi)
-- [SPODI experiment and measured intensities](../assets/gui/y2o3/inputs/spodi.edi)
+- [Crystal structure: {structure_file}](../assets/gui/y2o3/{manifest['inputs']['structure']['file']})
+- [Experiment and measured intensities: {experiment_file}](../assets/gui/y2o3/{manifest['inputs']['experiment']['file']})
 
 The experiment input contains the measured pattern, instrument, profile, background and starting free parameters. Import these files separately; start with an empty project.
 """
@@ -238,7 +332,7 @@ The experiment input contains the measured pattern, instrument, profile, backgro
         ('Create a project', 'Choose **Create a new project**.', '02-project-start'),
         (
             'Enter the project details',
-            'Enter the name **pd-neut-cwl_y2o3-spodi**, a title, authors and description. Choose a location on your computer, then confirm.',
+            'Enter a name, title, authors and description for the analysis. Choose a location on your computer, then confirm.',
             '03-project-details',
         ),
         (
@@ -248,7 +342,7 @@ The experiment input contains the measured pattern, instrument, profile, backgro
         ),
         (
             'Load the structure',
-            'Open **Structure**, expand **Structures**, choose **Load** and select **y2o3.edi**.',
+            f'Open **Structure**, expand **Structures**, choose **Load** and select **{structure_file}**.',
             '06-structure-import',
         ),
         (
@@ -258,7 +352,7 @@ The experiment input contains the measured pattern, instrument, profile, backgro
         ),
         (
             'Load the experiment',
-            'Open **Experiment**, expand **Experiments**, choose **Load** and select **spodi.edi**.',
+            f'Open **Experiment**, expand **Experiments**, choose **Load** and select **{experiment_file}**.',
             '09-experiment-import',
         ),
         (
@@ -312,7 +406,7 @@ The page views below introduce each enabled tab. Then follow [Example refinement
 
 Selecting a structure or experiment changes the model being inspected. The status bar reports the project state, messages and fitting progress. Read messages after importing data or when an operation is refused.
 """
-    gallery = '\n## Page and sidebar views\n\nThese views come from the same Y₂O₃/SPODI walkthrough. Every enabled sidebar tab is shown. Select **Workflow page** to see how its toolbar tab connects to the whole page. All **Analysis** and **Report** views were captured after the fit completed and its results popup was closed.\n'
+    gallery = '\n## Page and sidebar views\n\nThese views come from the same example refinement. Every enabled sidebar tab is shown. Select **Workflow page** to see how its toolbar tab connects to the whole page. All **Analysis** and **Report** views were captured after the fit completed and its results popup was closed.\n'
     for name in ['project', 'structure', 'experiment', 'analysis', 'report']:
         icon = {
             'project': 'archive',
@@ -334,6 +428,17 @@ Selecting a structure or experiment changes the model being inspected. The statu
         examples += figure(by_id['15-project-examples'])
         examples += '\nChoose a **Fitting** example to analyse measured data, or a **Simulation** example to inspect a calculated pattern. Examples open as working copies; use **Save project as…** to keep your changes.\n\nFor a guided analysis, follow [Example refinement](first-refinement.md). The shared [example catalogue](../user-guide/examples.md) describes the scientific cases.\n'
         (DOCS / 'application/examples.md').write_text(page('Example projects', examples))
+    introduction = DOCS / 'application/index.md'
+    text = introduction.read_text()
+    text = re.sub(
+        r'<figure class="gui-figure".*?</figure>',
+        figure(by_id['13-analysis-basic'], instance='application-introduction').rstrip(),
+        text,
+        count=1,
+        flags=re.DOTALL,
+    )
+    introduction.write_text(text)
+    illustrate_guides(by_id)
     print(json.dumps({'imported': len(scenes), 'source': manifest['source_revision']}))
 
 

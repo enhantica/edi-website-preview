@@ -6,7 +6,7 @@
     ],
     "id": "15-project-examples",
     "image": "15-project-examples.png",
-    "image_sha256": "66760352dcaf642d3b58acc951be95adc5d27db55d40812e55af79d73b1347f3",
+    "image_sha256": "584d88e31d0bdc0c8d47c5c82d3754d90425dc596a716ab8b1ced7528d452988",
     "items": {
         "ApplicationWindow": {
             "bounds": [
@@ -576,21 +576,21 @@
                 183.4,
                 284.6,
                 567,
-                19
+                20
             ],
             "enabled": true,
-            "label": "Constant-wavelength neutron powder diffraction from SPODI at FRM II.",
+            "label": "Anisotropic β tensors tied by site symmetry · Coordinates, profile and background",
             "visible_bounds": [
                 183.4,
                 284.6,
                 567,
-                19
+                20
             ]
         },
         "project.experiments": {
             "bounds": [
                 183.4,
-                390.20000000000005,
+                391.20000000000005,
                 567,
                 18.109375
             ],
@@ -598,7 +598,7 @@
             "label": "",
             "visible_bounds": [
                 183.4,
-                390.20000000000005,
+                391.20000000000005,
                 567,
                 18.109375
             ]
@@ -606,15 +606,15 @@
         "project.location": {
             "bounds": [
                 183.4,
-                328.40000000000003,
+                329.40000000000003,
                 567,
                 19
             ],
             "enabled": true,
-            "label": "/tmp/EasyDiffraction-JRtevb/pd-neut-cwl_y2o3-spodi",
+            "label": "/tmp/EasyDiffraction-QjVCcH/pd-neut-cwl_y2o3-spodi",
             "visible_bounds": [
                 183.4,
-                328.40000000000003,
+                329.40000000000003,
                 567,
                 19
             ]
@@ -638,7 +638,7 @@
         "project.structures": {
             "bounds": [
                 183.4,
-                359.30000000000007,
+                360.30000000000007,
                 567,
                 18.109375
             ],
@@ -646,7 +646,7 @@
             "label": "",
             "visible_bounds": [
                 183.4,
-                359.30000000000007,
+                360.30000000000007,
                 567,
                 18.109375
             ]
@@ -659,7 +659,7 @@
                 19
             ],
             "enabled": true,
-            "label": "Y2O3 on SPODI",
+            "label": "Y₂O₃ [Ia-3] · SPODI @ FRM II",
             "visible_bounds": [
                 183.4,
                 222.8,
@@ -854,7 +854,7 @@
                 18.109375
             ],
             "enabled": true,
-            "label": "5 0.13s 127.71→1.20",
+            "label": "5 0.12s 127.71→1.20",
             "visible_bounds": [
                 1178,
                 770,
@@ -1020,8 +1020,8 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "e4e0560b8d376afcabcd87a95437d283e28202cec3d85181e305e2d73cb2243f",
-    "source_revision": "8996a2b6093bd51fb153b5c815638d6f644df705",
+    "script_sha256": "f8b28e655938b21364826a3e2f1620621f061ba3e7f5019ec64c19f0032032df",
+    "source_revision": "ce108caedfe7f6637328bae9aad009deed328ddb",
     "state": {
         "experiments": 1,
         "fit_outcome": "success",

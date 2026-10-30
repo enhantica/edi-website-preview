@@ -1,5 +1,5 @@
 {
-    "description": "Load the SPODI experiment and measured intensities",
+    "description": "Load the experiment and measured intensities",
     "gui_components_revision": "10dc5828020c90666a1ef015835475936d56e819",
     "highlights": [
         "experiments.load",
@@ -7,7 +7,7 @@
     ],
     "id": "09-experiment-import",
     "image": "09-experiment-import.png",
-    "image_sha256": "695f5cd7ec4b0e0737da2e9150ac4f0318b093b200d3b918d4b04ca43546d656",
+    "image_sha256": "f1ea4cc7ae5e60c0043d8c925a8003ece02190dbf6b0388292ab1b9705cfc560",
     "items": {
         "ApplicationWindow": {
             "bounds": [
@@ -970,8 +970,8 @@
     ],
     "qt_version": "6.11.2",
     "schema": 1,
-    "script_sha256": "e4e0560b8d376afcabcd87a95437d283e28202cec3d85181e305e2d73cb2243f",
-    "source_revision": "8996a2b6093bd51fb153b5c815638d6f644df705",
+    "script_sha256": "f8b28e655938b21364826a3e2f1620621f061ba3e7f5019ec64c19f0032032df",
+    "source_revision": "ce108caedfe7f6637328bae9aad009deed328ddb",
     "state": {
         "experiments": 0,
         "fit_outcome": "",
