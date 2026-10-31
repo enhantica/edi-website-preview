@@ -117,14 +117,15 @@ The current [nuclear neutron](diffraction.md#eq-nuclear-structure-factor) and [X
 | --- | --- | --- |
 | `single` | project analysis | [Physics](rietveld.md#joint-refinement) |
 | `joint` | project analysis | [Physics](rietveld.md#joint-refinement) |
-| `sequential` | project analysis | [Physics](rietveld.md#scan-refinement) |
-| `independent` | project analysis | [Physics](rietveld.md#scan-refinement) |
+| `sequential` | project analysis | [Physics](rietveld.md#sequential-scans) |
+| `independent` | project analysis | [Physics](rietveld.md#independent-scans) |
 
 ## Intensity extraction {#intensity-extraction}
 
 | Model | Status | Explanation |
 | --- | --- | --- |
-| Le Bail / Pawley | Proposed | [Analysis](rietveld.md#intensity-extraction) |
+| Le Bail | Proposed | [Analysis](rietveld.md#le-bail-intensity-extraction) |
+| Pawley | Proposed | [Analysis](rietveld.md#pawley-intensity-extraction) |
 
 ## Descent {#descent}
 

@@ -47,6 +47,24 @@ Edit the name in the list or use the row's remove control. Removing a structure 
 
 ## Change the structure display
 
+### Structure viewer controls {#structure-viewer-controls}
+
+Drag to rotate, use the wheel to zoom, and drag with the right mouse button to pan.
+
+| Control | What it changes |
+| --- | --- |
+| <span class="ed-reference-icon" aria-hidden="true">&#62930;</span> Atoms | Show all symmetry copies, the asymmetric unit only, or no atoms |
+| <span class="ed-reference-icon" aria-hidden="true">&#61483;</span> Labels | Show or hide atom names |
+| <span class="ed-reference-icon" aria-hidden="true">&#61633;</span> Bonds | Show or hide bonds when the structure has them |
+| <span class="ed-reference-icon" aria-hidden="true">&#62923;</span> Cell | Show or hide the unit-cell outline |
+| <span class="ed-reference-icon" aria-hidden="true">&#61732;</span> Axes | Show or hide crystallographic directions |
+| <span class="ed-reference-icon" aria-hidden="true">&#61874;</span> Camera | Switch parallel/perspective projection, look along **a**, **b** or **c**, or reset the view |
+| Colour scheme | Choose the element colours used by the view and its legend |
+
+These controls change the picture; they do not change the crystallographic model.
+
+### Appearance
+
 On **Structure → Extra**, expand **Appearance**. Choose how atom sizes are drawn, adjust the display scale or use displacement ellipsoids. For ellipsoids, set the probability level.
 
 These controls change the picture. Edit the scientific model in [Symmetry and cell](symmetry.md), [Atom sites](atoms.md) and [Atomic displacement](displacement.md). [Scattering lengths](scattering.md) and [experiment links](linked-structures.md) have their own controls.
@@ -62,3 +80,7 @@ These controls change the picture. Edit the scientific model in [Symmetry and ce
 
 </div>
 <!-- /gui-guide -->
+
+### Magnetic moments {#magnetic-moments}
+
+Magnetic-moment arrows in the structure viewer are **planned**. They are not available in the current viewer.

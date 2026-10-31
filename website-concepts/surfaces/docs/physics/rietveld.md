@@ -37,11 +37,29 @@ Inspect each experiment after a joint fit. Combined agreement can hide a systema
 
 ## Sequential and independent scans {#scan-refinement}
 
-Both scan modes run a sequence of fits against a template experiment. Sequential fitting starts the next dataset from the preceding result; independent fitting restarts each dataset from the same template state. The distinction is the starting model, not parallel execution. See the [fitting-mode guide](../user-guide/fitting-modes.md).
+Both scan modes run a sequence of fits against a template experiment. Their distinction is the starting model, not parallel execution. See the [fitting-mode guide](../user-guide/fitting-modes.md).
 
-## Le Bail / Pawley intensity extraction {#intensity-extraction}
+### Sequential scans {#sequential-scans}
 
-**Proposed.** Le Bail / Pawley intensity extraction is a proposed capability. It is not an available fitting mode in this reference snapshot. See [Pattern fitting](../user-guide/features.md#pattern-fitting) for the current alternatives.
+Each dataset starts from the preceding fitted result. This carries the evolving model forward through the series.
+
+### Independent scans {#independent-scans}
+
+Every dataset starts from the same template values, so the starting model does not depend on the preceding fit.
+
+## Intensity extraction {#intensity-extraction}
+
+**Proposed.** These methods are not available fitting modes in this reference snapshot. See [Pattern fitting](../user-guide/features.md#pattern-fitting) for current alternatives.
+
+### Le Bail intensity extraction {#le-bail-intensity-extraction}
+
+Reflection intensities are updated by iterative decomposition of the measured powder pattern, alongside profile fitting.
+
+### Pawley intensity extraction {#pawley-intensity-extraction}
+
+Reflection intensities are adjustable variables in a least-squares fit of the powder pattern.
+
+The distinction is described in the [IUCr intensity-extraction overview](https://onlinelibrary.wiley.com/iucr/itc/Ha/ch4o2v0001/sec4o2o2/).
 
 ## Interpretation
 

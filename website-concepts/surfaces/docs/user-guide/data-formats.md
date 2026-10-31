@@ -29,10 +29,20 @@ CIF is the crystallographic exchange format maintained by the [International Uni
 | --- | --- |
 | Edi project | Reopen the analysis with its structures, experiments, data and settings |
 | Structural CIF | Import or exchange crystallographic structure information |
+| Structure `.edi` | Import one EasyDiffraction structure, including its model settings |
+| Experiment `.edi` | Import an EasyDiffraction experiment, including its settings and stored observations |
 | Measured-pattern file | Supply observations to an experiment |
 | HTML or PDF report | Inspect or share a readable account of the analysis |
 
 A structure imported from CIF is a starting point. It still needs an experiment, instrument settings and measured data or a calculation range before it represents a complete analysis.
+
+### Structure `.edi` {#structure-edi}
+
+Use **Load structure from file** to add a saved structure to the current project. This imports the structure model; it does not open a complete project.
+
+### Experiment `.edi` {#experiment-edi}
+
+Use **Load experiment** to add a saved experiment with its measurement settings and any stored data. Check its linked structures after import. A measured-data file such as `.xye` supplies observations to an experiment instead.
 
 ## Powder-pattern input
 

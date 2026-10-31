@@ -10,3 +10,5 @@ Render the category symbol beside every category caption in all four naming proj
 Use the existing exported dictionary `icon` and Font Awesome 5 glyph/font assets. No separately chosen icon mapping or icon artwork is introduced. The reference renderer owns the explicit page-to-category associations and regenerates heading/navigation metadata after a fresh capture import. Fail if a declared native icon lacks a glyph. Icons are decorative to assistive technology; text names the category.
 
 Validate generated references, stable links, actual font loading, correct symbols in all naming tabs and both navigation areas, and readable alignment at phone/desktop widths in both themes.
+
+2026-10-31 clarification: navigation icons inherit their adjacent label colour with no independent fading, including hover and active states. Apply the same rule to SVG symbols and native Font Awesome glyphs.
