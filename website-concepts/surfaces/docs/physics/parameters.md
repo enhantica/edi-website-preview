@@ -126,8 +126,6 @@ The atom sites of the structure: position, occupancy and isotropic displacement.
 
 Unique atom-site identifier.
 
-**Units:** not applicable (identifier or type).
-
 [Equation and conventions](diffraction.md#eq-nuclear-structure-factor) · [Names across interfaces](../user-guide/parameter-reference.md#names-atom-site)
 
 </section>
@@ -137,8 +135,6 @@ Unique atom-site identifier.
 ### Chemical symbol of the atom at this site {#atom-site-type-symbol}
 
 Chemical symbol of the atom at this site.
-
-**Units:** not applicable (identifier or type).
 
 [Equation and conventions](diffraction.md#eq-nuclear-structure-factor) · [Names across interfaces](../user-guide/parameter-reference.md#names-atom-site)
 
@@ -150,8 +146,6 @@ Chemical symbol of the atom at this site.
 
 Wyckoff letter of the site in its space group.
 
-**Units:** not applicable (identifier or type).
-
 [Equation and conventions](diffraction.md#eq-nuclear-structure-factor) · [Names across interfaces](../user-guide/parameter-reference.md#names-atom-site)
 
 </section>
@@ -161,8 +155,6 @@ Wyckoff letter of the site in its space group.
 ### Atomic displacement parameter type: Biso, Uiso, Bani, Uani or beta {#atom-site-adp-type}
 
 Atomic displacement parameter type: Biso, Uiso, Bani, Uani or beta; Biso when absent.
-
-**Units:** not applicable (identifier or type).
 
 | Option | Meaning |
 | --- | --- |
@@ -253,8 +245,6 @@ The anisotropic displacement of each anisotropic atom site.
 ### Id {#atom-site-aniso-id}
 
 The id of the anisotropic atom site the row belongs to.
-
-**Units:** not applicable (identifier or type).
 
 [Equation and conventions](displacement.md#eq-anisotropic-adp) · [Names across interfaces](../user-guide/parameter-reference.md#names-atom-site-aniso)
 

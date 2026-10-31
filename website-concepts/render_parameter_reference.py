@@ -332,7 +332,7 @@ def render() -> None:
             units = item['units'] or scientific.get(item['uid'], {}).get('units', '')
             if category['id'] == 'atom_site_aniso' and item['variants']:
                 units = 'Å² for B/U; dimensionless for β'
-            if units:
+            if units and item['dtype'] in {'float', 'int'}:
                 details += ['**Units:** ' + plain(units) + '.', '']
             if item['uid'] in scientific:
                 entry = scientific[item['uid']]

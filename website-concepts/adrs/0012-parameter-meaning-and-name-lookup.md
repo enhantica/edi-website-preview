@@ -12,3 +12,5 @@ Use restrained entry boundaries and native headings to make each parameter block
 Validate every native category/item link, all naming tabs and return anchors, unit-dependent displacement forms, preserved options, readable headings and desktop/phone layout in both themes.
 
 Keep core structure and experiment categories before persistence/report metadata. Reader descriptions for cell dimensions and fractional coordinates expand the existing crystallography explanation; other entries retain native descriptions. Category return anchors wrap the visible caption so native browser navigation works after selecting a different naming tab, without an additional tab-switching script.
+
+2026-10-31 clarification: omit the Units line for identifiers, type selectors and other non-numeric fields, including metadata placeholders saying units are not applicable. Keep declared units and meaningful dimensionless information for numerical quantities.
