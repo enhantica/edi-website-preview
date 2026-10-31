@@ -273,6 +273,38 @@ def viewer(panes: list[tuple[str, str]]) -> str:
     return '<div class="gui-viewer" markdown="1">\n\n' + content + '\n</div>\n'
 
 
+def highlight_area(meta: dict, target: str, page: str) -> str:
+    """Use native item bounds to keep screenshot colours tied to the four app areas."""
+    if target.startswith('appBar'):
+        return 'navigation'
+    if target.startswith('statusBar'):
+        return 'status'
+    if target.startswith('mainView.') or target.endswith(('.mainContent', '.page')):
+        return 'main'
+    if target.endswith('.manualSidebar'):
+        return 'sidebar'
+    x, y, width, height = meta['items'][target]['visible_bounds']
+    centre_x, centre_y = x + width / 2, y + height / 2
+    for name, area in [
+        ('appBar', 'navigation'),
+        ('statusBar', 'status'),
+        (f'workflow.{page}.manualSidebar', 'sidebar'),
+        (f'workflow.{page}.mainContent', 'main'),
+    ]:
+        item = meta['items'].get(name)
+        if not item:
+            continue
+        left, top, width, height = item['visible_bounds']
+        if (
+            width > 0
+            and height > 0
+            and left <= centre_x <= left + width
+            and top <= centre_y <= top + height
+        ):
+            return area
+    raise ValueError('No native app area contains highlight: ' + target)
+
+
 def figure(
     scene: dict,
     *,
@@ -299,26 +331,29 @@ def figure(
     targets = (
         [f'workflow.{scene["page"]}.manualSidebar']
         if view == 'sidebar'
-        else ([f'workflow.{scene["page"]}.page'] if view == 'workflow' else meta['highlights'])
+        else (
+            [f'workflow.{scene["page"]}.mainContent']
+            + ([f'workflow.{scene["page"]}.manualSidebar'] if scene['page'] != 'home' else [])
+            if view == 'workflow'
+            else meta['highlights']
+        )
     )
     if view == 'main':
         targets = [f'mainView.{scene["page"]}.{selection.rsplit(".", 1)[1]}']
     navigation = ''
-    if view == 'overview':
+    if view in {'overview', 'workflow'}:
         targets = [target for target in targets if target != 'appBar']
         empty = (
             scene['page'] == 'home'
             or (scene['page'] == 'structure' and not meta['state']['structures'])
             or (scene['page'] == 'experiment' and not meta['state']['experiments'])
         )
-        if empty:
+        if empty and view == 'overview':
             targets = [target for target in targets if not target.endswith('.mainContent')]
         tab = f'appBar.tab.{scene["page"]}'
         parts = region_parts(meta, tab)
         data = html.escape(json.dumps(parts, separators=(',', ':')), quote=True)
-        navigation = (
-            f'<path data-gui-navigation data-gui-parts="{data}" d="{region_path(parts)}" />'
-        )
+        navigation = f'<path data-gui-navigation data-gui-area="navigation" data-gui-parts="{data}" d="{region_path(parts)}" />'
     if interactive and view in {'overview', 'layout'}:
         panes = []
         if view == 'layout':
@@ -336,7 +371,13 @@ def figure(
             item = meta['items'].get(target, {})
             title, text = label(target, scene['page'], item.get('label', ''))
             panes.append((
-                gui_icon(item) + html.escape(title),
+                (
+                    f'<span class="gui-area-key" data-gui-area="{highlight_area(meta, target, scene["page"])}" aria-hidden="true"></span>'
+                    if view == 'layout'
+                    else ''
+                )
+                + gui_icon(item)
+                + html.escape(title),
                 figure(
                     scene,
                     view=view,
@@ -356,8 +397,9 @@ def figure(
         parts = [meta['items'][target]['visible_bounds']] if inset else region_parts(meta, target)
         key = f'{identity}-{number}'
         data = html.escape(json.dumps(parts, separators=(',', ':')), quote=True)
+        area = highlight_area(meta, target, scene['page'])
         paths.append(
-            f'<path class="{"is-active" if number == 1 or view in {"layout", "flow"} else ""}" data-gui-region="{key}" '
+            f'<path class="{"is-active" if number == 1 or view in {"layout", "flow", "workflow"} else ""}" data-gui-region="{key}" data-gui-area="{area}" '
             + ('data-gui-inset="2" ' if inset else '')
             + f'data-gui-parts="{data}" d="{region_path(parts, -2 if inset else 2)}" />'
         )

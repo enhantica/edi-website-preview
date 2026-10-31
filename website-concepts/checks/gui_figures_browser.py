@@ -23,7 +23,7 @@ const figures = [...article.querySelectorAll('.gui-figure')].map(figure => {
     const parts = JSON.parse(region.dataset.guiParts), box = region.getBBox();
     const left = Math.min(...parts.map(p => p[0]));
     const top = Math.min(...parts.map(p => p[1]));
-    return {parts: parts.length, inset:region.hasAttribute('data-gui-inset'), paddingX: (left-box.x)*scale,
+    return {area:region.dataset.guiArea, parts: parts.length, inset:region.hasAttribute('data-gui-inset'), paddingX: (left-box.x)*scale,
       paddingY: (top-box.y)*scale, square: getComputedStyle(region).strokeLinejoin === 'miter'};
   });
   return {width: bounds.width, height: bounds.height, column: width, view:svg.dataset.guiView,
@@ -58,11 +58,16 @@ def check_viewers(browser: Browser, width: int, output: Path) -> None:
 const svg=document.querySelector('[data-gui-view="flow"]');
 const horizontal=svg.querySelector('[data-gui-axis="x"]'), vertical=svg.querySelector('[data-gui-axis="y"]');
 const a=horizontal.getBBox(), b=vertical.getBBox();
-const sidebar=JSON.parse(svg.querySelectorAll('[data-gui-region]')[2].dataset.guiParts)[0];
+const regions=[...svg.querySelectorAll('[data-gui-region]')];
+const sidebar=JSON.parse(regions[2].dataset.guiParts)[0];
+const sample=document.createElement('span'); sample.style.color='var(--md-default-bg-color)';
+document.body.append(sample); const pageBackground=getComputedStyle(sample).color; sample.remove();
 return {image:svg.querySelector('image').getAttribute('href'),
   sameWidth:Math.abs(a.height-b.width)<.01,
   centered:Math.abs(b.x+b.width/2-sidebar[0]-sidebar[2]/2)<.01,
-  color:getComputedStyle(horizontal).fill,
+  color:getComputedStyle(horizontal).fill, pageBackground,
+  areas:regions.map(p=>p.dataset.guiArea),
+  colours:regions.map(p=>getComputedStyle(p).stroke),
   rectangles:[...svg.querySelectorAll('[data-gui-region]')].every(p=>JSON.parse(p.dataset.guiParts).length===1 && p.hasAttribute('data-gui-inset')),
   order:[...document.querySelectorAll('h2')].slice(0,2).map(h=>h.id)};
 """)
@@ -71,9 +76,11 @@ return {image:svg.querySelector('image').getAttribute('href'),
     )
     require(
         '11-experiment-basic.png' in direction['image']
-        and direction['color'] == 'rgb(0, 132, 199)',
+        and direction['color'] == direction['pageBackground'],
         direction,
     )
+    require(direction['areas'] == ['navigation', 'main', 'sidebar', 'status'], direction)
+    require(len(set(direction['colours'])) == 4, direction)
     require(direction['order'] == ['main-regions', 'following-the-workflow'], direction)
     require(browser.execute("return document.querySelectorAll('.tabbed-set').length === 6;"))
     groups = browser.execute(
@@ -178,18 +185,23 @@ def exercise(browser: Browser, base: str, output: Path) -> list[dict]:
                 require(abs(figure['width'] - figure['column']) < 1, figure)
                 require(abs(figure['width'] / figure['height'] - 1480 / 800) < 0.01, figure)
                 require(figure['overflow'] == 'visible' and figure['radius'] == '0px', figure)
-                require(figure['imageClip'] and figure['active'] in {1, 4}, figure)
+                require(
+                    figure['imageClip']
+                    and figure['active'] in ({1, 2} if figure['view'] == 'workflow' else {1, 4}),
+                    figure,
+                )
                 for region in figure['regions']:
                     padding = -2 if region['inset'] else 1.5
                     require(abs(region['paddingX'] - padding) < 0.05, region)
                     require(abs(region['paddingY'] - padding) < 0.05, region)
                     require(region['square'], region)
+                    require(region['area'] in {'navigation', 'main', 'sidebar', 'status'}, region)
             if route.endswith('workspace/'):
                 require(
                     all(
                         f['regions'][0]['parts'] == 2
                         for f in result['figures']
-                        if f['view'] in {'workflow', 'main', 'sidebar'}
+                        if f['view'] in {'main', 'sidebar'}
                     ),
                     result,
                 )
