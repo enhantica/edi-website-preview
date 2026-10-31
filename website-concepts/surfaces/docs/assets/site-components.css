@@ -42,7 +42,7 @@
 .md-typeset .tabbed-labels .gui-fa { flex: none; margin-right: 0; }
 @media (prefers-reduced-motion: reduce) { .md-typeset .md-button { transition: none; } }
 
-.md-typeset ol.ed-workflow-diagram {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1rem;list-style:none;margin:1.5rem 0;padding:0}
+.md-typeset ol.ed-workflow-diagram {display:grid;grid-template-columns:repeat(var(--ed-flow-columns,5),minmax(0,1fr));gap:1rem;list-style:none;margin:1.5rem 0;padding:0}
 .md-typeset ol.ed-workflow-diagram > li {position:relative;margin:0;padding:0}
 .md-typeset .ed-workflow-diagram li:not(:last-child)::after {content:"→";position:absolute;inset-inline-end:-.5rem;top:50%;transform:translate(50%,-50%);color:var(--md-primary-fg-color)}
 .md-typeset .ed-workflow-diagram a {display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;padding:.5rem .2rem;border:1px solid var(--md-primary-fg-color);border-radius:.25rem;background:var(--md-accent-fg-color--transparent);font-size:.75rem;white-space:nowrap;text-decoration:none}
@@ -67,3 +67,18 @@
 
 /* Navigation symbols use the adjacent label colour, including active links. */
 .md-nav__link svg, .md-nav__link .twemoji, .md-nav__link .ed-reference-icon, .md-tabs__link .ed-interface-icons {color:inherit;opacity:1}
+
+/* Concept figures supplement short explanations; they are not application captures. */
+.md-typeset .ed-concept-flow a {height:100%;box-sizing:border-box;white-space:normal;text-align:center;min-height:4.2rem;padding:.5rem}
+.md-typeset .ed-concept-flow a .twemoji {display:block;width:1.1rem;height:1.1rem;margin:0}
+.ed-concept-figures {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-block:.8rem 1rem}
+.md-typeset .ed-concept-figures figure {display:block;width:100%;max-width:100%;margin:0;text-align:left}
+.md-typeset .ed-concept-figures figcaption {max-width:none;margin:0 0 .5rem;font-size:.7rem;font-style:normal;text-align:left}
+.ed-concept-figures img {display:block;width:100%;height:auto;border-radius:var(--ed-screenshot-radius)}
+.ed-concept-figures--single {grid-template-columns:minmax(0,1fr);max-width:28rem}
+@media (max-width:600px) {
+  .ed-concept-figures {grid-template-columns:1fr}
+  .md-typeset .ed-concept-flow a {min-height:0}
+}
+
+.md-typeset .ed-concept-flow > li > p {margin:0;height:100%}

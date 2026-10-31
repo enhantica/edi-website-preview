@@ -4,9 +4,55 @@ EasyDiffraction compares a crystallographic model with diffraction measurements.
 
 ## Acquisition, reduction and analysis
 
-**Acquisition** records the detector response during an experiment. **Reduction** turns those detector measurements into the observations used for analysis, with the relevant corrections and uncertainties. **Analysis** compares those observations with a model of the sample and experiment.
+<ol class="ed-workflow-diagram ed-concept-flow" style="--ed-flow-columns:3" markdown="1" aria-label="From detector measurements to analysis">
+<li markdown="1">[:material-microscope: Acquisition](#acquisition)</li>
+<li markdown="1">[:lucide-filter: Reduction](#reduction)</li>
+<li markdown="1">[:material-calculator: Analysis](#analysis)</li>
+</ol>
 
-EasyDiffraction focuses on the analysis stage. For a powder experiment, the starting observation is usually an intensity profile against scattering angle or time of flight. Keep the reduction history and experimental context with the project: they affect how its uncertainties and agreement factors should be interpreted.
+=== ":material-microscope: Acquisition"
+
+    <div id="acquisition" markdown="1">
+
+    Record the detector response while the sample scatters the incident beam. This example uses a two-dimensional detector.
+
+    <div class="ed-concept-figures">
+    <figure><figcaption>Beam, sample and detector</figcaption><img src="../assets/concepts/data-acquisition_instrument.png" alt="A beam scatters from a sample onto a two-dimensional diffraction detector" width="2218" height="1274" loading="lazy"></figure>
+    <figure><figcaption>Raw detector image</figcaption><img src="../assets/concepts/data-acquisition_2d-raw-data.jpg" alt="A raw two-dimensional diffraction image showing rings around the direct beam" width="1245" height="935" loading="lazy"></figure>
+    </div>
+
+    </div>
+
+=== ":lucide-filter: Reduction"
+
+    <div id="reduction" markdown="1">
+
+    Apply the relevant corrections and turn detector measurements into observations with uncertainties. For powder diffraction, these are often a one-dimensional intensity profile.
+
+    <div class="ed-concept-figures ed-concept-figures--single">
+    <figure><figcaption>Reduced diffraction pattern</figcaption><img src="../assets/concepts/data-reduction_1d-pattern.png" alt="A reduced one-dimensional diffraction pattern with intensity peaks" width="1631" height="931" loading="lazy"></figure>
+    </div>
+
+    </div>
+
+=== ":material-calculator: Analysis"
+
+    <div id="analysis" markdown="1">
+
+    Compare a calculated pattern with the observations, refine the model and inspect the result. **EasyDiffraction focuses on this stage.**
+
+    <div class="ed-concept-figures">
+    <figure><figcaption>Measured, calculated and residual signals</figcaption><img src="../assets/concepts/data-analysis_refinement.png" alt="Measured intensity in blue, calculated intensity in red and their residual in grey" width="1631" height="931" loading="lazy"></figure>
+    <figure><figcaption>Crystal structure model</figcaption><img src="../assets/concepts/data-analysis_model.png" alt="A crystal structure represented by atoms and bonds inside a unit cell" width="1142" height="684" loading="lazy"></figure>
+    </div>
+
+    </div>
+
+??? info "Illustration credits"
+
+    These illustrations are reused from the [earlier EasyDiffraction concept guide](https://docs.easydiffraction.org/lib/latest/user-guide/concept/). Its detector and diffraction example is credited to [Bish et al., Science (2013)](https://doi.org/10.1126/science.1238932). They illustrate the processing stages; the first-refinement tutorial uses its own measured example.
+
+Keep the reduction history and experimental context with the project: they affect how uncertainties and agreement factors should be interpreted.
 
 ## A model of the sample and the experiment
 
@@ -14,12 +60,18 @@ The calculated intensity depends on more than atom positions. EasyDiffraction se
 
 | Part | Describes | Examples |
 | --- | --- | --- |
-| Structure | The crystalline sample | Unit cell, symmetry, atom sites, occupancies, displacement parameters |
-| Experiment | How it is observed | Wavelength or time-of-flight calibration, peak profile, background, scale and excluded regions |
+| [:material-puzzle: Structure](analysis-workflow/structure.md) | The crystalline sample | Unit cell, symmetry, atom sites, occupancies, displacement parameters |
+| [:material-microscope: Experiment](analysis-workflow/experiment.md) | How it is observed | Wavelength or time-of-flight calibration, peak profile, background, scale and excluded regions |
 
 A disagreement between measured and calculated patterns can therefore have several causes. A peak-position error may come from the cell or calibration; a broad mismatch underneath peaks may come from the background; an intensity mismatch can involve the structure as well as experiment settings.
 
 ## Calculation before refinement
+
+<ol class="ed-workflow-diagram ed-concept-flow" style="--ed-flow-columns:3" markdown="1" aria-label="Model calculation and comparison">
+<li markdown="1">[:material-puzzle: Structure + experiment](#a-model-of-the-sample-and-the-experiment)</li>
+<li markdown="1">[:lucide-chart-no-axes-combined: Calculated pattern](../physics/rietveld.md#eq-rietveld-pattern)</li>
+<li markdown="1">[:lucide-git-compare: Compare with observations](#refinement-is-an-optimisation-problem)</li>
+</ol>
 
 A calculation predicts the diffraction signal from the current structure and experiment. It does not need measured intensities. Use it to inspect peak positions and the influence of the model before fitting.
 
@@ -30,6 +82,17 @@ A refinement requires observations to compare against. It changes the parameters
 A least-squares fit reduces a weighted difference between observations and calculations. The starting model, free-parameter set, constraints, excluded regions and minimizer conditions all influence the result.
 
 Start from a physically meaningful model. Inspect the initial pattern, allow parameters to vary deliberately, and review the result after each meaningful change. Adding more free parameters may reduce a residual without making the model more informative.
+
+## Least squares and Bayesian analysis {#least-squares-and-bayesian-analysis}
+
+Both compare a model with observations, but summarise parameter uncertainty differently.
+
+| Approach | What it reports |
+| --- | --- |
+| Least squares | A best-fit parameter set and, when the covariance can be estimated, standard uncertainties and correlations |
+| Bayesian sampling | A posterior distribution combining a likelihood with prior information, from which credible intervals and correlations can be summarised |
+
+The fitting instructions in this documentation use **least squares**. Its [objective and covariance conventions](../physics/minimization.md) explain the reported uncertainties. Bayesian sampling is a separate workflow; the older library's sampler choices should not be assumed to be available in this application.
 
 ## A result needs interpretation
 
