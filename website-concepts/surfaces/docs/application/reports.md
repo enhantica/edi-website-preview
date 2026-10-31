@@ -152,7 +152,7 @@ Use **Save report** again to bring the selected formats up to date. The status s
 
 Saving a project keeps the working model and report settings, but does not generate a new report. Save each for its purpose: the project for continuing the analysis, the report for communicating it.
 
-The same report settings can be used from [Python](../python/reports.md) or [the Command Line](../cli/reports.md).
+The same report settings can be used from [<span class="ed-interface-icons" aria-hidden="true">:simple-python:</span> Python](../python/reports.md){ .ed-interface-link } or [<span class="ed-interface-icons" aria-hidden="true">:lucide-square-terminal:</span> the Command Line](../cli/reports.md){ .ed-interface-link }.
 
 <!-- gui-guide:save-the-project-too -->
 <div class="gui-viewer" markdown="1">

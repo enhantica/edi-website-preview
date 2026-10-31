@@ -11,7 +11,7 @@ The interfaces share the project model and native calculation core, using crysta
 ## Documentation
 
 - [User guide](../user-guide/index.md) explains the shared model and analysis workflow.
-- [Application](../application/index.md), [Python](../python/index.md) and [Command Line](../cli/index.md) explain how to follow that workflow in each interface.
+- [<span class="ed-interface-icons" aria-hidden="true">:lucide-globe: :lucide-monitor:</span> Application](../application/index.md){ .ed-interface-link }, [<span class="ed-interface-icons" aria-hidden="true">:simple-python:</span> Python](../python/index.md){ .ed-interface-link } and [<span class="ed-interface-icons" aria-hidden="true">:lucide-square-terminal:</span> Command Line](../cli/index.md){ .ed-interface-link } explain how to follow that workflow in each interface.
 - [Physics](../physics/index.md) explains the scientific models, equations and conventions.
 
 ## Open scientific software

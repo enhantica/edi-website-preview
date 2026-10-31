@@ -596,4 +596,4 @@ Change the cell length **a** slightly on **Structure** and watch the peak positi
 
 ## Continue with the same project
 
-Open the saved project in [Python](../python/examples.md) or run it from the [Command Line](../cli/examples.md). Try [joint refinement](refine.md) or a [scan](scans.md) when you are ready for several measurements.
+Open the saved project in [<span class="ed-interface-icons" aria-hidden="true">:simple-python:</span> Python](../python/examples.md){ .ed-interface-link } or run it from the [<span class="ed-interface-icons" aria-hidden="true">:lucide-square-terminal:</span> Command Line](../cli/examples.md){ .ed-interface-link }. Try [joint refinement](refine.md) or a [scan](scans.md) when you are ready for several measurements.

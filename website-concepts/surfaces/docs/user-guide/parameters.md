@@ -22,7 +22,7 @@ The [project model](analysis-workflow/project.md) keeps structure quantities sep
 
 A **free** parameter is allowed to change during [refinement](../physics/rietveld.md#eq-weighted-residual). An active **fixed** parameter contributes to the calculation but keeps the value you supplied. A stored-only field is different: retaining it does not establish a calculation effect. The [parameter index](../physics/parameters.md) identifies the known stored-only fields and model-specific roles.
 
-Review the free set before fitting. Only quantities that can vary independently belong in it; symmetry-related or constrained values do not add independent degrees of freedom. Keep the chosen free set with the saved project. Edit the free set in the [Application](../application/parameters.md) or [Python](../python/structures.md). [Command Line](../cli/fit.md) uses the choices saved in the project.
+Review the free set before fitting. Only quantities that can vary independently belong in it; symmetry-related or constrained values do not add independent degrees of freedom. Keep the chosen free set with the saved project. Edit the free set in the [<span class="ed-interface-icons" aria-hidden="true">:lucide-globe: :lucide-monitor:</span> Application](../application/parameters.md){ .ed-interface-link } or [<span class="ed-interface-icons" aria-hidden="true">:simple-python:</span> Python](../python/structures.md){ .ed-interface-link }. [<span class="ed-interface-icons" aria-hidden="true">:lucide-square-terminal:</span> Command Line](../cli/fit.md){ .ed-interface-link } uses the choices saved in the project.
 
 ## Uncertainties
 

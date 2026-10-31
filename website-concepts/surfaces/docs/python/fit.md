@@ -62,4 +62,4 @@ project.save_as('refined-project')
 
 `save_as()` puts the project in the new folder and makes that its location for later saves. A Python single or joint fit does not automatically save your project. Scan analysis also writes its progress results during the run; retain the input project separately when you need its initial state.
 
-Open the saved result in [the application](../application/index.md) to inspect it visually, or run the project through [the Command Line](../cli/fit.md).
+Open the saved result in [the application](../application/index.md) to inspect it visually, or run the project through [<span class="ed-interface-icons" aria-hidden="true">:lucide-square-terminal:</span> the Command Line](../cli/fit.md){ .ed-interface-link }.

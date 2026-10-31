@@ -22,4 +22,4 @@ The same application runs in your browser or on your desktop, with workflow page
 [Explore the application layout](workspace.md){ .md-button }
 [Follow an example refinement](first-refinement.md){ .md-button }
 
-For file access and saving, read [Web application](browser.md) or [Desktop application](desktop.md).
+For file access and saving, read [<span class="ed-interface-icons" aria-hidden="true">:lucide-globe:</span> Web application](browser.md){ .ed-interface-link } or [<span class="ed-interface-icons" aria-hidden="true">:lucide-monitor:</span> Desktop application](desktop.md){ .ed-interface-link }.

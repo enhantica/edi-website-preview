@@ -31,4 +31,4 @@ A runnable experiment needs valid structure links and either observations with u
 
 For scans, retain the declared source files and their order along with the template and results. Moving a project may require checking that the scan's external input location is still available.
 
-Create, open and save a project in the [Application](../../application/projects.md), [Python](../../python/projects.md) or [Command Line](../../cli/files.md).
+Create, open and save a project in the [<span class="ed-interface-icons" aria-hidden="true">:lucide-globe: :lucide-monitor:</span> Application](../../application/projects.md){ .ed-interface-link }, [<span class="ed-interface-icons" aria-hidden="true">:simple-python:</span> Python](../../python/projects.md){ .ed-interface-link } or [<span class="ed-interface-icons" aria-hidden="true">:lucide-square-terminal:</span> Command Line](../../cli/files.md){ .ed-interface-link }.

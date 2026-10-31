@@ -30,4 +30,4 @@ A project may contain several structures. An experiment links the structures tha
 
 Check which phases should contribute and whether their links are enabled. Structural quantities describe the sample; background and peak-profile terms belong to the experiment even though they also affect the calculated pattern.
 
-Edit structures in the [Application](../../application/structures.md) or [Python](../../python/structures.md), then [calculate the saved model from Command Line](../../cli/calculate.md).
+Edit structures in the [<span class="ed-interface-icons" aria-hidden="true">:lucide-globe: :lucide-monitor:</span> Application](../../application/structures.md){ .ed-interface-link } or [<span class="ed-interface-icons" aria-hidden="true">:simple-python:</span> Python](../../python/structures.md){ .ed-interface-link }, then [calculate the saved model from Command Line](../../cli/calculate.md).

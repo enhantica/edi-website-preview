@@ -122,7 +122,7 @@ A report is separate: saving a project does not create a fresh report. Use [Save
 
 ## Move to another interface
 
-Open the saved folder, `project.edi` or archive from [Python](../python/index.md) or [the Command Line](../cli/index.md). The shared [project concepts](../user-guide/analysis-workflow/project.md) explain what those interfaces read.
+Open the saved folder, `project.edi` or archive from [<span class="ed-interface-icons" aria-hidden="true">:simple-python:</span> Python](../python/index.md){ .ed-interface-link } or [<span class="ed-interface-icons" aria-hidden="true">:lucide-square-terminal:</span> the Command Line](../cli/index.md){ .ed-interface-link }. The shared [project concepts](../user-guide/analysis-workflow/project.md) explain what those interfaces read.
 
 <!-- gui-guide:move-to-another-interface -->
 <div class="gui-viewer" markdown="1">

@@ -34,4 +34,4 @@ Link each contributing structure and review its scale. One experiment can sum co
 
 Scales connect phase contributions to the experiment. Interpret any derived composition or phase fraction in the context of the model and its conventions.
 
-Configure experiments in the [Application](../../application/experiments.md) or [Python](../../python/experiments.md), then [use the saved experiments from Command Line](../../cli/experiments.md).
+Configure experiments in the [<span class="ed-interface-icons" aria-hidden="true">:lucide-globe: :lucide-monitor:</span> Application](../../application/experiments.md){ .ed-interface-link } or [<span class="ed-interface-icons" aria-hidden="true">:simple-python:</span> Python](../../python/experiments.md){ .ed-interface-link }, then [use the saved experiments from Command Line](../../cli/experiments.md).

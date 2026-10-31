@@ -14,10 +14,10 @@ hide:
 
 <nav class="ed-landing__interfaces" aria-label="Explore EasyDiffraction interfaces" markdown>
 
-[:lucide-globe:{ aria-hidden="true" } Web app](application/browser.md "Web app documentation")
-[:lucide-monitor:{ aria-hidden="true" } Desktop app](application/desktop.md#download "Desktop app downloads")
-[:simple-python:{ aria-hidden="true" } Python](python/index.md "Python library documentation")
-[:lucide-square-terminal:{ aria-hidden="true" } Command Line](cli/index.md "Command Line documentation")
+[<span class="ed-interface-icons" aria-hidden="true">:lucide-globe:</span> Web app](application/browser.md "Web app documentation"){ .ed-interface-link }
+[<span class="ed-interface-icons" aria-hidden="true">:lucide-monitor:</span> Desktop app](application/desktop.md#download "Desktop app downloads"){ .ed-interface-link }
+[<span class="ed-interface-icons" aria-hidden="true">:simple-python:</span> Python](python/index.md "Python library documentation"){ .ed-interface-link }
+[<span class="ed-interface-icons" aria-hidden="true">:lucide-square-terminal:</span> Command Line](cli/index.md "Command Line documentation"){ .ed-interface-link }
 
 </nav>
 

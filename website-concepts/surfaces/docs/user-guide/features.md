@@ -35,7 +35,7 @@ Available, planned and proposed features appear together in their scientific gro
 
     The web and desktop apps share the scientific controls. Browser file access and downloads differ; see [browser projects](../application/browser.md). Files, controls and rendering are documented under each interface tab.
 
-## Structure model
+## :material-puzzle: Structure model {#structure-model}
 
 ### Crystal structure
 
@@ -65,7 +65,7 @@ Available, planned and proposed features appear together in their scientific gro
 | [Polarized diffraction](../physics/diffraction.md#polarized-diffraction) | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">:status-planned:</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">:status-planned:</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">:status-planned:</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">:status-planned:</span> |
 | [Total scattering and PDF](../physics/diffraction.md#total-scattering-and-pdf) | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">:status-planned:</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">:status-planned:</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">:status-planned:</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">:status-planned:</span> |
 
-## Experiment model
+## :material-microscope: Experiment model {#experiment-model}
 
 ### Diffraction modes
 
@@ -169,7 +169,7 @@ Command Line honours automatic-background settings saved in a project, including
 | [Single-crystal reflection exclusions](../physics/reliability.md#single-crystal-reflection-exclusions) | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">:status-planned:</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">:status-planned:</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">:status-planned:</span> | <span role="img" aria-label="Shared scientific model planned; unavailable now; interface delivery is not specified" title="Shared scientific model planned; unavailable now; interface delivery is not specified">:status-planned:</span> |
 
 
-## Analysis and refinement
+## :material-calculator: Analysis and refinement {#analysis-and-refinement}
 
 <span id="calculation-and-fitting-modes"></span>
 
@@ -215,7 +215,7 @@ A dictionary refinability flag does not by itself establish an admissible free p
 | [Single-crystal factors and reflection subsets](../physics/reliability.md#single-crystal-factors) | <span role="img" aria-label="Available" title="Available">:status-available:</span> | <span role="img" aria-label="Available" title="Available">:status-available:</span> | <span role="img" aria-label="Available" title="Available">:status-available:</span> | <span role="img" aria-label="Available" title="Available">:status-available:</span> |
 
 
-## Projects and results
+## :material-archive: Projects and results {#projects-and-results}
 
 <span id="project-files-and-measured-input"></span>
 

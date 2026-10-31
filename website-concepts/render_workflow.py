@@ -20,13 +20,9 @@ def render() -> None:
     config = yaml.load((ROOT / 'surfaces/mkdocs.yml').read_text(), Loader=yaml.BaseLoader)
     stages = config['extra']['workflow_icons']
     package = distribution('zensical')
-    diagram = [
-        '<div class="ed-workflow-diagram">',
-        '<svg viewBox="0 0 760 92" role="img" aria-labelledby="workflow-title" xmlns="http://www.w3.org/2000/svg">',
-        '<title id="workflow-title">Project, Structure, Experiment, Analysis, Report. Revisit earlier stages when assessing the fit.</title>',
-        '<defs><marker id="workflow-arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 6 3 0 6" fill="#0084c7"/></marker></defs>',
-    ]
-    for index, (title, name) in enumerate(stages.items()):
+    # Both entry pages share one responsive component and the navigation's icon paths.
+    steps = []
+    for title, name in stages.items():
         relative = 'zensical/templates/.icons/material/' + name + '.svg'
         source = Path(package.locate_file(relative))
         root = ElementTree.fromstring(source.read_bytes())
@@ -37,30 +33,43 @@ def render() -> None:
         )
         if not paths:
             raise ValueError('Workflow icon has no vector paths: ' + name)
-        x = 4 + index * 152
-        diagram += [
-            f'<a href="{title.lower()}/" aria-label="{title}">',
-            f'<rect x="{x}" y="12" width="136" height="68" rx="5" fill="#0084c7" fill-opacity=".07" stroke="#0084c7"/>',
-            f'<svg x="{x + 58}" y="21" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">{paths}</svg>',
-            f'<text x="{x + 68}" y="65" fill="currentColor" text-anchor="middle" font-size="16">{title}</text></a>',
-        ]
-        if index < len(stages) - 1:
+        steps.append((title, paths))
+    for filename, prefix in [
+        ('user-guide/analysis-workflow/index.md', ''),
+        ('user-guide/index.md', 'analysis-workflow/'),
+    ]:
+        diagram = ['<ol class="ed-workflow-diagram" aria-label="Analysis workflow">']
+        for title, paths in steps:
             diagram.append(
-                f'<path d="M{x + 137} 46h13" stroke="#0084c7" marker-end="url(#workflow-arrow)"/>'
+                f'<li><a href="{prefix}{title.lower()}/">'
+                f'<svg viewBox="0 0 24 24" aria-hidden="true">{paths}</svg>'
+                f'<span>{title}</span></a></li>'
             )
-    diagram += ['</svg>', '</div>']
-    path = DOCS / 'user-guide/analysis-workflow/index.md'
+        diagram.append('</ol>')
+        replace(DOCS / filename, 'workflow-diagram', '\n'.join(diagram))
+    # Broad scientific groups keep the same stage symbols as their navigation.
+    group_stages = {
+        'Structure model': 'Structure',
+        'Experiment model': 'Experiment',
+        'Analysis and refinement': 'Analysis',
+        'Projects and results': 'Project',
+    }
+    path = DOCS / 'user-guide/features.md'
     text = path.read_text()
-    if '<!-- workflow-diagram -->' not in text:
+    for title, stage in group_stages.items():
         text = re.sub(
-            r'<svg viewBox="0 0 760 .*?</svg>',
-            '<!-- workflow-diagram -->\n<!-- /workflow-diagram -->',
+            r'^## (?::material-[a-z-]+: )?' + re.escape(title) + r'( \{#[^}]+\})?$',
+            lambda match, stage=stage, title=title: (
+                '## :material-'
+                + stages[stage]
+                + ': '
+                + title
+                + (match[1] or ' {#' + title.lower().replace(' ', '-') + '}')
+            ),
             text,
-            count=1,
-            flags=re.DOTALL,
+            flags=re.MULTILINE,
         )
-        path.write_text(text)
-    replace(path, 'workflow-diagram', '\n'.join(diagram))
+    path.write_text(text)
     # Stage links use the same identifiers in the diagram, overview table and guides.
     for path in (DOCS / 'user-guide').rglob('*.md'):
         text = path.read_text()

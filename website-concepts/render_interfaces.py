@@ -11,6 +11,7 @@ import struct
 from pathlib import Path
 from urllib.parse import urlsplit
 
+import yaml
 from defusedxml import ElementTree
 
 ROOT = Path(__file__).resolve().parent
@@ -74,6 +75,52 @@ def replace_marker(source: Path, kind: str, key: str, content: str) -> None:
     source.write_text(text)
 
 
+def render_interface_links() -> None:
+    config = yaml.load((ROOT / 'surfaces/mkdocs.yml').read_text(), Loader=yaml.BaseLoader)
+    icons = config['extra']['interface_icons']
+    for path in DOCS.rglob('*.md'):
+
+        def decorate(match):
+            label, url, attributes = match.groups()
+            label = re.sub(r'^<span class="ed-interface-icons"[^>]*>.*?</span>\s*', '', label)
+            label = re.sub(r':[a-z][a-z0-9-]+:(?:\{[^}]*\})?\s*', '', label)
+            name = label.removeprefix('the ')
+            if name not in icons:
+                return match[0]
+            symbols = ' '.join(':' + name.replace('/', '-') + ':' for name in icons[name])
+            attributes = attributes or ''
+            if '.ed-interface-link' not in attributes:
+                attributes = (
+                    attributes.rstrip().removesuffix('}').rstrip() + ' .ed-interface-link }'
+                    if attributes
+                    else '{ .ed-interface-link }'
+                )
+            return (
+                '[<span class="ed-interface-icons" aria-hidden="true">'
+                + symbols
+                + '</span> '
+                + label
+                + ']('
+                + url
+                + ')'
+                + attributes
+            )
+
+        # Code examples keep literal names. Only named interface links get icons.
+        parts = re.split(
+            r'(^```[^\n]*\n.*?^```[^\n]*(?:\n|$))',
+            path.read_text(),
+            flags=re.MULTILINE | re.DOTALL,
+        )
+        for index in range(0, len(parts), 2):
+            parts[index] = re.sub(
+                r'(?<!!)\[([^\]\n]+)\]\(([^)\n]+)\)([ \t]*\{[^}\n]*\})?',
+                decorate,
+                parts[index],
+            )
+        path.write_text(''.join(parts))
+
+
 def render() -> None:
     capture = DOCS / 'assets/interfaces/capture.json'
     if capture.exists():
@@ -133,6 +180,7 @@ def render() -> None:
             family,
             '<div class="ed-downloads">' + '\n'.join(buttons) + '</div>',
         )
+    render_interface_links()
 
 
 if __name__ == '__main__':

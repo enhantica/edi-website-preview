@@ -42,5 +42,24 @@
 .md-typeset .tabbed-labels .gui-fa { flex: none; margin-right: 0; }
 @media (prefers-reduced-motion: reduce) { .md-typeset .md-button { transition: none; } }
 
-.ed-workflow-diagram {overflow-x:auto;margin-block:1.5rem;color:var(--md-default-fg-color)}
-.md-typeset .ed-workflow-diagram > svg {display:block;width:100%;min-width:36rem;max-width:none;height:auto}
+.md-typeset ol.ed-workflow-diagram {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1rem;list-style:none;margin:1.5rem 0;padding:0}
+.md-typeset .ed-workflow-diagram li {position:relative;margin:0;padding:0}
+.md-typeset .ed-workflow-diagram li:not(:last-child)::after {content:"→";position:absolute;inset-inline-end:-.8rem;top:50%;transform:translateY(-50%);color:var(--md-primary-fg-color)}
+.md-typeset .ed-workflow-diagram a {display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;padding:.5rem .2rem;border:1px solid var(--md-primary-fg-color);border-radius:.25rem;background:var(--md-accent-fg-color--transparent);font-size:.75rem;white-space:nowrap;text-decoration:none}
+.md-typeset .ed-workflow-diagram svg {width:1.1rem;height:1.1rem;fill:currentColor;flex:none}
+.md-typeset .ed-workflow-diagram a:hover {background:var(--md-primary-fg-color);color:var(--md-primary-bg-color)}
+.md-typeset .ed-workflow-diagram a:focus-visible {outline:2px solid var(--md-primary-fg-color);outline-offset:3px}
+.md-typeset .ed-workflow-stage-table :is(th,td):first-child {width:1%;white-space:nowrap}
+.md-typeset .ed-workflow-stage-table td:first-child a {display:inline-flex;align-items:center;gap:.3em;white-space:nowrap}
+.md-typeset .ed-workflow-stage-table td:first-child .twemoji {margin:0;flex:none}
+.ed-interface-link {display:inline-flex;align-items:center;gap:.3em;white-space:nowrap}
+.md-typeset .ed-interface-link .twemoji {margin:0;flex:none}
+.ed-interface-icons {display:inline-flex;align-items:center;gap:.18em;vertical-align:middle}
+.md-tabs__link:has(.ed-interface-icons) {display:inline-flex;align-items:center;gap:.35em}
+.ed-interface-icons svg {width:1em;height:1em;fill:currentColor;flex:none}
+.md-typeset .ed-interface-icons svg[fill="none"], .ed-interface-icons svg[fill="none"] {fill:none}
+@media (max-width: 600px) {
+  .md-typeset ol.ed-workflow-diagram {grid-template-columns:1fr;gap:1rem}
+  .md-typeset .ed-workflow-diagram a {flex-direction:row;padding:.4rem}
+  .md-typeset .ed-workflow-diagram li:not(:last-child)::after {content:"↓";inset-inline-end:50%;top:auto;bottom:-1rem;transform:translateX(50%);line-height:1rem}
+}
