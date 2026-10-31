@@ -122,7 +122,7 @@ The atom sites of the structure: position, occupancy and isotropic displacement.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-site-id">
 
-### Unique atom-site identifier {#atom-site-id}
+### Atom-site identifier {#atom-site-id}
 
 Unique atom-site identifier.
 
@@ -132,7 +132,7 @@ Unique atom-site identifier.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-site-type-symbol">
 
-### Chemical symbol of the atom at this site {#atom-site-type-symbol}
+### Chemical element {#atom-site-type-symbol}
 
 Chemical symbol of the atom at this site.
 
@@ -142,7 +142,7 @@ Chemical symbol of the atom at this site.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-site-wyckoff-letter">
 
-### Wyckoff letter of the site in its space group {#atom-site-wyckoff-letter}
+### Wyckoff position {#atom-site-wyckoff-letter}
 
 Wyckoff letter of the site in its space group.
 
@@ -152,7 +152,7 @@ Wyckoff letter of the site in its space group.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-site-adp-type">
 
-### Atomic displacement parameter type: Biso, Uiso, Bani, Uani or beta {#atom-site-adp-type}
+### Displacement parameter type {#atom-site-adp-type}
 
 Atomic displacement parameter type: Biso, Uiso, Bani, Uani or beta; Biso when absent.
 
@@ -206,7 +206,7 @@ Position of the representative atom site along the c lattice vector, expressed a
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-site-occupancy">
 
-### Site occupancy {#atom-site-occupancy}
+### Occupancy {#atom-site-occupancy}
 
 Site occupancy (raw occupancy; m/M multiplicity applied in &#124;F&#124;^2).
 
@@ -242,7 +242,7 @@ The anisotropic displacement of each anisotropic atom site.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-site-aniso-id">
 
-### Id {#atom-site-aniso-id}
+### Anisotropic atom-site identifier {#atom-site-aniso-id}
 
 The id of the anisotropic atom site the row belongs to.
 
@@ -252,7 +252,7 @@ The id of the anisotropic atom site the row belongs to.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-site-aniso-adp-11">
 
-### Anisotropic displacement tensor component 11 {#atom-site-aniso-adp-11}
+### Displacement tensor component 11 {#atom-site-aniso-adp-11}
 
 Anisotropic displacement tensor component 11 (diagonal 11) in the site&#x27;s declared type: U for Uani, B for Bani (Å²), dimensionless beta for beta.
 
@@ -270,7 +270,7 @@ Anisotropic displacement tensor component 11 (diagonal 11) in the site&#x27;s de
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-site-aniso-adp-22">
 
-### Anisotropic displacement tensor component 22 {#atom-site-aniso-adp-22}
+### Displacement tensor component 22 {#atom-site-aniso-adp-22}
 
 Anisotropic displacement tensor component 22 (diagonal 22) in the site&#x27;s declared type: U for Uani, B for Bani (Å²), dimensionless beta for beta.
 
@@ -288,7 +288,7 @@ Anisotropic displacement tensor component 22 (diagonal 22) in the site&#x27;s de
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-site-aniso-adp-33">
 
-### Anisotropic displacement tensor component 33 {#atom-site-aniso-adp-33}
+### Displacement tensor component 33 {#atom-site-aniso-adp-33}
 
 Anisotropic displacement tensor component 33 (diagonal 33) in the site&#x27;s declared type: U for Uani, B for Bani (Å²), dimensionless beta for beta.
 
@@ -306,7 +306,7 @@ Anisotropic displacement tensor component 33 (diagonal 33) in the site&#x27;s de
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-site-aniso-adp-12">
 
-### Anisotropic displacement tensor component 12 {#atom-site-aniso-adp-12}
+### Displacement tensor component 12 {#atom-site-aniso-adp-12}
 
 Anisotropic displacement tensor component 12 (off-diagonal 12) in the site&#x27;s declared type: U for Uani, B for Bani (Å²), dimensionless beta for beta.
 
@@ -324,7 +324,7 @@ Anisotropic displacement tensor component 12 (off-diagonal 12) in the site&#x27;
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-site-aniso-adp-13">
 
-### Anisotropic displacement tensor component 13 {#atom-site-aniso-adp-13}
+### Displacement tensor component 13 {#atom-site-aniso-adp-13}
 
 Anisotropic displacement tensor component 13 (off-diagonal 13) in the site&#x27;s declared type: U for Uani, B for Bani (Å²), dimensionless beta for beta.
 
@@ -342,7 +342,7 @@ Anisotropic displacement tensor component 13 (off-diagonal 13) in the site&#x27;
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-site-aniso-adp-23">
 
-### Anisotropic displacement tensor component 23 {#atom-site-aniso-adp-23}
+### Displacement tensor component 23 {#atom-site-aniso-adp-23}
 
 Anisotropic displacement tensor component 23 (off-diagonal 23) in the site&#x27;s declared type: U for Uani, B for Bani (Å²), dimensionless beta for beta.
 
@@ -364,7 +364,7 @@ Neutron coherent scattering lengths that replace the built-in table for an eleme
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="scattering-length-type-symbol">
 
-### Type symbol {#scattering-length-type-symbol}
+### Type {#scattering-length-type-symbol}
 
 The element or isotope the scattering length applies to.
 
@@ -374,7 +374,7 @@ The element or isotope the scattering length applies to.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="scattering-length-length-fm">
 
-### Length fm {#scattering-length-length-fm}
+### Neutron scattering length {#scattering-length-length-fm}
 
 The coherent neutron scattering length.
 
@@ -390,7 +390,7 @@ How bonds between atoms are found.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="geom-min-bond-distance-cutoff">
 
-### Atoms closer than this are not bonded {#geom-min-bond-distance-cutoff}
+### Minimum bond distance {#geom-min-bond-distance-cutoff}
 
 Atoms closer than this are not bonded.
 
@@ -402,7 +402,7 @@ Atoms closer than this are not bonded.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="geom-bond-distance-inc">
 
-### How much longer than the sum of the covalent radii a bond may be {#geom-bond-distance-inc}
+### Bond-distance tolerance {#geom-bond-distance-inc}
 
 How much longer than the sum of the covalent radii a bond may be.
 
@@ -418,7 +418,7 @@ How the structure view draws the structure: atoms, colours, labels and what else
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="structure-view-atom-view">
 
-### What sets the size of each atom {#structure-view-atom-view}
+### Atom radius model {#structure-view-atom-view}
 
 What sets the size of each atom.
 
@@ -460,7 +460,7 @@ The atoms&#x27; drawn size as a share of their radius.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="structure-view-adp-probability">
 
-### Probability {#structure-view-adp-probability}
+### Ellipsoid probability {#structure-view-adp-probability}
 
 The probability the displacement ellipsoids enclose.
 
@@ -480,7 +480,7 @@ Whether each atom is labelled.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="structure-view-atoms">
 
-### Which atoms are drawn {#structure-view-atoms}
+### Atoms shown {#structure-view-atoms}
 
 Which atoms are drawn.
 
@@ -530,7 +530,7 @@ The space group&#x27;s symmetry operators, in the order a symmetry code refers t
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="space-group-symop-operation-xyz">
 
-### Operation {#space-group-symop-operation-xyz}
+### Symmetry operation {#space-group-symop-operation-xyz}
 
 A symmetry operator as x, y, z expressions.
 
@@ -544,7 +544,7 @@ Every atom of the unit cell, generated from the atom sites by symmetry.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="expanded-atom-site-atom-site-id">
 
-### Site {#expanded-atom-site-atom-site-id}
+### Source atom site {#expanded-atom-site-atom-site-id}
 
 The atom site this atom is generated from.
 
@@ -554,7 +554,7 @@ The atom site this atom is generated from.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="expanded-atom-site-site-symmetry">
 
-### Symmetry {#expanded-atom-site-site-symmetry}
+### Generating symmetry operation {#expanded-atom-site-site-symmetry}
 
 The symmetry code that generates this atom from its site.
 
@@ -630,7 +630,7 @@ Cartesian Z-coordinate.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="expanded-atom-site-occupancy">
 
-### Occupancy of the atom {#expanded-atom-site-occupancy}
+### Occupancy {#expanded-atom-site-occupancy}
 
 Occupancy of the atom.
 
@@ -640,7 +640,7 @@ Occupancy of the atom.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="expanded-atom-site-u-iso">
 
-### Isotropic displacement of the atom, as U {#expanded-atom-site-u-iso}
+### Isotropic displacement U {#expanded-atom-site-u-iso}
 
 Isotropic displacement of the atom, as U.
 
@@ -652,7 +652,7 @@ Isotropic displacement of the atom, as U.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="expanded-atom-site-cluster-id">
 
-### Atoms within one shared position carry the same cluster number {#expanded-atom-site-cluster-id}
+### Coincident-atom cluster {#expanded-atom-site-cluster-id}
 
 Atoms within one shared position carry the same cluster number.
 
@@ -742,7 +742,7 @@ The matrix from fractional to Cartesian coordinates.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-sites-cartn-transform-mat-11">
 
-### Element 11 of the fractional-to-Cartesian matrix {#atom-sites-cartn-transform-mat-11}
+### Coordinate-transform element 11 {#atom-sites-cartn-transform-mat-11}
 
 Element 11 of the fractional-to-Cartesian matrix.
 
@@ -754,7 +754,7 @@ Element 11 of the fractional-to-Cartesian matrix.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-sites-cartn-transform-mat-12">
 
-### Element 12 of the fractional-to-Cartesian matrix {#atom-sites-cartn-transform-mat-12}
+### Coordinate-transform element 12 {#atom-sites-cartn-transform-mat-12}
 
 Element 12 of the fractional-to-Cartesian matrix.
 
@@ -766,7 +766,7 @@ Element 12 of the fractional-to-Cartesian matrix.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-sites-cartn-transform-mat-13">
 
-### Element 13 of the fractional-to-Cartesian matrix {#atom-sites-cartn-transform-mat-13}
+### Coordinate-transform element 13 {#atom-sites-cartn-transform-mat-13}
 
 Element 13 of the fractional-to-Cartesian matrix.
 
@@ -778,7 +778,7 @@ Element 13 of the fractional-to-Cartesian matrix.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-sites-cartn-transform-mat-21">
 
-### Element 21 of the fractional-to-Cartesian matrix {#atom-sites-cartn-transform-mat-21}
+### Coordinate-transform element 21 {#atom-sites-cartn-transform-mat-21}
 
 Element 21 of the fractional-to-Cartesian matrix.
 
@@ -790,7 +790,7 @@ Element 21 of the fractional-to-Cartesian matrix.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-sites-cartn-transform-mat-22">
 
-### Element 22 of the fractional-to-Cartesian matrix {#atom-sites-cartn-transform-mat-22}
+### Coordinate-transform element 22 {#atom-sites-cartn-transform-mat-22}
 
 Element 22 of the fractional-to-Cartesian matrix.
 
@@ -802,7 +802,7 @@ Element 22 of the fractional-to-Cartesian matrix.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-sites-cartn-transform-mat-23">
 
-### Element 23 of the fractional-to-Cartesian matrix {#atom-sites-cartn-transform-mat-23}
+### Coordinate-transform element 23 {#atom-sites-cartn-transform-mat-23}
 
 Element 23 of the fractional-to-Cartesian matrix.
 
@@ -814,7 +814,7 @@ Element 23 of the fractional-to-Cartesian matrix.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-sites-cartn-transform-mat-31">
 
-### Element 31 of the fractional-to-Cartesian matrix {#atom-sites-cartn-transform-mat-31}
+### Coordinate-transform element 31 {#atom-sites-cartn-transform-mat-31}
 
 Element 31 of the fractional-to-Cartesian matrix.
 
@@ -826,7 +826,7 @@ Element 31 of the fractional-to-Cartesian matrix.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-sites-cartn-transform-mat-32">
 
-### Element 32 of the fractional-to-Cartesian matrix {#atom-sites-cartn-transform-mat-32}
+### Coordinate-transform element 32 {#atom-sites-cartn-transform-mat-32}
 
 Element 32 of the fractional-to-Cartesian matrix.
 
@@ -838,7 +838,7 @@ Element 32 of the fractional-to-Cartesian matrix.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-sites-cartn-transform-mat-33">
 
-### Element 33 of the fractional-to-Cartesian matrix {#atom-sites-cartn-transform-mat-33}
+### Coordinate-transform element 33 {#atom-sites-cartn-transform-mat-33}
 
 Element 33 of the fractional-to-Cartesian matrix.
 
@@ -850,7 +850,7 @@ Element 33 of the fractional-to-Cartesian matrix.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="atom-sites-cartn-transform-axes">
 
-### How the Cartesian axes are placed in the cell {#atom-sites-cartn-transform-axes}
+### Axes {#atom-sites-cartn-transform-axes}
 
 How the Cartesian axes are placed in the cell.
 
@@ -864,7 +864,7 @@ What kind of experiment this is: sample form, beam mode, probe and scattering ty
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="experiment-type-beam-mode">
 
-### How the pattern is measured {#experiment-type-beam-mode}
+### Beam mode {#experiment-type-beam-mode}
 
 How the pattern is measured.
 
@@ -909,7 +909,7 @@ The radiation scattered by the sample.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="experiment-type-scattering-type">
 
-### Which scattering the pattern is modelled with {#experiment-type-scattering-type}
+### Scattering type {#experiment-type-scattering-type}
 
 Which scattering the pattern is modelled with.
 
@@ -957,7 +957,7 @@ The grid a pattern is calculated on when no data are measured.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="data-range-two-theta-min">
 
-### Two theta min {#data-range-two-theta-min}
+### Min {#data-range-two-theta-min}
 
 The first 2θ of the calculation grid.
 
@@ -969,7 +969,7 @@ The first 2θ of the calculation grid.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="data-range-two-theta-max">
 
-### Two theta max {#data-range-two-theta-max}
+### Max {#data-range-two-theta-max}
 
 The last 2θ of the calculation grid.
 
@@ -993,7 +993,7 @@ The 2θ step of the calculation grid.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="data-range-two-theta">
 
-### Two theta {#data-range-two-theta}
+### Scattering angle {#data-range-two-theta}
 
 The 2θ points of the calculation grid.
 
@@ -1005,7 +1005,7 @@ The 2θ points of the calculation grid.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="data-range-time-of-flight-min">
 
-### Time of flight min {#data-range-time-of-flight-min}
+### Min {#data-range-time-of-flight-min}
 
 The first time of flight of the calculation grid.
 
@@ -1017,7 +1017,7 @@ The first time of flight of the calculation grid.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="data-range-time-of-flight-max">
 
-### Time of flight max {#data-range-time-of-flight-max}
+### Max {#data-range-time-of-flight-max}
 
 The last time of flight of the calculation grid.
 
@@ -1041,7 +1041,7 @@ The time-of-flight step of the calculation grid.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="data-range-time-of-flight">
 
-### TOF {#data-range-time-of-flight}
+### Time of flight {#data-range-time-of-flight}
 
 The time-of-flight points of the calculation grid.
 
@@ -1057,7 +1057,7 @@ The background under the diffraction peaks.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="background-intensity">
 
-### Line-segment background intensity anchor {#background-intensity}
+### Background anchor intensity {#background-intensity}
 
 Line-segment background intensity anchor (dimensionless in the reduced pattern; linear).
 
@@ -1081,7 +1081,7 @@ Background anchor position (TOF, us); a fixed node, not a refinable Parameter.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="background-coef">
 
-### Polynomial or Chebyshev background coefficient of the row&#x27;s order {#background-coef}
+### Background coefficient {#background-coef}
 
 Polynomial or Chebyshev background coefficient of the row&#x27;s order (dimensionless in the reduced pattern; linear).
 
@@ -1093,7 +1093,7 @@ Polynomial or Chebyshev background coefficient of the row&#x27;s order (dimensio
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="background-order">
 
-### Order m of a polynomial or Chebyshev background term {#background-order}
+### Background term order {#background-order}
 
 Order m of a polynomial or Chebyshev background term (a non-negative integer; a fixed node, not a refinable Parameter).
 
@@ -1105,7 +1105,7 @@ Order m of a polynomial or Chebyshev background term (a non-negative integer; a 
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="background-origin">
 
-### Origin of the polynomial background, FullProf Bkpos: the terms are powers of x/origin - 1 {#background-origin}
+### Polynomial background origin {#background-origin}
 
 Origin of the polynomial background, FullProf Bkpos: the terms are powers of x/origin - 1 (in the pattern&#x27;s axis units; non-zero).
 
@@ -1117,7 +1117,7 @@ Origin of the polynomial background, FullProf Bkpos: the terms are powers of x/o
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="background-x-min">
 
-### Lower end of the Chebyshev background&#x27;s normalisation domain {#background-x-min}
+### Chebyshev domain minimum {#background-x-min}
 
 Lower end of the Chebyshev background&#x27;s normalisation domain (in the pattern&#x27;s axis units).
 
@@ -1129,7 +1129,7 @@ Lower end of the Chebyshev background&#x27;s normalisation domain (in the patter
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="background-x-max">
 
-### Upper end of the Chebyshev background&#x27;s normalisation domain {#background-x-max}
+### Chebyshev domain maximum {#background-x-max}
 
 Upper end of the Chebyshev background&#x27;s normalisation domain (in the pattern&#x27;s axis units; above x_min).
 
@@ -1141,7 +1141,7 @@ Upper end of the Chebyshev background&#x27;s normalisation domain (in the patter
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="background-type">
 
-### Type {#background-type}
+### Background model {#background-type}
 
 The background function.
 
@@ -1157,7 +1157,7 @@ The background function.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="background-id">
 
-### Id {#background-id}
+### Background row identifier {#background-id}
 
 The name of a background point or term.
 
@@ -1213,7 +1213,7 @@ The peak width the estimation assumes, in points.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="background-estimate-smoothness">
 
-### How smooth the estimated background is {#background-estimate-smoothness}
+### Smoothness {#background-estimate-smoothness}
 
 How smooth the estimated background is.
 
@@ -1223,7 +1223,7 @@ How smooth the estimated background is.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="background-estimate-n-points">
 
-### How many background points the estimation keeps {#background-estimate-n-points}
+### Number of background anchors {#background-estimate-n-points}
 
 How many background points the estimation keeps.
 
@@ -1233,7 +1233,7 @@ How many background points the estimation keeps.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="background-estimate-tolerance">
 
-### How far, in units of the noise, the thinned background may stray {#background-estimate-tolerance}
+### Background thinning tolerance {#background-estimate-tolerance}
 
 How far, in units of the noise, the thinned background may stray.
 
@@ -1243,7 +1243,7 @@ How far, in units of the noise, the thinned background may stray.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="background-estimate-in-peaks">
 
-### What happens to a background point that falls in a peak {#background-estimate-in-peaks}
+### Anchors within peaks {#background-estimate-in-peaks}
 
 What happens to a background point that falls in a peak.
 
@@ -1258,7 +1258,7 @@ What happens to a background point that falls in a peak.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="background-estimate-use-model">
 
-### What the estimation does with the peaks of the calculated pattern {#background-estimate-use-model}
+### Calculated-peak treatment {#background-estimate-use-model}
 
 What the estimation does with the peaks of the calculated pattern.
 
@@ -1308,7 +1308,7 @@ The instrument setup and calibration.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="instrument-calib-d-to-tof-offset">
 
-### TOF calibration zero offset {#instrument-calib-d-to-tof-offset}
+### TOF offset {#instrument-calib-d-to-tof-offset}
 
 TOF calibration zero offset (TOF = zero + Dtt1*d + Dtt2*d^2 + recip/d).
 
@@ -1320,7 +1320,7 @@ TOF calibration zero offset (TOF = zero + Dtt1*d + Dtt2*d^2 + recip/d).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="instrument-calib-d-to-tof-linear">
 
-### TOF calibration linear coefficient Dtt1 {#instrument-calib-d-to-tof-linear}
+### TOF linear {#instrument-calib-d-to-tof-linear}
 
 TOF calibration linear coefficient Dtt1 (us/A).
 
@@ -1332,7 +1332,7 @@ TOF calibration linear coefficient Dtt1 (us/A).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="instrument-calib-d-to-tof-quadratic">
 
-### TOF calibration quadratic coefficient Dtt2 {#instrument-calib-d-to-tof-quadratic}
+### TOF quadratic {#instrument-calib-d-to-tof-quadratic}
 
 TOF calibration quadratic coefficient Dtt2 (us/A^2).
 
@@ -1344,7 +1344,7 @@ TOF calibration quadratic coefficient Dtt2 (us/A^2).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="instrument-calib-d-to-tof-reciprocal">
 
-### TOF calibration reciprocal {#instrument-calib-d-to-tof-reciprocal}
+### TOF reciprocal {#instrument-calib-d-to-tof-reciprocal}
 
 TOF calibration reciprocal (1/d) coefficient (us*A); round-tripped, held fixed in the free set.
 
@@ -1358,7 +1358,7 @@ TOF calibration reciprocal (1/d) coefficient (us*A); round-tripped, held fixed i
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="instrument-calib-twotheta-offset">
 
-### CW zero-point offset in degrees 2theta, subtracted from the observed axis {#instrument-calib-twotheta-offset}
+### Zero-point angular offset {#instrument-calib-twotheta-offset}
 
 CW zero-point offset in degrees 2theta, subtracted from the observed axis.
 
@@ -1370,7 +1370,7 @@ CW zero-point offset in degrees 2theta, subtracted from the observed axis.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="instrument-setup-wavelength">
 
-### Incident neutron wavelength in angstroms {#instrument-setup-wavelength}
+### Wavelength {#instrument-setup-wavelength}
 
 Incident neutron wavelength in angstroms (single wavelength; the doublet tags are X-ray scope).
 
@@ -1386,7 +1386,7 @@ Incident neutron wavelength in angstroms (single wavelength; the doublet tags ar
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="instrument-calib-sample-displacement">
 
-### CW sample-displacement line shift in degrees 2theta {#instrument-calib-sample-displacement}
+### Sample displacement {#instrument-calib-sample-displacement}
 
 CW sample-displacement line shift in degrees 2theta (FullProf SyCos): adds displacement*cos(2theta_B) to each reflection&#x27;s position.
 
@@ -1398,7 +1398,7 @@ CW sample-displacement line shift in degrees 2theta (FullProf SyCos): adds displ
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="instrument-calib-sample-transparency">
 
-### CW sample-transparency line shift in degrees 2theta {#instrument-calib-sample-transparency}
+### Sample transparency {#instrument-calib-sample-transparency}
 
 CW sample-transparency line shift in degrees 2theta (FullProf SySin): adds transparency*sin(2theta_B) to each reflection&#x27;s position.
 
@@ -1410,7 +1410,7 @@ CW sample-transparency line shift in degrees 2theta (FullProf SySin): adds trans
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="instrument-setup-polarization-coefficient">
 
-### X-ray CW polarization coefficient K {#instrument-setup-polarization-coefficient}
+### Polarization coefficient {#instrument-setup-polarization-coefficient}
 
 X-ray CW polarization coefficient K (FullProf Rpolarz): the intensity carries P = 1 - K + K cos^2(2theta_m) cos^2(2theta); 0 disables the correction.
 
@@ -1422,7 +1422,7 @@ X-ray CW polarization coefficient K (FullProf Rpolarz): the intensity carries P 
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="instrument-setup-monochromator-twotheta">
 
-### X-ray CW pre-specimen monochromator angle 2theta_m in degrees {#instrument-setup-monochromator-twotheta}
+### Monochromator 2θ {#instrument-setup-monochromator-twotheta}
 
 X-ray CW pre-specimen monochromator angle 2theta_m in degrees (FullProf stores Cthm = cos^2(2theta_m)); 0 means no monochromator.
 
@@ -1434,7 +1434,7 @@ X-ray CW pre-specimen monochromator angle 2theta_m in degrees (FullProf stores C
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="instrument-setup-wavelength-2">
 
-### X-ray CW second incident wavelength in angstroms {#instrument-setup-wavelength-2}
+### Secondary wavelength {#instrument-setup-wavelength-2}
 
 X-ray CW second incident wavelength in angstroms (FullProf Lambda2, e.g. Cu K-alpha2); used when setup_wavelength_2_to_1_ratio is not 0.
 
@@ -1446,7 +1446,7 @@ X-ray CW second incident wavelength in angstroms (FullProf Lambda2, e.g. Cu K-al
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="instrument-setup-wavelength-2-to-1-ratio">
 
-### X-ray CW intensity of the second wavelength relative to the first {#instrument-setup-wavelength-2-to-1-ratio}
+### Secondary-to-primary intensity ratio {#instrument-setup-wavelength-2-to-1-ratio}
 
 X-ray CW intensity of the second wavelength relative to the first (FullProf Ratio); 0 means a single wavelength.
 
@@ -1494,7 +1494,7 @@ The shape and width of the diffraction peaks.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-rise-alpha-0">
 
-### Back-to-back exponential rise-rate coefficient alpha_0 {#peak-rise-alpha-0}
+### Exponential rise coefficient α₀ {#peak-rise-alpha-0}
 
 Back-to-back exponential rise-rate coefficient alpha_0 (rate, 1/us; no closed unit code).
 
@@ -1506,7 +1506,7 @@ Back-to-back exponential rise-rate coefficient alpha_0 (rate, 1/us; no closed un
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-rise-alpha-1">
 
-### Back-to-back exponential rise-rate coefficient alpha_1 {#peak-rise-alpha-1}
+### Exponential rise coefficient α₁ {#peak-rise-alpha-1}
 
 Back-to-back exponential rise-rate coefficient alpha_1 (alpha(d)=alpha_0+alpha_1/d).
 
@@ -1518,7 +1518,7 @@ Back-to-back exponential rise-rate coefficient alpha_1 (alpha(d)=alpha_0+alpha_1
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-decay-beta-0">
 
-### Back-to-back exponential decay-rate coefficient beta_0 {#peak-decay-beta-0}
+### Exponential decay coefficient β₀ {#peak-decay-beta-0}
 
 Back-to-back exponential decay-rate coefficient beta_0 (rate, 1/us; no closed unit code).
 
@@ -1530,7 +1530,7 @@ Back-to-back exponential decay-rate coefficient beta_0 (rate, 1/us; no closed un
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-decay-beta-1">
 
-### Back-to-back exponential decay-rate coefficient beta_1 {#peak-decay-beta-1}
+### Exponential decay coefficient β₁ {#peak-decay-beta-1}
 
 Back-to-back exponential decay-rate coefficient beta_1 (beta(d)=beta_0+beta_1/d^4).
 
@@ -1542,7 +1542,7 @@ Back-to-back exponential decay-rate coefficient beta_1 (beta(d)=beta_0+beta_1/d^
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-broad-gauss-sigma-0">
 
-### Gaussian VARIANCE coefficient sigma_0^2 {#peak-broad-gauss-sigma-0}
+### Gaussian broadening σ₀² {#peak-broad-gauss-sigma-0}
 
 Gaussian VARIANCE coefficient sigma_0^2 (variance domain; TCH consumes FWHM_G=sqrt(sigma^2)*sqrt(8 ln 2)).
 
@@ -1554,7 +1554,7 @@ Gaussian VARIANCE coefficient sigma_0^2 (variance domain; TCH consumes FWHM_G=sq
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-broad-gauss-sigma-1">
 
-### Gaussian VARIANCE coefficient sigma_1^2 {#peak-broad-gauss-sigma-1}
+### Gaussian broadening σ₁² {#peak-broad-gauss-sigma-1}
 
 Gaussian VARIANCE coefficient sigma_1^2 (d^2 term; variance domain).
 
@@ -1566,7 +1566,7 @@ Gaussian VARIANCE coefficient sigma_1^2 (d^2 term; variance domain).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-broad-gauss-sigma-2">
 
-### Gaussian VARIANCE coefficient sigma_2^2 {#peak-broad-gauss-sigma-2}
+### Gaussian broadening σ₂² {#peak-broad-gauss-sigma-2}
 
 Gaussian VARIANCE coefficient sigma_2^2 (d^4 term; us^2/A^4 not in closed vocab -&gt; none).
 
@@ -1578,7 +1578,7 @@ Gaussian VARIANCE coefficient sigma_2^2 (d^4 term; us^2/A^4 not in closed vocab 
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-broad-gauss-size">
 
-### Gaussian isotropic size broadening {#peak-broad-gauss-size}
+### Gaussian broadening size G {#peak-broad-gauss-size}
 
 Gaussian isotropic size broadening (variance contribution).
 
@@ -1590,7 +1590,7 @@ Gaussian isotropic size broadening (variance contribution).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-broad-gauss-strain">
 
-### Gaussian isotropic strain broadening {#peak-broad-gauss-strain}
+### Gaussian broadening strain G {#peak-broad-gauss-strain}
 
 Gaussian isotropic strain broadening (variance contribution).
 
@@ -1602,7 +1602,7 @@ Gaussian isotropic strain broadening (variance contribution).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-broad-lorentz-gamma-0">
 
-### Lorentzian FWHM coefficient gamma_0 {#peak-broad-lorentz-gamma-0}
+### Lorentzian broadening γ₀ {#peak-broad-lorentz-gamma-0}
 
 Lorentzian FWHM coefficient gamma_0 (FWHM domain, H_L; consumed as FWHM directly, no sqrt(8 ln 2)).
 
@@ -1614,7 +1614,7 @@ Lorentzian FWHM coefficient gamma_0 (FWHM domain, H_L; consumed as FWHM directly
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-broad-lorentz-gamma-1">
 
-### Lorentzian FWHM coefficient gamma_1 {#peak-broad-lorentz-gamma-1}
+### Lorentzian broadening γ₁ {#peak-broad-lorentz-gamma-1}
 
 Lorentzian FWHM coefficient gamma_1 (d term; FWHM domain).
 
@@ -1626,7 +1626,7 @@ Lorentzian FWHM coefficient gamma_1 (d term; FWHM domain).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-broad-lorentz-gamma-2">
 
-### Lorentzian FWHM coefficient gamma_2 {#peak-broad-lorentz-gamma-2}
+### Lorentzian broadening γ₂ {#peak-broad-lorentz-gamma-2}
 
 Lorentzian FWHM coefficient gamma_2 (d^2 term; FWHM domain).
 
@@ -1638,7 +1638,7 @@ Lorentzian FWHM coefficient gamma_2 (d^2 term; FWHM domain).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-broad-lorentz-size">
 
-### Lorentzian isotropic size broadening {#peak-broad-lorentz-size}
+### Lorentzian broadening size L {#peak-broad-lorentz-size}
 
 Lorentzian isotropic size broadening (FWHM).
 
@@ -1650,7 +1650,7 @@ Lorentzian isotropic size broadening (FWHM).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-broad-lorentz-strain">
 
-### Lorentzian isotropic strain broadening {#peak-broad-lorentz-strain}
+### Lorentzian broadening strain L {#peak-broad-lorentz-strain}
 
 Lorentzian isotropic strain broadening (FWHM).
 
@@ -1662,7 +1662,7 @@ Lorentzian isotropic strain broadening (FWHM).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-broad-gauss-u">
 
-### Caglioti Gaussian FWHM coefficient U {#peak-broad-gauss-u}
+### Gaussian broadening U {#peak-broad-gauss-u}
 
 Caglioti Gaussian FWHM coefficient U (tan^2(theta) term; H_G^2 in deg^2).
 
@@ -1674,7 +1674,7 @@ Caglioti Gaussian FWHM coefficient U (tan^2(theta) term; H_G^2 in deg^2).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-broad-gauss-v">
 
-### Caglioti Gaussian FWHM coefficient V {#peak-broad-gauss-v}
+### Gaussian broadening V {#peak-broad-gauss-v}
 
 Caglioti Gaussian FWHM coefficient V (tan(theta) term; H_G^2 in deg^2).
 
@@ -1686,7 +1686,7 @@ Caglioti Gaussian FWHM coefficient V (tan(theta) term; H_G^2 in deg^2).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-broad-gauss-w">
 
-### Caglioti Gaussian FWHM coefficient W {#peak-broad-gauss-w}
+### Gaussian broadening W {#peak-broad-gauss-w}
 
 Caglioti Gaussian FWHM coefficient W (constant term; H_G^2 in deg^2).
 
@@ -1698,7 +1698,7 @@ Caglioti Gaussian FWHM coefficient W (constant term; H_G^2 in deg^2).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-broad-lorentz-x">
 
-### Lorentzian FWHM coefficient X, strain-like {#peak-broad-lorentz-x}
+### Lorentzian broadening X {#peak-broad-lorentz-x}
 
 Lorentzian FWHM coefficient X, strain-like (tan(theta) term; H_L in deg).
 
@@ -1710,7 +1710,7 @@ Lorentzian FWHM coefficient X, strain-like (tan(theta) term; H_L in deg).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-broad-lorentz-y">
 
-### Lorentzian FWHM coefficient Y, size-like {#peak-broad-lorentz-y}
+### Lorentzian broadening Y {#peak-broad-lorentz-y}
 
 Lorentzian FWHM coefficient Y, size-like (1/cos(theta) term; H_L in deg).
 
@@ -1722,7 +1722,7 @@ Lorentzian FWHM coefficient Y, size-like (1/cos(theta) term; H_L in deg).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-mixing-eta-0">
 
-### Pseudo-Voigt mixing at 2theta = 0: eta = eta_0 + eta_1 2theta {#peak-mixing-eta-0}
+### Pseudo-Voigt mixing intercept {#peak-mixing-eta-0}
 
 Pseudo-Voigt mixing at 2theta = 0: eta = eta_0 + eta_1 2theta (FullProf Eta0).
 
@@ -1734,7 +1734,7 @@ Pseudo-Voigt mixing at 2theta = 0: eta = eta_0 + eta_1 2theta (FullProf Eta0).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-mixing-eta-1">
 
-### Pseudo-Voigt mixing slope per degree 2theta: eta = eta_0 + eta_1 2theta {#peak-mixing-eta-1}
+### Pseudo-Voigt mixing slope {#peak-mixing-eta-1}
 
 Pseudo-Voigt mixing slope per degree 2theta: eta = eta_0 + eta_1 2theta (FullProf X of Npr 5).
 
@@ -1746,7 +1746,7 @@ Pseudo-Voigt mixing slope per degree 2theta: eta = eta_0 + eta_1 2theta (FullPro
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-asym-fcj-1">
 
-### S/L {#peak-asym-fcj-1}
+### FCJ asymmetry S/L {#peak-asym-fcj-1}
 
 Finger-Cox-Jephcoat asymmetry parameter 1: S/L, half the sample height over the diffractometer radius.
 
@@ -1758,7 +1758,7 @@ Finger-Cox-Jephcoat asymmetry parameter 1: S/L, half the sample height over the 
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-asym-fcj-2">
 
-### D/L {#peak-asym-fcj-2}
+### FCJ asymmetry D/L {#peak-asym-fcj-2}
 
 Finger-Cox-Jephcoat asymmetry parameter 2: D/L, half the detector height over the diffractometer radius.
 
@@ -1770,7 +1770,7 @@ Finger-Cox-Jephcoat asymmetry parameter 2: D/L, half the detector height over th
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-asym-beba-a0">
 
-### Berar-Baldinozzi asymmetry coefficient A0 {#peak-asym-beba-a0}
+### Bérar-Baldinozzi asymmetry A₀ {#peak-asym-beba-a0}
 
 Berar-Baldinozzi asymmetry coefficient A0 (Fa/tan theta).
 
@@ -1782,7 +1782,7 @@ Berar-Baldinozzi asymmetry coefficient A0 (Fa/tan theta).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-asym-beba-b0">
 
-### Berar-Baldinozzi asymmetry coefficient B0 {#peak-asym-beba-b0}
+### Bérar-Baldinozzi asymmetry B₀ {#peak-asym-beba-b0}
 
 Berar-Baldinozzi asymmetry coefficient B0 (Fb/tan theta).
 
@@ -1794,7 +1794,7 @@ Berar-Baldinozzi asymmetry coefficient B0 (Fb/tan theta).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-asym-beba-a1">
 
-### Berar-Baldinozzi asymmetry coefficient A1 {#peak-asym-beba-a1}
+### Bérar-Baldinozzi asymmetry A₁ {#peak-asym-beba-a1}
 
 Berar-Baldinozzi asymmetry coefficient A1 (Fa/tan 2theta).
 
@@ -1806,7 +1806,7 @@ Berar-Baldinozzi asymmetry coefficient A1 (Fa/tan 2theta).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-asym-beba-b1">
 
-### Berar-Baldinozzi asymmetry coefficient B1 {#peak-asym-beba-b1}
+### Bérar-Baldinozzi asymmetry B₁ {#peak-asym-beba-b1}
 
 Berar-Baldinozzi asymmetry coefficient B1 (Fb/tan 2theta).
 
@@ -1818,7 +1818,7 @@ Berar-Baldinozzi asymmetry coefficient B1 (Fb/tan 2theta).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-asym-beba-limit">
 
-### Berar-Baldinozzi limit angle {#peak-asym-beba-limit}
+### Bérar-Baldinozzi asymmetry AsyLim {#peak-asym-beba-limit}
 
 Berar-Baldinozzi limit angle (deg 2theta): reflections at or above it get no asymmetry correction (FullProf AsyLim); default 180.
 
@@ -1852,7 +1852,7 @@ The peak-profile function.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="peak-cutoff-fwhm">
 
-### How far from its centre a peak is calculated, in units of its width {#peak-cutoff-fwhm}
+### Peak calculation cutoff {#peak-cutoff-fwhm}
 
 How far from its centre a peak is calculated, in units of its width.
 
@@ -1876,7 +1876,7 @@ The name of the excluded region.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="excluded-region-start">
 
-### Where the excluded region starts {#excluded-region-start}
+### Start {#excluded-region-start}
 
 Where the excluded region starts.
 
@@ -1893,7 +1893,7 @@ Where the excluded region starts.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="excluded-region-end">
 
-### Where the excluded region ends {#excluded-region-end}
+### End {#excluded-region-end}
 
 Where the excluded region ends.
 
@@ -1914,7 +1914,7 @@ A single crystal&#x27;s extinction correction: its type, mosaic distribution and
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="extinction-domain-radius">
 
-### Becker-Coppens domain {#extinction-domain-radius}
+### Domain radius {#extinction-domain-radius}
 
 Becker-Coppens domain (mosaic block) radius r (micrometres; extinction types II and mixed; single crystal; a fit parameter).
 
@@ -2072,7 +2072,7 @@ The structures that contribute to the pattern, each with its scale.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="linked-structure-scale">
 
-### Scale factor of one linked structure&#x27;s {#linked-structure-scale}
+### Scale {#linked-structure-scale}
 
 Scale factor of one linked structure&#x27;s (phase&#x27;s) pattern, the overall pattern scale when there is one structure (dimensionless; linear).
 
@@ -2104,7 +2104,7 @@ Whether the structure contributes to the pattern.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="linked-structure-weight-fraction">
 
-### Weight fraction {#linked-structure-weight-fraction}
+### Phase mass fraction {#linked-structure-weight-fraction}
 
 The structure&#x27;s weight fraction in the sample, from the scales (Hill and Howard); computed, never edited.
 
@@ -2118,7 +2118,7 @@ The absorption correction.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="absorption-abscor1">
 
-### TOF sample absorption coefficient ABSCOR1 {#absorption-abscor1}
+### ABSCOR1 {#absorption-abscor1}
 
 TOF sample absorption coefficient ABSCOR1 (muR = ABSCOR1 * lambda; refinable).
 
@@ -2130,7 +2130,7 @@ TOF sample absorption coefficient ABSCOR1 (muR = ABSCOR1 * lambda; refinable).
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="absorption-abscor2">
 
-### TOF sample absorption lambda-power ABSCOR2 {#absorption-abscor2}
+### ABSCOR2 {#absorption-abscor2}
 
 TOF sample absorption lambda-power ABSCOR2 (round-tripped, held fixed; freeing it is a hard error).
 
@@ -2144,7 +2144,7 @@ TOF sample absorption lambda-power ABSCOR2 (round-tripped, held fixed; freeing i
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="absorption-mu-r">
 
-### CW cylinder sample absorption mu*R {#absorption-mu-r}
+### ΜR {#absorption-mu-r}
 
 CW cylinder sample absorption mu*R (mu the linear absorption coefficient, R the cylinder RADIUS; evaluated at each reflection&#x27;s Bragg theta; refinable; C13-T5).
 
@@ -2176,7 +2176,7 @@ The March-Dollase preferred-orientation correction per structure.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="preferred-orientation-march-r">
 
-### March-Dollase coefficient r {#preferred-orientation-march-r}
+### March-Dollase coefficient {#preferred-orientation-march-r}
 
 March-Dollase coefficient r (FullProf Pref1, IUCr _pd_pref_orient_March_Dollase.r; 1 = no texture, &lt;1 platy, &gt;1 needle; must be &gt; 0; a fit parameter; C13-T4).
 
@@ -2188,7 +2188,7 @@ March-Dollase coefficient r (FullProf Pref1, IUCr _pd_pref_orient_March_Dollase.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="preferred-orientation-march-random-fract">
 
-### Random {#preferred-orientation-march-random-fract}
+### Randomly oriented fraction {#preferred-orientation-march-random-fract}
 
 Random (untextured) fraction mixed with the March-Dollase term (FullProf Pref2; a fit parameter; C13-T4).
 
@@ -2210,7 +2210,7 @@ The structure the correction applies to.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="preferred-orientation-index-h">
 
-### Index h {#preferred-orientation-index-h}
+### Miller index h {#preferred-orientation-index-h}
 
 The h index of the preferred-orientation direction.
 
@@ -2220,7 +2220,7 @@ The h index of the preferred-orientation direction.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="preferred-orientation-index-k">
 
-### Index k {#preferred-orientation-index-k}
+### Miller index k {#preferred-orientation-index-k}
 
 The k index of the preferred-orientation direction.
 
@@ -2230,7 +2230,7 @@ The k index of the preferred-orientation direction.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="preferred-orientation-index-l">
 
-### Index l {#preferred-orientation-index-l}
+### Miller index l {#preferred-orientation-index-l}
 
 The l index of the preferred-orientation direction.
 
@@ -2244,7 +2244,7 @@ Which of a single crystal&#x27;s reflections count as observed, for its counts a
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="reflns-threshold-sigma">
 
-### Observed above (su) {#reflns-threshold-sigma}
+### Observed-reflection threshold {#reflns-threshold-sigma}
 
 The multiple n of its su above which a single crystal&#x27;s reflection counts as observed; 2 when absent.
 
@@ -2254,7 +2254,7 @@ The multiple n of its su above which a single crystal&#x27;s reflection counts a
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="reflns-threshold-basis">
 
-### Threshold basis {#reflns-threshold-basis}
+### On {#reflns-threshold-basis}
 
 Whether the observed threshold is on the intensity or the amplitude; the intensity when absent.
 
@@ -2334,7 +2334,7 @@ The file the measured data were read from.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="data-source-file-name">
 
-### Data file {#data-source-file-name}
+### Measured-data filename {#data-source-file-name}
 
 The file the measured data were read from.
 
@@ -2348,7 +2348,7 @@ The measured pattern and the values calculated at each of its points.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="data-two-theta">
 
-### Two theta {#data-two-theta}
+### Scattering angle {#data-two-theta}
 
 The scattering angle of each point.
 
@@ -2360,7 +2360,7 @@ The scattering angle of each point.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="data-time-of-flight">
 
-### TOF {#data-time-of-flight}
+### Time of flight {#data-time-of-flight}
 
 The time of flight of each point.
 
@@ -2392,7 +2392,7 @@ The standard uncertainty of the measured intensity.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="data-d-spacing">
 
-### D spacing {#data-d-spacing}
+### Interplanar spacing {#data-d-spacing}
 
 The d-spacing of each point.
 
@@ -2424,7 +2424,7 @@ The background at each point.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="data-calc-status">
 
-### Status {#data-calc-status}
+### Calculation status {#data-calc-status}
 
 Whether the point takes part in the calculation and the fit.
 
@@ -2495,7 +2495,7 @@ The structure the reflection belongs to.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="refln-d-spacing">
 
-### D spacing {#refln-d-spacing}
+### Interplanar spacing {#refln-d-spacing}
 
 The d-spacing of the reflection.
 
@@ -2507,7 +2507,7 @@ The d-spacing of the reflection.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="refln-sin-theta-over-lambda">
 
-### sin θ over λ of the reflection {#refln-sin-theta-over-lambda}
+### Sin θ/λ {#refln-sin-theta-over-lambda}
 
 sin θ over λ of the reflection.
 
@@ -2519,7 +2519,7 @@ sin θ over λ of the reflection.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="refln-index-h">
 
-### Index h {#refln-index-h}
+### Miller index h {#refln-index-h}
 
 The h index of the reflection.
 
@@ -2529,7 +2529,7 @@ The h index of the reflection.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="refln-index-k">
 
-### Index k {#refln-index-k}
+### Miller index k {#refln-index-k}
 
 The k index of the reflection.
 
@@ -2539,7 +2539,7 @@ The k index of the reflection.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="refln-index-l">
 
-### Index l {#refln-index-l}
+### Miller index l {#refln-index-l}
 
 The l index of the reflection.
 
@@ -2609,7 +2609,7 @@ The calculated squared structure factor of a single crystal&#x27;s reflection.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="refln-wavelength">
 
-### Wavelength {#refln-wavelength}
+### Λ {#refln-wavelength}
 
 The wavelength a time-of-flight single crystal&#x27;s reflection was measured at.
 
@@ -2621,7 +2621,7 @@ The wavelength a time-of-flight single crystal&#x27;s reflection was measured at
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="refln-two-theta">
 
-### Two theta {#refln-two-theta}
+### Scattering angle {#refln-two-theta}
 
 The Bragg angle of the reflection.
 
@@ -2633,7 +2633,7 @@ The Bragg angle of the reflection.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="refln-time-of-flight">
 
-### TOF {#refln-time-of-flight}
+### Time of flight {#refln-time-of-flight}
 
 The time of flight of the reflection.
 
@@ -2669,7 +2669,7 @@ The project&#x27;s title.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="metadata-description">
 
-### What the project is about {#metadata-description}
+### Description {#metadata-description}
 
 What the project is about.
 
@@ -2733,7 +2733,7 @@ How values with a standard uncertainty are written and shown.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="su-format-rule">
 
-### How a value with a standard uncertainty is rounded when it is written and shown {#su-format-rule}
+### Uncertainty rounding rule {#su-format-rule}
 
 How a value with a standard uncertainty is rounded when it is written and shown.
 
@@ -2913,7 +2913,7 @@ How the experiments of a project are fitted.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="fitting-mode-type">
 
-### How the experiments of the project are fitted {#fitting-mode-type}
+### Fitting mode {#fitting-mode-type}
 
 How the experiments of the project are fitted.
 
@@ -2934,7 +2934,7 @@ Which of a single crystal&#x27;s reflections a fit uses.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="refine-ls-threshold-sigma">
 
-### Fit reflections above (su) {#refine-ls-threshold-sigma}
+### Fitted-reflection threshold {#refine-ls-threshold-sigma}
 
 The multiple n of its su above which a single crystal&#x27;s reflection is fitted; every reflection when absent.
 
@@ -3030,7 +3030,7 @@ The folder of the data files.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="sequential-fit-file-pattern">
 
-### Which files of the folder are fitted {#sequential-fit-file-pattern}
+### Files {#sequential-fit-file-pattern}
 
 Which files of the folder are fitted.
 
@@ -3074,7 +3074,7 @@ The name of the value read from each file name.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="sequential-fit-extract-target">
 
-### What the value is stored as {#sequential-fit-extract-target}
+### Extracted value name {#sequential-fit-extract-target}
 
 What the value is stored as.
 
@@ -3226,7 +3226,7 @@ The outcome of the last fit.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="fit-result-result-kind">
 
-### What kind of fit gave the result {#fit-result-result-kind}
+### Kind {#fit-result-result-kind}
 
 What kind of fit gave the result.
 
@@ -3256,7 +3256,7 @@ The minimizer&#x27;s message.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="fit-result-iterations">
 
-### How many iterations the fit took {#fit-result-iterations}
+### Iterations {#fit-result-iterations}
 
 How many iterations the fit took.
 
@@ -3266,7 +3266,7 @@ How many iterations the fit took.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="fit-result-fitting-time">
 
-### How long the fit took {#fit-result-fitting-time}
+### Time {#fit-result-fitting-time}
 
 How long the fit took.
 
@@ -3278,7 +3278,7 @@ How long the fit took.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="fit-result-reduced-chi-square">
 
-### χ² divided by the degrees of freedom {#fit-result-reduced-chi-square}
+### Reduced χ² {#fit-result-reduced-chi-square}
 
 χ² divided by the degrees of freedom.
 
@@ -3308,7 +3308,7 @@ The value of the objective at the end of the fit.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="fit-result-n-data-points">
 
-### How many data points the fit used {#fit-result-n-data-points}
+### Number of fitted observations {#fit-result-n-data-points}
 
 How many data points the fit used.
 
@@ -3318,7 +3318,7 @@ How many data points the fit used.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="fit-result-n-parameters">
 
-### How many parameters the project has {#fit-result-n-parameters}
+### Parameters {#fit-result-n-parameters}
 
 How many parameters the project has.
 
@@ -3328,7 +3328,7 @@ How many parameters the project has.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="fit-result-n-free-parameters">
 
-### How many parameters the fit refined {#fit-result-n-free-parameters}
+### Free parameters {#fit-result-n-free-parameters}
 
 How many parameters the fit refined.
 
@@ -3358,7 +3358,7 @@ Whether the fit gave a covariance matrix.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="fit-result-exit-reason">
 
-### Why the fit stopped {#fit-result-exit-reason}
+### Exit reason {#fit-result-exit-reason}
 
 Why the fit stopped.
 
@@ -3384,7 +3384,7 @@ The weighted profile R factor.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="fit-result-prof-r-factor">
 
-### Prof r factor {#fit-result-prof-r-factor}
+### Rp {#fit-result-prof-r-factor}
 
 The profile R factor.
 
@@ -3470,7 +3470,7 @@ The agreement factors of each experiment in the last fit.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="fit-result-bank-n-data-points">
 
-### How many data points of the experiment the fit used {#fit-result-bank-n-data-points}
+### Number of fitted observations {#fit-result-bank-n-data-points}
 
 How many data points of the experiment the fit used.
 
@@ -3480,7 +3480,7 @@ How many data points of the experiment the fit used.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="fit-result-bank-prof-r-factor">
 
-### Prof r factor {#fit-result-bank-prof-r-factor}
+### Rp {#fit-result-bank-prof-r-factor}
 
 The experiment&#x27;s profile R factor.
 
@@ -3600,7 +3600,7 @@ The name of the correlation.
 
 <section class="ed-parameter-entry" markdown="1" aria-labelledby="fit-parameter-correlation-source-kind">
 
-### What kind of fit the correlation comes from {#fit-parameter-correlation-source-kind}
+### Source {#fit-parameter-correlation-source-kind}
 
 What kind of fit the correlation comes from.
 

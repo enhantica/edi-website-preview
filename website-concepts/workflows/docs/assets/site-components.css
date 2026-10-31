@@ -55,7 +55,7 @@
 .ed-interface-link {display:inline-flex;align-items:center;gap:.3em;white-space:nowrap}
 .md-typeset .ed-interface-link .twemoji {margin:0;flex:none}
 .ed-interface-icons {display:inline-flex;align-items:center;gap:.18em;vertical-align:middle}
-.md-tabs__link:has(.ed-interface-icons) {display:inline-flex;align-items:center;gap:.15em}
+.md-tabs__link:has(.ed-interface-icons) {display:inline-flex;align-items:center;gap:.3em}
 .md-tabs__link .ed-interface-icons svg {margin:0}
 .ed-interface-icons svg {width:1em;height:1em;fill:currentColor;flex:none}
 .md-typeset .ed-interface-icons svg[fill="none"], .ed-interface-icons svg[fill="none"] {fill:none}

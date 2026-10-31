@@ -123,19 +123,85 @@ def readable_name(item: dict) -> str:
             + coordinate[2]
             + '-coordinate'
         )
-    # Native descriptions supply the actual scientific vocabulary. Use their short
-    # noun phrase where possible, with a readable field name as the fallback.
-    description = re.sub(r'\s*\(ADR-\d+[^)]*\)', '', item['description'])
-    phrase = re.split(r'[;(]|\.(?=\s|$)', description, maxsplit=1)[0].strip()
-    if (
-        phrase
-        and len(phrase) <= 90
-        and not re.match(r'^(Whether|If|When|Select|Controls|Sets|Enable|The|A|An)\b', phrase)
-    ):
-        return phrase
+    # A lookup label names the quantity. Descriptions, equations and cross-program
+    # conventions belong in the linked explanation, never in this column or heading.
+    labels = {
+        'atom_site.id': 'Atom-site identifier',
+        'atom_site.type_symbol': 'Chemical element',
+        'atom_site.wyckoff_letter': 'Wyckoff position',
+        'atom_site.adp_type': 'Displacement parameter type',
+        'atom_site_aniso.id': 'Anisotropic atom-site identifier',
+        'scattering_length.length_fm': 'Neutron scattering length',
+        'geom.min_bond_distance_cutoff': 'Minimum bond distance',
+        'geom.bond_distance_inc': 'Bond-distance tolerance',
+        'structure_view.atom_view': 'Atom radius model',
+        'structure_view.adp_probability': 'Ellipsoid probability',
+        'space_group_symop.operation_xyz': 'Symmetry operation',
+        'expanded_atom_site.atom_site_id': 'Source atom site',
+        'expanded_atom_site.site_symmetry': 'Generating symmetry operation',
+        'expanded_atom_site.cluster_id': 'Coincident-atom cluster',
+        'background.intensity': 'Background anchor intensity',
+        'background.position': 'Background anchor position',
+        'background.coef': 'Background coefficient',
+        'background.order': 'Background term order',
+        'background.origin': 'Polynomial background origin',
+        'background.x_min': 'Chebyshev domain minimum',
+        'background.x_max': 'Chebyshev domain maximum',
+        'background.type': 'Background model',
+        'background.id': 'Background row identifier',
+        'background_estimate.n_points': 'Number of background anchors',
+        'background_estimate.tolerance': 'Background thinning tolerance',
+        'background_estimate.in_peaks': 'Anchors within peaks',
+        'background_estimate.use_model': 'Calculated-peak treatment',
+        'su_format.rule': 'Uncertainty rounding rule',
+        'data_source.file_name': 'Measured-data filename',
+        'data.calc_status': 'Calculation status',
+        'instrument.calib_twotheta_offset': 'Zero-point angular offset',
+        'instrument.setup_wavelength_2': 'Secondary wavelength',
+        'instrument.setup_wavelength_2_to_1_ratio': 'Secondary-to-primary intensity ratio',
+        'peak.mixing_eta_0': 'Pseudo-Voigt mixing intercept',
+        'peak.mixing_eta_1': 'Pseudo-Voigt mixing slope',
+        'peak.cutoff_fwhm': 'Peak calculation cutoff',
+        'linked_structure.weight_fraction': 'Phase mass fraction',
+        'preferred_orientation.march_r': 'March-Dollase coefficient',
+        'preferred_orientation.march_random_fract': 'Randomly oriented fraction',
+        'reflns.threshold_sigma': 'Observed-reflection threshold',
+        'refine_ls.threshold_sigma': 'Fitted-reflection threshold',
+        'fitting_mode.type': 'Fitting mode',
+        'fit_result.n_data_points': 'Number of fitted observations',
+        'fit_result_bank.n_data_points': 'Number of fitted observations',
+        'sequential_fit_extract.target': 'Extracted value name',
+    }
+    if item['uid'] in labels:
+        return labels[item['uid']]
+    if item['category'] == 'atom_sites_cartn_transform' and name.startswith('mat_'):
+        return 'Coordinate-transform element ' + name.removeprefix('mat_')
+    if item['category'] == 'atom_site_aniso' and name.startswith('adp_'):
+        return 'Displacement tensor component ' + name.removeprefix('adp_')
+    if item['category'] == 'peak':
+        for prefix, title in {
+            'rise_alpha_': 'Exponential rise coefficient',
+            'decay_beta_': 'Exponential decay coefficient',
+            'broad_gauss_': 'Gaussian broadening',
+            'broad_lorentz_': 'Lorentzian broadening',
+            'asym_fcj_': 'FCJ asymmetry',
+            'asym_beba_': 'Bérar-Baldinozzi asymmetry',
+        }.items():
+            if name.startswith(prefix):
+                return title + ' ' + item['label']
+    common = {
+        'occupancy': 'Occupancy',
+        'u_iso': 'Isotropic displacement U',
+        'd_spacing': 'Interplanar spacing',
+        'two_theta': 'Scattering angle',
+        'time_of_flight': 'Time of flight',
+        'index_h': 'Miller index h',
+        'index_k': 'Miller index k',
+        'index_l': 'Miller index l',
+    }
+    if name in common:
+        return common[name]
     label = item['label'].strip() or name.replace('_', ' ')
-    if len(label) < 3 or label in {'name', 'type', 'id', 'value', 'on', 'min', 'max'}:
-        label = name.replace('_', ' ')
     return label[:1].upper() + label[1:]
 
 

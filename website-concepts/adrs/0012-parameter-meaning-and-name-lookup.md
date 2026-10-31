@@ -14,3 +14,5 @@ Validate every native category/item link, all naming tabs and return anchors, un
 Keep core structure and experiment categories before persistence/report metadata. Reader descriptions for cell dimensions and fractional coordinates expand the existing crystallography explanation; other entries retain native descriptions. Category return anchors wrap the visible caption so native browser navigation works after selecting a different naming tab, without an additional tab-switching script.
 
 2026-10-31 clarification: omit the Units line for identifiers, type selectors and other non-numeric fields, including metadata placeholders saying units are not applicable. Keep declared units and meaningful dimensionless information for numerical quantities.
+
+2026-10-31 clarification: parameter lookup labels and explanation headings are concise quantity names. Do not derive them from description sentences: that leaks formulas, qualifications and cross-program conventions such as FullProf Bkpos into navigation. Keep those details in explanations; retain interface spellings only in the selected naming column and preserve stable parameter anchors.
