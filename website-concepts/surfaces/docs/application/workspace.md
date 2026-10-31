@@ -21,7 +21,7 @@ Choose a tab to inspect each region. These four areas stay in the same places on
 
     </figure>
 
-=== "<span class='gui-area-key' data-gui-area='navigation' aria-hidden='true'></span>Workflow navigation"
+=== "<span class='gui-area-icon' data-gui-area='navigation' aria-hidden='true'>:material-dock-top:</span> Workflow navigation"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Move between Home, Project, Structure, Experiment, Analysis and Report.</p>
@@ -29,7 +29,7 @@ Choose a tab to inspect each region. These four areas stay in the same places on
 
     </figure>
 
-=== "<span class='gui-area-key' data-gui-area='main' aria-hidden='true'></span>Main workspace"
+=== "<span class='gui-area-icon' data-gui-area='main' aria-hidden='true'>:lucide-monitor:</span> Main workspace"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Inspect the experiment view here. Its content changes with the active page and selection.</p>
@@ -37,7 +37,7 @@ Choose a tab to inspect each region. These four areas stay in the same places on
 
     </figure>
 
-=== "<span class='gui-area-key' data-gui-area='sidebar' aria-hidden='true'></span>Sidebar"
+=== "<span class='gui-area-icon' data-gui-area='sidebar' aria-hidden='true'>:material-dock-right:</span> Sidebar"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Use the enabled Main, Extra, Text and Settings tabs to inspect and edit this page.</p>
@@ -45,7 +45,7 @@ Choose a tab to inspect each region. These four areas stay in the same places on
 
     </figure>
 
-=== "<span class='gui-area-key' data-gui-area='status' aria-hidden='true'></span>Status bar"
+=== "<span class='gui-area-icon' data-gui-area='status' aria-hidden='true'>:material-dock-bottom:</span> Status bar"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Read project counts, messages, calculation and fitting state here.</p>
@@ -87,7 +87,7 @@ Selecting a structure or experiment changes the model being inspected. The statu
 
 ## Page and sidebar views
 
-Choose **Overview** for the whole page. :lucide-monitor: marks a main-view tab; :material-dock-right: marks a sidebar tab. Only enabled tabs are shown. Analysis and Report show the completed refinement.
+Choose **Overview** for the whole page. <span class="gui-area-icon" data-gui-area="main" aria-hidden="true">:lucide-monitor:</span> marks a main-view tab; <span class="gui-area-icon" data-gui-area="sidebar" aria-hidden="true">:material-dock-right:</span> marks a sidebar tab. Only enabled tabs are shown. Analysis and Report show the completed refinement.
 
 ### :material-home: Home
 
@@ -110,7 +110,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":lucide-monitor: <span class='gui-sr-only'>Main view: </span>Project"
+=== "<span class='gui-area-icon' data-gui-area='main' aria-hidden='true'>:lucide-monitor:</span> <span class='gui-sr-only'>Main view: </span>Project"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Read the project details, location, structures and experiments in one view.</p>
@@ -118,7 +118,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":material-dock-right: <span class='gui-sr-only'>Sidebar: </span>Main"
+=== "<span class='gui-area-icon' data-gui-area='sidebar' aria-hidden='true'>:material-dock-right:</span> <span class='gui-sr-only'>Sidebar: </span>Main"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Create or open a project, browse built-in examples and return to recent work.</p>
@@ -126,7 +126,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":material-dock-right: <span class='gui-sr-only'>Sidebar: </span>Extra"
+=== "<span class='gui-area-icon' data-gui-area='sidebar' aria-hidden='true'>:material-dock-right:</span> <span class='gui-sr-only'>Sidebar: </span>Extra"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Choose how standard uncertainties are displayed in the project data.</p>
@@ -134,7 +134,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":material-dock-right: <span class='gui-sr-only'>Sidebar: </span>Text"
+=== "<span class='gui-area-icon' data-gui-area='sidebar' aria-hidden='true'>:material-dock-right:</span> <span class='gui-sr-only'>Sidebar: </span>Text"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Inspect or edit this page&#x27;s project data in its text representation.</p>
@@ -156,7 +156,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":lucide-monitor: <span class='gui-sr-only'>Main view: </span>Structure"
+=== "<span class='gui-area-icon' data-gui-area='main' aria-hidden='true'>:lucide-monitor:</span> <span class='gui-sr-only'>Main view: </span>Structure"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Inspect the selected crystal structure and its unit cell in the interactive view.</p>
@@ -164,7 +164,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":material-dock-right: <span class='gui-sr-only'>Sidebar: </span>Main"
+=== "<span class='gui-area-icon' data-gui-area='sidebar' aria-hidden='true'>:material-dock-right:</span> <span class='gui-sr-only'>Sidebar: </span>Main"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Select a structure and edit its symmetry, cell, atom sites and displacement parameters.</p>
@@ -172,7 +172,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":material-dock-right: <span class='gui-sr-only'>Sidebar: </span>Extra"
+=== "<span class='gui-area-icon' data-gui-area='sidebar' aria-hidden='true'>:material-dock-right:</span> <span class='gui-sr-only'>Sidebar: </span>Extra"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Adjust the structure appearance and scattering-length settings.</p>
@@ -180,7 +180,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":material-dock-right: <span class='gui-sr-only'>Sidebar: </span>Text"
+=== "<span class='gui-area-icon' data-gui-area='sidebar' aria-hidden='true'>:material-dock-right:</span> <span class='gui-sr-only'>Sidebar: </span>Text"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Inspect or edit this page&#x27;s project data in its text representation.</p>
@@ -202,7 +202,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":lucide-monitor: <span class='gui-sr-only'>Main view: </span>Pattern"
+=== "<span class='gui-area-icon' data-gui-area='main' aria-hidden='true'>:lucide-monitor:</span> <span class='gui-sr-only'>Main view: </span>Pattern"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Compare measured and calculated intensities, reflection marks and the residual pattern.</p>
@@ -210,7 +210,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":material-dock-right: <span class='gui-sr-only'>Sidebar: </span>Main"
+=== "<span class='gui-area-icon' data-gui-area='sidebar' aria-hidden='true'>:material-dock-right:</span> <span class='gui-sr-only'>Sidebar: </span>Main"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Choose an experiment and edit its instrument, profile, background and linked structures.</p>
@@ -218,7 +218,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":material-dock-right: <span class='gui-sr-only'>Sidebar: </span>Extra"
+=== "<span class='gui-area-icon' data-gui-area='sidebar' aria-hidden='true'>:material-dock-right:</span> <span class='gui-sr-only'>Sidebar: </span>Extra"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Configure intensity corrections, scattering sources and background estimation.</p>
@@ -226,7 +226,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":material-dock-right: <span class='gui-sr-only'>Sidebar: </span>Text"
+=== "<span class='gui-area-icon' data-gui-area='sidebar' aria-hidden='true'>:material-dock-right:</span> <span class='gui-sr-only'>Sidebar: </span>Text"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Inspect or edit this page&#x27;s project data in its text representation.</p>
@@ -248,7 +248,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":lucide-monitor: <span class='gui-sr-only'>Main view: </span>Pattern"
+=== "<span class='gui-area-icon' data-gui-area='main' aria-hidden='true'>:lucide-monitor:</span> <span class='gui-sr-only'>Main view: </span>Pattern"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Inspect the fitted pattern, residual and agreement factors for the selected experiment.</p>
@@ -256,7 +256,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":lucide-monitor: <span class='gui-sr-only'>Main view: </span>Correlations"
+=== "<span class='gui-area-icon' data-gui-area='main' aria-hidden='true'>:lucide-monitor:</span> <span class='gui-sr-only'>Main view: </span>Correlations"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Inspect correlations between refined parameters to identify strongly coupled values.</p>
@@ -264,7 +264,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":material-dock-right: <span class='gui-sr-only'>Sidebar: </span>Main"
+=== "<span class='gui-area-icon' data-gui-area='sidebar' aria-hidden='true'>:material-dock-right:</span> <span class='gui-sr-only'>Sidebar: </span>Main"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Choose free parameters, inspect their values and bounds, and adjust the selected value.</p>
@@ -272,7 +272,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":material-dock-right: <span class='gui-sr-only'>Sidebar: </span>Extra"
+=== "<span class='gui-area-icon' data-gui-area='sidebar' aria-hidden='true'>:material-dock-right:</span> <span class='gui-sr-only'>Sidebar: </span>Extra"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Configure fitting modes, minimizers, parameter aliases and constraints.</p>
@@ -280,7 +280,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":material-dock-right: <span class='gui-sr-only'>Sidebar: </span>Text"
+=== "<span class='gui-area-icon' data-gui-area='sidebar' aria-hidden='true'>:material-dock-right:</span> <span class='gui-sr-only'>Sidebar: </span>Text"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Inspect or edit this page&#x27;s project data in its text representation.</p>
@@ -288,7 +288,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":material-dock-right: <span class='gui-sr-only'>Sidebar: </span>Settings"
+=== "<span class='gui-area-icon' data-gui-area='sidebar' aria-hidden='true'>:material-dock-right:</span> <span class='gui-sr-only'>Sidebar: </span>Settings"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Choose which parameters are shown and how the displayed pattern updates during a scan.</p>
@@ -310,7 +310,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":lucide-monitor: <span class='gui-sr-only'>Main view: </span>Report"
+=== "<span class='gui-area-icon' data-gui-area='main' aria-hidden='true'>:lucide-monitor:</span> <span class='gui-sr-only'>Main view: </span>Report"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Read the report preview for the current model and results before exporting it.</p>
@@ -318,7 +318,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":material-dock-right: <span class='gui-sr-only'>Sidebar: </span>Main"
+=== "<span class='gui-area-icon' data-gui-area='sidebar' aria-hidden='true'>:material-dock-right:</span> <span class='gui-sr-only'>Sidebar: </span>Main"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Choose output formats, save locations and the sections included in the report.</p>
@@ -326,7 +326,7 @@ Start an analysis, learn the interface through built-in tutorials, read about Ea
 
     </figure>
 
-=== ":material-dock-right: <span class='gui-sr-only'>Sidebar: </span>Text"
+=== "<span class='gui-area-icon' data-gui-area='sidebar' aria-hidden='true'>:material-dock-right:</span> <span class='gui-sr-only'>Sidebar: </span>Text"
 
     <figure class="gui-figure" data-gui-figure>
     <p class="gui-view-description">Inspect or edit this page&#x27;s project data in its text representation.</p>

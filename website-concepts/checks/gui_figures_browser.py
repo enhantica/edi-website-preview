@@ -65,7 +65,7 @@ document.body.append(sample); const pageBackground=getComputedStyle(sample).colo
 return {image:svg.querySelector('image').getAttribute('href'),
   sameWidth:Math.abs(a.height-b.width)<.01,
   centered:Math.abs(b.x+b.width/2-sidebar[0]-sidebar[2]/2)<.01,
-  color:getComputedStyle(horizontal).fill, pageBackground,
+  color:getComputedStyle(horizontal).fill, opacity:Number(getComputedStyle(horizontal).fillOpacity), pageBackground,
   areas:regions.map(p=>p.dataset.guiArea),
   colours:regions.map(p=>getComputedStyle(p).stroke),
   rectangles:[...svg.querySelectorAll('[data-gui-region]')].every(p=>JSON.parse(p.dataset.guiParts).length===1 && p.hasAttribute('data-gui-inset')),
@@ -76,7 +76,8 @@ return {image:svg.querySelector('image').getAttribute('href'),
     )
     require(
         '11-experiment-basic.png' in direction['image']
-        and direction['color'] == direction['pageBackground'],
+        and direction['color'] == direction['pageBackground']
+        and 0 < direction['opacity'] < 1,
         direction,
     )
     require(direction['areas'] == ['navigation', 'main', 'sidebar', 'status'], direction)

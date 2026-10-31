@@ -4,7 +4,10 @@
 [data-gui-area="main"] {--gui-area-colour:var(--gui-area-main)}
 [data-gui-area="sidebar"] {--gui-area-colour:var(--gui-area-sidebar)}
 [data-gui-area="status"] {--gui-area-colour:var(--gui-area-status)}
-.gui-area-key {display:inline-block;flex:none;inline-size:.65em;block-size:.65em;border-radius:2px;background:var(--gui-area-colour)}
+.gui-area-icon {display:inline-flex;align-items:center;flex:none;color:var(--gui-area-colour);vertical-align:middle}
+.gui-area-icon .twemoji {margin:0}
+.gui-area-icon svg {color:inherit;opacity:1}
+.md-typeset .gui-area-icon svg[fill="none"] {fill:none}
 .md-typeset figure.gui-figure { display: block; width: 100%; max-width: 100%; margin: 1.6rem 0 2.4rem; text-align: left; }
 .gui-image-link { display: block; width: 100%; cursor: zoom-in; line-height: 0; text-decoration: none; border-radius: var(--ed-screenshot-radius); }
 .gui-image-link:focus-visible { outline: 2px solid var(--md-accent-fg-color); outline-offset: 5px; }
@@ -30,7 +33,7 @@
 
 html.gui-lightbox-open { overflow: hidden; }
 
-.gui-direction { display: none; fill: var(--md-default-bg-color); fill-opacity: 1; pointer-events: none; }
+.gui-direction { display: none; fill: var(--md-default-bg-color); fill-opacity: .55; pointer-events: none; }
 .gui-direction.is-active { display: block; }
 
 .gui-capture [data-gui-navigation] { fill: var(--gui-area-colour); fill-opacity: .12; stroke: var(--gui-area-colour); stroke-width: 2; stroke-linejoin: miter; vector-effect: non-scaling-stroke; pointer-events: none; }

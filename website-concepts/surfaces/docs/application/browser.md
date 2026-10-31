@@ -10,16 +10,28 @@ The [application layout](workspace.md) and controls are identical in the browser
 
 **Open project…** accepts a folder or zip archive. When importing a structure or measured pattern, select the file in your browser's file chooser.
 
-| Browser | Where your work is saved |
-| --- | --- |
-| Chrome and Edge | Opening a local folder or archive can retain access to that location. **Save** writes back there; **Save project as…** chooses a new location. |
-| Firefox and Safari | Projects are kept in browser storage. **Save project as…** downloads a zip copy. |
+Choose your browser:
+
+=== ":fontawesome-brands-chrome: Chrome"
+
+    Opening a local folder or archive can retain access to that location. **Save** writes back there; **Save project as…** chooses a new location.
+
+=== ":fontawesome-brands-edge: Edge"
+
+    Opening a local folder or archive can retain access to that location. **Save** writes back there; **Save project as…** chooses a new location.
+
+=== ":fontawesome-brands-firefox-browser: Firefox"
+
+    Projects are kept in browser storage. **Save project as…** downloads a zip copy.
+
+=== ":fontawesome-brands-safari: Safari"
+
+    Projects are kept in browser storage. **Save project as…** downloads a zip copy.
 
 !!! note "Check where your project is saved"
 
     New projects and built-in examples initially use browser storage in every browser. When the location reads **In this browser only**, use **Save project as…** to keep a copy outside the browser or move it to another computer.
 
-    Chrome and Edge can also retain access to a local folder or archive that you opened. Firefox and Safari download a zip copy instead.
 
 ## Return to your work
 

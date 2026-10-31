@@ -273,6 +273,16 @@ def viewer(panes: list[tuple[str, str]]) -> str:
     return '<div class="gui-viewer" markdown="1">\n\n' + content + '\n</div>\n'
 
 
+def area_icon(area: str) -> str:
+    icons = {
+        'navigation': 'material-dock-top',
+        'main': 'lucide-monitor',
+        'sidebar': 'material-dock-right',
+        'status': 'material-dock-bottom',
+    }
+    return f'<span class="gui-area-icon" data-gui-area="{area}" aria-hidden="true">:{icons[area]}:</span> '
+
+
 def highlight_area(meta: dict, target: str, page: str) -> str:
     """Use native item bounds to keep screenshot colours tied to the four app areas."""
     if target.startswith('appBar'):
@@ -372,11 +382,10 @@ def figure(
             title, text = label(target, scene['page'], item.get('label', ''))
             panes.append((
                 (
-                    f'<span class="gui-area-key" data-gui-area="{highlight_area(meta, target, scene["page"])}" aria-hidden="true"></span>'
+                    area_icon(highlight_area(meta, target, scene['page']))
                     if view == 'layout'
-                    else ''
+                    else gui_icon(item)
                 )
-                + gui_icon(item)
                 + html.escape(title),
                 figure(
                     scene,
@@ -941,7 +950,13 @@ The page views below introduce each enabled tab. Then follow [Example refinement
 
 Selecting a structure or experiment changes the model being inspected. The status bar reports the project state, messages and fitting progress. Read messages after importing data or when an operation is refused.
 """
-    gallery = '\n## Page and sidebar views\n\nChoose **Overview** for the whole page. :lucide-monitor: marks a main-view tab; :material-dock-right: marks a sidebar tab. Only enabled tabs are shown. Analysis and Report show the completed refinement.\n'
+    gallery = (
+        '\n## Page and sidebar views\n\nChoose **Overview** for the whole page. '
+        + area_icon('main')
+        + 'marks a main-view tab; '
+        + area_icon('sidebar')
+        + 'marks a sidebar tab. Only enabled tabs are shown. Analysis and Report show the completed refinement.\n'
+    )
     gallery += '\n### :material-home: Home\n\nStart an analysis, learn the interface through built-in tutorials, read about EasyDiffraction, open the documentation or get in touch.\n\n'
     gallery += figure(by_id['01-home'], view='workflow', description='Home overview')
     introductions = {
@@ -1052,7 +1067,7 @@ Selecting a structure or experiment changes the model being inspected. The statu
                 selected = captures[-1]
             title = html.escape(item['label'])
             panes.append((
-                f":lucide-monitor: <span class='gui-sr-only'>Main view: </span>{title}",
+                area_icon('main') + f"<span class='gui-sr-only'>Main view: </span>{title}",
                 figure(
                     selected,
                     view='main',
@@ -1064,7 +1079,8 @@ Selecting a structure or experiment changes the model being inspected. The statu
             ))
         for scene in modes:
             panes.append((
-                f":material-dock-right: <span class='gui-sr-only'>Sidebar: </span>{scene['sidebar']}",
+                area_icon('sidebar')
+                + f"<span class='gui-sr-only'>Sidebar: </span>{scene['sidebar']}",
                 figure(
                     scene,
                     view='sidebar',
