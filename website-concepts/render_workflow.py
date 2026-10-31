@@ -85,6 +85,16 @@ def render() -> None:
                 r'[:material-' + name + ': ' + title + r'](\1)',
                 text,
             )
+        # Table labels can wrap below their icon group without separating icons.
+        text = re.sub(
+            r'(?m)^(\|.*)$',
+            lambda row: re.sub(
+                r'\[(:material-[a-z-]+:) ([^]\n<]+)\]',
+                r'[<span class="ed-icon-label"><span class="ed-icon-group" aria-hidden="true">\1</span><span class="ed-icon-text">\2</span></span>]',
+                row[0],
+            ),
+            text,
+        )
         path.write_text(text)
 
 

@@ -10,43 +10,31 @@ EasyDiffraction compares a crystallographic model with diffraction measurements.
 <li markdown="1">[:material-calculator: Analysis](#analysis)</li>
 </ol>
 
-=== ":material-microscope: Acquisition"
+### :material-microscope: Acquisition
 
-    <div id="acquisition" markdown="1">
+Record the detector response while the sample scatters the incident beam. This example uses a two-dimensional detector.
 
-    Record the detector response while the sample scatters the incident beam. This example uses a two-dimensional detector.
+<div class="ed-concept-figures">
+<figure><figcaption>Beam, sample and detector</figcaption><img src="../assets/concepts/data-acquisition_instrument.png" alt="A beam scatters from a sample onto a two-dimensional diffraction detector" width="2218" height="1274" loading="lazy"></figure>
+<figure><figcaption>Raw detector image</figcaption><img src="../assets/concepts/data-acquisition_2d-raw-data.jpg" alt="A raw two-dimensional diffraction image showing rings around the direct beam" width="1245" height="935" loading="lazy"></figure>
+</div>
 
-    <div class="ed-concept-figures">
-    <figure><figcaption>Beam, sample and detector</figcaption><img src="../assets/concepts/data-acquisition_instrument.png" alt="A beam scatters from a sample onto a two-dimensional diffraction detector" width="2218" height="1274" loading="lazy"></figure>
-    <figure><figcaption>Raw detector image</figcaption><img src="../assets/concepts/data-acquisition_2d-raw-data.jpg" alt="A raw two-dimensional diffraction image showing rings around the direct beam" width="1245" height="935" loading="lazy"></figure>
-    </div>
+### :lucide-filter: Reduction
 
-    </div>
+Apply the relevant corrections and turn detector measurements into observations with uncertainties. For powder diffraction, these are often a one-dimensional intensity profile.
 
-=== ":lucide-filter: Reduction"
+<div class="ed-concept-figures ed-concept-figures--single">
+<figure><figcaption>Reduced diffraction pattern</figcaption><img src="../assets/concepts/data-reduction_1d-pattern.png" alt="A reduced one-dimensional diffraction pattern with intensity peaks" width="1631" height="931" loading="lazy"></figure>
+</div>
 
-    <div id="reduction" markdown="1">
+### :material-calculator: Analysis
 
-    Apply the relevant corrections and turn detector measurements into observations with uncertainties. For powder diffraction, these are often a one-dimensional intensity profile.
+Compare a calculated pattern with the observations, refine the model and inspect the result. **EasyDiffraction focuses on this stage.**
 
-    <div class="ed-concept-figures ed-concept-figures--single">
-    <figure><figcaption>Reduced diffraction pattern</figcaption><img src="../assets/concepts/data-reduction_1d-pattern.png" alt="A reduced one-dimensional diffraction pattern with intensity peaks" width="1631" height="931" loading="lazy"></figure>
-    </div>
-
-    </div>
-
-=== ":material-calculator: Analysis"
-
-    <div id="analysis" markdown="1">
-
-    Compare a calculated pattern with the observations, refine the model and inspect the result. **EasyDiffraction focuses on this stage.**
-
-    <div class="ed-concept-figures">
-    <figure><figcaption>Measured, calculated and residual signals</figcaption><img src="../assets/concepts/data-analysis_refinement.png" alt="Measured intensity in blue, calculated intensity in red and their residual in grey" width="1631" height="931" loading="lazy"></figure>
-    <figure><figcaption>Crystal structure model</figcaption><img src="../assets/concepts/data-analysis_model.png" alt="A crystal structure represented by atoms and bonds inside a unit cell" width="1142" height="684" loading="lazy"></figure>
-    </div>
-
-    </div>
+<div class="ed-concept-figures">
+<figure><figcaption>Measured, calculated and residual signals</figcaption><img src="../assets/concepts/data-analysis_refinement.png" alt="Measured intensity in blue, calculated intensity in red and their residual in grey" width="1631" height="931" loading="lazy"></figure>
+<figure><figcaption>Crystal structure model</figcaption><img src="../assets/concepts/data-analysis_model.png" alt="A crystal structure represented by atoms and bonds inside a unit cell" width="1142" height="684" loading="lazy"></figure>
+</div>
 
 ??? info "Illustration credits"
 
@@ -60,8 +48,8 @@ The calculated intensity depends on more than atom positions. EasyDiffraction se
 
 | Part | Describes | Examples |
 | --- | --- | --- |
-| [:material-puzzle: Structure](analysis-workflow/structure.md) | The crystalline sample | Unit cell, symmetry, atom sites, occupancies, displacement parameters |
-| [:material-microscope: Experiment](analysis-workflow/experiment.md) | How it is observed | Wavelength or time-of-flight calibration, peak profile, background, scale and excluded regions |
+| [<span class="ed-icon-label"><span class="ed-icon-group" aria-hidden="true">:material-puzzle:</span><span class="ed-icon-text">Structure</span></span>](analysis-workflow/structure.md) | The crystalline sample | Unit cell, symmetry, atom sites, occupancies, displacement parameters |
+| [<span class="ed-icon-label"><span class="ed-icon-group" aria-hidden="true">:material-microscope:</span><span class="ed-icon-text">Experiment</span></span>](analysis-workflow/experiment.md) | How it is observed | Wavelength or time-of-flight calibration, peak profile, background, scale and excluded regions |
 
 A disagreement between measured and calculated patterns can therefore have several causes. A peak-position error may come from the cell or calibration; a broad mismatch underneath peaks may come from the background; an intensity mismatch can involve the structure as well as experiment settings.
 
