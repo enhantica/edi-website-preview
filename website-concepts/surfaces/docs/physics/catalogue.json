@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-29",
-  "edi_source_commit": "56457f29c82d0209e7845a0b4658155938cb5630",
-  "engine_source_commit": "188234833fe069d760ea6b59c372c2740461b09f",
-  "engine_relation": "SDK pin declared by the inspected edi source",
+  "updated": "2026-11-01",
+  "edi_source_commit": "4c5946eae8679644cd7ab9680fc88b90d10113c8",
+  "engine_source_commit": "f202da63edf4bd128c91dbe12908107712aa2e4f",
+  "engine_relation": "crysta main commit with the same source tree as the SDK build pinned by the inspected edi source",
   "models": [
     {
       "id": "cwl-gaussian",
@@ -1222,7 +1222,7 @@
       "units": "mm",
       "description": "Radius of the crystal taken as a sphere, which sets each reflection's mean path length through it for the Becker-Coppens secondary extinction (millimetres, as _exptl_crystal.size_rad; every Becker-Coppens type; single crystal; a descriptor, never fitted).",
       "role": "descriptor",
-      "refinable_metadata": true,
+      "refinable_metadata": false,
       "parameter_url": "parameters/#extinction-crystal-radius",
       "explanation_url": "corrections/extinction/#extinction-units",
       "edi_key": "_extinction.crystal_radius"
