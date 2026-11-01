@@ -54,7 +54,7 @@
 .md-typeset .ed-workflow-stage-table td:first-child .twemoji {margin:0;flex:none}
 .ed-interface-link {display:inline-flex;align-items:center;gap:.3em;white-space:nowrap}
 .md-typeset .ed-interface-link .twemoji {margin:0;flex:none}
-.ed-interface-icons {display:inline-flex;align-items:center;gap:.18em;vertical-align:middle}
+.ed-interface-icons {display:inline-flex;align-items:center;gap:.18em;vertical-align:middle;flex:none}
 .md-tabs__link:has(.ed-interface-icons) {display:inline-flex;align-items:center;gap:.3em}
 .md-tabs__link .ed-interface-icons svg {margin:0}
 .ed-interface-icons svg {width:1em;height:1em;fill:currentColor;flex:none}
@@ -82,3 +82,13 @@
 }
 
 .md-typeset .ed-concept-flow > li > p {margin:0;height:100%}
+
+/* Keep symbols together; a constrained table cell puts the label below them. */
+.md-typeset td .ed-icon-label {display:inline-flex;flex-wrap:wrap;align-items:center;gap:.2em .3em;max-inline-size:100%;white-space:normal;vertical-align:middle}
+.md-typeset td :is(.ed-icon-group,.ed-interface-icons) {display:inline-flex;align-items:center;gap:.18em;flex:none}
+.md-typeset td .ed-icon-text {flex:0 1 auto;min-inline-size:0;max-inline-size:100%;overflow-wrap:anywhere}
+.md-typeset td .ed-icon-group :is(.twemoji,.ed-reference-icon) {margin:0;flex:none}
+@media (min-width:601px) {
+  .md-typeset .ed-workflow-stage-table td:first-child .ed-icon-label {flex-wrap:nowrap;inline-size:max-content;max-inline-size:none}
+  .md-typeset .ed-workflow-stage-table td:first-child .ed-icon-text {flex:none;white-space:nowrap}
+}

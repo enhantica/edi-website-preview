@@ -253,10 +253,13 @@ def render() -> None:
             else ''
         )
         return (
-            icon(block_icon, glyphs)
+            '<span class="ed-icon-label"><span class="ed-icon-group" aria-hidden="true">'
+            + icon(block_icon, glyphs)
             + icon(lookup[category]['icon'], glyphs)
             + icon(parameter_icon(item['name'], rules), glyphs)
+            + '</span><span class="ed-icon-text">'
             + label
+            + '</span></span>'
         )
 
     def cif(item: dict) -> str:

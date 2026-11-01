@@ -16,11 +16,11 @@ A complete EasyDiffraction analysis connects the model of a sample with an exper
 
 | Stage | Scientific task | Ready to continue when… |
 | --- | --- | --- |
-| [:material-archive: Project](project.md) | Organise the analysis, inputs and provenance | You can identify the measurement, model and starting conditions |
-| [:material-puzzle: Structure](structure.md) | Describe the crystalline phase or phases | Symmetry, cell and atom sites represent your intended sample model |
-| [:material-microscope: Experiment](experiment.md) | Describe the observations and how they are calculated | Data or a simulation range, instrument, profile, background and structure links are consistent |
-| [:material-calculator: Analysis](analysis.md) | Calculate, refine and assess | The result has been inspected against the observations and physical model |
-| [:material-clipboard-text: Report](report.md) | Communicate and retain the result | The report matches the saved model and the complete project is retained |
+| [<span class="ed-icon-label"><span class="ed-icon-group" aria-hidden="true">:material-archive:</span><span class="ed-icon-text">Project</span></span>](project.md) | Organise the analysis, inputs and provenance | You can identify the measurement, model and starting conditions |
+| [<span class="ed-icon-label"><span class="ed-icon-group" aria-hidden="true">:material-puzzle:</span><span class="ed-icon-text">Structure</span></span>](structure.md) | Describe the crystalline phase or phases | Symmetry, cell and atom sites represent your intended sample model |
+| [<span class="ed-icon-label"><span class="ed-icon-group" aria-hidden="true">:material-microscope:</span><span class="ed-icon-text">Experiment</span></span>](experiment.md) | Describe the observations and how they are calculated | Data or a simulation range, instrument, profile, background and structure links are consistent |
+| [<span class="ed-icon-label"><span class="ed-icon-group" aria-hidden="true">:material-calculator:</span><span class="ed-icon-text">Analysis</span></span>](analysis.md) | Calculate, refine and assess | The result has been inspected against the observations and physical model |
+| [<span class="ed-icon-label"><span class="ed-icon-group" aria-hidden="true">:material-clipboard-text:</span><span class="ed-icon-text">Report</span></span>](report.md) | Communicate and retain the result | The report matches the saved model and the complete project is retained |
 
 </div>
 
@@ -36,8 +36,8 @@ A simulation uses a calculation range without measured observations. A refinemen
 
 | Interface | What its section provides |
 | --- | --- |
-| [<span class="ed-interface-icons" aria-hidden="true">:lucide-globe: :lucide-monitor:</span> Application](../../application/index.md){ .ed-interface-link } | Workspace, imports, parameter controls, fit progress and visual inspection |
-| [<span class="ed-interface-icons" aria-hidden="true">:simple-python:</span> Python](../../python/index.md){ .ed-interface-link } | Project objects, parameter access, analysis calls and result objects |
-| [<span class="ed-interface-icons" aria-hidden="true">:lucide-square-terminal:</span> Command Line](../../cli/index.md){ .ed-interface-link } | Commands for saved projects, output options and automation |
+| [<span class="ed-interface-icons" aria-hidden="true">:lucide-globe: :lucide-monitor:</span> <span class="ed-icon-text">Application</span>](../../application/index.md){ .ed-interface-link .ed-icon-label } | Workspace, imports, parameter controls, fit progress and visual inspection |
+| [<span class="ed-interface-icons" aria-hidden="true">:simple-python:</span> <span class="ed-icon-text">Python</span>](../../python/index.md){ .ed-interface-link .ed-icon-label } | Project objects, parameter access, analysis calls and result objects |
+| [<span class="ed-interface-icons" aria-hidden="true">:lucide-square-terminal:</span> <span class="ed-icon-text">Command Line</span>](../../cli/index.md){ .ed-interface-link .ed-icon-label } | Commands for saved projects, output options and automation |
 
 The scientific explanations belong here; the interface pages link back to them as needed.

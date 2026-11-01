@@ -84,11 +84,18 @@ def render_interface_links() -> None:
             label, url, attributes = match.groups()
             label = re.sub(r'^<span class="ed-interface-icons"[^>]*>.*?</span>\s*', '', label)
             label = re.sub(r':[a-z][a-z0-9-]+:(?:\{[^}]*\})?\s*', '', label)
+            label = re.sub(r'^<span class="ed-icon-text">(.*?)</span>$', r'\1', label)
             name = label.removeprefix('the ')
             if name not in icons:
                 return match[0]
             symbols = ' '.join(':' + name.replace('/', '-') + ':' for name in icons[name])
             attributes = attributes or ''
+            if '.ed-icon-label' not in attributes:
+                attributes = (
+                    attributes.rstrip().removesuffix('}').rstrip() + ' .ed-icon-label }'
+                    if attributes
+                    else '{ .ed-icon-label }'
+                )
             if '.ed-interface-link' not in attributes:
                 attributes = (
                     attributes.rstrip().removesuffix('}').rstrip() + ' .ed-interface-link }'
@@ -98,9 +105,9 @@ def render_interface_links() -> None:
             return (
                 '[<span class="ed-interface-icons" aria-hidden="true">'
                 + symbols
-                + '</span> '
+                + '</span> <span class="ed-icon-text">'
                 + label
-                + ']('
+                + '</span>]('
                 + url
                 + ')'
                 + attributes
