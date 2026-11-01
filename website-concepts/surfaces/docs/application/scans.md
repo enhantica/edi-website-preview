@@ -86,9 +86,9 @@ Expand **Sequential fit** and **Scan extraction rules** on the same tab. Inspect
 
 ## Run, stop and continue
 
-Press **Fit** and follow the dataset counts in the status bar. **Stop fitting** keeps completed results; **Continue fitting** resumes from the first unfitted file. **Reset fits** clears results for another run, and **Undo** restores the preceding results.
+Press **Fit** at the right of the status bar, on any page, and follow the dataset counts beside it. While a run is under way the button reads **Stop**; stopping keeps the completed results. It then reads **Continue**, which resumes from the first unfitted file, or **Refit** after a change to the template, which fits every file again. **Reset**, next to it, clears every dataset's result for another run, and **Undo** restores the preceding results.
 
-**Follow** displays the dataset currently being fitted. Selecting another dataset turns it off; select Follow again to follow progress. [Display and updates](display.md) controls redraw frequency.
+**Follow**, also in the status bar, displays the dataset currently being fitted. Selecting another dataset turns it off; select Follow again to follow progress. [Display and updates](display.md) controls redraw frequency.
 
 <!-- gui-guide:run-stop-and-continue -->
 <div class="gui-viewer" markdown="1">
@@ -104,7 +104,7 @@ Press **Fit** and follow the dataset counts in the status bar. **Stop fitting** 
 
 ## Inspect the scan views
 
-Use **Stacked** to compare offset patterns or **Map** to inspect intensity across the series. **Evolution** plots a fitted parameter with its uncertainty against a selected dataset value or its place in the scan. Select a point to inspect that dataset elsewhere in the app.
+Use **Stacked** to compare the patterns one above another or **Map** to inspect intensity across the series as rows of colour. On Stacked, **Spacing** runs from **Overlay**, every pattern on one baseline, through **Close**, **Medium** and **Wide**, the default, to **Separate**, each pattern in its own band. Its legend, turned on from the toolbar, lists the files; click an entry to hide that pattern. On Map, choose the colour map, **Blue-Red** by default or **Viridis**, **Batlow**, **Inferno**, **Lapaz** or **Greys**, and its **Direction**: **Auto**, **Normal** or **Inverted**. **Subtract background** draws each pattern less the project's background, here and on the pattern chart. **Evolution** plots a fitted parameter with its uncertainty against a selected dataset value or its place in the scan. Select a point to inspect that dataset elsewhere in the app.
 
 **Correlations** shows the selected dataset's last fit. Only the template dataset's correlations are retained when saving and reopening the project. After editing the template, earlier results remain visible but are marked out of date until refitted.
 

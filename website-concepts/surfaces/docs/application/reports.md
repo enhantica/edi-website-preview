@@ -67,7 +67,7 @@ These choices are saved with the project. They do not change which data were fit
 | --- | --- |
 | HTML | An interactive document with pattern zoom, hover and structure controls |
 | PDF | A paginated document with static figures |
-| CIF | Not available in this version; a structural CIF input is a different document |
+| CIF | A crystallographic report with the fit result and a data block for each structure and experiment, every item under its official CIF name |
 
 The HTML export option can embed the chart libraries for offline use. Without embedding, the document loads those libraries from the web when opened.
 
@@ -114,7 +114,7 @@ The PDF uses A4 pages and light-colour figures. The application writes PDF; Pyth
 
 ## Save the report
 
-Select the desired formats in **Export**, then choose **Save report**. The files are written to the project's `reports/` directory. The web app also downloads the report files.
+Select the desired formats in **Export**, then choose **Save report**. The files are written to the project's `reports/` folder, inside the zip when the project is a zip archive. An example or a read-only archive cannot be written back, so the desktop app first asks where to save the project, then saves the report there. The web app also downloads the report files, as one file or one zip of them.
 
 Turning off a format leaves any previously saved file in place; it does not delete it.
 

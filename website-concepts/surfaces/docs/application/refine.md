@@ -66,9 +66,9 @@ Look at peak positions, widths, intensities and the background before fitting. A
 
 ## Choose free parameters
 
-On **Analysis**, the parameter table shows the values available to the fit. Use the **free** column to choose which independent parameters may vary. The name and variability filters help you find them.
+On **Analysis**, the parameter table lists every numerical input of the structures and experiments. Use the **free** column to choose which parameters may vary. When a fit cannot vary a value, its checkbox is disabled and hovering over it shows the reason. The name and variability filters help you find them.
 
-Values fixed by symmetry or constrained to other values are not independent fit parameters. The minimum and maximum displayed in the table describe admissible model values; they are not a separate set of user-defined optimizer bounds.
+A value cannot be fitted when it describes the setup, symmetry or a constraint sets it, the fit's data cannot determine it, or the calculation has no derivative for it yet. A value saved as free that cannot be fitted opens as fixed, and **Messages** says so. The minimum and maximum displayed in the table describe admissible model values; they are not a separate set of user-defined optimizer bounds.
 
 Free parameters deliberately, checking the effect of each stage. Starting with every parameter free can hide an unsuitable model behind strongly correlated values.
 
@@ -121,7 +121,7 @@ The available mode depends on the project. One experiment is fitted on its own; 
 
 ## Start and inspect the fit
 
-Press **Fit**. Review the calculated curve and residual as well as the reported agreement factors. Parameter uncertainties and correlations help you understand what the data constrain.
+Press **Fit** at the right of the status bar. Review the calculated curve and residual as well as the reported agreement factors. Parameter uncertainties and correlations help you understand what the data constrain.
 
 A small agreement factor alone does not establish that the structural model is correct. Inspect unmodelled features and physically implausible values before accepting the result.
 

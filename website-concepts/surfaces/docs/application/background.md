@@ -38,7 +38,7 @@ Changing the background type replaces its representation; review the confirmatio
 
 ## Estimate the background
 
-On **Experiment**, choose **Estimate** in the **Background** group. The estimate replaces the current points or terms. Undo brings the previous values back.
+On **Experiment**, choose **Estimate** in the **Background** group. The estimate replaces the current points or terms. Undo brings the previous values back. Estimate needs measured data: until data are loaded into the experiment, the button is disabled and its tooltip says why.
 
 The **estimation mode** controls what happens next:
 
@@ -72,7 +72,7 @@ You can still free or fix a value through its context menu.
 
 ## Estimation settings
 
-The **Extra** tab's **Background** group holds the estimation settings. Leave a field empty to let the estimator choose where that option supports automatic selection.
+The **Extra** tab's **Background** group holds the estimation settings. It appears once the experiment has measured data. Leave a field empty to let the estimator choose where that option supports automatic selection.
 
 | Setting | Purpose |
 | --- | --- |
@@ -136,7 +136,7 @@ Subtracting calculated peaks can help where peaks overlap and the measured inten
 
 ## Exclude an interval
 
-Use **Excluded regions** on the Experiment page to declare intervals that should not be fitted. Check the boundaries against the pattern. An excluded region remains a deliberate omission from the analysis; it does not repair the model of that interval.
+Use **Excluded regions** on the Experiment page to declare intervals that should not be fitted. The group appears once the experiment has measured data. Check the boundaries against the pattern. An excluded region remains a deliberate omission from the analysis; it does not repair the model of that interval.
 
 Save the project to keep its background settings and excluded regions.
 
