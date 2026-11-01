@@ -53,6 +53,12 @@ Saving a project is separate from saving a report. A later model or report-setti
 
 ## Supported outputs
 
-HTML is available from Python, including self-contained offline HTML. PDF is written by the application. A CIF-report setting exists in the project model, but its writer is not available in this reference version; there is no `save_cif` method.
+HTML is available from Python, including self-contained offline HTML. PDF is written by the application.
+
+```python
+cif_path = project.report.save_cif()
+```
+
+`save_cif()` writes the CIF report, by default to `reports/<name>.cif` in the project folder. It holds the fit result, then one data block for each structure and each experiment. Every item is written under its official CIF name, or an `_edi_` name where CIF has none, with its standard uncertainty.
 
 Keep the complete Edi project as the editable analysis record.

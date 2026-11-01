@@ -18,7 +18,7 @@ The shared [Report](../user-guide/analysis-workflow/report.md) chapter explains 
     python -m edi report path/to/project
     ```
 
-This writes the formats selected by the project into its `reports/` folder, for the available writers. HTML is supported; CIF reporting is unavailable. The application writes PDF; the command leaves an existing PDF and its record as they are.
+This writes the formats selected by the project into its `reports/` folder, for the available writers. HTML and CIF reports are written. The application writes PDF; the command leaves an existing PDF and its record as they are.
 
 Saving a project does not automatically save its report. A report can become out of date after changes to the model or report contents.
 
@@ -65,7 +65,7 @@ Optional group keys are `charts`, `correlations`, `reflections`, `data` and `evo
 | `--x-axis native` or `d_spacing` | Use the experiment's native axis or d-spacing. |
 | `--correlation-threshold X` | Show parameters whose strongest correlation reaches X, from 0 to 1. |
 | `--correlation-experiment NAME` | Choose the experiment for the correlation chart in a multi-experiment fit. |
-| `--colour-scheme NAME` | Use `ediNatural`, `ediCoast`, `ediGarden`, `ediStudio` or `ediContrast`. |
+| `--colour-scheme NAME` | Use `earth` (the default), `classic`, `soft`, `natural` or `colourBlindSafe`. |
 
 These switches affect the generated report for that run; they do not replace the project's saved preferences.
 

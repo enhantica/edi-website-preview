@@ -24,6 +24,8 @@ The same complete project is used by the application, Python and Command Line. C
 
 A folder holds `project.edi`, `structures/`, `experiments/`, `analysis/` and `reports/`. Its entry file opens that complete folder. A zip packages the project files together.
 
+`structures/` and `experiments/` can hold CIF files as well as `.edi` ones. When both `lbco.edi` and `lbco.cif` are there, the `.edi` file is read and the `.cif` one is named in a warning on stderr. Items a CIF gives that EasyDiffraction does not read are reported the same way. Writing results back saves every member as `.edi`. See [CIF files](../user-guide/data-formats.md#cif-files).
+
 ## Where results are written
 
 | Input and options | `fit` / `calc` behavior |
