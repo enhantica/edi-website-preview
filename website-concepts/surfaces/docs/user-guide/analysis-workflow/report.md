@@ -15,7 +15,7 @@ Report settings select optional material such as charts, correlations, reflectio
 | Interactive HTML | Share a readable document with interactive figures | Application, Python and Command Line |
 | Offline HTML | Embed chart libraries so the document can be opened without fetching them | Application, Python and Command Line |
 | PDF | Share a paginated document with static figures | Application |
-| CIF report | Exchange a scientific account of structures, experiments and results | Not available in this reference version |
+| CIF report | Exchange a scientific account of structures, experiments and results | Application, Python and Command Line |
 
 A structural CIF used as input and a CIF report serve different purposes. Neither replaces the complete project; see [data formats](../data-formats.md).
 

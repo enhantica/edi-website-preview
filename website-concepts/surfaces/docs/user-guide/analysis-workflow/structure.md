@@ -6,7 +6,7 @@ A structure describes a crystalline phase used to calculate diffraction. It comb
 
 The [space group and its setting](../../physics/crystallography.md#symmetry) determine which positions and cell parameters are independent. Check that the chosen setting matches the coordinate system of the structural data you are using.
 
-A symmetry-related value is not an additional independent fitting direction. A table can display several coordinates or cell dimensions even when symmetry relates or fixes them.
+A symmetry-related value is not an additional independent fitting direction. A table can display several coordinates or cell dimensions even when symmetry relates or fixes them. Symmetry is one of several reasons a fit cannot vary a value; see [free and fixed](../parameters.md#free-and-fixed).
 
 ## Unit cell
 

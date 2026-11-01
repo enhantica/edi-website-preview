@@ -22,7 +22,7 @@ The [project model](analysis-workflow/project.md) keeps structure quantities sep
 
 A **free** parameter is allowed to change during [refinement](../physics/rietveld.md#eq-weighted-residual). An active **fixed** parameter contributes to the calculation but keeps the value you supplied. A stored-only field is different: retaining it does not establish a calculation effect. The [parameter index](../physics/parameters.md) identifies the known stored-only fields and model-specific roles.
 
-Review the free set before fitting. Only quantities that can vary independently belong in it; symmetry-related or constrained values do not add independent degrees of freedom. Keep the chosen free set with the saved project. Edit the free set in the [<span class="ed-interface-icons" aria-hidden="true">:lucide-globe: :lucide-monitor:</span> <span class="ed-icon-text">Application</span>](../application/parameters.md){ .ed-interface-link .ed-icon-label } or [<span class="ed-interface-icons" aria-hidden="true">:simple-python:</span> <span class="ed-icon-text">Python</span>](../python/structures.md){ .ed-interface-link .ed-icon-label }. [<span class="ed-interface-icons" aria-hidden="true">:lucide-square-terminal:</span> <span class="ed-icon-text">Command Line</span>](../cli/fit.md){ .ed-interface-link .ed-icon-label } uses the choices saved in the project.
+Review the free set before fitting. Only quantities that can vary independently belong in it. A fit cannot vary a value that describes the setup, such as the crystal radius, one that symmetry or a constraint sets, one the fit's data cannot determine, such as a cell fitted only to single-crystal intensities, or one the calculation has no derivative for yet. A value saved as free that cannot be fitted is loaded as fixed, with a message saying so. Keep the chosen free set with the saved project. Edit the free set in the [<span class="ed-interface-icons" aria-hidden="true">:lucide-globe: :lucide-monitor:</span> <span class="ed-icon-text">Application</span>](../application/parameters.md){ .ed-interface-link .ed-icon-label } or [<span class="ed-interface-icons" aria-hidden="true">:simple-python:</span> <span class="ed-icon-text">Python</span>](../python/structures.md){ .ed-interface-link .ed-icon-label }. [<span class="ed-interface-icons" aria-hidden="true">:lucide-square-terminal:</span> <span class="ed-icon-text">Command Line</span>](../cli/fit.md){ .ed-interface-link .ed-icon-label } uses the choices saved in the project.
 
 ## Uncertainties
 
@@ -36,7 +36,7 @@ See [fit quality](fit-quality.md) for how parameter uncertainties relate to agre
 
 Some values are related by the crystallographic symmetry; others may be linked by a declared constraint. Such values are not independent fitting directions.
 
-For example, a symmetry restriction on a coordinate cannot be treated as an arbitrary free coordinate simply because a table displays it. Inspect the relationship before interpreting how many independently variable quantities the fit has.
+For example, a symmetry restriction on a coordinate cannot be treated as an arbitrary free coordinate simply because a table displays it. The application disables the free checkbox on such a value. Inspect the relationship before interpreting how many independently variable quantities the fit has.
 
 ## Bounds and starting values
 
