@@ -124,7 +124,7 @@ The Project page now shows your project name and details.
 
 ## Load the structure
 
-Open **Structure → Main**, expand **Structures**, choose **Load structure** and select **y2o3.cif**.
+Open **Structure → Main**, expand **Structures**, choose **Load structure from file** and select **y2o3.cif**.
 
 <div class="gui-viewer" markdown="1">
 

@@ -20,9 +20,9 @@ This page covers the calls used in the Python guides. It is a **selected referen
 | `project.experiments` | Inspect its experiments. |
 | `project.free_parameters` | Inspect parameters whose `free` flag is set. |
 | `parameter.value` | Read or change a parameter's value. |
-| `parameter.free` | Read or change whether it may vary. |
+| `parameter.free` | Read or change whether it may vary. Freeing a value a fit cannot vary raises an error with the reason. |
 
-Factories used here are `StructureFactory.from_cif_path(path)` and `ExperimentFactory.from_data_path(...)`. These create model components, not automatically complete analysis projects.
+Factories used here are `StructureFactory.from_cif_path(path)`, `ExperimentFactory.from_cif_path(path)` and `ExperimentFactory.from_data_path(...)`. These create model components, not automatically complete analysis projects. `project.structures.add_from_cif_path(path)` and `project.experiments.add_from_cif_path(path)` read a CIF or `.edi` file and add the result to the project; each reader also has a `_str` form that takes text.
 
 ## Analysis
 
@@ -41,7 +41,8 @@ Optional fit callbacks are `on_start`, `on_iteration`, `on_scan_start`, `on_file
 | --- | --- |
 | `project.report.as_html(...)` | Obtain HTML text. |
 | `project.report.save_html(path, ...)` | Write an HTML report. |
-| `project.report.save(...)` | Write the available selected formats; PDF requires the application and CIF reporting is unavailable. |
+| `project.report.save(...)` | Write the selected formats except PDF, which the application writes. |
+| `project.report.save_cif(path)` | Write a CIF report. |
 | `project.report.check()` | Read saved-report freshness states. |
 
 See [reports](reports.md) for call-specific options and the difference between saved settings and per-call overrides.

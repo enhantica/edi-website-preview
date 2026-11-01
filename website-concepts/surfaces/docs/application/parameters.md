@@ -6,7 +6,7 @@ template: gui.html
 
 ## Choose independent parameters
 
-On **Analysis → Main**, use the table filters to find a parameter. Edit its value and use the **free** checkbox to choose whether it may vary. Values fixed by symmetry or set by a constraint are not independent fitting parameters.
+On **Analysis → Main**, use the table filters to find a parameter. Edit its value and use the **free** checkbox to choose whether it may vary. The checkbox is disabled when a fit cannot vary the value, because it describes the setup, symmetry or a constraint sets it, the fit's data cannot determine it, or the calculation has no derivative for it yet. Hover over it to see which.
 
 The displayed minimum and maximum describe admissible model values. See [parameters](../user-guide/parameters.md) and [refine a pattern](refine.md#choose-free-parameters).
 

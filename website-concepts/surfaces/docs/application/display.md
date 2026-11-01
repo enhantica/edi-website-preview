@@ -6,7 +6,7 @@ template: gui.html
 
 ## Choose which parameters are shown
 
-On **Analysis → Settings**, expand **Parameters shown**. Free parameters are always shown. Choose whether to include parameters that were not measured in this fit, fixed by symmetry, set by a constraint, or used as setup values.
+On **Analysis → Settings**, expand **Parameters shown**. The table always lists every value a fit can vary, free or fixed, and every value marked free. Four boxes add the values that cannot be fitted: **Not measured in this fit**, on by default, and **Fixed by symmetry**, **Set by a constraint** and **Setup values**, off by default.
 
 This filters the table; it does not free parameters or change the fit. The selection is an application preference, separate from the saved project.
 

@@ -9,7 +9,7 @@ template: gui.html
 
 Select an experiment on **Experiment → Main**, then expand **Instrument**. Enter the measurement conditions in the units shown. The available fields depend on the experiment type: constant-wavelength measurements use a wavelength; time-of-flight measurements use calibration coefficients.
 
-Facility and instrument names record where the measurement was made. Check the numerical settings against the measurement before refining peak positions.
+**Facility** and **Instrument** record where the measurement was made. After you load a data file into an experiment, choose each from its list. Otherwise they show what the saved or loaded experiment states. Check the numerical settings against the measurement before refining peak positions.
 
 See [calibration and peak positions](../physics/calibration.md) for the equations and conventions. Set peak shapes separately in [Peak profiles](peak-profiles.md).
 

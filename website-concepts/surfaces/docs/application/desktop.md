@@ -26,6 +26,6 @@ An archive opens as a temporary working copy. **Save** updates the archive when 
 
 **Save project as…** writes a folder or zip archive. Select **Save a copy** to write to another location while continuing in the original project.
 
-Use a folder to access individual model and result files, or a zip archive to move the complete project. Reports are saved directly to the location you choose.
+Use a folder to access individual model and result files, or a zip archive to move the complete project. Reports are saved in the project's `reports/` folder, inside the archive when the project is a zip. When the project cannot be written back, such as an example or a read-only archive, the app first asks where to save it.
 
 The [application layout](workspace.md) and [example refinement](first-refinement.md) apply to both desktop and web versions.

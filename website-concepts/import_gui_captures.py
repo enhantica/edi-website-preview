@@ -711,7 +711,7 @@ The experiment input contains the measured pattern, instrument, profile, backgro
         ),
         (
             'Load the structure',
-            f'Open **Structure**, expand **Structures**, choose **Load structure** and select **{structure_file}**.',
+            f'Open **Structure**, expand **Structures**, choose **Load structure from file** and select **{structure_file}**.',
             '06-structure-import',
         ),
         (
@@ -798,7 +798,7 @@ Start with an empty project. Set up the experiment in the app; the measured-data
             ),
             (
                 'Load the structure',
-                f'Open **Structure → Main**, expand **Structures**, choose **Load structure** and select **{structure_file}**.',
+                f'Open **Structure → Main**, expand **Structures**, choose **Load structure from file** and select **{structure_file}**.',
                 '06-structure-import',
             ),
             (
@@ -942,13 +942,13 @@ Choose a tab to inspect each region. These four areas stay in the same places on
 
 ## Sidebar tabs
 
-**Main** contains the primary controls for the active page. **Extra**, **Text** and **Settings** provide additional controls or representations where available. A disabled tab has no available view in the current state.
+**Main** contains the primary controls for the active page. **Extra** and **Settings** add controls where the page has them. Every page has a **Text** tab with the `.edi` text a save writes for what the page shows. Its **Show** box picks **Editable**, text you can change and apply with **✓**, or **Everything**, which adds the measured data and results and is read-only. A disabled tab has no available view in the current state.
 
 The page views below introduce each enabled tab. Then follow [Example refinement](first-refinement.md) to build the analysis step by step.
 
 ## Selection and messages
 
-Selecting a structure or experiment changes the model being inspected. The status bar reports the project state, messages and fitting progress. Read messages after importing data or when an operation is refused.
+Selecting a structure or experiment changes the model being inspected. The status bar reports the project state, messages and fitting progress. Its **Fit** button runs the fit from any page. Read messages after importing data or when an operation is refused.
 """
     gallery = (
         '\n## Page and sidebar views\n\nChoose **Overview** for the whole page. '

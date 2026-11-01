@@ -6,7 +6,7 @@ A project is the complete working record of an analysis. It keeps structures, ex
 
 Start from an included example, open an existing complete project, or assemble the inputs for a new measurement. Give the analysis a useful identity and retain the provenance of its structural model and observations.
 
-A structural CIF supplies a structure. A measured-pattern file supplies observations. Neither alone describes a complete analysis: the project connects them with instrument settings, structural links and analysis choices.
+A structural CIF supplies a structure. An experiment CIF supplies an experiment, including its measured points, and a measured-pattern file supplies observations. Neither alone describes a complete analysis: the project connects them with instrument settings, structural links and analysis choices.
 
 ## What belongs together
 

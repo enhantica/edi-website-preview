@@ -32,7 +32,7 @@ print(length_a.free)
 length_a.free = True
 ```
 
-The [`free` flag](../physics/minimization.md#eq-jacobian) allows a parameter to vary during refinement. Set it only when that parameter belongs in the scientific model you intend to fit. Shared [parameter concepts](../user-guide/parameters.md) explain values, uncertainties and constraints.
+The [`free` flag](../physics/minimization.md#eq-jacobian) allows a parameter to vary during refinement. Set it only when that parameter belongs in the scientific model you intend to fit. Setting `free = True` on a value a fit cannot vary raises an error that gives the reason. On a value set by symmetry or a constraint, it is ignored with a warning and the value stays dependent. Shared [parameter concepts](../user-guide/parameters.md) explain values, uncertainties and constraints.
 
 ## Inspect the free set
 
@@ -45,13 +45,16 @@ This project-level list includes structural and experimental parameters. It help
 
 ## Read a structure file
 
-The current factory supports structure input from CIF or edi text:
+The factory reads a structure from a CIF or `.edi` file, and the project's collection reads one and adds it:
 
 ```python
 structure = edi.StructureFactory.from_cif_path('structure.cif')
+project.structures.add_from_cif_path('structure.cif')
 ```
 
-This creates a structure object; it does not by itself create a complete measurement and analysis project. A successful import also depends on the input carrying the structure information the reader supports.
+`from_cif_str` and `add_from_cif_str` take the text instead of a path.
+
+This creates a structure object; it does not by itself create a complete measurement and analysis project. Imported values start fixed. Items in the file that EasyDiffraction does not read come back as Python warnings starting with `crysta.schema.cif_items_not_read`, and a file EasyDiffraction cannot read raises an error that names the item. See [CIF files](../user-guide/data-formats.md#cif-files).
 
 For a complete runnable analysis, start from a project or a checked example. These pages intentionally document a demonstrated subset rather than claiming that all constructors and file variants are covered.
 
